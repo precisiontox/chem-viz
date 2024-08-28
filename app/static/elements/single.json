@@ -1,0 +1,149 @@
+[
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "chem",
+                  "id": "PTX062",
+                  "ptx_code": "PTX062",
+                  "name": "Cyclosporin A",
+                  "label": "PTX062 | Cyclosporin A",
+                  "cas": "59865-13-3",
+                  "dtxsid": "DTXSID0020365",
+                  "db_id": "DB00091",
+                  "smiles": "[H][C@@]1([C@H](O)[C@H](C)C\\C=C\\C)N(C)C(=O)[C@H](C(C)C)N(C)C(=O)[C@H](CC(C)C)N(C)C(=O)[C@H](CC(C)C)N(C)C(=O)[C@@H](C)NC(=O)[C@H](C)NC(=O)[C@H](CC(C)C)N(C)C(=O)[C@@H](NC(=O)[C@H](CC(C)C)N(C)C(=O)CN(C)C(=O)[C@H](CC)NC1=O)C(C)C",
+                  "inchi": "PMATZTZNYRCHOR-CGLBZJNRSA-N"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "drugbank",
+                  "id": "DB00091_1",
+                  "drugbank_id": "DB00091",
+                  "organism": "Humans",
+                  "chem_target": "Calcium signal-modulating cyclophilin ligand",
+                  "chem_effect": "binder",
+                  "known_action": "yes",
+                  "toxicity": "The oral LD50 in rats is 1480 mg/kg and the TDLO in humans is 12 mg/kg.[L11085] \n\n**Overdose information**\n\nIn cases of overdose with oral cyclosporine, forced emesis and gastric lavage are recommended 2 hours after ingestion. There are little data available in the literature regarding overdoses with cyclosporine, but hepatotoxicity and nephrotoxicity may occur.[L3734] One case report of an cyclosporine overdose due to medical error was made involving a 26 year old female and noted the occurrence of nausea, flushing, tremor, vertigo and vomiting, which resolved within about 1 day. Anorexia and a feeling of increased body girth were also experienced by this patient and resolved within about 2 weeks.[A189453] When overdose with cyclosporine is observed, it is important to consider that dialysis and charcoal, hemoperfusion are not effective techniques to remove cyclosporine from the body.[L3734]"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "drugbank",
+                  "source": "PTX062",
+                  "target": "DB00091_1",
+                  "chem_effect": "binder"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "drugbank",
+                  "id": "DB00091_2",
+                  "drugbank_id": "DB00091",
+                  "organism": "Humans",
+                  "chem_target": "Calcineurin subunit B type 2",
+                  "chem_effect": "inhibitor",
+                  "known_action": "yes",
+                  "toxicity": "The oral LD50 in rats is 1480 mg/kg and the TDLO in humans is 12 mg/kg.[L11085] \n\n**Overdose information**\n\nIn cases of overdose with oral cyclosporine, forced emesis and gastric lavage are recommended 2 hours after ingestion. There are little data available in the literature regarding overdoses with cyclosporine, but hepatotoxicity and nephrotoxicity may occur.[L3734] One case report of an cyclosporine overdose due to medical error was made involving a 26 year old female and noted the occurrence of nausea, flushing, tremor, vertigo and vomiting, which resolved within about 1 day. Anorexia and a feeling of increased body girth were also experienced by this patient and resolved within about 2 weeks.[A189453] When overdose with cyclosporine is observed, it is important to consider that dialysis and charcoal, hemoperfusion are not effective techniques to remove cyclosporine from the body.[L3734]"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "drugbank",
+                  "source": "PTX062",
+                  "target": "DB00091_2",
+                  "chem_effect": "inhibitor"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "drugbank",
+                  "id": "DB00091_3",
+                  "drugbank_id": "DB00091",
+                  "organism": "Humans",
+                  "chem_target": "Peptidyl-prolyl cis-trans isomerase A",
+                  "chem_effect": "inhibitor",
+                  "known_action": "yes",
+                  "toxicity": "The oral LD50 in rats is 1480 mg/kg and the TDLO in humans is 12 mg/kg.[L11085] \n\n**Overdose information**\n\nIn cases of overdose with oral cyclosporine, forced emesis and gastric lavage are recommended 2 hours after ingestion. There are little data available in the literature regarding overdoses with cyclosporine, but hepatotoxicity and nephrotoxicity may occur.[L3734] One case report of an cyclosporine overdose due to medical error was made involving a 26 year old female and noted the occurrence of nausea, flushing, tremor, vertigo and vomiting, which resolved within about 1 day. Anorexia and a feeling of increased body girth were also experienced by this patient and resolved within about 2 weeks.[A189453] When overdose with cyclosporine is observed, it is important to consider that dialysis and charcoal, hemoperfusion are not effective techniques to remove cyclosporine from the body.[L3734]"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "drugbank",
+                  "source": "PTX062",
+                  "target": "DB00091_3",
+                  "chem_effect": "inhibitor"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "drugbank",
+                  "id": "DB00091_4",
+                  "drugbank_id": "DB00091",
+                  "organism": "Humans",
+                  "chem_target": "Peptidyl-prolyl cis-trans isomerase A",
+                  "chem_effect": "binder",
+                  "known_action": "yes",
+                  "toxicity": "The oral LD50 in rats is 1480 mg/kg and the TDLO in humans is 12 mg/kg.[L11085] \n\n**Overdose information**\n\nIn cases of overdose with oral cyclosporine, forced emesis and gastric lavage are recommended 2 hours after ingestion. There are little data available in the literature regarding overdoses with cyclosporine, but hepatotoxicity and nephrotoxicity may occur.[L3734] One case report of an cyclosporine overdose due to medical error was made involving a 26 year old female and noted the occurrence of nausea, flushing, tremor, vertigo and vomiting, which resolved within about 1 day. Anorexia and a feeling of increased body girth were also experienced by this patient and resolved within about 2 weeks.[A189453] When overdose with cyclosporine is observed, it is important to consider that dialysis and charcoal, hemoperfusion are not effective techniques to remove cyclosporine from the body.[L3734]"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "drugbank",
+                  "source": "PTX062",
+                  "target": "DB00091_4",
+                  "chem_effect": "binder"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "drugbank",
+                  "id": "DB00091_5",
+                  "drugbank_id": "DB00091",
+                  "organism": "Humans",
+                  "chem_target": "Peptidyl-prolyl cis-trans isomerase A",
+                  "chem_effect": "ligand",
+                  "known_action": "yes",
+                  "toxicity": "The oral LD50 in rats is 1480 mg/kg and the TDLO in humans is 12 mg/kg.[L11085] \n\n**Overdose information**\n\nIn cases of overdose with oral cyclosporine, forced emesis and gastric lavage are recommended 2 hours after ingestion. There are little data available in the literature regarding overdoses with cyclosporine, but hepatotoxicity and nephrotoxicity may occur.[L3734] One case report of an cyclosporine overdose due to medical error was made involving a 26 year old female and noted the occurrence of nausea, flushing, tremor, vertigo and vomiting, which resolved within about 1 day. Anorexia and a feeling of increased body girth were also experienced by this patient and resolved within about 2 weeks.[A189453] When overdose with cyclosporine is observed, it is important to consider that dialysis and charcoal, hemoperfusion are not effective techniques to remove cyclosporine from the body.[L3734]"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "drugbank",
+                  "source": "PTX062",
+                  "target": "DB00091_5",
+                  "chem_effect": "ligand"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "drugbank",
+                  "id": "DB00091_6",
+                  "drugbank_id": "DB00091",
+                  "organism": "Humans",
+                  "chem_target": "Peptidyl-prolyl cis-trans isomerase F, mitochondrial",
+                  "chem_effect": "binder",
+                  "known_action": "yes",
+                  "toxicity": "The oral LD50 in rats is 1480 mg/kg and the TDLO in humans is 12 mg/kg.[L11085] \n\n**Overdose information**\n\nIn cases of overdose with oral cyclosporine, forced emesis and gastric lavage are recommended 2 hours after ingestion. There are little data available in the literature regarding overdoses with cyclosporine, but hepatotoxicity and nephrotoxicity may occur.[L3734] One case report of an cyclosporine overdose due to medical error was made involving a 26 year old female and noted the occurrence of nausea, flushing, tremor, vertigo and vomiting, which resolved within about 1 day. Anorexia and a feeling of increased body girth were also experienced by this patient and resolved within about 2 weeks.[A189453] When overdose with cyclosporine is observed, it is important to consider that dialysis and charcoal, hemoperfusion are not effective techniques to remove cyclosporine from the body.[L3734]"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "drugbank",
+                  "source": "PTX062",
+                  "target": "DB00091_6",
+                  "chem_effect": "binder"
+            }
+      }
+]

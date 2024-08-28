@@ -1,0 +1,237 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.topbar {
+    width: 100%;
+    background-color: #004880;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in element's width */
+    text-align: center;
+}
+
+.topbar button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #9a999a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.topbar button:hover {
+    background-color: #2e6694;
+}
+
+.tab {
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    justify-content: left;
+    color: white;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab button {
+    background-color: inherit;
+    border: 2px solid #ccc;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    color: black;
+    font-size: 16px;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+}
+
+.tab button:hover {
+    background-color: #2e6694;
+    border-color: #aaa;
+    color: black;
+}
+
+.tab button.active {
+    background-color: #007cc1;
+    border-color: #aaa;
+    color: white;
+}
+
+.tabcontent {
+    display: none;
+    /*padding: 20px;*/
+    border-top: none;
+    height: 100%;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.side-panel {
+    width: 20%; /* Adjust this width as needed */
+    padding: 10px;
+    background-color: #f0f0f0; /* Optional: Background color for the side panel */
+    /*box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); !* Optional: Shadow for the side panel *!*/
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    border-right: #aaa 1px solid;
+    font-size: 12px;
+}
+
+
+.main-panel {
+    width: 80%; /* Takes the remaining space */
+    height: 100%;
+    flex-grow: 2;
+    position: relative;
+    background-color: white;
+}
+
+#cy_single, #cy_zoom, #cy_aop, #cy_basic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.dropdown {
+    margin: 10px;
+}
+.dropdown select {
+    font-size: 12px; /* Adjust the font size as needed */
+}
+
+.tools-widget {
+  position: relative;
+  /*display: inline-block;*/
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.zoom-widget {
+  position: relative;
+  display: table;
+  margin-left: 5px;
+}
+.zoom-tools-row {
+  display: table-row;
+}
+.my-btn {
+  border: none;
+  border-radius: 3px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  background: none;
+  color: #2e6694;
+  cursor: pointer;
+}
+.my-btn:hover {
+  color: #9a999a;
+}
+#help-btn {
+  background-color: #2e6694;
+  color: #fff;
+}
+#help-btn:hover {
+  background-color: #9a999a;
+}
+.dl-widget {
+  position: absolute;
+  display: inline-block;
+  /* margin-top: 20px; */
+  /* margin-left: 5px; */
+  /*right: 1px;*/
+  /*background-color: #FFF;*/
+}
+
+#dl-content {
+  display: none;
+}
+
+.dl-btn-off {
+  color: #2e6694;
+}
+.dl-btn-off:hover {
+  color: #9a999a;
+}
+.dl-btn-on {
+  color: #9a999a;
+}
+.dl-btn-on:hover {
+  color: #2e6694;
+}
+
+.dl-btn-pic {
+  border: none;
+  border-radius: 3px;
+  background-color: #CCC;
+  padding: 3px;
+  cursor: pointer;
+}
+.dl-btn-pic:hover {
+  background-color: #9a999a;
+  color: #fff;
+}
+
+
+/* qTip content styling */
+.qtip-wide {
+     max-width: none !important;
+}
+
+.qtip-content .field {
+    display: inline-block;
+    width: 100px; /* Adjust width as needed */
+    text-align: right;
+}
+
+.qtip-content .compound {
+    color: #172d4a;
+}
+
+.qtip-content .ptx_code {
+      color: #004880;
+}
+
+.qtip-content .cas_number {
+    color: #007cc1;
+}
+
+.qtip-content .dsstox_id {
+    color: #8E44AD;
+}
+
+.qtip-content .drugbank_id {
+    color: #da3a1d;
+}
+
+.qtip-content .smiles {
+    color: #E67E22;
+}
+
+.qtip-content .inchi {
+    color: #F1C40F;
+}
+
+.qtip-content .drugbank {
+    color: #dd009c;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_paginate,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper table {
+    font-size: 12px; /* Adjust the font size as needed */
+}

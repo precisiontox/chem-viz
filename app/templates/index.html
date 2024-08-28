@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrecisionTox Chemical Selection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.21.0/cytoscape.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape-qtip@2.7.1/cytoscape-qtip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <!-- pdfmake for PDF export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <!-- Buttons for CSV, Excel, PDF, and Print -->
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+    <script>
+        const jsonBasic = "{{ url_for('static', filename='elements/basic.json')}}";
+        const jsonSingle = "{{ url_for('static', filename='elements/single.json')}}";
+        const jsonAOP = "{{ url_for('static', filename='elements/aop.json')}}";
+        const jsonZoom = "{{ url_for('static', filename='elements/zoom.json')}}";
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" integrity="sha256-FPJJt8nA+xL4RU6/gsriA8p8xAeLGatoyTjldvQKGdE=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/cytoscape-svg.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/basic_network.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/single_network.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/aop_network.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/zoom_network.js') }}" defer></script>
+</head>
+<body>
+    <div class="topbar">
+        <span>PrecisionTox Chemical Seletion</span>
+    </div>
+        <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'network_basic')">Chemical Network</button>
+<!--        <button class="tablinks" onclick="openTab(event, 'network_zoom')">Zoom 1</button>-->
+<!--        <button class="tablinks" onclick="openTab(event, 'network_single')">Zoom 2</button>-->
+<!--        <button class="tablinks" onclick="openTab(event, 'network_aop')">AOP Network</button>-->
+        <button class="tablinks" onclick="openTab(event, 'chem_list')">Chemical List</button>
+    </div>
+
+   <div id="network_basic" class="tabcontent">
+       <div class="container">
+           <div class="side-panel">
+               <div class="dropdown">
+                    <label for="chem-node-label-select">Select label for chemicals:</label>
+                   <br>
+                    <select id="chem-node-label-select" onchange="changeChemNodeLabel()">
+                        <option value="ptx_code">Ptox Identifier</option>
+                        <option value="name">Compound Name</option>
+                        <option value="label">Ptox Id | Compound Name</option>
+                    </select>
+               </div>
+               <div class="dropdown">
+                    <label for="label-font-size-slider">Label Font Size:</label>
+                    <input type="range" id="label-font-size-slider" min="10" max="50" value="25" oninput="changeLabelFontSize(this.value)">
+               </div>
+               <div class="dropdown">
+                    <label for="category-select">Select Classification:</label>
+                   <br>
+                    <select id="category-select" onchange="selectClassification()" >
+                        <option value="use">Use</option>
+                        <option value="tox">Toxicity</option>
+                    </select>
+               </div>
+               <hr>
+               <div class="dropdown">
+                   <label for="chem-node-select">Focus on chemical:</label>
+                   <select id="chem-node-select" onchange="filterNetworkByChemNode()">
+                       <option value="">Select an option...</option>
+                   </select>
+               </div>
+
+                <!-- Future options can be added here -->
+           </div>
+           <div class="main-panel">
+               <div id="cy_basic"></div>
+               <div class="tools-widget">
+<!--                        <button class="my-btn" id="help-btn" title="Help">-->
+<!--                            <i class="far fa-question-circle"></i>-->
+<!--                        </button>-->
+                        <button class="my-btn" id="center" title="Center graph">
+                            <i class="fa fa-align-center"></i>
+                        </button>
+                        <button class="my-btn" id="lock" title="Lock/unlock element positions">
+                            <i class="fa fa-unlock"></i>
+                        </button>
+                   <div class="dl-widget">
+                        <button class="my-btn dl-btn-off" id="dl-btn"
+                                title="Download network view.">
+                            <i class="fas fa-download"></i>
+                        </button>
+                        <div id="dl-content">
+                            <button class="dl-btn-pic" id="dl_svg"
+                            title="Download complete network as a vector graphic">
+                              <i class="fas fa-file-download"></i> SVG
+                            </button>
+                            <button class="dl-btn-pic" id="dl_jpg"
+                            title="Take a snapshot of the current network view as JPG.">
+                                <i class="fas fa-camera"></i> JPG
+                            </button>
+                            <button class="dl-btn-pic" id="dl_png"
+                            title="Take a snapshot of the current network view as PNG.">
+                                <i class="fas fa-camera"></i> PNG
+                            </button>
+                        </div>
+                    </div>
+               </div>
+               <div class="zoom-widget">
+                    <div class="zoom-widget-row">
+                        <button class="my-btn" id="zoom_in" title="Zoom in">
+                            <i class="fas fa-search-plus"></i>
+                        </button>
+                    </div>
+                    <div class="zoom-widget-row">
+                        <button class="my-btn" id="zoom_out" title="Zoom out">
+                            <i class="fas fa-search-minus"></i>
+                        </button>
+                    </div>
+               </div>
+
+           </div>
+       </div>
+   </div>
+
+    <div id="chem_list" class="tabcontent">
+        <table id="chem-table" class="display">
+            <thead>
+                <tr id="chem-table-header"></tr>
+            </thead>
+            <tbody id="chem-table-body"></tbody>
+        </table>
+    </div>
+
+    <script>
+        function loadChemList() {
+        fetch('/get_chemicals')
+            .then(response => response.json())
+            .then(data => {
+                const tableHeader = document.getElementById('chem-table-header');
+                const tableBody = document.getElementById('chem-table-body');
+
+                // Clear any existing content
+                tableHeader.innerHTML = '';
+                tableBody.innerHTML = '';
+
+                // Create the table header
+                if (data.length > 0) {
+                    const headers = Object.keys(data[0]);
+                    headers.forEach(header => {
+                        const th = document.createElement('th');
+                        th.textContent = header;
+                        tableHeader.appendChild(th);
+                    });
+                }
+
+                // Populate the table body
+                data.forEach(row => {
+                    const tr = document.createElement('tr');
+                    Object.values(row).forEach(value => {
+                        const td = document.createElement('td');
+                        td.textContent = value;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+
+                // Initialize DataTable
+                $('#chem-table').DataTable({
+                    dom: 'lBfrtip', // This is the key to enabling the buttons
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ],
+                    scrollY: '65vh', // Vertical scrolling (adjust height as needed)
+                    scrollX: true,   // Enable horizontal scrolling
+                    scrollCollapse: true, // Allows the table to reduce in height when fewer rows are shown
+                    paging: false
+                });
+            })
+            .catch(error => console.error('Error loading chemical list:', error));
+        }
+
+        function changeLabelFontSize(fontSize) {
+            cy_basic.style().selector('node[role="chem"]').style('font-size', fontSize + 'px').update();
+        }
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+
+            // Initialize the network only when the tab is activated
+            if (tabName === 'network_basic') {
+                initializeNetworkBasic();
+                // selectClassification();
+            } else if (tabName === 'chem_list') {
+                loadChemList();
+            }
+        }
+
+        // Initialize the first network by default
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.tablinks').click();
+        });
+
+         // BUTTON: Center the graph on the page
+        $("#center").click(function () {
+            cy_basic.fit(cy_basic.$("node:visible"));
+        });
+
+        // BUTTON: Lock/Unlock element positions
+        $("#lock").click(function () {
+            if (cy_basic.autolock() == false) {
+                cy_basic.autolock(true);
+                $("#lock i").toggleClass("fa-unlock fa-lock");
+            } else if (cy_basic.autolock() == true) {
+                cy_basic.autolock(false);
+                $("#lock i").toggleClass("fa-lock fa-unlock");
+            }
+        });
+
+        // BUTTON: Zoom-In / Zoom-Out
+        $("#zoom_in").click(function () {
+            var z = cy_basic.zoom() + 0.2;
+            cy_basic.zoom(z);
+        });
+        $("#zoom_out").click(function () {
+            var z = cy_basic.zoom() - 0.2;
+            cy_basic.zoom(z);
+        });
+
+        // BUTTON: Center the graph on the page
+        $("#center").click(function () {
+            cy_basic.fit(cy_basic.$("node:visible"));
+        });
+
+        /// DOWNLOAD BUTTONS
+        $("#dl-btn").click(function () {
+            if (this.className == "my-btn dl-btn-off") {
+                this.className = "my-btn dl-btn-on";
+                $("#dl-content").css("display", "inline-block");
+            } else {
+                this.className = "my-btn dl-btn-off";
+                $("#dl-content").css("display", "none");
+            }
+        });
+
+        // BUTTON: Get snapshot as PNG
+        $("#dl_png").click(function () {
+            var image = cy_basic.png()
+            var iframe = "<iframe src='" + image + `' frameborder='0'
+                style='border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;'
+                allowfullscreen></iframe>`;
+            var win = window.open();
+            win.document.write(iframe);
+        });
+        // BUTTON: Get snapshot as JPG
+        $("#dl_jpg").click(function () {
+            var image = cy_basic.jpg()
+            var iframe = "<iframe src='" + image + `' frameborder='0'
+                style='border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;'
+                allowfullscreen></iframe>`;
+            var win = window.open();
+            win.document.write(iframe);
+        });
+        // BUTTON: Get snapshot as SVG
+        $("#dl_svg").click(function (filename) {
+            var svgContent = cy_basic.svg({scale: 1, full: true});
+            var blob = new Blob([svgContent], {type: "image/svg+xml;charset=utf-8"});
+            saveAs(blob, "graph.svg");
+        });
+
+    </script>
+
+    </script>
+</body>
+</html>

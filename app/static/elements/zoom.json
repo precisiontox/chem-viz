@@ -1,0 +1,102 @@
+[
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "chem",
+                  "id": "PTX062",
+                  "ptx_code": "PTX062",
+                  "name": "Cyclosporin A",
+                  "label": "PTX062 | Cyclosporin A",
+                  "cas": "59865-13-3",
+                  "dtxsid": "DTXSID0020365",
+                  "db_id": "DB00091",
+                  "smiles": "[H][C@@]1([C@H](O)[C@H](C)C\\C=C\\C)N(C)C(=O)[C@H](C(C)C)N(C)C(=O)[C@H](CC(C)C)N(C)C(=O)[C@H](CC(C)C)N(C)C(=O)[C@@H](C)NC(=O)[C@H](C)NC(=O)[C@H](CC(C)C)N(C)C(=O)[C@@H](NC(=O)[C@H](CC(C)C)N(C)C(=O)CN(C)C(=O)[C@H](CC)NC1=O)C(C)C",
+                  "inchi": "PMATZTZNYRCHOR-CGLBZJNRSA-N"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attributes",
+                  "id": "Chemical Properties_PTX062",
+                  "label": "Chemical Properties",
+                  "color": "#009FBD"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attributes",
+                  "id": "DrugBank_PTX062",
+                  "label": "DrugBank",
+                  "color": "#dd009c"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attributes",
+                  "id": "AOP_PTX062",
+                  "label": "AOP",
+                  "color": "#FFC300"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attributes",
+                  "id": "Enriched Pathways_PTX062",
+                  "label": "Enriched Pathways",
+                  "color": "#FF5733"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attributes",
+                  "id": "Exposome_PTX062",
+                  "label": "Exposome",
+                  "color": "#900C3F"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "source": "PTX062",
+                  "target": "Chemical Properties_PTX062",
+                  "color": "#009FBD"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "source": "PTX062",
+                  "target": "DrugBank_PTX062",
+                  "color": "#dd009c"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "source": "PTX062",
+                  "target": "AOP_PTX062",
+                  "color": "#FFC300"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "source": "PTX062",
+                  "target": "Enriched Pathways_PTX062",
+                  "color": "#FF5733"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "source": "PTX062",
+                  "target": "Exposome_PTX062",
+                  "color": "#900C3F"
+            }
+      }
+]
