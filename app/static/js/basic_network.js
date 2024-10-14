@@ -126,8 +126,58 @@ function initializeNetworkBasic() {
                         } else {
                             var drugbank = "<b class='field drugbank_id'>DrugBank AN</b> | <a href='https://go.drugbank.com/drugs/" + this.data("db_id") + "'>" + this.data("db_id") + "</a><br>\n";
                         }
+                        if (this.data("mw_g_mol")==="NA") {
+                            var mw = "<b class='field prop'>Molecular Weight</b> | N/A<br>\n";
+                        } else {
+                            var mw = "<b class='field prop'>Molecular Weight</b> | "+this.data("mw_g_mol")+" g/mol<br>\n"
+                        }
+                        if (this.data("solubility_h2o_mol_liter")==="NA") {
+                            var solubility = "<b class='field prop'>Solubility (H2O)</b> | N/A<br>\n";
+                        } else {
+                            var solubility = "<b class='field prop'>Solubility (H2O)</b> | "+this.data("solubility_h2o_mol_liter")+" mol/liter (source:"+this.data("source_solubility_h2o")+")<br>\n"
+                        }
+                        if (this.data("henry_coefficient_atm_m3_mol")==="NA") {
+                            var henry = "<b class='field prop'>Henry Coefficient</b> | N/A<br>\n";
+                        } else {
+                            var henry = "<b class='field prop'>Henry Coefficient</b> | "+this.data("henry_coefficient_atm_m3_mol")+" atm*m3/mol (source:"+this.data("source_henry")+")<br>\n"
+                        }
+                        if (this.data("log_kaw_kh_rt")==="NA") {
+                            var log_kaw = "<b class='field prop'>Log Kaw</b> | N/A<br>\n";
+                        } else {
+                            var log_kaw = "<b class='field prop'>Log Kaw</b> | "+this.data("log_kaw_kh_rt")+" (source: "+this.data("source_kaw")+")<br>\n"
+                        }
+                        if (this.data("log_kow_liter_liter")==="NA") {
+                            var log_kow = "<b class='field prop'>Log Kow</b> | N/A<br>\n";
+                        } else {
+                            var log_kow = "<b class='field prop'>Log Kow</b> | "+this.data("log_kow_liter_liter")+" (source: "+this.data("source_kow")+")<br>\n"
+                        }
+                        if (this.data("pka_acid")==="NA") {
+                            var pka_acid = "<b class='field prop'>pKa (acid)</b> | N/A<br>\n";
+                        } else {
+                            var pka_acid = "<b class='field prop'>pKa (acid)</b> | "+this.data("pka_acid")+" (source: "+this.data("source_pka")+")<br>\n"
+                        }
+                        if (this.data("pka_base")==="NA") {
+                            var pka_base = "<b class='field prop'>pKa (base)</b> | N/A<br>\n";
+                        } else {
+                            var pka_base = "<b class='field prop'>pKa (base)</b> | "+this.data("pka_base")+" (source: "+this.data("source_pka")+")<br>\n"
+                        }
+                        if (this.data("log_dlipw_ph74_liter_liter")==="NA") {
+                            var dlipw = "<b class='field prop'>Log Dlipw (pH 7.4)</b> | N/A<br>\n";
+                        } else {
+                            var dlipw = "<b class='field prop'>Log Dlipw (pH 7.4)</b> | "+this.data("log_dlipw_ph74_liter_liter")+" (source: "+this.data("source_dlipw")+")<br>\n"
+                        }
+                        if (this.data("freely_dissolved_fraction")==="NA") {
+                            var fdf = "<b class='field prop'>Freely Dissolved Fraction</b> | N/A<br>\n";
+                        } else {
+                            var fdf = "<b class='field prop'>Freely Dissolved Fraction</b> | "+this.data("freely_dissolved_fraction")+"<br>\n"
+                        }
+                        if (this.data("density_kg_liter")==="NA") {
+                            var density = "<b class='field prop'>Density</b> | N/A<br>\n";
+                        } else {
+                            var density = "<b class='field prop'>Density</b> | "+this.data("density_kg_liter")+" kg/liter (source:"+this.data("source_density")+")<br>\n"
+                        }
                         var qtip_content =
-                            "<div class='qtip-content'>" +
+                            "<div class='qtip-content' style='max-height: 200px; overflow-y: auto;'>" +
                             "<b class='field compound'>Compound</b><b>  | " + this.data("name") + "</b> <br>\n" +
                             "<b class='field ptx_code'>PTX Code</b> | " + this.data("ptx_code") + "<br>\n" +
                             "<b class='field cas_number'>CAS Number</b> | " + this.data("cas") + "<br>\n" +
@@ -135,6 +185,7 @@ function initializeNetworkBasic() {
                              drugbank+
                             "<b class='field smiles'>SMILES</b> | " + this.data("smiles") + "<br>\n" +
                             "<b class='field inchi'>InChIKey</b> | " + this.data("inchi") + "<br>\n" +
+                            mw + solubility + henry + log_kaw + log_kow + pka_acid + pka_base + dlipw + fdf + density +
                             "</div>";
                         return qtip_content
                     },
@@ -145,7 +196,7 @@ function initializeNetworkBasic() {
                     style: {
                         classes: "qtip-bootstrap qtip-wide",
                         tip: {
-                            width: 20,
+                            width: 50,
                             height: 10
                         }
                     },

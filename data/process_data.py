@@ -1,6 +1,5 @@
 import sys
 import json
-import random
 import pandas as pd
 
 
@@ -23,6 +22,24 @@ def read_drugbank_file(file_path):
     ).rename(columns={"Prec.Tox code": "ptx_code", "DrugBank ID": "drugbank_id"})
 
     return df_drugbank
+
+
+def read_properties_file(file_path):
+    df = pd.read_excel(
+        file_path,
+        skiprows=0,
+        index_col=None,
+    ).rename(columns={
+        "compound_name_user": "chem_name_user",
+        "dtxsid_comptox_neutral": "DTXSID",
+        "inchikey_neutral": "INCHIKEY",
+        "smiles_canonical_neutral": "SMILES",
+        "cas_neutral": "CASRN"
+    })
+    df = df.drop(columns=["DTXSID", "INCHIKEY", "SMILES", "CASRN"], axis=1)
+    df.fillna("NA", inplace=True)
+    df = df.astype(str)
+    return df
 
 
 def read_aop_file(file_path):
@@ -67,23 +84,48 @@ def add_chemical_elements(df, restrict_to=None, json_elements=None):
         if len(restrict_to) > 0 and row["ptx_code"] not in restrict_to:
             continue
 
-        json_elements.append(
-            {
-                "group": "nodes",
-                "data": {
-                    "role": "chem",
-                    "id": row["ptx_code"],
-                    "ptx_code": row["ptx_code"],
-                    "name": row["chem_name"],
-                    "label": truncate_label(row["label"], 25),
-                    "cas": row["CASRN"],
-                    "dtxsid": row["DTXSID"],
-                    "db_id": row["drugbank_id"],
-                    "smiles": row["SMILES"],
-                    "inchi": row["INCHIKEY"]
-                }
+        node = {
+            "group": "nodes",
+            "data": {
+                "role": "chem",
+                "id": row["ptx_code"],
+                "ptx_code": row["ptx_code"],
+                "name": row["chem_name_user"],
+                "label": truncate_label(row["label"], 25),
+                "cas": row["CASRN"],
+                "dtxsid": row["DTXSID"],
+                "db_id": row["drugbank_id"],
+                "smiles": row["SMILES"],
+                "inchi": row["INCHIKEY"]
             }
-        )
+        }
+        for col in [col for col in row.keys() if col not in ["ptx_code", "chem_name_user", "label",
+                                                  "drugbank_id", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]]:
+            node["data"][col] = row[col]
+
+        json_elements.append(node)
+
+        node = {
+            "group": "nodes",
+            "data": {
+                "role": "prop",
+                "id": row["ptx_code"]+"_mw",
+                "label": "Molecular Weight",
+                "value": row["mw_g_mol"],
+                "color": "#009FBD"
+            }
+        }
+        json_elements.append(node)
+        edge = {
+            "group": "edges",
+            "data": {
+                "source": row["ptx_code"],
+                "target": row["ptx_code"]+"_mw",
+                "color": "#009FBD"
+            }
+        }
+        json_elements.append(edge)
+
     return json_elements
 
 
@@ -180,6 +222,7 @@ aop_file = "Manuscript Chemicals - AOP.xlsx"
 drugbank_file = "Manuscript Chemicals - DrugBank.xlsx"
 toxclass_file = "otox.txt.gz"
 use_file = "Manuscript Chemicals - Identifiers_with_category.xlsx"
+properties_file = "Visulaization P-Chem Dataset ver1.xlsx"
 
 # output files
 basic_network_out = "../app/static/elements/basic.json"
@@ -195,6 +238,9 @@ palette_2 = ["#894b5d", "#6868ac", "#85a1ac", "#8a5796", "#ecc371", "#f53151"]
 # Read DrugBank file
 df_drugb = read_drugbank_file(drugbank_file)
 
+# Read properties file
+df_prop = read_properties_file(properties_file)
+
 # Read Identifiers file
 df_ide = pd.read_excel(
     chem_ide_file,
@@ -207,24 +253,41 @@ df_ide = df_ide.merge(
         on=["ptx_code"],
         how="left"
 )
+df_ide = df_ide.merge(
+    df_prop,
+    on=["ptx_code"],
+    how="left"
+)
 df_ide = df_ide.fillna("NA")
-df_ide["label"] = df_ide["ptx_code"] + " | " + df_ide["chem_name"]
+df_ide["label"] = df_ide["ptx_code"] + " | " + df_ide["chem_name_user"]
+all_ptx_codes = df_ide["ptx_code"].unique().tolist()
+
 
 # Read AOP file
-df_aop = read_aop_file(aop_file)
-aop_dict = df_aop.set_index("AOP_id").apply(
-            lambda row: {"title": row["AOP_title"], "type": row["Type"]}, axis=1
-            ).to_dict()
+# df_aop = read_aop_file(aop_file)
+# aop_dict = df_aop.set_index("AOP_id").apply(
+#             lambda row: {"title": row["AOP_title"], "type": row["Type"]}, axis=1
+#             ).to_dict()
 
 # Read Toxicity class file
 df_toxclass = pd.read_csv(toxclass_file, sep="\t", header=None,
                           names=["chem_name", "tox_class", "score", "n_refs", "ref_list"])
 df_toxclass["chem_name"] = df_toxclass["chem_name"].str.replace("_", " ")
+### WARNING: not all chem_name in df_toxclass can be matched. Check manually
 df_toxclass = df_toxclass.merge(
         df_ide[["ptx_code", "chem_name"]],
         on=["chem_name"],
         how="left"
 )
+# Keep entries where ptx_code is also present in df_ide
+# print(len(df_toxclass))
+# df_toxclass.to_csv("toxclass_test1.csv", index=False)
+# print( df_toxclass[~df_toxclass["ptx_code"].isin(all_ptx_codes)] )
+# df_toxclass = df_toxclass[df_toxclass["ptx_code"].isin(all_ptx_codes)]
+# print(len(df_toxclass))
+# df_toxclass.to_csv("toxclass_test2.csv", index=False)
+# sys.exit()
+
 # Keep only toxicity with highest number of references per chemical
 idx = df_toxclass.groupby('chem_name')['n_refs'].idxmax()
 df_toxclass = df_toxclass.loc[idx]
@@ -300,17 +363,27 @@ for categories, cat_name, df, palette in zip(
 
 chem_elements.extend(edges)
 
+# with open("see", "wt") as out:
+#     for d in chem_elements:
+#         for k,v in d.items():
+#             out.write(f"{k}: {str(v)}\n")
+
 with open(basic_network_out, 'wt') as file_out:
     json.dump(chem_elements, file_out, indent=6)
+print(f"{basic_network_out} was generated")
 
 df_ide = df_ide.replace("NA", "'NA'")
 df_ide = df_ide.rename(columns={
     "chem_name": "Compound name",
+    "chem_name_user": "Compound name (user)",
     "drugbank_id": "DrugBank ID",
-    "ptx_code": "Ptox code"
+    "ptx_code": "Ptox code",
 })
-cols_to_print = ["Ptox code", "Compound name", "DrugBank ID", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
+cols_to_print = ["Ptox code", "Compound name (user)", "Compound name", "DrugBank ID", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
+cols = [col for col in df_ide.columns if col not in cols_to_print and col != "label"]
+cols_to_print += cols
 df_ide.to_csv(chemical_table, columns=cols_to_print, index=False)
+print(f"{chemical_table} was generated")
 
 sys.exit()
 

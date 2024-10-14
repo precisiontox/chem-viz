@@ -191,7 +191,7 @@ body, html {
 
 .qtip-content .field {
     display: inline-block;
-    width: 100px; /* Adjust width as needed */
+    width: 180px; /* Adjust width as needed */
     text-align: right;
 }
 
@@ -225,6 +225,10 @@ body, html {
 
 .qtip-content .drugbank {
     color: #dd009c;
+}
+
+.qtip-content .prop {
+    color: black;
 }
 
 .dataTables_wrapper .dataTables_length,
