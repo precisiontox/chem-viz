@@ -1,4 +1,4 @@
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, jsonify
 import pandas as pd
 import json
 import os
@@ -13,21 +13,15 @@ def home():
 
 @app.route('/get_chemicals')
 def get_chemicals():
-    # Load the CSV file
-    csv_path = os.path.join(app.root_path, 'static', 'data', 'chemical_table.csv')
-    df = pd.read_csv(csv_path)
+    # Load the JSON file
+    json_path = os.path.join(app.root_path, 'static', 'data', 'chemical_table.json')
+    df = pd.read_json(json_path)  # Use read_json instead of read_csv for JSON files
 
-    # Convert DataFrame to a list of dictionaries with column order preserved
+    # Convert DataFrame to a list of dictionaries
     data = df.to_dict(orient='records')
 
-    # Convert the list of dictionaries to JSON, ensuring the order is preserved
-    json_data = json.dumps(data, indent=2)
-
-    json_out = os.path.join(app.root_path, 'static', 'data', 'chemical_table.json')
-    with open(json_out, 'wt') as file_out:
-        json.dump(data, file_out, indent=6)
-
-    return Response(json_data, mimetype='application/json')
+    # Return JSON response
+    return jsonify(data)
 
 
 if __name__ == '__main__':

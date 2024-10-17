@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrecisionTox Chemical Selection</title>
+    <title>Ptox Chemical Selection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css">
@@ -37,14 +40,15 @@
 </head>
 <body>
     <div class="topbar">
-        <span>PrecisionTox Chemical Seletion</span>
+        <img src="{{ url_for('static', filename='images/ptox_logo_white.png') }}" alt="Logo" class="logo">
+        <span><a id="title_chemical">CHEMICAL</a> LIBRARY</span>
     </div>
         <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'network_basic')">Chemical Network</button>
+        <button class="tablinks" onclick="openTab(event, 'network_basic')">Network</button>
 <!--        <button class="tablinks" onclick="openTab(event, 'network_zoom')">Zoom 1</button>-->
 <!--        <button class="tablinks" onclick="openTab(event, 'network_single')">Zoom 2</button>-->
 <!--        <button class="tablinks" onclick="openTab(event, 'network_aop')">AOP Network</button>-->
-        <button class="tablinks" onclick="openTab(event, 'chem_list')">Chemical List</button>
+        <button class="tablinks" onclick="openTab(event, 'chem_list')">List</button>
     </div>
 
    <div id="network_basic" class="tabcontent">
@@ -142,50 +146,52 @@
 
     <script>
         function loadChemList() {
-        fetch('/get_chemicals')
-            .then(response => response.json())
-            .then(data => {
-                const tableHeader = document.getElementById('chem-table-header');
-                const tableBody = document.getElementById('chem-table-body');
+        if (!$.fn.DataTable.isDataTable('#chem-table')) {
+            fetch('/get_chemicals')
+                .then(response => response.json())
+                .then(data => {
+                    const tableHeader = document.getElementById('chem-table-header');
+                    const tableBody = document.getElementById('chem-table-body');
 
-                // Clear any existing content
-                tableHeader.innerHTML = '';
-                tableBody.innerHTML = '';
+                    // Clear any existing content
+                    tableHeader.innerHTML = '';
+                    tableBody.innerHTML = '';
 
-                // Create the table header
-                if (data.length > 0) {
-                    const headers = Object.keys(data[0]);
-                    headers.forEach(header => {
-                        const th = document.createElement('th');
-                        th.textContent = header;
-                        tableHeader.appendChild(th);
+                    // Create the table header
+                    if (data.length > 0) {
+                        const headers = Object.keys(data[0]);
+                        headers.forEach(header => {
+                            const th = document.createElement('th');
+                            th.textContent = header;
+                            tableHeader.appendChild(th);
+                        });
+                    }
+
+                    // Populate the table body
+                    data.forEach(row => {
+                        const tr = document.createElement('tr');
+                        Object.values(row).forEach(value => {
+                            const td = document.createElement('td');
+                            td.textContent = value;
+                            tr.appendChild(td);
+                        });
+                        tableBody.appendChild(tr);
                     });
-                }
 
-                // Populate the table body
-                data.forEach(row => {
-                    const tr = document.createElement('tr');
-                    Object.values(row).forEach(value => {
-                        const td = document.createElement('td');
-                        td.textContent = value;
-                        tr.appendChild(td);
+                    // Initialize DataTable
+                    $('#chem-table').DataTable({
+                        dom: 'lBfrtip', // This is the key to enabling the buttons
+                        buttons: [
+                            'copy', 'csv', 'excel', 'pdf', 'print'
+                        ],
+                        scrollY: '65vh', // Vertical scrolling (adjust height as needed)
+                        scrollX: true,   // Enable horizontal scrolling
+                        scrollCollapse: true, // Allows the table to reduce in height when fewer rows are shown
+                        paging: false
                     });
-                    tableBody.appendChild(tr);
-                });
-
-                // Initialize DataTable
-                $('#chem-table').DataTable({
-                    dom: 'lBfrtip', // This is the key to enabling the buttons
-                    buttons: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
-                    ],
-                    scrollY: '65vh', // Vertical scrolling (adjust height as needed)
-                    scrollX: true,   // Enable horizontal scrolling
-                    scrollCollapse: true, // Allows the table to reduce in height when fewer rows are shown
-                    paging: false
-                });
-            })
-            .catch(error => console.error('Error loading chemical list:', error));
+                })
+                .catch(error => console.error('Error loading chemical list:', error));
+            }
         }
 
         function changeLabelFontSize(fontSize) {
