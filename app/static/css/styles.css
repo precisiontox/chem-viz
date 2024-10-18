@@ -117,13 +117,13 @@ body, html {
 }
 
 .side-panel {
-    width: 20%; /* Adjust this width as needed */
+    width: 18%; /* Adjust this width as needed */
     padding: 10px;
     background-color: #f0f0f0; /* Optional: Background color for the side panel */
     /*box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); !* Optional: Shadow for the side panel *!*/
     overflow-y: auto; /* Allows scrolling if content overflows */
     border-right: #aaa 1px solid;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 
@@ -229,6 +229,18 @@ body, html {
 .qtip-content .field {
     display: inline-block;
     width: 180px; /* Adjust width as needed */
+    text-align: right;
+}
+
+.qtip-content .field-edge-use {
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+}
+
+.qtip-content .field-edge-tox {
+    display: inline-block;
+    width: 95px;
     text-align: right;
 }
 

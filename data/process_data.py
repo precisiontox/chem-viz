@@ -80,11 +80,17 @@ def add_chemical_elements(df, restrict_to=None, json_elements=None):
     if json_elements is None:
         json_elements = []
 
+    labels = {
+        "mw_g_mol": "Molecular Weight (g/mol)",
+        "solubility_h2o_mol_liter": "Solubility (H2O)",
+        "henry_coefficient_atm_m3_mol": "Henry Coefficient"
+    }
+
     for index, row in df.iterrows():
         if len(restrict_to) > 0 and row["ptx_code"] not in restrict_to:
             continue
 
-        node = {
+        chem_node = {
             "group": "nodes",
             "data": {
                 "role": "chem",
@@ -99,32 +105,36 @@ def add_chemical_elements(df, restrict_to=None, json_elements=None):
                 "inchi": row["INCHIKEY"]
             }
         }
-        for col in [col for col in row.keys() if col not in ["ptx_code", "chem_name_user", "label",
+        
+        for col in [col for col in row.keys() if col not in ["ptx_code", "chem_name_user", "chem_name", "label",
                                                   "drugbank_id", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]]:
-            node["data"][col] = row[col]
+            chem_node["data"][col] = row[col]     
 
-        json_elements.append(node)
+            label = labels[col] if col in labels else col
+            prop_node = {
+                "group": "nodes",
+                "data": {
+                    "role": "prop",
+                    "id": row["ptx_code"]+"-"+col,
+                    "label": label,
+                    "combinedLabel": label+"\n"+str(row[col]),
+                    "value": row[col],
+                    "color": "#009FBD"
+                }
+            }
+            json_elements.append(prop_node)
+            edge = {
+                "group": "edges",
+                "data": {
+                    "role": "prop",
+                    "source": row["ptx_code"],
+                    "target": row["ptx_code"]+"-"+col,
+                    "color": "#009FBD"
+                }
+            }
+            json_elements.append(edge)
 
-        node = {
-            "group": "nodes",
-            "data": {
-                "role": "prop",
-                "id": row["ptx_code"]+"_mw",
-                "label": "Molecular Weight",
-                "value": row["mw_g_mol"],
-                "color": "#009FBD"
-            }
-        }
-        json_elements.append(node)
-        edge = {
-            "group": "edges",
-            "data": {
-                "source": row["ptx_code"],
-                "target": row["ptx_code"]+"_mw",
-                "color": "#009FBD"
-            }
-        }
-        json_elements.append(edge)
+        json_elements.append(chem_node)
 
     return json_elements
 
@@ -216,6 +226,35 @@ def create_single_chemical_network(df_chemlist, df_drugbank, output_file):
     return json_ele
 
 
+def export_chemical_table(df):
+    df = df.replace("NA", "")
+    df = df.rename(columns={
+        "chem_name": "Compound name",
+        "chem_name_user": "Compound name (user)",
+        "drugbank_id": "DrugBank ID",
+        "ptx_code": "Ptox code",
+    })
+    cols_to_print = ["Ptox code", "Compound name (user)", "Compound name", "DrugBank ID", 
+                    "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
+    cols_to_print += [col for col in df.columns if col not in cols_to_print and col != "label"]
+    df.to_csv(chemical_table, columns=cols_to_print, index=False)
+    print(f"{chemical_table} was generated")
+
+    # Replace NaN values in the DataFrame with None, ensuring consistent replacement
+    df = df.astype(object).where(pd.notnull(df), None)
+
+    # Convert DataFrame to a list of dictionaries with column order preserved
+    data = df.to_dict(orient='records')
+
+    # Convert the list of dictionaries to JSON, ensuring the order is preserved
+    json_data = json.dumps(data, indent=2)
+
+    # Optionally, write this JSON data to a file
+    with open(chemical_table_json, 'wt') as file_out:
+        json.dump(data, file_out, indent=6)
+    print(f"{chemical_table_json} was generated")
+
+
 # data files
 chem_ide_file = "Manuscript Chemicals - Identifiers.xlsx"
 aop_file = "Manuscript Chemicals - AOP.xlsx"
@@ -230,6 +269,7 @@ aop_network_out = "../app/static/elements/aop.json"
 zoom_network_out = "../app/static/elements/zoom.json"
 single_network_out = "../app/static/elements/single.json"
 chemical_table = "../app/static/data/chemical_table.csv"
+chemical_table_json = "../app/static/data/chemical_table.json"
 
 palette_1 = ["#6C946F", "#F4D35E", "#EE964B", "#F95738", "#D81159", "#8F2D56", "#218380", "#FFC857"]
 palette_2 = ["#894b5d", "#6868ac", "#85a1ac", "#8a5796", "#ecc371", "#f53151"]
@@ -289,9 +329,9 @@ df_toxclass = df_toxclass.merge(
 # sys.exit()
 
 # Keep only toxicity with highest number of references per chemical
-idx = df_toxclass.groupby('chem_name')['n_refs'].idxmax()
-df_toxclass = df_toxclass.loc[idx]
-df_toxclass = df_toxclass.reset_index(drop=True)
+# idx = df_toxclass.groupby('chem_name')['n_refs'].idxmax()
+# df_toxclass = df_toxclass.loc[idx]
+# df_toxclass = df_toxclass.reset_index(drop=True)
 df_toxclass.to_csv("toxclass.csv", index=False)
 
 # Read 'Use' class file
@@ -368,22 +408,14 @@ chem_elements.extend(edges)
 #         for k,v in d.items():
 #             out.write(f"{k}: {str(v)}\n")
 
+# Create output files
+# Export basic network elements
 with open(basic_network_out, 'wt') as file_out:
     json.dump(chem_elements, file_out, indent=6)
 print(f"{basic_network_out} was generated")
 
-df_ide = df_ide.replace("NA", "'NA'")
-df_ide = df_ide.rename(columns={
-    "chem_name": "Compound name",
-    "chem_name_user": "Compound name (user)",
-    "drugbank_id": "DrugBank ID",
-    "ptx_code": "Ptox code",
-})
-cols_to_print = ["Ptox code", "Compound name (user)", "Compound name", "DrugBank ID", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
-cols = [col for col in df_ide.columns if col not in cols_to_print and col != "label"]
-cols_to_print += cols
-df_ide.to_csv(chemical_table, columns=cols_to_print, index=False)
-print(f"{chemical_table} was generated")
+# Export chemical table
+export_chemical_table(df_ide)
 
 sys.exit()
 

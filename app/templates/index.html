@@ -54,6 +54,14 @@
    <div id="network_basic" class="tabcontent">
        <div class="container">
            <div class="side-panel">
+                <div class="dropdown">
+                    <label for="category-select">Select Classification:</label>
+                <br>
+                    <select id="category-select" onchange="selectClassification(true)" >
+                        <option value="use">Use</option>
+                        <option value="tox">Toxicity</option>
+                    </select>
+                </div>
                <div class="dropdown">
                     <label for="chem-node-label-select">Select label for chemicals:</label>
                    <br>
@@ -67,14 +75,7 @@
                     <label for="label-font-size-slider">Label Font Size:</label>
                     <input type="range" id="label-font-size-slider" min="10" max="50" value="25" oninput="changeLabelFontSize(this.value)">
                </div>
-               <div class="dropdown">
-                    <label for="category-select">Select Classification:</label>
-                   <br>
-                    <select id="category-select" onchange="selectClassification()" >
-                        <option value="use">Use</option>
-                        <option value="tox">Toxicity</option>
-                    </select>
-               </div>
+
                <hr>
                <div class="dropdown">
                    <label for="chem-node-select">Focus on chemical:</label>
@@ -213,7 +214,6 @@
             // Initialize the network only when the tab is activated
             if (tabName === 'network_basic') {
                 initializeNetworkBasic();
-                // selectClassification();
             } else if (tabName === 'chem_list') {
                 loadChemList();
             }
