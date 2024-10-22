@@ -352,7 +352,7 @@ function initializeNetworkBasic() {
                 //     }
                 // });
 
-                selectClassification(true);
+                selectClassification(true, 'use');
 
             })
             .catch(error => console.error('Error loading elements:', error));
@@ -361,10 +361,12 @@ function initializeNetworkBasic() {
 }
 
 function filterNetworkByChemNode() {
+    document.querySelectorAll('.classification-btn').forEach(btn => btn.classList.remove('active'));
+    
     let selectedNodeId = document.getElementById('chem-node-select').value;
     if (!selectedNodeId) {
         // If no node is selected, reset the network
-        selectClassification(true)
+        selectClassification(true, 'use')
         return;
     }
 
@@ -397,8 +399,8 @@ function changeChemNodeLabel(){
     cy_basic.style().selector('node[role="chem"]').style('label', selectedLabel2).update();
 }
 
-function selectClassification(first_time=false) {
-    let selectedClass = document.getElementById('category-select').value;
+function selectClassification(first_time=false, selectedClass=null) {
+    // let selectedClass = document.getElementById('category-select').value;
     let selectedNodes = cy_basic.nodes("[role^='category_" + selectedClass + "']");
     console.log(selectedNodes);
     

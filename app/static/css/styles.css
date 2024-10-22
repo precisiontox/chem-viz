@@ -1,3 +1,7 @@
+/* My colors
+dark-grey for text: #2c2e35 /  #424949 
+*/
+
 .arimo-<uniquifier> {
   font-family: "Arimo", sans-serif;
   font-optical-sizing: auto;
@@ -11,7 +15,7 @@ body, html {
     height: 100%;
     width: 100%;
     background: linear-gradient(135deg, #004880, #007cc1);
-    font-family: Arial, sans-serif;
+    font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
     overflow: hidden;
 }
 
@@ -29,72 +33,81 @@ body, html {
     box-sizing: border-box;
 }
 
-#title_chemical {
-    font-weight: bold;
-}
-
-.topbar button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #9a999a;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.logo {
+.topbar .logo {
     height: 65px;
     margin-right: 15px;
 }
 
-/* Styles for the top bar buttons */
-.topbar button {
-    margin-left: 10px;
-    padding: 5px 15px;
-    background-color: #007cc1;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+#title_chemical {
+    font-weight: bold;
 }
 
-.topbar button:hover {
-    background-color: #005f8b;
+
+.topbar li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 20px;
 }
+.topbar a {
+    color: #f0f0f0;
+    font-size: 60%;
+    font-weight: bolder;
+    text-decoration: none;
+    position: relative;
+  }
+
+.topbar a:hover {
+    color: white;
+}
+.topbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Adjust the thickness of the underline */
+    background-color: white; /* Underline color */
+    left: 0;
+    bottom: -2px; /* Adjusts the position of the underline */
+    transition: width 0.3s ease-in-out; /* Animation effect */
+}
+
+.topbar a:hover::after {
+    width: 100%; /* Full width on hover */
+}
+
 
 .tab {
     overflow: hidden;
     display: flex;
     justify-content: left;
     color: white;
-    border-bottom: 1px solid #ccc;
 }
 
 .tab button {
-    background-color: white;
+    background-color: #6396bd;
     width: 125px;
-    border: 2px solid #ccc;
+    border: none;
+    border-radius: 6px 6px 0 0;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
-    color: black;
+    padding: 10px 10px;
+    margin-left: 10px;
+    color: #424949;
     font-size: 16px;
-    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2)
+    font-weight: bolder;
+    transition: background-color 0.3s;
 }
 
 .tab button:hover {
-    background-color: #2e6694;
-    border-color: #aaa;
-    color: black;
+    background-color: #424949;
+    color: white;
+    font-weight: bolder;
 }
 
 .tab button.active {
-    background-color: #9a999a;
-    border-color: #aaa;
-    color: white;
+    background-color: white;
+    color: #2c2e35;
+    font-weight: bolder;
 }
 
 .tabcontent {
@@ -114,16 +127,174 @@ body, html {
     height: 100%;
     max-height: calc(100vh - 130px); /* Example adjustment if there's more padding needed */
     overflow-y: auto;
+    background-color: white;
 }
 
 .side-panel {
     width: 18%; /* Adjust this width as needed */
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 10px;
     background-color: #f0f0f0; /* Optional: Background color for the side panel */
-    /*box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); !* Optional: Shadow for the side panel *!*/
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); 
     overflow-y: auto; /* Allows scrolling if content overflows */
-    border-right: #aaa 1px solid;
+    border: #9a999a 1px solid;
+    border-radius: 5px;
     font-size: 14px;
+    font-weight: bolder;
+    color: #2c2e35;
+}
+
+.button-group {
+    margin: 10px 0;
+    display: flex;
+    flex: 1 1 0px;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.classification-btn {
+    flex: 1 1 0px;
+    display: flex; /* Use flexbox to align icon and text */
+    align-items: center; /* Vertically center icon and text */
+    justify-content: center; /* Horizontally center content */
+    padding: 5px; /* Adjust padding as needed */
+    background-color: white;
+    border: 1px solid #172d4a;
+    box-shadow: 3px 3px #172d4a;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #172d4a;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, filter 0.3s; /* Added filter transition for icon hover effect */
+}
+
+.classification-btn:hover {
+    background-color: #424949;
+    color: white;
+}
+
+.classification-btn.active {
+    background-color: #424949;
+    color: white;
+}
+
+.classification-btn:hover .btn-icon {
+    filter: brightness(0) invert(1); /* Makes the icon white */
+}
+.classification-btn.active .btn-icon {
+    filter: brightness(0) invert(1); /* Makes the icon white */
+}
+
+/* Style for the icons inside the buttons */
+.classification-btn .btn-icon {
+    width: 30px; /* Adjust size */
+    height: 30px;
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.dropdown {
+    margin-bottom: 15px; /* Adds consistent spacing between dropdown sections */
+}
+
+.dropdown label {
+    display: block; /* Ensure the label takes full width and is above the dropdown */
+    margin-bottom: 5px; /* Adds spacing between label and dropdown */
+    font-weight: bold;
+}
+
+/* Styling for the dropdown menu */
+.dropdown select {
+    width: 100%; /* Make the dropdown take the full width of the container */
+    padding: 8px; /* Adjust the padding for a better look */
+    border: 1px solid #172d4a;
+    border-radius: 5px; /* Rounded corners for the dropdown */
+    background-color: white; /* Background color */
+    color: #2c2e35; /* Text color */
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none; /* Removes the default arrow in some browsers */
+}
+
+.dropdown select:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+}
+
+.dropdown select:focus {
+    outline: none;
+    border-color: #172d4a; /* Change border color when focused */
+    box-shadow: 0 0 5px rgba(0, 124, 193, 0.5); /* Optional: shadow on focus */
+}
+
+/* Style for the dropdown options */
+.dropdown select option {
+    color: #2c2e35; /* Text color of dropdown options */
+}
+
+/* Additional spacing and alignment for input ranges (like sliders) */
+.dropdown input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* General slider styling for all browsers */
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling */
+    width: 100%; /* Full width */
+    height: 8px; /* Bar height */
+    background: #ddd; /* Default background color of the slider bar */
+    border-radius: 5px; /* Rounded corners for the bar */
+    outline: none; /* Remove default focus outline */
+    opacity: 0.7; /* Slight transparency */
+    transition: opacity 0.2s;
+}
+
+/* Style the slider thumb (handle) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default appearance */
+    appearance: none;
+    width: 20px; /* Thumb width */
+    height: 20px; /* Thumb height */
+    background: #172d4a; /* Thumb color */
+    border-radius: 50%; /* Rounded thumb */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #172d4a;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the slider track (the bar itself) */
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #007cc1, #004880); /* Gradient color for the bar */
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, #007cc1, #004880);
+    border-radius: 5px;
+}
+
+/* Style when the slider is hovered or focused */
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]:focus {
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 0 10px rgba(0, 124, 193, 0.5); /* Optional shadow when focused */
 }
 
 

@@ -38,12 +38,17 @@
     <script src="{{ url_for('static', filename='js/aop_network.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/zoom_network.js') }}" defer></script>
 </head>
+
 <body>
     <div class="topbar">
         <img src="{{ url_for('static', filename='images/ptox_logo_white.png') }}" alt="Logo" class="logo">
-        <span><a id="title_chemical">CHEMICAL</a> LIBRARY</span>
+        <span id="title_chemical">CHEMICAL&nbsp;</span><span>LIBRARY</span>
+        <ul>
+            <li><a href="https://precisiontox.org/" target="_blank">PrecisionTox</a></li>
+            <li><a href="about.asp" target="_blank">About</a></li>
+        </ul> 
     </div>
-        <div class="tab">
+    <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'network_basic')">Network</button>
 <!--        <button class="tablinks" onclick="openTab(event, 'network_zoom')">Zoom 1</button>-->
 <!--        <button class="tablinks" onclick="openTab(event, 'network_single')">Zoom 2</button>-->
@@ -51,41 +56,53 @@
         <button class="tablinks" onclick="openTab(event, 'chem_list')">List</button>
     </div>
 
-   <div id="network_basic" class="tabcontent">
-       <div class="container">
-           <div class="side-panel">
+    <div id="network_basic" class="tabcontent">
+        <div class="container">
+            <div class="side-panel">
                 <div class="dropdown">
+                    <label>Select chemical classification:</label>
+                    <div class="button-group">
+                        <button id="use-button" class="classification-btn active" onclick="selectClassification(true, 'use')">
+                            <img src="{{ url_for('static', filename='images/icons/purpose-button.png') }}" alt="Use" class="btn-icon">
+                            Use
+                        </button>
+                        <button id="tox-button" class="classification-btn" onclick="selectClassification(true, 'tox')">
+                            <img src="{{ url_for('static', filename='images/icons/toxicity-button.png') }}" alt="Use" class="btn-icon">
+                            Toxicity
+                        </button>
+                    </div>
+                </div>
+                <!-- <div class="dropdown">
                     <label for="category-select">Select Classification:</label>
                 <br>
                     <select id="category-select" onchange="selectClassification(true)" >
                         <option value="use">Use</option>
                         <option value="tox">Toxicity</option>
                     </select>
-                </div>
-               <div class="dropdown">
+                </div> -->
+                <div class="dropdown">
                     <label for="chem-node-label-select">Select label for chemicals:</label>
-                   <br>
                     <select id="chem-node-label-select" onchange="changeChemNodeLabel()">
                         <option value="ptx_code">Ptox Identifier</option>
                         <option value="name">Compound Name</option>
                         <option value="label">Ptox Id | Compound Name</option>
                     </select>
-               </div>
-               <div class="dropdown">
-                    <label for="label-font-size-slider">Label Font Size:</label>
+                </div>
+                
+                <div class="dropdown">
+                    <label for="label-font-size-slider">Change chemical label size:</label>
                     <input type="range" id="label-font-size-slider" min="10" max="50" value="25" oninput="changeLabelFontSize(this.value)">
-               </div>
+                </div>
 
-               <hr>
-               <div class="dropdown">
-                   <label for="chem-node-select">Focus on chemical:</label>
-                   <select id="chem-node-select" onchange="filterNetworkByChemNode()">
-                       <option value="">Select an option...</option>
-                   </select>
-               </div>
+                <hr>
+                <div class="dropdown">
+                    <label for="chem-node-select">Focus on chemical:</label>
+                    <select id="chem-node-select" onchange="filterNetworkByChemNode()">
+                        <option value="">Select an option...</option>
+                        </select>
+                </div>
+            </div>
 
-                <!-- Future options can be added here -->
-           </div>
            <div class="main-panel">
                <div id="cy_basic"></div>
                <div class="tools-widget">
@@ -222,6 +239,16 @@
         // Initialize the first network by default
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.tablinks').click();
+        });
+
+        document.querySelectorAll('.classification-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove 'active' class from all buttons
+                document.querySelectorAll('.classification-btn').forEach(btn => btn.classList.remove('active'));
+                
+                // Add 'active' class to the clicked button
+                this.classList.add('active');
+            });
         });
 
          // BUTTON: Center the graph on the page
