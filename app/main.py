@@ -2,6 +2,7 @@ from flask import Flask, render_template, Response, jsonify
 import pandas as pd
 import json
 import os
+from collections import OrderedDict
 
 app = Flask(__name__)
 
@@ -15,13 +16,14 @@ def home():
 def get_chemicals():
     # Load the JSON file
     json_path = os.path.join(app.root_path, 'static', 'data', 'chemical_table.json')
-    df = pd.read_json(json_path)  # Use read_json instead of read_csv for JSON files
+    with open(json_path) as f:
+        data = json.load(f, object_pairs_hook=OrderedDict)  # Preserve key order
 
-    # Convert DataFrame to a list of dictionaries
-    data = df.to_dict(orient='records')
+    # Convert the data back to JSON string to ensure order and return it
+    response = json.dumps(data, indent=4, sort_keys=False)
 
-    # Return JSON response
-    return jsonify(data)
+    # Return a Flask response with the correct content type
+    return Response(response, content_type='application/json')
 
 
 if __name__ == '__main__':
