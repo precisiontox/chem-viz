@@ -50,9 +50,6 @@
     </div>
     <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'network_basic')">Network</button>
-<!--        <button class="tablinks" onclick="openTab(event, 'network_zoom')">Zoom 1</button>-->
-<!--        <button class="tablinks" onclick="openTab(event, 'network_single')">Zoom 2</button>-->
-<!--        <button class="tablinks" onclick="openTab(event, 'network_aop')">AOP Network</button>-->
         <button class="tablinks" onclick="openTab(event, 'chem_list')">List</button>
     </div>
 
@@ -80,14 +77,14 @@
                         <option value="tox">Toxicity</option>
                     </select>
                 </div> -->
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                     <label for="chem-node-label-select">Select label for chemicals:</label>
                     <select id="chem-node-label-select" onchange="changeChemNodeLabel()">
                         <option value="ptx_code">Ptox Identifier</option>
                         <option value="name">Compound Name</option>
                         <option value="label">Ptox Id | Compound Name</option>
                     </select>
-                </div>
+                </div> -->
                 
                 <div class="dropdown">
                     <label for="label-font-size-slider">Change chemical label size:</label>
@@ -96,15 +93,15 @@
 
                 <hr>
                 <div class="dropdown">
-                    <label for="chem-node-select">Focus on chemical:</label>
-                    <select id="chem-node-select" onchange="filterNetworkByChemNode()">
-                        <option value="">Select an option...</option>
+                    <label for="chem-select">Focus on chemical:</label>
+                    <select id="chem-select" onchange="loadSingleChemNetwork()">
+                        <option value="">Select a compound...</option>
                         </select>
                 </div>
             </div>
 
            <div class="main-panel">
-               <div id="cy_basic"></div>
+               <div class="cytoscape-container" id="cy_graph"></div>
                <div class="tools-widget">
 <!--                        <button class="my-btn" id="help-btn" title="Help">-->
 <!--                            <i class="far fa-question-circle"></i>-->
@@ -213,7 +210,7 @@
         }
 
         function changeLabelFontSize(fontSize) {
-            cy_basic.style().selector('node[role="chem"]').style('font-size', fontSize + 'px').update();
+            cy_graph.style().selector('node[role="chem"]').style('font-size', fontSize + 'px').update();
         }
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
@@ -253,33 +250,33 @@
 
          // BUTTON: Center the graph on the page
         $("#center").click(function () {
-            cy_basic.fit(cy_basic.$("node:visible"));
+            cy_graph.fit(cy_graph.$("node:visible"));
         });
 
         // BUTTON: Lock/Unlock element positions
         $("#lock").click(function () {
-            if (cy_basic.autolock() == false) {
-                cy_basic.autolock(true);
+            if (cy_graph.autolock() == false) {
+                cy_graph.autolock(true);
                 $("#lock i").toggleClass("fa-unlock fa-lock");
-            } else if (cy_basic.autolock() == true) {
-                cy_basic.autolock(false);
+            } else if (cy_graph.autolock() == true) {
+                cy_graph.autolock(false);
                 $("#lock i").toggleClass("fa-lock fa-unlock");
             }
         });
 
         // BUTTON: Zoom-In / Zoom-Out
         $("#zoom_in").click(function () {
-            var z = cy_basic.zoom() + 0.2;
-            cy_basic.zoom(z);
+            var z = cy_graph.zoom() + 0.2;
+            cy_graph.zoom(z);
         });
         $("#zoom_out").click(function () {
-            var z = cy_basic.zoom() - 0.2;
-            cy_basic.zoom(z);
+            var z = cy_graph.zoom() - 0.2;
+            cy_graph.zoom(z);
         });
 
         // BUTTON: Center the graph on the page
         $("#center").click(function () {
-            cy_basic.fit(cy_basic.$("node:visible"));
+            cy_graph.fit(cy_graph.$("node:visible"));
         });
 
         /// DOWNLOAD BUTTONS
@@ -295,7 +292,7 @@
 
         // BUTTON: Get snapshot as PNG
         $("#dl_png").click(function () {
-            var image = cy_basic.png()
+            var image = cy_graph.png()
             var iframe = "<iframe src='" + image + `' frameborder='0'
                 style='border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;'
                 allowfullscreen></iframe>`;
@@ -304,7 +301,7 @@
         });
         // BUTTON: Get snapshot as JPG
         $("#dl_jpg").click(function () {
-            var image = cy_basic.jpg()
+            var image = cy_graph.jpg()
             var iframe = "<iframe src='" + image + `' frameborder='0'
                 style='border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;'
                 allowfullscreen></iframe>`;
@@ -313,7 +310,7 @@
         });
         // BUTTON: Get snapshot as SVG
         $("#dl_svg").click(function (filename) {
-            var svgContent = cy_basic.svg({scale: 1, full: true});
+            var svgContent = cy_graph.svg({scale: 1, full: true});
             var blob = new Blob([svgContent], {type: "image/svg+xml;charset=utf-8"});
             saveAs(blob, "graph.svg");
         });

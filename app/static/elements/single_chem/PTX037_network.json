@@ -1,0 +1,524 @@
+[
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "chem",
+                  "id": "PTX037",
+                  "ptx_code": "PTX037",
+                  "name": "valproic acid",
+                  "label": "PTX037 | valproic acid",
+                  "cas": "99-66-1",
+                  "dtxsid": "DTXSID6023733",
+                  "db_id": "DB00313",
+                  "smiles": "CCCC(CCC)C(O)=O",
+                  "inchi": "NIJJYAXOARWZEE-UHFFFAOYSA-N",
+                  "mw_g_mol": "144.2132",
+                  "solubility_h2o_mol_liter": "0.0260016",
+                  "source_solubility_h2o": "COMPTOX",
+                  "henry_coefficient_atm_m3_mol": "8.31548e-07",
+                  "source_henry": "COMPTOX (Opera)",
+                  "log_kaw_kh_rt": "4.46842234848348",
+                  "source_kaw": "LSER eq 1",
+                  "pka_acid": "4.52",
+                  "pka_base": "NA",
+                  "source_pka": "Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
+                  "log_kow_liter_liter": "2.75",
+                  "source_kow": "experimental Sangster et al. (1993)",
+                  "log_dlipw_ph74_liter_liter": "1.9",
+                  "source_dlipw": "Kow-QSAR (?mw=1)",
+                  "freely_dissolved_fraction": "0.547614505020103",
+                  "density_kg_liter": "0.95",
+                  "source_density": "COMPTOX"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Physico-chemical properties",
+                  "label": "Physico-chemical\nproperties",
+                  "colorBorder": "#007cc1",
+                  "colorBg": "#539cc4",
+                  "shape": "diamond"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX037",
+                  "target": "Physico-chemical properties"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Use",
+                  "label": "Use",
+                  "colorBorder": "#cd5632",
+                  "colorBg": "#FD8B51",
+                  "shape": "round-rectangle"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX037",
+                  "target": "Use"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Toxicity",
+                  "label": "Toxicity",
+                  "colorBorder": "#135D66",
+                  "colorBg": "#77B0AA",
+                  "shape": "round-pentagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX037",
+                  "target": "Toxicity"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "mw_g_mol",
+                  "label": "Molecular Weight",
+                  "combinedLabel": "Molecular Weight:\n144.2132 g/mol",
+                  "value": "144.2132",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "mw_g_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "solubility_h2o_mol_liter",
+                  "label": "Solubility (H2O)",
+                  "combinedLabel": "Solubility (H2O):\n0.0260016 mol/liter",
+                  "value": "0.0260016",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "solubility_h2o_mol_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "henry_coefficient_atm_m3_mol",
+                  "label": "Henry Coefficient",
+                  "combinedLabel": "Henry Coefficient:\n8.31548e-07 atm*m3/mol",
+                  "value": "8.31548e-07",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "henry_coefficient_atm_m3_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "log_kaw_kh_rt",
+                  "label": "Log Kaw",
+                  "combinedLabel": "Log Kaw:\n4.46842234848348 ",
+                  "value": "4.46842234848348",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kaw_kh_rt",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "pka_acid",
+                  "label": "pKa (acid)",
+                  "combinedLabel": "pKa (acid):\n4.52 ",
+                  "value": "4.52",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_acid",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "pka_base",
+                  "label": "pKa (base)",
+                  "combinedLabel": "pKa (base)",
+                  "value": "NA",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_base",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "log_kow_liter_liter",
+                  "label": "Log Kow",
+                  "combinedLabel": "Log Kow:\n2.75 ",
+                  "value": "2.75",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kow_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "log_dlipw_ph74_liter_liter",
+                  "label": "Log Dlipw (pH 7.4)",
+                  "combinedLabel": "Log Dlipw (pH 7.4):\n1.9 ",
+                  "value": "1.9",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_dlipw_ph74_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "freely_dissolved_fraction",
+                  "label": "Freely Dissolved Fraction",
+                  "combinedLabel": "Freely Dissolved Fraction:\n0.547614505020103 ",
+                  "value": "0.547614505020103",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "freely_dissolved_fraction",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "density_kg_liter",
+                  "label": "Density",
+                  "combinedLabel": "Density:\n0.95 kg/liter",
+                  "value": "0.95",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "density_kg_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "ototoxicity",
+                  "label": "ototoxicity",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "hematotoxicity",
+                  "label": "hematotoxicity",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "immunotoxicity",
+                  "label": "immunotoxicity",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "hepatotoxicity",
+                  "label": "hepatotoxicity",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "neurotoxicity",
+                  "label": "neurotoxicity",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "genotoxicity",
+                  "label": "genotoxicity",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "nephrotoxicity",
+                  "label": "nephrotoxicity",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "cardiotoxicity",
+                  "label": "cardiotoxicity",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "id": "PTX037_ototoxicity",
+                  "source": "Toxicity",
+                  "target": "ototoxicity",
+                  "color": "#135D66",
+                  "score": -0.08,
+                  "n_refs": 2,
+                  "ref_list": "25167568,17270285"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "id": "PTX037_hematotoxicity",
+                  "source": "Toxicity",
+                  "target": "hematotoxicity",
+                  "color": "#135D66",
+                  "score": 1.57,
+                  "n_refs": 2,
+                  "ref_list": "34382515,15937649"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "id": "PTX037_immunotoxicity",
+                  "source": "Toxicity",
+                  "target": "immunotoxicity",
+                  "color": "#135D66",
+                  "score": -1.28,
+                  "n_refs": 1,
+                  "ref_list": "25934555"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "id": "PTX037_hepatotoxicity",
+                  "source": "Toxicity",
+                  "target": "hepatotoxicity",
+                  "color": "#135D66",
+                  "score": 5.52,
+                  "n_refs": 357,
+                  "ref_list": "11502730,7548749,22533937,10321796,119151,6791048,6425047,15858223,35747443,6811395,25302991,23792104,8839057,6094147,3922822,3102219,11839873,18201150,17168987,6780925,7925143,35253521,8809226,19280426,1628592,11460259,12475192,17053827,3093358,17199028,6777157,3939742,23640149,8681902,6150774,9029053,3932513,35011339,7980539,9821988,16055160,11376200,8576567,28646254,9175586,21454832,9201347,8884168,1534366,31009705,22889891,3131043,1502010,32877431,11130937,8370349,31541998,6141357,19239041,25168794,12060006,1733752,8956852,6427299,14580788,6437960,2118134,12699868,29494435,19854160,1758143,35392666,8156045,35430391,11768270,28745680,15215557,3933110,2979731,12894087,18208989,20388938,29783990,29214384,12614387,22531971,16787750,33915122,3124828,25988394,15021860,1425492,6103126,25444248,22055352,17994680,2947142,8232957,19830722,32139333,3922660,11212363,22003123,34625331,8799319,7905390,15647953,6138013,11015639,15858222,3939748,28112972,17040368,11737171,9834471,10424764,21083304,25147275,20513011,20371285,24535564,17412645,3098946,14685007,16277730,18237476,7672665,19641884,22915484,19754465,10852092,26420750,21227905,32879081,12071334,3121292,17963808,30503838,11092611,3113926,34718827,17496767,8614514,18155166,16842952,33688502,28992869,12644750,2290919,22940460,28273397,21349718,17917551,11765305,3131628,6411094,27483368,19440247,20861068,31628911,3102998,3091053,31120577,24733439,381698,24442146,1514659,17873515,17145692,15997234,6437961,3137018,17986647,6142383,3114876,1811959,31658868,8797803,19128756,7925144,23543036,25152329,25605636,1493781,18344455,30255931,21038416,2867888,8115437,33756270,2002205,10695824,3934460,8085069,24489787,32496438,1761843,16890251,6441315,11264687,30925397,12387752,35543257,10518650,17493839,7635145,1743173,28878340,17322992,3146709,17845866,17055186,21175036,6791053,2494154,6437962,24114766,1914428,1676665,36229318,1304235,18671279,8168173,6410977,3925601,22342442,7650693,34032977,17241210,1729767,30422963,17292431,31624995,3084712,12221238,21115105,32686964,3092003,10403231,6428980,23819490,2880197,21571092,9316822,31914696,21248613,20602621,31734319,3146220,24450420,7939085,20138553,23324142,28366540,1606338,3093213,12015170,3927267,21157986,1491708,8453944,1901443,10989947,10030429,19877649,12396903,35313886,8119269,25745980,21492891,16997532,15483197,19605889,21544075,12867285,11714207,17046167,1733753,6788635,36058508,21469507,21376637,12456539,1502007,3116453,34803013,28124216,2113424,20337505,17201699,30631023,24476311,6435012,10962217,3939614,30931853,3934853,17306079,28205314,30273971,18375641,1872899,15294003,1350534,12856823,24800341,2119269,25086301,33315275,3137017,1471867,20843939,20553011,18827862,19173214,21686371,22331495,17173601,27160211,17654398,16504461,28762043,16096883,14596657,18341684,21105289,21039766,18798340,20413803,12603798,22537903,22931300,14511902,21386809,22133982,27089845,14986274,27765674,19262596,21274758,26560050,24085192,25064622,16190747,17662147,21994861,21321060,19949568,22271975,22666603,28138970,12016548,26921665,21225242,15390328,8398372,21234410"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "id": "PTX037_neurotoxicity",
+                  "source": "Toxicity",
+                  "target": "neurotoxicity",
+                  "color": "#135D66",
+                  "score": 3.6,
+                  "n_refs": 285,
+                  "ref_list": "23170820,27550043,20973717,25384498,14534250,29309796,34779009,21037148,9344228,26107349,17482520,18077579,36550671,17635667,10434712,15816783,15144866,12906346,29957469,8932450,3004930,22587482,10953214,8308706,26613405,15579172,11554897,12654346,29064543,25555796,9153479,35419963,35747443,12180275,19382315,19406619,21700501,16153667,32885679,27956235,25178235,30578912,15790540,19460635,26040297,17987544,8828922,18480705,23473468,7667199,17900830,1296726,23053268,31061301,9016327,24810446,19024136,15461671,16245212,8557213,10379423,28277442,3145137,23179753,31785325,8427944,20633966,25735860,11879339,12798671,31278712,21767635,12609230,22244950,30404997,16645330,31401662,17116023,19280426,18609419,25187442,2839806,24803404,21543053,24081968,12192617,36040614,19931796,9513792,17917551,19651682,24896083,19674061,24633004,33111190,34309959,29261810,19149911,17374600,25616162,33219756,30792162,12742598,17579623,27566479,21394985,3922659,31808457,17850978,17823470,28610743,32058303,22217957,8149357,36323391,24119342,15839456,28745680,33761592,9090712,22180549,36536269,22131109,24952295,12230260,2004628,16549226,16510768,27091084,15210153,11737171,23917397,6434297,16221398,20738383,33206316,24315420,15079854,18316694,26535436,23246073,32167238,35342909,8836446,11206668,15800163,22305367,12821749,2832143,22433424,15568484,31085223,16987152,31539780,6810197,16969367,20486465,18602440,21959082,35012534,24699060,17596541,23473467,24566814,15749465,30593950,22960313,16837598,28093879,33835518,30397004,10530675,6793881,34455033,24722719,16787750,25139813,8112253,29523611,6807671,31331678,22137344,21626890,25394838,15266186,27231098,18455366,8381686,1803343,29778792,18599177,29071700,33997963,23317937,21978982,7747269,25111975,21981101,19384575,11879382,2507307,10728915,2945004,23298644,18029137,8894115,22082834,18222569,17418452,23265873,20947222,20573423,25062008,22326394,20573424,25466174,22236471,24412497,19674817,21167624,3950916,21930331,18640843,23676307,17348421,22645609,19332328,20944813,1495012,15077252,31708184,27015953,15005753,22652317,19399237,26560050,20618394,16858951,22288670,21664729,19430525,22131947,34748853,3336019,20884390,12445957,18539913,25619635,16190747,2308142,31084949,32949729,22727446,20363141,11817174,30108708,15050044,21272614,15202553,16139502,28202327,19435143,31862286,19072766,16843667,7715759,15881810,21217874,17225454,9438018,22666298,17406176,15716057,3085769,15262530,12128166,15813358,8831764,22339381,22262939,16958556,1681105,26519928,12397847,12432977"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "id": "PTX037_genotoxicity",
+                  "source": "Toxicity",
+                  "target": "genotoxicity",
+                  "color": "#135D66",
+                  "score": -0.93,
+                  "n_refs": 14,
+                  "ref_list": "21912190,23142536,30285097,20955786,22001255,30004275,19956891,15574465,20466068,22247744,15962942,18468974,19861651,21753906"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "id": "PTX037_nephrotoxicity",
+                  "source": "Toxicity",
+                  "target": "nephrotoxicity",
+                  "color": "#135D66",
+                  "score": -0.01,
+                  "n_refs": 18,
+                  "ref_list": "35747443,19535489,32194547,21083304,25000991,29072686,27124675,19644613,23030706,8108303,10199580,32879081,29968957,24958008,26838987,9851889,22263104,16259316"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "id": "PTX037_cardiotoxicity",
+                  "source": "Toxicity",
+                  "target": "cardiotoxicity",
+                  "color": "#135D66",
+                  "score": 0.48,
+                  "n_refs": 12,
+                  "ref_list": "30503838,9255595,34674775,31004822,31661193,35747443,35064532,23837677,11276827,21731215,20930262,17352515"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_use_class",
+                  "id": "Pharmaceutical",
+                  "label": "Pharmaceutical",
+                  "colorBg": "#FD8B51",
+                  "colorBorder": "#cd5632"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_use_class",
+                  "subrole": "attribute",
+                  "id": "PTX037_Pharmaceutical",
+                  "source": "Use",
+                  "target": "Pharmaceutical",
+                  "color": "#cd5632"
+            }
+      }
+]

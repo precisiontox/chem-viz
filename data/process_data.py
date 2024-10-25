@@ -10,6 +10,21 @@ def truncate_label(label, length=25):
         return label
 
 
+def wrap_label(label, length=10):
+    line_len = 0
+    wrapped_label = ""
+    for word in label.split(" "):
+        if line_len == 0:
+            wrapped_label = word
+        elif line_len <= length:
+            wrapped_label += " " + word
+        else:
+            wrapped_label += "\n" + word    
+            line_len = 0
+        line_len += len(word)
+    return wrapped_label
+
+
 def read_drugbank_file(file_path):
     target_cols = ["Prec.Tox code", "DrugBank ID", "organism", "Chemical Target",
                    "Chemical Effect at Target", "known_action", "toxicity"]
@@ -74,156 +89,302 @@ def read_aop_file(file_path):
     return df_aop
 
 
-def add_chemical_elements(df, restrict_to=None, json_elements=None):
-    if restrict_to is None:
-        restrict_to = []
-    if json_elements is None:
-        json_elements = []
-
-    labels = {
-        "mw_g_mol": "Molecular Weight (g/mol)",
-        "solubility_h2o_mol_liter": "Solubility (H2O)",
-        "henry_coefficient_atm_m3_mol": "Henry Coefficient"
-    }
-
-    for index, row in df.iterrows():
-        if len(restrict_to) > 0 and row["ptx_code"] not in restrict_to:
-            continue
-
-        chem_node = {
-            "group": "nodes",
-            "data": {
-                "role": "chem",
-                "id": row["ptx_code"],
-                "ptx_code": row["ptx_code"],
-                "name": row["chem_name_user"],
-                "label": truncate_label(row["label"], 25),
-                "cas": row["CASRN"],
-                "dtxsid": row["DTXSID"],
-                "db_id": row["drugbank_id"],
-                "smiles": row["SMILES"],
-                "inchi": row["INCHIKEY"]
-            }
+def get_chemical_node(chem_values: dict): 
+    chem_node = {
+        "group": "nodes",
+        "data": {
+            "role": "chem",
+            "id": chem_values["ptx_code"],
+            "ptx_code": chem_values["ptx_code"],
+            "name": chem_values["chem_name_user"],
+            "label": chem_values["label"],# truncate_label(chem_values["label"], 25),
+            "cas": chem_values["CASRN"],
+            "dtxsid": chem_values["DTXSID"],
+            "db_id": chem_values["drugbank_id"],
+            "smiles": chem_values["SMILES"],
+            "inchi": chem_values["INCHIKEY"]
         }
-        
-        for col in [col for col in row.keys() if col not in ["ptx_code", "chem_name_user", "chem_name", "label",
-                                                  "drugbank_id", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]]:
-            chem_node["data"][col] = row[col]     
+    }
+    
+    properties = [
+        col 
+        for col in chem_values.keys() 
+        if col not in ["ptx_code", "chem_name_user", "chem_name", "label",
+                        "drugbank_id", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
+    ]
+    for col in properties:
+        chem_node["data"][col] = chem_values[col]  
 
-            label = labels[col] if col in labels else col
-            prop_node = {
-                "group": "nodes",
-                "data": {
-                    "role": "prop",
-                    "id": row["ptx_code"]+"-"+col,
-                    "label": label,
-                    "combinedLabel": label+"\n"+str(row[col]),
-                    "value": row[col],
-                    "color": "#009FBD"
-                }
-            }
-            json_elements.append(prop_node)
-            edge = {
-                "group": "edges",
-                "data": {
-                    "role": "prop",
-                    "source": row["ptx_code"],
-                    "target": row["ptx_code"]+"-"+col,
-                    "color": "#009FBD"
-                }
-            }
-            json_elements.append(edge)
-
-        json_elements.append(chem_node)
-
-    return json_elements
+    return chem_node
 
 
-def create_zoom_network(df_chemlist,  output_file):
-    test_set = ["PTX062"]# "PTX103"]
-    json_ele = add_chemical_elements(df_chemlist, restrict_to=test_set, json_elements=[])
-    id_dict = {}
+def create_general_network(
+    df_chem: pd.DataFrame, df_tox: pd.DataFrame, df_use: pd.DataFrame, outf:str
+    ):
 
-    attributes = ["Chemical Properties", "DrugBank", "AOP", "Enriched Pathways", "Exposome"]
-    color = ["#009FBD", "#dd009c", "#FFC300", "#FF5733", "#900C3F"]
-    nodes = []
-    edges = []
-    for ele in json_ele:
-        for attr, col in zip(attributes, color):
-            nodes.append(
+    json_elements = []
+
+    for index, row in df_ide.iterrows():
+        json_elements.append(get_chemical_node(row))
+
+
+    tox_classes = df_tox["tox_class"].unique()
+    use_classes = df_use["use_class"].unique()
+    color_dic = {}
+    for categories, cat_name, df, palette in zip(
+            [tox_classes, use_classes], 
+            ["tox_class", "use_class"], 
+            [df_tox, df_use],
+            [palette_1, palette_2]
+        ):
+        for cat, color in zip(categories, palette):
+            color_dic[cat] = color
+            json_elements.append(
                 {
                     "group": "nodes",
                     "data": {
-                        "role": "attributes",
-                        "id": attr+"_"+ele["data"]["id"],
-                        "label": attr,
-                        "color": col
+                            "role": "category_"+cat_name,
+                        "id": cat,
+                        "label": wrap_label(cat, 10),
+                        "color": color
                     }
                 }
             )
-            edges.append(
-                {
-                    "group": "edges",
-                    "data": {
-                        "source": ele["data"]["id"],
-                        "target": attr+"_"+ele["data"]["id"],
-                        "color": col
+
+        for index, row in df[df["ptx_code"].notna()].iterrows():
+            if cat_name == "tox_class":
+                if row["n_refs"] < 3:
+                    continue
+                json_elements.append(
+                    {
+                        "group": "edges",
+                        "data": {
+                            "id": row["ptx_code"]+"_"+row[cat_name],
+                            "role": cat_name,
+                            "source": row["ptx_code"],
+                            "target": row[cat_name],
+                            "color": color_dic[row[cat_name]],
+                            "score": row["score"],
+                            "n_refs": row["n_refs"],
+                            "ref_list": row["ref_list"]
+                        }
                     }
-                }
-            )
-    json_ele.extend(nodes)
-    json_ele.extend(edges)
+                )
+            else:
+                json_elements.append(
+                    {
+                        "group": "edges",
+                        "data": {
+                            "id": row["ptx_code"] + "_" + row[cat_name],
+                            "role": cat_name,
+                            "source": row["ptx_code"],
+                            "target": row[cat_name],
+                            "color": color_dic[row[cat_name]]
+                        }
+                    }
+                )
 
-    with open(output_file, 'wt') as out:
-        json.dump(json_ele, out, indent=6)
+    # Create output files
+    # Export basic network elements
+    with open(outf, 'wt') as file_out:
+        json.dump(json_elements, file_out, indent=6)
 
-    return json_ele
 
+def create_single_chemical_network(
+    chem_values: dict,  df_tox: pd.DataFrame, df_use: pd.DataFrame, output_file: str
+    ):
+    """ Create nodes & edges for network containing a single chemical in the 
+    center and its properties as nodes around it.
+    """
+    json_elements = []
 
-def create_single_chemical_network(df_chemlist, df_drugbank, output_file):
-    test_set = ["PTX062"]# "PTX103"]
-    json_ele = add_chemical_elements(df_chemlist, restrict_to=test_set, json_elements=[])
-    id_dict = {}
+    # Start list of network elements with the chemical node
+    json_elements.append(get_chemical_node(chem_values))
 
-    for index, row in df_drugbank.iterrows():
-        if row["ptx_code"] not in test_set:
-            continue
-        if row["drugbank_id"] not in id_dict:
-            id_dict[row["drugbank_id"]] = 1
+    # Add attributes main nodes
+    attributes = ["Physico-chemical properties", "Use", "Toxicity"]#"AOP"]
+    shapes = ["diamond", "round-rectangle", "round-pentagon"]
+    for attr, shape in zip(attributes, shapes):
+        label = attr
+        if attr == "Physico-chemical properties":
+            label = "Physico-chemical\nproperties"
+        attr_node = {
+            "group": "nodes",
+            "data": {
+                "role": "attribute",
+                "id": attr,
+                "label": label,
+                "colorBorder": colors[attr+"_border"],
+                "colorBg": colors[attr+"_bg"],
+                "shape": shape
+            }
+        }
+        attr_edge = {
+            "group": "edges",
+            "data": {
+                "role": "attribute",
+                "source": chem_values["ptx_code"],
+                "target": attr
+            }
+        }
+        json_elements.append(attr_node)
+        json_elements.append(attr_edge)
+
+    # Add physico-chemical properties nodes and edges
+    properties = [
+        col 
+        for col in chem_values.keys() 
+        if col not in ["ptx_code", "chem_name_user", "chem_name", "label",
+                        "drugbank_id", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
+        and "source" not in col
+    ]
+    for prop in properties:
+        label = labels[prop] if prop in labels else prop
+        unit = units[prop] if prop in units else ""
+        if str(chem_values[prop]) == "NA":
+            combined_label = label
+            color_bg = "#ddd"
+            color_border = "#9a999a"
         else:
-            id_dict[row["drugbank_id"]] += 1
-        json_ele.append(
-            {
-                "group": "nodes",
-                "data": {
-                    "role": "drugbank",
-                    "id": row["drugbank_id"]+"_"+str(id_dict[row["drugbank_id"]]),
-                    "drugbank_id": row["drugbank_id"],
-                    "organism": row["organism"],
-                    "chem_target": row["Chemical Target"],
-                    "chem_effect": row["Chemical Effect at Target"],
-                    "known_action": row["known_action"],
-                    "toxicity": row["toxicity"]
-                }
+            combined_label = label+":\n"+str(chem_values[prop])+" "+unit
+            color_bg = colors["Physico-chemical properties_bg"]
+            color_border = colors["Physico-chemical properties_border"]
+        prop_node = {
+            "group": "nodes",
+            "data": {
+                "role": "prop",
+                "id": prop,
+                "label": label,
+                "combinedLabel": combined_label,
+                "value": chem_values[prop],
+                "colorBg": color_bg,
+                "colorBorder": color_border
             }
-        )
-        json_ele.append(
-            {
-                "group": "edges",
-                "data": {
-                    "role": "drugbank",
-                    "source": row["ptx_code"],
-                    "target": row["drugbank_id"] + "_" + str(id_dict[row["drugbank_id"]]),
-                    "chem_effect": row["Chemical Effect at Target"],
+        }
+        prop_edge = {
+            "group": "edges",
+            "data": {
+                "role": "prop",
+                "subrole": "attribute",
+                "source": "Physico-chemical properties",
+                "target": prop,
+                "color": colors["Physico-chemical properties_border"]
+            }
+        }
+        json_elements.append(prop_node)
+        json_elements.append(prop_edge)
 
+
+    # Add toxicity nodes and edges
+    tox_classes = df_tox["tox_class"].unique()
+    use_classes = df_use["use_class"].unique()
+    color_dic = {}
+    for categories, cat_name, attr, df, palette in zip(
+            [tox_classes, use_classes], 
+            ["tox_class", "use_class"],
+            ["Toxicity", "Use"], 
+            [df_tox, df_use],
+            [palette_1, palette_2]
+        ):
+        for cat, color in zip(categories, palette):
+            color_dic[cat] = color
+            json_elements.append(
+                {
+                    "group": "nodes",
+                    "data": {
+                        "role": "category_"+cat_name,
+                        "id": cat,
+                        "label": wrap_label(cat, 10),
+                        "colorBg": colors[attr+"_bg"],
+                        "colorBorder": colors[attr+"_border"]
+                    }
                 }
-            }
-        )
+            )
+
+        for index, row in df[df["ptx_code"].notna()].iterrows():
+            if cat_name == "tox_class":
+
+                json_elements.append(
+                    {
+                        "group": "edges",
+                        "data": {
+                            "role": "category_"+cat_name,
+                            "subrole": "attribute",
+                            "id": row["ptx_code"]+"_"+row[cat_name],
+                            "source": attr,
+                            "target": row[cat_name],
+                            "color": colors["Toxicity_border"],
+                            "score": row["score"],
+                            "n_refs": row["n_refs"],
+                            "ref_list": row["ref_list"]
+                        }
+                    }
+                )
+            else:
+                json_elements.append(
+                    {
+                        "group": "edges",
+                        "data": {
+                            "role": "category_"+cat_name,
+                            "subrole": "attribute",
+                            "id": row["ptx_code"] + "_" + row[cat_name],
+                            "source": attr,
+                            "target": row[cat_name],
+                            "color": colors["Use_border"]
+                        }
+                    }
+                )
 
     with open(output_file, 'wt') as out:
-        json.dump(json_ele, out, indent=6)
+        json.dump(json_elements, out, indent=6)
 
-    return json_ele
+    return
+
+
+# def create_single_chemical_network(df_chemlist, df_drugbank, output_file):
+#     test_set = ["PTX062"]# "PTX103"]
+#     json_ele = add_chemical_elements(df_chemlist, restrict_to=test_set, json_elements=[])
+#     id_dict = {}
+
+#     for index, row in df_drugbank.iterrows():
+#         if row["ptx_code"] not in test_set:
+#             continue
+#         if row["drugbank_id"] not in id_dict:
+#             id_dict[row["drugbank_id"]] = 1
+#         else:
+#             id_dict[row["drugbank_id"]] += 1
+#         json_ele.append(
+#             {
+#                 "group": "nodes",
+#                 "data": {
+#                     "role": "drugbank",
+#                     "id": row["drugbank_id"]+"_"+str(id_dict[row["drugbank_id"]]),
+#                     "drugbank_id": row["drugbank_id"],
+#                     "organism": row["organism"],
+#                     "chem_target": row["Chemical Target"],
+#                     "chem_effect": row["Chemical Effect at Target"],
+#                     "known_action": row["known_action"],
+#                     "toxicity": row["toxicity"]
+#                 }
+#             }
+#         )
+#         json_ele.append(
+#             {
+#                 "group": "edges",
+#                 "data": {
+#                     "role": "drugbank",
+#                     "source": row["ptx_code"],
+#                     "target": row["drugbank_id"] + "_" + str(id_dict[row["drugbank_id"]]),
+#                     "chem_effect": row["Chemical Effect at Target"],
+
+#                 }
+#             }
+#         )
+
+#     with open(output_file, 'wt') as out:
+#         json.dump(json_ele, out, indent=6)
+
+#     return json_ele
 
 
 def export_chemical_table(df):
@@ -264,16 +425,42 @@ use_file = "Manuscript Chemicals - Identifiers_with_category.xlsx"
 properties_file = "Visulaization P-Chem Dataset ver1.xlsx"
 
 # output files
-basic_network_out = "../app/static/elements/basic.json"
-aop_network_out = "../app/static/elements/aop.json"
-zoom_network_out = "../app/static/elements/zoom.json"
-single_network_out = "../app/static/elements/single.json"
+elements_dir = "../app/static/elements/"
+basic_network_out = f"{elements_dir}basic.json"
+# aop_network_out = f"{elements_dir}aop.json"
+# zoom_network_out = f"{elements_dir}zoom.json"
+# single_network_out = f"{elements_dir}single.json"
 chemical_table = "../app/static/data/chemical_table.csv"
 chemical_table_json = "../app/static/data/chemical_table.json"
 
 palette_1 = ["#6C946F", "#F4D35E", "#EE964B", "#F95738", "#D81159", "#8F2D56", "#218380", "#FFC857"]
 palette_2 = ["#894b5d", "#6868ac", "#85a1ac", "#8a5796", "#ecc371", "#f53151"]
-
+labels = {
+    "mw_g_mol": "Molecular Weight",
+    "solubility_h2o_mol_liter": "Solubility (H2O)",
+    "henry_coefficient_atm_m3_mol": "Henry Coefficient",
+    "log_kaw_kh_rt": "Log Kaw",
+    "log_kow_liter_liter": "Log Kow",
+    "pka_acid": "pKa (acid)",
+    "pka_base": "pKa (base)",
+    "log_dlipw_ph74_liter_liter": "Log Dlipw (pH 7.4)",
+    "freely_dissolved_fraction": "Freely Dissolved Fraction",
+    "density_kg_liter": "Density",
+}
+units = {
+    "mw_g_mol": "g/mol",
+    "solubility_h2o_mol_liter": "mol/liter",
+    "henry_coefficient_atm_m3_mol": "atm*m3/mol",
+    "density_kg_liter": "kg/liter"
+}
+colors = {
+    "Physico-chemical properties_border": "#007cc1",
+    "Physico-chemical properties_bg": "#539cc4",
+    "Use_border": "#cd5632",
+    "Use_bg": "#FD8B51",
+    "Toxicity_border": "#135D66",
+    "Toxicity_bg": "#77B0AA",
+}
 
 # Read DrugBank file
 df_drugb = read_drugbank_file(drugbank_file)
@@ -343,91 +530,29 @@ df_useclass = pd.read_excel(
 ).rename(columns={"Prec.Tox code": "ptx_code", "Category": "use_class"})
 
 
-### Create network elements
-## Create Chemical network elements
-chem_elements = add_chemical_elements(df_ide)
-tox_classes = df_toxclass["tox_class"].unique()
-use_classes = df_useclass["use_class"].unique()
-
-edges = []
-color_dic = {}
-
-for categories, cat_name, df, palette in zip(
-        [tox_classes, use_classes], ["tox_class", "use_class"], [df_toxclass, df_useclass],
-        [palette_1, palette_2]):
-    for cat, color in zip(categories, palette):
-        color_dic[cat] = color
-        chem_elements.append(
-            {
-                "group": "nodes",
-                "data": {
-                        "role": "category_"+cat_name,
-                    "id": cat,
-                    "color": color
-                }
-            }
-        )
-
-    for index, row in df[df["ptx_code"].notna()].iterrows():
-        if cat_name == "tox_class":
-            if row["n_refs"] < 3:
-                continue
-            edges.append(
-                {
-                    "group": "edges",
-                    "data": {
-                        "id": row["ptx_code"]+"_"+row[cat_name],
-                        "role": cat_name,
-                        "source": row["ptx_code"],
-                        "target": row[cat_name],
-                        "color": color_dic[row[cat_name]],
-                        "score": row["score"],
-                        "n_refs": row["n_refs"],
-                        "ref_list": row["ref_list"]
-                    }
-                }
-            )
-        else:
-            edges.append(
-                {
-                    "group": "edges",
-                    "data": {
-                        "id": row["ptx_code"] + "_" + row[cat_name],
-                        "role": cat_name,
-                        "source": row["ptx_code"],
-                        "target": row[cat_name],
-                        "color": color_dic[row[cat_name]]
-                    }
-                }
-            )
-
-chem_elements.extend(edges)
-
-# with open("see", "wt") as out:
-#     for d in chem_elements:
-#         for k,v in d.items():
-#             out.write(f"{k}: {str(v)}\n")
-
-# Create output files
-# Export basic network elements
-with open(basic_network_out, 'wt') as file_out:
-    json.dump(chem_elements, file_out, indent=6)
-print(f"{basic_network_out} was generated")
-
 # Export chemical table
 export_chemical_table(df_ide)
 
+### Create network elements
+# Create general network
+create_general_network(df_ide, df_toxclass, df_useclass, basic_network_out)
+print(f"{basic_network_out} was generated")
+
+# Create single chemical networks
+for chem in df_ide["ptx_code"].unique():
+    create_single_chemical_network(
+        df_ide[df_ide["ptx_code"] == chem].iloc[0],
+        df_toxclass[df_toxclass["ptx_code"] == chem],
+        df_useclass[df_useclass["ptx_code"] == chem],
+        elements_dir+"single_chem/"+chem+"_network.json"
+    )
+print(f"{len(df_ide['ptx_code'].unique())} single chemical networks were generated")
 sys.exit()
+
 
 
 ## Zoom view 1
 create_zoom_network(df_ide, zoom_network_out)
-
-
-## Create Individual Chemical view networks
-create_single_chemical_network(df_ide, df_drugb, single_network_out)
-
-sys.exit()
 
 
 aop_elements = []
