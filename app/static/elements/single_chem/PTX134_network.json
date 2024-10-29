@@ -39,7 +39,7 @@
                   "label": "Physico-chemical\nproperties",
                   "colorBorder": "#007cc1",
                   "colorBg": "#539cc4",
-                  "shape": "diamond"
+                  "shape": "round-diamond"
             }
       },
       {
@@ -56,8 +56,8 @@
                   "role": "attribute",
                   "id": "Use",
                   "label": "Use",
-                  "colorBorder": "#cd5632",
-                  "colorBg": "#FD8B51",
+                  "colorBorder": "#B03052",
+                  "colorBg": "#D76C82",
                   "shape": "round-rectangle"
             }
       },
@@ -91,11 +91,31 @@
       {
             "group": "nodes",
             "data": {
+                  "role": "attribute",
+                  "id": "Baseline Toxicity",
+                  "label": "Baseline Toxicity",
+                  "colorBorder": "#AB886D",
+                  "colorBg": "#D6C0B3",
+                  "shape": "round-hexagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX134",
+                  "target": "Baseline Toxicity"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
                   "role": "prop",
                   "id": "mw_g_mol",
                   "label": "Molecular Weight",
                   "combinedLabel": "Molecular Weight:\n376.66 g/mol",
                   "value": "376.66",
+                  "hlLabel": "Molecular Weight:\n376.66 g/mol",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -118,6 +138,7 @@
                   "label": "Solubility (H2O)",
                   "combinedLabel": "Solubility (H2O):\n8.33735e-05 mol/liter",
                   "value": "8.33735e-05",
+                  "hlLabel": "Solubility (H2O):\n8.33735e-05 mol/liter\nSource: COMPTOX (OPERA)",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -140,6 +161,7 @@
                   "label": "Henry Coefficient",
                   "combinedLabel": "Henry Coefficient:\n1.92882e-07 atm*m3/mol",
                   "value": "1.92882e-07",
+                  "hlLabel": "Henry Coefficient:\n1.92882e-07 atm*m3/mol\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -162,6 +184,7 @@
                   "label": "Log Kaw",
                   "combinedLabel": "Log Kaw:\n5.10301797122576 ",
                   "value": "5.10301797122576",
+                  "hlLabel": "Log Kaw:\n5.10301797122576 \nSource: LSER",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -182,8 +205,9 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid)",
+                  "combinedLabel": "pKa (acid):\nn/a",
                   "value": "NA",
+                  "hlLabel": "pKa (acid):\nn/a\nSource: ACD pKa/GALAS",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -195,7 +219,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_acid",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -206,6 +230,7 @@
                   "label": "pKa (base)",
                   "combinedLabel": "pKa (base):\n5.66 ",
                   "value": "5.66",
+                  "hlLabel": "pKa (base):\n5.66 \nSource: ACD pKa/GALAS",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -228,6 +253,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n4.1 ",
                   "value": "4.1",
+                  "hlLabel": "Log Kow:\n4.1 \nSource: NA",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -250,6 +276,7 @@
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n4.25328566885276 ",
                   "value": "4.25328566885276",
+                  "hlLabel": "Log Dlipw (pH 7.4):\n4.25328566885276 \nSource: Kow-QSAR (\u00e2\u02c6\u2020mw=1)",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -272,6 +299,7 @@
                   "label": "Freely Dissolved Fraction",
                   "combinedLabel": "Freely Dissolved Fraction:\n0.114879198883148 ",
                   "value": "0.114879198883148",
+                  "hlLabel": "Freely Dissolved Fraction:\n0.114879198883148 ",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -292,8 +320,9 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density",
+                  "combinedLabel": "Density:\nn/a",
                   "value": "NA",
+                  "hlLabel": "Density:\nn/a\nSource: COMPTOX",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -305,7 +334,154 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "base_tox",
+                  "id": "Baseline - D. rerio",
+                  "label": "D. rerio:\n10.2152073828185",
+                  "value": "10.2152073828185",
+                  "colorBg": "#D6C0B3",
+                  "colorBorder": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - D. rerio",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "base_tox",
+                  "id": "Baseline - Daphnia",
+                  "label": "D. magna:\n11.1658984080978",
+                  "value": "11.1658984080978",
+                  "colorBg": "#D6C0B3",
+                  "colorBorder": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Daphnia",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "base_tox",
+                  "id": "Baseline - C. elegans",
+                  "label": "C. elegans:\n24.7892347582222",
+                  "value": "24.7892347582222",
+                  "colorBg": "#D6C0B3",
+                  "colorBorder": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - C. elegans",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "base_tox",
+                  "id": "Baseline - Xenopus",
+                  "label": "X. laevis:\n19.5646931992745",
+                  "value": "19.5646931992745",
+                  "colorBg": "#D6C0B3",
+                  "colorBorder": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Xenopus",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "base_tox",
+                  "id": "Baseline - Drosophila",
+                  "label": "D. melanogaster:\n94.2900717103305",
+                  "value": "94.2900717103305",
+                  "colorBg": "#D6C0B3",
+                  "colorBorder": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Drosophila",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "base_tox",
+                  "id": "Baseline - Cells",
+                  "label": "HepG2 cells:\n1.24147225829798e-05",
+                  "value": "1.24147225829798e-05",
+                  "colorBg": "#D6C0B3",
+                  "colorBorder": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Cells",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "base_tox",
+                  "id": "baseline_cells_generic_micromole_liter_free_ec10",
+                  "label": "HepG2 cells (generic micromol/l free EC10):\n1.42619338468924e-06",
+                  "value": "1.42619338468924e-06",
+                  "colorBg": "#D6C0B3",
+                  "colorBorder": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "baseline_cells_generic_micromole_liter_free_ec10",
+                  "color": "#AB886D"
             }
       },
       {
@@ -482,8 +658,8 @@
                   "role": "category_use_class",
                   "id": "Pesticide",
                   "label": "Pesticide",
-                  "colorBg": "#FD8B51",
-                  "colorBorder": "#cd5632"
+                  "colorBg": "#D76C82",
+                  "colorBorder": "#B03052"
             }
       },
       {
@@ -494,7 +670,7 @@
                   "id": "PTX134_Pesticide",
                   "source": "Use",
                   "target": "Pesticide",
-                  "color": "#cd5632"
+                  "color": "#B03052"
             }
       }
 ]

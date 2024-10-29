@@ -25,6 +25,13 @@ def wrap_label(label, length=10):
     return wrapped_label
 
 
+def format_float(value):
+    try:
+        return f"{float(value):.4f}"
+    except:
+        return value
+
+
 def read_drugbank_file(file_path):
     target_cols = ["Prec.Tox code", "DrugBank ID", "organism", "Chemical Target",
                    "Chemical Effect at Target", "known_action", "toxicity"]
@@ -52,6 +59,21 @@ def read_properties_file(file_path):
         "cas_neutral": "CASRN"
     })
     df = df.drop(columns=["DTXSID", "INCHIKEY", "SMILES", "CASRN"], axis=1)
+    df.fillna("NA", inplace=True)
+    df = df.astype(str)
+    properties = [col for col in df.columns if col not in ["ptx_code", "chem_name_user"]]
+    return df, properties
+
+
+def read_baseline_tox_file(file_path):
+    df = pd.read_excel(
+        file_path,
+        skiprows=0,
+        index_col=None,
+    ).rename(columns={
+        "Baseline - Daphina": "Baseline - Daphnia"
+    })
+    df = df.drop(columns=["Compound", "CASRN", "DTXSID"], axis=1)
     df.fillna("NA", inplace=True)
     df = df.astype(str)
     return df
@@ -89,6 +111,69 @@ def read_aop_file(file_path):
     return df_aop
 
 
+def read_drugbank_moa_file(file_path):
+    df_moa = pd.read_excel(
+        file_path,
+        skiprows=0,
+        index_col=None,
+        sheet_name="MoA",
+        usecols=["Prec.Tox code", "mechanism_of_action"]
+    ).rename(columns={
+        "Prec.Tox code": "ptx_code",
+        "mechanism_of_action": "moa_drugbank"
+    })
+    df_moa = df_moa[df_moa["moa_drugbank"].notna()]
+
+    df_bind = pd.read_excel(
+        file_path,
+        skiprows=0,
+        index_col=None,
+        sheet_name="Target",
+        usecols=["Prec.Tox code", "protein_binding"]
+    ).rename(columns={
+        "Prec.Tox code": "ptx_code",
+    })
+    df_bind = df_bind[df_bind["protein_binding"].notna()]
+
+    df = df_moa.merge(
+        df_bind,
+        on=["ptx_code"],
+        how="outer"
+    )
+
+    return df
+
+
+def read_t3db_moa_file(file_path):
+    df_moa = pd.read_excel(
+        file_path,
+        skiprows=0,
+        index_col=None,
+        sheet_name="MoA",
+        usecols=["Prec.Tox code", "Mechanism of Action"]
+    ).rename(columns={
+        "Prec.Tox code": "ptx_code",
+        "Mechanism of Action": "moa_t3db"
+    })
+    df_moa = df_moa[df_moa["moa_t3db"].notna()]
+    df_moa = df_moa.drop_duplicates()
+
+    df_target = pd.read_excel(
+        file_path,
+        skiprows=0,
+        index_col=None,
+        sheet_name="Target",
+        usecols=["Prec.Tox code", "Target Name"]
+    ).rename(columns={
+        "Prec.Tox code": "ptx_code",
+        "Target Name": "target_t3db"
+    })
+    df_target = df_target[df_target["target_t3db"].notna()]
+    df_target = df_target.drop_duplicates()
+
+    return df_moa, df_target
+
+
 def get_chemical_node(chem_values: dict): 
     chem_node = {
         "group": "nodes",
@@ -106,13 +191,7 @@ def get_chemical_node(chem_values: dict):
         }
     }
     
-    properties = [
-        col 
-        for col in chem_values.keys() 
-        if col not in ["ptx_code", "chem_name_user", "chem_name", "label",
-                        "drugbank_id", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
-    ]
-    for col in properties:
+    for col in property_cols:
         chem_node["data"][col] = chem_values[col]  
 
     return chem_node
@@ -124,7 +203,7 @@ def create_general_network(
 
     json_elements = []
 
-    for index, row in df_ide.iterrows():
+    for index, row in df_chem.iterrows():
         json_elements.append(get_chemical_node(row))
 
 
@@ -202,12 +281,15 @@ def create_single_chemical_network(
     json_elements.append(get_chemical_node(chem_values))
 
     # Add attributes main nodes
-    attributes = ["Physico-chemical properties", "Use", "Toxicity"]#"AOP"]
-    shapes = ["diamond", "round-rectangle", "round-pentagon"]
+    attributes = ["Physico-chemical properties", "Use", "Toxicity", "Baseline Toxicity"]
+    shapes = ["round-diamond", "round-rectangle", "round-pentagon", "round-hexagon"]
     for attr, shape in zip(attributes, shapes):
         label = attr
-        if attr == "Physico-chemical properties":
-            label = "Physico-chemical\nproperties"
+        # if attr == "Physico-chemical properties":
+        #     label = "Physico-chemical\nproperties"
+        # elif attr == "Baseline Toxicity":
+        #     label = "Baseline\nToxicity"
+        label = wrap_label(attr, 10)
         attr_node = {
             "group": "nodes",
             "data": {
@@ -231,24 +313,21 @@ def create_single_chemical_network(
         json_elements.append(attr_edge)
 
     # Add physico-chemical properties nodes and edges
-    properties = [
-        col 
-        for col in chem_values.keys() 
-        if col not in ["ptx_code", "chem_name_user", "chem_name", "label",
-                        "drugbank_id", "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
-        and "source" not in col
-    ]
-    for prop in properties:
+    for prop in [col for col in property_cols if "source" not in col]:
         label = labels[prop] if prop in labels else prop
         unit = units[prop] if prop in units else ""
+        source = chem_values[sources[prop]] if prop in sources else ""
         if str(chem_values[prop]) == "NA":
-            combined_label = label
+            combined_label = label+":\nn/a"
             color_bg = "#ddd"
             color_border = "#9a999a"
         else:
             combined_label = label+":\n"+str(chem_values[prop])+" "+unit
             color_bg = colors["Physico-chemical properties_bg"]
             color_border = colors["Physico-chemical properties_border"]
+        hl_label = combined_label
+        if source != "":
+            hl_label = combined_label+"\nSource: "+source
         prop_node = {
             "group": "nodes",
             "data": {
@@ -257,6 +336,7 @@ def create_single_chemical_network(
                 "label": label,
                 "combinedLabel": combined_label,
                 "value": chem_values[prop],
+                "hlLabel": hl_label,
                 "colorBg": color_bg,
                 "colorBorder": color_border
             }
@@ -268,12 +348,45 @@ def create_single_chemical_network(
                 "subrole": "attribute",
                 "source": "Physico-chemical properties",
                 "target": prop,
-                "color": colors["Physico-chemical properties_border"]
+                "color": color_border
             }
         }
         json_elements.append(prop_node)
         json_elements.append(prop_edge)
 
+    # Add baseline toxicity nodes and edges
+    for base in [col for col in chem_values.keys() if "aseline" in col]:
+        if str(chem_values[base]) == "NA":
+            label = labels[base].replace("Baseline Toxicity - ","")+":\nn/a"
+            color_bg = "#ddd"
+            color_border = "#9a999a"
+        else:
+            label = labels[base].replace("Baseline Toxicity - ","")+":\n"+str(chem_values[base])
+            color_bg = colors["Baseline Toxicity_bg"]
+            color_border = colors["Baseline Toxicity_border"]
+        base_node = {
+            "group": "nodes",
+            "data": {
+                "role": "base_tox",
+                "id": base,
+                "label": label,
+                "value": chem_values[base],
+                "colorBg": color_bg,
+                "colorBorder": color_border
+            }
+        }
+        base_edge = {
+            "group": "edges",
+            "data": {
+                "role": "base_tox",
+                "subrole": "attribute",
+                "source": "Baseline Toxicity",
+                "target": base,
+                "color": color_border
+            }
+        }
+        json_elements.append(base_node)
+        json_elements.append(base_edge)
 
     # Add toxicity nodes and edges
     tox_classes = df_tox["tox_class"].unique()
@@ -388,16 +501,14 @@ def create_single_chemical_network(
 
 
 def export_chemical_table(df):
+    """ Export chemical table to CSV and JSON files
+    """
     df = df.replace("NA", "")
-    df = df.rename(columns={
-        "chem_name": "Compound name",
-        "chem_name_user": "Compound name (user)",
-        "drugbank_id": "DrugBank ID",
-        "ptx_code": "Ptox code",
-    })
+    df = df.rename(columns=labels)
+    df = df.drop(columns=["label"], axis=1)
     cols_to_print = ["Ptox code", "Compound name (user)", "Compound name", "DrugBank ID", 
                     "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
-    cols_to_print += [col for col in df.columns if col not in cols_to_print and col != "label"]
+    cols_to_print += [col for col in df.columns if col not in cols_to_print]
     df.to_csv(chemical_table, columns=cols_to_print, index=False)
     print(f"{chemical_table} was generated")
 
@@ -415,6 +526,8 @@ def export_chemical_table(df):
         json.dump(data, file_out, indent=6)
     print(f"{chemical_table_json} was generated")
 
+    return
+
 
 # data files
 chem_ide_file = "Manuscript Chemicals - Identifiers.xlsx"
@@ -423,29 +536,51 @@ drugbank_file = "Manuscript Chemicals - DrugBank.xlsx"
 toxclass_file = "otox.txt.gz"
 use_file = "Manuscript Chemicals - Identifiers_with_category.xlsx"
 properties_file = "Visulaization P-Chem Dataset ver1.xlsx"
+baseline_file = "Visualization Data - Baseline Toxicity.xlsx"
+drugbank_moa_file = "Manuscript Chemicals - DrugBank - Target & MoA.xlsx"
+t3db_moa_file = "Manuscript Chemicals - T3Db - Target & MoA.xlsx"
 
 # output files
 elements_dir = "../app/static/elements/"
 basic_network_out = f"{elements_dir}basic.json"
-# aop_network_out = f"{elements_dir}aop.json"
-# zoom_network_out = f"{elements_dir}zoom.json"
-# single_network_out = f"{elements_dir}single.json"
 chemical_table = "../app/static/data/chemical_table.csv"
 chemical_table_json = "../app/static/data/chemical_table.json"
 
 palette_1 = ["#6C946F", "#F4D35E", "#EE964B", "#F95738", "#D81159", "#8F2D56", "#218380", "#FFC857"]
 palette_2 = ["#894b5d", "#6868ac", "#85a1ac", "#8a5796", "#ecc371", "#f53151"]
 labels = {
+    "ptx_code": "Ptox code",
+    "chem_name": "Compound name",
+    "chem_name_user": "Compound name (user)",
+    "drugbank_id": "DrugBank ID",
     "mw_g_mol": "Molecular Weight",
     "solubility_h2o_mol_liter": "Solubility (H2O)",
+    "source_solubility_h2o": "Solubility (H2O) source",
     "henry_coefficient_atm_m3_mol": "Henry Coefficient",
+    "source_henry": "Henry Coefficient source",
     "log_kaw_kh_rt": "Log Kaw",
+    "source_kaw": "Log Kaw source",
     "log_kow_liter_liter": "Log Kow",
+    "source_kow": "Log Kow source",
     "pka_acid": "pKa (acid)",
     "pka_base": "pKa (base)",
+    "source_pka": "pKa source",
     "log_dlipw_ph74_liter_liter": "Log Dlipw (pH 7.4)",
+    "source_dlipw": "Log Dlipw source",
     "freely_dissolved_fraction": "Freely Dissolved Fraction",
     "density_kg_liter": "Density",
+    "source_density": "Density source",
+    "Baseline - C. elegans": "Baseline Toxicity - C. elegans",
+    "Baseline - Daphnia": "Baseline Toxicity - D. magna",
+    "Baseline - D. rerio": "Baseline Toxicity - D. rerio",
+    "Baseline - Xenopus": "Baseline Toxicity - X. laevis",
+    "Baseline - Drosophila": "Baseline Toxicity - D. melanogaster",
+    "Baseline - Cells": "Baseline Toxicity - HepG2 cells",
+    "baseline_cells_generic_micromole_liter_free_ec10": "Baseline Toxicity - HepG2 cells (generic micromol/l free EC10)",
+    "moa_drugbank": "Mechanism of Action (DrugBank)",
+    "protein_binding": "Protein Binding (DrugBank)",
+    "moa_t3db": "Mechanism of Action (T3DB)",
+    "target_t3db": "Target Name (T3DB)"
 }
 units = {
     "mw_g_mol": "g/mol",
@@ -456,17 +591,38 @@ units = {
 colors = {
     "Physico-chemical properties_border": "#007cc1",
     "Physico-chemical properties_bg": "#539cc4",
-    "Use_border": "#cd5632",
-    "Use_bg": "#FD8B51",
+    "Use_border": "#B03052",
+    "Use_bg": "#D76C82",
     "Toxicity_border": "#135D66",
     "Toxicity_bg": "#77B0AA",
+    "Baseline Toxicity_border": "#AB886D",
+    "Baseline Toxicity_bg": "#D6C0B3"
+}
+sources = {
+    "solubility_h2o_mol_liter": "source_solubility_h2o",
+    "henry_coefficient_atm_m3_mol": "source_henry",
+    "log_kaw_kh_rt": "source_kaw",
+    "log_kow_liter_liter": "source_kow",
+    "pka_acid": "source_pka",
+    "pka_base": "source_pka",
+    "log_dlipw_ph74_liter_liter": "source_dlipw",
+    "density_kg_liter": "source_density"
 }
 
 # Read DrugBank file
 df_drugb = read_drugbank_file(drugbank_file)
 
 # Read properties file
-df_prop = read_properties_file(properties_file)
+df_prop, property_cols = read_properties_file(properties_file)
+
+# Read Baseline Toxicity file
+df_base = read_baseline_tox_file(baseline_file)
+
+# Read Target & MoA file (DrugBank)
+df_moa_drugbank = read_drugbank_moa_file(drugbank_moa_file)
+
+# Read Target & MoA file (T3Db)
+df_moa_t3db, df_target_t3db = read_t3db_moa_file(t3db_moa_file)
 
 # Read Identifiers file
 df_ide = pd.read_excel(
@@ -485,6 +641,26 @@ df_ide = df_ide.merge(
     on=["ptx_code"],
     how="left"
 )
+df_ide = df_ide.merge(
+    df_base,
+    on=["ptx_code"],
+    how="left"
+)
+df_ide = df_ide.merge(
+    df_moa_drugbank,
+    on=["ptx_code"],
+    how="left"
+)
+df_ide = df_ide.merge(
+    df_moa_t3db.groupby('ptx_code').agg({'moa_t3db': '; '.join}).reset_index(),
+    on=["ptx_code"],
+    how="left"
+)
+df_ide = df_ide.merge(
+    df_target_t3db.groupby('ptx_code').agg({'target_t3db': '; '.join}).reset_index(),
+    on=["ptx_code"],
+    how="left"
+)
 df_ide = df_ide.fillna("NA")
 df_ide["label"] = df_ide["ptx_code"] + " | " + df_ide["chem_name_user"]
 all_ptx_codes = df_ide["ptx_code"].unique().tolist()
@@ -496,7 +672,7 @@ all_ptx_codes = df_ide["ptx_code"].unique().tolist()
 #             lambda row: {"title": row["AOP_title"], "type": row["Type"]}, axis=1
 #             ).to_dict()
 
-# Read Toxicity class file
+# Read Toxicity Class file
 df_toxclass = pd.read_csv(toxclass_file, sep="\t", header=None,
                           names=["chem_name", "tox_class", "score", "n_refs", "ref_list"])
 df_toxclass["chem_name"] = df_toxclass["chem_name"].str.replace("_", " ")
@@ -550,11 +726,7 @@ print(f"{len(df_ide['ptx_code'].unique())} single chemical networks were generat
 sys.exit()
 
 
-
-## Zoom view 1
-create_zoom_network(df_ide, zoom_network_out)
-
-
+# Create AOP network
 aop_elements = []
 for aop_id in aop_dict:
     aop_elements.append(

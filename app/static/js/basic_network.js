@@ -133,8 +133,8 @@ const singleNetworkStyle = [
         selector: "node[role='chem']",
         style: {
             "shape": "ellipse",
-            "width": "40px",
-            "height": "40px",
+            "width": "50px",
+            "height": "50px",
             "background-color": "#f0f0f0",
             "border-width": "5px",
             "border-color": "#172d4a",
@@ -152,8 +152,8 @@ const singleNetworkStyle = [
     {
         selector: "node[role='chem'].hl",
         style: {
-            "width": "42px",
-            "height": "42px",
+            "width": "55px",
+            "height": "55px",
             "font-size": "25px",
             "font-weight": "bold",
             "border-width": "5px",
@@ -213,12 +213,12 @@ const singleNetworkStyle = [
     {
         selector: "node[role^='category']",
         style: {
-            "width": "60px",
-            "height": "60px",
+            "width": "50px",
+            "height": "50px",
             "background-color": "data(colorBg)",
             "border-width": "1px",
             "border-color": "data(colorBorder)",
-            "border-opacity": "1",
+            "border-opacity": "0",
             "font-size": "18px",
             "font-weight": "bold",
             "label": "data(label)",
@@ -243,8 +243,8 @@ const singleNetworkStyle = [
     {
         selector: "node[role^='category'].hl",
         style: {
-            "width": "63px",
-            "height": "63px",
+            "width": "53px",
+            "height": "53px",
             "font-size": "20px",
             "border-color": "#004880",
             "color": "#004880"
@@ -272,7 +272,7 @@ const singleNetworkStyle = [
     {
         selector: "node[role='prop']",
         style:{
-            "shape": "diamond",
+            "shape": "round-diamond",
             "background-color": "data(colorBg)",
             "width": "50px",
             "height": "50px",
@@ -291,12 +291,47 @@ const singleNetworkStyle = [
         style:{
             "width": "52px",
             "height": "52px",
+            "label": "data(hlLabel)",
+            "color": "#004880",
             "border-color": "#004880",
-        
+            "border-opacity": "1",
         }
     },
     {
         selector: "edge[role='prop']",
+        style: {
+            "line-color": "data(color)"
+        }
+    },
+    {
+        selector: "node[role='base_tox']",
+        style:{
+            "shape": "round-hexagon",
+            "background-color": "data(colorBg)",
+            "width": "50px",
+            "height": "50px",
+            "border-width": "1px",
+            "border-color": "data(colorBorder)",
+            "border-opacity": "0",
+            "label": "data(label)",
+            "color": "#2c2e35",
+            "font-weight": "bold",
+            "text-valign": "center",
+            "text-wrap": "wrap" 
+        }
+    },
+    {
+        selector: "node[role='base_tox'].hl",
+        style:{
+            "width": "52px",
+            "height": "52px",
+            "color": "#004880",
+            "border-color": "#004880",
+            "border-opacity": "1",
+        }
+    },
+    {
+        selector: "edge[role='base_tox']",
         style: {
             "line-color": "data(color)"
         }
