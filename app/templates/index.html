@@ -202,7 +202,10 @@
                         scrollY: '65vh', // Vertical scrolling (adjust height as needed)
                         scrollX: true,   // Enable horizontal scrolling
                         scrollCollapse: true, // Allows the table to reduce in height when fewer rows are shown
-                        paging: false
+                        paging: false,
+                        columnDefs: [
+                            { width: '150px', targets: '_all' } // Set the width for all columns
+                        ]
                     });
                 })
                 .catch(error => console.error('Error loading chemical list:', error));

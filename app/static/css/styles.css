@@ -469,13 +469,10 @@ input[type="range"]:focus {
     width: 100%; /* Ensures the table takes full width */
     border-radius: 4px; /* Optional: rounded corners for the table */
 }
-
 #chem_list .dataTables_wrapper {
     max-height: calc(100vh - 150px); /* Adjust based on available space */
     overflow-y: auto; /* Ensures the table and footer stay within tab boundaries */
 }
-
-
 /* DataTable header (column headers) background color */
 .dataTables_wrapper .dataTables_scrollHead thead {
     background: linear-gradient(90deg, #004880, #007cc1) !important;
@@ -485,12 +482,13 @@ input[type="range"]:focus {
     font-size: 14px;
     font-weight: bold;
     padding: 10px;
+    text-align: left !important;
+    padding-right: 25px; /* Ensure enough padding for sorting icons */
+    /* white-space: nowrap; / */
 }
-
 .dataTables_wrapper tbody {
     font-size: 12px;
 }
-
 .dataTables_wrapper .dataTables_info {
     font-size: 12px; /* Set to desired font size */
     color: #333; /* Optional: set color */
