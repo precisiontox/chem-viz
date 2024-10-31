@@ -205,7 +205,29 @@
                         paging: false,
                         columnDefs: [
                             { width: '150px', targets: '_all' } // Set the width for all columns
-                        ]
+                        ],
+                        drawCallback: function() { // Add tooltips after the table is drawn
+                            $('#chem-table tbody td').each(function() {
+                                // Destroy any existing tooltip instance to avoid duplicates
+                                if ($(this).data('qtip')) $(this).qtip('destroy', true);
+
+                                // Determine if this cell is in the rightmost column
+                                let isRightmost = $(this).is(':last-child');
+
+                                $(this).qtip({
+                                    content: {
+                                        text: $(this).text().trim()
+                                    },
+                                    style: {
+                                        classes: 'qtip-dark qtip-rounded'
+                                    },
+                                    position: {
+                                        my: isRightmost ? 'top right' : 'top left', // Adjust `my` for the rightmost column
+                                        at: isRightmost ? 'bottom left' : 'bottom right' // Adjust `at` for the rightmost column
+                                    }
+                                });
+                            });
+                        }
                     });
                 })
                 .catch(error => console.error('Error loading chemical list:', error));
@@ -317,7 +339,7 @@
             var blob = new Blob([svgContent], {type: "image/svg+xml;charset=utf-8"});
             saveAs(blob, "graph.svg");
         });
-
+        
     </script>
 
     </script>

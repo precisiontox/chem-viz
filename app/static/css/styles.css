@@ -489,6 +489,15 @@ input[type="range"]:focus {
 .dataTables_wrapper tbody {
     font-size: 12px;
 }
+.dataTables_wrapper tbody tr {
+    height: 50px; /* Adjust this value to your preferred row height */
+}
+.dataTables_wrapper tbody td {
+    max-width: 250px; /* Adjust to fit within your desired table width */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Prevents text from wrapping to multiple lines */
+}
 .dataTables_wrapper .dataTables_info {
     font-size: 12px; /* Set to desired font size */
     color: #333; /* Optional: set color */
