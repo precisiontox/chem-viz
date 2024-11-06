@@ -6,7 +6,7 @@
                   "id": "PTX083",
                   "ptx_code": "PTX083",
                   "name": "all-trans Retinoic acid",
-                  "label": "PTX083 | all-trans Retinoic acid",
+                  "label": "PTX083 | Retinoic acid",
                   "cas": "302-79-4",
                   "dtxsid": "DTXSID7021239",
                   "db_id": "DB00755",
@@ -110,6 +110,44 @@
       {
             "group": "nodes",
             "data": {
+                  "role": "attribute",
+                  "id": "Mechanism of Action",
+                  "label": "Mechanism of\nAction",
+                  "colorBorder": "#d4ac0d",
+                  "colorBg": "#F4D35E",
+                  "shape": "round-heptagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX083",
+                  "target": "Mechanism of Action"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Targets",
+                  "label": "Targets",
+                  "colorBorder": "#6A1E55",
+                  "colorBg": "#A64D79",
+                  "shape": "round-tag"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX083",
+                  "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
                   "role": "prop",
                   "id": "mw_g_mol",
                   "label": "Molecular Weight",
@@ -118,16 +156,6 @@
                   "hlLabel": "Molecular Weight:\n300.442 g/mol",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "mw_g_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -144,16 +172,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "solubility_h2o_mol_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -164,16 +182,6 @@
                   "hlLabel": "Henry Coefficient:\n3.95162e-05 atm*m3/mol\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -190,16 +198,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -210,16 +208,6 @@
                   "hlLabel": "pKa (acid):\n6.03 \nSource: UFZ; Sirius T3",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_acid",
-                  "color": "#007cc1"
             }
       },
       {
@@ -236,16 +224,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_base",
-                  "color": "#9a999a"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -256,16 +234,6 @@
                   "hlLabel": "Log Kow:\n6.3 \nSource: experimental  PhysPropNCCT",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kow_liter_liter",
-                  "color": "#007cc1"
             }
       },
       {
@@ -282,16 +250,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_dlipw_ph74_liter_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -305,16 +263,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "freely_dissolved_fraction",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -325,6 +273,96 @@
                   "hlLabel": "Density:\n0.999 kg/liter\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "mw_g_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "solubility_h2o_mol_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "henry_coefficient_atm_m3_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kaw_kh_rt",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_acid",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_base",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kow_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_dlipw_ph74_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "freely_dissolved_fraction",
+                  "color": "#007cc1"
             }
       },
       {
@@ -349,16 +387,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - D. rerio",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -367,16 +395,6 @@
                   "value": "0.858",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Daphnia",
-                  "color": "#AB886D"
             }
       },
       {
@@ -391,16 +409,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - C. elegans",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -409,16 +417,6 @@
                   "value": "2.87905122272857",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Xenopus",
-                  "color": "#AB886D"
             }
       },
       {
@@ -433,16 +431,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Drosophila",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -451,16 +439,6 @@
                   "value": "3.33097189024087e-05",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Cells",
-                  "color": "#AB886D"
             }
       },
       {
@@ -480,8 +458,132 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
+                  "target": "Baseline - D. rerio",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Daphnia",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - C. elegans",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Xenopus",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Drosophila",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Cells",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
                   "target": "baseline_cells_generic_micromole_liter_free_ec10",
                   "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_drugbank",
+                  "label": "DrugBank:\nTretinoin\nbinds...",
+                  "fullLabel": "DrugBank:\nTretinoin binds\nto alpha, beta, and gamma\nretinoic acid receptors\n(RARs). RAR-alpha and RAR-beta\nhave been associated with\nthe development of acute\npromyelocytic leukemia\nand squamous cell cancers,\nrespectively. RAR-gamma\nis associated with retinoid\neffects on mucocutaneous\ntissues and bone. Although\nthe exact mechanism of action\nof tretinoin is unknown,\ncurrent evidence suggests\nthat the effectiveness of\ntretinoin in acne is due primarily\nto its ability to modify abnormal\nfollicular keratinization.\nComedones form in follicles\nwith an excess of keratinized\nepithelial cells. Tretinoin\npromotes detachment of cornified\ncells and the enhanced shedding\nof corneocytes from the follicle.\nBy increasing the mitotic\nactivity of follicular epithelia,\ntretinoin also increases\nthe turnover rate of thin,\nloosely-adherent corneocytes.\nThrough these actions, the\ncomedo contents are extruded\nand the formation of the microcomedo,\nthe precursor lesion of acne\nvulgaris, is reduced. Tretinoin\nis not a cytolytic agent but\ninstead induces cytodifferentiation\nand decreased proliferation\nof APL cells in culture and\nin vivo. When Tretinoin is\ngiven systemically to APL\npatients, tretinoin treatment\nproduces an initial maturation\nof the primitive promyelocytes\nderived from the leukemic\nclone, followed by a repopulation\nof the bone marrow and peripheral\nblood by normal, polyclonal\nhematopoietic cells in patients\nachieving complete remission\n(CR). The exact mechanism\nof action of tretinoin in\nAPL is unknown.",
+                  "value": "Tretinoin binds to alpha, beta, and gamma retinoic acid receptors (RARs). RAR-alpha and RAR-beta have been associated with the development of acute promyelocytic leukemia and squamous cell cancers, respectively. RAR-gamma is associated with retinoid effects on mucocutaneous tissues and bone. Although the exact mechanism of action of tretinoin is unknown, current evidence suggests that the effectiveness of tretinoin in acne is due primarily to its ability to modify abnormal follicular keratinization. Comedones form in follicles with an excess of keratinized epithelial cells. Tretinoin promotes detachment of cornified cells and the enhanced shedding of corneocytes from the follicle. By increasing the mitotic activity of follicular epithelia, tretinoin also increases the turnover rate of thin, loosely-adherent corneocytes. Through these actions, the comedo contents are extruded and the formation of the microcomedo, the precursor lesion of acne vulgaris, is reduced. Tretinoin is not a cytolytic agent but instead induces cytodifferentiation and decreased proliferation of APL cells in culture and in vivo. When Tretinoin is given systemically to APL patients, tretinoin treatment produces an initial maturation of the primitive promyelocytes derived from the leukemic clone, followed by a repopulation of the bone marrow and peripheral blood by normal, polyclonal hematopoietic cells in patients achieving complete remission (CR). The exact mechanism of action of tretinoin in APL is unknown.",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_t3db",
+                  "label": "T3DB:\nTretinoin\nbinds to ...",
+                  "fullLabel": "T3DB:\nTretinoin binds to\nalpha, beta, and gamma retinoic\nacid receptors (RARs). RAR-alpha\nand RAR-beta have been associated\nwith the development of acute\npromyelocytic leukemia\nand squamous cell cancers,\nrespectively. RAR-gamma\nis associated with retinoid\neffects on mucocutaneous\ntissues and bone. Although\nthe exact mechanism of action\nof tretinoin is unknown,\ncurrent evidence suggests\nthat the effectiveness of\ntretinoin in acne is due primarily\nto its ability to modify abnormal\nfollicular keratinization.\nComedones form in follicles\nwith an excess of keratinized\nepithelial cells. Tretinoin\npromotes detachment of cornified\ncells and the enhanced shedding\nof corneocytes from the follicle.\nBy increasing the mitotic\nactivity of follicular epithelia,\ntretinoin also increases\nthe turnover rate of thin,\nloosely-adherent corneocytes.\nThrough these actions, the\ncomedo contents are extruded\nand the formation of the microcomedo,\nthe precursor lesion of acne\nvulgaris, is reduced. Tretinoin\nis not a cytolytic agent but\ninstead induces cytodifferentiation\nand decreased proliferation\nof APL cells in culture and\nin vivo. When Tretinoin is\ngiven systemically to APL\npatients, tretinoin treatment\nproduces an initial maturation\nof the primitive promyelocytes\nderived from the leukemic\nclone, followed by a repopulation\nof the bone marrow and peripheral\nblood by normal, polyclonal\nhematopoietic cells in patients\nachieving complete remission\n(CR). The exact mechanism\nof action of tretinoin in\nAPL is unknown.",
+                  "value": "Tretinoin binds to alpha, beta, and gamma retinoic acid receptors (RARs). RAR-alpha and RAR-beta have been associated with the development of acute promyelocytic leukemia and squamous cell cancers, respectively. RAR-gamma is associated with retinoid effects on mucocutaneous tissues and bone. Although the exact mechanism of action of tretinoin is unknown, current evidence suggests that the effectiveness of tretinoin in acne is due primarily to its ability to modify abnormal follicular keratinization. Comedones form in follicles with an excess of keratinized epithelial cells. Tretinoin promotes detachment of cornified cells and the enhanced shedding of corneocytes from the follicle. By increasing the mitotic activity of follicular epithelia, tretinoin also increases the turnover rate of thin, loosely-adherent corneocytes. Through these actions, the comedo contents are extruded and the formation of the microcomedo, the precursor lesion of acne vulgaris, is reduced. Tretinoin is not a cytolytic agent but instead induces cytodifferentiation and decreased proliferation of APL cells in culture and in vivo. When Tretinoin is given systemically to APL patients, tretinoin treatment produces an initial maturation of the primitive promyelocytes derived from the leukemic clone, followed by a repopulation of the bone marrow and peripheral blood by normal, polyclonal hematopoietic cells in patients achieving complete remission (CR). The exact mechanism of action of tretinoin in APL is unknown.",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_drugbank",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_t3db",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_use_class",
+                  "id": "Industry and consumer goods",
+                  "label": "Industry and\nconsumer goods",
+                  "colorBg": "#D76C82",
+                  "colorBorder": "#B03052"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_use_class",
+                  "subrole": "attribute",
+                  "source": "Use",
+                  "target": "Industry and consumer goods",
+                  "color": "#B03052"
             }
       },
       {
@@ -569,7 +671,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX083_ototoxicity",
                   "source": "Toxicity",
                   "target": "ototoxicity",
                   "color": "#135D66",
@@ -583,7 +684,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX083_hematotoxicity",
                   "source": "Toxicity",
                   "target": "hematotoxicity",
                   "color": "#135D66",
@@ -597,7 +697,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX083_immunotoxicity",
                   "source": "Toxicity",
                   "target": "immunotoxicity",
                   "color": "#135D66",
@@ -611,7 +710,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX083_neurotoxicity",
                   "source": "Toxicity",
                   "target": "neurotoxicity",
                   "color": "#135D66",
@@ -625,7 +723,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX083_hepatotoxicity",
                   "source": "Toxicity",
                   "target": "hepatotoxicity",
                   "color": "#135D66",
@@ -639,7 +736,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX083_genotoxicity",
                   "source": "Toxicity",
                   "target": "genotoxicity",
                   "color": "#135D66",
@@ -653,7 +749,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX083_nephrotoxicity",
                   "source": "Toxicity",
                   "target": "nephrotoxicity",
                   "color": "#135D66",
@@ -667,34 +762,12 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX083_cardiotoxicity",
                   "source": "Toxicity",
                   "target": "cardiotoxicity",
                   "color": "#135D66",
                   "score": 0.85,
                   "n_refs": 22,
                   "ref_list": "22809260,34134554,36715483,20230404,32336675,26507774,36918482,24052562,18230668,25203460,20735397,36331922,12452732,28356735,22715121,12423680,10065091,29085977,17020459,22989704,23837677,20930262"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_use_class",
-                  "id": "Industry and consumer goods",
-                  "label": "Industry and\nconsumer goods",
-                  "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_use_class",
-                  "subrole": "attribute",
-                  "id": "PTX083_Industry and consumer goods",
-                  "source": "Use",
-                  "target": "Industry and consumer goods",
-                  "color": "#B03052"
             }
       }
 ]

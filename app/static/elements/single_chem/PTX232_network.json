@@ -110,6 +110,44 @@
       {
             "group": "nodes",
             "data": {
+                  "role": "attribute",
+                  "id": "Mechanism of Action",
+                  "label": "Mechanism of\nAction",
+                  "colorBorder": "#d4ac0d",
+                  "colorBg": "#F4D35E",
+                  "shape": "round-heptagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX232",
+                  "target": "Mechanism of Action"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Targets",
+                  "label": "Targets",
+                  "colorBorder": "#6A1E55",
+                  "colorBg": "#A64D79",
+                  "shape": "round-tag"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX232",
+                  "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
                   "role": "prop",
                   "id": "mw_g_mol",
                   "label": "Molecular Weight",
@@ -118,16 +156,6 @@
                   "hlLabel": "Molecular Weight:\n266.32 g/mol",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "mw_g_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -144,16 +172,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "solubility_h2o_mol_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -164,16 +182,6 @@
                   "hlLabel": "Henry Coefficient:\n2.45947e-08 atm*m3/mol\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -190,16 +198,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -210,16 +208,6 @@
                   "hlLabel": "pKa (acid):\n4.49 \nSource: ACD/GALAS",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_acid",
-                  "color": "#007cc1"
             }
       },
       {
@@ -236,16 +224,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_base",
-                  "color": "#9a999a"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -256,16 +234,6 @@
                   "hlLabel": "Log Kow:\n5.12 \nSource: NA",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kow_liter_liter",
-                  "color": "#007cc1"
             }
       },
       {
@@ -282,16 +250,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_dlipw_ph74_liter_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -305,16 +263,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "freely_dissolved_fraction",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -325,6 +273,96 @@
                   "hlLabel": "Density:\n1.764 kg/liter\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "mw_g_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "solubility_h2o_mol_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "henry_coefficient_atm_m3_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kaw_kh_rt",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_acid",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_base",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kow_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_dlipw_ph74_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "freely_dissolved_fraction",
+                  "color": "#007cc1"
             }
       },
       {
@@ -349,16 +387,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - D. rerio",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -367,16 +395,6 @@
                   "value": "15.2264969556793",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Daphnia",
-                  "color": "#AB886D"
             }
       },
       {
@@ -391,16 +409,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - C. elegans",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -409,16 +417,6 @@
                   "value": "25.3016590997726",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Xenopus",
-                  "color": "#AB886D"
             }
       },
       {
@@ -433,16 +431,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Drosophila",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -451,16 +439,6 @@
                   "value": "0.000143265168509922",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Cells",
-                  "color": "#AB886D"
             }
       },
       {
@@ -480,8 +458,132 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
+                  "target": "Baseline - D. rerio",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Daphnia",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - C. elegans",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Xenopus",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Drosophila",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Cells",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
                   "target": "baseline_cells_generic_micromole_liter_free_ec10",
                   "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_drugbank",
+                  "label": "DrugBank:\nn/a",
+                  "fullLabel": "DrugBank:\nn/a",
+                  "value": "NA",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_t3db",
+                  "label": "T3DB:\nPentachlorophenol\np...",
+                  "fullLabel": "T3DB:\nPentachlorophenol\nprevents sulfation by inhibiting\nphenol-sulfotransferases.\n(A92); Pentachlorophenol\ninhibits acetylcholinesterase\nin erythrocyte membranes.\n(A93); Pentachlorophenol\ncompetes with thyroxine\nfor uptake into cerebrospinal\nfluid at the T4 binding site\nof transthyretin. (L127);\nPentachlorophenol inhibits\nO-acetyltransferases.\n(A94); Pentachlorophenol\ncauses adverse effects on\nthyroid homeostasis, decreasing\nserum thyroxine by competing\nfor serum protein thyroxine\nbinding sites. (L127); This\norganochloride inhibits\nNa+/K+ ATPase and Ca2+ and\nMg2+ ATPase, which are essential\nfor the transport of calcium\nacross membranes. This results\nin the accumulation of intracellular\nfree calcium ions, which\npromotes release of neurotransmitters\nfrom storage vesicles, the\nsubsequent depolarization\nof adjacent neurons, and\nthe propagation of stimuli\nthroughout the central nervous\nsystem. (T10); Pentachlorophenol\ninhibits mitochondrial\nATP-ase activity, preventing\nthe the formation of ATP and\nthe release of energy to the\ncell from the breakdown of\nATP to ADP. (A95); This organochloride\nantagonizes the action of\nthe neurotransmitter gamma-aminobutyric\nacid (GABA) acting at the\nGABA-A receptors, effectively\nblocking the GABA-induced\nuptake of chloride ions and\ncausing hyperexcitability\nof the central nervous system.\n(T10); Causes endocrine\ndisruption in humans by binding\nto and inhibiting the estrogen\nreceptor. (A590); Pentachlorophenol\nis an antagonist of progesterone\nreceptor (PR). It inhibits\nthe gene expression via the\nPR in a dose-dependent manner.",
+                  "value": "Pentachlorophenol prevents sulfation by inhibiting phenol-sulfotransferases. (A92); Pentachlorophenol inhibits acetylcholinesterase in erythrocyte membranes. (A93); Pentachlorophenol competes with thyroxine for uptake into cerebrospinal fluid at the T4 binding site of transthyretin. (L127); Pentachlorophenol inhibits O-acetyltransferases. (A94); Pentachlorophenol causes adverse effects on thyroid homeostasis, decreasing serum thyroxine by competing for serum protein thyroxine binding sites. (L127); This organochloride inhibits Na+/K+ ATPase and Ca2+ and Mg2+ ATPase, which are essential for the transport of calcium across membranes. This results in the accumulation of intracellular free calcium ions, which promotes release of neurotransmitters from storage vesicles, the subsequent depolarization of adjacent neurons, and the propagation of stimuli throughout the central nervous system. (T10); Pentachlorophenol inhibits mitochondrial ATP-ase activity, preventing the the formation of ATP and the release of energy to the cell from the breakdown of ATP to ADP. (A95); This organochloride antagonizes the action of the neurotransmitter gamma-aminobutyric acid (GABA) acting at the GABA-A receptors, effectively blocking the GABA-induced uptake of chloride ions and causing hyperexcitability of the central nervous system. (T10); Causes endocrine disruption in humans by binding to and inhibiting the estrogen receptor. (A590); Pentachlorophenol is an antagonist of progesterone receptor (PR). It inhibits the gene expression via the PR in a dose-dependent manner.",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_drugbank",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_t3db",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_use_class",
+                  "id": "Pesticide",
+                  "label": "Pesticide",
+                  "colorBg": "#D76C82",
+                  "colorBorder": "#B03052"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_use_class",
+                  "subrole": "attribute",
+                  "source": "Use",
+                  "target": "Pesticide",
+                  "color": "#B03052"
             }
       },
       {
@@ -539,7 +641,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX232_genotoxicity",
                   "source": "Toxicity",
                   "target": "genotoxicity",
                   "color": "#135D66",
@@ -553,7 +654,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX232_hepatotoxicity",
                   "source": "Toxicity",
                   "target": "hepatotoxicity",
                   "color": "#135D66",
@@ -567,7 +667,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX232_neurotoxicity",
                   "source": "Toxicity",
                   "target": "neurotoxicity",
                   "color": "#135D66",
@@ -581,7 +680,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX232_immunotoxicity",
                   "source": "Toxicity",
                   "target": "immunotoxicity",
                   "color": "#135D66",
@@ -595,34 +693,12 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX232_hematotoxicity",
                   "source": "Toxicity",
                   "target": "hematotoxicity",
                   "color": "#135D66",
                   "score": 3.42,
                   "n_refs": 1,
                   "ref_list": "21635189"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_use_class",
-                  "id": "Pesticide",
-                  "label": "Pesticide",
-                  "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_use_class",
-                  "subrole": "attribute",
-                  "id": "PTX232_Pesticide",
-                  "source": "Use",
-                  "target": "Pesticide",
-                  "color": "#B03052"
             }
       }
 ]

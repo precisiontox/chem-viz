@@ -110,6 +110,44 @@
       {
             "group": "nodes",
             "data": {
+                  "role": "attribute",
+                  "id": "Mechanism of Action",
+                  "label": "Mechanism of\nAction",
+                  "colorBorder": "#d4ac0d",
+                  "colorBg": "#F4D35E",
+                  "shape": "round-heptagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX095",
+                  "target": "Mechanism of Action"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Targets",
+                  "label": "Targets",
+                  "colorBorder": "#6A1E55",
+                  "colorBg": "#A64D79",
+                  "shape": "round-tag"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX095",
+                  "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
                   "role": "prop",
                   "id": "mw_g_mol",
                   "label": "Molecular Weight",
@@ -118,16 +156,6 @@
                   "hlLabel": "Molecular Weight:\n234.343 g/mol",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "mw_g_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -144,16 +172,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "solubility_h2o_mol_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -164,16 +182,6 @@
                   "hlLabel": "Henry Coefficient:\n1.95107e-10 atm*m3/mol\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -190,16 +198,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -210,16 +208,6 @@
                   "hlLabel": "pKa (acid):\n13.1 \nSource: UFZ; Sirius T3",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_acid",
-                  "color": "#007cc1"
             }
       },
       {
@@ -236,16 +224,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_base",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -256,16 +234,6 @@
                   "hlLabel": "Log Kow:\n2.44 \nSource: experimental  PhysPropNCCT",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kow_liter_liter",
-                  "color": "#007cc1"
             }
       },
       {
@@ -282,16 +250,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_dlipw_ph74_liter_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -305,16 +263,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "freely_dissolved_fraction",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -325,6 +273,96 @@
                   "hlLabel": "Density:\n1.014 kg/liter\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "mw_g_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "solubility_h2o_mol_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "henry_coefficient_atm_m3_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kaw_kh_rt",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_acid",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_base",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kow_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_dlipw_ph74_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "freely_dissolved_fraction",
+                  "color": "#007cc1"
             }
       },
       {
@@ -349,16 +387,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - D. rerio",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -367,16 +395,6 @@
                   "value": "1140.0",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Daphnia",
-                  "color": "#AB886D"
             }
       },
       {
@@ -391,16 +409,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - C. elegans",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -409,16 +417,6 @@
                   "value": "619.665970600883",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Xenopus",
-                  "color": "#AB886D"
             }
       },
       {
@@ -433,16 +431,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Drosophila",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -451,16 +439,6 @@
                   "value": "0.000623522354441741",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Cells",
-                  "color": "#AB886D"
             }
       },
       {
@@ -480,8 +458,132 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
+                  "target": "Baseline - D. rerio",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Daphnia",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - C. elegans",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Xenopus",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Drosophila",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Cells",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
                   "target": "baseline_cells_generic_micromole_liter_free_ec10",
                   "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_drugbank",
+                  "label": "DrugBank:\nLidocaine\nis a ...",
+                  "fullLabel": "DrugBank:\nLidocaine is\na local anesthetic of the\namide type [F4349, L5930,\nL5948]. It is used to provide\nlocal anesthesia by nerve\nblockade at various sites\nin the body [F4349, L5930,\nL5948]. It does so by stabilizing\nthe neuronal membrane by\ninhibiting the ionic fluxes\nrequired for the initiation\nand conduction of impulses,\nthereby effecting local\nanesthetic action [F4349,\nL5930, L5948]. In particular,\nthe lidocaine agent acts\non sodium ion channels located\non the internal surface of\nnerve cell membranes [F4349,\nL5930, L5948]. At these channels,\nneutral uncharged lidocaine\nmolecules diffuse through\nneural sheaths into the axoplasm\nwhere they are subsequently\nionized by joining with hydrogen\nions [F4349, L5930, L5948].\nThe resultant lidocaine\ncations are then capable\nof reversibly binding the\nsodium channels from the\ninside, keeping them locked\nin an open state that prevents\nnerve depolarization [F4349,\nL5930, L5948]. As a result,\nwith sufficient blockage,\nthe membrane of the postsynaptic\nneuron will ultimately not\ndepolarize and will thus\nfail to transmit an action\npotential [F4349, L5930,\nL5948]. This facilitates\nan anesthetic effect by not\nmerely preventing pain signals\nfrom propagating to the brain\nbut by aborting their generation\nin the first place [F4349,\nL5930, L5948].\n\nIn addition\nto blocking conduction in\nnerve axons in the peripheral\nnervous system, lidocaine\nhas important effects on\nthe central nervous system\nand cardiovascular system\n[F4349, L5930, L5948]. After\nabsorption, lidocaine may\ncause stimulation of the\nCNS followed by depression\nand in the cardiovascular\nsystem, it acts primarily\non the myocardium where it\nmay produce decreases in\nelectrical excitability,\nconduction rate, and force\nof contraction [F4349, L5930,\nL5948].",
+                  "value": "Lidocaine is a local anesthetic of the amide type [F4349, L5930, L5948]. It is used to provide local anesthesia by nerve blockade at various sites in the body [F4349, L5930, L5948]. It does so by stabilizing the neuronal membrane by inhibiting the ionic fluxes required for the initiation and conduction of impulses, thereby effecting local anesthetic action [F4349, L5930, L5948]. In particular, the lidocaine agent acts on sodium ion channels located on the internal surface of nerve cell membranes [F4349, L5930, L5948]. At these channels, neutral uncharged lidocaine molecules diffuse through neural sheaths into the axoplasm where they are subsequently ionized by joining with hydrogen ions [F4349, L5930, L5948]. The resultant lidocaine cations are then capable of reversibly binding the sodium channels from the inside, keeping them locked in an open state that prevents nerve depolarization [F4349, L5930, L5948]. As a result, with sufficient blockage, the membrane of the postsynaptic neuron will ultimately not depolarize and will thus fail to transmit an action potential [F4349, L5930, L5948]. This facilitates an anesthetic effect by not merely preventing pain signals from propagating to the brain but by aborting their generation in the first place [F4349, L5930, L5948].\n\nIn addition to blocking conduction in nerve axons in the peripheral nervous system, lidocaine has important effects on the central nervous system and cardiovascular system [F4349, L5930, L5948]. After absorption, lidocaine may cause stimulation of the CNS followed by depression and in the cardiovascular system, it acts primarily on the myocardium where it may produce decreases in electrical excitability, conduction rate, and force of contraction [F4349, L5930, L5948].",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_t3db",
+                  "label": "T3DB:\nLidocaine\nstabilize...",
+                  "fullLabel": "T3DB:\nLidocaine stabilizes\nthe neuronal membrane by\ninhibiting the ionic fluxes\nrequired for the initiation\nand conduction of impulses\nthereby effecting local\nanesthetic action.",
+                  "value": "Lidocaine stabilizes the neuronal membrane by inhibiting the ionic fluxes required for the initiation and conduction of impulses thereby effecting local anesthetic action.",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_drugbank",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_t3db",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_use_class",
+                  "id": "Pharmaceutical",
+                  "label": "Pharmaceutical",
+                  "colorBg": "#D76C82",
+                  "colorBorder": "#B03052"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_use_class",
+                  "subrole": "attribute",
+                  "source": "Use",
+                  "target": "Pharmaceutical",
+                  "color": "#B03052"
             }
       },
       {
@@ -559,7 +661,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX095_genotoxicity",
                   "source": "Toxicity",
                   "target": "genotoxicity",
                   "color": "#135D66",
@@ -573,7 +674,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX095_hepatotoxicity",
                   "source": "Toxicity",
                   "target": "hepatotoxicity",
                   "color": "#135D66",
@@ -587,7 +687,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX095_neurotoxicity",
                   "source": "Toxicity",
                   "target": "neurotoxicity",
                   "color": "#135D66",
@@ -601,7 +700,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX095_ototoxicity",
                   "source": "Toxicity",
                   "target": "ototoxicity",
                   "color": "#135D66",
@@ -615,7 +713,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX095_hematotoxicity",
                   "source": "Toxicity",
                   "target": "hematotoxicity",
                   "color": "#135D66",
@@ -629,7 +726,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX095_cardiotoxicity",
                   "source": "Toxicity",
                   "target": "cardiotoxicity",
                   "color": "#135D66",
@@ -643,34 +739,12 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX095_nephrotoxicity",
                   "source": "Toxicity",
                   "target": "nephrotoxicity",
                   "color": "#135D66",
                   "score": -3.91,
                   "n_refs": 2,
                   "ref_list": "29402925,32103942"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_use_class",
-                  "id": "Pharmaceutical",
-                  "label": "Pharmaceutical",
-                  "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_use_class",
-                  "subrole": "attribute",
-                  "id": "PTX095_Pharmaceutical",
-                  "source": "Use",
-                  "target": "Pharmaceutical",
-                  "color": "#B03052"
             }
       }
 ]

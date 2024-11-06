@@ -110,6 +110,44 @@
       {
             "group": "nodes",
             "data": {
+                  "role": "attribute",
+                  "id": "Mechanism of Action",
+                  "label": "Mechanism of\nAction",
+                  "colorBorder": "#d4ac0d",
+                  "colorBg": "#F4D35E",
+                  "shape": "round-heptagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX223",
+                  "target": "Mechanism of Action"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Targets",
+                  "label": "Targets",
+                  "colorBorder": "#6A1E55",
+                  "colorBg": "#A64D79",
+                  "shape": "round-tag"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX223",
+                  "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
                   "role": "prop",
                   "id": "mw_g_mol",
                   "label": "Molecular Weight",
@@ -118,16 +156,6 @@
                   "hlLabel": "Molecular Weight:\n308.3 g/mol",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "mw_g_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -144,16 +172,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "solubility_h2o_mol_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -164,16 +182,6 @@
                   "hlLabel": "Henry Coefficient:\n1.52073e-11 atm*m3/mol\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -190,16 +198,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -210,16 +208,6 @@
                   "hlLabel": "pKa (acid):\nn/a\nSource: ACD/GALAS",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_acid",
-                  "color": "#9a999a"
             }
       },
       {
@@ -236,16 +224,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_base",
-                  "color": "#9a999a"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -256,16 +234,6 @@
                   "hlLabel": "Log Kow:\n0.625 \nSource: NA",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kow_liter_liter",
-                  "color": "#007cc1"
             }
       },
       {
@@ -282,16 +250,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_dlipw_ph74_liter_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -305,16 +263,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "freely_dissolved_fraction",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -325,6 +273,96 @@
                   "hlLabel": "Density:\n1.635 kg/liter\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "mw_g_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "solubility_h2o_mol_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "henry_coefficient_atm_m3_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kaw_kh_rt",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_acid",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_base",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kow_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_dlipw_ph74_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "freely_dissolved_fraction",
+                  "color": "#007cc1"
             }
       },
       {
@@ -349,16 +387,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - D. rerio",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -367,16 +395,6 @@
                   "value": "52963.2954890455",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Daphnia",
-                  "color": "#AB886D"
             }
       },
       {
@@ -391,16 +409,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - C. elegans",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -409,16 +417,6 @@
                   "value": "10828.377181331",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Xenopus",
-                  "color": "#AB886D"
             }
       },
       {
@@ -433,16 +431,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Drosophila",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -451,16 +439,6 @@
                   "value": "0.0489279369693309",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Cells",
-                  "color": "#AB886D"
             }
       },
       {
@@ -480,6 +458,66 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
+                  "target": "Baseline - D. rerio",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Daphnia",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - C. elegans",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Xenopus",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Drosophila",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Cells",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
                   "target": "baseline_cells_generic_micromole_liter_free_ec10",
                   "color": "#AB886D"
             }
@@ -487,25 +525,45 @@
       {
             "group": "nodes",
             "data": {
-                  "role": "category_tox_class",
-                  "id": "genotoxicity",
-                  "label": "genotoxicity",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "role": "moa",
+                  "id": "moa_drugbank",
+                  "label": "DrugBank:\nA\nsurface coati...",
+                  "fullLabel": "DrugBank:\nA surface coating\nof benzophenones decreases\nthe amount of UV radiation\nabsorbed by the skin by limiting\nthe total amount of energy\nthat reaches the skin [L2663].\n\nBenzophenone\nsunscreens, applied topically,\nprotect the skin from these\nharmful effects of ultraviolet\nlight by chemically absorbing\nlight energy (photons).\nAs this occurs, the benzophenone\nmolecule becomes activated\nto higher energy levels.\nAs the excited molecule returns\nto its ground state, the energy\nis released in the form of\nthermal energy. The hydroxyl\ngroup in the ortho position\nto the carbonyl group is believed\nto be a structural requirement\nfor the benzophenones' absorption\nof UV light. This structural\narrangement also contributes\nto the electronic stability\nof the molecule.  Benzophenones\nabsorb energy throughout\nthe UV range, although the\nmaximum  UV absorbance is\nbetween 284 and 287 nm for\nthe 2-hydroxybenzophenones\n[L2669].",
+                  "value": "A surface coating of benzophenones decreases the amount of UV radiation absorbed by the skin by limiting the total amount of energy that reaches the skin [L2663].\n\nBenzophenone sunscreens, applied topically, protect the skin from these harmful effects of ultraviolet light by chemically absorbing light energy (photons). As this occurs, the benzophenone molecule becomes activated to higher energy levels. As the excited molecule returns to its ground state, the energy is released in the form of thermal energy. The hydroxyl group in the ortho position to the carbonyl group is believed to be a structural requirement for the benzophenones' absorption of UV light. This structural arrangement also contributes to the electronic stability of the molecule.  Benzophenones absorb energy throughout the UV range, although the maximum  UV absorbance is between 284 and 287 nm for the 2-hydroxybenzophenones [L2669].",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_t3db",
+                  "label": "T3DB:\nn/a",
+                  "fullLabel": "T3DB:\nn/a",
+                  "value": "NA",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
             "group": "edges",
             "data": {
-                  "role": "category_tox_class",
+                  "role": "moa",
                   "subrole": "attribute",
-                  "id": "PTX223_genotoxicity",
-                  "source": "Toxicity",
-                  "target": "genotoxicity",
-                  "color": "#135D66",
-                  "score": 3.36,
-                  "n_refs": 1,
-                  "ref_list": "27521641"
+                  "source": "Mechanism of Action",
+                  "target": "moa_drugbank",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_t3db",
+                  "color": "#9a999a"
             }
       },
       {
@@ -523,10 +581,32 @@
             "data": {
                   "role": "category_use_class",
                   "subrole": "attribute",
-                  "id": "PTX223_Personal care products",
                   "source": "Use",
                   "target": "Personal care products",
                   "color": "#B03052"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "genotoxicity",
+                  "label": "genotoxicity",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "genotoxicity",
+                  "color": "#135D66",
+                  "score": 3.36,
+                  "n_refs": 1,
+                  "ref_list": "27521641"
             }
       }
 ]

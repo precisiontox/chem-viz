@@ -32,6 +32,18 @@ def format_float(value):
         return value
 
 
+def read_identifier_file(file_path):
+    df = pd.read_excel(
+        file_path,
+        usecols="A:F",
+        skiprows=0,
+        index_col=None,
+    ).rename(columns={"Prec.Tox code": "ptx_code", "PREFERRED_NAME": "chem_name"})
+    df["label"] = df["ptx_code"] + " | " + df["chem_name"]
+    df = df[df["chem_name"].notna()]
+    return df
+
+
 def read_drugbank_file(file_path):
     target_cols = ["Prec.Tox code", "DrugBank ID", "organism", "Chemical Target",
                    "Chemical Effect at Target", "known_action", "toxicity"]
@@ -42,8 +54,26 @@ def read_drugbank_file(file_path):
         index_col=None,
         sheet_name="In DrugBank"
     ).rename(columns={"Prec.Tox code": "ptx_code", "DrugBank ID": "drugbank_id"})
-
     return df_drugbank
+
+
+def read_useclass_file(file_path):
+    df = pd.read_excel(
+        file_path,
+        usecols="A,G",
+        skiprows=0,
+        index_col=None,
+    ).rename(columns={"Prec.Tox code": "ptx_code", "Category": "use_class"})
+    return df
+
+
+def read_toxclass_file(file_path, df_identifier):
+    df = pd.read_csv(
+        file_path,
+        sep="\t", 
+    )
+    df = df[df["ptx_code"].isin(df_identifier["ptx_code"].unique())]
+    return df
 
 
 def read_properties_file(file_path):
@@ -269,26 +299,14 @@ def create_general_network(
         json.dump(json_elements, file_out, indent=6)
 
 
-def create_single_chemical_network(
-    chem_values: dict,  df_tox: pd.DataFrame, df_use: pd.DataFrame, output_file: str
-    ):
-    """ Create nodes & edges for network containing a single chemical in the 
-    center and its properties as nodes around it.
-    """
-    json_elements = []
-
-    # Start list of network elements with the chemical node
-    json_elements.append(get_chemical_node(chem_values))
-
-    # Add attributes main nodes
-    attributes = ["Physico-chemical properties", "Use", "Toxicity", "Baseline Toxicity"]
-    shapes = ["round-diamond", "round-rectangle", "round-pentagon", "round-hexagon"]
+def get_attribute_nodes_edges(chem_values: dict):
+    attributes = ["Physico-chemical properties", "Use", "Toxicity", 
+                 "Baseline Toxicity", "Mechanism of Action", "Targets"]
+    shapes = ["round-diamond", "round-rectangle", "round-pentagon", 
+             "round-hexagon", "round-heptagon", "round-tag"]
+    network_elements = []
     for attr, shape in zip(attributes, shapes):
         label = attr
-        # if attr == "Physico-chemical properties":
-        #     label = "Physico-chemical\nproperties"
-        # elif attr == "Baseline Toxicity":
-        #     label = "Baseline\nToxicity"
         label = wrap_label(attr, 10)
         attr_node = {
             "group": "nodes",
@@ -309,10 +327,15 @@ def create_single_chemical_network(
                 "target": attr
             }
         }
-        json_elements.append(attr_node)
-        json_elements.append(attr_edge)
+        network_elements.append(attr_node)
+        network_elements.append(attr_edge)
+    return network_elements
 
-    # Add physico-chemical properties nodes and edges
+
+def get_phychem_property_nodes_edges(chem_values: dict):
+    nodes = []
+    edges = []
+    not_empty = False
     for prop in [col for col in property_cols if "source" not in col]:
         label = labels[prop] if prop in labels else prop
         unit = units[prop] if prop in units else ""
@@ -325,6 +348,7 @@ def create_single_chemical_network(
             combined_label = label+":\n"+str(chem_values[prop])+" "+unit
             color_bg = colors["Physico-chemical properties_bg"]
             color_border = colors["Physico-chemical properties_border"]
+            not_empty = True
         hl_label = combined_label
         if source != "":
             hl_label = combined_label+"\nSource: "+source
@@ -351,10 +375,18 @@ def create_single_chemical_network(
                 "color": color_border
             }
         }
-        json_elements.append(prop_node)
-        json_elements.append(prop_edge)
+        nodes.append(prop_node)
+        edges.append(prop_edge)
+    if not_empty:
+        return nodes + edges
+    else:
+        return []
 
-    # Add baseline toxicity nodes and edges
+
+def get_baseline_tox_nodes_edges(chem_values: dict):
+    base_nodes = []
+    base_edges = []
+    base_not_empty = False
     for base in [col for col in chem_values.keys() if "aseline" in col]:
         if str(chem_values[base]) == "NA":
             label = labels[base].replace("Baseline Toxicity - ","")+":\nn/a"
@@ -364,6 +396,7 @@ def create_single_chemical_network(
             label = labels[base].replace("Baseline Toxicity - ","")+":\n"+str(chem_values[base])
             color_bg = colors["Baseline Toxicity_bg"]
             color_border = colors["Baseline Toxicity_border"]
+            base_not_empty = True
         base_node = {
             "group": "nodes",
             "data": {
@@ -385,119 +418,155 @@ def create_single_chemical_network(
                 "color": color_border
             }
         }
-        json_elements.append(base_node)
-        json_elements.append(base_edge)
+        base_nodes.append(base_node)
+        base_edges.append(base_edge)
+    if base_not_empty:
+        return base_nodes + base_edges
+    else:
+        return []
 
-    # Add toxicity nodes and edges
-    tox_classes = df_tox["tox_class"].unique()
-    use_classes = df_use["use_class"].unique()
-    color_dic = {}
-    for categories, cat_name, attr, df, palette in zip(
-            [tox_classes, use_classes], 
-            ["tox_class", "use_class"],
-            ["Toxicity", "Use"], 
-            [df_tox, df_use],
-            [palette_1, palette_2]
-        ):
-        for cat, color in zip(categories, palette):
-            color_dic[cat] = color
-            json_elements.append(
-                {
-                    "group": "nodes",
-                    "data": {
-                        "role": "category_"+cat_name,
-                        "id": cat,
-                        "label": wrap_label(cat, 10),
-                        "colorBg": colors[attr+"_bg"],
-                        "colorBorder": colors[attr+"_border"]
-                    }
-                }
-            )
 
-        for index, row in df[df["ptx_code"].notna()].iterrows():
-            if cat_name == "tox_class":
+def get_mechanism_of_action_nodes_edges(chem_values: dict):
+    moa_nodes = []
+    moa_edges = []
+    moa_not_empty = False
+    for moa_col in [col for col in chem_values.keys() if "moa_" in col]:
+        if str(chem_values[moa_col]) == "NA":
+            label = labels[moa_col].replace("Mechanism of Action (","").replace(")","")+":\nn/a"
+            color_bg = "#ddd"
+            color_border = "#9a999a"
+        else:
+            label = labels[moa_col].replace("Mechanism of Action (","").replace(")","")+":\n"+str(chem_values[moa_col])
+            color_bg = colors["Mechanism of Action_bg"]
+            color_border = colors["Mechanism of Action_border"]
+            moa_not_empty = True
+        full_label = wrap_label(label, 20)
+        label = truncate_label(label)
+        label = wrap_label(label, 10)
+        moa_node = {
+            "group": "nodes",
+            "data": {
+                "role": "moa",
+                "id": moa_col,
+                "label": label,
+                "fullLabel": full_label,
+                "value": chem_values[moa_col],
+                "colorBg": color_bg,
+                "colorBorder": color_border
+            }
+        }
+        moa_edge = {
+            "group": "edges",
+            "data": {
+                "role": "moa",
+                "subrole": "attribute",
+                "source": "Mechanism of Action",
+                "target": moa_col,
+                "color": color_border
+            }
+        }
+        moa_nodes.append(moa_node)
+        moa_edges.append(moa_edge)
+    if moa_not_empty:
+        return moa_nodes + moa_edges
+    else:
+        return []
 
-                json_elements.append(
-                    {
-                        "group": "edges",
-                        "data": {
-                            "role": "category_"+cat_name,
-                            "subrole": "attribute",
-                            "id": row["ptx_code"]+"_"+row[cat_name],
-                            "source": attr,
-                            "target": row[cat_name],
-                            "color": colors["Toxicity_border"],
-                            "score": row["score"],
-                            "n_refs": row["n_refs"],
-                            "ref_list": row["ref_list"]
-                        }
-                    }
-                )
-            else:
-                json_elements.append(
-                    {
-                        "group": "edges",
-                        "data": {
-                            "role": "category_"+cat_name,
-                            "subrole": "attribute",
-                            "id": row["ptx_code"] + "_" + row[cat_name],
-                            "source": attr,
-                            "target": row[cat_name],
-                            "color": colors["Use_border"]
-                        }
-                    }
-                )
 
+def get_use_class_nodes_edges(df_use):
+    use_nodes = []
+    use_edges = []
+    
+    for index, row in df_use.iterrows():
+        use_node = {
+            "group": "nodes",
+            "data": {
+                "role": "category_use_class",
+                "id": row["use_class"],
+                "label": wrap_label(row["use_class"], 10),
+                "colorBg": colors["Use_bg"],
+                "colorBorder": colors["Use_border"]
+            }
+        }            
+        use_edge = {
+            "group": "edges",
+            "data": {
+                "role": "category_use_class",
+                "subrole": "attribute",
+                "source": "Use",
+                "target": row["use_class"],
+                "color": colors["Use_border"]
+            }
+        }
+        use_nodes.append(use_node)
+        use_edges.append(use_edge)
+    return use_nodes + use_edges
+
+
+def get_toxicity_class_nodes_edges(df_tox):
+    tox_nodes = []
+    tox_edges = []
+    for index, row in df_tox.iterrows():
+        tox_node = {
+            "group": "nodes",
+            "data": {
+                "role": "category_tox_class",
+                "id": row["tox_class"],
+                "label": wrap_label(row["tox_class"], 10),
+                "colorBg": colors["Toxicity_bg"],
+                "colorBorder": colors["Toxicity_border"]
+            }
+        }
+        tox_edge = {
+            "group": "edges",
+            "data": {
+                "role": "category_tox_class",
+                "subrole": "attribute",
+                "source": "Toxicity",
+                "target": row["tox_class"],
+                "color": colors["Toxicity_border"],
+                "score": row["score"],
+                "n_refs": row["n_refs"],
+                "ref_list": row["ref_list"]
+            }
+        }
+        tox_nodes.append(tox_node)
+        tox_edges.append(tox_edge)
+    return tox_nodes + tox_edges
+
+
+def create_single_chemical_network(
+    chem_values: dict,  df_tox: pd.DataFrame, df_use: pd.DataFrame, output_file: str
+    ):
+    """ Create nodes & edges for network containing a single chemical in the 
+    center and its properties as nodes around it.
+    """
+    json_elements = []
+
+    # Start list of network elements with the chemical node
+    json_elements.append(get_chemical_node(chem_values))
+
+    # Add attributes main nodes
+    json_elements += get_attribute_nodes_edges(chem_values)
+
+    # Add physico-chemical properties nodes and edges
+    json_elements += get_phychem_property_nodes_edges(chem_values)
+
+    # Add baseline toxicity nodes and edges
+    json_elements += get_baseline_tox_nodes_edges(chem_values)
+
+    # Add mechanism of action nodes and edges
+    json_elements += get_mechanism_of_action_nodes_edges(chem_values)
+
+    # Add use & toxicity nodes and edges
+    json_elements += get_use_class_nodes_edges(df_use)
+    json_elements += get_toxicity_class_nodes_edges(df_tox)
+
+    # Export network elements as JSON
     with open(output_file, 'wt') as out:
         json.dump(json_elements, out, indent=6)
 
     return
-
-
-# def create_single_chemical_network(df_chemlist, df_drugbank, output_file):
-#     test_set = ["PTX062"]# "PTX103"]
-#     json_ele = add_chemical_elements(df_chemlist, restrict_to=test_set, json_elements=[])
-#     id_dict = {}
-
-#     for index, row in df_drugbank.iterrows():
-#         if row["ptx_code"] not in test_set:
-#             continue
-#         if row["drugbank_id"] not in id_dict:
-#             id_dict[row["drugbank_id"]] = 1
-#         else:
-#             id_dict[row["drugbank_id"]] += 1
-#         json_ele.append(
-#             {
-#                 "group": "nodes",
-#                 "data": {
-#                     "role": "drugbank",
-#                     "id": row["drugbank_id"]+"_"+str(id_dict[row["drugbank_id"]]),
-#                     "drugbank_id": row["drugbank_id"],
-#                     "organism": row["organism"],
-#                     "chem_target": row["Chemical Target"],
-#                     "chem_effect": row["Chemical Effect at Target"],
-#                     "known_action": row["known_action"],
-#                     "toxicity": row["toxicity"]
-#                 }
-#             }
-#         )
-#         json_ele.append(
-#             {
-#                 "group": "edges",
-#                 "data": {
-#                     "role": "drugbank",
-#                     "source": row["ptx_code"],
-#                     "target": row["drugbank_id"] + "_" + str(id_dict[row["drugbank_id"]]),
-#                     "chem_effect": row["Chemical Effect at Target"],
-
-#                 }
-#             }
-#         )
-
-#     with open(output_file, 'wt') as out:
-#         json.dump(json_ele, out, indent=6)
-
-#     return json_ele
 
 
 def export_chemical_table(df):
@@ -533,7 +602,7 @@ def export_chemical_table(df):
 chem_ide_file = "Manuscript Chemicals - Identifiers.xlsx"
 aop_file = "Manuscript Chemicals - AOP.xlsx"
 drugbank_file = "Manuscript Chemicals - DrugBank.xlsx"
-toxclass_file = "otox.txt.gz"
+toxclass_file = "toxicity_categories.tsv"
 use_file = "Manuscript Chemicals - Identifiers_with_category.xlsx"
 properties_file = "Visulaization P-Chem Dataset ver1.xlsx"
 baseline_file = "Visualization Data - Baseline Toxicity.xlsx"
@@ -553,6 +622,8 @@ labels = {
     "chem_name": "Compound name",
     "chem_name_user": "Compound name (user)",
     "drugbank_id": "DrugBank ID",
+    "use_class": "Use Category",
+    "tox_class": "Toxicity Category",
     "mw_g_mol": "Molecular Weight",
     "solubility_h2o_mol_liter": "Solubility (H2O)",
     "source_solubility_h2o": "Solubility (H2O) source",
@@ -596,7 +667,11 @@ colors = {
     "Toxicity_border": "#135D66",
     "Toxicity_bg": "#77B0AA",
     "Baseline Toxicity_border": "#AB886D",
-    "Baseline Toxicity_bg": "#D6C0B3"
+    "Baseline Toxicity_bg": "#D6C0B3",
+    "Mechanism of Action_border": "#d4ac0d",
+    "Mechanism of Action_bg": "#F4D35E",
+    "Targets_border": "#6A1E55",
+    "Targets_bg": "#A64D79"
 }
 sources = {
     "solubility_h2o_mol_liter": "source_solubility_h2o",
@@ -609,48 +684,60 @@ sources = {
     "density_kg_liter": "source_density"
 }
 
-# Read DrugBank file
-df_drugb = read_drugbank_file(drugbank_file)
-
-# Read properties file
-df_prop, property_cols = read_properties_file(properties_file)
-
-# Read Baseline Toxicity file
-df_base = read_baseline_tox_file(baseline_file)
-
-# Read Target & MoA file (DrugBank)
-df_moa_drugbank = read_drugbank_moa_file(drugbank_moa_file)
-
-# Read Target & MoA file (T3Db)
-df_moa_t3db, df_target_t3db = read_t3db_moa_file(t3db_moa_file)
 
 # Read Identifiers file
-df_ide = pd.read_excel(
-    chem_ide_file,
-    usecols="A:F",
-    skiprows=0,
-    index_col=None,
-).rename(columns={"Prec.Tox code": "ptx_code", "PREFERRED_NAME": "chem_name"})
+df_ide = read_identifier_file(chem_ide_file)
+
+# Read DrugBank file
+df_drugb = read_drugbank_file(drugbank_file)
 df_ide = df_ide.merge(
         df_drugb[["ptx_code", "drugbank_id"]].drop_duplicates(),
         on=["ptx_code"],
         how="left"
 )
+
+# Read 'Use' class file
+df_useclass = read_useclass_file(use_file)
+df_ide = df_ide.merge(
+    df_useclass.groupby('ptx_code').agg({'use_class': '; '.join}).reset_index(),
+    on=["ptx_code"],
+    how="left"
+)
+
+# Read Toxicity Class file ### Apply filtering on score/n_refs
+df_toxclass = read_toxclass_file(toxclass_file, df_ide)
+df_ide = df_ide.merge(
+    df_toxclass.groupby('ptx_code').agg({'tox_class': '; '.join}).reset_index(),
+    on=["ptx_code"],
+    how="left"
+)
+
+# Read Physiochemical Properties file
+df_prop, property_cols = read_properties_file(properties_file)
 df_ide = df_ide.merge(
     df_prop,
     on=["ptx_code"],
     how="left"
 )
+
+# Read Baseline Toxicity file
+df_base = read_baseline_tox_file(baseline_file)
 df_ide = df_ide.merge(
     df_base,
     on=["ptx_code"],
     how="left"
 )
+
+# Read Target & MoA file (DrugBank)
+df_moa_drugbank = read_drugbank_moa_file(drugbank_moa_file)
 df_ide = df_ide.merge(
     df_moa_drugbank,
     on=["ptx_code"],
     how="left"
 )
+
+# Read Target & MoA file (T3Db)
+df_moa_t3db, df_target_t3db = read_t3db_moa_file(t3db_moa_file)
 df_ide = df_ide.merge(
     df_moa_t3db.groupby('ptx_code').agg({'moa_t3db': '; '.join}).reset_index(),
     on=["ptx_code"],
@@ -661,10 +748,6 @@ df_ide = df_ide.merge(
     on=["ptx_code"],
     how="left"
 )
-df_ide = df_ide.fillna("NA")
-df_ide["label"] = df_ide["ptx_code"] + " | " + df_ide["chem_name_user"]
-all_ptx_codes = df_ide["ptx_code"].unique().tolist()
-
 
 # Read AOP file
 # df_aop = read_aop_file(aop_file)
@@ -672,38 +755,7 @@ all_ptx_codes = df_ide["ptx_code"].unique().tolist()
 #             lambda row: {"title": row["AOP_title"], "type": row["Type"]}, axis=1
 #             ).to_dict()
 
-# Read Toxicity Class file
-df_toxclass = pd.read_csv(toxclass_file, sep="\t", header=None,
-                          names=["chem_name", "tox_class", "score", "n_refs", "ref_list"])
-df_toxclass["chem_name"] = df_toxclass["chem_name"].str.replace("_", " ")
-### WARNING: not all chem_name in df_toxclass can be matched. Check manually
-df_toxclass = df_toxclass.merge(
-        df_ide[["ptx_code", "chem_name"]],
-        on=["chem_name"],
-        how="left"
-)
-# Keep entries where ptx_code is also present in df_ide
-# print(len(df_toxclass))
-# df_toxclass.to_csv("toxclass_test1.csv", index=False)
-# print( df_toxclass[~df_toxclass["ptx_code"].isin(all_ptx_codes)] )
-# df_toxclass = df_toxclass[df_toxclass["ptx_code"].isin(all_ptx_codes)]
-# print(len(df_toxclass))
-# df_toxclass.to_csv("toxclass_test2.csv", index=False)
-# sys.exit()
-
-# Keep only toxicity with highest number of references per chemical
-# idx = df_toxclass.groupby('chem_name')['n_refs'].idxmax()
-# df_toxclass = df_toxclass.loc[idx]
-# df_toxclass = df_toxclass.reset_index(drop=True)
-df_toxclass.to_csv("toxclass.csv", index=False)
-
-# Read 'Use' class file
-df_useclass = pd.read_excel(
-    use_file,
-    usecols="A,G",
-    skiprows=0,
-    index_col=None,
-).rename(columns={"Prec.Tox code": "ptx_code", "Category": "use_class"})
+df_ide = df_ide.fillna("NA")
 
 
 # Export chemical table

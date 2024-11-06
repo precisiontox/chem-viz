@@ -110,6 +110,44 @@
       {
             "group": "nodes",
             "data": {
+                  "role": "attribute",
+                  "id": "Mechanism of Action",
+                  "label": "Mechanism of\nAction",
+                  "colorBorder": "#d4ac0d",
+                  "colorBg": "#F4D35E",
+                  "shape": "round-heptagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX039",
+                  "target": "Mechanism of Action"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Targets",
+                  "label": "Targets",
+                  "colorBorder": "#6A1E55",
+                  "colorBg": "#A64D79",
+                  "shape": "round-tag"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX039",
+                  "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
                   "role": "prop",
                   "id": "mw_g_mol",
                   "label": "Molecular Weight",
@@ -118,16 +156,6 @@
                   "hlLabel": "Molecular Weight:\n296.1524 g/mol",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "mw_g_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -144,16 +172,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "solubility_h2o_mol_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -164,16 +182,6 @@
                   "hlLabel": "Henry Coefficient:\n1.5686e-10 atm*m3/mol\nSource: COMPTOX (Opera)",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -190,16 +198,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -210,16 +208,6 @@
                   "hlLabel": "pKa (acid):\n4.07 \nSource: Drillia et al. 2005",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_acid",
-                  "color": "#007cc1"
             }
       },
       {
@@ -236,16 +224,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_base",
-                  "color": "#9a999a"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -256,16 +234,6 @@
                   "hlLabel": "Log Kow:\n4.51 \nSource: Avdeef et al. 1997",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kow_liter_liter",
-                  "color": "#007cc1"
             }
       },
       {
@@ -282,16 +250,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_dlipw_ph74_liter_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -305,16 +263,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "freely_dissolved_fraction",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -325,6 +273,96 @@
                   "hlLabel": "Density:\n1.447 kg/liter\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "mw_g_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "solubility_h2o_mol_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "henry_coefficient_atm_m3_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kaw_kh_rt",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_acid",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_base",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kow_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_dlipw_ph74_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "freely_dissolved_fraction",
+                  "color": "#007cc1"
             }
       },
       {
@@ -349,16 +387,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - D. rerio",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -367,16 +395,6 @@
                   "value": "226.0",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Daphnia",
-                  "color": "#AB886D"
             }
       },
       {
@@ -391,16 +409,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - C. elegans",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -409,16 +417,6 @@
                   "value": "184.798638568366",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Xenopus",
-                  "color": "#AB886D"
             }
       },
       {
@@ -433,16 +431,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Drosophila",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -451,16 +439,6 @@
                   "value": "0.00441855797246566",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Cells",
-                  "color": "#AB886D"
             }
       },
       {
@@ -480,8 +458,132 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
+                  "target": "Baseline - D. rerio",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Daphnia",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - C. elegans",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Xenopus",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Drosophila",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Cells",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
                   "target": "baseline_cells_generic_micromole_liter_free_ec10",
                   "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_drugbank",
+                  "label": "DrugBank:\nDiclofenac\ninhi...",
+                  "fullLabel": "DrugBank:\nDiclofenac inhibits\ncyclooxygenase-1 and -2,\nthe enzymes responsible\nfor production of prostaglandin\n(PG) G<sub>2</sub> which\nis the precursor to other\nPGs.[label,T116] These\nmolecules have broad activity\nin pain and inflammation\nand the inhibition of their\nproduction is the common\nmechanism linking each effect\nof diclofenac.\n\nPGE<sub>2</sub>\nis the primary PG involved\nin modulation of nociception.[A179023]\nIt mediates peripheral sensitization\nthrough a variety of effects.[T116,A179023]\nPGE<sub>2</sub> activates\nthe G<sub>q</sub>-coupled\nEP<sub>1</sub> receptor\nleading to increased activity\nof the inositol trisphosphate/phospholipase\nC pathway. Activation of\nthis pathway releases intracellular\nstores of calcium which directly\nreduces action potential\nthreshold and activates\nprotein kinase C (PKC) which\ncontributes to several indirect\nmechanisms. PGE<sub>2</sub>\nalso activates the EP<sub>4</sub>\nreceptor, coupled to G<sub>s</sub>,\nwhich activates the adenylyl\ncyclase/protein kinase\nA (AC/PKA) signaling pathway.\nPKA and PKC both contribute\nto the potentiation of transient\nreceptor potential cation\nchannel subfamily V member\n1 (TRPV1) potentiation,\nwhich increases sensitivity\nto heat stimuli. They also\nactivate tetrodotoxin-resistant\nsodium channels and inhibit\ninward potassium currents.\nPKA further contributes\nto the activation of the P2X3\npurine receptor and sensitization\nof T-type calcium channels.\nThe activation and sensitization\nof depolarizing ion channels\nand inhibition of inward\npotassium currents serve\nto reduce the intensity of\nstimulus necessary to generate\naction potentials in nociceptive\nsensory afferents. PGE<sub>2</sub>\nact via EP<sub>3</sub> to\nincrease sensitivity to\nbradykinin and via EP<sub>2</sub>\nto further increase heat\nsensitivity. Central sensitization\noccurs in the dorsal horn\nof the spinal cord and is mediated\nby the EP<sub>2</sub> receptor\nwhich couples to G<sub>s</sub>.\nPre-synaptically, this\nreceptor increases the release\nof pro-nociceptive neurotransmitters\nglutamate, CGRP, and substance\nP. Post-synaptically it\nincreases the activity of\nAMPA and NMDA receptors and\nproduces inhibition of inhibitory\nglycinergic neurons. Together\nthese lead to a reduced threshold\nof activating, allowing\nlow intensity stimuli to\ngenerate pain signals. PGI<sub>2</sub>\nis known to play a role via\nits G<sub>s</sub>-coupled\nIP receptor although the\nmagnitude of its contribution\nvaries. It has been proposed\nto be of greater importance\nin painful inflammatory\nconditions such as arthritis.\nBy limiting sensitization,\nboth peripheral and central,\nvia these pathways NSAIDs\ncan effectively reduce inflammatory\npain.\n\nPGI<sub>2</sub>\nand PGE<sub>2</sub> contribute\nto acute inflammation via\ntheir IP and EP<sub>2</sub>\nreceptors.[T116,A179044]\nSimilarly to \u00ce\u00b2 adrenergic\nreceptors these are G<sub>s</sub>-coupled\nand mediate vasodilation\nthrough the AC/PKA pathway.\nPGE<sub>2</sub> also contributes\nby increasing leukocyte\nadhesion to the endothelium\nand attracts the cells to\nthe site of injury.[T116]\nPGD<sub>2</sub> plays a\nrole in the activation of\nendothelial cell release\nof cytokines through its\nDP<sub>1</sub> receptor.[A179044]\nPGI<sub>2</sub> and PGE<sub>2</sub>\nmodulate T-helper cell activation\nand differentiation through\nIP, EP<sub>2</sub>, and\nEP<sub>4</sub> receptors\nwhich is believed to be an\nimportant activity in the\npathology of arthritic conditions.\nBy limiting the production\nof these PGs at the site of\ninjury, NSAIDs can reduce\ninflammation.\n\nPGE<sub>2</sub>\ncan cross the blood-brain\nbarrier and act on excitatory\nG<sub>q</sub> EP<sub>3</sub>\nreceptors on thermoregulatory\nneurons in the hypothalamus.[T116]\nThis activation triggers\nan increase in heat-generation\nand a reduction in heat-loss\nto produce a fever. NSAIDs\nprevent the generation of\nPGE<sub>2</sub> thereby\nreducing the activity of\nthese neurons.",
+                  "value": "Diclofenac inhibits cyclooxygenase-1 and -2, the enzymes responsible for production of prostaglandin (PG) G<sub>2</sub> which is the precursor to other PGs.[label,T116] These molecules have broad activity in pain and inflammation and the inhibition of their production is the common mechanism linking each effect of diclofenac.\n\nPGE<sub>2</sub> is the primary PG involved in modulation of nociception.[A179023] It mediates peripheral sensitization through a variety of effects.[T116,A179023] PGE<sub>2</sub> activates the G<sub>q</sub>-coupled EP<sub>1</sub> receptor leading to increased activity of the inositol trisphosphate/phospholipase C pathway. Activation of this pathway releases intracellular stores of calcium which directly reduces action potential threshold and activates protein kinase C (PKC) which contributes to several indirect mechanisms. PGE<sub>2</sub> also activates the EP<sub>4</sub> receptor, coupled to G<sub>s</sub>, which activates the adenylyl cyclase/protein kinase A (AC/PKA) signaling pathway. PKA and PKC both contribute to the potentiation of transient receptor potential cation channel subfamily V member 1 (TRPV1) potentiation, which increases sensitivity to heat stimuli. They also activate tetrodotoxin-resistant sodium channels and inhibit inward potassium currents. PKA further contributes to the activation of the P2X3 purine receptor and sensitization of T-type calcium channels. The activation and sensitization of depolarizing ion channels and inhibition of inward potassium currents serve to reduce the intensity of stimulus necessary to generate action potentials in nociceptive sensory afferents. PGE<sub>2</sub> act via EP<sub>3</sub> to increase sensitivity to bradykinin and via EP<sub>2</sub> to further increase heat sensitivity. Central sensitization occurs in the dorsal horn of the spinal cord and is mediated by the EP<sub>2</sub> receptor which couples to G<sub>s</sub>. Pre-synaptically, this receptor increases the release of pro-nociceptive neurotransmitters glutamate, CGRP, and substance P. Post-synaptically it increases the activity of AMPA and NMDA receptors and produces inhibition of inhibitory glycinergic neurons. Together these lead to a reduced threshold of activating, allowing low intensity stimuli to generate pain signals. PGI<sub>2</sub> is known to play a role via its G<sub>s</sub>-coupled IP receptor although the magnitude of its contribution varies. It has been proposed to be of greater importance in painful inflammatory conditions such as arthritis. By limiting sensitization, both peripheral and central, via these pathways NSAIDs can effectively reduce inflammatory pain.\n\nPGI<sub>2</sub> and PGE<sub>2</sub> contribute to acute inflammation via their IP and EP<sub>2</sub> receptors.[T116,A179044] Similarly to \u00ce\u00b2 adrenergic receptors these are G<sub>s</sub>-coupled and mediate vasodilation through the AC/PKA pathway. PGE<sub>2</sub> also contributes by increasing leukocyte adhesion to the endothelium and attracts the cells to the site of injury.[T116] PGD<sub>2</sub> plays a role in the activation of endothelial cell release of cytokines through its DP<sub>1</sub> receptor.[A179044] PGI<sub>2</sub> and PGE<sub>2</sub> modulate T-helper cell activation and differentiation through IP, EP<sub>2</sub>, and EP<sub>4</sub> receptors which is believed to be an important activity in the pathology of arthritic conditions. By limiting the production of these PGs at the site of injury, NSAIDs can reduce inflammation.\n\nPGE<sub>2</sub> can cross the blood-brain barrier and act on excitatory G<sub>q</sub> EP<sub>3</sub> receptors on thermoregulatory neurons in the hypothalamus.[T116] This activation triggers an increase in heat-generation and a reduction in heat-loss to produce a fever. NSAIDs prevent the generation of PGE<sub>2</sub> thereby reducing the activity of these neurons.",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_t3db",
+                  "label": "T3DB:\nn/a",
+                  "fullLabel": "T3DB:\nn/a",
+                  "value": "NA",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_drugbank",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_t3db",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_use_class",
+                  "id": "Pharmaceutical",
+                  "label": "Pharmaceutical",
+                  "colorBg": "#D76C82",
+                  "colorBorder": "#B03052"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_use_class",
+                  "subrole": "attribute",
+                  "source": "Use",
+                  "target": "Pharmaceutical",
+                  "color": "#B03052"
             }
       },
       {
@@ -569,7 +671,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX039_hematotoxicity",
                   "source": "Toxicity",
                   "target": "hematotoxicity",
                   "color": "#135D66",
@@ -583,7 +684,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX039_ototoxicity",
                   "source": "Toxicity",
                   "target": "ototoxicity",
                   "color": "#135D66",
@@ -597,7 +697,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX039_neurotoxicity",
                   "source": "Toxicity",
                   "target": "neurotoxicity",
                   "color": "#135D66",
@@ -611,7 +710,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX039_hepatotoxicity",
                   "source": "Toxicity",
                   "target": "hepatotoxicity",
                   "color": "#135D66",
@@ -625,7 +723,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX039_immunotoxicity",
                   "source": "Toxicity",
                   "target": "immunotoxicity",
                   "color": "#135D66",
@@ -639,7 +736,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX039_genotoxicity",
                   "source": "Toxicity",
                   "target": "genotoxicity",
                   "color": "#135D66",
@@ -653,7 +749,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX039_nephrotoxicity",
                   "source": "Toxicity",
                   "target": "nephrotoxicity",
                   "color": "#135D66",
@@ -667,34 +762,12 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX039_cardiotoxicity",
                   "source": "Toxicity",
                   "target": "cardiotoxicity",
                   "color": "#135D66",
                   "score": 2.22,
                   "n_refs": 26,
                   "ref_list": "30905704,27589040,32023064,31359235,31916080,34157463,25753886,31342476,24228015,35590388,2220134,19920767,28593443,30636337,31150883,32413916,36961261,34499283,32278692,33110169,19462923,29364179,31520926,16785833,21092260,33617802"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_use_class",
-                  "id": "Pharmaceutical",
-                  "label": "Pharmaceutical",
-                  "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_use_class",
-                  "subrole": "attribute",
-                  "id": "PTX039_Pharmaceutical",
-                  "source": "Use",
-                  "target": "Pharmaceutical",
-                  "color": "#B03052"
             }
       }
 ]

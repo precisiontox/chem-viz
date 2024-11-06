@@ -6,7 +6,7 @@
                   "id": "PTX037",
                   "ptx_code": "PTX037",
                   "name": "valproic acid",
-                  "label": "PTX037 | valproic acid",
+                  "label": "PTX037 | Valproic acid",
                   "cas": "99-66-1",
                   "dtxsid": "DTXSID6023733",
                   "db_id": "DB00313",
@@ -110,6 +110,44 @@
       {
             "group": "nodes",
             "data": {
+                  "role": "attribute",
+                  "id": "Mechanism of Action",
+                  "label": "Mechanism of\nAction",
+                  "colorBorder": "#d4ac0d",
+                  "colorBg": "#F4D35E",
+                  "shape": "round-heptagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX037",
+                  "target": "Mechanism of Action"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Targets",
+                  "label": "Targets",
+                  "colorBorder": "#6A1E55",
+                  "colorBg": "#A64D79",
+                  "shape": "round-tag"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX037",
+                  "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
                   "role": "prop",
                   "id": "mw_g_mol",
                   "label": "Molecular Weight",
@@ -118,16 +156,6 @@
                   "hlLabel": "Molecular Weight:\n144.2132 g/mol",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "mw_g_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -144,16 +172,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "solubility_h2o_mol_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -164,16 +182,6 @@
                   "hlLabel": "Henry Coefficient:\n8.31548e-07 atm*m3/mol\nSource: COMPTOX (Opera)",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -190,16 +198,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -210,16 +208,6 @@
                   "hlLabel": "pKa (acid):\n4.52 \nSource: Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_acid",
-                  "color": "#007cc1"
             }
       },
       {
@@ -236,16 +224,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_base",
-                  "color": "#9a999a"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -256,16 +234,6 @@
                   "hlLabel": "Log Kow:\n2.75 \nSource: experimental Sangster et al. (1993)",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kow_liter_liter",
-                  "color": "#007cc1"
             }
       },
       {
@@ -282,16 +250,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_dlipw_ph74_liter_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -305,16 +263,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "freely_dissolved_fraction",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -325,6 +273,96 @@
                   "hlLabel": "Density:\n0.95 kg/liter\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "mw_g_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "solubility_h2o_mol_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "henry_coefficient_atm_m3_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kaw_kh_rt",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_acid",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_base",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kow_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_dlipw_ph74_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "freely_dissolved_fraction",
+                  "color": "#007cc1"
             }
       },
       {
@@ -349,16 +387,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - D. rerio",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -367,16 +395,6 @@
                   "value": "924.0",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Daphnia",
-                  "color": "#AB886D"
             }
       },
       {
@@ -391,16 +409,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - C. elegans",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -409,16 +417,6 @@
                   "value": "529.341971615207",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Xenopus",
-                  "color": "#AB886D"
             }
       },
       {
@@ -433,16 +431,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Drosophila",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -451,16 +439,6 @@
                   "value": "0.000594131844827602",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Cells",
-                  "color": "#AB886D"
             }
       },
       {
@@ -480,8 +458,132 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
+                  "target": "Baseline - D. rerio",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Daphnia",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - C. elegans",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Xenopus",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Drosophila",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Cells",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
                   "target": "baseline_cells_generic_micromole_liter_free_ec10",
                   "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_drugbank",
+                  "label": "DrugBank:\nThe\nexact mecha...",
+                  "fullLabel": "DrugBank:\nThe exact mechanisms\nby which valproate exerts\nit's effects on epilepsy,\nmigraine headaches, and\nbipolar disorder are unknown\nhowever several pathways\nexist which may contribute\nto the drug's action.\n\nValproate\nis known to inhibit succinic\nsemialdehyde dehydrogenase.[A177991]\nThis inhibition results\nin an increase in succinic\nsemialdehyde which acts\nas an inhibitor of GABA transaminase\nultimately reducing GABA\nmetabolism and increasing\nGABAergic neurotransmission.\nAs GABA is an inhibitory neurotransmitter,\nthis increase results in\nincreased inhibitory activity.[A457]\nA possible secondary contributor\nto cortical inhibition is\na direct suppression of voltage\ngated sodium channel activity\nand indirect suppression\nthrough effects on GABA.\n\nIt\nhas also been suggested that\nvalproate impacts the extracellular\nsignal-related kinase pathway\n(ERK).[A457] These effects\nappear to be dependent on\nmitogen-activated protein\nkinase (MEK) and result in\nthe phosphorylation of ERK1/2.\nThis activation increases\nexpression of several downstream\ntargets including ELK-1\nwith subsequent increases\nin c-fos, growth cone-associated\nprotein-43 which contributes\nto neural plasticity, B-cell\nlymphoma/leukaemia-2 which\nis an anti-apoptotic protein,\nand brain-derived neurotrophic\nfactor (BDNF) which is also\ninvolved in neural plasticity\nand growth. Increased neurogenesis\nand neurite growth due to\nvalproate are attributed\nto the effects of this pathway.\nAn additional downstream\neffect of increased BDNF\nexpression appears to be\nan increase in GABA<sub>A</sub>\nreceptors which contribute\nfurther to increased GABAergic\nactivity.[A177997]\n\nValproate\nexerts a non-competitive\nindirect inhibitory effect\non myo-inosital-1-phophate\nsynthetase.[A178000] This\nresults in reduced de novo\nsynthesis of inositol monophosphatase\nand subsequent inositol\ndepletion. It is unknown\nhow this contributed to valproate's\neffects on bipolar disorder\nbut [lithium] is known to\nexert a similar inositol-depleting\neffect.[A178003] Valproate\nexposure also appears to\nproduce down-regulation\nof protein kinase C proteins\n(PKC)-\u00ce\u00b1 and -\u00ce\u00b5 which are\npotentially related to bipolar\ndisorder as PKC is unregulated\nin the frontal cortex of bipolar\npatients. This is further\nsupported by a similar reduction\nin PKC with lithium.[A178015]\nThe inhibition of the PKC\npathway may also be a contributor\nto migraine prophylaxis.[A178018]\nMyristoylated alanine-rich\nC kinase substrate, a PKC\nsubstrate, is also downregulated\nby valproate and may contribute\nto changes in synaptic remodeling\nthrough effects on the cytoskeleton.[A178021]\n\nValproate\nalso appears to impact fatty\nacid metabolism.[A457]\nLess incorporation of fatty\nacid substrates in sterols\nand glycerolipids is thought\nto impact membrane fluidity\nand result in increased action\npotential threshold potentially\ncontributing to valproate's\nantiepileptic action.[A178024]\nValproate has been found\nto be a non-competitive direct\ninhibitor of brain microsomal\nlong-chain fatty acyl-CoA\nsynthetase.[A14708] Inhibition\nof this enzyme decreases\navailable arichidonyl-CoA,\na substrate in the production\nof inflammatory prostaglandins.\nIt is thought that this may\nbe a mechanism behind valproate's\nefficacy in migraine prophylaxis\nas migraines are routinely\ntreated with non-steroidal\nanti-inflammatory drugs\nwhich also inhibit prostaglandin\nproduction.\n\nFinally,\nvalproate acts as a direct\nhistone deactylase (HDAC)\ninhibitor.[A178030] Hyperacetylation\nof lysine residues on histones\npromoted DNA relaxation\nand allows for increased\ngene transcription. The\nscope of valproate's genomic\neffects is wide with 461 genes\nbeing up or down-regulated.[A178027]\nThe relation of these genomic\neffects to therapeutic value\nis not fully characterized\nhowever H3 and H4 hyperacetylation\ncorrelates with improvement\nof symptoms in bipolar patients.[A178033]\nHistone hyperacetylation\nat the BDNF gene, increasing\nBDNF expression, post-seizure\nis known to occur and is thought\nto be a neuroprotective mechanism\nwhich valproate may strengthen\nor prolong.[A178036] H3\nhyperacetylation is associated\nwith a reduction in glyceraldehyde-3-phosphate\ndehydrogenase, a pro-apoptotic\nenzyme, contributing further\nto valproate's neuroprotective\neffects.[A11814]",
+                  "value": "The exact mechanisms by which valproate exerts it's effects on epilepsy, migraine headaches, and bipolar disorder are unknown however several pathways exist which may contribute to the drug's action.\n\nValproate is known to inhibit succinic semialdehyde dehydrogenase.[A177991] This inhibition results in an increase in succinic semialdehyde which acts as an inhibitor of GABA transaminase ultimately reducing GABA metabolism and increasing GABAergic neurotransmission. As GABA is an inhibitory neurotransmitter, this increase results in increased inhibitory activity.[A457] A possible secondary contributor to cortical inhibition is a direct suppression of voltage gated sodium channel activity and indirect suppression through effects on GABA.\n\nIt has also been suggested that valproate impacts the extracellular signal-related kinase pathway (ERK).[A457] These effects appear to be dependent on mitogen-activated protein kinase (MEK) and result in the phosphorylation of ERK1/2. This activation increases expression of several downstream targets including ELK-1 with subsequent increases in c-fos, growth cone-associated protein-43 which contributes to neural plasticity, B-cell lymphoma/leukaemia-2 which is an anti-apoptotic protein, and brain-derived neurotrophic factor (BDNF) which is also involved in neural plasticity and growth. Increased neurogenesis and neurite growth due to valproate are attributed to the effects of this pathway. An additional downstream effect of increased BDNF expression appears to be an increase in GABA<sub>A</sub> receptors which contribute further to increased GABAergic activity.[A177997]\n\nValproate exerts a non-competitive indirect inhibitory effect on myo-inosital-1-phophate synthetase.[A178000] This results in reduced de novo synthesis of inositol monophosphatase and subsequent inositol depletion. It is unknown how this contributed to valproate's effects on bipolar disorder but [lithium] is known to exert a similar inositol-depleting effect.[A178003] Valproate exposure also appears to produce down-regulation of protein kinase C proteins (PKC)-\u00ce\u00b1 and -\u00ce\u00b5 which are potentially related to bipolar disorder as PKC is unregulated in the frontal cortex of bipolar patients. This is further supported by a similar reduction in PKC with lithium.[A178015] The inhibition of the PKC pathway may also be a contributor to migraine prophylaxis.[A178018] Myristoylated alanine-rich C kinase substrate, a PKC substrate, is also downregulated by valproate and may contribute to changes in synaptic remodeling through effects on the cytoskeleton.[A178021]\n\nValproate also appears to impact fatty acid metabolism.[A457] Less incorporation of fatty acid substrates in sterols and glycerolipids is thought to impact membrane fluidity and result in increased action potential threshold potentially contributing to valproate's antiepileptic action.[A178024] Valproate has been found to be a non-competitive direct inhibitor of brain microsomal long-chain fatty acyl-CoA synthetase.[A14708] Inhibition of this enzyme decreases available arichidonyl-CoA, a substrate in the production of inflammatory prostaglandins. It is thought that this may be a mechanism behind valproate's efficacy in migraine prophylaxis as migraines are routinely treated with non-steroidal anti-inflammatory drugs which also inhibit prostaglandin production.\n\nFinally, valproate acts as a direct histone deactylase (HDAC) inhibitor.[A178030] Hyperacetylation of lysine residues on histones promoted DNA relaxation and allows for increased gene transcription. The scope of valproate's genomic effects is wide with 461 genes being up or down-regulated.[A178027] The relation of these genomic effects to therapeutic value is not fully characterized however H3 and H4 hyperacetylation correlates with improvement of symptoms in bipolar patients.[A178033] Histone hyperacetylation at the BDNF gene, increasing BDNF expression, post-seizure is known to occur and is thought to be a neuroprotective mechanism which valproate may strengthen or prolong.[A178036] H3 hyperacetylation is associated with a reduction in glyceraldehyde-3-phosphate dehydrogenase, a pro-apoptotic enzyme, contributing further to valproate's neuroprotective effects.[A11814]",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_t3db",
+                  "label": "T3DB:\nValproic\nAcid binds...",
+                  "fullLabel": "T3DB:\nValproic Acid binds\nto and inhibits GABA transaminase.\nThe drug's anticonvulsant\nactivity may be related to\nincreased brain concentrations\nof gamma-aminobutyric acid\n(GABA), an inhibitory neurotransmitter\nin the CNS, by inhibiting\nenzymes that catabolize\nGABA or block the reuptake\nof GABA into glia and nerve\nendings. Valproic Acid may\nalso work by suppressing\nrepetitive neuronal firing\nthrough inhibition of voltage-sensitive\nsodium channels.",
+                  "value": "Valproic Acid binds to and inhibits GABA transaminase. The drug's anticonvulsant activity may be related to increased brain concentrations of gamma-aminobutyric acid (GABA), an inhibitory neurotransmitter in the CNS, by inhibiting enzymes that catabolize GABA or block the reuptake of GABA into glia and nerve endings. Valproic Acid may also work by suppressing repetitive neuronal firing through inhibition of voltage-sensitive sodium channels.",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_drugbank",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_t3db",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_use_class",
+                  "id": "Pharmaceutical",
+                  "label": "Pharmaceutical",
+                  "colorBg": "#D76C82",
+                  "colorBorder": "#B03052"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_use_class",
+                  "subrole": "attribute",
+                  "source": "Use",
+                  "target": "Pharmaceutical",
+                  "color": "#B03052"
             }
       },
       {
@@ -569,7 +671,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX037_ototoxicity",
                   "source": "Toxicity",
                   "target": "ototoxicity",
                   "color": "#135D66",
@@ -583,7 +684,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX037_hematotoxicity",
                   "source": "Toxicity",
                   "target": "hematotoxicity",
                   "color": "#135D66",
@@ -597,7 +697,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX037_immunotoxicity",
                   "source": "Toxicity",
                   "target": "immunotoxicity",
                   "color": "#135D66",
@@ -611,7 +710,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX037_hepatotoxicity",
                   "source": "Toxicity",
                   "target": "hepatotoxicity",
                   "color": "#135D66",
@@ -625,7 +723,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX037_neurotoxicity",
                   "source": "Toxicity",
                   "target": "neurotoxicity",
                   "color": "#135D66",
@@ -639,7 +736,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX037_genotoxicity",
                   "source": "Toxicity",
                   "target": "genotoxicity",
                   "color": "#135D66",
@@ -653,7 +749,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX037_nephrotoxicity",
                   "source": "Toxicity",
                   "target": "nephrotoxicity",
                   "color": "#135D66",
@@ -667,34 +762,12 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX037_cardiotoxicity",
                   "source": "Toxicity",
                   "target": "cardiotoxicity",
                   "color": "#135D66",
                   "score": 0.48,
                   "n_refs": 12,
                   "ref_list": "30503838,9255595,34674775,31004822,31661193,35747443,35064532,23837677,11276827,21731215,20930262,17352515"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_use_class",
-                  "id": "Pharmaceutical",
-                  "label": "Pharmaceutical",
-                  "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_use_class",
-                  "subrole": "attribute",
-                  "id": "PTX037_Pharmaceutical",
-                  "source": "Use",
-                  "target": "Pharmaceutical",
-                  "color": "#B03052"
             }
       }
 ]

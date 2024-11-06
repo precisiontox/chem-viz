@@ -6,7 +6,7 @@
                   "id": "PTX022",
                   "ptx_code": "PTX022",
                   "name": "caffeine",
-                  "label": "PTX022 | caffeine",
+                  "label": "PTX022 | Caffeine",
                   "cas": "58-08-2",
                   "dtxsid": "DTXSID0020232",
                   "db_id": "DB00201",
@@ -110,6 +110,44 @@
       {
             "group": "nodes",
             "data": {
+                  "role": "attribute",
+                  "id": "Mechanism of Action",
+                  "label": "Mechanism of\nAction",
+                  "colorBorder": "#d4ac0d",
+                  "colorBg": "#F4D35E",
+                  "shape": "round-heptagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX022",
+                  "target": "Mechanism of Action"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Targets",
+                  "label": "Targets",
+                  "colorBorder": "#6A1E55",
+                  "colorBg": "#A64D79",
+                  "shape": "round-tag"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX022",
+                  "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
                   "role": "prop",
                   "id": "mw_g_mol",
                   "label": "Molecular Weight",
@@ -118,16 +156,6 @@
                   "hlLabel": "Molecular Weight:\n194.1926 g/mol",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "mw_g_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -144,16 +172,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "solubility_h2o_mol_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -164,16 +182,6 @@
                   "hlLabel": "Henry Coefficient:\n1.55451e-06 atm*m3/mol\nSource: COMPTOX (Opera)",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
             }
       },
       {
@@ -190,16 +198,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -210,16 +208,6 @@
                   "hlLabel": "pKa (acid):\nn/a\nSource: UFZ; Sirius T3",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_acid",
-                  "color": "#9a999a"
             }
       },
       {
@@ -236,16 +224,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "pka_base",
-                  "color": "#9a999a"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -256,16 +234,6 @@
                   "hlLabel": "Log Kow:\n-0.07 \nSource: experimental Hansch,C et al. (1995)",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_kow_liter_liter",
-                  "color": "#007cc1"
             }
       },
       {
@@ -282,16 +250,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "log_dlipw_ph74_liter_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -305,16 +263,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "freely_dissolved_fraction",
-                  "color": "#007cc1"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "prop",
@@ -325,6 +273,96 @@
                   "hlLabel": "Density:\n1.401 kg/liter\nSource: COMPTOX",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "mw_g_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "solubility_h2o_mol_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "henry_coefficient_atm_m3_mol",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kaw_kh_rt",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_acid",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "pka_base",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_kow_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "log_dlipw_ph74_liter_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "freely_dissolved_fraction",
+                  "color": "#007cc1"
             }
       },
       {
@@ -349,16 +387,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - D. rerio",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -367,16 +395,6 @@
                   "value": "19500.0",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Daphnia",
-                  "color": "#AB886D"
             }
       },
       {
@@ -391,16 +409,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - C. elegans",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -409,16 +417,6 @@
                   "value": "5156.98656520616",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Xenopus",
-                  "color": "#AB886D"
             }
       },
       {
@@ -433,16 +431,6 @@
             }
       },
       {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Drosophila",
-                  "color": "#AB886D"
-            }
-      },
-      {
             "group": "nodes",
             "data": {
                   "role": "base_tox",
@@ -451,16 +439,6 @@
                   "value": "0.0144825990245794",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "base_tox",
-                  "subrole": "attribute",
-                  "source": "Baseline Toxicity",
-                  "target": "Baseline - Cells",
-                  "color": "#AB886D"
             }
       },
       {
@@ -480,8 +458,132 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
+                  "target": "Baseline - D. rerio",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Daphnia",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - C. elegans",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Xenopus",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Drosophila",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
+                  "target": "Baseline - Cells",
+                  "color": "#AB886D"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "base_tox",
+                  "subrole": "attribute",
+                  "source": "Baseline Toxicity",
                   "target": "baseline_cells_generic_micromole_liter_free_ec10",
                   "color": "#AB886D"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_drugbank",
+                  "label": "DrugBank:\nThe\nmechanism o...",
+                  "fullLabel": "DrugBank:\nThe mechanism\nof action of caffeine is complex,\nas it impacts several body\nsystems, which are listed\nbelow. The effects as they\nrelate to various body systems\nare described as follows:\n\n**General\nand cellular actions**\n\nCaffeine\nexerts several actions on\ncells, but the clinical relevance\nis poorly understood. One\nprobable mechanism is the\ninhibition of nucleotide\nphosphodiesterase enzymes,\nadenosine receptors, regulation\nof calcium handling in cells,\nand participates in adenosine\nreceptor antagonism.[A187221,L9857]\nPhosphodiesterase enzymes\nregulate cell function via\nactions on second messengers\ncAMP and cGMP.[A187724]\nThis causes lipolysis through\nactivation of hormone-sensitive\nlipases, releasing fatty\nacids and glycerol.[T722]\n\n**Respiratory**\n\nThe\nexact mechanism of action\nof caffeine in treating apnea\nrelated to prematurity is\nunknown, however, there\nare several proposed mechanisms,\nincluding respiratory center\nstimulation in the central\nnervous system, a reduced\nthreshold to hypercapnia\nwith increased response,\nand increased consumption\nof oxygen, among others.[L9851]\nThe blocking of the adenosine\nreceptors enhances respiratory\ndrive via an increase in brain\nmedullary response to carbon\ndioxide, stimulating ventilation\nand respiratory drive, while\nincreasing contractility\nof the diaphragm.[T716]\n\n**Central\nnervous system**\n\nCaffeine\ndemonstrates antagonism\nof all 4 adenosine receptor\nsubtypes (A1, A2a, A2b, A3)\nin the central nervous system.[T716,L9851]\nCaffeine's effects on alertness\nand combatting drowsiness\nare specifically related\nto the antagonism of the A2a\nreceptor.[T716]\n\n**Renal\nsystem**\n\nCaffeine has\ndiuretic effects due to is\nstimulatory effects on renal\nblood flow, increase in glomerular\nfiltration, and increase\nin sodium excretion.[T716]\n\n**Cardiovascular\nsystem**\n\nAdenosine receptor\nantagonism at the A1 receptor\nby caffeine stimulates inotropic\neffects in the heart. Blocking\nof adenosine receptors promotes\ncatecholamine release,\nleading to stimulatory effects\noccurring in the heart and\nthe rest of the body.  In the\nblood vessels, caffeine\nexerts direct antagonism\nof adenosine receptors,\ncausing vasodilation. It\nstimulates the endothelial\ncells in the blood vessel\nwall to release nitric oxide,\npotentiating blood vessel\nrelaxation. Catecholamine\nrelease, however, antagonizes\nthis and exerts inotropic\nand chronotropic effects\non the heart, ultimately\nleading to vasoconstriction.\nFinally, caffeine is shown\nto raise systolic blood pressure\nmeasurements by 5 to 10 mmHg\nwhen it is not taken regularly,\nversus no effect in those\nwho consume it regularly.[T716]\nThe vasoconstricting effects\nof caffeine are beneficial\nin migraines and other types\nof headache, which are normally\ncaused by vasodilation in\nthe brain.[A187709,L9872]",
+                  "value": "The mechanism of action of caffeine is complex, as it impacts several body systems, which are listed below. The effects as they relate to various body systems are described as follows:\n\n**General and cellular actions**\n\nCaffeine exerts several actions on cells, but the clinical relevance is poorly understood. One probable mechanism is the inhibition of nucleotide phosphodiesterase enzymes, adenosine receptors, regulation of calcium handling in cells, and participates in adenosine receptor antagonism.[A187221,L9857] Phosphodiesterase enzymes regulate cell function via actions on second messengers cAMP and cGMP.[A187724] This causes lipolysis through activation of hormone-sensitive lipases, releasing fatty acids and glycerol.[T722]\n\n**Respiratory**\n\nThe exact mechanism of action of caffeine in treating apnea related to prematurity is unknown, however, there are several proposed mechanisms, including respiratory center stimulation in the central nervous system, a reduced threshold to hypercapnia with increased response, and increased consumption of oxygen, among others.[L9851] The blocking of the adenosine receptors enhances respiratory drive via an increase in brain medullary response to carbon dioxide, stimulating ventilation and respiratory drive, while increasing contractility of the diaphragm.[T716]\n\n**Central nervous system**\n\nCaffeine demonstrates antagonism of all 4 adenosine receptor subtypes (A1, A2a, A2b, A3) in the central nervous system.[T716,L9851] Caffeine's effects on alertness and combatting drowsiness are specifically related to the antagonism of the A2a receptor.[T716]\n\n**Renal system**\n\nCaffeine has diuretic effects due to is stimulatory effects on renal blood flow, increase in glomerular filtration, and increase in sodium excretion.[T716]\n\n**Cardiovascular system**\n\nAdenosine receptor antagonism at the A1 receptor by caffeine stimulates inotropic effects in the heart. Blocking of adenosine receptors promotes catecholamine release, leading to stimulatory effects occurring in the heart and the rest of the body.  In the blood vessels, caffeine exerts direct antagonism of adenosine receptors, causing vasodilation. It stimulates the endothelial cells in the blood vessel wall to release nitric oxide, potentiating blood vessel relaxation. Catecholamine release, however, antagonizes this and exerts inotropic and chronotropic effects on the heart, ultimately leading to vasoconstriction. Finally, caffeine is shown to raise systolic blood pressure measurements by 5 to 10 mmHg when it is not taken regularly, versus no effect in those who consume it regularly.[T716] The vasoconstricting effects of caffeine are beneficial in migraines and other types of headache, which are normally caused by vasodilation in the brain.[A187709,L9872]",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "moa",
+                  "id": "moa_t3db",
+                  "label": "T3DB:\nCaffeine\nstimulates...",
+                  "fullLabel": "T3DB:\nCaffeine stimulates\nmedullary, vagal, vasomotor,\nand respiratory centers,\npromoting bradycardia,\nvasoconstriction, and increased\nrespiratory rate. This action\nwas previously believed\nto be due primarily to increased\nintracellular cyclic 3&prime;,5&prime;-adenosine\nmonophosphate (cyclic AMP)\nfollowing inhibition of\nphosphodiesterase, the\nenzyme that degrades cyclic\nAMP. It is now thought that\nxanthines such as caffeine\nact as agonists at adenosine-receptors\nwithin the plasma membrane\nof virtually every cell.\nAs adenosine acts as an autocoid,\ninhibiting the release of\nneurotransmitters from\npresynaptic sites but augmenting\nthe actions of norepinephrine\nor angiotensin, antagonism\nof adenosine receptors promotes\nneurotransmitter release.\nThis explains the stimulatory\neffects of caffeine. Blockade\nof the adenosine A1 receptor\nin the heart leads to the accelerated,\npronounced \"pounding\" of\nthe heart upon caffeine intake.",
+                  "value": "Caffeine stimulates medullary, vagal, vasomotor, and respiratory centers, promoting bradycardia, vasoconstriction, and increased respiratory rate. This action was previously believed to be due primarily to increased intracellular cyclic 3&prime;,5&prime;-adenosine monophosphate (cyclic AMP) following inhibition of phosphodiesterase, the enzyme that degrades cyclic AMP. It is now thought that xanthines such as caffeine act as agonists at adenosine-receptors within the plasma membrane of virtually every cell. As adenosine acts as an autocoid, inhibiting the release of neurotransmitters from presynaptic sites but augmenting the actions of norepinephrine or angiotensin, antagonism of adenosine receptors promotes neurotransmitter release. This explains the stimulatory effects of caffeine. Blockade of the adenosine A1 receptor in the heart leads to the accelerated, pronounced \"pounding\" of the heart upon caffeine intake.",
+                  "colorBg": "#F4D35E",
+                  "colorBorder": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_drugbank",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "moa",
+                  "subrole": "attribute",
+                  "source": "Mechanism of Action",
+                  "target": "moa_t3db",
+                  "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_use_class",
+                  "id": "Food and other consumption",
+                  "label": "Food and other\nconsumption",
+                  "colorBg": "#D76C82",
+                  "colorBorder": "#B03052"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_use_class",
+                  "subrole": "attribute",
+                  "source": "Use",
+                  "target": "Food and other consumption",
+                  "color": "#B03052"
             }
       },
       {
@@ -559,7 +661,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX022_ototoxicity",
                   "source": "Toxicity",
                   "target": "ototoxicity",
                   "color": "#135D66",
@@ -573,7 +674,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX022_immunotoxicity",
                   "source": "Toxicity",
                   "target": "immunotoxicity",
                   "color": "#135D66",
@@ -587,7 +687,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX022_hepatotoxicity",
                   "source": "Toxicity",
                   "target": "hepatotoxicity",
                   "color": "#135D66",
@@ -601,7 +700,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX022_neurotoxicity",
                   "source": "Toxicity",
                   "target": "neurotoxicity",
                   "color": "#135D66",
@@ -615,7 +713,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX022_genotoxicity",
                   "source": "Toxicity",
                   "target": "genotoxicity",
                   "color": "#135D66",
@@ -629,7 +726,6 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX022_nephrotoxicity",
                   "source": "Toxicity",
                   "target": "nephrotoxicity",
                   "color": "#135D66",
@@ -643,34 +739,12 @@
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
-                  "id": "PTX022_cardiotoxicity",
                   "source": "Toxicity",
                   "target": "cardiotoxicity",
                   "color": "#135D66",
                   "score": 0.92,
                   "n_refs": 35,
                   "ref_list": "25684415,2157959,9623719,8637182,15653753,18072214,2709437,9420645,30377735,12150202,33688777,19594908,10772060,17676524,21304156,18790837,18608257,36341877,2171802,8456986,19165199,9563899,11097869,15895207,28216052,7915431,12175705,30150463,18710555,8844612,18613971,19686702,22671762,12595956,12189279"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_use_class",
-                  "id": "Food and other consumption",
-                  "label": "Food and other\nconsumption",
-                  "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_use_class",
-                  "subrole": "attribute",
-                  "id": "PTX022_Food and other consumption",
-                  "source": "Use",
-                  "target": "Food and other consumption",
-                  "color": "#B03052"
             }
       }
 ]
