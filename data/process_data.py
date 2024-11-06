@@ -41,6 +41,7 @@ def read_identifier_file(file_path):
     ).rename(columns={"Prec.Tox code": "ptx_code", "PREFERRED_NAME": "chem_name"})
     df["label"] = df["ptx_code"] + " | " + df["chem_name"]
     df = df[df["chem_name"].notna()]
+    df = df[df["ptx_code"]!="PTX164"]
     return df
 
 
@@ -64,6 +65,7 @@ def read_useclass_file(file_path):
         skiprows=0,
         index_col=None,
     ).rename(columns={"Prec.Tox code": "ptx_code", "Category": "use_class"})
+    df = df[df["ptx_code"]!="PTX164"]
     return df
 
 
@@ -73,6 +75,7 @@ def read_toxclass_file(file_path, df_identifier):
         sep="\t", 
     )
     df = df[df["ptx_code"].isin(df_identifier["ptx_code"].unique())]
+    df = df[df["ptx_code"]!="PTX164"]
     return df
 
 
