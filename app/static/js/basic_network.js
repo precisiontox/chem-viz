@@ -169,14 +169,36 @@ const singleNetworkStyle = [
     {
         selector: "edge[role='attribute']",
         style: {
-            "line-color": "#172d4a"
+            "line-color": "#172d4a",
+            "width": "10px"
         }
     },
     {
         selector: "edge[role='attribute'].hl",
         style: {
             "line-color": "#004880",
-            "width": "5px"
+            "width": "15px"
+        }
+    },
+    {
+        selector: "node[role='isolated-attribute']",
+        style: {
+            "shape": "data(shape)",
+            "width": "80px",
+            "height": "80px",
+            "background-color": "#ddd",
+            "border-width": "3px",
+            "border-color": "#9a999a",
+            "border-opacity": "0",
+            "label": "data(label)",
+            "color": "#9a999a",
+            // "text-outline-width": "3px",
+            // "text-outline-color": "#9a999a",
+            "text-halign": "center",
+            "text-valign": "center",
+            "font-size": "20px",
+            "font-weight": "bold",
+            "text-wrap": "wrap"
         }
     },
     {
@@ -336,7 +358,84 @@ const singleNetworkStyle = [
             "line-color": "data(color)"
         }
     },
+    {
+        selector: "node[role='moa']",
+        style: {
+            "shape": "round-heptagon",
+            "background-color": "data(colorBg)",
+            "width": "50px",
+            "height": "50px",
+            "border-width": "1px",
+            "border-color": "data(colorBorder)",
+            "border-opacity": "0",
+            "label": "data(label)",
+            "color": "#2c2e35",
+            "text-valign": "center",
+            "text-wrap": "wrap" 
+        }
+    },
+    {
+        selector: "node[role='moa'].hl",
+        style: {
+            "width": "52px",
+            "height": "52px",
+            "color": "#004880",
+            "border-color": "#004880",
+            "border-opacity": "1",
+            "label": "data(fullLabel)",
+            "text-background-color": "white",
+            "text-background-opacity": "0.5",
+            "text-justification": "left"
+        }
+    },
+    {
+        selector: "edge[role='moa']",
+        style: {
+            "line-color": "data(color)"
+        }
+    },
 ]
+
+function updateIsolatedAttributes() {
+    // Loop through each node with role "attribute"
+    cy_graph.nodes("[role='attribute']").forEach(function(node) {
+        // Find edges that source from this node
+        const outgoingEdges = node.outgoers('edge');
+
+        // Check if there are no outgoing edges
+        if (outgoingEdges.length === 0) {
+            // Change the role to 'isolated-attribute' if no outgoing edges
+            node.data('role', 'isolated-attribute');
+        } else {
+            // Revert to 'attribute' role if there are outgoing edges
+            node.data('role', 'attribute');
+        }
+    });
+
+        // Apply qTip tooltip to isolated attribute nodes
+        cy_graph.nodes("[role='isolated-attribute']").qtip({
+            content: {
+                text: 'No information available.'
+            },
+            position: {
+                my: 'top center',
+                at: 'bottom center'
+            },
+            style: {
+                classes: 'qtip-dark qtip-rounded',
+                tip: {
+                    width: 8,
+                    height: 4
+                }
+            },
+            show: {
+                event: 'mouseover'
+            },
+            hide: {
+                event: 'mouseout'
+        }
+    });   
+}
 
 function initializeNetworkFeatures() {
     // Add mouseover and mouseout events
@@ -497,15 +596,7 @@ function initializeNetworkBasic() {
                 initializeNetworkFeatures();
 
                 cy_graph.on('click', "node[role^='category']", function(event) {
-                    let currentTime = new Date().getTime();  // Get the current time
-                
-                    // Check if the time between two clicks is less than the delay, meaning it's a double-click
-                    if (currentTime - lastClickTime < doubleClickDelay) {
-                        // It's a double-click, call the toggleChemNodes function
-                        toggleChemNodes(event.target);
-                    }
-                
-                    lastClickTime = currentTime;  // Update the lastClickTime to the current time
+                    toggleChemNodes(event.target);
                 });
                 // cy_graph.nodes("node[role^='category']").qtip({
                 //     content: function () {
@@ -638,7 +729,7 @@ function loadSingleChemNetwork() {
                 }
             });
 
-
+            updateIsolatedAttributes();
 
         })
         .catch(error => {
