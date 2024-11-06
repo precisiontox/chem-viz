@@ -32,7 +32,7 @@ const generalNetworkStyle = [ // the stylesheet for general graph
         }
     },
     {
-        selector: "node.hl",
+        selector: "node.hl, node:selected",
         style: {
             "font-size": "25px",
             "font-weight": "bold",
@@ -71,6 +71,13 @@ const generalNetworkStyle = [ // the stylesheet for general graph
             "text-background-color": "#004880",
             "text-background-opacity": "1",
             // "label": "data(label)",
+        }
+    },
+    {
+        selector: "node[role='chem'].hl, node[role='chem']:selected",
+        style: {
+            "width": "45px",
+            "height": "45px"
         }
     },
     {
@@ -126,6 +133,21 @@ const generalNetworkStyle = [ // the stylesheet for general graph
             "text-valign": "center",
             "text-wrap": "wrap"
         }
+    },
+    {
+        selector: "node[role^='category'].hl",
+        style: {
+            "width": "85px",
+            "height": "85px",
+            "font-size": "27px",
+            "text-outline-color": "#004880",
+        }
+    },
+    {
+        selector: "node[role^='category']:selected",
+        style: {
+            "text-outline-color": "#004880",
+        }
     }
 ];
 const singleNetworkStyle = [
@@ -150,7 +172,7 @@ const singleNetworkStyle = [
         }
     },
     {
-        selector: "node[role='chem'].hl",
+        selector: "node[role='chem'].hl, node[role='chem']:selected",
         style: {
             "width": "55px",
             "height": "55px",
@@ -174,7 +196,7 @@ const singleNetworkStyle = [
         }
     },
     {
-        selector: "edge[role='attribute'].hl",
+        selector: "edge[role='attribute'].hl, edge[role='attribute']:selected",
         style: {
             "line-color": "#004880",
             "width": "15px"
@@ -187,7 +209,7 @@ const singleNetworkStyle = [
             "width": "80px",
             "height": "80px",
             "background-color": "#ddd",
-            "border-width": "3px",
+            "border-width": "1px",
             "border-color": "#9a999a",
             "border-opacity": "0",
             "label": "data(label)",
@@ -199,6 +221,13 @@ const singleNetworkStyle = [
             "font-size": "20px",
             "font-weight": "bold",
             "text-wrap": "wrap"
+        }
+    },
+    {
+        selector: "node[role='isolated-attribute']:selected",
+        style: {
+            "border-color": "#004880",
+            "border-opacity": "1"
         }
     },
     {
@@ -223,7 +252,7 @@ const singleNetworkStyle = [
         }
     },
     {
-        selector: "node[role='attribute'].hl",
+        selector: "node[role='attribute'].hl, node[role='attribute']:selected",
         style: {
             "width": "82px",
             "height": "82px",
@@ -263,12 +292,13 @@ const singleNetworkStyle = [
             }
     },
     {
-        selector: "node[role^='category'].hl",
+        selector: "node[role^='category'].hl, node[role^='category']:selected",
         style: {
             "width": "53px",
             "height": "53px",
             "font-size": "20px",
             "border-color": "#004880",
+            "border-opacity": "1",
             "color": "#004880"
         }
     },
@@ -285,7 +315,7 @@ const singleNetworkStyle = [
         }
     },
     {
-        selector: "edge[role^='category'].hl",
+        selector: "edge[role^='category'].hl, edge[role^='category']:selected",
         style: {
             "line-color": "#004880",
             "width": "5px"
@@ -303,17 +333,19 @@ const singleNetworkStyle = [
             "border-opacity": "0",
             "label": "data(combinedLabel)",
             "color": "#2c2e35",
+            "font-size": "16px",
             "font-weight": "bold",
             "text-valign": "center",
             "text-wrap": "wrap" 
         }
     },
     {
-        selector: "node[role='prop'].hl",
+        selector: "node[role='prop'].hl, node[role='prop']:selected",
         style:{
-            "width": "52px",
-            "height": "52px",
+            "width": "53px",
+            "height": "53px",
             "label": "data(hlLabel)",
+            "font-size": "18px",
             "color": "#004880",
             "border-color": "#004880",
             "border-opacity": "1",
@@ -337,17 +369,19 @@ const singleNetworkStyle = [
             "border-opacity": "0",
             "label": "data(label)",
             "color": "#2c2e35",
+            "font-size": "16px",
             "font-weight": "bold",
             "text-valign": "center",
             "text-wrap": "wrap" 
         }
     },
     {
-        selector: "node[role='base_tox'].hl",
+        selector: "node[role='base_tox'].hl, node[role='base_tox']:selected",
         style:{
             "width": "52px",
             "height": "52px",
             "color": "#004880",
+            "font-size": "18px",
             "border-color": "#004880",
             "border-opacity": "1",
         }
@@ -369,6 +403,7 @@ const singleNetworkStyle = [
             "border-color": "data(colorBorder)",
             "border-opacity": "0",
             "label": "data(label)",
+            "font-size": "16px",
             "color": "#2c2e35",
             "text-valign": "center",
             "text-wrap": "wrap" 
@@ -383,9 +418,20 @@ const singleNetworkStyle = [
             "border-color": "#004880",
             "border-opacity": "1",
             "label": "data(fullLabel)",
+            "font-size": "18px",
             "text-background-color": "white",
             "text-background-opacity": "0.5",
             "text-justification": "left"
+        }
+    },
+    {
+        selector: "node[role='moa']:selected",
+        style: {
+            "width": "52px",
+            "height": "52px",
+            "color": "#004880",
+            "border-color": "#004880",
+            "border-opacity": "1"
         }
     },
     {
@@ -412,27 +458,27 @@ function updateIsolatedAttributes() {
         }
     });
 
-        // Apply qTip tooltip to isolated attribute nodes
-        cy_graph.nodes("[role='isolated-attribute']").qtip({
-            content: {
-                text: 'No information available.'
-            },
-            position: {
-                my: 'top center',
-                at: 'bottom center'
-            },
-            style: {
-                classes: 'qtip-dark qtip-rounded',
-                tip: {
-                    width: 8,
-                    height: 4
-                }
-            },
-            show: {
-                event: 'mouseover'
-            },
-            hide: {
-                event: 'mouseout'
+    // Apply qTip tooltip to isolated attribute nodes
+    cy_graph.nodes("[role='isolated-attribute']").qtip({
+        content: {
+            text: 'No information available.'
+        },
+        position: {
+            my: 'top center',
+            at: 'bottom center'
+        },
+        style: {
+            classes: 'qtip-dark qtip-rounded',
+            tip: {
+                width: 8,
+                height: 4
+            }
+        },
+        show: {
+            event: 'mouseover'
+        },
+        hide: {
+            event: 'mouseout'
         }
     });   
 }
