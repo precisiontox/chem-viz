@@ -33,10 +33,9 @@
     </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" integrity="sha256-FPJJt8nA+xL4RU6/gsriA8p8xAeLGatoyTjldvQKGdE=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ url_for('static',filename='js/cytoscape-svg.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/layouts.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/styles.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/basic_network.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/single_network.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/aop_network.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/zoom_network.js') }}" defer></script>
 </head>
 
 <body>
@@ -59,36 +58,24 @@
                 <div class="dropdown">
                     <label>Select chemical classification:</label>
                     <div class="button-group">
-                        <button id="use-button" class="classification-btn active" onclick="selectClassification(true, 'use')">
+                        <button id="use-button" class="classification-btn active" onclick="loadBasicNetworkAndClassify('use')">
                             <img src="{{ url_for('static', filename='images/icons/purpose-button.png') }}" alt="Use" class="btn-icon">
                             Use
                         </button>
-                        <button id="tox-button" class="classification-btn" onclick="selectClassification(true, 'tox')">
+                        <button id="tox-button" class="classification-btn" onclick="loadBasicNetworkAndClassify('tox')">
                             <img src="{{ url_for('static', filename='images/icons/toxicity-button.png') }}" alt="Use" class="btn-icon">
                             Toxicity
                         </button>
                     </div>
                 </div>
-                <!-- <div class="dropdown">
-                    <label for="category-select">Select Classification:</label>
-                <br>
-                    <select id="category-select" onchange="selectClassification(true)" >
-                        <option value="use">Use</option>
-                        <option value="tox">Toxicity</option>
-                    </select>
-                </div> -->
-                <!-- <div class="dropdown">
-                    <label for="chem-node-label-select">Select label for chemicals:</label>
-                    <select id="chem-node-label-select" onchange="changeChemNodeLabel()">
-                        <option value="ptx_code">Ptox Identifier</option>
-                        <option value="name">Compound Name</option>
-                        <option value="label">Ptox Id | Compound Name</option>
-                    </select>
-                </div> -->
                 
                 <div class="dropdown">
                     <label for="label-font-size-slider">Change chemical label size:</label>
-                    <input type="range" id="label-font-size-slider" min="10" max="50" value="25" oninput="changeLabelFontSize(this.value)">
+                    <input 
+                        type="range" id="label-font-size-slider" 
+                        min="10" max="50" value="25" 
+                        oninput="changeLabelFontSize(this.value)"
+                    >
                 </div>
 
                 <hr>
@@ -234,9 +221,6 @@
             }
         }
 
-        function changeLabelFontSize(fontSize) {
-            cy_graph.style().selector('node[role="chem"]').style('font-size', fontSize + 'px').update();
-        }
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");
