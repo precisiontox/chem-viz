@@ -132,8 +132,8 @@
                   "role": "attribute",
                   "id": "Targets",
                   "label": "Targets",
-                  "colorBorder": "#6A1E55",
-                  "colorBg": "#A64D79",
+                  "colorBorder": "#875178",
+                  "colorBg": "#cda7ba",
                   "shape": "round-tag"
             }
       },
@@ -143,6 +143,25 @@
                   "role": "attribute",
                   "source": "PTX092",
                   "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Adverse Outcome Pathways",
+                  "label": "Adverse Outcome\nPathways",
+                  "colorBorder": "#79AC78",
+                  "colorBg": "#B0D9B1",
+                  "shape": "round-octagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX092",
+                  "target": "Adverse Outcome Pathways"
             }
       },
       {
@@ -564,6 +583,530 @@
                   "source": "Mechanism of Action",
                   "target": "moa_t3db",
                   "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Aldehyde dehydrogenase family 1 member A3",
+                  "shape": "round-tag",
+                  "label": "Aldehyde dehydrogenase\nfamily 1 member\nA3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Aldehyde dehydrogenase family 16 member A1",
+                  "shape": "round-tag",
+                  "label": "Aldehyde dehydrogenase\nfamily 16 member\nA1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Aldehyde dehydrogenase family 3 member B1",
+                  "shape": "round-tag",
+                  "label": "Aldehyde dehydrogenase\nfamily 3 member\nB1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Aldehyde dehydrogenase family 3 member B2",
+                  "shape": "round-tag",
+                  "label": "Aldehyde dehydrogenase\nfamily 3 member\nB2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Aldehyde dehydrogenase family 8 member A1",
+                  "shape": "round-tag",
+                  "label": "Aldehyde dehydrogenase\nfamily 8 member\nA1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Aldehyde dehydrogenase X, mitochondrial",
+                  "shape": "round-tag",
+                  "label": "Aldehyde dehydrogenase\nX, mitochondrial",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Aldehyde dehydrogenase, dimeric NADP-preferring",
+                  "shape": "round-tag",
+                  "label": "Aldehyde dehydrogenase,\ndimeric NADP-preferring",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Aldehyde dehydrogenase, mitochondrial",
+                  "shape": "round-tag",
+                  "label": "Aldehyde dehydrogenase,\nmitochondrial",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Translocator protein",
+                  "shape": "round-tag",
+                  "label": "Translocator\nprotein",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Dopamine beta-hydroxylase",
+                  "shape": "round-tag",
+                  "label": "Dopamine beta-hydroxylase",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cellular tumor antigen p53",
+                  "shape": "round-tag",
+                  "label": "Cellular tumor\nantigen p53",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2C19",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2C19",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2C9",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2C9",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "5-hydroxytryptamine receptor 6",
+                  "shape": "round-tag",
+                  "label": "5-hydroxytryptamine\nreceptor 6",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "5-hydroxytryptamine receptor 7",
+                  "shape": "round-tag",
+                  "label": "5-hydroxytryptamine\nreceptor 7",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "D(1A) dopamine receptor",
+                  "shape": "round-tag",
+                  "label": "D(1A) dopamine\nreceptor",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Substance-K receptor",
+                  "shape": "round-tag",
+                  "label": "Substance-K\nreceptor",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Peroxisome proliferator-activated receptor gamma",
+                  "shape": "round-tag",
+                  "label": "Peroxisome proliferator-activated\nreceptor gamma",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Perilipin-1",
+                  "shape": "round-tag",
+                  "label": "Perilipin-1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Apelin receptor",
+                  "shape": "round-tag",
+                  "label": "Apelin receptor",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Perilipin-5",
+                  "shape": "round-tag",
+                  "label": "Perilipin-5",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Monoglyceride lipase",
+                  "shape": "round-tag",
+                  "label": "Monoglyceride\nlipase",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Fatty-acid amide hydrolase 1",
+                  "shape": "round-tag",
+                  "label": "Fatty-acid amide\nhydrolase 1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Type-1 angiotensin II receptor",
+                  "shape": "round-tag",
+                  "label": "Type-1 angiotensin\nII receptor",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Aldehyde dehydrogenase family 1 member A3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Aldehyde dehydrogenase family 16 member A1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Aldehyde dehydrogenase family 3 member B1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Aldehyde dehydrogenase family 3 member B2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Aldehyde dehydrogenase family 8 member A1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Aldehyde dehydrogenase X, mitochondrial",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Aldehyde dehydrogenase, dimeric NADP-preferring",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Aldehyde dehydrogenase, mitochondrial",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Translocator protein",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Dopamine beta-hydroxylase",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cellular tumor antigen p53",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2C19",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2C9",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "5-hydroxytryptamine receptor 6",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "5-hydroxytryptamine receptor 7",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "D(1A) dopamine receptor",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Substance-K receptor",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Peroxisome proliferator-activated receptor gamma",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Perilipin-1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Apelin receptor",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Perilipin-5",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Monoglyceride lipase",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Fatty-acid amide hydrolase 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Type-1 angiotensin II receptor",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:19] Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:19] Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) ",
+                  "color": "#79AC78"
             }
       },
       {

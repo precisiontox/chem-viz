@@ -132,8 +132,8 @@
                   "role": "attribute",
                   "id": "Targets",
                   "label": "Targets",
-                  "colorBorder": "#6A1E55",
-                  "colorBg": "#A64D79",
+                  "colorBorder": "#875178",
+                  "colorBg": "#cda7ba",
                   "shape": "round-tag"
             }
       },
@@ -143,6 +143,25 @@
                   "role": "attribute",
                   "source": "PTX002",
                   "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Adverse Outcome Pathways",
+                  "label": "Adverse Outcome\nPathways",
+                  "colorBorder": "#79AC78",
+                  "colorBg": "#B0D9B1",
+                  "shape": "round-octagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX002",
+                  "target": "Adverse Outcome Pathways"
             }
       },
       {
@@ -564,6 +583,194 @@
                   "source": "Mechanism of Action",
                   "target": "moa_t3db",
                   "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Acetylcholinesterase",
+                  "shape": "round-tag",
+                  "label": "Acetylcholinesterase",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Macrophage colony-stimulating factor 1",
+                  "shape": "round-tag",
+                  "label": "Macrophage colony-stimulating\nfactor 1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2B6",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2B6",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2D6",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2D6",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 3A4",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n3A4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Hydroxymethylglutaryl-CoA synthase, mitochondrial",
+                  "shape": "round-tag",
+                  "label": "Hydroxymethylglutaryl-CoA\nsynthase, mitochondrial",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Urokinase plasminogen activator surface receptor",
+                  "shape": "round-tag",
+                  "label": "Urokinase plasminogen\nactivator surface\nreceptor",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Bile salt sulfotransferase",
+                  "shape": "round-tag",
+                  "label": "Bile salt sulfotransferase",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Acetylcholinesterase",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Macrophage colony-stimulating factor 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2B6",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2D6",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 3A4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Hydroxymethylglutaryl-CoA synthase, mitochondrial",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Urokinase plasminogen activator surface receptor",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Bile salt sulfotransferase",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "NA",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "NA",
+                  "color": "#79AC78"
             }
       },
       {

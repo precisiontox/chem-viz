@@ -132,8 +132,8 @@
                   "role": "attribute",
                   "id": "Targets",
                   "label": "Targets",
-                  "colorBorder": "#6A1E55",
-                  "colorBg": "#A64D79",
+                  "colorBorder": "#875178",
+                  "colorBg": "#cda7ba",
                   "shape": "round-tag"
             }
       },
@@ -143,6 +143,25 @@
                   "role": "attribute",
                   "source": "PTX116",
                   "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Adverse Outcome Pathways",
+                  "label": "Adverse Outcome\nPathways",
+                  "colorBorder": "#79AC78",
+                  "colorBg": "#B0D9B1",
+                  "shape": "round-octagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX116",
+                  "target": "Adverse Outcome Pathways"
             }
       },
       {
@@ -564,6 +583,278 @@
                   "source": "Mechanism of Action",
                   "target": "moa_t3db",
                   "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Sodium/iodide cotransporter",
+                  "shape": "round-tag",
+                  "label": "Sodium/iodide\ncotransporter",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Sodium/potassium-transporting ATPase subunit gamma",
+                  "shape": "round-tag",
+                  "label": "Sodium/potassium-transporting\nATPase subunit\ngamma",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Sodium/potassium-transporting ATPase subunit alpha-1",
+                  "shape": "round-tag",
+                  "label": "Sodium/potassium-transporting\nATPase subunit\nalpha-1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Sodium/potassium-transporting ATPase subunit alpha-2",
+                  "shape": "round-tag",
+                  "label": "Sodium/potassium-transporting\nATPase subunit\nalpha-2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Sodium/potassium-transporting ATPase subunit alpha-3",
+                  "shape": "round-tag",
+                  "label": "Sodium/potassium-transporting\nATPase subunit\nalpha-3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Sodium/potassium-transporting ATPase subunit alpha-4",
+                  "shape": "round-tag",
+                  "label": "Sodium/potassium-transporting\nATPase subunit\nalpha-4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Sodium/potassium-transporting ATPase subunit beta-1",
+                  "shape": "round-tag",
+                  "label": "Sodium/potassium-transporting\nATPase subunit\nbeta-1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Sodium/potassium-transporting ATPase subunit beta-2",
+                  "shape": "round-tag",
+                  "label": "Sodium/potassium-transporting\nATPase subunit\nbeta-2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Sodium/potassium-transporting ATPase subunit beta-3",
+                  "shape": "round-tag",
+                  "label": "Sodium/potassium-transporting\nATPase subunit\nbeta-3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Carbonic anhydrase 1",
+                  "shape": "round-tag",
+                  "label": "Carbonic anhydrase\n1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Carbonic anhydrase 2",
+                  "shape": "round-tag",
+                  "label": "Carbonic anhydrase\n2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Transient receptor potential cation channel subfamily A member 1",
+                  "shape": "round-tag",
+                  "label": "Transient receptor\npotential cation\nchannel subfamily\nA member 1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Sodium/iodide cotransporter",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Sodium/potassium-transporting ATPase subunit gamma",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Sodium/potassium-transporting ATPase subunit alpha-1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Sodium/potassium-transporting ATPase subunit alpha-2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Sodium/potassium-transporting ATPase subunit alpha-3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Sodium/potassium-transporting ATPase subunit alpha-4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Sodium/potassium-transporting ATPase subunit beta-1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Sodium/potassium-transporting ATPase subunit beta-2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Sodium/potassium-transporting ATPase subunit beta-3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Carbonic anhydrase 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Carbonic anhydrase 2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Transient receptor potential cation channel subfamily A member 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "NA",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "NA",
+                  "color": "#79AC78"
             }
       },
       {

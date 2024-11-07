@@ -132,8 +132,8 @@
                   "role": "attribute",
                   "id": "Targets",
                   "label": "Targets",
-                  "colorBorder": "#6A1E55",
-                  "colorBg": "#A64D79",
+                  "colorBorder": "#875178",
+                  "colorBg": "#cda7ba",
                   "shape": "round-tag"
             }
       },
@@ -143,6 +143,25 @@
                   "role": "attribute",
                   "source": "PTX070",
                   "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Adverse Outcome Pathways",
+                  "label": "Adverse Outcome\nPathways",
+                  "colorBorder": "#79AC78",
+                  "colorBg": "#B0D9B1",
+                  "shape": "round-octagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX070",
+                  "target": "Adverse Outcome Pathways"
             }
       },
       {
@@ -564,6 +583,1153 @@
                   "source": "Mechanism of Action",
                   "target": "moa_t3db",
                   "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "NADH-ubiquinone oxidoreductase 75 kDa subunit, mitochondrial",
+                  "shape": "round-tag",
+                  "label": "NADH-ubiquinone\noxidoreductase\n75 kDa subunit,\nmitochondrial",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "NADH-ubiquinone oxidoreductase chain 1",
+                  "shape": "round-tag",
+                  "label": "NADH-ubiquinone\noxidoreductase\nchain 1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "NADH-ubiquinone oxidoreductase chain 2",
+                  "shape": "round-tag",
+                  "label": "NADH-ubiquinone\noxidoreductase\nchain 2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "NADH-ubiquinone oxidoreductase chain 3",
+                  "shape": "round-tag",
+                  "label": "NADH-ubiquinone\noxidoreductase\nchain 3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "NADH-ubiquinone oxidoreductase chain 4",
+                  "shape": "round-tag",
+                  "label": "NADH-ubiquinone\noxidoreductase\nchain 4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Bile salt export pump",
+                  "shape": "round-tag",
+                  "label": "Bile salt export\npump",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "ATP-binding cassette sub-family G member 2",
+                  "shape": "round-tag",
+                  "label": "ATP-binding\ncassette sub-family\nG member 2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Bone morphogenetic protein receptor type-2",
+                  "shape": "round-tag",
+                  "label": "Bone morphogenetic\nprotein receptor\ntype-2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "C-C motif chemokine 2",
+                  "shape": "round-tag",
+                  "label": "C-C motif chemokine\n2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "ADP-ribosyl cyclase 1",
+                  "shape": "round-tag",
+                  "label": "ADP-ribosyl\ncyclase 1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Tumor necrosis factor receptor superfamily member 5",
+                  "shape": "round-tag",
+                  "label": "Tumor necrosis\nfactor receptor\nsuperfamily\nmember 5",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Early activation antigen CD69",
+                  "shape": "round-tag",
+                  "label": "Early activation\nantigen CD69",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 1A1",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n1A1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial",
+                  "shape": "round-tag",
+                  "label": "25-hydroxyvitamin\nD-1 alpha hydroxylase,\nmitochondrial",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2B6",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2B6",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2C19",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2C19",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2C9",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2C9",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 3A4",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n3A4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 3A5",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n3A5",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Epidermal growth factor receptor",
+                  "shape": "round-tag",
+                  "label": "Epidermal growth\nfactor receptor",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Glutathione S-transferase A2",
+                  "shape": "round-tag",
+                  "label": "Glutathione\nS-transferase\nA2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "HLA class II histocompatibility antigen, DR alpha chain",
+                  "shape": "round-tag",
+                  "label": "HLA class II histocompatibility\nantigen, DR alpha\nchain",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "5-hydroxytryptamine receptor 6",
+                  "shape": "round-tag",
+                  "label": "5-hydroxytryptamine\nreceptor 6",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Interleukin-8",
+                  "shape": "round-tag",
+                  "label": "Interleukin-8",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Metal-response element-binding transcription factor 2",
+                  "shape": "round-tag",
+                  "label": "Metal-response\nelement-binding\ntranscription\nfactor 2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Nuclear factor erythroid 2-related factor 2",
+                  "shape": "round-tag",
+                  "label": "Nuclear factor\nerythroid 2-related\nfactor 2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Nuclear receptor subfamily 1 group I member 3",
+                  "shape": "round-tag",
+                  "label": "Nuclear receptor\nsubfamily 1 group\nI member 3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Urokinase-type plasminogen activator",
+                  "shape": "round-tag",
+                  "label": "Urokinase-type\nplasminogen\nactivator",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Urokinase plasminogen activator surface receptor",
+                  "shape": "round-tag",
+                  "label": "Urokinase plasminogen\nactivator surface\nreceptor",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "POU domain, class 2, transcription factor 1",
+                  "shape": "round-tag",
+                  "label": "POU domain, class\n2, transcription\nfactor 1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Peroxisome proliferator-activated receptor alpha",
+                  "shape": "round-tag",
+                  "label": "Peroxisome proliferator-activated\nreceptor alpha",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Prostaglandin E2 receptor EP2 subtype",
+                  "shape": "round-tag",
+                  "label": "Prostaglandin\nE2 receptor EP2\nsubtype",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Nuclear receptor ROR-alpha",
+                  "shape": "round-tag",
+                  "label": "Nuclear receptor\nROR-alpha",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "E-selectin",
+                  "shape": "round-tag",
+                  "label": "E-selectin",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Bile salt sulfotransferase",
+                  "shape": "round-tag",
+                  "label": "Bile salt sulfotransferase",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Thyroid hormone receptor alpha",
+                  "shape": "round-tag",
+                  "label": "Thyroid hormone\nreceptor alpha",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Metalloproteinase inhibitor 1",
+                  "shape": "round-tag",
+                  "label": "Metalloproteinase\ninhibitor 1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Tumor necrosis factor",
+                  "shape": "round-tag",
+                  "label": "Tumor necrosis\nfactor",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cellular tumor antigen p53",
+                  "shape": "round-tag",
+                  "label": "Cellular tumor\nantigen p53",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Vascular cell adhesion protein 1",
+                  "shape": "round-tag",
+                  "label": "Vascular cell\nadhesion protein\n1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cyclic AMP-responsive element-binding protein 3",
+                  "shape": "round-tag",
+                  "label": "Cyclic AMP-responsive\nelement-binding\nprotein 3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Estrogen receptor alpha",
+                  "shape": "round-tag",
+                  "label": "Estrogen receptor\nalpha",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Metal regulatory transcription factor 1",
+                  "shape": "round-tag",
+                  "label": "Metal regulatory\ntranscription\nfactor 1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Retinoic acid receptor RXR-alpha",
+                  "shape": "round-tag",
+                  "label": "Retinoic acid\nreceptor RXR-alpha",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Androgen receptor",
+                  "shape": "round-tag",
+                  "label": "Androgen receptor",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 19A1",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n19A1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Transient receptor potential cation channel subfamily A member 1",
+                  "shape": "round-tag",
+                  "label": "Transient receptor\npotential cation\nchannel subfamily\nA member 1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "NADH-ubiquinone oxidoreductase 75 kDa subunit, mitochondrial",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "NADH-ubiquinone oxidoreductase chain 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "NADH-ubiquinone oxidoreductase chain 2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "NADH-ubiquinone oxidoreductase chain 3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "NADH-ubiquinone oxidoreductase chain 4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Bile salt export pump",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "ATP-binding cassette sub-family G member 2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Bone morphogenetic protein receptor type-2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "C-C motif chemokine 2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "ADP-ribosyl cyclase 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Tumor necrosis factor receptor superfamily member 5",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Early activation antigen CD69",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 1A1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2B6",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2C19",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2C9",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 3A4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 3A5",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Epidermal growth factor receptor",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Glutathione S-transferase A2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "HLA class II histocompatibility antigen, DR alpha chain",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "5-hydroxytryptamine receptor 6",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Interleukin-8",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Metal-response element-binding transcription factor 2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Nuclear factor erythroid 2-related factor 2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Nuclear receptor subfamily 1 group I member 3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Urokinase-type plasminogen activator",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Urokinase plasminogen activator surface receptor",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "POU domain, class 2, transcription factor 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Peroxisome proliferator-activated receptor alpha",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Prostaglandin E2 receptor EP2 subtype",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Nuclear receptor ROR-alpha",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "E-selectin",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Bile salt sulfotransferase",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Thyroid hormone receptor alpha",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Metalloproteinase inhibitor 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Tumor necrosis factor",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cellular tumor antigen p53",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Vascular cell adhesion protein 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cyclic AMP-responsive element-binding protein 3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Estrogen receptor alpha",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Metal regulatory transcription factor 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Retinoic acid receptor RXR-alpha",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Androgen receptor",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 19A1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Transient receptor potential cation channel subfamily A member 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:6] Antagonist binding to PPAR\u00ce\u00b1 leading to body-weight loss ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:318] Glucocorticoid Receptor activation leading to hepatic steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:18] PPAR\u00ce\u00b1 activation in utero leading to impaired fertility in males ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:61] NFE2L2/FXR activation leading to hepatic steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:34] LXR activation leading to hepatic steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:58] NR1I3 (CAR) suppression leading to hepatic steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:72] Epigenetic modification of PPARG leading to adipogenesis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:123] Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:6] Antagonist binding to PPAR\u00ce\u00b1 leading to body-weight loss ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:318] Glucocorticoid Receptor activation leading to hepatic steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:18] PPAR\u00ce\u00b1 activation in utero leading to impaired fertility in males ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:61] NFE2L2/FXR activation leading to hepatic steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:34] LXR activation leading to hepatic steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:58] NR1I3 (CAR) suppression leading to hepatic steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:72] Epigenetic modification of PPARG leading to adipogenesis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:123] Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription ",
+                  "color": "#79AC78"
             }
       },
       {

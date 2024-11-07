@@ -132,8 +132,8 @@
                   "role": "attribute",
                   "id": "Targets",
                   "label": "Targets",
-                  "colorBorder": "#6A1E55",
-                  "colorBg": "#A64D79",
+                  "colorBorder": "#875178",
+                  "colorBg": "#cda7ba",
                   "shape": "round-tag"
             }
       },
@@ -143,6 +143,25 @@
                   "role": "attribute",
                   "source": "PTX135",
                   "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Adverse Outcome Pathways",
+                  "label": "Adverse Outcome\nPathways",
+                  "colorBorder": "#79AC78",
+                  "colorBg": "#B0D9B1",
+                  "shape": "round-octagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX135",
+                  "target": "Adverse Outcome Pathways"
             }
       },
       {
@@ -564,6 +583,47 @@
                   "source": "Mechanism of Action",
                   "target": "moa_t3db",
                   "color": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "NA",
+                  "shape": "round-tag",
+                  "label": "NA",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "NA",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "NA",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "NA",
+                  "color": "#79AC78"
             }
       },
       {

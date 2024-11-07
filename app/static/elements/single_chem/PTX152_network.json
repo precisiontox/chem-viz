@@ -132,8 +132,8 @@
                   "role": "attribute",
                   "id": "Targets",
                   "label": "Targets",
-                  "colorBorder": "#6A1E55",
-                  "colorBg": "#A64D79",
+                  "colorBorder": "#875178",
+                  "colorBg": "#cda7ba",
                   "shape": "round-tag"
             }
       },
@@ -143,6 +143,25 @@
                   "role": "attribute",
                   "source": "PTX152",
                   "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Adverse Outcome Pathways",
+                  "label": "Adverse Outcome\nPathways",
+                  "colorBorder": "#79AC78",
+                  "colorBg": "#B0D9B1",
+                  "shape": "round-octagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX152",
+                  "target": "Adverse Outcome Pathways"
             }
       },
       {
@@ -564,6 +583,1833 @@
                   "source": "Mechanism of Action",
                   "target": "moa_t3db",
                   "color": "#d4ac0d"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2E1",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2E1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit alpha-1",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit alpha-1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Glutamate receptor ionotropic, NMDA 3A",
+                  "shape": "round-tag",
+                  "label": "Glutamate receptor\nionotropic,\nNMDA 3A",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Glycine receptor subunit alpha-1",
+                  "shape": "round-tag",
+                  "label": "Glycine receptor\nsubunit alpha-1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Glycine receptor subunit alpha-2",
+                  "shape": "round-tag",
+                  "label": "Glycine receptor\nsubunit alpha-2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Alcohol dehydrogenase 1A",
+                  "shape": "round-tag",
+                  "label": "Alcohol dehydrogenase\n1A",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Alcohol dehydrogenase 1B",
+                  "shape": "round-tag",
+                  "label": "Alcohol dehydrogenase\n1B",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Alcohol dehydrogenase 1C",
+                  "shape": "round-tag",
+                  "label": "Alcohol dehydrogenase\n1C",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit delta",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit delta",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit gamma-1",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit gamma-1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit beta-1",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit beta-1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit beta-3",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit beta-3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Alcohol dehydrogenase class-3",
+                  "shape": "round-tag",
+                  "label": "Alcohol dehydrogenase\nclass-3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Voltage-dependent L-type calcium channel subunit alpha-1C",
+                  "shape": "round-tag",
+                  "label": "Voltage-dependent\nL-type calcium\nchannel subunit\nalpha-1C",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Voltage-dependent L-type calcium channel subunit beta-1",
+                  "shape": "round-tag",
+                  "label": "Voltage-dependent\nL-type calcium\nchannel subunit\nbeta-1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Voltage-dependent calcium channel gamma-1 subunit",
+                  "shape": "round-tag",
+                  "label": "Voltage-dependent\ncalcium channel\ngamma-1 subunit",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Voltage-dependent L-type calcium channel subunit alpha-1D",
+                  "shape": "round-tag",
+                  "label": "Voltage-dependent\nL-type calcium\nchannel subunit\nalpha-1D",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Voltage-dependent L-type calcium channel subunit alpha-1S",
+                  "shape": "round-tag",
+                  "label": "Voltage-dependent\nL-type calcium\nchannel subunit\nalpha-1S",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Voltage-dependent calcium channel gamma-2 subunit",
+                  "shape": "round-tag",
+                  "label": "Voltage-dependent\ncalcium channel\ngamma-2 subunit",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit alpha-3",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nalpha-3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit alpha-2",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nalpha-2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit alpha-4",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nalpha-4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit alpha-7",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nalpha-7",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit alpha-5",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nalpha-5",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Vascular cell adhesion protein 1",
+                  "shape": "round-tag",
+                  "label": "Vascular cell\nadhesion protein\n1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "5-hydroxytryptamine receptor 3E",
+                  "shape": "round-tag",
+                  "label": "5-hydroxytryptamine\nreceptor 3E",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit pi",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit pi",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "5-hydroxytryptamine receptor 3B",
+                  "shape": "round-tag",
+                  "label": "5-hydroxytryptamine\nreceptor 3B",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 1A1",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n1A1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 1A2",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n1A2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Alcohol dehydrogenase 4",
+                  "shape": "round-tag",
+                  "label": "Alcohol dehydrogenase\n4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 3A4",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n3A4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2C9",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2C9",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Alcohol dehydrogenase [NADP(+)]",
+                  "shape": "round-tag",
+                  "label": "Alcohol dehydrogenase\n[NADP(+)]",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit beta-2",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nbeta-2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2B6",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2B6",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Alcohol dehydrogenase 6",
+                  "shape": "round-tag",
+                  "label": "Alcohol dehydrogenase\n6",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit beta-4",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nbeta-4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit alpha-5",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit alpha-5",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 2C19",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n2C19",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit alpha-3",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit alpha-3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Alcohol dehydrogenase class 4 mu/sigma chain",
+                  "shape": "round-tag",
+                  "label": "Alcohol dehydrogenase\nclass 4 mu/sigma\nchain",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Glutamate receptor 1",
+                  "shape": "round-tag",
+                  "label": "Glutamate receptor\n1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Glutamate receptor 2",
+                  "shape": "round-tag",
+                  "label": "Glutamate receptor\n2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Glutamate receptor 3",
+                  "shape": "round-tag",
+                  "label": "Glutamate receptor\n3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "5-hydroxytryptamine receptor 3A",
+                  "shape": "round-tag",
+                  "label": "5-hydroxytryptamine\nreceptor 3A",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit alpha-2",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit alpha-2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit beta-2",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit beta-2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "G protein-activated inward rectifier potassium channel 2",
+                  "shape": "round-tag",
+                  "label": "G protein-activated\ninward rectifier\npotassium channel\n2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Glutamate receptor 4",
+                  "shape": "round-tag",
+                  "label": "Glutamate receptor\n4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit alpha-4",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit alpha-4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "G protein-activated inward rectifier potassium channel 4",
+                  "shape": "round-tag",
+                  "label": "G protein-activated\ninward rectifier\npotassium channel\n4",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "G protein-activated inward rectifier potassium channel 1",
+                  "shape": "round-tag",
+                  "label": "G protein-activated\ninward rectifier\npotassium channel\n1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit epsilon",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit epsilon",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Cytochrome P450 4A11",
+                  "shape": "round-tag",
+                  "label": "Cytochrome P450\n4A11",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit beta-3",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nbeta-3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Equilibrative nucleoside transporter 2",
+                  "shape": "round-tag",
+                  "label": "Equilibrative\nnucleoside transporter\n2",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit alpha-6",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nalpha-6",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit alpha-6",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit alpha-6",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "5-hydroxytryptamine receptor 3D",
+                  "shape": "round-tag",
+                  "label": "5-hydroxytryptamine\nreceptor 3D",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "5-hydroxytryptamine receptor 3C",
+                  "shape": "round-tag",
+                  "label": "5-hydroxytryptamine\nreceptor 3C",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "G protein-activated inward rectifier potassium channel 3",
+                  "shape": "round-tag",
+                  "label": "G protein-activated\ninward rectifier\npotassium channel\n3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Equilibrative nucleoside transporter 1",
+                  "shape": "round-tag",
+                  "label": "Equilibrative\nnucleoside transporter\n1",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit gamma-3",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit gamma-3",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit alpha-10",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nalpha-10",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Neuronal acetylcholine receptor subunit alpha-9",
+                  "shape": "round-tag",
+                  "label": "Neuronal acetylcholine\nreceptor subunit\nalpha-9",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "target",
+                  "id": "Gamma-aminobutyric acid receptor subunit theta",
+                  "shape": "round-tag",
+                  "label": "Gamma-aminobutyric\nacid receptor\nsubunit theta",
+                  "colorBg": "#cda7ba",
+                  "colorBorder": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2E1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit alpha-1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Glutamate receptor ionotropic, NMDA 3A",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Glycine receptor subunit alpha-1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Glycine receptor subunit alpha-2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Alcohol dehydrogenase 1A",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Alcohol dehydrogenase 1B",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Alcohol dehydrogenase 1C",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit delta",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit gamma-1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit beta-1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit beta-3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Alcohol dehydrogenase class-3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Voltage-dependent L-type calcium channel subunit alpha-1C",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Voltage-dependent L-type calcium channel subunit beta-1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Voltage-dependent calcium channel gamma-1 subunit",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Voltage-dependent L-type calcium channel subunit alpha-1D",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Voltage-dependent L-type calcium channel subunit alpha-1S",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Voltage-dependent calcium channel gamma-2 subunit",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit alpha-3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit alpha-2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit alpha-4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit alpha-7",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit alpha-5",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Vascular cell adhesion protein 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "5-hydroxytryptamine receptor 3E",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit pi",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "5-hydroxytryptamine receptor 3B",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 1A1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 1A2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Alcohol dehydrogenase 4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 3A4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2C9",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Alcohol dehydrogenase [NADP(+)]",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit beta-2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2B6",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Alcohol dehydrogenase 6",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit beta-4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit alpha-5",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 2C19",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit alpha-3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Alcohol dehydrogenase class 4 mu/sigma chain",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Glutamate receptor 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Glutamate receptor 2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Glutamate receptor 3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "5-hydroxytryptamine receptor 3A",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit alpha-2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit beta-2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "G protein-activated inward rectifier potassium channel 2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Glutamate receptor 4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit alpha-4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "G protein-activated inward rectifier potassium channel 4",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "G protein-activated inward rectifier potassium channel 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit epsilon",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Cytochrome P450 4A11",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit beta-3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Equilibrative nucleoside transporter 2",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit alpha-6",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit alpha-6",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "5-hydroxytryptamine receptor 3D",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "5-hydroxytryptamine receptor 3C",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "G protein-activated inward rectifier potassium channel 3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Equilibrative nucleoside transporter 1",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit gamma-3",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit alpha-10",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Neuronal acetylcholine receptor subunit alpha-9",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "target",
+                  "subrole": "attribute",
+                  "source": "Targets",
+                  "target": "Gamma-aminobutyric acid receptor subunit theta",
+                  "color": "#875178"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:6] Antagonist binding to PPAR\u00ce\u00b1 leading to body-weight loss ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:318] Glucocorticoid Receptor activation leading to hepatic steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:18] PPAR\u00ce\u00b1 activation in utero leading to impaired fertility in males ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:61] NFE2L2/FXR activation leading to hepatic steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:19] Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:57] AhR activation leading to hepatic steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:131] Aryl hydrocarbon receptor activation leading to uroporphyria ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:34] LXR activation leading to hepatic steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:58] NR1I3 (CAR) suppression leading to hepatic steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:72] Epigenetic modification of PPARG leading to adipogenesis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:36] Peroxisomal Fatty Acid Beta-Oxidation Inhibition Leading to Steatosis ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:97] 5-hydroxytryptamine transporter (5-HTT",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "SERT) inhibition leading to population decline ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:98] 5-hydroxytryptamine transporter (5-HTT",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "SERT) inhibition leading to decreased shelter seeking and increased predation ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:195] 5-hydroxytryptamine transporter (5-HTT) inhibition leading to population increase ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:203] 5-hydroxytryptamine transporter inhibition leading to decreased reproductive success and population decline ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:204] 5-hydroxytryptamine transporter inhibition leading to increased reproductive success and population increase ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:123] Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:148] EGFR Activation Leading to Decreased Lung Function ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "aop",
+                  "id": "[AOP:200] Estrogen receptor activation leading to breast cancer   ",
+                  "shape": "round-octagon",
+                  "colorBg": "#B0D9B1",
+                  "colorBorder": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:6] Antagonist binding to PPAR\u00ce\u00b1 leading to body-weight loss ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:318] Glucocorticoid Receptor activation leading to hepatic steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:18] PPAR\u00ce\u00b1 activation in utero leading to impaired fertility in males ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:61] NFE2L2/FXR activation leading to hepatic steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:19] Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:57] AhR activation leading to hepatic steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:131] Aryl hydrocarbon receptor activation leading to uroporphyria ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:34] LXR activation leading to hepatic steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:58] NR1I3 (CAR) suppression leading to hepatic steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:72] Epigenetic modification of PPARG leading to adipogenesis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:36] Peroxisomal Fatty Acid Beta-Oxidation Inhibition Leading to Steatosis ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:97] 5-hydroxytryptamine transporter (5-HTT",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "SERT) inhibition leading to population decline ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:98] 5-hydroxytryptamine transporter (5-HTT",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "SERT) inhibition leading to decreased shelter seeking and increased predation ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:195] 5-hydroxytryptamine transporter (5-HTT) inhibition leading to population increase ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:203] 5-hydroxytryptamine transporter inhibition leading to decreased reproductive success and population decline ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:204] 5-hydroxytryptamine transporter inhibition leading to increased reproductive success and population increase ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:123] Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:148] EGFR Activation Leading to Decreased Lung Function ",
+                  "color": "#79AC78"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "aop",
+                  "subrole": "attribute",
+                  "source": "Adverse Outcome Pathways",
+                  "target": "[AOP:200] Estrogen receptor activation leading to breast cancer   ",
+                  "color": "#79AC78"
             }
       },
       {

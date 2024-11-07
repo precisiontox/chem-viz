@@ -112,7 +112,7 @@ def read_baseline_tox_file(file_path):
     return df
 
 
-def read_aop_file(file_path):
+def read_aop_file_complete(file_path):
     df_aop_ke = pd.read_excel(
         file_path,
         usecols=["Prec.Tox code", "AOP_id", "Key Event"],
@@ -205,6 +205,26 @@ def read_t3db_moa_file(file_path):
     df_target = df_target.drop_duplicates()
 
     return df_moa, df_target
+
+
+def read_aop_file(file_path, df_ide):
+    df = pd.read_excel(
+        file_path,
+        skiprows=0,
+        index_col=None,
+        sheet_name="default_1",
+        usecols=["DTXSID=DTX_id", "AOP_id", "AOP_name"]
+    ).rename(columns={
+        "DTXSID=DTX_id": "DTXSID"    
+    })
+    df["AOP_id"] = df["AOP_id"].astype(str)
+    df["AOP_full"] = "[AOP:" + df["AOP_id"] + "] " + df["AOP_name"]
+    df = df.merge(
+        df_ide[["ptx_code", "DTXSID"]],
+        on=["DTXSID"],
+        how="left"
+    )
+    return df
 
 
 def get_chemical_node(chem_values: dict): 
@@ -304,11 +324,10 @@ def create_general_network(
 
 def get_attribute_nodes_edges(chem_values: dict):
     attributes = ["Physico-chemical properties", "Use", "Toxicity", 
-                 "Baseline Toxicity", "Mechanism of Action", "Targets"]
-    shapes = ["round-diamond", "round-rectangle", "round-pentagon", 
-             "round-hexagon", "round-heptagon", "round-tag"]
+                 "Baseline Toxicity", "Mechanism of Action", "Targets",
+                 "Adverse Outcome Pathways"]
     network_elements = []
-    for attr, shape in zip(attributes, shapes):
+    for attr in attributes:
         label = attr
         label = wrap_label(attr, 10)
         attr_node = {
@@ -319,7 +338,7 @@ def get_attribute_nodes_edges(chem_values: dict):
                 "label": label,
                 "colorBorder": colors[attr+"_border"],
                 "colorBg": colors[attr+"_bg"],
-                "shape": shape
+                "shape": shapes[attr]
             }
         }
         attr_edge = {
@@ -476,6 +495,67 @@ def get_mechanism_of_action_nodes_edges(chem_values: dict):
         return []
 
 
+def get_targets_nodes_edges(chem_values: dict):
+    target_nodes = []
+    target_edges = []
+    for target in chem_values["target_t3db"].split("; "):
+        target_nodes.append(
+            {
+                "group": "nodes",
+                "data": {
+                    "role": "target",
+                    "id": target,
+                    "shape": shapes["Targets"],
+                    "label": wrap_label(target, 10),
+                    "colorBg": colors["Targets_bg"],
+                    "colorBorder": colors["Targets_border"]
+                }
+            }
+        )
+        target_edges.append(
+            {
+                "group": "edges",
+                "data": {
+                    "role": "target",
+                    "subrole": "attribute",
+                    "source": "Targets",
+                    "target": target,
+                    "color": colors["Targets_border"]
+                }
+            }
+        )
+    return target_nodes + target_edges
+
+
+def get_aop_nodes_edges(chem_values:dict):
+    aop_nodes = []
+    aop_edges = []
+    for aop in chem_values["AOP_full"].split("; "):
+        aop_node = {
+            "group": "nodes",
+            "data": {
+                "role": "aop",
+                "id": aop,
+                "shape": shapes["Adverse Outcome Pathways"],
+                "colorBg": colors["Adverse Outcome Pathways_bg"],
+                "colorBorder": colors["Adverse Outcome Pathways_border"],
+            }
+        }
+        aop_edge = {
+            "group": "edges",
+            "data": {
+                "role": "aop",
+                "subrole": "attribute",
+                "source": "Adverse Outcome Pathways",
+                "target": aop,
+                "color": colors["Adverse Outcome Pathways_border"]
+            }
+        }
+        aop_nodes.append(aop_node)
+        aop_edges.append(aop_edge)
+    return aop_nodes + aop_edges
+    
+
 def get_use_class_nodes_edges(df_use):
     use_nodes = []
     use_edges = []
@@ -561,6 +641,12 @@ def create_single_chemical_network(
     # Add mechanism of action nodes and edges
     json_elements += get_mechanism_of_action_nodes_edges(chem_values)
 
+    # Add targets nodes and edges
+    json_elements += get_targets_nodes_edges(chem_values)
+
+    # Add AOP nodes and edges
+    json_elements += get_aop_nodes_edges(chem_values)
+
     # Add use & toxicity nodes and edges
     json_elements += get_use_class_nodes_edges(df_use)
     json_elements += get_toxicity_class_nodes_edges(df_tox)
@@ -603,7 +689,6 @@ def export_chemical_table(df):
 
 # data files
 chem_ide_file = "Manuscript Chemicals - Identifiers.xlsx"
-aop_file = "Manuscript Chemicals - AOP.xlsx"
 drugbank_file = "Manuscript Chemicals - DrugBank.xlsx"
 toxclass_file = "toxicity_categories.tsv"
 use_file = "Manuscript Chemicals - Identifiers_with_category.xlsx"
@@ -611,6 +696,9 @@ properties_file = "Visulaization P-Chem Dataset ver1.xlsx"
 baseline_file = "Visualization Data - Baseline Toxicity.xlsx"
 drugbank_moa_file = "Manuscript Chemicals - DrugBank - Target & MoA.xlsx"
 t3db_moa_file = "Manuscript Chemicals - T3Db - Target & MoA.xlsx"
+aop_file_simple = "Manuscript Chemicals - AOP IDs - only.xlsx"
+aop_file = "Manuscript Chemicals - AOP.xlsx"
+
 
 # output files
 elements_dir = "../app/static/elements/"
@@ -654,13 +742,23 @@ labels = {
     "moa_drugbank": "Mechanism of Action (DrugBank)",
     "protein_binding": "Protein Binding (DrugBank)",
     "moa_t3db": "Mechanism of Action (T3DB)",
-    "target_t3db": "Target Name (T3DB)"
+    "target_t3db": "Target Name (T3DB)",
+    "AOP_full": "Adverse Outcome Pathway"
 }
 units = {
     "mw_g_mol": "g/mol",
     "solubility_h2o_mol_liter": "mol/liter",
     "henry_coefficient_atm_m3_mol": "atm*m3/mol",
     "density_kg_liter": "kg/liter"
+}
+shapes = {
+    "Physico-chemical properties": "round-diamond",
+    "Use": "round-rectangle",
+    "Toxicity": "round-pentagon",
+    "Baseline Toxicity": "round-hexagon",
+    "Mechanism of Action": "round-heptagon",
+    "Targets": "round-tag",
+    "Adverse Outcome Pathways": "round-octagon"
 }
 colors = {
     "Physico-chemical properties_border": "#007cc1",
@@ -673,8 +771,10 @@ colors = {
     "Baseline Toxicity_bg": "#D6C0B3",
     "Mechanism of Action_border": "#d4ac0d",
     "Mechanism of Action_bg": "#F4D35E",
-    "Targets_border": "#6A1E55",
-    "Targets_bg": "#A64D79"
+    "Targets_border": "#875178",
+    "Targets_bg": "#cda7ba",
+    "Adverse Outcome Pathways_border": "#79AC78",
+    "Adverse Outcome Pathways_bg": "#B0D9B1",
 }
 sources = {
     "solubility_h2o_mol_liter": "source_solubility_h2o",
@@ -753,7 +853,14 @@ df_ide = df_ide.merge(
 )
 
 # Read AOP file
-# df_aop = read_aop_file(aop_file)
+df_aop = read_aop_file(aop_file_simple, df_ide)
+df_ide = df_ide.merge(
+    df_aop[["ptx_code", "AOP_full"]].groupby('ptx_code').agg({'AOP_full': '; '.join}).reset_index(),
+    on=["ptx_code"],
+    how="left"
+)
+
+# df_aop = read_aop_file_complete(aop_file)
 # aop_dict = df_aop.set_index("AOP_id").apply(
 #             lambda row: {"title": row["AOP_title"], "type": row["Type"]}, axis=1
 #             ).to_dict()
