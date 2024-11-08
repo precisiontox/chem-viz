@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\nn/a",
                   "value": "NA",
                   "hlLabel": "Molecular Weight:\nn/a",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\nn/a",
                   "value": "NA",
                   "hlLabel": "Solubility (H2O):\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\nn/a",
                   "value": "NA",
                   "hlLabel": "Henry Coefficient:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\nn/a",
                   "value": "NA",
                   "hlLabel": "Log Kaw:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (acid):\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (base):\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\nn/a",
                   "value": "NA",
                   "hlLabel": "Log Kow:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\nn/a",
                   "value": "NA",
                   "hlLabel": "Log Dlipw (pH 7.4):\nn/a\nSource: Kow QSAR (\u00e2\u02c6\u2020mw = 1)",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\n0.635756222637324 ",
                   "value": "0.635756222637324",
                   "hlLabel": "Freely Dissolved Fraction:\n0.635756222637324 ",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\nn/a",
                   "value": "NA",
                   "hlLabel": "Density:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -401,6 +411,7 @@
                   "id": "Baseline - D. rerio",
                   "label": "D. rerio:\nn/a",
                   "value": "NA",
+                  "shape": "round-hexagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -412,6 +423,7 @@
                   "id": "Baseline - Daphnia",
                   "label": "D. magna:\nn/a",
                   "value": "NA",
+                  "shape": "round-hexagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -423,6 +435,7 @@
                   "id": "Baseline - C. elegans",
                   "label": "C. elegans:\nn/a",
                   "value": "NA",
+                  "shape": "round-hexagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -434,6 +447,7 @@
                   "id": "Baseline - Xenopus",
                   "label": "X. laevis:\nn/a",
                   "value": "NA",
+                  "shape": "round-hexagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -445,6 +459,7 @@
                   "id": "Baseline - Drosophila",
                   "label": "D. melanogaster:\nn/a",
                   "value": "NA",
+                  "shape": "round-hexagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -456,6 +471,7 @@
                   "id": "Baseline - Cells",
                   "label": "HepG2 cells:\n7.68922809115104e-05",
                   "value": "7.68922809115104e-05",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -467,6 +483,7 @@
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
                   "label": "HepG2 cells (generic micromol/l free EC10):\n4.88847460622699e-05",
                   "value": "4.88847460622699e-05",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -539,27 +556,6 @@
                   "source": "Baseline Toxicity",
                   "target": "baseline_cells_generic_micromole_liter_free_ec10",
                   "color": "#AB886D"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "target",
-                  "id": "NA",
-                  "shape": "round-tag",
-                  "label": "NA",
-                  "colorBg": "#cda7ba",
-                  "colorBorder": "#875178"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "target",
-                  "subrole": "attribute",
-                  "source": "Targets",
-                  "target": "NA",
-                  "color": "#875178"
             }
       },
       {
@@ -648,8 +644,10 @@
                   "role": "category_use_class",
                   "id": "Pesticide",
                   "label": "Pesticide",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "pesticide.svg"
             }
       },
       {

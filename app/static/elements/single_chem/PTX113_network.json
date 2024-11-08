@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\n277.23 g/mol",
                   "value": "277.23",
                   "hlLabel": "Molecular Weight:\n277.23 g/mol",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\n0.000104593 mol/liter",
                   "value": "0.000104593",
                   "hlLabel": "Solubility (H2O):\n0.000104593 mol/liter\nSource: COMPTOX (OPERA)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\n9.23114e-07 atm*m3/mol",
                   "value": "9.23114e-07",
                   "hlLabel": "Henry Coefficient:\n9.23114e-07 atm*m3/mol\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\n4.42305433428057 ",
                   "value": "4.42305433428057",
                   "hlLabel": "Log Kaw:\n4.42305433428057 \nSource: LSER eq 1 exp. Descriptors",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (acid):\nn/a\nSource: ACD/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (base):\nn/a\nSource: ACD/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\n3.3 ",
                   "value": "3.3",
                   "hlLabel": "Log Kow:\n3.3 \nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\n3.72 ",
                   "value": "3.72",
                   "hlLabel": "Log Dlipw (pH 7.4):\n3.72 \nSource: LSER",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\n0.0902920275584531 ",
                   "value": "0.0902920275584531",
                   "hlLabel": "Freely Dissolved Fraction:\n0.0902920275584531 ",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\nn/a",
                   "value": "NA",
                   "hlLabel": "Density:\nn/a\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -401,6 +411,7 @@
                   "id": "Baseline - D. rerio",
                   "label": "D. rerio:\n34.4508546286578",
                   "value": "34.4508546286578",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -412,6 +423,7 @@
                   "id": "Baseline - Daphnia",
                   "label": "D. magna:\n30.4067705566362",
                   "value": "30.4067705566362",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -423,6 +435,7 @@
                   "id": "Baseline - C. elegans",
                   "label": "C. elegans:\n67.1781009676035",
                   "value": "67.1781009676035",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -434,6 +447,7 @@
                   "id": "Baseline - Xenopus",
                   "label": "X. laevis:\n41.3431915878264",
                   "value": "41.3431915878264",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -445,6 +459,7 @@
                   "id": "Baseline - Drosophila",
                   "label": "D. melanogaster:\n259.513526918903",
                   "value": "259.513526918903",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -456,6 +471,7 @@
                   "id": "Baseline - Cells",
                   "label": "HepG2 cells:\n5.48686080119e-05",
                   "value": "5.48686080119e-05",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -467,6 +483,7 @@
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
                   "label": "HepG2 cells (generic micromol/l free EC10):\n4.95419786670443e-06",
                   "value": "4.95419786670443e-06",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -903,8 +920,10 @@
                   "role": "category_use_class",
                   "id": "Pesticide",
                   "label": "Pesticide",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "pesticide.svg"
             }
       },
       {
@@ -923,8 +942,10 @@
                   "role": "category_tox_class",
                   "id": "cardiotoxicity",
                   "label": "cardiotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "cardiotoxicity.svg"
             }
       },
       {
@@ -933,8 +954,10 @@
                   "role": "category_tox_class",
                   "id": "genotoxicity",
                   "label": "genotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -943,8 +966,10 @@
                   "role": "category_tox_class",
                   "id": "nephrotoxicity",
                   "label": "nephrotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -953,8 +978,10 @@
                   "role": "category_tox_class",
                   "id": "hepatotoxicity",
                   "label": "hepatotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hepatotoxicity.svg"
             }
       },
       {
@@ -963,8 +990,10 @@
                   "role": "category_tox_class",
                   "id": "neurotoxicity",
                   "label": "neurotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -973,8 +1002,10 @@
                   "role": "category_tox_class",
                   "id": "immunotoxicity",
                   "label": "immunotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {

@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\n183.31 g/mol",
                   "value": "183.31",
                   "hlLabel": "Molecular Weight:\n183.31 g/mol",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\n2.493044569 mol/liter",
                   "value": "2.493044569",
                   "hlLabel": "Solubility (H2O):\n2.493044569 mol/liter\nSource: MSDS (Sigma)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\nn/a",
                   "value": "NA",
                   "hlLabel": "Henry Coefficient:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\nn/a",
                   "value": "NA",
                   "hlLabel": "Log Kaw:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (acid):\nn/a\nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (base):\nn/a\nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\nn/a",
                   "value": "NA",
                   "hlLabel": "Log Kow:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\nmetal ",
                   "value": "metal",
                   "hlLabel": "Log Dlipw (pH 7.4):\nmetal \nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\nn/a",
                   "value": "NA",
                   "hlLabel": "Freely Dissolved Fraction:\nn/a",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\n4.05 kg/liter",
                   "value": "4.05",
                   "hlLabel": "Density:\n4.05 kg/liter\nSource: MSDS (Sigma)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -402,6 +412,7 @@
                   "label": "DrugBank:\nn/a",
                   "fullLabel": "DrugBank:\nn/a",
                   "value": "NA",
+                  "shape": "round-heptagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -414,6 +425,7 @@
                   "label": "T3DB:\nCadmium\ncauses cell...",
                   "fullLabel": "T3DB:\nCadmium causes cell\napoptosis by activating\nmitogen-activated protein\nkinases. (A28); Cadmium\nbinds to and activates the\nestrogen receptor, likely\nstimulating the growth of\ncertain types of cancer cells\nand causing other estrogenic\neffects, such as reproductive\ndysfunction. (A19)",
                   "value": "Cadmium causes cell apoptosis by activating mitogen-activated protein kinases. (A28); Cadmium binds to and activates the estrogen receptor, likely stimulating the growth of certain types of cancer cells and causing other estrogenic effects, such as reproductive dysfunction. (A19)",
+                  "shape": "round-heptagon",
                   "colorBg": "#F4D35E",
                   "colorBorder": "#d4ac0d"
             }
@@ -1226,8 +1238,10 @@
                   "role": "category_use_class",
                   "id": "Pesticide",
                   "label": "Pesticide",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "pesticide.svg"
             }
       },
       {
@@ -1246,8 +1260,10 @@
                   "role": "category_tox_class",
                   "id": "cardiotoxicity",
                   "label": "cardiotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "cardiotoxicity.svg"
             }
       },
       {
@@ -1256,8 +1272,10 @@
                   "role": "category_tox_class",
                   "id": "nephrotoxicity",
                   "label": "nephrotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -1266,8 +1284,10 @@
                   "role": "category_tox_class",
                   "id": "genotoxicity",
                   "label": "genotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -1276,8 +1296,10 @@
                   "role": "category_tox_class",
                   "id": "hematotoxicity",
                   "label": "hematotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hematotoxicity.svg"
             }
       },
       {
@@ -1286,8 +1308,10 @@
                   "role": "category_tox_class",
                   "id": "ototoxicity",
                   "label": "ototoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "ototoxicity.svg"
             }
       },
       {
@@ -1296,8 +1320,10 @@
                   "role": "category_tox_class",
                   "id": "neurotoxicity",
                   "label": "neurotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -1306,8 +1332,10 @@
                   "role": "category_tox_class",
                   "id": "hepatotoxicity",
                   "label": "hepatotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hepatotoxicity.svg"
             }
       },
       {
@@ -1316,8 +1344,10 @@
                   "role": "category_tox_class",
                   "id": "immunotoxicity",
                   "label": "immunotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {

@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\n250.177 g/mol",
                   "value": "250.177",
                   "hlLabel": "Molecular Weight:\n250.177 g/mol",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\n9.87e-05 mol/liter",
                   "value": "9.87e-05",
                   "hlLabel": "Solubility (H2O):\n9.87e-05 mol/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\n3.1984e-10 atm*m3/mol",
                   "value": "3.1984e-10",
                   "hlLabel": "Henry Coefficient:\n3.1984e-10 atm*m3/mol\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\n7.88337689505868 ",
                   "value": "7.88337689505868",
                   "hlLabel": "Log Kaw:\n7.88337689505868 \nSource: Comptox",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\n15.7 ",
                   "value": "15.7",
                   "hlLabel": "pKa (acid):\n15.7 \nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (base):\nn/a\nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\n2.26 ",
                   "value": "2.26",
                   "hlLabel": "Log Kow:\n2.26 \nSource: mean of ACD consensus and KOWWIN",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\n2.4 ",
                   "value": "2.4",
                   "hlLabel": "Log Dlipw (pH 7.4):\n2.4 \nSource: Kow-QSAR (?mw=1)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\n0.749543920368816 ",
                   "value": "0.749543920368816",
                   "hlLabel": "Freely Dissolved Fraction:\n0.749543920368816 ",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\n1.427 kg/liter",
                   "value": "1.427",
                   "hlLabel": "Density:\n1.427 kg/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -401,6 +411,7 @@
                   "id": "Baseline - D. rerio",
                   "label": "D. rerio:\n697.0",
                   "value": "697.0",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -412,6 +423,7 @@
                   "id": "Baseline - Daphnia",
                   "label": "D. magna:\n362.0",
                   "value": "362.0",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -423,6 +435,7 @@
                   "id": "Baseline - C. elegans",
                   "label": "C. elegans:\n791.237298701986",
                   "value": "791.237298701986",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -434,6 +447,7 @@
                   "id": "Baseline - Xenopus",
                   "label": "X. laevis:\n263.164076915896",
                   "value": "263.164076915896",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -445,6 +459,7 @@
                   "id": "Baseline - Drosophila",
                   "label": "D. melanogaster:\n3176.04370868296",
                   "value": "3176.04370868296",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -456,6 +471,7 @@
                   "id": "Baseline - Cells",
                   "label": "HepG2 cells:\n0.000137858052511996",
                   "value": "0.000137858052511996",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -467,6 +483,7 @@
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
                   "label": "HepG2 cells (generic micromol/l free EC10):\n0.000103330665134251",
                   "value": "0.000103330665134251",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -544,52 +561,13 @@
       {
             "group": "nodes",
             "data": {
-                  "role": "target",
-                  "id": "NA",
-                  "shape": "round-tag",
-                  "label": "NA",
-                  "colorBg": "#cda7ba",
-                  "colorBorder": "#875178"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "target",
-                  "subrole": "attribute",
-                  "source": "Targets",
-                  "target": "NA",
-                  "color": "#875178"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "aop",
-                  "id": "NA",
-                  "shape": "round-octagon",
-                  "colorBg": "#B0D9B1",
-                  "colorBorder": "#79AC78"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "aop",
-                  "subrole": "attribute",
-                  "source": "Adverse Outcome Pathways",
-                  "target": "NA",
-                  "color": "#79AC78"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
                   "role": "category_use_class",
                   "id": "Personal care products",
                   "label": "Personal care\nproducts",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "personal_care_products.svg"
             }
       },
       {

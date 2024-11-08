@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\n371.524 g/mol",
                   "value": "371.524",
                   "hlLabel": "Molecular Weight:\n371.524 g/mol",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\n4.81e-06 mol/liter",
                   "value": "4.81e-06",
                   "hlLabel": "Solubility (H2O):\n4.81e-06 mol/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\n2.23383e-08 atm*m3/mol",
                   "value": "2.23383e-08",
                   "hlLabel": "Henry Coefficient:\n2.23383e-08 atm*m3/mol\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\n6.03925955268213 ",
                   "value": "6.03925955268213",
                   "hlLabel": "Log Kaw:\n6.03925955268213 \nSource: LSER eq 1",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (acid):\nn/a\nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\n8.62 ",
                   "value": "8.62",
                   "hlLabel": "pKa (base):\n8.62 \nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\n7.07 ",
                   "value": "7.07",
                   "hlLabel": "Log Kow:\n7.07 \nSource: PP-LFER, Ulrich, N., Endo, S., Brown, T.N., Watanabe, N., Bronner, G., Abraham, M.H., Goss, K.-U., UFZ-LSER database v 3.2.1 [Internet], Leipzig, Germany, Helmholtz Centre for Environmental Research-UFZ. 2017 [accessed on 11.08.2023]. Available from http://www.ufz.de/lserd",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\n5.74 ",
                   "value": "5.74",
                   "hlLabel": "Log Dlipw (pH 7.4):\n5.74 \nSource: LSERD, eq. 1  (?mw=1)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\n0.00115515636329617 ",
                   "value": "0.00115515636329617",
                   "hlLabel": "Freely Dissolved Fraction:\n0.00115515636329617 ",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\n1.047 kg/liter",
                   "value": "1.047",
                   "hlLabel": "Density:\n1.047 kg/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -401,6 +411,7 @@
                   "id": "Baseline - D. rerio",
                   "label": "D. rerio:\n0.345",
                   "value": "0.345",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -412,6 +423,7 @@
                   "id": "Baseline - Daphnia",
                   "label": "D. magna:\n0.685",
                   "value": "0.685",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -423,6 +435,7 @@
                   "id": "Baseline - C. elegans",
                   "label": "C. elegans:\n1.54067855908489",
                   "value": "1.54067855908489",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -434,6 +447,7 @@
                   "id": "Baseline - Xenopus",
                   "label": "X. laevis:\n2.43210023156998",
                   "value": "2.43210023156998",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -445,6 +459,7 @@
                   "id": "Baseline - Drosophila",
                   "label": "D. melanogaster:\n5.61257094292064",
                   "value": "5.61257094292064",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -456,6 +471,7 @@
                   "id": "Baseline - Cells",
                   "label": "HepG2 cells:\n4.10137149478347e-05",
                   "value": "4.10137149478347e-05",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -467,6 +483,7 @@
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
                   "label": "HepG2 cells (generic micromol/l free EC10):\n4.73772538044067e-08",
                   "value": "4.73772538044067e-08",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -549,6 +566,7 @@
                   "label": "DrugBank:\nTamoxifen\ncompe...",
                   "fullLabel": "DrugBank:\nTamoxifen competitively\ninhibits estrogen binding\nto its receptor, which is\ncritical for it's activity\nin breast cancer cells.[A1025]\nTamoxifen leads to a decrease\nin tumor growth factor \u00ce\u00b1\nand insulin-like growth\nfactor 1, and an increase\nin sex hormone binding globulin.[A1025]\nThe increase in sex hormon\nbinding globulin limits\nthe amount of freely available\nestradiol.[A1025] These\nchanges reduce levels of\nfactors that stimulate tumor\ngrowth.[A1025]\n\nTamoxifen\nhas also been shown to induce\napoptosis in estrogen receptor\npositive cells.[A182195]\nThis action is thought to\nbe the result of inhibition\nof protein kinase C, which\nprevents DNA synthesis.[A182195]\nAlternate theories for the\napoptotic effect of tamoxifen\ncomes from the approximately\n3 fold increase in intracellular\nand mitochondrial calcium\nion levels after administration\nor the induction of tumor\ngrowth factor \u00ce\u00b2.[A182195]",
                   "value": "Tamoxifen competitively inhibits estrogen binding to its receptor, which is critical for it's activity in breast cancer cells.[A1025] Tamoxifen leads to a decrease in tumor growth factor \u00ce\u00b1 and insulin-like growth factor 1, and an increase in sex hormone binding globulin.[A1025] The increase in sex hormon binding globulin limits the amount of freely available estradiol.[A1025] These changes reduce levels of factors that stimulate tumor growth.[A1025]\n\nTamoxifen has also been shown to induce apoptosis in estrogen receptor positive cells.[A182195] This action is thought to be the result of inhibition of protein kinase C, which prevents DNA synthesis.[A182195] Alternate theories for the apoptotic effect of tamoxifen comes from the approximately 3 fold increase in intracellular and mitochondrial calcium ion levels after administration or the induction of tumor growth factor \u00ce\u00b2.[A182195]",
+                  "shape": "round-heptagon",
                   "colorBg": "#F4D35E",
                   "colorBorder": "#d4ac0d"
             }
@@ -561,6 +579,7 @@
                   "label": "T3DB:\nn/a",
                   "fullLabel": "T3DB:\nn/a",
                   "value": "NA",
+                  "shape": "round-heptagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -1102,8 +1121,10 @@
                   "role": "category_use_class",
                   "id": "Pharmaceutical",
                   "label": "Pharmaceutical",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "pharmaceutical.svg"
             }
       },
       {
@@ -1122,8 +1143,10 @@
                   "role": "category_tox_class",
                   "id": "nephrotoxicity",
                   "label": "nephrotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -1132,8 +1155,10 @@
                   "role": "category_tox_class",
                   "id": "cardiotoxicity",
                   "label": "cardiotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "cardiotoxicity.svg"
             }
       },
       {
@@ -1142,8 +1167,10 @@
                   "role": "category_tox_class",
                   "id": "immunotoxicity",
                   "label": "immunotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {
@@ -1152,8 +1179,10 @@
                   "role": "category_tox_class",
                   "id": "neurotoxicity",
                   "label": "neurotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -1162,8 +1191,10 @@
                   "role": "category_tox_class",
                   "id": "hepatotoxicity",
                   "label": "hepatotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hepatotoxicity.svg"
             }
       },
       {
@@ -1172,8 +1203,10 @@
                   "role": "category_tox_class",
                   "id": "ototoxicity",
                   "label": "ototoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "ototoxicity.svg"
             }
       },
       {
@@ -1182,8 +1215,10 @@
                   "role": "category_tox_class",
                   "id": "genotoxicity",
                   "label": "genotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
             }
       },
       {

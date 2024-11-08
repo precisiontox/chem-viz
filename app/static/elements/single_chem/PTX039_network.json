@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\n296.1524 g/mol",
                   "value": "296.1524",
                   "hlLabel": "Molecular Weight:\n296.1524 g/mol",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\n1.78e-05 mol/liter",
                   "value": "1.78e-05",
                   "hlLabel": "Solubility (H2O):\n1.78e-05 mol/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\n1.5686e-10 atm*m3/mol",
                   "value": "1.5686e-10",
                   "hlLabel": "Henry Coefficient:\n1.5686e-10 atm*m3/mol\nSource: COMPTOX (Opera)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\n8.19279746115865 ",
                   "value": "8.19279746115865",
                   "hlLabel": "Log Kaw:\n8.19279746115865 \nSource: LSER eq 1",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\n4.07 ",
                   "value": "4.07",
                   "hlLabel": "pKa (acid):\n4.07 \nSource: Drillia et al. 2005",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (base):\nn/a\nSource: Drillia et al. 2005",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\n4.51 ",
                   "value": "4.51",
                   "hlLabel": "Log Kow:\n4.51 \nSource: Avdeef et al. 1997",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\n2.65 ",
                   "value": "2.65",
                   "hlLabel": "Log Dlipw (pH 7.4):\n2.65 \nSource: Avdeef et al. 1997",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\n0.0130910516349 ",
                   "value": "0.0130910516349",
                   "hlLabel": "Freely Dissolved Fraction:\n0.0130910516349 ",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\n1.447 kg/liter",
                   "value": "1.447",
                   "hlLabel": "Density:\n1.447 kg/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -401,6 +411,7 @@
                   "id": "Baseline - D. rerio",
                   "label": "D. rerio:\n392.0",
                   "value": "392.0",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -412,6 +423,7 @@
                   "id": "Baseline - Daphnia",
                   "label": "D. magna:\n226.0",
                   "value": "226.0",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -423,6 +435,7 @@
                   "id": "Baseline - C. elegans",
                   "label": "C. elegans:\n494.007672645864",
                   "value": "494.007672645864",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -434,6 +447,7 @@
                   "id": "Baseline - Xenopus",
                   "label": "X. laevis:\n184.798638568366",
                   "value": "184.798638568366",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -445,6 +459,7 @@
                   "id": "Baseline - Drosophila",
                   "label": "D. melanogaster:\n1968.49265650456",
                   "value": "1968.49265650456",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -456,6 +471,7 @@
                   "id": "Baseline - Cells",
                   "label": "HepG2 cells:\n0.00441855797246566",
                   "value": "0.00441855797246566",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -467,6 +483,7 @@
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
                   "label": "HepG2 cells (generic micromol/l free EC10):\n5.78435705693473e-05",
                   "value": "5.78435705693473e-05",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -549,6 +566,7 @@
                   "label": "DrugBank:\nDiclofenac\ninhi...",
                   "fullLabel": "DrugBank:\nDiclofenac inhibits\ncyclooxygenase-1 and -2,\nthe enzymes responsible\nfor production of prostaglandin\n(PG) G<sub>2</sub> which\nis the precursor to other\nPGs.[label,T116] These\nmolecules have broad activity\nin pain and inflammation\nand the inhibition of their\nproduction is the common\nmechanism linking each effect\nof diclofenac.\n\nPGE<sub>2</sub>\nis the primary PG involved\nin modulation of nociception.[A179023]\nIt mediates peripheral sensitization\nthrough a variety of effects.[T116,A179023]\nPGE<sub>2</sub> activates\nthe G<sub>q</sub>-coupled\nEP<sub>1</sub> receptor\nleading to increased activity\nof the inositol trisphosphate/phospholipase\nC pathway. Activation of\nthis pathway releases intracellular\nstores of calcium which directly\nreduces action potential\nthreshold and activates\nprotein kinase C (PKC) which\ncontributes to several indirect\nmechanisms. PGE<sub>2</sub>\nalso activates the EP<sub>4</sub>\nreceptor, coupled to G<sub>s</sub>,\nwhich activates the adenylyl\ncyclase/protein kinase\nA (AC/PKA) signaling pathway.\nPKA and PKC both contribute\nto the potentiation of transient\nreceptor potential cation\nchannel subfamily V member\n1 (TRPV1) potentiation,\nwhich increases sensitivity\nto heat stimuli. They also\nactivate tetrodotoxin-resistant\nsodium channels and inhibit\ninward potassium currents.\nPKA further contributes\nto the activation of the P2X3\npurine receptor and sensitization\nof T-type calcium channels.\nThe activation and sensitization\nof depolarizing ion channels\nand inhibition of inward\npotassium currents serve\nto reduce the intensity of\nstimulus necessary to generate\naction potentials in nociceptive\nsensory afferents. PGE<sub>2</sub>\nact via EP<sub>3</sub> to\nincrease sensitivity to\nbradykinin and via EP<sub>2</sub>\nto further increase heat\nsensitivity. Central sensitization\noccurs in the dorsal horn\nof the spinal cord and is mediated\nby the EP<sub>2</sub> receptor\nwhich couples to G<sub>s</sub>.\nPre-synaptically, this\nreceptor increases the release\nof pro-nociceptive neurotransmitters\nglutamate, CGRP, and substance\nP. Post-synaptically it\nincreases the activity of\nAMPA and NMDA receptors and\nproduces inhibition of inhibitory\nglycinergic neurons. Together\nthese lead to a reduced threshold\nof activating, allowing\nlow intensity stimuli to\ngenerate pain signals. PGI<sub>2</sub>\nis known to play a role via\nits G<sub>s</sub>-coupled\nIP receptor although the\nmagnitude of its contribution\nvaries. It has been proposed\nto be of greater importance\nin painful inflammatory\nconditions such as arthritis.\nBy limiting sensitization,\nboth peripheral and central,\nvia these pathways NSAIDs\ncan effectively reduce inflammatory\npain.\n\nPGI<sub>2</sub>\nand PGE<sub>2</sub> contribute\nto acute inflammation via\ntheir IP and EP<sub>2</sub>\nreceptors.[T116,A179044]\nSimilarly to \u00ce\u00b2 adrenergic\nreceptors these are G<sub>s</sub>-coupled\nand mediate vasodilation\nthrough the AC/PKA pathway.\nPGE<sub>2</sub> also contributes\nby increasing leukocyte\nadhesion to the endothelium\nand attracts the cells to\nthe site of injury.[T116]\nPGD<sub>2</sub> plays a\nrole in the activation of\nendothelial cell release\nof cytokines through its\nDP<sub>1</sub> receptor.[A179044]\nPGI<sub>2</sub> and PGE<sub>2</sub>\nmodulate T-helper cell activation\nand differentiation through\nIP, EP<sub>2</sub>, and\nEP<sub>4</sub> receptors\nwhich is believed to be an\nimportant activity in the\npathology of arthritic conditions.\nBy limiting the production\nof these PGs at the site of\ninjury, NSAIDs can reduce\ninflammation.\n\nPGE<sub>2</sub>\ncan cross the blood-brain\nbarrier and act on excitatory\nG<sub>q</sub> EP<sub>3</sub>\nreceptors on thermoregulatory\nneurons in the hypothalamus.[T116]\nThis activation triggers\nan increase in heat-generation\nand a reduction in heat-loss\nto produce a fever. NSAIDs\nprevent the generation of\nPGE<sub>2</sub> thereby\nreducing the activity of\nthese neurons.",
                   "value": "Diclofenac inhibits cyclooxygenase-1 and -2, the enzymes responsible for production of prostaglandin (PG) G<sub>2</sub> which is the precursor to other PGs.[label,T116] These molecules have broad activity in pain and inflammation and the inhibition of their production is the common mechanism linking each effect of diclofenac.\n\nPGE<sub>2</sub> is the primary PG involved in modulation of nociception.[A179023] It mediates peripheral sensitization through a variety of effects.[T116,A179023] PGE<sub>2</sub> activates the G<sub>q</sub>-coupled EP<sub>1</sub> receptor leading to increased activity of the inositol trisphosphate/phospholipase C pathway. Activation of this pathway releases intracellular stores of calcium which directly reduces action potential threshold and activates protein kinase C (PKC) which contributes to several indirect mechanisms. PGE<sub>2</sub> also activates the EP<sub>4</sub> receptor, coupled to G<sub>s</sub>, which activates the adenylyl cyclase/protein kinase A (AC/PKA) signaling pathway. PKA and PKC both contribute to the potentiation of transient receptor potential cation channel subfamily V member 1 (TRPV1) potentiation, which increases sensitivity to heat stimuli. They also activate tetrodotoxin-resistant sodium channels and inhibit inward potassium currents. PKA further contributes to the activation of the P2X3 purine receptor and sensitization of T-type calcium channels. The activation and sensitization of depolarizing ion channels and inhibition of inward potassium currents serve to reduce the intensity of stimulus necessary to generate action potentials in nociceptive sensory afferents. PGE<sub>2</sub> act via EP<sub>3</sub> to increase sensitivity to bradykinin and via EP<sub>2</sub> to further increase heat sensitivity. Central sensitization occurs in the dorsal horn of the spinal cord and is mediated by the EP<sub>2</sub> receptor which couples to G<sub>s</sub>. Pre-synaptically, this receptor increases the release of pro-nociceptive neurotransmitters glutamate, CGRP, and substance P. Post-synaptically it increases the activity of AMPA and NMDA receptors and produces inhibition of inhibitory glycinergic neurons. Together these lead to a reduced threshold of activating, allowing low intensity stimuli to generate pain signals. PGI<sub>2</sub> is known to play a role via its G<sub>s</sub>-coupled IP receptor although the magnitude of its contribution varies. It has been proposed to be of greater importance in painful inflammatory conditions such as arthritis. By limiting sensitization, both peripheral and central, via these pathways NSAIDs can effectively reduce inflammatory pain.\n\nPGI<sub>2</sub> and PGE<sub>2</sub> contribute to acute inflammation via their IP and EP<sub>2</sub> receptors.[T116,A179044] Similarly to \u00ce\u00b2 adrenergic receptors these are G<sub>s</sub>-coupled and mediate vasodilation through the AC/PKA pathway. PGE<sub>2</sub> also contributes by increasing leukocyte adhesion to the endothelium and attracts the cells to the site of injury.[T116] PGD<sub>2</sub> plays a role in the activation of endothelial cell release of cytokines through its DP<sub>1</sub> receptor.[A179044] PGI<sub>2</sub> and PGE<sub>2</sub> modulate T-helper cell activation and differentiation through IP, EP<sub>2</sub>, and EP<sub>4</sub> receptors which is believed to be an important activity in the pathology of arthritic conditions. By limiting the production of these PGs at the site of injury, NSAIDs can reduce inflammation.\n\nPGE<sub>2</sub> can cross the blood-brain barrier and act on excitatory G<sub>q</sub> EP<sub>3</sub> receptors on thermoregulatory neurons in the hypothalamus.[T116] This activation triggers an increase in heat-generation and a reduction in heat-loss to produce a fever. NSAIDs prevent the generation of PGE<sub>2</sub> thereby reducing the activity of these neurons.",
+                  "shape": "round-heptagon",
                   "colorBg": "#F4D35E",
                   "colorBorder": "#d4ac0d"
             }
@@ -561,6 +579,7 @@
                   "label": "T3DB:\nn/a",
                   "fullLabel": "T3DB:\nn/a",
                   "value": "NA",
+                  "shape": "round-heptagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -919,8 +938,10 @@
                   "role": "category_use_class",
                   "id": "Pharmaceutical",
                   "label": "Pharmaceutical",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "pharmaceutical.svg"
             }
       },
       {
@@ -939,8 +960,10 @@
                   "role": "category_tox_class",
                   "id": "hematotoxicity",
                   "label": "hematotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hematotoxicity.svg"
             }
       },
       {
@@ -949,8 +972,10 @@
                   "role": "category_tox_class",
                   "id": "ototoxicity",
                   "label": "ototoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "ototoxicity.svg"
             }
       },
       {
@@ -959,8 +984,10 @@
                   "role": "category_tox_class",
                   "id": "neurotoxicity",
                   "label": "neurotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -969,8 +996,10 @@
                   "role": "category_tox_class",
                   "id": "hepatotoxicity",
                   "label": "hepatotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hepatotoxicity.svg"
             }
       },
       {
@@ -979,8 +1008,10 @@
                   "role": "category_tox_class",
                   "id": "immunotoxicity",
                   "label": "immunotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {
@@ -989,8 +1020,10 @@
                   "role": "category_tox_class",
                   "id": "genotoxicity",
                   "label": "genotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -999,8 +1032,10 @@
                   "role": "category_tox_class",
                   "id": "nephrotoxicity",
                   "label": "nephrotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -1009,8 +1044,10 @@
                   "role": "category_tox_class",
                   "id": "cardiotoxicity",
                   "label": "cardiotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "cardiotoxicity.svg"
             }
       },
       {

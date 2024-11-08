@@ -270,7 +270,14 @@ def create_general_network(
             [palette_1, palette_2]
         ):
         for cat, color in zip(categories, palette):
-            color_dic[cat] = color
+            chem_number = len(df[df[cat_name]==cat])
+            if cat+"_bg" in colors:
+                color_bg = colors[cat+"_bg"]
+                color_border = colors[cat+"_border"]
+            else:
+                color_bg = color
+                color_border = color
+            color_dic[cat] = color_bg
             json_elements.append(
                 {
                     "group": "nodes",
@@ -278,7 +285,10 @@ def create_general_network(
                             "role": "category_"+cat_name,
                         "id": cat,
                         "label": wrap_label(cat, 10),
-                        "color": color
+                        "color_bg": color_bg,
+                        "color_border": color_border,
+                        "image": cat.lower().replace(" ", "_")+".svg",
+                        "chem_number": chem_number
                     }
                 }
             )
@@ -383,6 +393,7 @@ def get_phychem_property_nodes_edges(chem_values: dict):
                 "combinedLabel": combined_label,
                 "value": chem_values[prop],
                 "hlLabel": hl_label,
+                "shape": shapes["Physico-chemical properties"],
                 "colorBg": color_bg,
                 "colorBorder": color_border
             }
@@ -426,6 +437,7 @@ def get_baseline_tox_nodes_edges(chem_values: dict):
                 "id": base,
                 "label": label,
                 "value": chem_values[base],
+                "shape": shapes["Baseline Toxicity"],
                 "colorBg": color_bg,
                 "colorBorder": color_border
             }
@@ -473,6 +485,7 @@ def get_mechanism_of_action_nodes_edges(chem_values: dict):
                 "label": label,
                 "fullLabel": full_label,
                 "value": chem_values[moa_col],
+                "shape": shapes["Mechanism of Action"],
                 "colorBg": color_bg,
                 "colorBorder": color_border
             }
@@ -499,6 +512,8 @@ def get_targets_nodes_edges(chem_values: dict):
     target_nodes = []
     target_edges = []
     for target in chem_values["target_t3db"].split("; "):
+        if target == "NA":
+            continue
         target_nodes.append(
             {
                 "group": "nodes",
@@ -531,6 +546,8 @@ def get_aop_nodes_edges(chem_values:dict):
     aop_nodes = []
     aop_edges = []
     for aop in chem_values["AOP_full"].split("; "):
+        if aop == "NA":
+            continue
         aop_node = {
             "group": "nodes",
             "data": {
@@ -567,8 +584,10 @@ def get_use_class_nodes_edges(df_use):
                 "role": "category_use_class",
                 "id": row["use_class"],
                 "label": wrap_label(row["use_class"], 10),
+                "shape": shapes["Use"],
                 "colorBg": colors["Use_bg"],
-                "colorBorder": colors["Use_border"]
+                "colorBorder": colors["Use_border"],
+                "image": row["use_class"].lower().replace(" ", "_")+".svg",
             }
         }            
         use_edge = {
@@ -596,8 +615,10 @@ def get_toxicity_class_nodes_edges(df_tox):
                 "role": "category_tox_class",
                 "id": row["tox_class"],
                 "label": wrap_label(row["tox_class"], 10),
+                "shape": shapes["Toxicity"],
                 "colorBg": colors["Toxicity_bg"],
-                "colorBorder": colors["Toxicity_border"]
+                "colorBorder": colors["Toxicity_border"],
+                "image": row["tox_class"].lower().replace(" ", "_")+".svg"
             }
         }
         tox_edge = {
@@ -775,6 +796,26 @@ colors = {
     "Targets_bg": "#cda7ba",
     "Adverse Outcome Pathways_border": "#79AC78",
     "Adverse Outcome Pathways_bg": "#B0D9B1",
+    "Pesticide_border": "#4a500f",
+    "Pesticide_bg": "#cdd485",
+    "Pharmaceutical_bg": "#8795de",
+    "Pharmaceutical_border": "#515fa2",
+    "Industry and consumer goods_bg": "#f399a5",
+    "Industry and consumer goods_border": "#ac2b3c",
+    "Food and other consumption_border": "#8a5796",
+    "Food and other consumption_bg": "#9a67a6",
+    "Personal care products_bg": "#87cbd4",
+    "Personal care products_border": "#297e89",
+    "Endogenous_bg": "#f4f4b3",
+    "Endogenous_border": "#c6c34b",
+    "genotoxicity_bg": "#73c6b6",
+    "genotoxicity_border": "#73c6b6",
+    "hematotoxicity_bg": "#f46e81",
+    "hematotoxicity_border": "#f46e81",
+    "cardiotoxicity_bg": "#69c2d6",
+    "cardiotoxicity_border": "#69c2d6",
+    "neurotoxicity_bg": "#8a5796",
+    "neurotoxicity_border": "#8a5796"
 }
 sources = {
     "solubility_h2o_mol_liter": "source_solubility_h2o",

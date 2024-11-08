@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\n454.447 g/mol",
                   "value": "454.447",
                   "hlLabel": "Molecular Weight:\n454.447 g/mol",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\n0.000189 mol/liter",
                   "value": "0.000189",
                   "hlLabel": "Solubility (H2O):\n0.000189 mol/liter\nSource: COMPTOX (OPERA)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\n1.4525e-11 atm*m3/mol",
                   "value": "1.4525e-11",
                   "hlLabel": "Henry Coefficient:\n1.4525e-11 atm*m3/mol\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\n9.22619353077035 ",
                   "value": "9.22619353077035",
                   "hlLabel": "Log Kaw:\n9.22619353077035 \nSource: LSER eq 1",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\n3.32;4.65;14.4 ",
                   "value": "3.32;4.65;14.4",
                   "hlLabel": "pKa (acid):\n3.32;4.65;14.4 \nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\n1.2;5.52 ",
                   "value": "1.2;5.52",
                   "hlLabel": "pKa (base):\n1.2;5.52 \nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\n-1.85 ",
                   "value": "-1.85",
                   "hlLabel": "Log Kow:\n-1.85 \nSource: experimental  PhysPropNCCT",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\n-1 ",
                   "value": "-1",
                   "hlLabel": "Log Dlipw (pH 7.4):\n-1 \nSource: @ -1 at logKow < -1 (Gobas 1988)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\n0.942276927352634 ",
                   "value": "0.942276927352634",
                   "hlLabel": "Freely Dissolved Fraction:\n0.942276927352634 ",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\n1.645 kg/liter",
                   "value": "1.645",
                   "hlLabel": "Density:\n1.645 kg/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -401,6 +411,7 @@
                   "id": "Baseline - D. rerio",
                   "label": "D. rerio:\n1620000.0",
                   "value": "1620000.0",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -412,6 +423,7 @@
                   "id": "Baseline - Daphnia",
                   "label": "D. magna:\n216000.0",
                   "value": "216000.0",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -423,6 +435,7 @@
                   "id": "Baseline - C. elegans",
                   "label": "C. elegans:\nn/a",
                   "value": "NA",
+                  "shape": "round-hexagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -434,6 +447,7 @@
                   "id": "Baseline - Xenopus",
                   "label": "X. laevis:\nn/a",
                   "value": "NA",
+                  "shape": "round-hexagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -445,6 +459,7 @@
                   "id": "Baseline - Drosophila",
                   "label": "D. melanogaster:\nn/a",
                   "value": "NA",
+                  "shape": "round-hexagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -456,6 +471,7 @@
                   "id": "Baseline - Cells",
                   "label": "HepG2 cells:\n0.275927375968422",
                   "value": "0.275927375968422",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -467,6 +483,7 @@
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
                   "label": "HepG2 cells (generic micromol/l free EC10):\n0.26",
                   "value": "0.26",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -549,6 +566,7 @@
                   "label": "DrugBank:\nMethotrexate\nen...",
                   "fullLabel": "DrugBank:\nMethotrexate\nenters tissues and is converted\nto a methotrexate polyglutamate\nby folylpolyglutamate.[A180322]\n\nMethotrexate's\nmechanism of action is due\nto its inhibition of enzymes\nresponsible for nucleotide\nsynthesis including  dihydrofolate\nreductase, thymidylate\nsynthase, aminoimidazole\ncaboxamide ribonucleotide\ntransformylase (AICART),\nand amido phosphoribosyltransferase.[A180322]\nInhibtion of nucleotide\nsynthesis prevents cell\ndivision.\n\nIn rheumatoid\narthritis, methotrexate\npolyglutamates inhibit\nAICART more than methotrexate.[A180322]\nThis inhibition leads to\naccumulation of AICART ribonucleotide,\nwhich inhibits adenosine\ndeaminase, leading to an\naccumulation of adenosine\ntriphosphate and adenosine\nin the extracellular space,\nstimulating adenosine receptors,\nleading to anti-inflammatory\naction.[A180322]",
                   "value": "Methotrexate enters tissues and is converted to a methotrexate polyglutamate by folylpolyglutamate.[A180322]\n\nMethotrexate's mechanism of action is due to its inhibition of enzymes responsible for nucleotide synthesis including  dihydrofolate reductase, thymidylate synthase, aminoimidazole caboxamide ribonucleotide transformylase (AICART), and amido phosphoribosyltransferase.[A180322] Inhibtion of nucleotide synthesis prevents cell division.\n\nIn rheumatoid arthritis, methotrexate polyglutamates inhibit AICART more than methotrexate.[A180322] This inhibition leads to accumulation of AICART ribonucleotide, which inhibits adenosine deaminase, leading to an accumulation of adenosine triphosphate and adenosine in the extracellular space, stimulating adenosine receptors, leading to anti-inflammatory action.[A180322]",
+                  "shape": "round-heptagon",
                   "colorBg": "#F4D35E",
                   "colorBorder": "#d4ac0d"
             }
@@ -561,6 +579,7 @@
                   "label": "T3DB:\nMethotrexate\nanti-t...",
                   "fullLabel": "T3DB:\nMethotrexate anti-tumor\nactivity is a result of the\ninhibition of folic acid\nreductase, leading to inhibition\nof DNA synthesis and inhibition\nof cellular replication.\nThe mechanism involved in\nits activity against rheumatoid\narthritis is not known.",
                   "value": "Methotrexate anti-tumor activity is a result of the inhibition of folic acid reductase, leading to inhibition of DNA synthesis and inhibition of cellular replication. The mechanism involved in its activity against rheumatoid arthritis is not known.",
+                  "shape": "round-heptagon",
                   "colorBg": "#F4D35E",
                   "colorBorder": "#d4ac0d"
             }
@@ -1002,8 +1021,10 @@
                   "role": "category_use_class",
                   "id": "Pharmaceutical",
                   "label": "Pharmaceutical",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "pharmaceutical.svg"
             }
       },
       {
@@ -1022,8 +1043,10 @@
                   "role": "category_tox_class",
                   "id": "cardiotoxicity",
                   "label": "cardiotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "cardiotoxicity.svg"
             }
       },
       {
@@ -1032,8 +1055,10 @@
                   "role": "category_tox_class",
                   "id": "nephrotoxicity",
                   "label": "nephrotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -1042,8 +1067,10 @@
                   "role": "category_tox_class",
                   "id": "genotoxicity",
                   "label": "genotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -1052,8 +1079,10 @@
                   "role": "category_tox_class",
                   "id": "hepatotoxicity",
                   "label": "hepatotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hepatotoxicity.svg"
             }
       },
       {
@@ -1062,8 +1091,10 @@
                   "role": "category_tox_class",
                   "id": "neurotoxicity",
                   "label": "neurotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -1072,8 +1103,10 @@
                   "role": "category_tox_class",
                   "id": "immunotoxicity",
                   "label": "immunotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {
@@ -1082,8 +1115,10 @@
                   "role": "category_tox_class",
                   "id": "hematotoxicity",
                   "label": "hematotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hematotoxicity.svg"
             }
       },
       {
@@ -1092,8 +1127,10 @@
                   "role": "category_tox_class",
                   "id": "ototoxicity",
                   "label": "ototoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "ototoxicity.svg"
             }
       },
       {

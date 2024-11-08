@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\n122.171 g/mol",
                   "value": "122.171",
                   "hlLabel": "Molecular Weight:\n122.171 g/mol",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\n0.310823 mol/liter",
                   "value": "0.310823",
                   "hlLabel": "Solubility (H2O):\n0.310823 mol/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\n5.72501e-08 atm*m3/mol",
                   "value": "5.72501e-08",
                   "hlLabel": "Henry Coefficient:\n5.72501e-08 atm*m3/mol\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\n5.63053342222848 ",
                   "value": "5.63053342222848",
                   "hlLabel": "Log Kaw:\n5.63053342222848 \nSource: Comptox",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (acid):\nn/a\nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\n3.26;6.22 ",
                   "value": "3.26;6.22",
                   "hlLabel": "pKa (base):\n3.26;6.22 \nSource: ACD pKa/GALAS",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\n0.11 ",
                   "value": "0.11",
                   "hlLabel": "Log Kow:\n0.11 \nSource: comptox.epa.gov/dashboard",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\n0.21 ",
                   "value": "0.21",
                   "hlLabel": "Log Dlipw (pH 7.4):\n0.21 \nSource: Kow-QSAR (?mw=1)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\n0.942183062727825 ",
                   "value": "0.942183062727825",
                   "hlLabel": "Freely Dissolved Fraction:\n0.942183062727825 ",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\n1.131 kg/liter",
                   "value": "1.131",
                   "hlLabel": "Density:\n1.131 kg/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -401,6 +411,7 @@
                   "id": "Baseline - D. rerio",
                   "label": "D. rerio:\n104000.0",
                   "value": "104000.0",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -412,6 +423,7 @@
                   "id": "Baseline - Daphnia",
                   "label": "D. magna:\n22300.0",
                   "value": "22300.0",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -423,6 +435,7 @@
                   "id": "Baseline - C. elegans",
                   "label": "C. elegans:\n47799.3042105299",
                   "value": "47799.3042105299",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -434,6 +447,7 @@
                   "id": "Baseline - Xenopus",
                   "label": "X. laevis:\n5713.68580828943",
                   "value": "5713.68580828943",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -445,6 +459,7 @@
                   "id": "Baseline - Drosophila",
                   "label": "D. melanogaster:\n204495.896067088",
                   "value": "204495.896067088",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -456,6 +471,7 @@
                   "id": "Baseline - Cells",
                   "label": "HepG2 cells:\n0.0171358673847385",
                   "value": "0.0171358673847385",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -467,6 +483,7 @@
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
                   "label": "HepG2 cells (generic micromol/l free EC10):\n0.0161451240150508",
                   "value": "0.0161451240150508",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -544,52 +561,13 @@
       {
             "group": "nodes",
             "data": {
-                  "role": "target",
-                  "id": "NA",
-                  "shape": "round-tag",
-                  "label": "NA",
-                  "colorBg": "#cda7ba",
-                  "colorBorder": "#875178"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "target",
-                  "subrole": "attribute",
-                  "source": "Targets",
-                  "target": "NA",
-                  "color": "#875178"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "aop",
-                  "id": "NA",
-                  "shape": "round-octagon",
-                  "colorBg": "#B0D9B1",
-                  "colorBorder": "#79AC78"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "aop",
-                  "subrole": "attribute",
-                  "source": "Adverse Outcome Pathways",
-                  "target": "NA",
-                  "color": "#79AC78"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
                   "role": "category_use_class",
                   "id": "Pharmaceutical",
                   "label": "Pharmaceutical",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "pharmaceutical.svg"
             }
       },
       {
@@ -608,8 +586,10 @@
                   "role": "category_tox_class",
                   "id": "genotoxicity",
                   "label": "genotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
             }
       },
       {

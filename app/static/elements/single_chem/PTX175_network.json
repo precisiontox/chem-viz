@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\n531.43 g/mol",
                   "value": "531.43",
                   "hlLabel": "Molecular Weight:\n531.43 g/mol",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\n0.000157623 mol/liter",
                   "value": "0.000157623",
                   "hlLabel": "Solubility (H2O):\n0.000157623 mol/liter\nSource: COMPTOX (OPERA)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\n4.41965e-08 atm*m3/mol",
                   "value": "4.41965e-08",
                   "hlLabel": "Henry Coefficient:\n4.41965e-08 atm*m3/mol\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\n5.74292179367983 ",
                   "value": "5.74292179367983",
                   "hlLabel": "Log Kaw:\n5.74292179367983 \nSource: LSER eq 1 exp. Descriptors",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (acid):\nn/a\nSource: Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\n3.33;5.74 ",
                   "value": "3.33;5.74",
                   "hlLabel": "pKa (base):\n3.33;5.74 \nSource: Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\n4.35 ",
                   "value": "4.35",
                   "hlLabel": "Log Kow:\n4.35 \nSource: NA",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\n3.44154949806068 ",
                   "value": "3.44154949806068",
                   "hlLabel": "Log Dlipw (pH 7.4):\n3.44154949806068 \nSource: LSER",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\n0.288249412087226 ",
                   "value": "0.288249412087226",
                   "hlLabel": "Freely Dissolved Fraction:\n0.288249412087226 ",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\nn/a",
                   "value": "NA",
                   "hlLabel": "Density:\nn/a\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -401,6 +411,7 @@
                   "id": "Baseline - D. rerio",
                   "label": "D. rerio:\n64.9929121499891",
                   "value": "64.9929121499891",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -412,6 +423,7 @@
                   "id": "Baseline - Daphnia",
                   "label": "D. magna:\n51.3028858792376",
                   "value": "51.3028858792376",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -423,6 +435,7 @@
                   "id": "Baseline - C. elegans",
                   "label": "C. elegans:\n113.056737066158",
                   "value": "113.056737066158",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -434,6 +447,7 @@
                   "id": "Baseline - Xenopus",
                   "label": "X. laevis:\n61.1031909688845",
                   "value": "61.1031909688845",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -445,6 +459,7 @@
                   "id": "Baseline - Drosophila",
                   "label": "D. melanogaster:\n440.293667055501",
                   "value": "440.293667055501",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -456,6 +471,7 @@
                   "id": "Baseline - Cells",
                   "label": "HepG2 cells:\n3.2632881186228e-05",
                   "value": "3.2632881186228e-05",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -467,6 +483,7 @@
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
                   "label": "HepG2 cells (generic micromol/l free EC10):\n9.40640881664254e-06",
                   "value": "9.40640881664254e-06",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -549,6 +566,7 @@
                   "label": "DrugBank:\nKetoconazole\nin...",
                   "fullLabel": "DrugBank:\nKetoconazole\ninteracts with 14-&alpha;-sterol\ndemethylase, a cytochrome\nP-450 enzyme necessary for\nthe conversion of lanosterol\nto ergosterol.[A181802,T116]\nThis results in inhibition\nof ergosterol synthesis\nand increased fungal cellular\npermeability due to reduced\namounts of ergosterol present\nin the fungal cell membrane.\nThis metabolic inhibition\nalso results in accumulation\nof 14\u00ce\u00b1-methyl-3,6-diol,\na toxic metabolite. The increase\nin membrane fluidity is also\nthought to produce impairment\nof membrane-bound enzyme\nsystems as components become\nless closely packed.",
                   "value": "Ketoconazole interacts with 14-&alpha;-sterol demethylase, a cytochrome P-450 enzyme necessary for the conversion of lanosterol to ergosterol.[A181802,T116] This results in inhibition of ergosterol synthesis and increased fungal cellular permeability due to reduced amounts of ergosterol present in the fungal cell membrane. This metabolic inhibition also results in accumulation of 14\u00ce\u00b1-methyl-3,6-diol, a toxic metabolite. The increase in membrane fluidity is also thought to produce impairment of membrane-bound enzyme systems as components become less closely packed.",
+                  "shape": "round-heptagon",
                   "colorBg": "#F4D35E",
                   "colorBorder": "#d4ac0d"
             }
@@ -561,6 +579,7 @@
                   "label": "T3DB:\nKetoconazole\nintera...",
                   "fullLabel": "T3DB:\nKetoconazole interacts\nwith 14-\u00ce\u00b1 demethylase,\na cytochrome P-450 enzyme\nnecessary for the conversion\nof lanosterol to ergosterol.\nThis results in inhibition\nof ergosterol synthesis\nand increased fungal cellular\npermeability. Other mechanisms\nmay involve the inhibition\nof endogenous respiration,\ninteraction with membrane\nphospholipids, inhibition\nof yeast transformation\nto mycelial forms, inhibition\nof purine uptake, and impairment\nof triglyceride and/or phospholipid\nbiosynthesis. Ketoconazole\ncan also inhibit the synthesis\nof thromboxane and sterols\nsuch as aldosterone, cortisol,\nand testosterone. (A365)",
                   "value": "Ketoconazole interacts with 14-\u00ce\u00b1 demethylase, a cytochrome P-450 enzyme necessary for the conversion of lanosterol to ergosterol. This results in inhibition of ergosterol synthesis and increased fungal cellular permeability. Other mechanisms may involve the inhibition of endogenous respiration, interaction with membrane phospholipids, inhibition of yeast transformation to mycelial forms, inhibition of purine uptake, and impairment of triglyceride and/or phospholipid biosynthesis. Ketoconazole can also inhibit the synthesis of thromboxane and sterols such as aldosterone, cortisol, and testosterone. (A365)",
+                  "shape": "round-heptagon",
                   "colorBg": "#F4D35E",
                   "colorBorder": "#d4ac0d"
             }
@@ -1235,8 +1254,10 @@
                   "role": "category_use_class",
                   "id": "Pharmaceutical",
                   "label": "Pharmaceutical",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "pharmaceutical.svg"
             }
       },
       {
@@ -1255,8 +1276,10 @@
                   "role": "category_tox_class",
                   "id": "cardiotoxicity",
                   "label": "cardiotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "cardiotoxicity.svg"
             }
       },
       {
@@ -1265,8 +1288,10 @@
                   "role": "category_tox_class",
                   "id": "genotoxicity",
                   "label": "genotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -1275,8 +1300,10 @@
                   "role": "category_tox_class",
                   "id": "nephrotoxicity",
                   "label": "nephrotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -1285,8 +1312,10 @@
                   "role": "category_tox_class",
                   "id": "ototoxicity",
                   "label": "ototoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "ototoxicity.svg"
             }
       },
       {
@@ -1295,8 +1324,10 @@
                   "role": "category_tox_class",
                   "id": "neurotoxicity",
                   "label": "neurotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -1305,8 +1336,10 @@
                   "role": "category_tox_class",
                   "id": "hepatotoxicity",
                   "label": "hepatotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hepatotoxicity.svg"
             }
       },
       {
@@ -1315,8 +1348,10 @@
                   "role": "category_tox_class",
                   "id": "immunotoxicity",
                   "label": "immunotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {

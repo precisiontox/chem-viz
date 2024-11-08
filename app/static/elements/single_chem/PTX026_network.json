@@ -173,6 +173,7 @@
                   "combinedLabel": "Molecular Weight:\n350.57 g/mol",
                   "value": "350.57",
                   "hlLabel": "Molecular Weight:\n350.57 g/mol",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -186,6 +187,7 @@
                   "combinedLabel": "Solubility (H2O):\n2.36e-06 mol/liter",
                   "value": "2.36e-06",
                   "hlLabel": "Solubility (H2O):\n2.36e-06 mol/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -199,6 +201,7 @@
                   "combinedLabel": "Henry Coefficient:\n2.91816e-06 atm*m3/mol",
                   "value": "2.91816e-06",
                   "hlLabel": "Henry Coefficient:\n2.91816e-06 atm*m3/mol\nSource: COMPTOX (Opera)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -212,6 +215,7 @@
                   "combinedLabel": "Log Kaw:\n3.92320057165976 ",
                   "value": "3.92320057165976",
                   "hlLabel": "Log Kaw:\n3.92320057165976 \nSource: LSER eq 1",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -225,6 +229,7 @@
                   "combinedLabel": "pKa (acid):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (acid):\nn/a\nSource: UFZ; Sirius T3",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -238,6 +243,7 @@
                   "combinedLabel": "pKa (base):\nn/a",
                   "value": "NA",
                   "hlLabel": "pKa (base):\nn/a\nSource: UFZ; Sirius T3",
+                  "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -251,6 +257,7 @@
                   "combinedLabel": "Log Kow:\n4.96 ",
                   "value": "4.96",
                   "hlLabel": "Log Kow:\n4.96 \nSource: experimental, Sangster et al. (1994)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -264,6 +271,7 @@
                   "combinedLabel": "Log Dlipw (pH 7.4):\n5.13 ",
                   "value": "5.13",
                   "hlLabel": "Log Dlipw (pH 7.4):\n5.13 \nSource: Kow-QSAR (?mw=1)",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -277,6 +285,7 @@
                   "combinedLabel": "Freely Dissolved Fraction:\n0.0325557539535589 ",
                   "value": "0.0325557539535589",
                   "hlLabel": "Freely Dissolved Fraction:\n0.0325557539535589 ",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -290,6 +299,7 @@
                   "combinedLabel": "Density:\n1.486 kg/liter",
                   "value": "1.486",
                   "hlLabel": "Density:\n1.486 kg/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
             }
@@ -401,6 +411,7 @@
                   "id": "Baseline - D. rerio",
                   "label": "D. rerio:\n1.39",
                   "value": "1.39",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -412,6 +423,7 @@
                   "id": "Baseline - Daphnia",
                   "label": "D. magna:\n2.15",
                   "value": "2.15",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -423,6 +435,7 @@
                   "id": "Baseline - C. elegans",
                   "label": "C. elegans:\n4.81725903559165",
                   "value": "4.81725903559165",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -434,6 +447,7 @@
                   "id": "Baseline - Xenopus",
                   "label": "X. laevis:\n5.72182696401208",
                   "value": "5.72182696401208",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -445,6 +459,7 @@
                   "id": "Baseline - Drosophila",
                   "label": "D. melanogaster:\n17.8626052189272",
                   "value": "17.8626052189272",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -456,6 +471,7 @@
                   "id": "Baseline - Cells",
                   "label": "HepG2 cells:\n5.92578090805652e-06",
                   "value": "5.92578090805652e-06",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -467,6 +483,7 @@
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
                   "label": "HepG2 cells (generic micromol/l free EC10):\n1.92918265225385e-07",
                   "value": "1.92918265225385e-07",
+                  "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
             }
@@ -549,6 +566,7 @@
                   "label": "DrugBank:\nn/a",
                   "fullLabel": "DrugBank:\nn/a",
                   "value": "NA",
+                  "shape": "round-heptagon",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
             }
@@ -561,6 +579,7 @@
                   "label": "T3DB:\nChlorpyrifos\nand it...",
                   "fullLabel": "T3DB:\nChlorpyrifos and\nits bioactivation product,\nchlorpyrifos oxon, and inhibit\nneural acetylcholinesterase\nby forming a stable covalent\nbond at the active site. The\nresult of this acetylcholinesterase\ninhibition is cholinergic\noverstimulation of the central\nnervous system. (L268);\nChlorpyrifos oxon binds\nto muscarinic receptors,\naltering the receptors signal\ntransduction, which affects\ncellular signalling and\ndisrupts neurological function.\n(A163); Chlorpyrifos oxon\nbinds albumin and may generate\nan antibody response. (A164);\nChlorpyrifos is an irreversible\nnon-competitive inhibitor\nof cytochrome P-450 3A4.\n(A166); Chlorpyrifos inhibits\nneuropathy target esterase,\nproducing ataxia. (A167);\nChlorpyrifos oxon inhibits\ncannabinoid receptor 1.\n(A168); Chlorpyrifos inhibits\nan endogenous signaling\nmodulator, fatty acid amide\nhydrolase, producing secondary\nneurotoxicity. (A217);\nThis organochloride inhibits\nNa+/K+ ATPase and Ca2+ and\nMg2+ ATPase, which are essential\nfor the transport of calcium\nacross membranes. This results\nin the accumulation of intracellular\nfree calcium ions, which\npromotes release of neurotransmitters\nfrom storage vesicles, the\nsubsequent depolarization\nof adjacent neurons, and\nthe propagation of stimuli\nthroughout the central nervous\nsystem. (T10); This organochloride\nantagonizes the action of\nthe neurotransmitter gamma-aminobutyric\nacid (GABA) acting at the\nGABA-A receptors, effectively\nblocking the GABA-induced\nuptake of chloride ions and\ncausing hyperexcitability\nof the central nervous system.\n(T10); Causes endocrine\ndisruption in humans by binding\nto and inhibiting the estrogen\nreceptor. (A590)",
                   "value": "Chlorpyrifos and its bioactivation product, chlorpyrifos oxon, and inhibit neural acetylcholinesterase by forming a stable covalent bond at the active site. The result of this acetylcholinesterase inhibition is cholinergic overstimulation of the central nervous system. (L268); Chlorpyrifos oxon binds to muscarinic receptors, altering the receptors signal transduction, which affects cellular signalling and disrupts neurological function. (A163); Chlorpyrifos oxon binds albumin and may generate an antibody response. (A164); Chlorpyrifos is an irreversible non-competitive inhibitor of cytochrome P-450 3A4. (A166); Chlorpyrifos inhibits neuropathy target esterase, producing ataxia. (A167); Chlorpyrifos oxon inhibits cannabinoid receptor 1. (A168); Chlorpyrifos inhibits an endogenous signaling modulator, fatty acid amide hydrolase, producing secondary neurotoxicity. (A217); This organochloride inhibits Na+/K+ ATPase and Ca2+ and Mg2+ ATPase, which are essential for the transport of calcium across membranes. This results in the accumulation of intracellular free calcium ions, which promotes release of neurotransmitters from storage vesicles, the subsequent depolarization of adjacent neurons, and the propagation of stimuli throughout the central nervous system. (T10); This organochloride antagonizes the action of the neurotransmitter gamma-aminobutyric acid (GABA) acting at the GABA-A receptors, effectively blocking the GABA-induced uptake of chloride ions and causing hyperexcitability of the central nervous system. (T10); Causes endocrine disruption in humans by binding to and inhibiting the estrogen receptor. (A590)",
+                  "shape": "round-heptagon",
                   "colorBg": "#F4D35E",
                   "colorBorder": "#d4ac0d"
             }
@@ -2106,8 +2125,10 @@
                   "role": "category_use_class",
                   "id": "Pesticide",
                   "label": "Pesticide",
+                  "shape": "round-rectangle",
                   "colorBg": "#D76C82",
-                  "colorBorder": "#B03052"
+                  "colorBorder": "#B03052",
+                  "image": "pesticide.svg"
             }
       },
       {
@@ -2126,8 +2147,10 @@
                   "role": "category_tox_class",
                   "id": "hepatotoxicity",
                   "label": "hepatotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hepatotoxicity.svg"
             }
       },
       {
@@ -2136,8 +2159,10 @@
                   "role": "category_tox_class",
                   "id": "neurotoxicity",
                   "label": "neurotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -2146,8 +2171,10 @@
                   "role": "category_tox_class",
                   "id": "immunotoxicity",
                   "label": "immunotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {
@@ -2156,8 +2183,10 @@
                   "role": "category_tox_class",
                   "id": "hematotoxicity",
                   "label": "hematotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "hematotoxicity.svg"
             }
       },
       {
@@ -2166,8 +2195,10 @@
                   "role": "category_tox_class",
                   "id": "ototoxicity",
                   "label": "ototoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "ototoxicity.svg"
             }
       },
       {
@@ -2176,8 +2207,10 @@
                   "role": "category_tox_class",
                   "id": "genotoxicity",
                   "label": "genotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -2186,8 +2219,10 @@
                   "role": "category_tox_class",
                   "id": "nephrotoxicity",
                   "label": "nephrotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -2196,8 +2231,10 @@
                   "role": "category_tox_class",
                   "id": "cardiotoxicity",
                   "label": "cardiotoxicity",
+                  "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66"
+                  "colorBorder": "#135D66",
+                  "image": "cardiotoxicity.svg"
             }
       },
       {

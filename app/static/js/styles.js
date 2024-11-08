@@ -65,17 +65,11 @@ const generalNetworkStyle = [ // the stylesheet for general graph
     {
             selector: "node[role='category_tox_class']",
             style: {
-                "shape": "round-pentagon"
+                "shape": "elipse"
             }
     },
     {
-        selector: "node[role^='category'].hl, node[role^='category']:selected",
-        style: {
-            "text-outline-color": "#004880"
-        }
-    },
-    {
-        selector: "edge[role^='category']",
+        selector: "edge",
         style: {
             "line-color": "data(color)"
         }
@@ -98,16 +92,29 @@ const generalNetworkStyle = [ // the stylesheet for general graph
         style: {
             "width": "80px",
             "height": "80px",
-            "background-color": "data(color)",
+            "background-color": "data(color_bg)", // Set node body color
+            "background-opacity": "1",       // Adjust opacity if needed
+            "border-width": "0px",
+            "border-color": "data(color_border)",
+            "border-opacity": "1",
+            "background-image": function (ele) {
+                return `${imageBaseUrl}${ele.data('image')}`;
+            },
+            "background-image-opacity": "1",
+            "background-image-containment": "over",
+            // "background-fit": "cover",         // Make the image cover the node
+            "background-width": "120%",        // Extend beyond node width
+            "background-height": "120%",       // Extend beyond node height
+            "background-clip": "none",         // Allow image to go beyond node borders
+            "bounds-expansion": "40px",         // Extend the image beyond node borders
             "font-size": "25px",
             "font-weight": "bold",
             "label": "data(label)",
-            "color": "white",
-            "text-outline-width": "3px",
-            "text-outline-color": "data(color)",
+            "color": "#000",
             "text-halign": "center",
-            "text-valign": "center",
-            "text-wrap": "wrap"
+            "text-valign": "bottom",
+            "text-margin-y": "10px",
+            "text-wrap": "wrap",
         }
     },
     {
@@ -116,13 +123,15 @@ const generalNetworkStyle = [ // the stylesheet for general graph
             "width": "85px",
             "height": "85px",
             "font-size": "27px",
-            "text-outline-color": "#004880",
+            "background-color": "#004880",
+            "color": "#004880"
         }
     },
     {
         selector: "node[role^='category']:selected",
         style: {
-            "text-outline-color": "#004880",
+            "background-color": "#004880",
+            "color": "#004880"
         }
     }
 ];
@@ -245,30 +254,29 @@ const singleNetworkStyle = [
         style: {
             "width": "50px",
             "height": "50px",
+            "shape": "data(shape)",
             "background-color": "data(colorBg)",
+            "background-image": function (ele) {
+                return `${imageBaseUrl}${ele.data('image')}`;
+            },
+            "background-image-opacity": "1",
+            // "background-image-containment": "over",
+            "background-fit": "cover",         // Make the image cover the node
+            "background-width": "120%",        // Extend beyond node width
+            "background-height": "120%",       // Extend beyond node height
+            "background-clip": "none",         // Allow image to go beyond node borders
+            "bounds-expansion": "40px", 
             "border-width": "1px",
             "border-color": "data(colorBorder)",
             "border-opacity": "0",
             "font-size": "18px",
             "font-weight": "bold",
             "label": "data(label)",
-            "color": "data(colorBorder)",
+            "color": "#000",
             "text-halign": "center",
-            "text-valign": "center",
+            "text-valign": "bottom",
             "text-wrap": "wrap"
         }
-    },
-    {
-        selector: "node[role='category_use_class']",
-        style: {
-            "shape": "round-rectangle"
-        }
-    },
-    {
-            selector: "node[role='category_tox_class']",
-            style: {
-                "shape": "round-pentagon"
-            }
     },
     {
         selector: "node[role^='category'].hl, node[role^='category']:selected",
@@ -303,7 +311,7 @@ const singleNetworkStyle = [
     {
         selector: "node[role='prop']",
         style:{
-            "shape": "round-diamond",
+            "shape": "data(shape)",
             "background-color": "data(colorBg)",
             "width": "50px",
             "height": "50px",
@@ -339,7 +347,7 @@ const singleNetworkStyle = [
     {
         selector: "node[role='base_tox']",
         style:{
-            "shape": "round-hexagon",
+            "shape": "data(shape)",
             "background-color": "data(colorBg)",
             "width": "50px",
             "height": "50px",
@@ -374,7 +382,7 @@ const singleNetworkStyle = [
     {
         selector: "node[role='moa']",
         style: {
-            "shape": "round-heptagon",
+            "shape": "data(shape)",
             "background-color": "data(colorBg)",
             "width": "50px",
             "height": "50px",
