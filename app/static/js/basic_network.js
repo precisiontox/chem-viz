@@ -230,21 +230,6 @@ function initializeNetworkFeatures() {
     //         event: 'unfocus'
     //     }
     // });
-
-    // cy.add({
-    //     data: { id: 'Pesticide' },
-    //     position: { x: 100, y: 100 },
-    //     style: {
-    //         // 'background-color': '#FF5733', // Base background color
-    //         'background-image': 'url(static/images/nodes/pesticide-bottle.png )', // Background image
-    //         'background-fit': 'cover',  // Scale the image to cover the node's shape
-    //         'background-opacity': 0.8,  // Set opacity for the image to see the color beneath
-    //         'background-image-opacity': 0.5, // Control how visible the image is
-    //         'width': 100,
-    //         'height': 100
-    //     }
-    // });
-
 };
 
 function initializeNetworkBasic() {
@@ -272,6 +257,32 @@ function initializeNetworkBasic() {
                     option.textContent = node.data('label') || node.id();
                     select.appendChild(option);
                 });
+
+                // Apply qTip tooltip to isolated attribute nodes
+                cy_graph.nodes("[role^='category']").qtip({
+                    content: {
+                        text: function () {
+                            return `${this.data('chem_number')} chemicals associated to this category.<br>Click to display.`;
+                        }
+                    },
+                    position: {
+                        my: 'top center',
+                        at: 'bottom center'
+                    },
+                    style: {
+                        classes: 'qtip-dark qtip-rounded',
+                        tip: {
+                            width: 8,
+                            height: 4
+                        }
+                    },
+                    show: {
+                        event: 'mouseover'
+                    },
+                    hide: {
+                        event: 'mouseout'
+                    }
+                });   
             })
             .catch(error => console.error('Error loading elements:', error));
     }
@@ -303,6 +314,8 @@ function loadBasicNetworkAndClassify(classificationType) {
             selectClassification(true, classificationType);
 
             isSingleChemNetwork = false;
+
+
         })
         .catch(error => console.error('Error loading basic network:', error));
 
