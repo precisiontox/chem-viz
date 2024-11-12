@@ -608,18 +608,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "nephrotoxicity",
-                  "label": "nephrotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "nephrotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "neurotoxicity",
                   "label": "neurotoxicity",
                   "shape": "round-pentagon",
@@ -652,19 +640,6 @@
                   "score": 1.88,
                   "n_refs": 5,
                   "ref_list": "24676659,28634040,36165032,30594731,31662213"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "nephrotoxicity",
-                  "color": "#135D66",
-                  "score": -0.09,
-                  "n_refs": 1,
-                  "ref_list": "21519595"
             }
       },
       {

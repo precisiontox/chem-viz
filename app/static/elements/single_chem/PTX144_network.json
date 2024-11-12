@@ -1008,18 +1008,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "genotoxicity",
-                  "label": "genotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "genotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "ototoxicity",
                   "label": "ototoxicity",
                   "shape": "round-pentagon",
@@ -1056,18 +1044,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "neurotoxicity",
-                  "label": "neurotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "neurotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "cardiotoxicity",
                   "label": "cardiotoxicity",
                   "shape": "round-pentagon",
@@ -1086,19 +1062,6 @@
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "nephrotoxicity.svg"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "genotoxicity",
-                  "color": "#135D66",
-                  "score": -1.26,
-                  "n_refs": 5,
-                  "ref_list": "35613639,36835302,22305340,31323261,22539965"
             }
       },
       {
@@ -1138,19 +1101,6 @@
                   "score": 2.62,
                   "n_refs": 25,
                   "ref_list": "23231599,30190369,21395357,27438066,21235620,23983378,28857200,20950441,27986624,23932071,24987823,26330362,34641705,21951737,34794962,32509153,35234063,24651044,32629158,24206381,20829430,28640225,34251816,29341879,29655783"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "neurotoxicity",
-                  "color": "#135D66",
-                  "score": -0.24,
-                  "n_refs": 9,
-                  "ref_list": "28470518,24077981,26233726,21156017,18506148,21569417,21881470,18690886,17876335"
             }
       },
       {

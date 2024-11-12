@@ -1108,18 +1108,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "genotoxicity",
-                  "label": "genotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "genotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "cardiotoxicity",
                   "label": "cardiotoxicity",
                   "shape": "round-pentagon",
@@ -1152,19 +1140,6 @@
                   "score": 0.95,
                   "n_refs": 9,
                   "ref_list": "15086275,20206946,15121663,23956101,27225372,20843939,19094887,20553011,27271269"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "genotoxicity",
-                  "color": "#135D66",
-                  "score": -0.53,
-                  "n_refs": 7,
-                  "ref_list": "32375106,28854817,23232079,20851831,33725349,22750076,22272032"
             }
       },
       {

@@ -596,18 +596,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "genotoxicity",
-                  "label": "genotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "genotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "nephrotoxicity",
                   "label": "nephrotoxicity",
                   "shape": "round-pentagon",
@@ -663,19 +651,6 @@
                   "score": 1.54,
                   "n_refs": 14,
                   "ref_list": "37037291,26579943,32659285,31425380,29800918,23385671,30540688,33686244,30086269,31866378,16906597,12825143,19918574,21490912"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "genotoxicity",
-                  "color": "#135D66",
-                  "score": -0.45,
-                  "n_refs": 10,
-                  "ref_list": "20549636,29849914,37037291,18485436,7791813,25817349,18161561,37047754,15962942,21873647"
             }
       },
       {

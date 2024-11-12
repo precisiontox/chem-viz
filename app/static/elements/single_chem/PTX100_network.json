@@ -748,18 +748,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "immunotoxicity",
-                  "label": "immunotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "immunotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "hematotoxicity",
                   "label": "hematotoxicity",
                   "shape": "round-pentagon",
@@ -841,19 +829,6 @@
                   "score": 2.69,
                   "n_refs": 42,
                   "ref_list": "15571270,15232664,1398282,3071762,18258784,10073149,8931744,8453688,2730091,12933575,23152274,25042398,11426487,12554521,8634923,6366149,9255269,23335239,15386563,3886002,3756357,9003155,26377357,3528959,29209924,12114412,17050205,12497211,6594184,33085777,28573946,18030002,1986559,25066676,11781652,3471699,22666603,19920087,20472527,11529252,22931300,23956101"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "immunotoxicity",
-                  "color": "#135D66",
-                  "score": -1.43,
-                  "n_refs": 1,
-                  "ref_list": "25934555"
             }
       },
       {

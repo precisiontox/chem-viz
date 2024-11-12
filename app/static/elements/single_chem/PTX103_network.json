@@ -727,18 +727,6 @@
             }
       },
       {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "cardiotoxicity",
-                  "label": "cardiotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "cardiotoxicity.svg"
-            }
-      },
-      {
             "group": "edges",
             "data": {
                   "role": "category_tox_class",
@@ -801,19 +789,6 @@
                   "score": 3.33,
                   "n_refs": 20,
                   "ref_list": "9137807,9760456,36493943,22036025,34200310,22036024,15478947,26321723,32222132,9158693,20689731,10685017,29408486,8597155,18850355,30645201,11409539,29339245,20837131,8246307"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "cardiotoxicity",
-                  "color": "#135D66",
-                  "score": -0.11,
-                  "n_refs": 1,
-                  "ref_list": "30403670"
             }
       }
 ]

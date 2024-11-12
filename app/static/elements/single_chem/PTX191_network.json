@@ -693,18 +693,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "cardiotoxicity",
-                  "label": "cardiotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "cardiotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "nephrotoxicity",
                   "label": "nephrotoxicity",
                   "shape": "round-pentagon",
@@ -723,30 +711,6 @@
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "genotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "immunotoxicity",
-                  "label": "immunotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "immunotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "neurotoxicity",
-                  "label": "neurotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -791,19 +755,6 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "cardiotoxicity",
-                  "color": "#135D66",
-                  "score": -0.33,
-                  "n_refs": 15,
-                  "ref_list": "16466123,36082507,28544933,11414383,12052667,19538020,14675020,22591294,12799623,11562902,11986768,15139788,25288496,15143768,20003315"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
                   "target": "nephrotoxicity",
                   "color": "#135D66",
                   "score": 1.01,
@@ -822,32 +773,6 @@
                   "score": 1.02,
                   "n_refs": 61,
                   "ref_list": "24211107,35077737,33031630,12840108,31655981,9019897,30016301,29235998,26748250,8921512,25022851,1851537,22161117,12240556,10048748,35131333,20334059,15691228,9505350,20049419,29695695,28648729,32656556,11673084,25492931,2667107,29654371,9654244,32205461,27548984,35588875,27410723,8224788,24317225,1957311,2921999,36639588,7701619,7811007,34871411,25105482,24316197,30948195,7678175,29752090,20706607,32147358,28634040,31376569,15962942,28174104,22142834,28789907,22084712,29596745,16384725,17303420,22047769,25891104,20817623,16313947"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "immunotoxicity",
-                  "color": "#135D66",
-                  "score": -1.04,
-                  "n_refs": 2,
-                  "ref_list": "34601990,22683480"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "neurotoxicity",
-                  "color": "#135D66",
-                  "score": -0.13,
-                  "n_refs": 27,
-                  "ref_list": "17116962,3335336,25886295,10207853,2686430,16122804,31066327,31500468,36284937,34051493,32463028,1662895,25902267,21777722,2124211,2309508,9300146,11344971,11735605,20459819,17660656,17760640,22506251,12533263,16778737,18682717,7827199"
             }
       },
       {

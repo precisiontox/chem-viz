@@ -666,18 +666,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "neurotoxicity",
-                  "label": "neurotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "neurotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "ototoxicity",
                   "label": "ototoxicity",
                   "shape": "round-pentagon",
@@ -735,19 +723,6 @@
                   "score": 2.55,
                   "n_refs": 9,
                   "ref_list": "12172412,31967706,37015244,29753615,21321060,20553011,20843939,23956101,21822469"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "neurotoxicity",
-                  "color": "#135D66",
-                  "score": -1.41,
-                  "n_refs": 1,
-                  "ref_list": "34214917"
             }
       },
       {

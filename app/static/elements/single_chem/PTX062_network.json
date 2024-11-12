@@ -1326,30 +1326,6 @@
             }
       },
       {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "hematotoxicity",
-                  "label": "hematotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "hematotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "genotoxicity",
-                  "label": "genotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "genotoxicity.svg"
-            }
-      },
-      {
             "group": "edges",
             "data": {
                   "role": "category_tox_class",
@@ -1425,32 +1401,6 @@
                   "score": 0.37,
                   "n_refs": 6,
                   "ref_list": "12121739,31005598,8117405,28541783,10661503,11718240"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "hematotoxicity",
-                  "color": "#135D66",
-                  "score": -0.19,
-                  "n_refs": 1,
-                  "ref_list": "20381478"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "genotoxicity",
-                  "color": "#135D66",
-                  "score": -1.04,
-                  "n_refs": 22,
-                  "ref_list": "15914462,19285518,1589877,32297577,19836469,19136475,7511794,1579066,22775415,25541063,19816013,1944373,12371664,29072510,15369828,18752452,22992618,10195346,17324008,1597130,9413208,11108662"
             }
       }
 ]

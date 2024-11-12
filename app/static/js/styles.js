@@ -65,7 +65,7 @@ const generalNetworkStyle = [ // the stylesheet for general graph
     {
             selector: "node[role='category_tox_class']",
             style: {
-                "shape": "elipse"
+                "shape": "round-rectangle"
             }
     },
     {
@@ -123,14 +123,16 @@ const generalNetworkStyle = [ // the stylesheet for general graph
             "width": "85px",
             "height": "85px",
             "font-size": "27px",
-            "background-color": "#004880",
+            "border-width": "5px",
+            "border-color": "#004880",
             "color": "#004880"
         }
     },
     {
         selector: "node[role^='category']:selected",
         style: {
-            "background-color": "#004880",
+            "border-width": "5px",
+            "border-color": "#004880",
             "color": "#004880"
         }
     }
@@ -272,7 +274,7 @@ const singleNetworkStyle = [
             "font-size": "18px",
             "font-weight": "bold",
             "label": "data(label)",
-            "color": "#000",
+            "color": "#2c2e35",
             "text-halign": "center",
             "text-valign": "bottom",
             "text-wrap": "wrap"

@@ -76,6 +76,7 @@ def read_toxclass_file(file_path, df_identifier):
     )
     df = df[df["ptx_code"].isin(df_identifier["ptx_code"].unique())]
     df = df[df["ptx_code"]!="PTX164"]
+    df = df[df["score"] > 0]
     return df
 
 
@@ -295,16 +296,14 @@ def create_general_network(
 
         for index, row in df[df["ptx_code"].notna()].iterrows():
             if cat_name == "tox_class":
-                if row["n_refs"] < 3:
-                    continue
                 json_elements.append(
                     {
                         "group": "edges",
                         "data": {
                             "id": row["ptx_code"]+"_"+row[cat_name],
                             "role": cat_name,
-                            "source": row["ptx_code"],
-                            "target": row[cat_name],
+                            "source": row[cat_name],
+                            "target": row["ptx_code"],
                             "color": color_dic[row[cat_name]],
                             "score": row["score"],
                             "n_refs": row["n_refs"],
@@ -319,8 +318,8 @@ def create_general_network(
                         "data": {
                             "id": row["ptx_code"] + "_" + row[cat_name],
                             "role": cat_name,
-                            "source": row["ptx_code"],
-                            "target": row[cat_name],
+                            "source": row[cat_name],
+                            "target": row["ptx_code"],
                             "color": color_dic[row[cat_name]]
                         }
                     }
