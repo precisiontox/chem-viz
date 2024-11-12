@@ -297,6 +297,55 @@ input[type="range"]:focus {
     box-shadow: 0 0 10px rgba(0, 124, 193, 0.5); /* Optional shadow when focused */
 }
 
+#reset-button, #dl-btn{
+    width: 100%;
+    padding: 10px; /* Adjust padding as needed */
+    background-color: white;
+    border: 1px solid #172d4a;
+    box-shadow: 3px 3px #172d4a;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #172d4a;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, filter 0.3s; /* Added filter transition for icon hover effect */
+}
+#reset-button:hover, #dl-btn:hover {
+    background-color: #CCC;
+}
+
+
+#dl-content {
+    display: none;
+    /* display: flex; */
+    flex-direction: row; /* Align buttons in a single line */
+    justify-content: space-between; /* Add space between buttons */
+    gap: 10px; /* Optional: Adjust space between buttons */
+    margin-top: 10px;
+}
+.dl-btn-pic {
+    flex: 1; /* Allow buttons to grow and take equal space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    background-color: white;
+    border: 1px solid #172d4a;
+    border-radius: 5px;
+    font-weight: bold;
+    color: #172d4a;
+    cursor: pointer;
+    box-shadow: 2px 2px #172d4a;
+    transition: background-color 0.3s, color 0.3s;
+}
+.dl-btn-pic i {
+    margin-right: 8px; /* Add space between the icon and the text */
+}
+.dl-btn-pic:hover {
+    background-color: #9a999a;
+    color: white;
+}
+
 
 .main-panel {
     width: 80%; /* Takes the remaining space */
@@ -352,43 +401,6 @@ input[type="range"]:focus {
 }
 #help-btn:hover {
   background-color: #9a999a;
-}
-.dl-widget {
-  position: absolute;
-  display: inline-block;
-  /* margin-top: 20px; */
-  /* margin-left: 5px; */
-  /*right: 1px;*/
-  /*background-color: #FFF;*/
-}
-
-#dl-content {
-  display: none;
-}
-
-.dl-btn-off {
-  color: #2e6694;
-}
-.dl-btn-off:hover {
-  color: #9a999a;
-}
-.dl-btn-on {
-  color: #9a999a;
-}
-.dl-btn-on:hover {
-  color: #2e6694;
-}
-
-.dl-btn-pic {
-  border: none;
-  border-radius: 3px;
-  background-color: #CCC;
-  padding: 3px;
-  cursor: pointer;
-}
-.dl-btn-pic:hover {
-  background-color: #9a999a;
-  color: #fff;
 }
 
 

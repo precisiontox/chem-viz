@@ -489,7 +489,25 @@ function reLayout(network, layout_name) {
     layout.run();
 }
 
+function resetNetwork() {
+    if (isSingleChemNetwork) {
+        // Reset for single chemical network
+        const selectedChem = document.getElementById('chem-select').value;
+        if (selectedChem) {
+            loadSingleChemNetwork(); // Reload with the currently selected chemical
+        }
+    } else {
+        // Reset for basic network
+        const activeButton = document.querySelector('.classification-btn.active');
+        if (activeButton) {
+            const classificationType = activeButton.id.includes('use') ? 'use' : 'tox';
+            loadBasicNetworkAndClassify(classificationType);
+        }
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.tablinks').click();
+    // Add event listener for the reset button
+    document.getElementById('reset-button').addEventListener('click', resetNetwork);
 });

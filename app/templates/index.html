@@ -88,11 +88,31 @@
                         <option value="">Select a compound...</option>
                     </select>
                 </div>
+                <br>
+                <div class="dropdown">
+                    <button id="reset-button"><i class="fa-solid fa-arrow-rotate-left"></i> Reset Network</button>
+                </div>
+                <div class="dropdown">
+                    <button class="dl-btn-off" id="dl-btn">
+                        <i class="fas fa-download"></i> Download Network
+                    </button>
+                    <div id="dl-content" class="dl-content">
+                        <button class="dl-btn-pic" id="dl_svg">
+                            <i class="fas fa-file-download"></i> SVG
+                        </button>
+                        <button class="dl-btn-pic" id="dl_jpg">
+                            <i class="fas fa-camera"></i> JPG
+                        </button>
+                        <button class="dl-btn-pic" id="dl_png">
+                            <i class="fas fa-camera"></i> PNG
+                        </button>
+                    </div>
+                </div>
             </div>
 
-           <div class="main-panel">
-               <div class="cytoscape-container" id="cy_graph"></div>
-               <div class="tools-widget">
+            <div class="main-panel">
+                <div class="cytoscape-container" id="cy_graph"></div>
+                <div class="tools-widget">
 <!--                        <button class="my-btn" id="help-btn" title="Help">-->
 <!--                            <i class="far fa-question-circle"></i>-->
 <!--                        </button>-->
@@ -102,26 +122,6 @@
                         <button class="my-btn" id="lock" title="Lock/unlock element positions">
                             <i class="fa fa-unlock"></i>
                         </button>
-                   <div class="dl-widget">
-                        <button class="my-btn dl-btn-off" id="dl-btn"
-                                title="Download network view.">
-                            <i class="fas fa-download"></i>
-                        </button>
-                        <div id="dl-content">
-                            <button class="dl-btn-pic" id="dl_svg"
-                            title="Download complete network as a vector graphic">
-                              <i class="fas fa-file-download"></i> SVG
-                            </button>
-                            <button class="dl-btn-pic" id="dl_jpg"
-                            title="Take a snapshot of the current network view as JPG.">
-                                <i class="fas fa-camera"></i> JPG
-                            </button>
-                            <button class="dl-btn-pic" id="dl_png"
-                            title="Take a snapshot of the current network view as PNG.">
-                                <i class="fas fa-camera"></i> PNG
-                            </button>
-                        </div>
-                    </div>
                </div>
                <div class="zoom-widget">
                     <div class="zoom-widget-row">
@@ -293,11 +293,11 @@
 
         /// DOWNLOAD BUTTONS
         $("#dl-btn").click(function () {
-            if (this.className == "my-btn dl-btn-off") {
-                this.className = "my-btn dl-btn-on";
-                $("#dl-content").css("display", "inline-block");
+            if (this.className == "dl-btn-off") {
+                this.className = "dl-btn-on";
+                $("#dl-content").css("display", "flex");
             } else {
-                this.className = "my-btn dl-btn-off";
+                this.className = "dl-btn-off";
                 $("#dl-content").css("display", "none");
             }
         });
