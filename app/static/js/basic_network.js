@@ -4,32 +4,79 @@ let doubleClickDelay = 300;  // Maximum delay between clicks (in milliseconds)
 let isSingleChemNetwork = false; // Tracks if a single chemical network is loaded
 
 
-function changeLabelFontSize(fontSize) {
-    if (!isSingleChemNetwork) {
-        cy_graph.style().selector('node[role="chem"]').style('font-size', fontSize + 'px').update();
-    }  
+// Basic Network Functions
+function initializeNetworkBasic() {
+    if (!document.getElementById('cy_graph').hasChildNodes()) {
+        fetch(jsonBasic)
+            .then(response => response.json())
+            .then(elements => {
+                cy_graph = cytoscape({
+                    container: document.getElementById('cy_graph'),
+                    elements: elements,
+                    style: generalNetworkStyle,
+                    // layout: cose_layout
+                });
+                initializeBasicNetworkFeatures();
+                selectClassification(true, 'use');
+                populateChemSelect();
+            })
+            .catch(error => console.error('Error loading elements:', error));
+    }
 }
 
-function updateIsolatedAttributes() {
-    // Loop through each node with role "attribute"
-    cy_graph.nodes("[role='attribute']").forEach(function(node) {
-        // Find edges that source from this node
-        const outgoingEdges = node.outgoers('edge');
+function initializeBasicNetworkFeatures() {
+    commonNetworkFeatures()
 
-        // Check if there are no outgoing edges
-        if (outgoingEdges.length === 0) {
-            // Change the role to 'isolated-attribute' if no outgoing edges
-            node.data('role', 'isolated-attribute');
-        } else {
-            // Revert to 'attribute' role if there are outgoing edges
-            node.data('role', 'attribute');
+    cy_graph.on('click', "node[role^='category']", function(event) {
+        toggleChemNodes(event.target);
+    });
+
+    cy_graph.edges().qtip({
+        content: function () {
+            let sourceNode = this.source();
+            let chem_name = sourceNode.data("name");
+            if (this.data("role") === "tox_class") {
+                var qtip_content =
+                    "<div class='qtip-content'><br>\n" +
+                    "<b class='field-edge-tox'>Compound</b> | " + this.data("source") + " | " + chem_name+ "<br>\n" +
+                    "<b class='field-edge-tox'>Toxicity class</b> | <span style='color:" + this.data("color") + "'>" + this.data("target") + "</span><br>\n" +
+                    "<b class='field-edge-tox'>Score</b> | " + this.data("score") + "<br>\n" +
+                    "<b class='field-edge-tox'># references</b> | " + this.data("n_refs") + "<br>\n" +
+                    "</div>";
+            } else if (this.data("role") === "use_class") {
+                var qtip_content =
+                    "<div class='qtip-content'><br>\n" +
+                    "<b class='field-edge-use'>Compound</b> | " + this.data("source") + " | " + chem_name+ "<br>\n" +
+                    "<b class='field-edge-use'>Use class</b> | <span style='color:" + this.data("color") + "'>" + this.data("target") + "</span><br>\n" +
+                    "</div>";
+            }
+            return qtip_content
+        },
+        position: {
+            my: "top center",
+            at: "bottom center"
+        },
+        style: {
+            classes: "qtip-bootstrap qtip-wide",
+            tip: {
+                width: 20,
+                height: 10
+            }
+        },
+        show: {
+            event: "click"
+        },
+        hide: {
+            event: 'unfocus'
         }
     });
 
-    // Apply qTip tooltip to isolated attribute nodes
-    cy_graph.nodes("[role='isolated-attribute']").qtip({
+       // Apply qTip tooltip to isolated attribute nodes
+       cy_graph.nodes("[role^='category']").qtip({
         content: {
-            text: 'No information available.'
+            text: function () {
+                return `${this.data('chem_number')} chemicals associated to this category.<br>Click to display/hide.`;
+            }
         },
         position: {
             my: 'top center',
@@ -48,28 +95,6 @@ function updateIsolatedAttributes() {
         hide: {
             event: 'mouseout'
         }
-    });   
-}
-
-function populateChemSelect() {
-    const chemNodes = cy_graph.nodes("[role='chem']");
-    const select = document.getElementById('chem-select');
-
-    // Clear existing options
-    select.innerHTML = '<option value="">Select a compound...</option>';
-
-    // Populate the dropdown
-    chemNodes.forEach(node => {
-        const option = document.createElement('option');
-        option.value = node.id();
-        option.textContent = node.data('label') || node.id();
-        select.appendChild(option);
-    });
-
-    // Initialize Select2 with search enabled
-    $(select).select2({
-        placeholder: "Type to search for a compound...",
-        allowClear: true
     });
 }
 
@@ -177,70 +202,31 @@ function commonNetworkFeatures() {
     });
 };
 
-function initializeBasicNetworkFeatures() {
-    commonNetworkFeatures()
+function selectClassification(first_time=false, selectedClass=null) {
+    // let selectedClass = document.getElementById('category-select').value;
+    let selectedNodes = cy_graph.nodes("[role^='category_" + selectedClass + "']");
+    console.log(selectedNodes);
+    
+    if (first_time) {
+        cy_graph.elements().hide();
+        selectedNodes.show();
+        reLayout(selectedNodes, initial_layout);
+        cy_graph.fit(selectedNodes);  
 
-    cy_graph.on('click', "node[role^='category']", function(event) {
-        toggleChemNodes(event.target);
-    });
+    } else {
+        // Get the connected edges and neighbor nodes
+        let connectedEdges = selectedNodes.connectedEdges();
+        let neighborNodes = connectedEdges.targets().add(connectedEdges.sources());
 
-    cy_graph.edges().qtip({
-        content: function () {
-            let sourceNode = this.source();
-            let chem_name = sourceNode.data("name");
-            if (this.data("role") === "tox_class") {
-                var qtip_content =
-                    "<div class='qtip-content'><br>\n" +
-                    "<b class='field-edge-tox'>Compound</b> | " + this.data("source") + " | " + chem_name+ "<br>\n" +
-                    "<b class='field-edge-tox'>Toxicity class</b> | <span style='color:" + this.data("color") + "'>" + this.data("target") + "</span><br>\n" +
-                    "<b class='field-edge-tox'>Score</b> | " + this.data("score") + "<br>\n" +
-                    "<b class='field-edge-tox'># references</b> | " + this.data("n_refs") + "<br>\n" +
-                    "</div>";
-            } else if (this.data("role") === "use_class") {
-                var qtip_content =
-                    "<div class='qtip-content'><br>\n" +
-                    "<b class='field-edge-use'>Compound</b> | " + this.data("source") + " | " + chem_name+ "<br>\n" +
-                    "<b class='field-edge-use'>Use class</b> | <span style='color:" + this.data("color") + "'>" + this.data("target") + "</span><br>\n" +
-                    "</div>";
-            }
-            return qtip_content
-        },
-        position: {
-            my: "top center",
-            at: "bottom center"
-        },
-        style: {
-            classes: "qtip-bootstrap qtip-wide",
-            tip: {
-                width: 20,
-                height: 10
-            }
-        },
-        show: {
-            event: "click"
-        },
-        hide: {
-            event: 'unfocus'
-        }
-    });
-}
+        // Hide non-displayed elements
+        cy_graph.elements().hide();
+        selectedNodes.show();
+        connectedEdges.show();
+        neighborNodes.show();
 
-function initializeNetworkBasic() {
-    if (!document.getElementById('cy_graph').hasChildNodes()) {
-        fetch(jsonBasic)
-            .then(response => response.json())
-            .then(elements => {
-                cy_graph = cytoscape({
-                    container: document.getElementById('cy_graph'),
-                    elements: elements,
-                    style: generalNetworkStyle,
-                    // layout: cose_layout
-                });
-                initializeBasicNetworkFeatures();
-                selectClassification(true, 'use');
-                populateChemSelect();
-            })
-            .catch(error => console.error('Error loading elements:', error));
+        // Re-layout and fit view
+        reLayout(selectedNodes.union(connectedEdges).union(neighborNodes), cose_layout);
+        cy_graph.fit(selectedNodes.union(connectedEdges).union(neighborNodes));
     }
 }
 
@@ -269,8 +255,6 @@ function loadBasicNetworkAndClassify(classificationType) {
             selectClassification(true, classificationType);
 
             isSingleChemNetwork = false;
-
-
         })
         .catch(error => console.error('Error loading basic network:', error));
 
@@ -281,59 +265,39 @@ function loadBasicNetworkAndClassify(classificationType) {
     document.getElementById(`${classificationType}-button`).classList.add('active');
 }
 
-function initializeSingleChemNetworkFeatures() {
-    commonNetworkFeatures();    
-    updateIsolatedAttributes();
+function toggleChemNodes(categoryNode) {
+    // Find all connected 'chem' nodes and edges
+    const connectedEdges = categoryNode.connectedEdges();
+    const chemNodes = connectedEdges.targets().add(connectedEdges.sources()).filter("[role='chem']");
 
-    // Add click event to attribute nodes
-    cy_graph.on('click', "node[role='attribute']", function(event) {
-        let selectedNode = event.target;
-        let connectedEdges = selectedNode.connectedEdges().filter("[subrole='attribute']");
-        let neighborNodes = connectedEdges.targets();
-        let selectedElements = connectedEdges.union(neighborNodes);
-    
-        // Check if the neighbor nodes are visible
-        let areVisible = neighborNodes.first().style('display') !== 'none';
-    
-        if (areVisible) {
-            // If they are visible, hide them
-            selectedElements.hide();
-        } else {
-            // If they are hidden, show them
-            selectedElements.show();
-            reLayout(cy_graph.elements(), cose_layout);
-            // let main = cy_graph.nodes("[role='chem']").union( cy_graph.nodes("[role='category']") );
-            // main.layout(circle_layout)
-            // neighborNodes.layout(circle_layout).run();
-            cy_graph.fit(cy_graph.elements());
-        }
-    });
+    // Determine if we should hide or show chem nodes
+    const isAlreadyVisible = connectedEdges.every(edge => edge.visible());
 
-    // Apply qTip tooltip to attribute nodes
-    cy_graph.nodes("[role='attribute']").qtip({
-        content: {
-            text: 'Click to display/hide information.'
-        },
-        position: {
-            my: 'top center',
-            at: 'bottom center'
-        },
-        style: {
-            classes: 'qtip-dark qtip-rounded',
-            tip: {
-                width: 8,
-                height: 4
-            }
-        },
-        show: {
-            event: 'mouseover'
-        },
-        hide: {
-            event: 'mouseout'
-        }
-    }); 
+    if (isAlreadyVisible) {
+        connectedEdges.hide();
+        const chemNodesWithNoVisibleEdges = cy_graph.nodes("[role='chem']").filter(node => {
+            // Check if the node has no visible connected edges
+            return node.connectedEdges(":visible").length === 0;
+        });
+        chemNodesWithNoVisibleEdges.hide();        
+    } else {
+        // Show category node (always keep it visible), connected edges, and chem nodes
+        connectedEdges.show();
+        chemNodes.show();
+    }
+
+    // Get all currently visible elements
+    const visibleElements = cy_graph.elements(":visible");
+
+    // Re-layout all visible elements
+    reLayout(visibleElements, cose_layout);
+
+    // Fit the view to the visible elements
+    cy_graph.fit(visibleElements);
 }
 
+
+// Single Chemical Network Functions
 function loadSingleChemNetwork() {
     // Get the selected chemical ID (PTX code)
     let selectedChem = document.getElementById('chem-select').value;
@@ -390,45 +354,79 @@ function loadSingleChemNetwork() {
     );
 }
 
-function changeChemNodeLabel(){
-    let selectedLabel = document.getElementById('chem-node-label-select').value;
-    let selectedLabel2 = 'data(' + selectedLabel + ')';
-    cy_graph.style().selector('node[role="chem"]').style('label', selectedLabel2).update();
+function initializeSingleChemNetworkFeatures() {
+    commonNetworkFeatures();    
+    updateIsolatedAttributes();
+
+    // Add click event to attribute nodes
+    cy_graph.on('click', "node[role='attribute']", function(event) {
+        let selectedNode = event.target;
+        let connectedEdges = selectedNode.connectedEdges().filter("[subrole='attribute']");
+        let neighborNodes = connectedEdges.targets();
+        let selectedElements = connectedEdges.union(neighborNodes);
+    
+        // Check if the neighbor nodes are visible
+        let areVisible = neighborNodes.first().style('display') !== 'none';
+    
+        if (areVisible) {
+            // If they are visible, hide them
+            selectedElements.hide();
+        } else {
+            // If they are hidden, show them
+            selectedElements.show();
+            reLayout(cy_graph.elements(), cose_layout);
+            // let main = cy_graph.nodes("[role='chem']").union( cy_graph.nodes("[role='category']") );
+            // main.layout(circle_layout)
+            // neighborNodes.layout(circle_layout).run();
+            cy_graph.fit(cy_graph.elements());
+        }
+    });
+
+    // Apply qTip tooltip to attribute nodes
+    cy_graph.nodes("[role='attribute']").qtip({
+        content: {
+            text: 'Click to display/hide information.'
+        },
+        position: {
+            my: 'top center',
+            at: 'bottom center'
+        },
+        style: {
+            classes: 'qtip-dark qtip-rounded',
+            tip: {
+                width: 8,
+                height: 4
+            }
+        },
+        show: {
+            event: 'mouseover'
+        },
+        hide: {
+            event: 'mouseout'
+        }
+    }); 
 }
 
-function selectClassification(first_time=false, selectedClass=null) {
-    // let selectedClass = document.getElementById('category-select').value;
-    let selectedNodes = cy_graph.nodes("[role^='category_" + selectedClass + "']");
-    console.log(selectedNodes);
-    
-    if (first_time) {
-        cy_graph.elements().hide();
-        selectedNodes.show();
-        reLayout(selectedNodes, initial_layout);
-        cy_graph.fit(selectedNodes);  
+function updateIsolatedAttributes() {
+    // Loop through each node with role "attribute"
+    cy_graph.nodes("[role='attribute']").forEach(function(node) {
+        // Find edges that source from this node
+        const outgoingEdges = node.outgoers('edge');
 
-    } else {
-        // Get the connected edges and neighbor nodes
-        let connectedEdges = selectedNodes.connectedEdges();
-        let neighborNodes = connectedEdges.targets().add(connectedEdges.sources());
-
-        // Hide non-displayed elements
-        cy_graph.elements().hide();
-        selectedNodes.show();
-        connectedEdges.show();
-        neighborNodes.show();
-
-        // Re-layout and fit view
-        reLayout(selectedNodes.union(connectedEdges).union(neighborNodes), cose_layout);
-        cy_graph.fit(selectedNodes.union(connectedEdges).union(neighborNodes));
-    }
+        // Check if there are no outgoing edges
+        if (outgoingEdges.length === 0) {
+            // Change the role to 'isolated-attribute' if no outgoing edges
+            node.data('role', 'isolated-attribute');
+        } else {
+            // Revert to 'attribute' role if there are outgoing edges
+            node.data('role', 'attribute');
+        }
+    });
 
     // Apply qTip tooltip to isolated attribute nodes
-    cy_graph.nodes("[role^='category']").qtip({
+    cy_graph.nodes("[role='isolated-attribute']").qtip({
         content: {
-            text: function () {
-                return `${this.data('chem_number')} chemicals associated to this category.<br>Click to display/hide.`;
-            }
+            text: 'No information available.'
         },
         position: {
             my: 'top center',
@@ -450,40 +448,45 @@ function selectClassification(first_time=false, selectedClass=null) {
     });   
 }
 
+
+// Utility Functions
+function populateChemSelect() {
+    const chemNodes = cy_graph.nodes("[role='chem']");
+    const select = document.getElementById('chem-select');
+
+    // Clear existing options
+    select.innerHTML = '<option value="">Select a compound...</option>';
+
+    // Populate the dropdown
+    chemNodes.forEach(node => {
+        const option = document.createElement('option');
+        option.value = node.id();
+        option.textContent = node.data('label') || node.id();
+        select.appendChild(option);
+    });
+
+    // Initialize Select2 with search enabled
+    $(select).select2({
+        placeholder: "Type to search for a compound...",
+        allowClear: true
+    });
+}
+
+function changeLabelFontSize(fontSize) {
+    if (!isSingleChemNetwork) {
+        cy_graph.style().selector('node[role="chem"]').style('font-size', fontSize + 'px').update();
+    }  
+}
+
+function changeChemNodeLabel(){
+    let selectedLabel = document.getElementById('chem-node-label-select').value;
+    let selectedLabel2 = 'data(' + selectedLabel + ')';
+    cy_graph.style().selector('node[role="chem"]').style('label', selectedLabel2).update();
+}
+
 function reLayout(network, layout_name) {
     let layout = network.layout(layout_name);
     layout.run();
-}
-
-function toggleChemNodes(categoryNode) {
-    // Find all connected 'chem' nodes and edges
-    const connectedEdges = categoryNode.connectedEdges();
-    const chemNodes = connectedEdges.targets().add(connectedEdges.sources()).filter("[role='chem']");
-
-    // Determine if we should hide or show chem nodes
-    const isAlreadyVisible = connectedEdges.every(edge => edge.visible());
-
-    if (isAlreadyVisible) {
-        connectedEdges.hide();
-        const chemNodesWithNoVisibleEdges = cy_graph.nodes("[role='chem']").filter(node => {
-            // Check if the node has no visible connected edges
-            return node.connectedEdges(":visible").length === 0;
-        });
-        chemNodesWithNoVisibleEdges.hide();        
-    } else {
-        // Show category node (always keep it visible), connected edges, and chem nodes
-        connectedEdges.show();
-        chemNodes.show();
-    }
-
-    // Get all currently visible elements
-    const visibleElements = cy_graph.elements(":visible");
-
-    // Re-layout all visible elements
-    reLayout(visibleElements, cose_layout);
-
-    // Fit the view to the visible elements
-    cy_graph.fit(visibleElements);
 }
 
 
