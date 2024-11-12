@@ -278,7 +278,7 @@ def create_general_network(
             else:
                 color_bg = color
                 color_border = color
-            color_dic[cat] = color_bg
+            color_dic[cat] = color_border
             json_elements.append(
                 {
                     "group": "nodes",
@@ -795,7 +795,7 @@ colors = {
     "Targets_bg": "#cda7ba",
     "Adverse Outcome Pathways_border": "#79AC78",
     "Adverse Outcome Pathways_bg": "#B0D9B1",
-    "Pesticide_border": "#4a500f",
+    "Pesticide_border": "#b2bb5d",
     "Pesticide_bg": "#cdd485",
     "Pharmaceutical_bg": "#8795de",
     "Pharmaceutical_border": "#515fa2",
@@ -807,14 +807,22 @@ colors = {
     "Personal care products_border": "#297e89",
     "Endogenous_bg": "#f4f4b3",
     "Endogenous_border": "#c6c34b",
+    "hepatotoxicity_bg": "#9dd381",
+    "hepatotoxicity_border": "#84ba65",
     "genotoxicity_bg": "#73c6b6",
-    "genotoxicity_border": "#73c6b6",
+    "genotoxicity_border": "#50b19e",
     "hematotoxicity_bg": "#f46e81",
-    "hematotoxicity_border": "#f46e81",
+    "hematotoxicity_border": "#e53546",
     "cardiotoxicity_bg": "#69c2d6",
-    "cardiotoxicity_border": "#69c2d6",
-    "neurotoxicity_bg": "#8a5796",
-    "neurotoxicity_border": "#8a5796"
+    "cardiotoxicity_border": "#3a8fa3",
+    "neurotoxicity_bg": "#fc92c3",
+    "neurotoxicity_border": "#fc5696",
+    "nephrotoxicity_bg": "#956488",
+    "nephrotoxicity_border": "#8c4478",
+    "ototoxicity_bg": "#e9c4aa",
+    "ototoxicity_border": "#d3a691",
+    "immunotoxicity_bg": "#f3cf7d",
+    "immunotoxicity_border": "#c1a161",
 }
 sources = {
     "solubility_h2o_mol_liter": "source_solubility_h2o",
