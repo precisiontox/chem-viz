@@ -1,0 +1,111 @@
+{
+      "ptx_code": "PTX058",
+      "chem_name": "Tamoxifen",
+      "casrn": "10540-29-1",
+      "dtxsid": "DTXSID1034187",
+      "smiles": "CC\\C(=C(/C1=CC=CC=C1)C1=CC=C(OCCN(C)C)C=C1)C1=CC=CC=C1",
+      "inchikey": "NKANXQFJJICGDU-QPLCGJKRSA-N",
+      "label": "PTX058 | Tamoxifen",
+      "drugbank_id": "DB00675",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Neurotoxicity; Hepatotoxicity; Genotoxicity",
+      "chem_name_user": "Tamoxifen",
+      "mw_g_mol": "371.524",
+      "solubility_h2o_mol_liter": "4.81e-06",
+      "source_solubility_h2o": "COMPTOX",
+      "henry_coefficient_atm_m3_mol": "2.23383e-08",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "6.03925955268213",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "",
+      "pka_base": "8.62",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "7.07",
+      "source_kow": "PP-LFER, Ulrich, N., Endo, S., Brown, T.N., Watanabe, N., Bronner, G., Abraham, M.H., Goss, K.-U., UFZ-LSER database v 3.2.1 [Internet], Leipzig, Germany, Helmholtz Centre for Environmental Research-UFZ. 2017 [accessed on 11.08.2023]. Available from http://www.ufz.de/lserd",
+      "log_dlipw_ph74_liter_liter": "5.74",
+      "source_dlipw": "LSERD, eq. 1  (?mw=1)",
+      "freely_dissolved_fraction": "0.00115515636329617",
+      "density_kg_liter": "1.047",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "0.345",
+      "baseline_dmagna": "0.685",
+      "baseline_celegans": "1.54067855908489",
+      "baseline_xlaevis": "2.43210023156998",
+      "baseline_dmelanogaster": "5.61257094292064",
+      "baseline_cells": "4.10137149478347e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "4.73772538044067e-08",
+      "moa_drugbank": "Tamoxifen competitively inhibits estrogen binding to its receptor, which is critical for it's activity in breast cancer cells.[A1025] Tamoxifen leads to a decrease in tumor growth factor \u00ce\u00b1 and insulin-like growth factor 1, and an increase in sex hormone binding globulin.[A1025] The increase in sex hormon binding globulin limits the amount of freely available estradiol.[A1025] These changes reduce levels of factors that stimulate tumor growth.[A1025]\n\nTamoxifen has also been shown to induce apoptosis in estrogen receptor positive cells.[A182195] This action is thought to be the result of inhibition of protein kinase C, which prevents DNA synthesis.[A182195] Alternate theories for the apoptotic effect of tamoxifen comes from the approximately 3 fold increase in intracellular and mitochondrial calcium ion levels after administration or the induction of tumor growth factor \u00ce\u00b2.[A182195]",
+      "protein_binding": "The protein binding of tamoxifen in plasma is over 98% and mostly to serum albumin.[A182207]",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            },
+            {
+                  "AOP_id": 200,
+                  "AOP_name": "Estrogen receptor activation leading to breast cancer   "
+            },
+            {
+                  "AOP_id": 318,
+                  "AOP_name": "Glucocorticoid Receptor activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "3-beta-hydroxysteroid-Delta(8),Delta(7)-isomerase",
+            "5-hydroxytryptamine receptor 6",
+            "Androgen receptor",
+            "Cytochrome P450 19A1",
+            "D(1A) dopamine receptor",
+            "Estrogen receptor alpha",
+            "Estrogen receptor beta",
+            "Nuclear factor erythroid 2-related factor 2",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Sodium-dependent dopamine transporter",
+            "Sodium-dependent noradrenaline transporter"
+      ]
+}

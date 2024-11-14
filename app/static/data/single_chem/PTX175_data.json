@@ -1,0 +1,96 @@
+{
+      "ptx_code": "PTX175",
+      "chem_name": "Ketoconazole",
+      "casrn": "65277-42-1",
+      "dtxsid": "DTXSID7029879",
+      "smiles": "CC(=O)N1CCN(CC1)C1=CC=C(OC[C@H]2CO[C@@](CN3C=CN=C3)(O2)C2=CC=C(Cl)C=C2Cl)C=C1",
+      "inchikey": "XMAYWYJOQHXEEK-OZXSUGGESA-N",
+      "label": "PTX175 | Ketoconazole",
+      "drugbank_id": "DB01026",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Genotoxicity; Nephrotoxicity; Ototoxicity; Neurotoxicity; Hepatotoxicity; Immunotoxicity",
+      "chem_name_user": "Ketoconazole",
+      "mw_g_mol": "531.43",
+      "solubility_h2o_mol_liter": "0.000157623",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "4.41965e-08",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "5.74292179367983",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "",
+      "pka_base": "3.33;5.74",
+      "source_pka": "Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
+      "log_kow_liter_liter": "4.35",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "3.44154949806068",
+      "source_dlipw": "LSER",
+      "freely_dissolved_fraction": "0.288249412087226",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "64.9929121499891",
+      "baseline_dmagna": "51.3028858792376",
+      "baseline_celegans": "113.056737066158",
+      "baseline_xlaevis": "61.1031909688845",
+      "baseline_dmelanogaster": "440.293667055501",
+      "baseline_cells": "3.2632881186228e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "9.40640881664254e-06",
+      "moa_drugbank": "Ketoconazole interacts with 14-&alpha;-sterol demethylase, a cytochrome P-450 enzyme necessary for the conversion of lanosterol to ergosterol.[A181802,T116] This results in inhibition of ergosterol synthesis and increased fungal cellular permeability due to reduced amounts of ergosterol present in the fungal cell membrane. This metabolic inhibition also results in accumulation of 14\u00ce\u00b1-methyl-3,6-diol, a toxic metabolite. The increase in membrane fluidity is also thought to produce impairment of membrane-bound enzyme systems as components become less closely packed.",
+      "protein_binding": "Ketoconazole is approximately 84% bound to plasma albumin with another 15% associated with blood cells for a total of 99% binding within the plasma.[A181802]",
+      "moa_t3db": "Ketoconazole interacts with 14-\u00ce\u00b1 demethylase, a cytochrome P-450 enzyme necessary for the conversion of lanosterol to ergosterol. This results in inhibition of ergosterol synthesis and increased fungal cellular permeability. Other mechanisms may involve the inhibition of endogenous respiration, interaction with membrane phospholipids, inhibition of yeast transformation to mycelial forms, inhibition of purine uptake, and impairment of triglyceride and/or phospholipid biosynthesis. Ketoconazole can also inhibit the synthesis of thromboxane and sterols such as aldosterone, cortisol, and testosterone. (A365)",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 318,
+                  "AOP_name": "Glucocorticoid Receptor activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "1,25-dihydroxyvitamin D(3) 24-hydroxylase, mitochondrial",
+            "25-hydroxyvitamin D-1 alpha hydroxylase, mitochondrial",
+            "Androgen receptor",
+            "Aryl hydrocarbon receptor",
+            "Bile acid receptor",
+            "Bile salt export pump",
+            "Cytochrome P450 11B1, mitochondrial",
+            "Cytochrome P450 11B2, mitochondrial",
+            "Cytochrome P450 19A1",
+            "Cytochrome P450 3A4",
+            "Lanosterol 14-alpha demethylase",
+            "Malate dehydrogenase, cytoplasmic",
+            "Multidrug resistance protein 1",
+            "NAD-dependent protein deacetylase sirtuin-2",
+            "Nuclear receptor ROR-gamma",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Nuclear receptor subfamily 1 group I member 3",
+            "Potassium voltage-gated channel subfamily H member 2",
+            "Sodium-dependent serotonin transporter",
+            "Sodium/bile acid cotransporter",
+            "Steroid 17-alpha-hydroxylase/17,20 lyase",
+            "Steroid 21-hydroxylase",
+            "Sterol regulatory element-binding protein 1",
+            "Vitamin D3 receptor"
+      ]
+}

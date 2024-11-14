@@ -1,0 +1,95 @@
+{
+      "ptx_code": "PTX028",
+      "chem_name": "Genistein",
+      "casrn": "446-72-0",
+      "dtxsid": "DTXSID5022308",
+      "smiles": "OC1=CC=C(C=C1)C1=COC2=C(C(O)=CC(O)=C2)C1=O",
+      "inchikey": "TZBJGXHYKVUXJN-UHFFFAOYSA-N",
+      "label": "PTX028 | Genistein",
+      "drugbank_id": "DB01645",
+      "use_class": "Personal care products",
+      "tox_class": "Genotoxicity; Immunotoxicity; Neurotoxicity; Hepatotoxicity; Hematotoxicity; Cardiotoxicity",
+      "chem_name_user": "Genistein",
+      "mw_g_mol": "270.241",
+      "solubility_h2o_mol_liter": "0.00061",
+      "source_solubility_h2o": "COMPTOX",
+      "henry_coefficient_atm_m3_mol": "2.14825e-10",
+      "source_henry": "COMPTOX (Opera)",
+      "log_kaw_kh_rt": "8.05622485136821",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "7.05;9.37;12.61;;",
+      "pka_base": "",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "3.08",
+      "source_kow": "PP-LFER, Ulrich, N., Endo, S., Brown, T.N., Watanabe, N., Bronner, G., Abraham, M.H., Goss, K.-U., UFZ-LSER database v 3.2.1 [Internet], Leipzig, Germany, Helmholtz Centre for Environmental Research-UFZ. 2017 [accessed on 11.08.2023]. Available from http://www.ufz.de/lserd",
+      "log_dlipw_ph74_liter_liter": "3.32",
+      "source_dlipw": "Henneberger et al. 2019",
+      "freely_dissolved_fraction": "0.315010272034269",
+      "density_kg_liter": "1.555",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "85.7",
+      "baseline_dmagna": "64.5",
+      "baseline_celegans": "141.89928201801",
+      "baseline_xlaevis": "72.4642830961401",
+      "baseline_dmelanogaster": "554.57463239434",
+      "baseline_cells": "3.95046876408996e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "1.24443824003886e-05",
+      "moa_drugbank": "Genistein may inhibit cancer cell growth by blocking enzymes required for cell growth. \n\nGenistein may decrease cardiovascular risk in postmenopausal women by interacting with the nuclear estrogen receptors to alter the transcription of cell specific genes. In randomized clinical trials, genistein was seen to increase the ratio of nitric oxide to endothelin and improved flow-mediated endothelium dependent vasodilation in healthy postmenopausal women [A14417]. In addition, genistein may have beneficial effects on glucose metabolism by inhibiting islet tyrosine kinase activity as well as insulin release dependent on glucose and sulfonylurea [A14417].",
+      "protein_binding": "",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 36,
+                  "AOP_name": "Peroxisomal Fatty Acid Beta-Oxidation Inhibition Leading to Steatosis "
+            },
+            {
+                  "AOP_id": 54,
+                  "AOP_name": "Inhibition of Na+/I- symporter (NIS) leads to learning and memory impairment  "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 167,
+                  "AOP_name": "Early-life estrogen receptor activity leading to endometrial carcinoma in the mouse. "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            }
+      ],
+      "targets": []
+}

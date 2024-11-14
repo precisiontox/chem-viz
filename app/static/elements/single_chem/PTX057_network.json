@@ -5,8 +5,8 @@
                   "role": "chem",
                   "id": "PTX057",
                   "ptx_code": "PTX057",
-                  "name": "HC yellow 13",
-                  "label": "PTX057 | HC Yellow no. 13",
+                  "name": "Hc yellow 13",
+                  "label": "PTX057 | Hc yellow no. 13",
                   "cas": "10442-83-8",
                   "dtxsid": "DTXSID10146483",
                   "db_id": "NA",
@@ -408,7 +408,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - D. rerio",
+                  "id": "baseline_drerio",
                   "label": "D. rerio:\n697.0",
                   "value": "697.0",
                   "shape": "round-hexagon",
@@ -420,7 +420,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - Daphnia",
+                  "id": "baseline_dmagna",
                   "label": "D. magna:\n362.0",
                   "value": "362.0",
                   "shape": "round-hexagon",
@@ -432,7 +432,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - C. elegans",
+                  "id": "baseline_celegans",
                   "label": "C. elegans:\n791.237298701986",
                   "value": "791.237298701986",
                   "shape": "round-hexagon",
@@ -444,7 +444,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - Xenopus",
+                  "id": "baseline_xlaevis",
                   "label": "X. laevis:\n263.164076915896",
                   "value": "263.164076915896",
                   "shape": "round-hexagon",
@@ -456,7 +456,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - Drosophila",
+                  "id": "baseline_dmelanogaster",
                   "label": "D. melanogaster:\n3176.04370868296",
                   "value": "3176.04370868296",
                   "shape": "round-hexagon",
@@ -468,7 +468,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - Cells",
+                  "id": "baseline_cells",
                   "label": "HepG2 cells:\n0.000137858052511996",
                   "value": "0.000137858052511996",
                   "shape": "round-hexagon",
@@ -494,7 +494,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - D. rerio",
+                  "target": "baseline_drerio",
                   "color": "#AB886D"
             }
       },
@@ -504,7 +504,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - Daphnia",
+                  "target": "baseline_dmagna",
                   "color": "#AB886D"
             }
       },
@@ -514,7 +514,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - C. elegans",
+                  "target": "baseline_celegans",
                   "color": "#AB886D"
             }
       },
@@ -524,7 +524,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - Xenopus",
+                  "target": "baseline_xlaevis",
                   "color": "#AB886D"
             }
       },
@@ -534,7 +534,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - Drosophila",
+                  "target": "baseline_dmelanogaster",
                   "color": "#AB886D"
             }
       },
@@ -544,7 +544,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - Cells",
+                  "target": "baseline_cells",
                   "color": "#AB886D"
             }
       },

@@ -5,8 +5,8 @@
                   "role": "chem",
                   "id": "PTX040",
                   "ptx_code": "PTX040",
-                  "name": "bisphenol A",
-                  "label": "PTX040 | Bisphenol A",
+                  "name": "Bisphenol a",
+                  "label": "PTX040 | Bisphenol a",
                   "cas": "80-05-7",
                   "dtxsid": "DTXSID7020182",
                   "db_id": "DB06973",
@@ -408,7 +408,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - D. rerio",
+                  "id": "baseline_drerio",
                   "label": "D. rerio:\n40.4",
                   "value": "40.4",
                   "shape": "round-hexagon",
@@ -420,7 +420,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - Daphnia",
+                  "id": "baseline_dmagna",
                   "label": "D. magna:\n34.7",
                   "value": "34.7",
                   "shape": "round-hexagon",
@@ -432,7 +432,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - C. elegans",
+                  "id": "baseline_celegans",
                   "label": "C. elegans:\n76.5701337915672",
                   "value": "76.5701337915672",
                   "shape": "round-hexagon",
@@ -444,7 +444,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - Xenopus",
+                  "id": "baseline_xlaevis",
                   "label": "X. laevis:\n45.6094673117715",
                   "value": "45.6094673117715",
                   "shape": "round-hexagon",
@@ -456,7 +456,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - Drosophila",
+                  "id": "baseline_dmelanogaster",
                   "label": "D. melanogaster:\n296.397816524898",
                   "value": "296.397816524898",
                   "shape": "round-hexagon",
@@ -468,7 +468,7 @@
             "group": "nodes",
             "data": {
                   "role": "base_tox",
-                  "id": "Baseline - Cells",
+                  "id": "baseline_cells",
                   "label": "HepG2 cells:\n2.08869754494793e-05",
                   "value": "2.08869754494793e-05",
                   "shape": "round-hexagon",
@@ -494,7 +494,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - D. rerio",
+                  "target": "baseline_drerio",
                   "color": "#AB886D"
             }
       },
@@ -504,7 +504,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - Daphnia",
+                  "target": "baseline_dmagna",
                   "color": "#AB886D"
             }
       },
@@ -514,7 +514,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - C. elegans",
+                  "target": "baseline_celegans",
                   "color": "#AB886D"
             }
       },
@@ -524,7 +524,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - Xenopus",
+                  "target": "baseline_xlaevis",
                   "color": "#AB886D"
             }
       },
@@ -534,7 +534,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - Drosophila",
+                  "target": "baseline_dmelanogaster",
                   "color": "#AB886D"
             }
       },
@@ -544,7 +544,7 @@
                   "role": "base_tox",
                   "subrole": "attribute",
                   "source": "Baseline Toxicity",
-                  "target": "Baseline - Cells",
+                  "target": "baseline_cells",
                   "color": "#AB886D"
             }
       },
@@ -562,7 +562,7 @@
             "group": "nodes",
             "data": {
                   "role": "aop",
-                  "id": "[AOP:6] Antagonist binding to PPAR\u00ce\u00b1 leading to body-weight loss ",
+                  "id": "[AOP:6] Antagonist binding to PPAR\u03b1 leading to body-weight loss ",
                   "shape": "round-octagon",
                   "colorBg": "#B0D9B1",
                   "colorBorder": "#79AC78"
@@ -592,7 +592,7 @@
             "group": "nodes",
             "data": {
                   "role": "aop",
-                  "id": "[AOP:18] PPAR\u00ce\u00b1 activation in utero leading to impaired fertility in males ",
+                  "id": "[AOP:18] PPAR\u03b1 activation in utero leading to impaired fertility in males ",
                   "shape": "round-octagon",
                   "colorBg": "#B0D9B1",
                   "colorBorder": "#79AC78"
@@ -814,7 +814,7 @@
                   "role": "aop",
                   "subrole": "attribute",
                   "source": "Adverse Outcome Pathways",
-                  "target": "[AOP:6] Antagonist binding to PPAR\u00ce\u00b1 leading to body-weight loss ",
+                  "target": "[AOP:6] Antagonist binding to PPAR\u03b1 leading to body-weight loss ",
                   "color": "#79AC78"
             }
       },
@@ -844,7 +844,7 @@
                   "role": "aop",
                   "subrole": "attribute",
                   "source": "Adverse Outcome Pathways",
-                  "target": "[AOP:18] PPAR\u00ce\u00b1 activation in utero leading to impaired fertility in males ",
+                  "target": "[AOP:18] PPAR\u03b1 activation in utero leading to impaired fertility in males ",
                   "color": "#79AC78"
             }
       },
@@ -1084,8 +1084,8 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "nephrotoxicity",
-                  "label": "nephrotoxicity",
+                  "id": "Nephrotoxicity",
+                  "label": "Nephrotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
@@ -1096,8 +1096,8 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "hematotoxicity",
-                  "label": "hematotoxicity",
+                  "id": "Hematotoxicity",
+                  "label": "Hematotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
@@ -1108,8 +1108,8 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "immunotoxicity",
-                  "label": "immunotoxicity",
+                  "id": "Immunotoxicity",
+                  "label": "Immunotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
@@ -1120,8 +1120,8 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "neurotoxicity",
-                  "label": "neurotoxicity",
+                  "id": "Neurotoxicity",
+                  "label": "Neurotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
@@ -1132,8 +1132,8 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "hepatotoxicity",
-                  "label": "hepatotoxicity",
+                  "id": "Hepatotoxicity",
+                  "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
@@ -1144,8 +1144,8 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "cardiotoxicity",
-                  "label": "cardiotoxicity",
+                  "id": "Cardiotoxicity",
+                  "label": "Cardiotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
@@ -1156,8 +1156,8 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "genotoxicity",
-                  "label": "genotoxicity",
+                  "id": "Genotoxicity",
+                  "label": "Genotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
@@ -1170,7 +1170,7 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "nephrotoxicity",
+                  "target": "Nephrotoxicity",
                   "color": "#135D66",
                   "score": 0.91,
                   "n_refs": 18,
@@ -1183,7 +1183,7 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "hematotoxicity",
+                  "target": "Hematotoxicity",
                   "color": "#135D66",
                   "score": 1.7,
                   "n_refs": 1,
@@ -1196,7 +1196,7 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "immunotoxicity",
+                  "target": "Immunotoxicity",
                   "color": "#135D66",
                   "score": 4.6,
                   "n_refs": 35,
@@ -1209,7 +1209,7 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "neurotoxicity",
+                  "target": "Neurotoxicity",
                   "color": "#135D66",
                   "score": 3.32,
                   "n_refs": 109,
@@ -1222,7 +1222,7 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "hepatotoxicity",
+                  "target": "Hepatotoxicity",
                   "color": "#135D66",
                   "score": 2.91,
                   "n_refs": 30,
@@ -1235,7 +1235,7 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "cardiotoxicity",
+                  "target": "Cardiotoxicity",
                   "color": "#135D66",
                   "score": 2.14,
                   "n_refs": 24,
@@ -1248,7 +1248,7 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "genotoxicity",
+                  "target": "Genotoxicity",
                   "color": "#135D66",
                   "score": 3.17,
                   "n_refs": 110,

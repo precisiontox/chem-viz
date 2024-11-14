@@ -1,0 +1,80 @@
+{
+      "ptx_code": "PTX214",
+      "chem_name": "Diuron",
+      "casrn": "330-54-1",
+      "dtxsid": "DTXSID0020446",
+      "smiles": "CN(C)C(=O)NC1=CC(Cl)=C(Cl)C=C1",
+      "inchikey": "XMTQQYYKAHVGBJ-UHFFFAOYSA-N",
+      "label": "PTX214 | Diuron",
+      "drugbank_id": "",
+      "use_class": "Pesticide",
+      "tox_class": "Immunotoxicity; Hepatotoxicity; Genotoxicity",
+      "chem_name_user": "Diuron",
+      "mw_g_mol": "233.09",
+      "solubility_h2o_mol_liter": "0.000173803",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "1.52783e-09",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "7.20423463838445",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "13.76",
+      "pka_base": "-1.63",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "2.68",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "3.19",
+      "source_dlipw": "Escher et al. 2017",
+      "freely_dissolved_fraction": "0.322242261942961",
+      "density_kg_liter": "1.366",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "115.318769596851",
+      "baseline_dmagna": "80.2047334800666",
+      "baseline_celegans": "184.54402985937",
+      "baseline_xlaevis": "86.9626969617339",
+      "baseline_dmelanogaster": "709.814717679633",
+      "baseline_cells": "7.52992847563081e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "2.42646118425599e-05",
+      "moa_drugbank": "",
+      "protein_binding": "",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 36,
+                  "AOP_name": "Peroxisomal Fatty Acid Beta-Oxidation Inhibition Leading to Steatosis "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            }
+      ],
+      "targets": [
+            "Aryl hydrocarbon receptor",
+            "Bile salt sulfotransferase",
+            "Cytochrome P450 1A2",
+            "Cytochrome P450 2B6",
+            "Cytochrome P450 3A4",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Solute carrier organic anion transporter family member 1B1",
+            "UDP-glucuronosyltransferase 1-1"
+      ]
+}

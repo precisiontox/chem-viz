@@ -1,0 +1,57 @@
+{
+      "ptx_code": "PTX160",
+      "chem_name": "3'-azido-3'-deoxythymidine",
+      "casrn": "30516-87-1",
+      "dtxsid": "DTXSID8020127",
+      "smiles": "CC1=CN([C@H]2C[C@H](N=[N+]=[N-])[C@@H](CO)O2)C(=O)NC1=O",
+      "inchikey": "HBOMLICNUCNMMY-XLPZGREQSA-N",
+      "label": "PTX160 | 3'-azido-3'-deoxythymidine",
+      "drugbank_id": "DB00495",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Nephrotoxicity; Genotoxicity; Ototoxicity; Hematotoxicity; Immunotoxicity; Neurotoxicity; Hepatotoxicity",
+      "chem_name_user": "Azidothymidine",
+      "mw_g_mol": "267.245",
+      "solubility_h2o_mol_liter": "0.0215924",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "8.84711e-10",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "7.44150824475386",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "9.60;14.62",
+      "pka_base": "",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "0.05",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "-0.222457669607975",
+      "source_dlipw": "LSER",
+      "freely_dissolved_fraction": "0.942245971318511",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "275570.733944714",
+      "baseline_dmagna": "50048.5163502149",
+      "baseline_celegans": "106668.193403625",
+      "baseline_xlaevis": "10436.2255859192",
+      "baseline_dmelanogaster": "462079.124387204",
+      "baseline_cells": "0.0461365741114752",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.0434720010869755",
+      "moa_drugbank": "Zidovudine, a structural analog of thymidine, is a prodrug that must be phosphorylated to its active 5\u00e2\u20ac\u00b2-triphosphate metabolite, zidovudine triphosphate (ZDV-TP). It inhibits the activity of HIV-1 reverse transcriptase (RT) via DNA chain termination after incorporation of the nucleotide analogue. It competes with the natural substrate dGTP and incorporates itself into viral DNA. It is also a weak inhibitor of cellular DNA polymerase \u00ce\u00b1 and \u00ce\u00b3.",
+      "protein_binding": "30-38%",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            }
+      ],
+      "targets": [
+            "Telomerase reverse transcriptase"
+      ]
+}

@@ -1,0 +1,75 @@
+{
+      "ptx_code": "PTX125",
+      "chem_name": "5alpha-dihydrotestosterone",
+      "casrn": "521-18-6",
+      "dtxsid": "DTXSID9022364",
+      "smiles": "[H][C@@]12CC[C@H](O)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])CC[C@@]2([H])CC(=O)CC[C@]12C",
+      "inchikey": "NVKAWKQGWWIWPM-ABEVXSGRSA-N",
+      "label": "PTX125 | 5alpha-dihydrotestosterone",
+      "drugbank_id": "DB02901",
+      "use_class": "Endogenous",
+      "tox_class": "Hepatotoxicity",
+      "chem_name_user": "5alpha-dihydrotestosterone",
+      "mw_g_mol": "290.447",
+      "solubility_h2o_mol_liter": "0.0378997",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "9.13098e-10",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "7.42779228030589",
+      "source_kaw": "LSER",
+      "pka_acid": "15.99",
+      "pka_base": "",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "3.55",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "3.70549999901819",
+      "source_dlipw": "Kow-QSAR (\u00e2\u02c6\u2020mw=1)",
+      "freely_dissolved_fraction": "0.251812862467243",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "35.6086083495355",
+      "baseline_dmagna": "31.2464009156911",
+      "baseline_celegans": "69.023980510712",
+      "baseline_xlaevis": "42.1928489255584",
+      "baseline_dmelanogaster": "266.756647550875",
+      "baseline_cells": "2.03420838004656e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "5.12239835034377e-06",
+      "moa_drugbank": "",
+      "protein_binding": "",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            }
+      ],
+      "targets": [
+            "Androgen receptor",
+            "Cytochrome P450 19A1",
+            "Estradiol 17-beta-dehydrogenase 1",
+            "Estrogen receptor alpha",
+            "Estrogen receptor beta",
+            "Glucocorticoid receptor",
+            "Progesterone receptor"
+      ]
+}

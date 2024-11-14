@@ -1,0 +1,59 @@
+{
+      "ptx_code": "PTX073",
+      "chem_name": "2,4,4'-trichlorobiphenyl",
+      "casrn": "7012-37-5",
+      "dtxsid": "DTXSID2038310",
+      "smiles": "ClC1=CC=C(C=C1)C1=C(Cl)C=C(Cl)C=C1",
+      "inchikey": "BZTYNSQSZHARAZ-UHFFFAOYSA-N",
+      "label": "PTX073 | 2,4,4'-trichlorobiphenyl",
+      "drugbank_id": "",
+      "use_class": "Industry and consumer goods",
+      "tox_class": "Genotoxicity; Hepatotoxicity; Neurotoxicity; Immunotoxicity",
+      "chem_name_user": "Pcb28",
+      "mw_g_mol": "257.54",
+      "solubility_h2o_mol_liter": "8.33e-07",
+      "source_solubility_h2o": "COMPTOX",
+      "henry_coefficient_atm_m3_mol": "0.000199754",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "2.08781418717318",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "",
+      "pka_base": "",
+      "source_pka": "UFZ; Sirius T3",
+      "log_kow_liter_liter": "5.62",
+      "source_kow": "experimental  PhysPropNCCT",
+      "log_dlipw_ph74_liter_liter": "5.7",
+      "source_dlipw": "Quinn et al. 2014",
+      "freely_dissolved_fraction": "0.0051672818511257",
+      "density_kg_liter": "1.34",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "0.378",
+      "baseline_dmagna": "0.737",
+      "baseline_celegans": "1.65845224399347",
+      "baseline_xlaevis": "2.57033659790014",
+      "baseline_dmelanogaster": "6.04853224174238",
+      "baseline_cells": "1.00394794949862e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "5.18768201891907e-08",
+      "moa_drugbank": "",
+      "protein_binding": "",
+      "moa_t3db": "PCB inhibition of aromatic-L-amino-acid decarboxylase is believed to cause decreased dopamine synthesis. (L4); Dioxin-like PCBs bind to the aryl hydrocarbon receptor, which disrupts cell function by altering the transcription of genes, mainly be inducing the expression of hepatic Phase I and Phase II enzymes, especially of the cytochrome P450 family. (A4); Causes endocrine disruption in humans by binding to and inhibiting the estrogen receptor. (A590); PCBs can cause endocrine disurption by binding to estrogen sulfotransferase, which can stimulate the growth of certain cancer cells and produce other estrogenic effects, such as reproductive dysfunction. (A3, A66); PCB inhibition of tyrosine 3-monooxygenase is believed to cause decreased dopamine synthesis. (L4); PCBs will bioaccumulate by binding to receptor proteins such as uteroglobin. (A30)",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            }
+      ],
+      "targets": [
+            "Aromatic-L-amino-acid decarboxylase",
+            "Aryl hydrocarbon receptor",
+            "Estrogen receptor alpha",
+            "Estrogen receptor beta",
+            "Estrogen sulfotransferase",
+            "Tyrosine 3-monooxygenase",
+            "Uteroglobin"
+      ]
+}

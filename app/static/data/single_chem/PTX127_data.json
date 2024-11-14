@@ -1,0 +1,59 @@
+{
+      "ptx_code": "PTX127",
+      "chem_name": "Hydrocortisone",
+      "casrn": "50-23-7",
+      "dtxsid": "DTXSID7020714",
+      "smiles": "C[C@]12C[C@H](O)[C@H]3[C@@H](CCC4=CC(=O)CC[C@]34C)[C@@H]1CC[C@]2(O)C(=O)CO",
+      "inchikey": "JYGXADMDTFJGBT-VWUMJDOOSA-N",
+      "label": "PTX127 | Hydrocortisone",
+      "drugbank_id": "DB00741",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Immunotoxicity; Ototoxicity",
+      "chem_name_user": "Cortisol",
+      "mw_g_mol": "362.466",
+      "solubility_h2o_mol_liter": "0.000974915",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "9.22306e-12",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "9.42343463791205",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "13.17;14.54",
+      "pka_base": "",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "1.61",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "2.11999938052116",
+      "source_dlipw": "LSER",
+      "freely_dissolved_fraction": "0.934160444417415",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "1321.90612015522",
+      "baseline_dmagna": "614.210642268038",
+      "baseline_celegans": "1337.32858218188",
+      "baseline_xlaevis": "390.197405581375",
+      "baseline_dmelanogaster": "5412.03393095769",
+      "baseline_cells": "0.000211131237697016",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.000197230450837443",
+      "moa_drugbank": "The short term effects of corticosteroids are decreased vasodilation and permeability of capillaries, as well as decreased leukocyte migration to sites of inflammation.[A187463] Corticosteroids binding to the glucocorticoid receptor mediates changes in gene expression that lead to multiple downstream effects over hours to days.[A187463]\n\nGlucocorticoids inhibit neutrophil apoptosis and demargination; they inhibit phospholipase A2, which decreases the formation of arachidonic acid derivatives; they inhibit NF-Kappa B and other inflammatory transcription factors; they promote anti-inflammatory genes like interleukin-10.[A187463]\n\nLower doses of corticosteroids provide an anti-inflammatory effect, while higher doses are immunosuppressive.[A187463] High doses of glucocorticoids for an extended period bind to the mineralocorticoid receptor, raising sodium levels and decreasing potassium levels.[A187463]",
+      "protein_binding": "Corticosteroids are generally bound to corticosteroid binding globulin[A187439] and serum albumin[A187436] in plasma. Hydrocortisone is 90.1% bound to proteins in plasma, with 56.2% bound to albumin.[A184223]",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 54,
+                  "AOP_name": "Inhibition of Na+/I- symporter (NIS) leads to learning and memory impairment  "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            }
+      ],
+      "targets": []
+}

@@ -4,6 +4,105 @@ let doubleClickDelay = 300;  // Maximum delay between clicks (in milliseconds)
 let isSingleChemNetwork = false; // Tracks if a single chemical network is loaded
 
 
+function displayCategoryChemicals(categoryNode) {
+    document.getElementById('chem-info-section').style.display = 'none';
+    
+    // Get all connected chemical nodes
+    const connectedEdges = categoryNode.connectedEdges();
+    // const chemNodes = connectedEdges.targets().add(connectedEdges.sources()).filter("[role='chem']");
+    const category = categoryNode.data('role').split('_')[1];
+    console.log(category);
+    if (connectedEdges.visible()) {
+        // Extract the `ptx_code` and `name` of each associated chemical node
+        const chemData = connectedEdges.map(edge => ({
+            ptx_code: edge.data('ptx_code') || 'N/A',
+            name: edge.data('chem_name') || 'N/A',
+            score: edge.data('score') || 'N/A',
+            refs: edge.data('n_refs') || 'N/A'
+        }));
+
+        // If there are no associated chemicals, hide the section and return
+        if (chemData.length === 0) {
+            document.getElementById('category-info-section').style.display = 'none';
+            return;
+        }
+
+        // Show the `chem-info-section`
+        document.getElementById('category-info-section').style.display = 'block';
+
+        // Build the table content
+        let tableContent;
+        let tableColumns;
+        if (category === "tox") {
+            tableColumns = `
+                <th>PTX Code</th>
+                <th>Name</th>
+                <th>Score</th>
+                <th># PubMed Refences</th>
+            `;
+            tableContent = chemData.map(chem => `
+                <tr>
+                    <td>${chem.ptx_code}</td>
+                    <td>${chem.name}</td>
+                    <td>${chem.score}</td>
+                    <td>${chem.refs}</td
+                </tr>
+            `).join('');
+        } else if (category === "use") {
+            tableColumns = `
+                <th>PTX Code</th>
+                <th>Name</th>
+            `;
+            tableContent = chemData.map(chem => `
+                <tr>
+                    <td>${chem.ptx_code}</td>
+                    <td>${chem.name}</td>
+                </tr>
+            `).join('');
+        }
+
+        // Update the content of `chem-info-section` with the new table
+        const tableHtml = `
+            <div class="category-header">
+                <div 
+                    class="category-header-background" 
+                    style="background: linear-gradient(90deg, ${categoryNode.data('color_border')}, ${categoryNode.data('color_bg')}); border-radius: 5px; z-index: 0;"></div> 
+                <img 
+                    src='${imageBaseUrl}${categoryNode.data('image')}' 
+                    alt='Category Image' 
+                    class='category-header-image' 
+                >
+                <h2>${categoryNode.data("id")}</h2>
+            </div>
+            <table id="category-chem-table" class="chem-associated-table">
+                <thead>
+                    <tr>
+                        ${tableColumns}
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tableContent}
+                </tbody>
+            </table>
+        `;
+        document.getElementById('category-info-section').innerHTML = tableHtml;
+
+        $('#category-chem-table').DataTable({
+            paging: false,       // Disable pagination
+            searching: false,    // Disable the search box
+            info: false,         // Disable the table info
+            order: [[0, 'asc']], // Set default sorting 
+            columnDefs: [
+                { targets: '_all', className: 'dt-center' } // Center-align all columns
+            ]
+        });
+    } else {
+        document.getElementById('category-info-section').style.display = 'none';
+    }
+}
+
+
+
 // Basic Network Functions
 function initializeNetworkBasic() {
     if (!document.getElementById('cy_graph').hasChildNodes()) {
@@ -28,7 +127,9 @@ function initializeBasicNetworkFeatures() {
     commonNetworkFeatures()
 
     cy_graph.on('click', "node[role^='category']", function(event) {
-        toggleChemNodes(event.target);
+        let categoryNode = event.target;
+        toggleChemNodes(categoryNode);
+        displayCategoryChemicals(categoryNode);
     });
 
     cy_graph.edges().qtip({
@@ -178,7 +279,7 @@ function commonNetworkFeatures() {
                  drugbank+
                 "<b class='field smiles'>SMILES</b> | " + this.data("smiles") + "<br>\n" +
                 "<b class='field inchi'>InChIKey</b> | " + this.data("inchi") + "<br>\n" +
-                mw + solubility + henry + log_kaw + log_kow + pka_acid + pka_base + dlipw + fdf + density +
+                // mw + solubility + henry + log_kaw + log_kow + pka_acid + pka_base + dlipw + fdf + density +
                 "</div>";
             return qtip_content
         },
@@ -263,6 +364,7 @@ function loadBasicNetworkAndClassify(classificationType) {
         button.classList.remove('active');
     });
     document.getElementById(`${classificationType}-button`).classList.add('active');
+    document.getElementById('chem-info-section').style.display = 'none';
 }
 
 function toggleChemNodes(categoryNode) {
@@ -328,7 +430,7 @@ function loadSingleChemNetwork() {
 
             // Initialize common interactivity features
             initializeSingleChemNetworkFeatures();
-
+            
             // Display only chemical and attribute nodes
             let selectedNode = cy_graph.getElementById(selectedChem);
             let connectedEdges = selectedNode.connectedEdges();
@@ -338,8 +440,10 @@ function loadSingleChemNetwork() {
             selectedElements.show();
             reLayout(selectedElements, cose_layout);
             cy_graph.fit(selectedElements);
-
+            
             isSingleChemNetwork = true;
+
+            displayChemicalInfo(selectedChem);
         })
         .catch(error => {
             console.error(
@@ -448,6 +552,127 @@ function updateIsolatedAttributes() {
     });   
 }
 
+
+function displayChemicalInfo(selectedChem) {
+    document.getElementById('category-info-section').style.display = 'none';
+    
+    fetch(`chemical_data/${selectedChem}`)
+    .then(response => response.json())
+    .then(data => {
+        // Check if there's an error in the response
+        if (data.error) {
+            console.error(data.error);
+            alert("Chemical data not found.");
+            return;
+        }
+        
+        // Show the chemical info section
+        document.getElementById('chem-info-section').style.display = 'block';
+        
+        // Populate the section with data
+        document.getElementById('chem-ptx-code').textContent = data.ptx_code || 'N/A';
+        document.getElementById('chem-name').textContent = data.chem_name || 'N/A';
+        document.getElementById('chem-common-name').textContent = data.chem_name_user || 'N/A';
+        document.getElementById('chem-dsstox-id').innerHTML = data.dtxsid
+                ? `<a href="https://comptox.epa.gov/chemexpo/chemical/${data.dtxsid}" target="_blank">${data.dtxsid}</a>`
+                : 'N/A';
+        document.getElementById('chem-cas').textContent = data.casrn || 'N/A';
+        document.getElementById('chem-drugbank-id').innerHTML = data.drugbank_id
+        ? `<a href="https://go.drugbank.com/drugs/${data.drugbank_id}" target="_blank">${data.drugbank_id}</a>`
+        : 'N/A';
+        document.getElementById('chem-smiles').textContent = data.smiles || 'N/A';
+        document.getElementById('chem-inchi').textContent = data.inchikey || 'N/A';
+        document.getElementById('chem-use').textContent = data.use_class || 'N/A';
+
+        document.getElementById('chem-mw').textContent = data.mw_g_mol || 'N/A';
+        document.getElementById('chem-solubility').textContent = data.solubility_h2o_mol_liter || 'N/A';
+        document.getElementById('chem-source-solubility').textContent = data.source_solubility_h2o || 'N/A';
+        document.getElementById('chem-henry').textContent = data.henry_coefficient_atm_m3_mol || 'N/A';
+        document.getElementById('chem-source-henry').textContent = data.source_henry || 'N/A';
+        document.getElementById('chem-log-kaw').textContent = data.log_kaw_kh_rt || 'N/A';
+        document.getElementById('chem-source-kaw').textContent = data.source_kaw || 'N/A';
+        document.getElementById('chem-log-kow').textContent = data.log_kow_liter_liter || 'N/A';
+        document.getElementById('chem-source-kow').textContent = data.source_kow || 'N/A';
+        document.getElementById('chem-pka-acid').textContent = data.pka_acid || 'N/A';
+        document.getElementById('chem-source-pka-acid').textContent = data.source_pka || 'N/A';
+        document.getElementById('chem-pka-base').textContent = data.pka_base || 'N/A';
+        document.getElementById('chem-source-pka-base').textContent = data.source_pka || 'N/A';
+        document.getElementById('chem-log-dlipw').textContent = data.log_dlipw_ph74_liter_liter || 'N/A';
+        document.getElementById('chem-source-dlipw').textContent = data.source_dlipw || 'N/A';
+        document.getElementById('chem-fdf').textContent = data.freely_dissolved_fraction || 'N/A';
+        document.getElementById('chem-density').textContent = data.density_kg_liter || 'N/A';
+        document.getElementById('chem-source-density').textContent = data.source_density || 'N/A';
+        document.getElementById('base-tox-celegans').textContent = data.baseline_celegans || 'N/A';
+        document.getElementById('base-tox-drerio').textContent = data.baseline_drerio || 'N/A';
+        document.getElementById('base-tox-dmagna').textContent = data.baseline_dmagna || 'N/A';
+        document.getElementById('base-tox-dmelanogaster').textContent = data.baseline_dmelanogaster || 'N/A';
+        document.getElementById('base-tox-cells').textContent = data.baseline_cells || 'N/A';
+        document.getElementById('base-tox-cells-generic').textContent = data.baseline_cells_generic_micromole_liter_free_ec10 || 'N/A';
+        document.getElementById('base-tox-xlaevis').textContent = data.baseline_xlaevis || 'N/A';
+    
+        populateAopTable(data.aop || []);
+        populateTargetsTable(data.targets || []);
+    });
+}
+
+function populateAopTable(aopData) {
+    const aopTableBody = document.getElementById('aop-table-body');
+    aopTableBody.innerHTML = ''; // Clear existing content
+
+    if (Array.isArray(aopData) && aopData.length > 0) {
+        aopData.forEach(aop => {
+            const row = document.createElement('tr');
+
+            const aopIdCell = document.createElement('td');
+            aopIdCell.textContent = aop.AOP_id|| 'N/A';
+            // aopIdCell.innerHTML = aop.AOP_id 
+            // ? `<a href="https://aopwiki.org/aops/${aop.AOP_id }" target="_blank">${aop.AOP_id }</a>`
+            // : 'N/A';
+
+            const aopNameCell = document.createElement('td');
+            // aopNameCell.textContent = aop.AOP_name || 'N/A';
+            aopNameCell.innerHTML = aop.AOP_name
+            ? `<a href="https://aopwiki.org/aops/${aop.AOP_id }" target="_blank">${aop.AOP_name }</a>`
+            : 'N/A';
+
+
+            row.appendChild(aopIdCell);
+            row.appendChild(aopNameCell);
+            aopTableBody.appendChild(row);
+        });
+    } else {
+        const row = document.createElement('tr');
+        const noDataCell = document.createElement('td');
+        noDataCell.colSpan = 2;
+        noDataCell.textContent = 'No data available';
+        row.appendChild(noDataCell);
+        aopTableBody.appendChild(row);
+    }
+}
+
+function populateTargetsTable(data) {
+    const TableBody = document.getElementById('targets-table-body');
+    TableBody.innerHTML = ''; // Clear existing content
+
+    if (Array.isArray(data) && data.length > 0) {
+        data.forEach(target => {
+            const row = document.createElement('tr');
+
+            const Cell = document.createElement('td');
+            Cell.textContent = target|| 'N/A';
+
+            row.appendChild(Cell);
+            TableBody.appendChild(row);
+        });
+    } else {
+        const row = document.createElement('tr');
+        const noDataCell = document.createElement('td');
+        noDataCell.colSpan = 2;
+        noDataCell.textContent = 'No data available';
+        row.appendChild(noDataCell);
+        TableBody.appendChild(row);
+    }
+}
 
 // Utility Functions
 function populateChemSelect() {

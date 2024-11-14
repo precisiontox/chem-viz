@@ -1,0 +1,79 @@
+{
+      "ptx_code": "PTX119",
+      "chem_name": "Flutamide",
+      "casrn": "13311-84-7",
+      "dtxsid": "DTXSID7032004",
+      "smiles": "CC(C)C(=O)NC1=CC(=C(C=C1)[N+]([O-])=O)C(F)(F)F",
+      "inchikey": "MKXKFYHWDHIYRV-UHFFFAOYSA-N",
+      "label": "PTX119 | Flutamide",
+      "drugbank_id": "DB00499",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Genotoxicity; Nephrotoxicity; Immunotoxicity; Hepatotoxicity",
+      "chem_name_user": "Flutamide",
+      "mw_g_mol": "276.215",
+      "solubility_h2o_mol_liter": "8.91076e-05",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "8.03811e-09",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "6.48315572669901",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "12.29",
+      "pka_base": "",
+      "source_pka": "UFZ; Sirius T3",
+      "log_kow_liter_liter": "3.35",
+      "source_kow": "PhysPropNCCT (COMPTOX)",
+      "log_dlipw_ph74_liter_liter": "3.57",
+      "source_dlipw": "Escher et al. 2017",
+      "freely_dissolved_fraction": "0.325683641039041",
+      "density_kg_liter": "1.371",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "48.5",
+      "baseline_dmagna": "40.3",
+      "baseline_celegans": "88.9221389982485",
+      "baseline_xlaevis": "51.0268782920793",
+      "baseline_dmelanogaster": "345.012634975639",
+      "baseline_cells": "3.03513074000227e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "9.88492430433459e-06",
+      "moa_drugbank": "Flutamide is a nonsteroidal antiandrogen that blocks the action of both endogenous and exogenous testosterone by binding to the androgen receptor. In addition Flutamide is a potent inhibitor of testosterone-stimulated prostatic DNA synthesis. Moreover, it is capable of inhibiting prostatic nuclear uptake of androgen.",
+      "protein_binding": "94-96%",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            },
+            {
+                  "AOP_id": 200,
+                  "AOP_name": "Estrogen receptor activation leading to breast cancer   "
+            }
+      ],
+      "targets": [
+            "5-hydroxytryptamine receptor 6",
+            "Androgen receptor",
+            "Aryl hydrocarbon receptor",
+            "Cytochrome P450 1A2",
+            "Cytochrome P450 2C19",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Thromboxane A2 receptor"
+      ]
+}

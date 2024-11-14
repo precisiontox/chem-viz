@@ -1,0 +1,155 @@
+{
+      "ptx_code": "PTX072",
+      "chem_name": "Acetaminophen",
+      "casrn": "103-90-2",
+      "dtxsid": "DTXSID2020006",
+      "smiles": "CC(=O)NC1=CC=C(O)C=C1",
+      "inchikey": "RZVAJINKPMORJF-UHFFFAOYSA-N",
+      "label": "PTX072 | Acetaminophen",
+      "drugbank_id": "DB00316",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Hematotoxicity; Ototoxicity; Neurotoxicity; Hepatotoxicity; Immunotoxicity; Genotoxicity; Nephrotoxicity; Cardiotoxicity",
+      "chem_name_user": "Acetaminophen",
+      "mw_g_mol": "151.165",
+      "solubility_h2o_mol_liter": "0.0933539",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "5.74367e-09",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "6.6291201920776",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "10.2;14.6",
+      "pka_base": "1.7",
+      "source_pka": "UFZ; Sirius T3",
+      "log_kow_liter_liter": "0.46",
+      "source_kow": "experimental  PhysPropNCCT",
+      "log_dlipw_ph74_liter_liter": "0.58",
+      "source_dlipw": "Kow-QSAR (?mw=1)",
+      "freely_dissolved_fraction": "0.942044388928192",
+      "density_kg_liter": "1.199",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "43800.0",
+      "baseline_dmagna": "11000.0",
+      "baseline_celegans": "23593.9488285702",
+      "baseline_xlaevis": "3363.59497639131",
+      "baseline_dmelanogaster": "99838.4759944572",
+      "baseline_cells": "0.00718294863318691",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.00676665645585316",
+      "moa_drugbank": "According to its FDA labeling, acetaminophen's exact mechanism of action has not been fully established[Label] - despite this, it is often categorized alongside NSAIDs (nonsteroidal anti-inflammatory drugs) due to its ability to inhibit the cyclooxygenase (COX) pathways.[T518] It is thought to exert central actions which ultimately lead to the alleviation of pain symptoms.[T518]\n\nOne theory is that acetaminophen increases the pain threshold by inhibiting two isoforms of cyclooxygenase, COX-1 and COX-2, which are involved in prostaglandin (PG) synthesis. Prostaglandins are responsible for eliciting pain sensations.[A176366] Acetaminophen does not inhibit cyclooxygenase in peripheral tissues and, therefore, has no peripheral anti-inflammatory effects. Though acetylsalicylic acid (aspirin) is an irreversible inhibitor of COX and directly blocks the active site of this enzyme, studies have shown that acetaminophen (paracetamol) blocks COX indirectly.[F4133] Studies also suggest that acetaminophen selectively blocks a variant type of the COX enzyme that is unique from the known variants COX-1 and COX-2.[A468] This enzyme has been referred to as _COX-3_. The antipyretic actions of acetaminophen are likely attributed to direct action on heat-regulating centers in the brain, resulting in peripheral vasodilation, sweating, and loss of body heat.[F4133] The exact mechanism of action of this drug is not fully understood at this time, but future research may contribute to deeper knowledge.[F4133]",
+      "protein_binding": "The binding of acetaminophen to plasma proteins is low (ranging from 10% to 25%), when given at therapeutic doses.[Label]",
+      "moa_t3db": "Acetaminophen is thought to act primarily in the CNS, increasing the pain threshold by inhibiting both isoforms of cyclooxygenase, COX-1 and COX-2, enzymes involved in prostaglandin (PG) synthesis. Unlike NSAIDs, acetaminophen does not inhibit cyclooxygenase in peripheral tissues and, thus, has no peripheral anti-inflammatory affects. While aspirin acts as an irreversible inhibitor of COX and directly blocks the enzyme's active site, studies have found that acetaminophen indirectly blocks COX, and that this blockade is ineffective in the presence of peroxides. This might explain why acetaminophen is effective in the central nervous system and in endothelial cells but not in platelets and immune cells which have high levels of peroxides. Studies also report data suggesting that acetaminophen selectively blocks a variant of the COX enzyme that is different from the known variants COX-1 and COX-2. This enzyme is now referred to as COX-3. Its exact mechanism of action is still poorly understood, but future research may provide further insight into how it works.",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 36,
+                  "AOP_name": "Peroxisomal Fatty Acid Beta-Oxidation Inhibition Leading to Steatosis "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 97,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to population decline "
+            },
+            {
+                  "AOP_id": 98,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to decreased shelter seeking and increased predation "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            },
+            {
+                  "AOP_id": 195,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT) inhibition leading to population increase "
+            },
+            {
+                  "AOP_id": 200,
+                  "AOP_name": "Estrogen receptor activation leading to breast cancer   "
+            },
+            {
+                  "AOP_id": 203,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to decreased reproductive success and population decline "
+            },
+            {
+                  "AOP_id": 204,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to increased reproductive success and population increase "
+            },
+            {
+                  "AOP_id": 318,
+                  "AOP_name": "Glucocorticoid Receptor activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "Aldehyde dehydrogenase, mitochondrial",
+            "Arachidonate 5-lipoxygenase-activating protein",
+            "Carbonic anhydrase 1",
+            "Carbonic anhydrase 12",
+            "Carbonic anhydrase 14",
+            "Carbonic anhydrase 2",
+            "Carbonic anhydrase 3",
+            "Carbonic anhydrase 4",
+            "Carbonic anhydrase 5A, mitochondrial",
+            "Carbonic anhydrase 5B, mitochondrial",
+            "Carbonic anhydrase 6",
+            "Carbonic anhydrase 7",
+            "Carbonic anhydrase 9",
+            "Cytochrome P450 1A1",
+            "Cytochrome P450 2E1",
+            "Cytochrome P450 3A4",
+            "Cytosolic 10-formyltetrahydrofolate dehydrogenase",
+            "Glutamate dehydrogenase 1, mitochondrial",
+            "Glutamine synthetase",
+            "Glutathione peroxidase 1",
+            "Glycerol-3-phosphate dehydrogenase [NAD(+)], cytoplasmic",
+            "Glycerol-3-phosphate dehydrogenase, mitochondrial",
+            "Indolethylamine N-methyltransferase",
+            "Myoglobin",
+            "Prostaglandin G/H synthase 1",
+            "Prostaglandin G/H synthase 2",
+            "Serum albumin",
+            "Sulfotransferase 1A3/1A4",
+            "Thioredoxin reductase 1, cytoplasmic",
+            "Thioredoxin reductase 2, mitochondrial",
+            "Thioredoxin reductase 3"
+      ]
+}

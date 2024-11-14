@@ -1,0 +1,65 @@
+{
+      "ptx_code": "PTX099",
+      "chem_name": "5-azacytidine",
+      "casrn": "320-67-2",
+      "dtxsid": "DTXSID9020116",
+      "smiles": "NC1=NC(=O)N(C=N1)[C@@H]1O[C@H](CO)[C@@H](O)[C@H]1O",
+      "inchikey": "NMUSYJAQQFHJEW-KVTDHHQDSA-N",
+      "label": "PTX099 | 5-azacytidine",
+      "drugbank_id": "DB00928",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Hematotoxicity; Nephrotoxicity; Hepatotoxicity; Neurotoxicity; Cardiotoxicity; Genotoxicity",
+      "chem_name_user": "Azacytidine",
+      "mw_g_mol": "244.207",
+      "solubility_h2o_mol_liter": "0.040316",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "1.26499e-10",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "8.28622257949241",
+      "source_kaw": "Comptox",
+      "pka_acid": "13.7;15.1",
+      "pka_base": "3.39",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "-2.17",
+      "source_kow": "experimental  PhysPropNCCT",
+      "log_dlipw_ph74_liter_liter": "-1",
+      "source_dlipw": "@ -1 at logKow < -1 (Gobas 1988)",
+      "freely_dissolved_fraction": "0.942276927352634",
+      "density_kg_liter": "2.198",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "1620000.0",
+      "baseline_dmagna": "216000.0",
+      "baseline_celegans": "456359.326678487",
+      "baseline_xlaevis": "31067.0488278996",
+      "baseline_dmelanogaster": "2022087.75840144",
+      "baseline_cells": "0.275927375968422",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.26",
+      "moa_drugbank": "Azacitidine (5-azacytidine) is a chemical analogue of the cytosine nucleoside used in DNA and RNA. Azacitidine may induce antineoplastic activity by inhibition of DNA methyltransferase at low doses and cytotoxicity through incorporation into RNA and DNA at high doses. Covalent binding to DNA methyltransferase results in hypomethylation of DNA and prevents DNA synthesis. As azacitidine is a ribonucleoside, it incoporates into RNA to a larger extent than into DNA. The incorporation into RNA leads to the dissembly of polyribosomes, defective methylation and acceptor function of transfer RNA, and inhibition of the production of protein, resulting in cell death.",
+      "protein_binding": "",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 54,
+                  "AOP_name": "Inhibition of Na+/I- symporter (NIS) leads to learning and memory impairment  "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            }
+      ],
+      "targets": [
+            "DNA (cytosine-5)-methyltransferase 1"
+      ]
+}

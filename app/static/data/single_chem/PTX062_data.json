@@ -1,0 +1,139 @@
+{
+      "ptx_code": "PTX062",
+      "chem_name": "Cyclosporin a",
+      "casrn": "59865-13-3",
+      "dtxsid": "DTXSID0020365",
+      "smiles": "[H][C@@]1([C@H](O)[C@H](C)C\\C=C\\C)N(C)C(=O)[C@H](C(C)C)N(C)C(=O)[C@H](CC(C)C)N(C)C(=O)[C@H](CC(C)C)N(C)C(=O)[C@@H](C)NC(=O)[C@H](C)NC(=O)[C@H](CC(C)C)N(C)C(=O)[C@@H](NC(=O)[C@H](CC(C)C)N(C)C(=O)CN(C)C(=O)[C@H](CC)NC1=O)C(C)C",
+      "inchikey": "PMATZTZNYRCHOR-CGLBZJNRSA-N",
+      "label": "PTX062 | Cyclosporin a",
+      "drugbank_id": "DB00091",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Nephrotoxicity; Cardiotoxicity; Immunotoxicity; Neurotoxicity; Hepatotoxicity; Ototoxicity",
+      "chem_name_user": "Cyclosporin a",
+      "mw_g_mol": "1202.635",
+      "solubility_h2o_mol_liter": "5.36e-06",
+      "source_solubility_h2o": "COMPTOX",
+      "henry_coefficient_atm_m3_mol": "2.26441e-11",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "9.03335460770141",
+      "source_kaw": "Comptox",
+      "pka_acid": "10.34;10.88;11.49;12.58;14.66",
+      "pka_base": "",
+      "source_pka": "UFZ; Sirius T3",
+      "log_kow_liter_liter": "2.92",
+      "source_kow": "experimental  PhysPropNCCT",
+      "log_dlipw_ph74_liter_liter": "3.07",
+      "source_dlipw": "Kow-QSAR (?mw=1)",
+      "freely_dissolved_fraction": "0.49602279719031",
+      "density_kg_liter": "0.999",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "152.0",
+      "baseline_dmagna": "103.0",
+      "baseline_celegans": "226.777519156727",
+      "baseline_xlaevis": "103.023533208861",
+      "baseline_dmelanogaster": "892.780302875879",
+      "baseline_cells": "4.46963141543435e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "2.21703907709343e-05",
+      "moa_drugbank": "Cyclosporine is a calcineurin inhibitor that inhibits T cell activation.[A174049,A174088,A189411] Its binding to the receptor cyclophilin-1 inside cells produces a complex known as cyclosporine-cyclophilin. This complex subsequently inhibits calcineurin, which in turn stops the dephosphorylation as well as the activation of the nuclear factor of activated T cells (NF-AT) that normally cause inflammatory reactions.  NF-AT is a transcription factor that promotes the production of cytokines such as IL-2, IL-4, interferon-gamma and TNF-alpha, all of which are involved in the inflammatory process. Specifically, the inhibition of IL-2, which is necessary for T cell activation or proliferation, is believed to be responsible for cyclosporine's  immunosuppressive actions.[A174049,A189408] In addition to the above, the inhibition of NF-AT leads to lower levels of other factors associated with T helper cell function and thymocyte development.[A174049]",
+      "protein_binding": "About 50% of the administered dose is taken up by erythrocytes while about 34% is bound to lipoproteins.[A174088] Prescribing information for Sandimmune states that 90% is mainly bound to lipoproteins.[L3002]",
+      "moa_t3db": "Cyclosporine binds to cyclophillin. The complex then inhibits calcineurin which is normally responsible for activating transcription of interleukin 2. Cyclosporine also inhibits lymphokine production and interleukin release. In ophthalmic applications, the precise mechanism of action is not known. Cyclosporine emulsion is thought to act as a partial immunomodulator in patients whose tear production is presumed to be suppressed due to ocular inflammation associated with keratoconjunctivitis sicca.",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 36,
+                  "AOP_name": "Peroxisomal Fatty Acid Beta-Oxidation Inhibition Leading to Steatosis "
+            },
+            {
+                  "AOP_id": 54,
+                  "AOP_name": "Inhibition of Na+/I- symporter (NIS) leads to learning and memory impairment  "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 97,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to population decline "
+            },
+            {
+                  "AOP_id": 98,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to decreased shelter seeking and increased predation "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 154,
+                  "AOP_name": "Inhibition of Calcineurin Activity Leading to Impaired T-Cell Dependent Antibody Response "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            },
+            {
+                  "AOP_id": 195,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT) inhibition leading to population increase "
+            },
+            {
+                  "AOP_id": 200,
+                  "AOP_name": "Estrogen receptor activation leading to breast cancer   "
+            },
+            {
+                  "AOP_id": 203,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to decreased reproductive success and population decline "
+            },
+            {
+                  "AOP_id": 204,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to increased reproductive success and population increase "
+            },
+            {
+                  "AOP_id": 318,
+                  "AOP_name": "Glucocorticoid Receptor activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "Calcineurin subunit B type 2",
+            "Calcium signal-modulating cyclophilin ligand",
+            "Multidrug resistance protein 1",
+            "Peptidyl-prolyl cis-trans isomerase A",
+            "Peptidyl-prolyl cis-trans isomerase F, mitochondrial",
+            "Photoreceptor",
+            "Solute carrier organic anion transporter family member 1B3"
+      ]
+}

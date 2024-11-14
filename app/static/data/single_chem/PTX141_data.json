@@ -1,0 +1,51 @@
+{
+      "ptx_code": "PTX141",
+      "chem_name": "Naproxen",
+      "casrn": "22204-53-1",
+      "dtxsid": "DTXSID4040686",
+      "smiles": "COC1=CC2=CC=C(C=C2C=C1)[C@H](C)C(O)=O",
+      "inchikey": "CMWTZPSULFXXJA-VIFPVBQESA-N",
+      "label": "PTX141 | Naproxen",
+      "drugbank_id": "DB00788",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Nephrotoxicity; Neurotoxicity; Hepatotoxicity; Immunotoxicity; Cardiotoxicity; Genotoxicity",
+      "chem_name_user": "Naproxen",
+      "mw_g_mol": "230.263",
+      "solubility_h2o_mol_liter": "5.81763e-05",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "1.0624e-09",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "7.36202160980878",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "4.19",
+      "pka_base": "",
+      "source_pka": "UFZ; Sirius T3",
+      "log_kow_liter_liter": "3.18",
+      "source_kow": "PhysPropNCCT (COMPTOX)",
+      "log_dlipw_ph74_liter_liter": "2.17",
+      "source_dlipw": "Henneberger et al. 2019",
+      "freely_dissolved_fraction": "0.00205105745326953",
+      "density_kg_liter": "1.212",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "1180.0",
+      "baseline_dmagna": "559.0",
+      "baseline_celegans": "1217.98955607273",
+      "baseline_xlaevis": "363.763399621965",
+      "baseline_dmelanogaster": "4921.92509447592",
+      "baseline_cells": "0.0857029008727705",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.000175781573601915",
+      "moa_drugbank": "As with other non-selective NSAIDs, naproxen exerts it's clinical effects by blocking COX-1 and COX-2 enzymes leading to decreased prostaglandin synthesis.[A178975] Although both enzymes contribute to prostaglandin production, they have unique functional differences.[A178975] The COX-1 enzymes is constitutively active and can be found in normal tissues such as the stomach lining, while the COX-2 enzyme is inducible and produces prostaglandins that mediate pain, fever and inflammation.[A178990] The COX-2 enzyme mediates the desired antipyretic, analgesic and anti-inflammatory properties offered by Naproxen, while undesired adverse effects such as gastrointestinal upset and renal toxicities are linked to the COX-1 enzyme.[A178990]",
+      "protein_binding": "Naproxen is highly protein bound with >99% of the drug bound to albumin at therapeutic levels.[L6582][L6583]",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            }
+      ],
+      "targets": []
+}

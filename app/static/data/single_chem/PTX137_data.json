@@ -1,0 +1,107 @@
+{
+      "ptx_code": "PTX137",
+      "chem_name": "Mifepristone",
+      "casrn": "84371-65-3",
+      "dtxsid": "DTXSID5023322",
+      "smiles": "[H][C@@]12CC[C@@](O)(C#CC)[C@@]1(C)C[C@]([H])(C1=CC=C(C=C1)N(C)C)C1=C3CCC(=O)C=C3CC[C@@]21[H]",
+      "inchikey": "VKHAHZOOUSRJNA-GCNJZUOMSA-N",
+      "label": "PTX137 | Mifepristone",
+      "drugbank_id": "DB00834",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Immunotoxicity; Hepatotoxicity; Neurotoxicity",
+      "chem_name_user": "Mifepristone",
+      "mw_g_mol": "429.604",
+      "solubility_h2o_mol_liter": "1.26633e-06",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "2.30668e-08",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "6.02532232173015",
+      "source_kaw": "LSER",
+      "pka_acid": "13.63",
+      "pka_base": "5.06",
+      "source_pka": "ACD/GALAS",
+      "log_kow_liter_liter": "5.2765",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "5.44731141615912",
+      "source_dlipw": "Kow-QSAR (\u00e2\u02c6\u2020mw=1)",
+      "freely_dissolved_fraction": "0.0154932928306422",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "0.671678888150183",
+      "baseline_dmagna": "1.18510768652439",
+      "baseline_celegans": "2.65984346096657",
+      "baseline_xlaevis": "3.66398050407133",
+      "baseline_dmelanogaster": "9.77218628810497",
+      "baseline_cells": "6.01002024039465e-06",
+      "baseline_cells_generic_micromole_liter_free_ec10": "9.3115003502521e-08",
+      "moa_drugbank": "The anti-progestational activity of mifepristone results from competitive interaction with progesterone at progesterone-receptor sites. Based on studies with various oral doses in several animal species (mouse, rat, rabbit and monkey), the compound inhibits the activity of endogenous or exogenous progesterone. The termination of pregnancy results.\n\nIn the treatment of Cushing's syndrome, Mifepristone blocks the binding of cortisol to its receptor. It does not decrease cortisol production but reduces the effects of excess cortisol, such as high blood sugar levels.",
+      "protein_binding": "98% (bound to plasma proteins, albumin and a 1-acid glycoprotein)",
+      "moa_t3db": "The anti-progestational activity of mifepristone results from competitive interaction with progesterone at progesterone-receptor sites. Based on studies with various oral doses in several animal species (mouse, rat, rabbit and monkey), the compound inhibits the activity of endogenous or exogenous progesterone. The termination of pregnancy results.",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 318,
+                  "AOP_name": "Glucocorticoid Receptor activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "Androgen receptor",
+            "Aryl hydrocarbon receptor",
+            "Bile acid receptor",
+            "Cholinesterase",
+            "Cytochrome P450 2C19",
+            "Cytochrome P450 2C9",
+            "Cytochrome P450 3A3",
+            "Cytochrome P450 3A4",
+            "Estrogen receptor alpha",
+            "Estrogen receptor beta",
+            "Glucocorticoid receptor",
+            "Hypoxia-inducible factor 1-alpha",
+            "Mineralocorticoid receptor",
+            "Mu-type opioid receptor",
+            "Neutrophil elastase",
+            "Nuclear receptor ROR-gamma",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Peroxisome proliferator-activated receptor gamma",
+            "Progesterone receptor",
+            "Retinoic acid receptor RXR-alpha",
+            "Thyroid hormone receptor alpha",
+            "Thyroid hormone receptor beta",
+            "Vitamin D3 receptor"
+      ]
+}

@@ -1,0 +1,80 @@
+{
+      "ptx_code": "PTX145",
+      "chem_name": "Clomipramine",
+      "casrn": "303-49-1",
+      "dtxsid": "DTXSID6022844",
+      "smiles": "CN(C)CCCN1C2=CC=CC=C2CCC2=CC=C(Cl)C=C12",
+      "inchikey": "GDLIGKIOYRNHDA-UHFFFAOYSA-N",
+      "label": "PTX145 | Clomipramine",
+      "drugbank_id": "DB01242",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Hematotoxicity; Neurotoxicity; Hepatotoxicity",
+      "chem_name_user": "Clomipramine",
+      "mw_g_mol": "314.86",
+      "solubility_h2o_mol_liter": "2.29722e-05",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "3.96215e-06",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "3.79037875869704",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "",
+      "pka_base": "9.13",
+      "source_pka": "Sirius T3",
+      "log_kow_liter_liter": "5.19",
+      "source_kow": "PhysPropNCCT (COMPTOX)",
+      "log_dlipw_ph74_liter_liter": "4.42",
+      "source_dlipw": "klipW (?mw = 1)",
+      "freely_dissolved_fraction": "0.0243776222723424",
+      "density_kg_liter": "1.101",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "7.05",
+      "baseline_dmagna": "8.22",
+      "baseline_celegans": "18.2825941879904",
+      "baseline_xlaevis": "15.5682821879484",
+      "baseline_dmelanogaster": "69.2126582110615",
+      "baseline_cells": "4.09103754435898e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "9.97297679583546e-07",
+      "moa_drugbank": "Clomipramine is a strong, but not completely selective serotonin reuptake inhibitor (SRI), as the active main metabolite desmethyclomipramine acts preferably as an inhibitor of noradrenaline reuptake. &alpha;<sub>1</sub>-receptor blockage and &beta;-down-regulation have been noted and most likely play a role in the short term effects of clomipramine. A blockade of sodium-channels and NDMA-receptors might, as with other tricyclics, account for its effect in chronic pain, in particular the neuropathic type.",
+      "protein_binding": "Clomipramine is approximately 97-98% bound to plasma proteins, principally to albumin and possibly to &alpha;<sub>1</sub>-acid glycoprotein. Desmethylclomipramine is 97-99% bound to plasma proteins.",
+      "moa_t3db": "Clomipramine is a strong, but not completely selective Serotonic-Reuptake-Inhibitor (SRI), as the active main metabolite desmethyclomipramine acts preferably as an inhibitor of Noradrenaline-Reuptake. Alpha-1-Receptor blockage and beta-down-regulation have been noted and most likely play a role in the short term effects of clomipramine. A blockade of sodium-channels and NDMA-receptors might, as with other tricyclics, account for its effect in chronic pain, in particular the neuropathic type.",
+      "aop": [
+            {
+                  "AOP_id": 97,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to population decline "
+            },
+            {
+                  "AOP_id": 98,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to decreased shelter seeking and increased predation "
+            },
+            {
+                  "AOP_id": 195,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT) inhibition leading to population increase "
+            },
+            {
+                  "AOP_id": 203,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to decreased reproductive success and population decline "
+            },
+            {
+                  "AOP_id": 204,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to increased reproductive success and population increase "
+            }
+      ],
+      "targets": [
+            "5-hydroxytryptamine receptor 1A",
+            "5-hydroxytryptamine receptor 1B",
+            "5-hydroxytryptamine receptor 1D",
+            "5-hydroxytryptamine receptor 2A",
+            "5-hydroxytryptamine receptor 2B",
+            "5-hydroxytryptamine receptor 2C",
+            "5-hydroxytryptamine receptor 6",
+            "Alpha-2A adrenergic receptor",
+            "D(1A) dopamine receptor",
+            "Glutathione S-transferase P",
+            "Glutathione S-transferase pi",
+            "Histamine H2 receptor",
+            "Sodium-dependent dopamine transporter",
+            "Sodium-dependent noradrenaline transporter",
+            "Sodium-dependent serotonin transporter",
+            "Solute carrier family 22 member 1"
+      ]
+}

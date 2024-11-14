@@ -1,0 +1,53 @@
+{
+      "ptx_code": "PTX120",
+      "chem_name": "Estrone",
+      "casrn": "53-16-7",
+      "dtxsid": "DTXSID4022367",
+      "smiles": "[H][C@@]12CCC(=O)[C@@]1(C)CC[C@]1([H])C3=C(CC[C@@]21[H])C=C(O)C=C3",
+      "inchikey": "DNXHEGUUPJUMQT-CBZIJGRNSA-N",
+      "label": "PTX120 | Estrone",
+      "drugbank_id": "DB00655",
+      "use_class": "Endogenous",
+      "tox_class": "Genotoxicity; Immunotoxicity; Hepatotoxicity",
+      "chem_name_user": "Estrone",
+      "mw_g_mol": "270.372",
+      "solubility_h2o_mol_liter": "2.6559e-05",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "1.04783e-09",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "7.36801884343186",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "9.92",
+      "pka_base": "",
+      "source_pka": "ACD/GALAS",
+      "log_kow_liter_liter": "3.13",
+      "source_kow": "PhysPropNCCT, Yalkowsky et al. Chemosphere 2002, 48, 487509 (COMPTOX)",
+      "log_dlipw_ph74_liter_liter": "3.59",
+      "source_dlipw": "Endo et al. 2011a",
+      "freely_dissolved_fraction": "0.344625423455012",
+      "density_kg_liter": "1.148",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "46.0",
+      "baseline_dmagna": "38.6",
+      "baseline_celegans": "85.1230662766478",
+      "baseline_xlaevis": "49.3819153311028",
+      "baseline_dmelanogaster": "330.048397115403",
+      "baseline_cells": "9.02442952615172e-06",
+      "baseline_cells_generic_micromole_liter_free_ec10": "3.11004784688995e-06",
+      "moa_drugbank": "Estrogens enter the cells of responsive tissues (e.g. female organs, breasts, hypothalamus, pituitary) where they interact with estrogen receptors. Hormone-bound estrogen receptors dimerize, translocate to the nucleus of cells and bind to estrogen response elements (ERE) of genes. Binding to ERE alters the transcription rate of affected genes. Estrogens increase the hepatic synthesis of sex hormone binding globulin (SHBG), thyroid-binding globulin (TBG), and other serum proteins and suppress follicle-stimulating hormone (FSH) release from the anterior pituitary.",
+      "protein_binding": "> 95%",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            }
+      ],
+      "targets": [
+            "Androgen receptor",
+            "Estrogen receptor alpha",
+            "Estrogen receptor beta",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Progesterone receptor"
+      ]
+}

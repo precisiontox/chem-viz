@@ -51,12 +51,12 @@
         </ul> 
     </div>
     <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'network_basic')">Network</button>
+        <button class="tablinks" onclick="openTab(event, 'network_view')">Network</button>
         <button class="tablinks" onclick="openTab(event, 'chem_list')">List</button>
     </div>
 
-    <div id="network_basic" class="tabcontent">
-        <div class="container">
+    <div id="network_view" class="tabcontent">
+        <div class="container" id="network-container">
             <div class="side-panel">
                 <div class="dropdown">
                     <label>Select chemical classification:</label>
@@ -116,14 +116,14 @@
 <!--                        <button class="my-btn" id="help-btn" title="Help">-->
 <!--                            <i class="far fa-question-circle"></i>-->
 <!--                        </button>-->
-                        <button class="my-btn" id="center" title="Center graph">
-                            <i class="fa fa-align-center"></i>
-                        </button>
-                        <button class="my-btn" id="lock" title="Lock/unlock element positions">
-                            <i class="fa fa-unlock"></i>
-                        </button>
-               </div>
-               <div class="zoom-widget">
+                    <button class="my-btn" id="center" title="Center graph">
+                        <i class="fa fa-align-center"></i>
+                    </button>
+                    <button class="my-btn" id="lock" title="Lock/unlock element positions">
+                        <i class="fa fa-unlock"></i>
+                    </button>
+                </div>
+                <div class="zoom-widget">
                     <div class="zoom-widget-row">
                         <button class="my-btn" id="zoom_in" title="Zoom in">
                             <i class="fas fa-search-plus"></i>
@@ -134,12 +134,201 @@
                             <i class="fas fa-search-minus"></i>
                         </button>
                     </div>
-               </div>
+                </div>
+            </div>
+        </div>
+        <div id="category-info-section" class="category-info-section" style="display: none;"></div>
+        <div id="chem-info-section" class="chem-info-section" style="display: none;">
+            <h2 style="color: #004880;"><i class="fa-solid fa-flask"></i> <span id="chem-ptx-code"></span> · <span id="chem-name"></span></h2>
+        
+            <!-- General Info Section -->
+            <div class="chem-info-content">
+                <div class="chem-general-info">
+                    <div class="chem-info-row">
+                        <div class="chem-label">Common Name</div>
+                        <div class="chem-value" id="chem-common-name"></div>
+                    </div>
+                    <div class="chem-info-row">
+                        <div class="chem-label">CAS Number</div>
+                        <div class="chem-value" id="chem-cas"></div>
+                    </div>
+                    <div class="chem-info-row">
+                        <div class="chem-label">DSSTox ID</div>
+                        <div class="chem-value" id="chem-dsstox-id"></div>
+                    </div>
+                    <div class="chem-info-row">
+                        <div class="chem-label">DrugBank ID</div>
+                        <div class="chem-value" id="chem-drugbank-id"></div>
+                    </div>
+                    <div class="chem-info-row">
+                        <div class="chem-label">SMILES</div>
+                        <div class="chem-value" id="chem-smiles"></div>
+                    </div>
+                    <div class="chem-info-row">
+                        <div class="chem-label">InChIKey</div>
+                        <div class="chem-value" id="chem-inchi"></div>
+                    </div>
+                    <div class="chem-info-row">
+                        <div class="chem-label">Use</div>
+                        <div class="chem-value" id="chem-use"></div>
+                    </div>
+                </div>
 
-           </div>
-       </div>
-   </div>
+                <div class="table-tabs">
+                    <button class="table-tab-btn active" onclick="showTable('phys-properties-table')">Physico-chemical Properties</button>
+                    <button class="table-tab-btn" onclick="showTable('baseline-tox-table')">Baseline Toxicity</button>
+                    <button class="table-tab-btn" onclick="showTable('aop-table')">Adverse Outcome Pathways</button>
+                    <button class="table-tab-btn" onclick="showTable('targets-table')">Targets</button>
+                </div>
+        
+                <!-- Physico-chemical Properties Table -->
+                <div id="phys-properties-table" class="chem-table-container">
+                    <table class="chem-data-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Value</th>
+                                <th>Unit</th>
+                                <th>Source</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Molecular Weight</td>
+                                <td id="chem-mw"></td>
+                                <td>g/mol</td>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <td>Solubility (H2O)</td>
+                                <td id="chem-solubility"></td>
+                                <td>mol/L</td>
+                                <td id="chem-source-solubility"></td>
+                            </tr>
+                            <tr>
+                                <td>Henry Coefficient</td>
+                                <td id="chem-henry"></td>
+                                <td>atm*m3/mol</td>
+                                <td id="chem-source-henry"></td>
+                            </tr>
+                            <tr>
+                                <td>Log Kaw</td>
+                                <td id="chem-log-kaw"></td>
+                                <td></td>
+                                <td id="chem-source-kaw"></td>
+                            </tr>
+                            <tr>
+                                <td>Log Kow</td>
+                                <td id="chem-log-kow"></td>
+                                <td></td>
+                                <td id="chem-source-kow"></td>
+                            </tr>
+                            <tr>
+                                <td>pKa (Acid)</td>
+                                <td id="chem-pka-acid"></td>
+                                <td></td>
+                                <td id="chem-source-pka-acid"></td>
+                            </tr>
+                            <tr>
+                                <td>pKa (Base)</td>
+                                <td id="chem-pka-base"></td>
+                                <td></td>
+                                <td id="chem-source-pka-base"></td>
+                            </tr>
+                            <tr>
+                                <td>Log Dlipw (pH 7.4)</td>
+                                <td id="chem-log-dlipw"></td>
+                                <td></td>
+                                <td id="chem-source-dlipw"></td>
+                            </tr>
+                            <tr>
+                                <td>Freely Dissolved Fraction</td>
+                                <td id="chem-fdf"></td>
+                                <td></td>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <td>Density</td>
+                                <td id="chem-density"></td>
+                                <td>kg/L</td>
+                                <td id="chem-source-density"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
+                <div id="baseline-tox-table" class="chem-table-container" style="display: none;">
+                    <table class="chem-data-table">
+                        <thead>
+                            <tr>
+                                <th>Organism</th>
+                                <th>Baseline Toxicity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Caenorhabditis elegans</td>
+                                <td id="base-tox-celegans"></td>
+                            </tr>
+                            <tr>
+                                <td>Danio rerio</td>
+                                <td id="base-tox-drerio"></td>
+                            </tr>
+                            <tr>
+                                <td>Daphnia magna</td>
+                                <td id="base-tox-dmagna"></td>
+                            </tr>
+                            <tr>
+                                <td>Drosophila melanogaster</td>
+                                <td id="base-tox-dmelanogaster"></td>
+                            </tr>
+                            <tr>
+                                <td>Human (HepG2 cells)</td>
+                                <td id="base-tox-cells"></td>
+                            </tr>
+                            <tr>
+                                <td>Cells (cells_generic_micromole_liter_free_ec10)</td>
+                                <td id="base-tox-cells-generic"></td>
+                            </tr>
+                            <tr>
+                                <td>Xenopus laevis</td>
+                                <td id="base-tox-xlaevis"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="aop-table" class="chem-table-container" style="display: none;">
+                    <table class="chem-data-table">
+                        <thead>
+                            <tr>
+                                <th>AOP ID</th>
+                                <th>AOP Name</th>
+                            </tr>
+                        </thead>
+                        <tbody id="aop-table-body">
+                            <!-- Data will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="targets-table" class="chem-table-container" style="display: none;">
+                    <table class="chem-data-table">
+                        <thead>
+                            <tr>
+                                <th>Target</th>
+                            </tr>
+                        </thead>
+                        <tbody id="targets-table-body">
+                            <!-- Data will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+        
     <div id="chem_list" class="tabcontent">
         <table id="chem-table" class="display">
             <thead>
@@ -238,7 +427,7 @@
             evt.currentTarget.classList.add("active");
 
             // Initialize the network only when the tab is activated
-            if (tabName === 'network_basic') {
+            if (tabName === 'network_view') {
                 initializeNetworkBasic();
             } else if (tabName === 'chem_list') {
                 loadChemList();
@@ -326,6 +515,33 @@
             var blob = new Blob([svgContent], {type: "image/svg+xml;charset=utf-8"});
             saveAs(blob, "graph.svg");
         });
+
+        function showTable(tableId) {
+            // Hide both tables
+            document.getElementById('phys-properties-table').style.display = 'none';
+            document.getElementById('baseline-tox-table').style.display = 'none';
+            document.getElementById('aop-table').style.display = 'none';
+            document.getElementById('targets-table').style.display = 'none';
+
+            // Remove 'active' class from both buttons
+            document.querySelectorAll('.table-tab-btn').forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show the selected table
+            document.getElementById(tableId).style.display = 'block';
+
+            // Add 'active' class to the clicked button
+            if (tableId === 'phys-properties-table') {
+                document.querySelector('.table-tab-btn:nth-child(1)').classList.add('active');
+            } else if (tableId === 'baseline-tox-table') {
+                document.querySelector('.table-tab-btn:nth-child(2)').classList.add('active');
+            } else if (tableId === 'aop-table') {
+                document.querySelector('.table-tab-btn:nth-child(3)').classList.add('active');
+            } else if (tableId === 'targets-table') {
+                document.querySelector('.table-tab-btn:nth-child(4)').classList.add('active');
+            }
+        }
         
     </script>
 

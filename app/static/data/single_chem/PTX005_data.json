@@ -1,0 +1,135 @@
+{
+      "ptx_code": "PTX005",
+      "chem_name": "Arsenic oxide (as2o3)",
+      "casrn": "1327-53-3",
+      "dtxsid": "DTXSID0020103",
+      "smiles": "[O--].[O--].[O--].[As+3].[As+3]",
+      "inchikey": "QTLQKAJBUDWPIB-UHFFFAOYSA-N",
+      "label": "PTX005 | Arsenic oxide (as2o3)",
+      "drugbank_id": "DB01169",
+      "use_class": "Industry and consumer goods",
+      "tox_class": "Genotoxicity; Cardiotoxicity; Immunotoxicity; Neurotoxicity; Hepatotoxicity; Nephrotoxicity",
+      "chem_name_user": "Arsenic (iii) oxide",
+      "mw_g_mol": "197.84",
+      "solubility_h2o_mol_liter": "0.089971694",
+      "source_solubility_h2o": "MSDS (Sigma)",
+      "henry_coefficient_atm_m3_mol": "",
+      "source_henry": "",
+      "log_kaw_kh_rt": "",
+      "source_kaw": "",
+      "pka_acid": "",
+      "pka_base": "",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "inorganic",
+      "source_dlipw": "",
+      "freely_dissolved_fraction": "",
+      "density_kg_liter": "3.87",
+      "source_density": "MSDS (Sigma)",
+      "baseline_drerio": "",
+      "baseline_dmagna": "",
+      "baseline_celegans": "",
+      "baseline_xlaevis": "",
+      "baseline_dmelanogaster": "",
+      "baseline_cells": "",
+      "baseline_cells_generic_micromole_liter_free_ec10": "",
+      "moa_drugbank": "The mechanism of action of Arsenic Trioxide is not completely understood. Arsenic trioxide causes morphological changes and DNA fragmentation characteristic of apoptosis in NB4 human promyelocytic leukemia cells <i>in vitro</i>. Arsenic trioxide also causes damage or degradation of the fusion protein PML/RAR-alpha. It is suspected that arsenic trioxide induces cancer cells to undergo apoptosis.",
+      "protein_binding": "75% bound",
+      "moa_t3db": "Arsenic disrupts ATP production through several mechanisms. At the level of the citric acid cycle, arsenic inhibits pyruvate dehydrogenase and by competing with phosphate it uncouples oxidative phosphorylation, thus inhibiting energy-linked reduction of NAD+, mitochondrial respiration, and ATP synthesis. Hydrogen peroxide production is also increased, which might form reactive oxygen species and oxidative stress. (T1); Arsenic binds to hemoglobin. (A15); Arsenic binds to haptoglobin. (A15); Arsenic binds to the estrogen receptor. (A17); Arsenic binds to the glucocorticoid receptor. (A17); Arsenic binds glutathione reductase, which results in the inhibition of essential biochemical reactions, alteration of cellular redox status, and eventual cytotoxicity. (L2); Arsenic binds to kelch-like ECH-associated protein 1. (A17); Arsenic binding of PARP-1 is believed to induce carcinogenesis by affecting DNA repair. (A17); Arsenic's carginogenicity is believed to be caused by the arsenical binding of tubulin, which results in aneuploidy, polyploidy and mitotic arrests. (A17); Arsenic binds to actin. (A16); Arsenic binds thioredoxin reductase, which results in the inhibition of essential biochemical reactions, alteration of cellular redox status, and eventual cytotoxicity. (L2); Arsenic binding of XPA is believed to induce carcinogenesis by affecting DNA repair. (A17)",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 318,
+                  "AOP_name": "Glucocorticoid Receptor activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "Actin, alpha cardiac muscle 1",
+            "Actin, alpha skeletal muscle",
+            "Actin, aortic smooth muscle",
+            "Actin, cytoplasmic 1",
+            "Actin, cytoplasmic 2",
+            "Actin, gamma-enteric smooth muscle",
+            "DNA repair protein complementing XP-A cells",
+            "Dihydrolipoyllysine-residue acetyltransferase component of pyruvate dehydrogenase complex, mitochondrial",
+            "Estrogen receptor alpha",
+            "G1/S-specific cyclin-D1",
+            "Glucocorticoid receptor",
+            "Glutathione reductase, mitochondrial",
+            "Haptoglobin",
+            "Hemoglobin subunit alpha",
+            "Hemoglobin subunit beta",
+            "Inhibitor of nuclear factor kappa-B kinase subunit beta",
+            "Kelch-like ECH-associated protein 1",
+            "Mitogen-activated protein kinase 1",
+            "Mitogen-activated protein kinase 3",
+            "Poly [ADP-ribose] polymerase 1",
+            "Protein PML",
+            "Putative tubulin beta chain-like protein ENSP00000290377",
+            "Putative tubulin beta-4q chain",
+            "Putative tubulin-like protein alpha-4B",
+            "Pyruvate dehydrogenase E1 component subunit alpha, somatic form, mitochondrial",
+            "Pyruvate dehydrogenase E1 component subunit alpha, testis-specific form, mitochondrial",
+            "Pyruvate dehydrogenase E1 component subunit beta, mitochondrial",
+            "Pyruvate dehydrogenase protein X component, mitochondrial",
+            "RAC-alpha serine/threonine-protein kinase",
+            "Thioredoxin reductase 1, cytoplasmic",
+            "Thioredoxin reductase 2, mitochondrial",
+            "Thioredoxin reductase 3",
+            "Transcription factor AP-1",
+            "Tubulin alpha chain-like 3",
+            "Tubulin alpha-1A chain",
+            "Tubulin alpha-1B chain",
+            "Tubulin alpha-1C chain",
+            "Tubulin alpha-3C/D chain",
+            "Tubulin alpha-3E chain",
+            "Tubulin alpha-4A chain",
+            "Tubulin alpha-8 chain",
+            "Tubulin beta chain",
+            "Tubulin beta-1 chain",
+            "Tubulin beta-2A chain",
+            "Tubulin beta-2B chain",
+            "Tubulin beta-3 chain",
+            "Tubulin beta-4A chain",
+            "Tubulin beta-4B chain",
+            "Tubulin beta-6 chain",
+            "Tubulin beta-8 chain",
+            "Tubulin beta-8 chain-like protein LOC260334"
+      ]
+}

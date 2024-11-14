@@ -1,0 +1,70 @@
+{
+      "ptx_code": "PTX078",
+      "chem_name": "5,5-diphenylhydantoin",
+      "casrn": "57-41-0",
+      "dtxsid": "DTXSID8020541",
+      "smiles": "O=C1NC(=O)C(N1)(C1=CC=CC=C1)C1=CC=CC=C1",
+      "inchikey": "CXOFVDLJLONNDW-UHFFFAOYSA-N",
+      "label": "PTX078 | 5,5-diphenylhydantoin",
+      "drugbank_id": "DB00252",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Neurotoxicity; Hepatotoxicity; Hematotoxicity; Cardiotoxicity",
+      "chem_name_user": "5,5-diphenylhydantoin",
+      "mw_g_mol": "252.273",
+      "solubility_h2o_mol_liter": "0.000107",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "6.27802e-10",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "7.59048697692684",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "7.84",
+      "pka_base": "",
+      "source_pka": "UFZ; Sirius T3",
+      "log_kow_liter_liter": "2.47",
+      "source_kow": "experimental  PhysPropNCCT",
+      "log_dlipw_ph74_liter_liter": "2.5",
+      "source_dlipw": "Kow-QSAR (?mw=1)",
+      "freely_dissolved_fraction": "0.369148050438583",
+      "density_kg_liter": "1.293",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "561.0",
+      "baseline_dmagna": "303.0",
+      "baseline_celegans": "662.582263683327",
+      "baseline_xlaevis": "230.350660101168",
+      "baseline_dmelanogaster": "2652.29421579844",
+      "baseline_cells": "0.000224959700614285",
+      "baseline_cells_generic_micromole_liter_free_ec10": "8.30434349090106e-05",
+      "moa_drugbank": "Although phenytoin first appeared in the literature in 1946, it has taken decades for the mechanism of action to be more specifically elucidated.[A188826] Although several scientists were convinced that phenytoin altered sodium permeability, it wasn\u00e2\u20ac\u2122t until the 1980\u00e2\u20ac\u2122s that this phenomenon was linked to voltage-gated sodium channels.[A188826] \n\nPhenytoin is often described as a non-specific sodium channel blocker and targets almost all voltage-gated sodium channel subtypes.[A188826] More specifically, phenytoin prevents seizures by inhibiting the positive feedback loop that results in neuronal propagation of high frequency action potentials.[A188772,A189219,A189273]",
+      "protein_binding": "Phenytoin is roughly 90% protein bound.[A188760]",
+      "moa_t3db": "Phenytoin acts on sodium channels on the neuronal cell membrane, limiting the spread of seizure activity and reducing seizure propagation. By promoting sodium efflux from neurons, phenytoin tends to stabilize the threshold against hyperexcitability caused by excessive stimulation or environmental changes capable of reducing membrane sodium gradient. This includes the reduction of post-tetanic potentiation at synapses. Loss of post-tetanic potentiation prevents cortical seizure foci from detonating adjacent cortical areas.",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            }
+      ],
+      "targets": [
+            "Bile acid receptor",
+            "Cytochrome P450 2C9",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Potassium voltage-gated channel subfamily H member 2",
+            "Sodium channel protein type 1 subunit alpha",
+            "Sodium channel protein type 2 subunit alpha",
+            "Sodium channel protein type 3 subunit alpha",
+            "Sodium channel protein type 4 subunit alpha",
+            "Sodium channel protein type 5 subunit alpha",
+            "Sodium-dependent dopamine transporter"
+      ]
+}

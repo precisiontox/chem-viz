@@ -1,0 +1,62 @@
+{
+      "ptx_code": "PTX179",
+      "chem_name": "Omeprazole",
+      "casrn": "73590-58-6",
+      "dtxsid": "DTXSID6021080",
+      "smiles": "COC1=CC2=C(NC(=N2)S(=O)CC2=C(C)C(OC)=C(C)C=N2)C=C1",
+      "inchikey": "SUBDBMMJDZJVOS-UHFFFAOYSA-N",
+      "label": "PTX179 | Omeprazole",
+      "drugbank_id": "DB00338",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Nephrotoxicity; Hepatotoxicity; Cardiotoxicity; Genotoxicity",
+      "chem_name_user": "Omeprazole",
+      "mw_g_mol": "345.42",
+      "solubility_h2o_mol_liter": "0.000301348",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "3.57509e-06",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "3.83502269254558",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "8.74",
+      "pka_base": "",
+      "source_pka": "ACD/GALAS",
+      "log_kow_liter_liter": "2.23",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "1.70000337158374",
+      "source_dlipw": "Kow QSAR (\u00e2\u02c6\u2020mw = 1)",
+      "freely_dissolved_fraction": "0.898925475389326",
+      "density_kg_liter": "1.506",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "3443.47284194675",
+      "baseline_dmagna": "1336.58700786802",
+      "baseline_celegans": "2971.64734500875",
+      "baseline_xlaevis": "703.376647977169",
+      "baseline_dmelanogaster": "12012.882249424",
+      "baseline_cells": "0.00057585994216615",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.000517655172269376",
+      "moa_drugbank": "Hydrochloric acid (HCl) secretion into the gastric lumen is a process regulated mainly by the H(+)/K(+)-ATPase of the proton pump [A175180], expressed in high quantities by the parietal cells of the stomach. ATPase is an enzyme on the parietal cell membrane that facilitates hydrogen and potassium exchange through the cell, which normally results in the extrusion of potassium and formation of HCl (gastric acid) [A174295].\n\nOmeprazole is a member of a class of antisecretory compounds, the substituted _benzimidazoles_, that stop gastric acid secretion by selective inhibition of the _H+/K+ ATPase_ enzyme system. Proton-pump inhibitors such as omeprazole bind covalently to cysteine residues via disulfide bridges on the alpha subunit of the _H+/K+ ATPase_ pump, inhibiting gastric acid secretion for up to 36 hours [A175192].  This antisecretory effect is dose-related and leads to the inhibition of both basal and stimulated acid secretion, regardless of the stimulus [FDA label].  \n\n**Mechanism of H. pylori eradication**\n\nPeptic ulcer disease (PUD) is frequently associated with _Helicobacter pylori_ bacterial infection (NSAIDs) [A175195]. The treatment of H. pylori infection may include the addition of omeprazole or other proton pump inhibitors as part of the treatment regimen [FDA label], [A175198]. \n_H. pylori_ replicates most effectively at a neutral pH [A175213]. Acid inhibition in H. pylori eradication therapy, including proton-pump inhibitors such as omeprazole, raises gastric pH, discouraging the growth of H.pylori [A175198]. It is generally believed that proton pump inhibitors inhibit the _urease_ enzyme, which increases the pathogenesis of H. pylori in gastric-acid related conditions [A175216].",
+      "protein_binding": "Approximately 95% bound to human plasma proteins [FDA label].",
+      "moa_t3db": "Omeprazole is a proton pump inhibitor that suppresses gastric acid secretion by specific inhibition of the H<sup>+</sup>/K<sup>+</sup>-ATPase in the gastric parietal cell. By acting specifically on the proton pump, omeprazole blocks the final step in acid production, thus reducing gastric acidity.",
+      "aop": [
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            }
+      ],
+      "targets": [
+            "Aryl hydrocarbon receptor",
+            "Cytochrome P450 2C9",
+            "Cytochrome P450 3A4",
+            "Multidrug resistance protein 1",
+            "Potassium-transporting ATPase alpha chain 1",
+            "Potassium-transporting ATPase subunit beta"
+      ]
+}

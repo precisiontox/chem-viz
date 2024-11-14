@@ -1,0 +1,51 @@
+{
+      "ptx_code": "PTX103",
+      "chem_name": "Aspartame",
+      "casrn": "22839-47-0",
+      "dtxsid": "DTXSID0020107",
+      "smiles": "COC(=O)[C@H](CC1=CC=CC=C1)NC(=O)[C@@H](N)CC(O)=O",
+      "inchikey": "IAOZJIPTCAWIRG-QWRGUYRKSA-N",
+      "label": "PTX103 | Aspartame",
+      "drugbank_id": "DB00168",
+      "use_class": "Food and other consumption",
+      "tox_class": "Neurotoxicity; Hepatotoxicity; Nephrotoxicity; Ototoxicity; Genotoxicity",
+      "chem_name_user": "Aspartame",
+      "mw_g_mol": "294.307",
+      "solubility_h2o_mol_liter": "0.0106719",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "5.06511e-11",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "8.68372079037447",
+      "source_kaw": "Comptox",
+      "pka_acid": "2.43;11.11",
+      "pka_base": "7.76",
+      "source_pka": "UFZ; Sirius T3",
+      "log_kow_liter_liter": "0.5",
+      "source_kow": "mean of ACD consensus and KOWWIN",
+      "log_dlipw_ph74_liter_liter": "-1",
+      "source_dlipw": "@ -1 at logKow < -1 (Gobas 1988)",
+      "freely_dissolved_fraction": "0.942276927352634",
+      "density_kg_liter": "1.345",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "1620000.0",
+      "baseline_dmagna": "216000.0",
+      "baseline_celegans": "456359.326678487",
+      "baseline_xlaevis": "31067.0488278996",
+      "baseline_dmelanogaster": "2022087.75840144",
+      "baseline_cells": "0.275927375968422",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.26",
+      "moa_drugbank": "180 to 200 times sweeter than sucrose, it is metabolized as a protein and its subsequent amino-acids used up in there respective mechanisms.",
+      "protein_binding": "",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            }
+      ],
+      "targets": []
+}

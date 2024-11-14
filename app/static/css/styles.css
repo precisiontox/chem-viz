@@ -16,7 +16,7 @@ body, html {
     width: 100%;
     background: linear-gradient(135deg, #004880, #007cc1);
     font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .topbar {
@@ -355,6 +355,10 @@ input[type="range"]:focus {
     background-color: white;
 }
 
+#network-container {
+    border-radius: 10px;
+}
+
 .cytoscape-container{
     position: absolute;
     width: 100%;
@@ -462,6 +466,218 @@ input[type="range"]:focus {
 .qtip-content .prop {
     color: black;
 }
+
+/* Styles for Chemical Info Section */
+.chem-info-section, .category-info-section {
+    /* max-width: 100%; */
+    /* margin-top: 20px; */
+    max-width: 80%;
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: white; /* rgba(254, 254, 254, 0.913); */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling if content is too wide */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-header {
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    padding: 5px;
+}
+.category-header-background {
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    height: 40px;
+}
+.category-header-image {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    /* border-radius: 5px;
+    margin-right: 10px; */
+}
+.category-header h2 {
+    color: white; 
+    margin: 0; 
+    line-height: 1; 
+    z-index: 1;
+}
+.chem-associated-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.chem-associated-table th,
+.chem-associated-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.chem-associated-table th {
+    background-color: #9a999a;
+    color: white;
+    font-weight: bold;
+}
+.chem-associated-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light background for even rows */
+}
+
+.chem-associated-table tr:hover {
+    background-color: #e0f7fa;
+}
+
+/* Increase font size and adjust row height */
+#category-chem-table td {
+    font-size: 16px; /* Adjust font size */
+    padding: 5px 10px; /* Reduce padding to decrease row height */
+}
+
+#category-chem-table th {
+    font-size: 16px; /* Adjust font size for header cells */
+    padding: 8px 10px; /* Adjust padding for header cells */
+}
+
+/* Optional: Set a fixed height for table rows */
+#category-chem-table tr {
+    height: 30px; /* Set the desired row height */
+}
+
+
+
+
+/* General Info Layout */
+.chem-general-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chem-info-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chem-label {
+    flex: 0 0 150px;
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+    border-right: 3px solid #2e6694;
+    padding-right: 10px;
+}
+
+.chem-value {
+    flex: 1;
+    text-align: left;
+    color: #555;
+    padding-left: 10px;
+}
+
+.table-tabs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.table-tab-btn {
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #172d4a;
+    border-radius: 5px;
+    color: #172d4a;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.table-tab-btn:hover {
+    background-color: #424949;
+    color: #fff;
+}
+
+.table-tab-btn.active {
+    background-color: #424949;
+    color: #fff;
+}
+
+.chem-table-container {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Full width of the section */
+}
+
+/* Table Styles for Physico-chemical Properties */
+.chem-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin: 0 auto;
+    font-size: 14px;
+    border: 1px solid #ddd;
+}
+
+.chem-data-table th,
+.chem-data-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.chem-data-table th {
+    background-color: #004880;
+    color: white;
+    font-weight: bold;
+}
+
+.chem-data-table td {
+    color: #333;
+}
+
+.chem-data-table tr:hover {
+    background-color: #f0f8ff; /* Change this color to your preferred choice */
+    transition: background-color 0.3s ease; /* Optional: Smooth transition effect */
+}
+
+.chem-data-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light background for even rows */
+}
+
+.chem-data-table tr:hover {
+    background-color: #e0f7fa; /* Background color on hover */
+}
+
+/* Apply styles to the first column of the Physico-chemical Properties table */
+#phys-properties-table td:first-child {
+    color: #004880; /* Change this color to your preferred choice */
+    font-weight: bold; /* Optional: make the text bold */
+}
+
+/* Apply styles to the first column of the Baseline Toxicity table */
+#baseline-tox-table td:first-child {
+    color: #004880; /* Change this color to your preferred choice */
+    font-weight: bold; /* Optional: make the text bold */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chem-label {
+        flex: 0 0 100px;
+    }
+}
+
 
 #chem-list{
     background-color: #e0e0e0;

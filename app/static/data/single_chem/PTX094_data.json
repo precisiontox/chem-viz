@@ -1,0 +1,82 @@
+{
+      "ptx_code": "PTX094",
+      "chem_name": "Citalopram",
+      "casrn": "59729-33-8",
+      "dtxsid": "DTXSID8022826",
+      "smiles": "CN(C)CCCC1(OCC2=CC(=CC=C12)C#N)C1=CC=C(F)C=C1",
+      "inchikey": "WSEQXVZVJXJVFP-UHFFFAOYSA-N",
+      "label": "PTX094 | Citalopram",
+      "drugbank_id": "DB00215",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Neurotoxicity; Hepatotoxicity; Cardiotoxicity",
+      "chem_name_user": "Citalopram",
+      "mw_g_mol": "324.399",
+      "solubility_h2o_mol_liter": "2.07e-05",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "3.94344e-06",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "3.79243443447267",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "",
+      "pka_base": "9.54",
+      "source_pka": "UFZ; Sirius T3",
+      "log_kow_liter_liter": "3.58",
+      "source_kow": "PP-LFER",
+      "log_dlipw_ph74_liter_liter": "1.54",
+      "source_dlipw": "LSERD for neutral and COSMO for charged",
+      "freely_dissolved_fraction": "0.366469065577438",
+      "density_kg_liter": "1.161",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "4970.0",
+      "baseline_dmagna": "1830.0",
+      "baseline_celegans": "3959.72635587113",
+      "baseline_xlaevis": "881.212406970847",
+      "baseline_dmelanogaster": "16297.2677026252",
+      "baseline_cells": "0.00204925871427609",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.00075098992614718",
+      "moa_drugbank": "The mechanism of action of citalopram results from its inhibition of CNS neuronal reuptake of serotonin (5-HT) [FDA label].  The molecular target for citalopram is the serotonin transporter (solute carrier family 6 member 4, _SLC6A4_), inhibiting its serotonin reuptake in the synaptic cleft [A37688].\n\nCitalopram binds with significantly less affinity to histamine, acetylcholine, and norepinephrine receptors than tricyclic antidepressant drugs [FDA label]. This drug has no or neglible affinity for _5-HT1A_, _5-HT2A_, _dopamine D_1 and _D2_, _\u00ce\u00b11-_, _\u00ce\u00b12_-, and_ \u00ce\u00b2\u00c2\u00ad adrenergic_, _histamine H1_, _gamma-aminobutyric acid_ (GABA), _muscarinic_,  _cholinergic_, and _benzodiazepine_ receptors. Antagonism of _muscarinic_, _histaminergic_, and _adrenergic receptors_ is thought to be associated with several anticholinergic, sedative, and cardiovascular effects of other psychotropic drugs [FDA label].",
+      "protein_binding": "Citalopram, dimethylcitalopram, and didemethylcitalopram are 80% bound to plasma proteins [FDA label].",
+      "moa_t3db": "The antidepressant, antiobsessive-compulsive, and antibulimic actions of Citalopram are presumed to be linked to its inhibition of CNS neuronal uptake of serotonin. Citalopram blocks the reuptake of serotonin at the serotonin reuptake pump of the neuronal membrane, enhancing the actions of serotonin on 5HT<sub>1A</sub> autoreceptors. SSRIs bind with significantly less affinity to histamine, acetylcholine, and norepinephrine receptors than tricyclic antidepressant drugs.",
+      "aop": [
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 97,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to population decline "
+            },
+            {
+                  "AOP_id": 98,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to decreased shelter seeking and increased predation "
+            },
+            {
+                  "AOP_id": 195,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT) inhibition leading to population increase "
+            },
+            {
+                  "AOP_id": 203,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to decreased reproductive success and population decline "
+            },
+            {
+                  "AOP_id": 204,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to increased reproductive success and population increase "
+            }
+      ],
+      "targets": [
+            "5-hydroxytryptamine receptor 1A",
+            "5-hydroxytryptamine receptor 1B",
+            "5-hydroxytryptamine receptor 1D",
+            "5-hydroxytryptamine receptor 2A",
+            "5-hydroxytryptamine receptor 2C",
+            "Alpha-1A adrenergic receptor",
+            "Alpha-2A adrenergic receptor",
+            "Histamine H1 receptor",
+            "Muscarinic acetylcholine receptor M1",
+            "Potassium voltage-gated channel subfamily H member 2",
+            "Sodium-dependent dopamine transporter",
+            "Sodium-dependent noradrenaline transporter",
+            "Sodium-dependent serotonin transporter",
+            "Solute carrier family 22 member 1"
+      ]
+}

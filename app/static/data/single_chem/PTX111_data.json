@@ -1,0 +1,68 @@
+{
+      "ptx_code": "PTX111",
+      "chem_name": "17-methyltestosterone",
+      "casrn": "58-18-4",
+      "dtxsid": "DTXSID1033664",
+      "smiles": "C[C@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C",
+      "inchikey": "GCKMFJBGXUYNAG-HLXURNFRSA-N",
+      "label": "PTX111 | 17-methyltestosterone",
+      "drugbank_id": "DB06710",
+      "use_class": "Endogenous",
+      "tox_class": "",
+      "chem_name_user": "17-methyltestosterone",
+      "mw_g_mol": "302.458",
+      "solubility_h2o_mol_liter": "0.000106734",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "4.51405e-09",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "6.73374330658946",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "15.99",
+      "pka_base": "",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "3.36",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "3.9",
+      "source_dlipw": "LSER",
+      "freely_dissolved_fraction": "0.0905562283176791",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "22.8559880337543",
+      "baseline_dmagna": "21.6829721443981",
+      "baseline_celegans": "47.9831890852274",
+      "baseline_xlaevis": "32.1166323331542",
+      "baseline_dmelanogaster": "184.395364856081",
+      "baseline_cells": "3.61455653738376e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "3.27320607066483e-06",
+      "moa_drugbank": "The effects of testosterone in humans and other vertebrates occur by way of two main mechanisms: by activation of the androgen receptor (directly or as DHT), and by conversion to estradiol and activation of certain estrogen receptors. Free testosterone (T) is transported into the cytoplasm of target tissue cells, where it can bind to the androgen receptor, or can be reduced to 5&alpha;-dihydrotestosterone (DHT) by the cytoplasmic enzyme 5&alpha;-reductase. DHT binds to the same androgen receptor even more strongly than T, so that its androgenic potency is about 2.5 times that of T. The T-receptor or DHT-receptor complex undergoes a structural change that allows it to move into the cell nucleus and bind directly to specific nucleotide sequences of the chromosomal DNA. The areas of binding are called hormone response elements (HREs), and influence transcriptional activity of certain genes, producing the androgen effects.",
+      "protein_binding": "40% of testosterone in plasma is bound to sex hormone-binding globulin and 2% remains unbound and the rest is bound to albumin and other proteins.",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            }
+      ],
+      "targets": [
+            "Androgen receptor",
+            "Estrogen receptor alpha",
+            "Glucocorticoid receptor",
+            "Progesterone receptor"
+      ]
+}

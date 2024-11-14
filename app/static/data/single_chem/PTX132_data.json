@@ -1,0 +1,79 @@
+{
+      "ptx_code": "PTX132",
+      "chem_name": "Fulvestrant",
+      "casrn": "129453-61-8",
+      "dtxsid": "DTXSID4022369",
+      "smiles": "[H][C@@]12CC[C@H](O)[C@@]1(C)CC[C@]1([H])C3=C(C[C@@H](CCCCCCCCCS(=O)CCCC(F)(F)C(F)(F)F)[C@@]21[H])C=C(O)C=C3",
+      "inchikey": "VWUXBMIQPBEWFH-WCCTWKNTSA-N",
+      "label": "PTX132 | Fulvestrant",
+      "drugbank_id": "DB00947",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Genotoxicity; Hepatotoxicity; Neurotoxicity; Immunotoxicity; Hematotoxicity",
+      "chem_name_user": "Fulvestrant",
+      "mw_g_mol": "606.78",
+      "solubility_h2o_mol_liter": "2.2738e-07",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "2.86328e-08",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "5.93144585209998",
+      "source_kaw": "LSER",
+      "pka_acid": "10",
+      "pka_base": "",
+      "source_pka": "ACD/GALAS",
+      "log_kow_liter_liter": "8.324",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "8.5262595455429",
+      "source_dlipw": "Kow-QSAR (\u00e2\u02c6\u2020mw=1)",
+      "freely_dissolved_fraction": "3.34099987998436e-05",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "0.000601177959350757",
+      "baseline_dmagna": "0.00364606070804575",
+      "baseline_celegans": "0.00841619932476012",
+      "baseline_xlaevis": "0.0487472430655514",
+      "baseline_dmelanogaster": "0.0282747650415549",
+      "baseline_cells": "2.31652687174454e-06",
+      "baseline_cells_generic_micromole_liter_free_ec10": "7.73951600047907e-11",
+      "moa_drugbank": "Fulvestrant competitively and reversibly binds to estrogen receptors present in cancer cells and achieves its anti-estrogen effects through two separate mechanisms. First, fulvestrant binds to the receptors and downregulates them so that estrogen is no longer able to bind to these receptors. Second, fulvestrant degrades the estrogen receptors to which it is bound. Both of these mechanisms inhibit the growth of tamoxifen-resistant as well as estrogen-sensitive human breast cancer cell lines.",
+      "protein_binding": "99% (mainly VLDL, LDL, and HDL)",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 167,
+                  "AOP_name": "Early-life estrogen receptor activity leading to endometrial carcinoma in the mouse. "
+            }
+      ],
+      "targets": [
+            "Aryl hydrocarbon receptor",
+            "Bile acid receptor",
+            "Cytochrome P450 19A1",
+            "Estrogen receptor alpha",
+            "Estrogen receptor beta",
+            "Glucocorticoid receptor",
+            "Nuclear receptor subfamily 1 group I member 2"
+      ]
+}

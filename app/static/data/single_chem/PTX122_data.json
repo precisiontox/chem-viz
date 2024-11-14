@@ -1,0 +1,65 @@
+{
+      "ptx_code": "PTX122",
+      "chem_name": "Linuron",
+      "casrn": "330-55-2",
+      "dtxsid": "DTXSID2024163",
+      "smiles": "CON(C)C(=O)NC1=CC=C(Cl)C(Cl)=C1",
+      "inchikey": "XKJMBINCVNINCA-UHFFFAOYSA-N",
+      "label": "PTX122 | Linuron",
+      "drugbank_id": "",
+      "use_class": "Pesticide",
+      "tox_class": "Immunotoxicity; Neurotoxicity; Nephrotoxicity; Genotoxicity",
+      "chem_name_user": "Linuron",
+      "mw_g_mol": "249.09",
+      "solubility_h2o_mol_liter": "0.000289987",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "1.11731e-09",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "7.34013598608435",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "",
+      "pka_base": "",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "3.2",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "3.13",
+      "source_dlipw": "LSER",
+      "freely_dissolved_fraction": "0.369614332345077",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "132.220866819026",
+      "baseline_dmagna": "92.1121314086852",
+      "baseline_celegans": "202.412637433614",
+      "baseline_xlaevis": "94.5999702883455",
+      "baseline_dmelanogaster": "795.453871674311",
+      "baseline_cells": "5.21464255769966e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "1.92740662738238e-05",
+      "moa_drugbank": "",
+      "protein_binding": "",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            }
+      ],
+      "targets": [
+            "Androgen receptor",
+            "Bile salt sulfotransferase",
+            "Cytochrome P450 1A1",
+            "Cytochrome P450 1A2",
+            "Cytochrome P450 2B6",
+            "Cytochrome P450 3A4",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Translocator protein",
+            "UDP-glucuronosyltransferase 1-1"
+      ]
+}

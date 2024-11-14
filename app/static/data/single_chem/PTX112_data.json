@@ -1,0 +1,60 @@
+{
+      "ptx_code": "PTX112",
+      "chem_name": "Finasteride",
+      "casrn": "98319-26-7",
+      "dtxsid": "DTXSID3020625",
+      "smiles": "CC(C)(C)NC(=O)[C@H]1CC[C@H]2[C@@H]3CC[C@H]4NC(=O)C=C[C@]4(C)[C@H]3CC[C@]12C",
+      "inchikey": "DBEPLOCGEIEOCV-WSBQPABSSA-N",
+      "label": "PTX112 | Finasteride",
+      "drugbank_id": "DB01216",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Genotoxicity; Hepatotoxicity; Neurotoxicity",
+      "chem_name_user": "Finasteride",
+      "mw_g_mol": "372.553",
+      "solubility_h2o_mol_liter": "0.00042152",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "2.21534e-09",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "7.04286928267671",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "14.78;15.44",
+      "pka_base": "-0.06;-0.75",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "3.03",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "3.10999998443938",
+      "source_dlipw": "LSER",
+      "freely_dissolved_fraction": "0.141323492038088",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "138.388504267244",
+      "baseline_dmagna": "95.6387026130546",
+      "baseline_celegans": "210.123806736878",
+      "baseline_xlaevis": "97.291972746758",
+      "baseline_dmelanogaster": "826.237710510073",
+      "baseline_cells": "0.000142810126359146",
+      "baseline_cells_generic_micromole_liter_free_ec10": "2.01824257554751e-05",
+      "moa_drugbank": "Finasteride acts as a competitive and specific inhibitor of Type II 5\u00ce\u00b1-reductase, a nuclear-bound steroid intracellular enzyme primarily located in the prostatic stromal cell that converts the androgen testosterone into the more active metabolite, 5\u00ce\u00b1-dihydrotestosterone (DHT).[A2132] DHT is considered to be the primary androgen playing a role in the development and enlargement of the prostate gland. It serves as the hormonal mediator for the hyperplasia upon accumulation within the prostate gland.[A178270] DHT displays a higher affinity towards androgen receptors in the prostate gland compared to testosterone[T28] and by acting on the androgen receptors, DHT modulates genes that are responsible for cell proliferation.[A178279] Responsible for the production of DHT together with type I 5\u00ce\u00b1-reductase, the type II 5\u00ce\u00b1-reductase isozyme is primarily found in the prostate, seminal vesicles, epididymides, and hair follicles as well as liver.[L6235] Although finasteride is 100-fold more selective for type II 5\u00ce\u00b1-reductase than for the type I isoenzyme,[A178183] chronic treatment with this drug may have some effect on type I 5\u00ce\u00b1-reductase, which is predominantly expressed in sebaceous glands of most regions of skin, including the scalp, and liver. It is proposed that the type I 5\u00ce\u00b1-reductase and type II 5\u00ce\u00b1-reductase is responsible for the production of one-third and two-thirds of circulating DHT, respectively. \n\nThe mechanism of action of Finasteride is based on its preferential inhibition of Type II 5\u00ce\u00b1-reductase through the formation of a stable complex with the enzyme _in vitro_ and _in vivo_.[L10565] Finasteride works selectively, where it preferentially displays a 100-fold selectivity for the human Type II 5\u00ce\u00b1-reductase over type I enzyme.[L6235] Inhibition of Type II 5\u00ce\u00b1-reductase blocks the peripheral conversion of testosterone to DHT, resulting in significant decreases in serum and tissue DHT concentrations, minimal to moderate increase in serum testosterone concentrations, and substantial increases in prostatic testosterone concentrations. As DHT appears to be the principal androgen responsible for stimulation of prostatic growth, a decrease in DHT concentrations will result in a decrease in prostatic volume (approximately 20-30% after 6-24 months of continued therapy). It is suggested that increased levels of DHT can lead to potentiated transcription of prostaglandin D2, which promotes the proliferation of prostate cancer cells.[A178189] In men with androgenic alopecia, the mechanism of action has not been fully determined, but finasteride has shown to decrease scalp DHT concentration to the levels found in the hairy scalp, reduce serum DHT, increase hair regrowth, and slow hair loss. Another study suggests that finasteride may work to reduce bleeding of prostatic origin by inhibiting vascular endothelial growth factor (VEGF) in the prostate, leading to atrophy and programmed cell death.[A178183] This may bestow the drug therapeutic benefits in patients idiopathic prostatic bleeding, bleeding during anticoagulation, or bleeding after instrumentation.[A178183]",
+      "protein_binding": "Approximately 90% of circulating finasteride is bound to plasma proteins.[L10565]",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            }
+      ],
+      "targets": [
+            "3-oxo-5-alpha-steroid 4-dehydrogenase 1",
+            "3-oxo-5-alpha-steroid 4-dehydrogenase 2",
+            "3-oxo-5-beta-steroid 4-dehydrogenase",
+            "Androgen receptor",
+            "Bile acid receptor",
+            "Estrogen-related receptor gamma",
+            "Nuclear receptor ROR-beta",
+            "Peroxisome proliferator-activated receptor delta"
+      ]
+}

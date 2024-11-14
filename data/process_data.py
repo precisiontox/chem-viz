@@ -38,7 +38,16 @@ def read_identifier_file(file_path):
         usecols="A:F",
         skiprows=0,
         index_col=None,
-    ).rename(columns={"Prec.Tox code": "ptx_code", "PREFERRED_NAME": "chem_name"})
+    ).rename(columns={
+        "Prec.Tox code": "ptx_code", 
+        "PREFERRED_NAME": "chem_name",
+        "CASRN": "casrn",
+        "DTXSID": "dtxsid",
+        "SMILES": "smiles",
+        "INCHIKEY": "inchikey",
+        }
+    )
+    df["chem_name"] = df["chem_name"].str.capitalize()
     df["label"] = df["ptx_code"] + " | " + df["chem_name"]
     df = df[df["chem_name"].notna()]
     df = df[df["ptx_code"]!="PTX164"]
@@ -74,6 +83,7 @@ def read_toxclass_file(file_path, df_identifier):
         file_path,
         sep="\t", 
     )
+    df["tox_class"] = df["tox_class"].str.capitalize() 
     df = df[df["ptx_code"].isin(df_identifier["ptx_code"].unique())]
     df = df[df["ptx_code"]!="PTX164"]
     df = df[df["score"] > 0]
@@ -87,12 +97,13 @@ def read_properties_file(file_path):
         index_col=None,
     ).rename(columns={
         "compound_name_user": "chem_name_user",
-        "dtxsid_comptox_neutral": "DTXSID",
-        "inchikey_neutral": "INCHIKEY",
-        "smiles_canonical_neutral": "SMILES",
-        "cas_neutral": "CASRN"
+        "dtxsid_comptox_neutral": "dtxsid",
+        "inchikey_neutral": "inchikey",
+        "smiles_canonical_neutral": "smiles",
+        "cas_neutral": "casrn"
     })
-    df = df.drop(columns=["DTXSID", "INCHIKEY", "SMILES", "CASRN"], axis=1)
+    df = df.drop(columns=["dtxsid", "inchikey", "smiles", "casrn"], axis=1)
+    df["chem_name_user"] = df["chem_name_user"].str.capitalize()
     df.fillna("NA", inplace=True)
     df = df.astype(str)
     properties = [col for col in df.columns if col not in ["ptx_code", "chem_name_user"]]
@@ -105,7 +116,12 @@ def read_baseline_tox_file(file_path):
         skiprows=0,
         index_col=None,
     ).rename(columns={
-        "Baseline - Daphina": "Baseline - Daphnia"
+        "Baseline - Daphina": "baseline_dmagna",
+        "Baseline - C. elegans": "baseline_celegans",
+        "Baseline - D. rerio": "baseline_drerio",
+        "Baseline - Xenopus": "baseline_xlaevis",
+        "Baseline - Drosophila": "baseline_dmelanogaster",
+        "Baseline - Cells": "baseline_cells",
     })
     df = df.drop(columns=["Compound", "CASRN", "DTXSID"], axis=1)
     df.fillna("NA", inplace=True)
@@ -211,18 +227,20 @@ def read_t3db_moa_file(file_path):
 def read_aop_file(file_path, df_ide):
     df = pd.read_excel(
         file_path,
+        engine="openpyxl",
         skiprows=0,
         index_col=None,
         sheet_name="default_1",
         usecols=["DTXSID=DTX_id", "AOP_id", "AOP_name"]
     ).rename(columns={
-        "DTXSID=DTX_id": "DTXSID"    
+        "DTXSID=DTX_id": "dtxsid"    
     })
+    df = df.apply(lambda x: x.str.replace("Î±", "α") if x.dtype == "object" else x)
     df["AOP_id"] = df["AOP_id"].astype(str)
     df["AOP_full"] = "[AOP:" + df["AOP_id"] + "] " + df["AOP_name"]
     df = df.merge(
-        df_ide[["ptx_code", "DTXSID"]],
-        on=["DTXSID"],
+        df_ide[["ptx_code", "dtxsid"]],
+        on=["dtxsid"],
         how="left"
     )
     return df
@@ -237,11 +255,11 @@ def get_chemical_node(chem_values: dict):
             "ptx_code": chem_values["ptx_code"],
             "name": chem_values["chem_name_user"],
             "label": chem_values["label"],# truncate_label(chem_values["label"], 25),
-            "cas": chem_values["CASRN"],
-            "dtxsid": chem_values["DTXSID"],
+            "cas": chem_values["casrn"],
+            "dtxsid": chem_values["dtxsid"],
             "db_id": chem_values["drugbank_id"],
-            "smiles": chem_values["SMILES"],
-            "inchi": chem_values["INCHIKEY"]
+            "smiles": chem_values["smiles"],
+            "inchi": chem_values["inchikey"]
         }
     }
     
@@ -259,7 +277,6 @@ def create_general_network(
 
     for index, row in df_chem.iterrows():
         json_elements.append(get_chemical_node(row))
-
 
     tox_classes = df_tox["tox_class"].unique()
     use_classes = df_use["use_class"].unique()
@@ -304,6 +321,8 @@ def create_general_network(
                             "role": cat_name,
                             "source": row[cat_name],
                             "target": row["ptx_code"],
+                            "ptx_code": row["ptx_code"],
+                            "chem_name": df_chem[df_chem["ptx_code"]==row["ptx_code"]]["chem_name"].values[0],
                             "color": color_dic[row[cat_name]],
                             "score": row["score"],
                             "n_refs": row["n_refs"],
@@ -320,6 +339,8 @@ def create_general_network(
                             "role": cat_name,
                             "source": row[cat_name],
                             "target": row["ptx_code"],
+                            "ptx_code": row["ptx_code"],
+                            "chem_name": df_chem[df_chem["ptx_code"]==row["ptx_code"]]["chem_name"].values[0],
                             "color": color_dic[row[cat_name]]
                         }
                     }
@@ -419,7 +440,7 @@ def get_baseline_tox_nodes_edges(chem_values: dict):
     base_nodes = []
     base_edges = []
     base_not_empty = False
-    for base in [col for col in chem_values.keys() if "aseline" in col]:
+    for base in [col for col in chem_values.keys() if "baseline" in col]:
         if str(chem_values[base]) == "NA":
             label = labels[base].replace("Baseline Toxicity - ","")+":\nn/a"
             color_bg = "#ddd"
@@ -685,7 +706,7 @@ def export_chemical_table(df):
     df = df.rename(columns=labels)
     df = df.drop(columns=["label"], axis=1)
     cols_to_print = ["Ptox code", "Compound name (user)", "Compound name", "DrugBank ID", 
-                    "CASRN", "DTXSID", "SMILES", "INCHIKEY"]
+                    "DTXSID", "CAS Number", "SMILES", "INCHIKEY"]
     cols_to_print += [col for col in df.columns if col not in cols_to_print]
     df.to_csv(chemical_table, columns=cols_to_print, index=False)
     print(f"{chemical_table} was generated")
@@ -707,7 +728,27 @@ def export_chemical_table(df):
     return
 
 
-# data files
+def export_single_chemical_data(
+    df_chem: pd.DataFrame, 
+    df_aop: pd.DataFrame, 
+    df_target: pd.DataFrame, 
+    outfile: str
+    ):
+    df_chem = df_chem.replace("NA", "")
+    df_chem = df_chem.drop(columns=["AOP_full", "target_t3db"], axis=1)
+    chem_data = df_chem.iloc[0].to_dict()
+
+    df_aop = df_aop.copy()
+    df_aop["AOP_id"] = df_aop["AOP_id"].astype(int)
+    chem_data["aop"] = df_aop[["AOP_id", "AOP_name"]].sort_values(by=["AOP_id"]).to_dict('records')
+
+    chem_data["targets"] = sorted(df_target["target_t3db"].to_list())
+
+    with open(outfile, "wt") as file_out:
+        json.dump(chem_data, file_out, indent=6)
+
+
+# Data files
 chem_ide_file = "Manuscript Chemicals - Identifiers.xlsx"
 drugbank_file = "Manuscript Chemicals - DrugBank.xlsx"
 toxclass_file = "toxicity_categories.tsv"
@@ -720,11 +761,12 @@ aop_file_simple = "Manuscript Chemicals - AOP IDs - only.xlsx"
 aop_file = "Manuscript Chemicals - AOP.xlsx"
 
 
-# output files
+# Output files
 elements_dir = "../app/static/elements/"
+data_dir = "../app/static/data/"
 basic_network_out = f"{elements_dir}basic.json"
-chemical_table = "../app/static/data/chemical_table.csv"
-chemical_table_json = "../app/static/data/chemical_table.json"
+chemical_table = f"{data_dir}chemical_table.csv"
+chemical_table_json = f"{data_dir}chemical_table.json"
 
 palette_1 = ["#6C946F", "#F4D35E", "#EE964B", "#F95738", "#D81159", "#8F2D56", "#218380", "#FFC857"]
 palette_2 = ["#894b5d", "#6868ac", "#85a1ac", "#8a5796", "#ecc371", "#f53151"]
@@ -732,7 +774,11 @@ labels = {
     "ptx_code": "Ptox code",
     "chem_name": "Compound name",
     "chem_name_user": "Compound name (user)",
+    "casrn": "CAS Number",
+    "dtxsid": "DTXSID",
     "drugbank_id": "DrugBank ID",
+    "smiles": "SMILES",
+    "inchikey": "INCHIKEY",
     "use_class": "Use Category",
     "tox_class": "Toxicity Category",
     "mw_g_mol": "Molecular Weight",
@@ -752,12 +798,12 @@ labels = {
     "freely_dissolved_fraction": "Freely Dissolved Fraction",
     "density_kg_liter": "Density",
     "source_density": "Density source",
-    "Baseline - C. elegans": "Baseline Toxicity - C. elegans",
-    "Baseline - Daphnia": "Baseline Toxicity - D. magna",
-    "Baseline - D. rerio": "Baseline Toxicity - D. rerio",
-    "Baseline - Xenopus": "Baseline Toxicity - X. laevis",
-    "Baseline - Drosophila": "Baseline Toxicity - D. melanogaster",
-    "Baseline - Cells": "Baseline Toxicity - HepG2 cells",
+    "baseline_celegans": "Baseline Toxicity - C. elegans",
+    "baseline_dmagna": "Baseline Toxicity - D. magna",
+    "baseline_drerio": "Baseline Toxicity - D. rerio",
+    "baseline_xlaevis": "Baseline Toxicity - X. laevis",
+    "baseline_dmelanogaster": "Baseline Toxicity - D. melanogaster",
+    "baseline_cells": "Baseline Toxicity - HepG2 cells",
     "baseline_cells_generic_micromole_liter_free_ec10": "Baseline Toxicity - HepG2 cells (generic micromol/l free EC10)",
     "moa_drugbank": "Mechanism of Action (DrugBank)",
     "protein_binding": "Protein Binding (DrugBank)",
@@ -801,28 +847,28 @@ colors = {
     "Pharmaceutical_border": "#515fa2",
     "Industry and consumer goods_bg": "#f399a5",
     "Industry and consumer goods_border": "#ac2b3c",
-    "Food and other consumption_border": "#8a5796",
+    "Food and other consumption_border": "#7c4389",
     "Food and other consumption_bg": "#9a67a6",
     "Personal care products_bg": "#87cbd4",
     "Personal care products_border": "#297e89",
     "Endogenous_bg": "#f4f4b3",
     "Endogenous_border": "#c6c34b",
-    "hepatotoxicity_bg": "#9dd381",
-    "hepatotoxicity_border": "#84ba65",
-    "genotoxicity_bg": "#73c6b6",
-    "genotoxicity_border": "#50b19e",
-    "hematotoxicity_bg": "#f46e81",
-    "hematotoxicity_border": "#e53546",
-    "cardiotoxicity_bg": "#69c2d6",
-    "cardiotoxicity_border": "#3a8fa3",
-    "neurotoxicity_bg": "#fc92c3",
-    "neurotoxicity_border": "#fc5696",
-    "nephrotoxicity_bg": "#956488",
-    "nephrotoxicity_border": "#8c4478",
-    "ototoxicity_bg": "#e9c4aa",
-    "ototoxicity_border": "#d3a691",
-    "immunotoxicity_bg": "#f3cf7d",
-    "immunotoxicity_border": "#c1a161",
+    "Hepatotoxicity_bg": "#9dd381",
+    "Hepatotoxicity_border": "#84ba65",
+    "Genotoxicity_bg": "#73c6b6",
+    "Genotoxicity_border": "#50b19e",
+    "Hematotoxicity_bg": "#f46e81",
+    "Hematotoxicity_border": "#e53546",
+    "Cardiotoxicity_bg": "#69c2d6",
+    "Cardiotoxicity_border": "#3a8fa3",
+    "Neurotoxicity_bg": "#fc92c3",
+    "Neurotoxicity_border": "#fc5696",
+    "Nephrotoxicity_bg": "#956488",
+    "Nephrotoxicity_border": "#8c4478",
+    "Ototoxicity_bg": "#e9c4aa",
+    "Ototoxicity_border": "#d3a691",
+    "Immunotoxicity_bg": "#f3cf7d",
+    "Immunotoxicity_border": "#c1a161",
 }
 sources = {
     "solubility_h2o_mol_liter": "source_solubility_h2o",
@@ -932,6 +978,15 @@ for chem in df_ide["ptx_code"].unique():
         df_useclass[df_useclass["ptx_code"] == chem],
         elements_dir+"single_chem/"+chem+"_network.json"
     )
+
+    export_single_chemical_data(
+        df_ide[df_ide["ptx_code"] == chem],
+        df_aop[df_aop["ptx_code"] == chem],
+        df_target_t3db[df_target_t3db["ptx_code"] == chem],
+        data_dir+"single_chem/"+chem+"_data.json"
+    )
+
+
 print(f"{len(df_ide['ptx_code'].unique())} single chemical networks were generated")
 sys.exit()
 
@@ -964,11 +1019,11 @@ for index, row in df_ide.iterrows():
                     "ptx_code": row["ptx_code"],
                     "name": row["chem_name"],
                     "label": truncate_label(row["label"], 25),
-                    "cas": row["CASRN"],
-                    "dtxsid": row["DTXSID"],
+                    "cas": row["casrn"],
+                    "dtxsid": row["dtxsid"],
                     "db_id": row["drugbank_id"],
-                    "smiles": row["SMILES"],
-                    "inchi": row["INCHIKEY"]
+                    "smiles": row["smiles"],
+                    "inchi": row["inchikey"]
                 }
             }
         )

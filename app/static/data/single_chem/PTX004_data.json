@@ -1,0 +1,93 @@
+{
+      "ptx_code": "PTX004",
+      "chem_name": "Dimethyl sulfoxide",
+      "casrn": "67-68-5",
+      "dtxsid": "DTXSID2021735",
+      "smiles": "CS(C)=O",
+      "inchikey": "IAZDPXIOMUYVGZ-UHFFFAOYSA-N",
+      "label": "PTX004 | Dimethyl sulfoxide",
+      "drugbank_id": "",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Nephrotoxicity; Genotoxicity; Immunotoxicity; Neurotoxicity; Hepatotoxicity; Ototoxicity; Hematotoxicity",
+      "chem_name_user": "Dmso",
+      "mw_g_mol": "78.133",
+      "solubility_h2o_mol_liter": "completely miscible",
+      "source_solubility_h2o": "MSDS (Sigma)",
+      "henry_coefficient_atm_m3_mol": "1.53006e-09",
+      "source_henry": "exp., EPISUITE",
+      "log_kaw_kh_rt": "7.2036012101929",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "",
+      "pka_base": "",
+      "source_pka": "",
+      "log_kow_liter_liter": "-1.35",
+      "source_kow": "experimental Hansch,C et al. (1995)",
+      "log_dlipw_ph74_liter_liter": "-1",
+      "source_dlipw": "@ -1 at logKow < -1 (Gobas 1988)",
+      "freely_dissolved_fraction": "0.942276927352634",
+      "density_kg_liter": "1.1",
+      "source_density": "MSDS (Sigma)",
+      "baseline_drerio": "1620000.0",
+      "baseline_dmagna": "216000.0",
+      "baseline_celegans": "456359.326678487",
+      "baseline_xlaevis": "31067.0488278996",
+      "baseline_dmelanogaster": "2022087.75840144",
+      "baseline_cells": "0.275927375968422",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.26",
+      "moa_drugbank": "The mechanism of dimethyl sulfoxide's actions is not well understood. Dimethyl sulfoxide has demonstrated antioxidant activity in certain biological settings. For example, the cardiovascular protective effect of dimethyl sulfoxide in copper-deficient rats is thought to occur by an antioxidant mechanism. It is also thought that dimethyl sulfoxide's possible anti-inflammatory activity is due to antioxidant action.",
+      "protein_binding": "",
+      "moa_t3db": "The mechanism of dimethyl sulfoxide's actions is not well understood. Dimethyl sulfoxide has demonstrated antioxidant activity in certain biological settings. For example, the cardiovascular protective effect of dimethyl sulfoxide in copper-deficient rats is thought to occur by an antioxidant mechanism. It is also thought that dimethyl sulfoxide's possible anti-inflammatory activity is due to antioxidant action.",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 200,
+                  "AOP_name": "Estrogen receptor activation leading to breast cancer   "
+            }
+      ],
+      "targets": [
+            "Alcohol dehydrogenase E chain",
+            "Aldo-keto reductase family 1 member C3",
+            "Beta-galactosidase",
+            "Cationic trypsin",
+            "Dihydrofolate reductase",
+            "Insulin-like growth factor-binding protein 5",
+            "Peptidyl-prolyl cis-trans isomerase F, mitochondrial",
+            "Peptidyl-prolyl cis-trans isomerase FKBP1A",
+            "Peptidyl-prolyl cis-trans isomerase FKBP4",
+            "Plasminogen activator inhibitor 1",
+            "Transthyretin",
+            "Triosephosphate isomerase",
+            "Triosephosphate isomerase, glycosomal"
+      ]
+}

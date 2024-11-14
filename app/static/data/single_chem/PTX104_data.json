@@ -1,0 +1,71 @@
+{
+      "ptx_code": "PTX104",
+      "chem_name": "5-fluorouracil",
+      "casrn": "51-21-8",
+      "dtxsid": "DTXSID2020634",
+      "smiles": "FC1=CNC(=O)NC1=O",
+      "inchikey": "GHASVSINZRGABV-UHFFFAOYSA-N",
+      "label": "PTX104 | 5-fluorouracil",
+      "drugbank_id": "DB00544",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Nephrotoxicity; Genotoxicity; Hepatotoxicity; Neurotoxicity; Ototoxicity; Hematotoxicity",
+      "chem_name_user": "5-fluorouracil",
+      "mw_g_mol": "130.078",
+      "solubility_h2o_mol_liter": "0.0891197",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "1.51587e-08",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "6.20764771374479",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "7.8",
+      "pka_base": "",
+      "source_pka": "UFZ; Sirius T3 + ACD pKa/GALAS",
+      "log_kow_liter_liter": "-0.89",
+      "source_kow": "experimental  PhysPropNCCT",
+      "log_dlipw_ph74_liter_liter": "-1",
+      "source_dlipw": "fixed @ -1 at logKow < -1 (Gobas 1988)",
+      "freely_dissolved_fraction": "0.942276927352634",
+      "density_kg_liter": "1.469",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "1620000.0",
+      "baseline_dmagna": "216000.0",
+      "baseline_celegans": "456359.326678487",
+      "baseline_xlaevis": "31067.0488278996",
+      "baseline_dmelanogaster": "2022087.75840144",
+      "baseline_cells": "0.275927375968422",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.26",
+      "moa_drugbank": "The precise mechanism of action has not been fully determined, but the main mechanism of fluorouracil is thought to be the binding of the deoxyribonucleotide of the drug (FdUMP) and the folate cofactor, N5\u00e2\u20ac\u201c10-methylenetetrahydrofolate, to thymidylate synthase (TS) to form a covalently bound ternary complex. This results in the inhibition of the formation of thymidylate from uracil, which leads to the inhibition of DNA and RNA synthesis and cell death. Fluorouracil can also be incorporated into RNA in place of uridine triphosphate (UTP), producing a fraudulent RNA and interfering with RNA processing and protein synthesis.",
+      "protein_binding": "8-12%",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            }
+      ],
+      "targets": [
+            "ATPase family AAA domain-containing protein 5",
+            "Bile acid receptor",
+            "Thymidylate synthase"
+      ]
+}

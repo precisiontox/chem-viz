@@ -1,0 +1,67 @@
+{
+      "ptx_code": "PTX007",
+      "chem_name": "Acrylamide",
+      "casrn": "79-06-1",
+      "dtxsid": "DTXSID5020027",
+      "smiles": "NC(=O)C=C",
+      "inchikey": "HRPVXLWXLXDGHG-UHFFFAOYSA-N",
+      "label": "PTX007 | Acrylamide",
+      "drugbank_id": "",
+      "use_class": "Food and other consumption",
+      "tox_class": "Genotoxicity; Cardiotoxicity; Neurotoxicity; Hepatotoxicity; Immunotoxicity; Hematotoxicity; Nephrotoxicity",
+      "chem_name_user": "Acrylamide",
+      "mw_g_mol": "71.08",
+      "solubility_h2o_mol_liter": "8.98",
+      "source_solubility_h2o": "COMPTOX",
+      "henry_coefficient_atm_m3_mol": "2.48431e-08",
+      "source_henry": "COMPTOX (Opera)",
+      "log_kaw_kh_rt": "5.99310388431804",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "15.1",
+      "pka_base": "-0.4",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "-0.67",
+      "source_kow": "Yalkowsky et al. Chemosphere 2002, 48, 487\u00e2\u20ac\u201c509",
+      "log_dlipw_ph74_liter_liter": "-0.22",
+      "source_dlipw": "LSERD, cited in Huchthausen 2023",
+      "freely_dissolved_fraction": "0.942245693301312",
+      "density_kg_liter": "0.972",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "274000.0",
+      "baseline_dmagna": "49800.0",
+      "baseline_celegans": "106179.237921188",
+      "baseline_xlaevis": "10400.303188775",
+      "baseline_dmelanogaster": "459928.159029843",
+      "baseline_cells": "0.0457940640112624",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.0431492595933766",
+      "moa_drugbank": "",
+      "protein_binding": "",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            }
+      ],
+      "targets": []
+}

@@ -1,0 +1,71 @@
+{
+      "ptx_code": "PTX110",
+      "chem_name": "Spironolactone",
+      "casrn": "52-01-7",
+      "dtxsid": "DTXSID6034186",
+      "smiles": "[H][C@@]12CC[C@@]3(CCC(=O)O3)[C@@]1(C)CC[C@@]1([H])[C@@]2([H])[C@@H](CC2=CC(=O)CC[C@]12C)SC(C)=O",
+      "inchikey": "LXMSZDCAJNLERA-ZHYRCANASA-N",
+      "label": "PTX110 | Spironolactone",
+      "drugbank_id": "DB00421",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Nephrotoxicity; Ototoxicity; Hepatotoxicity",
+      "chem_name_user": "Spironolactone",
+      "mw_g_mol": "416.58",
+      "solubility_h2o_mol_liter": "5.57862e-05",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "1.12379e-08",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "6.33762450860858",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "",
+      "pka_base": "",
+      "source_pka": "ACD/GALAS",
+      "log_kow_liter_liter": "2.78",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "2.08",
+      "source_dlipw": "LSER",
+      "freely_dissolved_fraction": "0.567542758426795",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "1448.10482305137",
+      "baseline_dmagna": "662.141022367752",
+      "baseline_celegans": "1441.1622289492",
+      "baseline_xlaevis": "412.720461034927",
+      "baseline_dmelanogaster": "5839.02049996887",
+      "baseline_cells": "0.000381043678693309",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.000216258580486694",
+      "moa_drugbank": "Spironolactone competitively inhibits aldosterone dependant sodium potassium exchange channels in the distal convoluted tubule.[Label] This action leads to increased sodium and water excretion, but more potassium retention.[Label] The increased excretion of water leads to diuretic and also antihypertensive effects.[Label]",
+      "protein_binding": ">90%.[Label] Canrenone is as much as 98% protein bound.[A178165]",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            }
+      ],
+      "targets": [
+            "Androgen receptor",
+            "Cytochrome P450 11B2, mitochondrial",
+            "Cytochrome P450 2C19",
+            "Delta-type opioid receptor",
+            "Estrogen receptor alpha",
+            "Glucocorticoid receptor",
+            "Mineralocorticoid receptor",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Peroxisome proliferator-activated receptor gamma",
+            "Progesterone receptor",
+            "Sex hormone-binding globulin"
+      ]
+}

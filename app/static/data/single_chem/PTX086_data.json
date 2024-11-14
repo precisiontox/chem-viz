@@ -1,0 +1,114 @@
+{
+      "ptx_code": "PTX086",
+      "chem_name": "Carbamazepine",
+      "casrn": "298-46-4",
+      "dtxsid": "DTXSID4022731",
+      "smiles": "NC(=O)N1C2=CC=CC=C2C=CC2=C1C=CC=C2",
+      "inchikey": "FFGPTBGBLSHEPO-UHFFFAOYSA-N",
+      "label": "PTX086 | Carbamazepine",
+      "drugbank_id": "DB00564",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Immunotoxicity; Neurotoxicity; Hepatotoxicity; Hematotoxicity; Genotoxicity; Cardiotoxicity",
+      "chem_name_user": "Carbamazepine",
+      "mw_g_mol": "236.274",
+      "solubility_h2o_mol_liter": "0.00049",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "2.24067e-10",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "8.03793177234014",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "14.3",
+      "pka_base": "0.1",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "2.45",
+      "source_kow": "experimental  PhysPropNCCT",
+      "log_dlipw_ph74_liter_liter": "3.1",
+      "source_dlipw": "LSERD, cited in Escher 2017",
+      "freely_dissolved_fraction": "0.925455944784849",
+      "density_kg_liter": "1.224",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "142.0",
+      "baseline_dmagna": "97.5",
+      "baseline_celegans": "214.088854974805",
+      "baseline_xlaevis": "98.6665629917331",
+      "baseline_dmelanogaster": "842.073499322993",
+      "baseline_cells": "0.00011984435943539",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.000110910674888414",
+      "moa_drugbank": "Carbamazepine's mechanism of action is not fully elucidated and is widely debated.[A180310,L7153] One major hypothesis is that carbamazepine inhibits sodium channel firing,  treating seizure activity. Animal research studies have demonstrated that carbamazepine exerts its effects by lowering polysynaptic nerve response and inhibiting post-tetanic potentiation. In both cats and rats, carbamazepine was shown to decrease pain caused by infraorbital nerve stimulation. A decrease in the action potential in the nucleus ventralis of the thalamus in the brain and inhibition of the lingual mandibular reflex were observed in other studies after carbamazepine use. Carbamazepine causes the above effects by binding to voltage-dependent sodium channels and preventing action potentials, which normally lead to stimulatory effects on nerves.[A180403,T634] In bipolar disorder, carbamazepine is thought to increase dopamine turnover and increase GABA transmission, treating manic and depressive symptoms.[L7216]\n\nA common issue that has arisen is resistance to this drug in up to 30% of epileptic patients, which may occur to altered metabolism in patients with variant genotypes.[A180436] A potential therapeutic target to combat carbamazepine resistance has recently been identified as the EPHX1 gene promoter, potentially conferring resistance to carbamazepine through methylation.[A180439]",
+      "protein_binding": "Carbamazepine is 75%-80% bound to plasma proteins.[A180301,L1335] One pharmacokinetic study indicates that it is 72% bound to plasma proteins.[A180424]",
+      "moa_t3db": "Carbamazepine inhibits sustained repetitive firing by blocking use-dependent sodium channels. Pain relief is believed to be associated with blockade of synaptic transmission in the trigeminal nucleus and seizure control with reduction of post-tetanic potentiation of synaptic transmission in the spinal cord. Carbamazepine also possesses anticholinergic, central antidiuretic, antiarrhythmic, muscle relaxant, antidepressant (possibly through blockade of norepinephrine release), sedative, and neuromuscular-blocking properties.",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 54,
+                  "AOP_name": "Inhibition of Na+/I- symporter (NIS) leads to learning and memory impairment  "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 97,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to population decline "
+            },
+            {
+                  "AOP_id": 98,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to decreased shelter seeking and increased predation "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 167,
+                  "AOP_name": "Early-life estrogen receptor activity leading to endometrial carcinoma in the mouse. "
+            },
+            {
+                  "AOP_id": 195,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT) inhibition leading to population increase "
+            },
+            {
+                  "AOP_id": 203,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to decreased reproductive success and population decline "
+            },
+            {
+                  "AOP_id": 204,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to increased reproductive success and population increase "
+            }
+      ],
+      "targets": [
+            "5-hydroxytryptamine receptor 1A",
+            "Androgen receptor",
+            "Bile acid receptor",
+            "D(1A) dopamine receptor",
+            "Estrogen-related receptor gamma",
+            "Glucocorticoid receptor",
+            "Hepatocyte nuclear factor 4-alpha",
+            "Histamine H1 receptor",
+            "Nuclear receptor ROR-beta",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Nuclear receptor subfamily 4 group A member 2",
+            "Sodium channel protein type 4 subunit alpha",
+            "Sodium channel protein type 5 subunit alpha",
+            "Sodium channel protein type 9 subunit alpha"
+      ]
+}

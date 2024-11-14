@@ -1,0 +1,143 @@
+{
+      "ptx_code": "PTX031",
+      "chem_name": "Dexamethasone",
+      "casrn": "50-02-2",
+      "dtxsid": "DTXSID3020384",
+      "smiles": "[H][C@@]12C[C@@H](C)[C@](O)(C(=O)CO)[C@@]1(C)C[C@H](O)[C@@]1(F)[C@@]2([H])CCC2=CC(=O)C=C[C@]12C",
+      "inchikey": "UREBDLICKHMUKA-CXSFZGCWSA-N",
+      "label": "PTX031 | Dexamethasone",
+      "drugbank_id": "DB01234",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Hematotoxicity; Ototoxicity; Neurotoxicity; Hepatotoxicity; Immunotoxicity",
+      "chem_name_user": "Dexamethasone",
+      "mw_g_mol": "392.4665",
+      "solubility_h2o_mol_liter": "0.000105",
+      "source_solubility_h2o": "COMPTOX",
+      "henry_coefficient_atm_m3_mol": "6.55994e-11",
+      "source_henry": "COMPTOX (Opera)",
+      "log_kaw_kh_rt": "8.57140980468085",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "13.02;14.13;14.97",
+      "pka_base": "",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "1.94",
+      "source_kow": "experimental Hansch,C et al. (1995)",
+      "log_dlipw_ph74_liter_liter": "1.73",
+      "source_dlipw": "LSERD, eq. 1  (?mw=1)",
+      "freely_dissolved_fraction": "0.714675602484706",
+      "density_kg_liter": "1.318",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "3220.0",
+      "baseline_dmagna": "1280.0",
+      "baseline_celegans": "2772.50315073701",
+      "baseline_xlaevis": "674.390697906975",
+      "baseline_dmelanogaster": "11347.9071338082",
+      "baseline_cells": "0.000677431409563551",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.000484143700771895",
+      "moa_drugbank": "The short term effects of corticosteroids are decreased vasodilation and permeability of capillaries, as well as decreased leukocyte migration to sites of inflammation.[A187463] Corticosteroids binding to the glucocorticoid receptor mediates changes in gene expression that lead to multiple downstream effects over hours to days.[A187463]\n\nGlucocorticoids inhibit neutrophil apoptosis and demargination; they inhibit phospholipase A2, which decreases the formation of arachidonic acid derivatives; they inhibit NF-Kappa B and other inflammatory transcription factors; they promote anti-inflammatory genes like interleukin-10.[A187463]\n\nLower doses of corticosteroids provide an anti-inflammatory effect, while higher doses are immunosuppressive.[A187463] High doses of glucocorticoids for an extended period bind to the mineralocorticoid receptor, raising sodium levels and decreasing potassium levels.[A187463]",
+      "protein_binding": "Dexamethasone is approximately 77% protein bound in plasma.[L10710] The majority of protein binding is with serum albumin.[A188559] Dexamethasone does not significantly bind to corticosteroid binding protein.[A188559]",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 36,
+                  "AOP_name": "Peroxisomal Fatty Acid Beta-Oxidation Inhibition Leading to Steatosis "
+            },
+            {
+                  "AOP_id": 54,
+                  "AOP_name": "Inhibition of Na+/I- symporter (NIS) leads to learning and memory impairment  "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 97,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to population decline "
+            },
+            {
+                  "AOP_id": 98,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to decreased shelter seeking and increased predation "
+            },
+            {
+                  "AOP_id": 123,
+                  "AOP_name": "Unknown MIE leading to reproductive dysfunction via increased HIF-1alpha transcription "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 154,
+                  "AOP_name": "Inhibition of Calcineurin Activity Leading to Impaired T-Cell Dependent Antibody Response "
+            },
+            {
+                  "AOP_id": 167,
+                  "AOP_name": "Early-life estrogen receptor activity leading to endometrial carcinoma in the mouse. "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            },
+            {
+                  "AOP_id": 195,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT) inhibition leading to population increase "
+            },
+            {
+                  "AOP_id": 200,
+                  "AOP_name": "Estrogen receptor activation leading to breast cancer   "
+            },
+            {
+                  "AOP_id": 203,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to decreased reproductive success and population decline "
+            },
+            {
+                  "AOP_id": 204,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to increased reproductive success and population increase "
+            },
+            {
+                  "AOP_id": 318,
+                  "AOP_name": "Glucocorticoid Receptor activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "Androgen receptor",
+            "Annexin A1",
+            "Aryl hydrocarbon receptor",
+            "Glucocorticoid receptor",
+            "Nitric oxide synthase, inducible",
+            "Nuclear receptor subfamily 0 group B member 1",
+            "Nuclear receptor subfamily 1 group I member 2"
+      ]
+}

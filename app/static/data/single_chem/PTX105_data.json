@@ -1,0 +1,91 @@
+{
+      "ptx_code": "PTX105",
+      "chem_name": "Methotrexate",
+      "casrn": "59-05-2",
+      "dtxsid": "DTXSID4020822",
+      "smiles": "FBOZXECLQNJBKD-ZDUSSCGKSA-N",
+      "inchikey": "CN(CC1=CN=C2C(=N1)C(=NC(=N2)N)N)C3=CC=C(C=C3)C(=O)NC(CCC(=O)O)C(=O)O",
+      "label": "PTX105 | Methotrexate",
+      "drugbank_id": "DB00563",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Cardiotoxicity; Nephrotoxicity; Hepatotoxicity; Neurotoxicity; Hematotoxicity; Ototoxicity",
+      "chem_name_user": "Methotrexate",
+      "mw_g_mol": "454.447",
+      "solubility_h2o_mol_liter": "0.000189",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "1.4525e-11",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "9.22619353077035",
+      "source_kaw": "LSER eq 1",
+      "pka_acid": "3.32;4.65;14.4",
+      "pka_base": "1.2;5.52",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "-1.85",
+      "source_kow": "experimental  PhysPropNCCT",
+      "log_dlipw_ph74_liter_liter": "-1",
+      "source_dlipw": "@ -1 at logKow < -1 (Gobas 1988)",
+      "freely_dissolved_fraction": "0.942276927352634",
+      "density_kg_liter": "1.645",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "1620000.0",
+      "baseline_dmagna": "216000.0",
+      "baseline_celegans": "",
+      "baseline_xlaevis": "",
+      "baseline_dmelanogaster": "",
+      "baseline_cells": "0.275927375968422",
+      "baseline_cells_generic_micromole_liter_free_ec10": "0.26",
+      "moa_drugbank": "Methotrexate enters tissues and is converted to a methotrexate polyglutamate by folylpolyglutamate.[A180322]\n\nMethotrexate's mechanism of action is due to its inhibition of enzymes responsible for nucleotide synthesis including  dihydrofolate reductase, thymidylate synthase, aminoimidazole caboxamide ribonucleotide transformylase (AICART), and amido phosphoribosyltransferase.[A180322] Inhibtion of nucleotide synthesis prevents cell division.\n\nIn rheumatoid arthritis, methotrexate polyglutamates inhibit AICART more than methotrexate.[A180322] This inhibition leads to accumulation of AICART ribonucleotide, which inhibits adenosine deaminase, leading to an accumulation of adenosine triphosphate and adenosine in the extracellular space, stimulating adenosine receptors, leading to anti-inflammatory action.[A180322]",
+      "protein_binding": "Methotrexate is 46.5-54% bound to plasma proteins.[A180322]",
+      "moa_t3db": "Methotrexate anti-tumor activity is a result of the inhibition of folic acid reductase, leading to inhibition of DNA synthesis and inhibition of cellular replication. The mechanism involved in its activity against rheumatoid arthritis is not known.",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            },
+            {
+                  "AOP_id": 318,
+                  "AOP_name": "Glucocorticoid Receptor activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "Bifunctional purine biosynthesis protein PURH",
+            "Cellular tumor antigen p53",
+            "Dihydrofolate reductase",
+            "Folate transporter 1",
+            "Folylpolyglutamate synthase, mitochondrial",
+            "Nuclear receptor coactivator 1",
+            "Nuclear receptor coactivator 3",
+            "Protein-arginine deiminase type-4",
+            "Serum albumin",
+            "Thymidylate synthase",
+            "Trifunctional purine biosynthetic protein adenosine-3"
+      ]
+}

@@ -1,0 +1,141 @@
+{
+      "ptx_code": "PTX107",
+      "chem_name": "17alpha-ethinylestradiol",
+      "casrn": "57-63-6",
+      "dtxsid": "DTXSID5020576",
+      "smiles": "[H][C@@]12CC[C@@](O)(C#C)[C@@]1(C)CC[C@]1([H])C3=C(CC[C@@]21[H])C=C(O)C=C3",
+      "inchikey": "BFPYWIDHMRZLRN-SLHNCBLASA-N",
+      "label": "PTX107 | 17alpha-ethinylestradiol",
+      "drugbank_id": "DB00977",
+      "use_class": "Endogenous",
+      "tox_class": "Genotoxicity; Immunotoxicity; Hepatotoxicity",
+      "chem_name_user": "17alpha-ethinylestradiol",
+      "mw_g_mol": "296.41",
+      "solubility_h2o_mol_liter": "3.93604e-05",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "9.44017e-08",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "5.41332985662394",
+      "source_kaw": "LSER eq 1 exp. Descriptors",
+      "pka_acid": "10.00;13.71",
+      "pka_base": "",
+      "source_pka": "ACD pKa/GALAS",
+      "log_kow_liter_liter": "3.67",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "3.88901954505219",
+      "source_dlipw": "LSER",
+      "freely_dissolved_fraction": "0.0671303784196809",
+      "density_kg_liter": "",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "23.4353071777423",
+      "baseline_dmagna": "22.1348775415063",
+      "baseline_celegans": "48.9783255670413",
+      "baseline_xlaevis": "32.6152259236345",
+      "baseline_dmelanogaster": "188.279651211811",
+      "baseline_cells": "2.46691735455568e-05",
+      "baseline_cells_generic_micromole_liter_free_ec10": "1.65605095541401e-06",
+      "moa_drugbank": "Ethinylestradiol is a synthetic estrogenic compound.[L11944] Use of estrogens have a number of effects on the body including reduced bone density.[A191565] Combined oral contraceptives suppress ovulation by suppressing gonadotrophic hormone, thickening cervical mucus to prevent the travel of sperm, and preventing changes in the endometrium required for implantation of a fertilized egg.[A191568,L11944] Ethinylestradiol decreases luteinizing hormone, decreasing vascularity in the endometrium.[A191571] It also increases sex hormone binding globulin.[A191571]",
+      "protein_binding": "Enthinylestradiol is 98.3-98.5% bound to albumin in serum[A191182] but also exhibits binding to sex hormone binding globulin.[A20240]",
+      "moa_t3db": "",
+      "aop": [
+            {
+                  "AOP_id": 6,
+                  "AOP_name": "Antagonist binding to PPAR\u03b1 leading to body-weight loss "
+            },
+            {
+                  "AOP_id": 18,
+                  "AOP_name": "PPAR\u03b1 activation in utero leading to impaired fertility in males "
+            },
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 34,
+                  "AOP_name": "LXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 36,
+                  "AOP_name": "Peroxisomal Fatty Acid Beta-Oxidation Inhibition Leading to Steatosis "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 58,
+                  "AOP_name": "NR1I3 (CAR) suppression leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 61,
+                  "AOP_name": "NFE2L2/FXR activation leading to hepatic steatosis "
+            },
+            {
+                  "AOP_id": 72,
+                  "AOP_name": "Epigenetic modification of PPARG leading to adipogenesis "
+            },
+            {
+                  "AOP_id": 97,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to population decline "
+            },
+            {
+                  "AOP_id": 98,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT; SERT) inhibition leading to decreased shelter seeking and increased predation "
+            },
+            {
+                  "AOP_id": 131,
+                  "AOP_name": "Aryl hydrocarbon receptor activation leading to uroporphyria "
+            },
+            {
+                  "AOP_id": 148,
+                  "AOP_name": "EGFR Activation Leading to Decreased Lung Function "
+            },
+            {
+                  "AOP_id": 167,
+                  "AOP_name": "Early-life estrogen receptor activity leading to endometrial carcinoma in the mouse. "
+            },
+            {
+                  "AOP_id": 187,
+                  "AOP_name": "Anticoagulant rodenticide inhibition of vitamin K epoxide reductase resulting coagulopathy and hemorrhage "
+            },
+            {
+                  "AOP_id": 195,
+                  "AOP_name": "5-hydroxytryptamine transporter (5-HTT) inhibition leading to population increase "
+            },
+            {
+                  "AOP_id": 200,
+                  "AOP_name": "Estrogen receptor activation leading to breast cancer   "
+            },
+            {
+                  "AOP_id": 203,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to decreased reproductive success and population decline "
+            },
+            {
+                  "AOP_id": 204,
+                  "AOP_name": "5-hydroxytryptamine transporter inhibition leading to increased reproductive success and population increase "
+            },
+            {
+                  "AOP_id": 318,
+                  "AOP_name": "Glucocorticoid Receptor activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "Androgen receptor",
+            "Bile acid receptor",
+            "Cytochrome P450 2C18",
+            "Cytochrome P450 2C19",
+            "Cytochrome P450 2C9",
+            "Cytochrome P450 2J2",
+            "Cytochrome P450 3A5",
+            "Estrogen receptor alpha",
+            "Estrogen receptor beta",
+            "Glucocorticoid receptor",
+            "Nuclear receptor subfamily 1 group I member 2",
+            "Nuclear receptor subfamily 1 group I member 3",
+            "Progesterone receptor",
+            "Sodium-dependent dopamine transporter",
+            "Sodium-dependent noradrenaline transporter",
+            "Sodium-dependent serotonin transporter",
+            "Translocator protein"
+      ]
+}

@@ -1,0 +1,58 @@
+{
+      "ptx_code": "PTX176",
+      "chem_name": "Itraconazole",
+      "casrn": "84625-61-6",
+      "dtxsid": "DTXSID3023180",
+      "smiles": "CCC(C)N1N=CN(C1=O)C1=CC=C(C=C1)N1CCN(CC1)C1=CC=C(OC[C@H]2CO[C@@](CN3C=NC=N3)(O2)C2=C(Cl)C=C(Cl)C=C2)C=C1",
+      "inchikey": "VHVPQPYKVGDNFY-ZPGVKDDISA-N",
+      "label": "PTX176 | Itraconazole",
+      "drugbank_id": "DB01167",
+      "use_class": "Pharmaceutical",
+      "tox_class": "Neurotoxicity; Hepatotoxicity; Nephrotoxicity",
+      "chem_name_user": "Itraconazole",
+      "mw_g_mol": "705.64",
+      "solubility_h2o_mol_liter": "7.11669e-10",
+      "source_solubility_h2o": "COMPTOX (OPERA)",
+      "henry_coefficient_atm_m3_mol": "5.18071e-08",
+      "source_henry": "COMPTOX",
+      "log_kaw_kh_rt": "5.67392038931682",
+      "source_kaw": "LSER",
+      "pka_acid": "",
+      "pka_base": "",
+      "source_pka": "ACD/GALAS",
+      "log_kow_liter_liter": "5.66",
+      "source_kow": "",
+      "log_dlipw_ph74_liter_liter": "5.83267365448527",
+      "source_dlipw": "Kow QSAR (\u00e2\u02c6\u2020mw = 1)",
+      "freely_dissolved_fraction": "0.00764094974955875",
+      "density_kg_liter": "1.799",
+      "source_density": "COMPTOX",
+      "baseline_drerio": "0.279031402537451",
+      "baseline_dmagna": "0.546018808983541",
+      "baseline_celegans": "1.33516315736127",
+      "baseline_xlaevis": "2.13379131106829",
+      "baseline_dmelanogaster": "4.70176124458394",
+      "baseline_cells": "5.01317605555031e-06",
+      "baseline_cells_generic_micromole_liter_free_ec10": "3.83054263261511e-08",
+      "moa_drugbank": "Itraconazole interacts with 14-&alpha; demethylase, a cytochrome P-450 enzyme necessary to convert lanosterol to ergosterol. As ergosterol is an essential component of the fungal cell membrane, inhibition of its synthesis results in increased cellular permeability causing leakage of cellular contents. Itraconazole may also inhibit endogenous respiration, interact with membrane phospholipids, inhibit the transformation of yeasts to mycelial forms, inhibit purine uptake, and impair triglyceride and/or phospholipid biosynthesis.",
+      "protein_binding": "99.80%",
+      "moa_t3db": "Itraconazole interacts with 14-&alpha; demethylase, a cytochrome P-450 enzyme necessary to convert lanosterol to ergosterol. As ergosterol is an essential component of the fungal cell membrane, inhibition of its synthesis results in increased cellular permeability causing leakage of cellular contents. Itraconazole may also inhibit endogenous respiration, interact with membrane phospholipids, inhibit the transformation of yeasts to mycelial forms, inhibit purine uptake, and impair triglyceride and/or phospholipid biosynthesis.",
+      "aop": [
+            {
+                  "AOP_id": 19,
+                  "AOP_name": "Androgen receptor antagonism leading to adverse effects in the male foetus (mammals) "
+            },
+            {
+                  "AOP_id": 57,
+                  "AOP_name": "AhR activation leading to hepatic steatosis "
+            }
+      ],
+      "targets": [
+            "C-C chemokine receptor type 4",
+            "C-X-C chemokine receptor type 1",
+            "Cytochrome P450 3A4",
+            "Lanosterol 14-alpha demethylase",
+            "Multidrug resistance protein 1",
+            "Vasopressin V2 receptor"
+      ]
+}
