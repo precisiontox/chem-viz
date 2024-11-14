@@ -172,6 +172,10 @@
                         <div class="chem-label">Use</div>
                         <div class="chem-value" id="chem-use"></div>
                     </div>
+                    <div class="chem-info-row">
+                        <div class="chem-label">Toxicity</div>
+                        <div class="chem-value" id="chem-tox"></div>
+                    </div>
                 </div>
 
                 <div class="table-tabs">
@@ -179,6 +183,7 @@
                     <button class="table-tab-btn" onclick="showTable('baseline-tox-table')">Baseline Toxicity</button>
                     <button class="table-tab-btn" onclick="showTable('aop-table')">Adverse Outcome Pathways</button>
                     <button class="table-tab-btn" onclick="showTable('targets-table')">Targets</button>
+                    <button class="table-tab-btn" onclick="showTable('moa-table')">Mechanism of Action</button>
                 </div>
         
                 <!-- Physico-chemical Properties Table -->
@@ -321,6 +326,27 @@
                         </thead>
                         <tbody id="targets-table-body">
                             <!-- Data will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="moa-table" class="chem-table-container" style="display: none;">
+                    <table class="chem-data-table">
+                        <thead>
+                            <tr>
+                                <th>Source</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>DrugBank</b></td>
+                                <td id="moa-drugbank"></td>
+                            </tr>
+                            <tr>
+                                <td><b>T3DB</b></td>
+                                <td id="moa-t3db"></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -517,13 +543,14 @@
         });
 
         function showTable(tableId) {
-            // Hide both tables
+            // Hide tables
             document.getElementById('phys-properties-table').style.display = 'none';
             document.getElementById('baseline-tox-table').style.display = 'none';
             document.getElementById('aop-table').style.display = 'none';
             document.getElementById('targets-table').style.display = 'none';
+            document.getElementById('moa-table').style.display = 'none';
 
-            // Remove 'active' class from both buttons
+            // Remove 'active' class from buttons
             document.querySelectorAll('.table-tab-btn').forEach(button => {
                 button.classList.remove('active');
             });
@@ -540,11 +567,10 @@
                 document.querySelector('.table-tab-btn:nth-child(3)').classList.add('active');
             } else if (tableId === 'targets-table') {
                 document.querySelector('.table-tab-btn:nth-child(4)').classList.add('active');
+            } else if (tableId === 'moa-table') {
+                document.querySelector('.table-tab-btn:nth-child(5)').classList.add('active');
             }
-        }
-        
-    </script>
-
+        }   
     </script>
 </body>
 </html>

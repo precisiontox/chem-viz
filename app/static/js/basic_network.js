@@ -583,6 +583,7 @@ function displayChemicalInfo(selectedChem) {
         document.getElementById('chem-smiles').textContent = data.smiles || 'N/A';
         document.getElementById('chem-inchi').textContent = data.inchikey || 'N/A';
         document.getElementById('chem-use').textContent = data.use_class || 'N/A';
+        document.getElementById('chem-tox').textContent = data.tox_class || 'N/A';
 
         document.getElementById('chem-mw').textContent = data.mw_g_mol || 'N/A';
         document.getElementById('chem-solubility').textContent = data.solubility_h2o_mol_liter || 'N/A';
@@ -609,9 +610,11 @@ function displayChemicalInfo(selectedChem) {
         document.getElementById('base-tox-cells').textContent = data.baseline_cells || 'N/A';
         document.getElementById('base-tox-cells-generic').textContent = data.baseline_cells_generic_micromole_liter_free_ec10 || 'N/A';
         document.getElementById('base-tox-xlaevis').textContent = data.baseline_xlaevis || 'N/A';
-    
+        document.getElementById('moa-drugbank').textContent = data.moa_drugbank || 'N/A';
+        document.getElementById('moa-t3db').textContent = data.moa_t3db || 'N/A';
         populateAopTable(data.aop || []);
         populateTargetsTable(data.targets || []);
+        showTable('phys-properties-table');
     });
 }
 
