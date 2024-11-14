@@ -184,9 +184,9 @@
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
                   "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n2.31756e-05 mol/liter",
+                  "combinedLabel": "Solubility (H2O):\n2.32e-05 mol/liter",
                   "value": "2.31756e-05",
-                  "hlLabel": "Solubility (H2O):\n2.31756e-05 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility (H2O):\n2.32e-05 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -198,9 +198,9 @@
                   "role": "prop",
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
-                  "combinedLabel": "Henry Coefficient:\n4.9077e-09 atm*m3/mol",
+                  "combinedLabel": "Henry Coefficient:\n4.91e-09 atm*m3/mol",
                   "value": "4.9077e-09",
-                  "hlLabel": "Henry Coefficient:\n4.9077e-09 atm*m3/mol\nSource: COMPTOX",
+                  "hlLabel": "Henry Coefficient:\n4.91e-09 atm*m3/mol\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -212,9 +212,9 @@
                   "role": "prop",
                   "id": "log_kaw_kh_rt",
                   "label": "Log Kaw",
-                  "combinedLabel": "Log Kaw:\n6.69743166470657 ",
+                  "combinedLabel": "Log Kaw:\n6.70 ",
                   "value": "6.69743166470657",
-                  "hlLabel": "Log Kaw:\n6.69743166470657 \nSource: LSER eq 1 exp. Descriptors",
+                  "hlLabel": "Log Kaw:\n6.70 \nSource: LSER eq 1 exp. Descriptors",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -282,9 +282,9 @@
                   "role": "prop",
                   "id": "freely_dissolved_fraction",
                   "label": "Freely Dissolved Fraction",
-                  "combinedLabel": "Freely Dissolved Fraction:\n0.635474480180771 ",
+                  "combinedLabel": "Freely Dissolved Fraction:\n0.64 ",
                   "value": "0.635474480180771",
-                  "hlLabel": "Freely Dissolved Fraction:\n0.635474480180771 ",
+                  "hlLabel": "Freely Dissolved Fraction:\n0.64 ",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -296,9 +296,9 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density:\n1.169 kg/liter",
+                  "combinedLabel": "Density:\n1.17 kg/liter",
                   "value": "1.169",
-                  "hlLabel": "Density:\n1.169 kg/liter\nSource: COMPTOX",
+                  "hlLabel": "Density:\n1.17 kg/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -409,7 +409,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n186.0",
+                  "label": "D. rerio:\n186.00",
                   "value": "186.0",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -421,7 +421,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n122.0",
+                  "label": "D. magna:\n122.00",
                   "value": "122.0",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -433,7 +433,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n267.791086841373",
+                  "label": "C. elegans:\n267.79",
                   "value": "267.791086841373",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -445,7 +445,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n116.71270367572",
+                  "label": "X. laevis:\n116.71",
                   "value": "116.71270367572",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -457,7 +457,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n1056.97043402194",
+                  "label": "D. melanogaster:\n1056.97",
                   "value": "1056.97043402194",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -469,7 +469,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n4.28153718352386e-05",
+                  "label": "HepG2 cells:\n4.28e-05",
                   "value": "4.28153718352386e-05",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -481,7 +481,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n2.72080761607447e-05",
+                  "label": "HepG2 cells (generic micromol/l free EC10):\n2.72e-05",
                   "value": "2.72080761607447e-05",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",

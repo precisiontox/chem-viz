@@ -1,6 +1,21 @@
 import sys
 import json
 import pandas as pd
+import math
+
+
+def format_number(number):
+    # Check if the number is very small or very large
+    try:
+        number = float(number)
+        if abs(number) < 0.01:
+            # Scientific notation with two decimal places
+            return f"{number:.2e}"
+        else:
+            # Fixed-point notation with two decimal places
+            return f"{number:.2f}"
+    except ValueError:
+        return number
 
 
 def truncate_label(label, length=25):
@@ -25,13 +40,6 @@ def wrap_label(label, length=10):
     return wrapped_label
 
 
-def format_float(value):
-    try:
-        return f"{float(value):.4f}"
-    except:
-        return value
-
-
 def read_identifier_file(file_path):
     df = pd.read_excel(
         file_path,
@@ -47,7 +55,7 @@ def read_identifier_file(file_path):
         "INCHIKEY": "inchikey",
         }
     )
-    df["chem_name"] = df["chem_name"].str.capitalize()
+    df["chem_name"] = df["chem_name"].apply(lambda x: x[0].upper() + x[1:] if isinstance(x, str) and x else x)
     df["label"] = df["ptx_code"] + " | " + df["chem_name"]
     df = df[df["chem_name"].notna()]
     df = df[df["ptx_code"]!="PTX164"]
@@ -103,7 +111,7 @@ def read_properties_file(file_path):
         "cas_neutral": "casrn"
     })
     df = df.drop(columns=["dtxsid", "inchikey", "smiles", "casrn"], axis=1)
-    df["chem_name_user"] = df["chem_name_user"].str.capitalize()
+    df["chem_name_user"] = df["chem_name_user"].apply(lambda x: x[0].upper() + x[1:] if isinstance(x, str) and x else x)
     df.fillna("NA", inplace=True)
     df = df.astype(str)
     properties = [col for col in df.columns if col not in ["ptx_code", "chem_name_user"]]
@@ -123,6 +131,8 @@ def read_baseline_tox_file(file_path):
         "Baseline - Drosophila": "baseline_dmelanogaster",
         "Baseline - Cells": "baseline_cells",
     })
+    for col in [col for col in df.columns if "baseline_" in col]:
+        df[col] = df[col].astype(float)
     df = df.drop(columns=["Compound", "CASRN", "DTXSID"], axis=1)
     df.fillna("NA", inplace=True)
     df = df.astype(str)
@@ -397,7 +407,7 @@ def get_phychem_property_nodes_edges(chem_values: dict):
             color_bg = "#ddd"
             color_border = "#9a999a"
         else:
-            combined_label = label+":\n"+str(chem_values[prop])+" "+unit
+            combined_label = label+":\n"+format_number(chem_values[prop])+" "+unit
             color_bg = colors["Physico-chemical properties_bg"]
             color_border = colors["Physico-chemical properties_border"]
             not_empty = True
@@ -446,7 +456,7 @@ def get_baseline_tox_nodes_edges(chem_values: dict):
             color_bg = "#ddd"
             color_border = "#9a999a"
         else:
-            label = labels[base].replace("Baseline Toxicity - ","")+":\n"+str(chem_values[base])
+            label = labels[base].replace("Baseline Toxicity - ","")+":\n"+format_number(float(chem_values[base]))
             color_bg = colors["Baseline Toxicity_bg"]
             color_border = colors["Baseline Toxicity_border"]
             base_not_empty = True
@@ -734,8 +744,13 @@ def export_single_chemical_data(
     df_target: pd.DataFrame, 
     outfile: str
     ):
-    df_chem = df_chem.replace("NA", "")
     df_chem = df_chem.drop(columns=["AOP_full", "target_t3db"], axis=1)
+    df_chem = df_chem.replace("NA", "")
+    for col in [col for col in df_chem.columns if "baseline_" in col]:
+        df_chem[col] = df_chem[col].apply(lambda x: format_number(x))
+    for prop in [col for col in property_cols if "source" not in col]:
+        df_chem[prop] = df_chem[prop].apply(lambda x: format_number(x))
+
     chem_data = df_chem.iloc[0].to_dict()
 
     df_aop = df_aop.copy()
