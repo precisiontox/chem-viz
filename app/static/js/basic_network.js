@@ -55,7 +55,7 @@ function displayCategoryChemicals(categoryNode) {
             `;
             tableContent = chemData.map(chem => `
                 <tr>
-                    <td>${chem.ptx_code}</td>
+                    <td><a href='/${chem.ptx_code}'>${chem.ptx_code}</a></td>
                     <td>${chem.name}</td>
                 </tr>
             `).join('');
@@ -101,7 +101,16 @@ function displayCategoryChemicals(categoryNode) {
     }
 }
 
-
+function initializeCytoscape(selectedChem = null) {
+    if (selectedChem) {
+        populateChemSelect().then(() => {
+            document.getElementById('chem-select').value = selectedChem;
+            document.getElementById('chem-select').dispatchEvent(new Event('change'));
+        });
+    } else {
+        initializeNetworkBasic();
+    }
+}
 
 // Basic Network Functions
 function initializeNetworkBasic() {
@@ -117,7 +126,7 @@ function initializeNetworkBasic() {
                 });
                 initializeBasicNetworkFeatures();
                 selectClassification(true, 'use');
-                populateChemSelect();
+                populateChemSelect(basicNetworkloaded=true);
             })
             .catch(error => console.error('Error loading elements:', error));
     }
@@ -306,7 +315,6 @@ function commonNetworkFeatures() {
 function selectClassification(first_time=false, selectedClass=null) {
     // let selectedClass = document.getElementById('category-select').value;
     let selectedNodes = cy_graph.nodes("[role^='category_" + selectedClass + "']");
-    console.log(selectedNodes);
     
     if (first_time) {
         cy_graph.elements().hide();
@@ -400,10 +408,7 @@ function toggleChemNodes(categoryNode) {
 
 
 // Single Chemical Network Functions
-function loadSingleChemNetwork() {
-    // Get the selected chemical ID (PTX code)
-    let selectedChem = document.getElementById('chem-select').value;
-
+function loadSingleChemNetwork(selectedChem) {
     // If no node is selected, reset the network
     if (!selectedChem) {
         selectClassification(true, 'use');
@@ -419,7 +424,7 @@ function loadSingleChemNetwork() {
             if (cy_graph) {
                 cy_graph.destroy();
             }
-
+      
             // Initialize the single chemical network
             cy_graph = cytoscape({
                 container: document.getElementById('cy_graph'),
@@ -428,22 +433,22 @@ function loadSingleChemNetwork() {
                 layout: circle_layout
             });
 
-            // Initialize common interactivity features
-            initializeSingleChemNetworkFeatures();
-            
-            // Display only chemical and attribute nodes
-            let selectedNode = cy_graph.getElementById(selectedChem);
-            let connectedEdges = selectedNode.connectedEdges();
-            let neighborNodes = connectedEdges.targets().add(connectedEdges.sources());
-            let selectedElements = selectedNode.union(connectedEdges).union(neighborNodes);
-            cy_graph.elements().hide();
-            selectedElements.show();
-            reLayout(selectedElements, cose_layout);
-            cy_graph.fit(selectedElements);
-            
-            isSingleChemNetwork = true;
-
+            cy_graph.ready(() => {
+                // Display only chemical and attribute nodes
+                let selectedNode = cy_graph.nodes("[role='chem']");
+                let connectedEdges = selectedNode.connectedEdges();
+                let neighborNodes = connectedEdges.targets().add(connectedEdges.sources());
+                let selectedElements = selectedNode.union(connectedEdges).union(neighborNodes);
+                cy_graph.elements().hide();
+                selectedElements.show();
+                reLayout(selectedElements, cose_layout);
+                cy_graph.fit(selectedElements);
+                
+                // Initialize interactivity features
+                initializeSingleChemNetworkFeatures();
+            });
             displayChemicalInfo(selectedChem);
+            isSingleChemNetwork = true;
         })
         .catch(error => {
             console.error(
@@ -678,25 +683,44 @@ function populateTargetsTable(data) {
 }
 
 // Utility Functions
-function populateChemSelect() {
-    const chemNodes = cy_graph.nodes("[role='chem']");
+function populateChemSelect(basicNetworkLoaded = false) {
     const select = document.getElementById('chem-select');
-
-    // Clear existing options
     select.innerHTML = '<option value="">Select a compound...</option>';
 
-    // Populate the dropdown
-    chemNodes.forEach(node => {
-        const option = document.createElement('option');
-        option.value = node.id();
-        option.textContent = node.data('label') || node.id();
-        select.appendChild(option);
-    });
-
-    // Initialize Select2 with search enabled
-    $(select).select2({
-        placeholder: "Type to search for a compound...",
-        allowClear: true
+    return new Promise((resolve, reject) => {
+        if (basicNetworkLoaded) {
+            const chemNodes = cy_graph.nodes("[role='chem']");
+            chemNodes.forEach(node => {
+                const option = document.createElement('option');
+                option.value = node.id();
+                option.textContent = node.data('label') || node.id();
+                select.appendChild(option);
+            });
+            resolve();
+        } else {
+            fetch(jsonBasic)
+                .then(response => response.json())
+                .then(elements => {
+                    const basicChemNodes = elements.filter(node => node.group === 'nodes' && node.data.role === 'chem');
+                    basicChemNodes.forEach(node => {
+                        const option = document.createElement('option');
+                        option.value = node.data.id;
+                        option.textContent = node.data.label || node.data.id;
+                        select.appendChild(option);
+                    });
+                    resolve();
+                })
+                .catch(error => {
+                    console.error('Error loading basic network for chem-select:', error);
+                    reject(error);
+                });
+        }
+    }).then(() => {
+        // Initialize Select2 after options are populated
+        $(select).select2({
+            placeholder: "Type to search for a compound...",
+            allowClear: true
+        });
     });
 }
 
@@ -722,7 +746,7 @@ function resetNetwork() {
         // Reset for single chemical network
         const selectedChem = document.getElementById('chem-select').value;
         if (selectedChem) {
-            loadSingleChemNetwork(); // Reload with the currently selected chemical
+            loadSingleChemNetwork(selectedChem); // Reload with the currently selected chemical
         }
     } else {
         // Reset for basic network

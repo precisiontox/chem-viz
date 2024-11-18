@@ -12,6 +12,12 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/<ptx_code>')
+def single_chem_network(ptx_code):
+    # Render your main HTML page but with a specific PTX code pre-selected
+    return render_template('index.html', selected_chem=ptx_code.upper())
+
+
 @app.route('/chemical_data/<selected_chem>')
 def get_chemical_info(selected_chem):
     # Define the path to your JSON data file
