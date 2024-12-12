@@ -15,7 +15,7 @@
                   "mw_g_mol": "444.44",
                   "solubility_h2o_mol_liter": "0.000948",
                   "source_solubility_h2o": "COMPTOX",
-                  "henry_coefficient_atm_m3_mol": "1.2755e-11",
+                  "henry_coefficient_atm_m3_mol": "1.2755E-11",
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "9.28262920888691",
                   "source_kaw": "LSER eq 1",
@@ -24,11 +24,18 @@
                   "source_pka": "ACD pKa/GALAS",
                   "log_kow_liter_liter": "-1.3",
                   "source_kow": "experimental  PhysPropNCCT",
-                  "log_dlipw_ph74_liter_liter": "-1",
+                  "log_dlipw_ph74_liter_liter": "-1.00",
                   "source_dlipw": "@ -1 at logKow < -1 (Gobas 1988)",
                   "freely_dissolved_fraction": "0.942276927352634",
                   "density_kg_liter": "1.718",
-                  "source_density": "COMPTOX"
+                  "source_density": "COMPTOX",
+                  "average_mass": "NA",
+                  "boiling_point": "NA",
+                  "source_boiling_point": "NA",
+                  "melting_point": "NA",
+                  "source_melting_point": "NA",
+                  "vapor_pressure": "NA",
+                  "source_vapor_pressure": "NA"
             }
       },
       {
@@ -199,7 +206,7 @@
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
                   "combinedLabel": "Henry Coefficient:\n1.28e-11 atm*m3/mol",
-                  "value": "1.2755e-11",
+                  "value": "1.2755E-11",
                   "hlLabel": "Henry Coefficient:\n1.28e-11 atm*m3/mol\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -269,7 +276,7 @@
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n-1.00 ",
-                  "value": "-1",
+                  "value": "-1.00",
                   "hlLabel": "Log Dlipw (pH 7.4):\n-1.00 \nSource: @ -1 at logKow < -1 (Gobas 1988)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -302,6 +309,62 @@
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "average_mass",
+                  "label": "Average Mass",
+                  "combinedLabel": "Average Mass:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Average Mass:\nn/a",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "boiling_point",
+                  "label": "Boiling Point",
+                  "combinedLabel": "Boiling Point:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Boiling Point:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "melting_point",
+                  "label": "Melting Point",
+                  "combinedLabel": "Melting Point:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Melting Point:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "vapor_pressure",
+                  "label": "Vapor Pressure",
+                  "combinedLabel": "Vapor Pressure:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Vapor Pressure:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -402,6 +465,46 @@
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
                   "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "average_mass",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "boiling_point",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "melting_point",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "vapor_pressure",
+                  "color": "#9a999a"
             }
       },
       {

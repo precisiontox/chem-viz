@@ -608,6 +608,13 @@ function displayChemicalInfo(selectedChem) {
         document.getElementById('chem-fdf').textContent = data.freely_dissolved_fraction || 'N/A';
         document.getElementById('chem-density').textContent = data.density_kg_liter || 'N/A';
         document.getElementById('chem-source-density').textContent = data.source_density || 'N/A';
+        document.getElementById('chem-avg-mass').textContent = data.average_mass || 'N/A';
+        document.getElementById('chem-boiling').textContent = data.boiling_point || 'N/A';
+        document.getElementById('chem-source-boiling').textContent = data.source_boiling_point || 'N/A';
+        document.getElementById('chem-melting').textContent = data.melting_point || 'N/A';
+        document.getElementById('chem-source-melting').textContent = data.source_melting_point || 'N/A';
+        document.getElementById('chem-vapor-pressure').textContent = data.vapor_pressure || 'N/A';
+        document.getElementById('chem-source-vapor-pressure').textContent = data.source_vapor_pressure || 'N/A';
         document.getElementById('base-tox-celegans').textContent = data.baseline_celegans || 'N/A';
         document.getElementById('base-tox-drerio').textContent = data.baseline_drerio || 'N/A';
         document.getElementById('base-tox-dmagna').textContent = data.baseline_dmagna || 'N/A';

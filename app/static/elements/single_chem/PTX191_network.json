@@ -15,20 +15,27 @@
                   "mw_g_mol": "331.347",
                   "solubility_h2o_mol_liter": "0.00657581",
                   "source_solubility_h2o": "COMPTOX (OPERA)",
-                  "henry_coefficient_atm_m3_mol": "9.23646e-12",
+                  "henry_coefficient_atm_m3_mol": "9.23646E-12",
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "9.42280411804157",
                   "source_kaw": "LSER eq 1 exp. Descriptors",
                   "pka_acid": "5.86",
-                  "pka_base": "NA",
+                  "pka_base": "",
                   "source_pka": "ACD/GALAS",
                   "log_kow_liter_liter": "0.28",
-                  "source_kow": "NA",
+                  "source_kow": "",
                   "log_dlipw_ph74_liter_liter": "-2.24",
-                  "source_dlipw": "Kow QSAR (\u00e2\u02c6\u2020mw = 1)",
+                  "source_dlipw": "Kow QSAR (\u2206mw = 1)",
                   "freely_dissolved_fraction": "0.942276927352634",
                   "density_kg_liter": "1.374",
-                  "source_density": "COMPTOX"
+                  "source_density": "COMPTOX",
+                  "average_mass": 331.347,
+                  "boiling_point": "NA",
+                  "source_boiling_point": "NA",
+                  "melting_point": "255.0 \u00b0C",
+                  "source_melting_point": "LKT Labs (Chemical company)",
+                  "vapor_pressure": "NA",
+                  "source_vapor_pressure": "NA"
             }
       },
       {
@@ -199,7 +206,7 @@
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
                   "combinedLabel": "Henry Coefficient:\n9.24e-12 atm*m3/mol",
-                  "value": "9.23646e-12",
+                  "value": "9.23646E-12",
                   "hlLabel": "Henry Coefficient:\n9.24e-12 atm*m3/mol\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -240,12 +247,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\nn/a",
-                  "value": "NA",
-                  "hlLabel": "pKa (base):\nn/a\nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (base):\n ",
+                  "value": "",
+                  "hlLabel": "pKa (base):\n \nSource: ACD/GALAS",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -256,7 +263,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n0.28 ",
                   "value": "0.28",
-                  "hlLabel": "Log Kow:\n0.28 \nSource: NA",
+                  "hlLabel": "Log Kow:\n0.28 ",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -270,7 +277,7 @@
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n-2.24 ",
                   "value": "-2.24",
-                  "hlLabel": "Log Dlipw (pH 7.4):\n-2.24 \nSource: Kow QSAR (\u00e2\u02c6\u2020mw = 1)",
+                  "hlLabel": "Log Dlipw (pH 7.4):\n-2.24 \nSource: Kow QSAR (\u2206mw = 1)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -302,6 +309,62 @@
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "average_mass",
+                  "label": "Average Mass",
+                  "combinedLabel": "Average Mass:\n331.35 ",
+                  "value": 331.347,
+                  "hlLabel": "Average Mass:\n331.35 ",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "boiling_point",
+                  "label": "Boiling Point",
+                  "combinedLabel": "Boiling Point:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Boiling Point:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "melting_point",
+                  "label": "Melting Point",
+                  "combinedLabel": "Melting Point:\n255.0 \u00b0C ",
+                  "value": "255.0 \u00b0C",
+                  "hlLabel": "Melting Point:\n255.0 \u00b0C \nSource: LKT Labs (Chemical company)",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "vapor_pressure",
+                  "label": "Vapor Pressure",
+                  "combinedLabel": "Vapor Pressure:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Vapor Pressure:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -361,7 +424,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {
@@ -402,6 +465,46 @@
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
                   "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "average_mass",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "boiling_point",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "melting_point",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "vapor_pressure",
+                  "color": "#9a999a"
             }
       },
       {

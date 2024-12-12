@@ -13,22 +13,29 @@
                   "smiles": "CC(=O)N1CCN(CC1)C1=CC=C(OC[C@H]2CO[C@@](CN3C=CN=C3)(O2)C2=CC=C(Cl)C=C2Cl)C=C1",
                   "inchi": "XMAYWYJOQHXEEK-OZXSUGGESA-N",
                   "mw_g_mol": "531.43",
-                  "solubility_h2o_mol_liter": "0.000157623",
+                  "solubility_h2o_mol_liter": "1.57623E-4",
                   "source_solubility_h2o": "COMPTOX (OPERA)",
-                  "henry_coefficient_atm_m3_mol": "4.41965e-08",
+                  "henry_coefficient_atm_m3_mol": "4.41965E-8",
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "5.74292179367983",
                   "source_kaw": "LSER eq 1 exp. Descriptors",
-                  "pka_acid": "NA",
+                  "pka_acid": "",
                   "pka_base": "3.33;5.74",
                   "source_pka": "Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
                   "log_kow_liter_liter": "4.35",
-                  "source_kow": "NA",
+                  "source_kow": "",
                   "log_dlipw_ph74_liter_liter": "3.44154949806068",
                   "source_dlipw": "LSER",
                   "freely_dissolved_fraction": "0.288249412087226",
-                  "density_kg_liter": "NA",
-                  "source_density": "COMPTOX"
+                  "density_kg_liter": "",
+                  "source_density": "COMPTOX",
+                  "average_mass": 531.43,
+                  "boiling_point": "NA",
+                  "source_boiling_point": "NA",
+                  "melting_point": "146.0 \u00b0C",
+                  "source_melting_point": "Biosynth (Chemical company)",
+                  "vapor_pressure": "NA",
+                  "source_vapor_pressure": "NA"
             }
       },
       {
@@ -185,7 +192,7 @@
                   "id": "solubility_h2o_mol_liter",
                   "label": "Solubility (H2O)",
                   "combinedLabel": "Solubility (H2O):\n1.58e-04 mol/liter",
-                  "value": "0.000157623",
+                  "value": "1.57623E-4",
                   "hlLabel": "Solubility (H2O):\n1.58e-04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -199,7 +206,7 @@
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
                   "combinedLabel": "Henry Coefficient:\n4.42e-08 atm*m3/mol",
-                  "value": "4.41965e-08",
+                  "value": "4.41965E-8",
                   "hlLabel": "Henry Coefficient:\n4.42e-08 atm*m3/mol\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -226,12 +233,12 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\nn/a",
-                  "value": "NA",
-                  "hlLabel": "pKa (acid):\nn/a\nSource: Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
+                  "combinedLabel": "pKa (acid):\n ",
+                  "value": "",
+                  "hlLabel": "pKa (acid):\n \nSource: Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -256,7 +263,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n4.35 ",
                   "value": "4.35",
-                  "hlLabel": "Log Kow:\n4.35 \nSource: NA",
+                  "hlLabel": "Log Kow:\n4.35 ",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -296,9 +303,65 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density:\nn/a",
+                  "combinedLabel": "Density:\n kg/liter",
+                  "value": "",
+                  "hlLabel": "Density:\n kg/liter\nSource: COMPTOX",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "average_mass",
+                  "label": "Average Mass",
+                  "combinedLabel": "Average Mass:\n531.43 ",
+                  "value": 531.43,
+                  "hlLabel": "Average Mass:\n531.43 ",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "boiling_point",
+                  "label": "Boiling Point",
+                  "combinedLabel": "Boiling Point:\nn/a",
                   "value": "NA",
-                  "hlLabel": "Density:\nn/a\nSource: COMPTOX",
+                  "hlLabel": "Boiling Point:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "melting_point",
+                  "label": "Melting Point",
+                  "combinedLabel": "Melting Point:\n146.0 \u00b0C ",
+                  "value": "146.0 \u00b0C",
+                  "hlLabel": "Melting Point:\n146.0 \u00b0C \nSource: Biosynth (Chemical company)",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "vapor_pressure",
+                  "label": "Vapor Pressure",
+                  "combinedLabel": "Vapor Pressure:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Vapor Pressure:\nn/a\nSource: NA",
                   "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
@@ -351,7 +414,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_acid",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {
@@ -401,6 +464,46 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "average_mass",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "boiling_point",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "melting_point",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "vapor_pressure",
                   "color": "#9a999a"
             }
       },

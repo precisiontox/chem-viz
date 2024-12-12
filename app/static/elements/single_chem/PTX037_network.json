@@ -5,7 +5,7 @@
                   "role": "chem",
                   "id": "PTX037",
                   "ptx_code": "PTX037",
-                  "name": "Valproic acid",
+                  "name": "valproic acid",
                   "label": "PTX037 | Valproic acid",
                   "cas": "99-66-1",
                   "dtxsid": "DTXSID6023733",
@@ -15,20 +15,27 @@
                   "mw_g_mol": "144.2132",
                   "solubility_h2o_mol_liter": "0.0260016",
                   "source_solubility_h2o": "COMPTOX",
-                  "henry_coefficient_atm_m3_mol": "8.31548e-07",
+                  "henry_coefficient_atm_m3_mol": "8.31548E-7",
                   "source_henry": "COMPTOX (Opera)",
                   "log_kaw_kh_rt": "4.46842234848348",
                   "source_kaw": "LSER eq 1",
                   "pka_acid": "4.52",
-                  "pka_base": "NA",
+                  "pka_base": "",
                   "source_pka": "Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
                   "log_kow_liter_liter": "2.75",
                   "source_kow": "experimental Sangster et al. (1993)",
-                  "log_dlipw_ph74_liter_liter": "1.9",
+                  "log_dlipw_ph74_liter_liter": "1.90",
                   "source_dlipw": "Kow-QSAR (?mw=1)",
                   "freely_dissolved_fraction": "0.547614505020103",
                   "density_kg_liter": "0.95",
-                  "source_density": "COMPTOX"
+                  "source_density": "COMPTOX",
+                  "average_mass": 144.214,
+                  "boiling_point": "219.5 \u00b0C",
+                  "source_boiling_point": "Alfa Aesar (Chemical company)",
+                  "melting_point": "125.0 \u00b0C",
+                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
+                  "vapor_pressure": "NA",
+                  "source_vapor_pressure": "NA"
             }
       },
       {
@@ -199,7 +206,7 @@
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
                   "combinedLabel": "Henry Coefficient:\n8.32e-07 atm*m3/mol",
-                  "value": "8.31548e-07",
+                  "value": "8.31548E-7",
                   "hlLabel": "Henry Coefficient:\n8.32e-07 atm*m3/mol\nSource: COMPTOX (Opera)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -240,12 +247,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\nn/a",
-                  "value": "NA",
-                  "hlLabel": "pKa (base):\nn/a\nSource: Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
+                  "combinedLabel": "pKa (base):\n ",
+                  "value": "",
+                  "hlLabel": "pKa (base):\n \nSource: Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -269,7 +276,7 @@
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n1.90 ",
-                  "value": "1.9",
+                  "value": "1.90",
                   "hlLabel": "Log Dlipw (pH 7.4):\n1.90 \nSource: Kow-QSAR (?mw=1)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -302,6 +309,62 @@
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "average_mass",
+                  "label": "Average Mass",
+                  "combinedLabel": "Average Mass:\n144.21 ",
+                  "value": 144.214,
+                  "hlLabel": "Average Mass:\n144.21 ",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "boiling_point",
+                  "label": "Boiling Point",
+                  "combinedLabel": "Boiling Point:\n219.5 \u00b0C ",
+                  "value": "219.5 \u00b0C",
+                  "hlLabel": "Boiling Point:\n219.5 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "melting_point",
+                  "label": "Melting Point",
+                  "combinedLabel": "Melting Point:\n125.0 \u00b0C ",
+                  "value": "125.0 \u00b0C",
+                  "hlLabel": "Melting Point:\n125.0 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "vapor_pressure",
+                  "label": "Vapor Pressure",
+                  "combinedLabel": "Vapor Pressure:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Vapor Pressure:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -361,7 +424,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {
@@ -402,6 +465,46 @@
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
                   "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "average_mass",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "boiling_point",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "melting_point",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "vapor_pressure",
+                  "color": "#9a999a"
             }
       },
       {

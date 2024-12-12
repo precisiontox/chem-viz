@@ -13,9 +13,9 @@
                   "smiles": "OC1(CCN(CCCC(=O)C2=CC=C(F)C=C2)CC1)C1=CC=C(Cl)C=C1",
                   "inchi": "LNEPOXFFQSENCJ-UHFFFAOYSA-N",
                   "mw_g_mol": "375.87",
-                  "solubility_h2o_mol_liter": "3.72e-05",
+                  "solubility_h2o_mol_liter": "0.0000372",
                   "source_solubility_h2o": "COMPTOX (OPERA)",
-                  "henry_coefficient_atm_m3_mol": "4.9482e-11",
+                  "henry_coefficient_atm_m3_mol": "4.9482E-11",
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "8.69386242688595",
                   "source_kaw": "LSER eq 1",
@@ -23,12 +23,19 @@
                   "pka_base": "8.68",
                   "source_pka": "ACD pKa/GALAS",
                   "log_kow_liter_liter": "4.28",
-                  "source_kow": "Yalkowsky et al. Chemosphere 2002, 48, 487\u00e2\u20ac\u201c509",
+                  "source_kow": "Yalkowsky et al. Chemosphere 2002, 48, 487\u2013509",
                   "log_dlipw_ph74_liter_liter": "2.83",
                   "source_dlipw": "LSERD, eq. 1  (?mw=1)",
                   "freely_dissolved_fraction": "0.222623148569519",
                   "density_kg_liter": "1.253",
-                  "source_density": "COMPTOX"
+                  "source_density": "COMPTOX",
+                  "average_mass": 375.87,
+                  "boiling_point": "NA",
+                  "source_boiling_point": "NA",
+                  "melting_point": "152.0 \u00b0C",
+                  "source_melting_point": "Tokyo Chemical Industry (Chemical company)",
+                  "vapor_pressure": "NA",
+                  "source_vapor_pressure": "NA"
             }
       },
       {
@@ -185,7 +192,7 @@
                   "id": "solubility_h2o_mol_liter",
                   "label": "Solubility (H2O)",
                   "combinedLabel": "Solubility (H2O):\n3.72e-05 mol/liter",
-                  "value": "3.72e-05",
+                  "value": "0.0000372",
                   "hlLabel": "Solubility (H2O):\n3.72e-05 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -199,7 +206,7 @@
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
                   "combinedLabel": "Henry Coefficient:\n4.95e-11 atm*m3/mol",
-                  "value": "4.9482e-11",
+                  "value": "4.9482E-11",
                   "hlLabel": "Henry Coefficient:\n4.95e-11 atm*m3/mol\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -256,7 +263,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n4.28 ",
                   "value": "4.28",
-                  "hlLabel": "Log Kow:\n4.28 \nSource: Yalkowsky et al. Chemosphere 2002, 48, 487\u00e2\u20ac\u201c509",
+                  "hlLabel": "Log Kow:\n4.28 \nSource: Yalkowsky et al. Chemosphere 2002, 48, 487\u2013509",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -302,6 +309,62 @@
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "average_mass",
+                  "label": "Average Mass",
+                  "combinedLabel": "Average Mass:\n375.87 ",
+                  "value": 375.87,
+                  "hlLabel": "Average Mass:\n375.87 ",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "boiling_point",
+                  "label": "Boiling Point",
+                  "combinedLabel": "Boiling Point:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Boiling Point:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "melting_point",
+                  "label": "Melting Point",
+                  "combinedLabel": "Melting Point:\n152.0 \u00b0C ",
+                  "value": "152.0 \u00b0C",
+                  "hlLabel": "Melting Point:\n152.0 \u00b0C \nSource: Tokyo Chemical Industry (Chemical company)",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "vapor_pressure",
+                  "label": "Vapor Pressure",
+                  "combinedLabel": "Vapor Pressure:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Vapor Pressure:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -402,6 +465,46 @@
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
                   "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "average_mass",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "boiling_point",
+                  "color": "#9a999a"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "melting_point",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "vapor_pressure",
+                  "color": "#9a999a"
             }
       },
       {

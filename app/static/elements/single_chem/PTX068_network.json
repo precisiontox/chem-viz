@@ -5,7 +5,7 @@
                   "role": "chem",
                   "id": "PTX068",
                   "ptx_code": "PTX068",
-                  "name": "O-Aminophenol",
+                  "name": "o-Aminophenol",
                   "label": "PTX068 | 2-Aminophenol",
                   "cas": "95-55-6",
                   "dtxsid": "DTXSID8024498",
@@ -15,7 +15,7 @@
                   "mw_g_mol": "109.128",
                   "solubility_h2o_mol_liter": "0.186017",
                   "source_solubility_h2o": "COMPTOX",
-                  "henry_coefficient_atm_m3_mol": "4.94481e-08",
+                  "henry_coefficient_atm_m3_mol": "4.94481E-8",
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "5.69416006296461",
                   "source_kaw": "Comptox",
@@ -28,7 +28,14 @@
                   "source_dlipw": "Kow-QSAR (?mw=1)",
                   "freely_dissolved_fraction": "0.941938883800628",
                   "density_kg_liter": "1.203",
-                  "source_density": "COMPTOX"
+                  "source_density": "COMPTOX",
+                  "average_mass": 109.128,
+                  "boiling_point": "150.0 \u00b0C",
+                  "source_boiling_point": "Alfa Aesar (Chemical company)",
+                  "melting_point": "172.0 \u00b0C",
+                  "source_melting_point": "Biosynth (Chemical company)",
+                  "vapor_pressure": "NA",
+                  "source_vapor_pressure": "NA"
             }
       },
       {
@@ -199,7 +206,7 @@
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
                   "combinedLabel": "Henry Coefficient:\n4.94e-08 atm*m3/mol",
-                  "value": "4.94481e-08",
+                  "value": "4.94481E-8",
                   "hlLabel": "Henry Coefficient:\n4.94e-08 atm*m3/mol\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -305,6 +312,62 @@
             }
       },
       {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "average_mass",
+                  "label": "Average Mass",
+                  "combinedLabel": "Average Mass:\n109.13 ",
+                  "value": 109.128,
+                  "hlLabel": "Average Mass:\n109.13 ",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "boiling_point",
+                  "label": "Boiling Point",
+                  "combinedLabel": "Boiling Point:\n150.0 \u00b0C ",
+                  "value": "150.0 \u00b0C",
+                  "hlLabel": "Boiling Point:\n150.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "melting_point",
+                  "label": "Melting Point",
+                  "combinedLabel": "Melting Point:\n172.0 \u00b0C ",
+                  "value": "172.0 \u00b0C",
+                  "hlLabel": "Melting Point:\n172.0 \u00b0C \nSource: Biosynth (Chemical company)",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "vapor_pressure",
+                  "label": "Vapor Pressure",
+                  "combinedLabel": "Vapor Pressure:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Vapor Pressure:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
+            }
+      },
+      {
             "group": "edges",
             "data": {
                   "role": "prop",
@@ -402,6 +465,46 @@
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
                   "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "average_mass",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "boiling_point",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "melting_point",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "vapor_pressure",
+                  "color": "#9a999a"
             }
       },
       {

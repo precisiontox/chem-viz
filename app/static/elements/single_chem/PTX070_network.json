@@ -13,22 +13,29 @@
                   "smiles": "[H][C@@]12COC3=C(C=C(OC)C(OC)=C3)[C@]1([H])C(=O)C1=CC=C3O[C@H](CC3=C1O2)C(C)=C",
                   "inchi": "JUVIOZPCNVVQFO-HBGVWJBISA-N",
                   "mw_g_mol": "394.423",
-                  "solubility_h2o_mol_liter": "2.48e-05",
+                  "solubility_h2o_mol_liter": "0.0000248",
                   "source_solubility_h2o": "COMPTOX",
-                  "henry_coefficient_atm_m3_mol": "1.81047e-09",
+                  "henry_coefficient_atm_m3_mol": "1.81047E-9",
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "7.13051833900248",
                   "source_kaw": "LSER eq 1",
-                  "pka_acid": "NA",
-                  "pka_base": "NA",
-                  "source_pka": "NA",
+                  "pka_acid": "",
+                  "pka_base": "",
+                  "source_pka": "",
                   "log_kow_liter_liter": "4.1",
-                  "source_kow": "Yalkowsky et al. Chemosphere 2002, 48, 487\u00e2\u20ac\u201c509",
+                  "source_kow": "Yalkowsky et al. Chemosphere 2002, 48, 487\u2013509",
                   "log_dlipw_ph74_liter_liter": "4.22",
                   "source_dlipw": "LSERD, eq. 1  (?mw=1)",
                   "freely_dissolved_fraction": "0.11640924998038",
                   "density_kg_liter": "1.293",
-                  "source_density": "COMPTOX"
+                  "source_density": "COMPTOX",
+                  "average_mass": 394.423,
+                  "boiling_point": "215.0 \u00b0C",
+                  "source_boiling_point": "Oxford University Chemical Safety Data (No longer updated)",
+                  "melting_point": "159.0 \u00b0C",
+                  "source_melting_point": "MolMall",
+                  "vapor_pressure": "NA",
+                  "source_vapor_pressure": "NA"
             }
       },
       {
@@ -185,7 +192,7 @@
                   "id": "solubility_h2o_mol_liter",
                   "label": "Solubility (H2O)",
                   "combinedLabel": "Solubility (H2O):\n2.48e-05 mol/liter",
-                  "value": "2.48e-05",
+                  "value": "0.0000248",
                   "hlLabel": "Solubility (H2O):\n2.48e-05 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -199,7 +206,7 @@
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
                   "combinedLabel": "Henry Coefficient:\n1.81e-09 atm*m3/mol",
-                  "value": "1.81047e-09",
+                  "value": "1.81047E-9",
                   "hlLabel": "Henry Coefficient:\n1.81e-09 atm*m3/mol\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -226,12 +233,12 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\nn/a",
-                  "value": "NA",
-                  "hlLabel": "pKa (acid):\nn/a\nSource: NA",
+                  "combinedLabel": "pKa (acid):\n ",
+                  "value": "",
+                  "hlLabel": "pKa (acid):\n ",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -240,12 +247,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\nn/a",
-                  "value": "NA",
-                  "hlLabel": "pKa (base):\nn/a\nSource: NA",
+                  "combinedLabel": "pKa (base):\n ",
+                  "value": "",
+                  "hlLabel": "pKa (base):\n ",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -256,7 +263,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n4.10 ",
                   "value": "4.1",
-                  "hlLabel": "Log Kow:\n4.10 \nSource: Yalkowsky et al. Chemosphere 2002, 48, 487\u00e2\u20ac\u201c509",
+                  "hlLabel": "Log Kow:\n4.10 \nSource: Yalkowsky et al. Chemosphere 2002, 48, 487\u2013509",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -302,6 +309,62 @@
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "average_mass",
+                  "label": "Average Mass",
+                  "combinedLabel": "Average Mass:\n394.42 ",
+                  "value": 394.423,
+                  "hlLabel": "Average Mass:\n394.42 ",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "boiling_point",
+                  "label": "Boiling Point",
+                  "combinedLabel": "Boiling Point:\n215.0 \u00b0C ",
+                  "value": "215.0 \u00b0C",
+                  "hlLabel": "Boiling Point:\n215.0 \u00b0C \nSource: Oxford University Chemical Safety Data (No longer updated)",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "melting_point",
+                  "label": "Melting Point",
+                  "combinedLabel": "Melting Point:\n159.0 \u00b0C ",
+                  "value": "159.0 \u00b0C",
+                  "hlLabel": "Melting Point:\n159.0 \u00b0C \nSource: MolMall",
+                  "shape": "round-diamond",
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "prop",
+                  "id": "vapor_pressure",
+                  "label": "Vapor Pressure",
+                  "combinedLabel": "Vapor Pressure:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Vapor Pressure:\nn/a\nSource: NA",
+                  "shape": "round-diamond",
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -351,7 +414,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_acid",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {
@@ -361,7 +424,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {
@@ -402,6 +465,46 @@
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
                   "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "average_mass",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "boiling_point",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "melting_point",
+                  "color": "#007cc1"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "prop",
+                  "subrole": "attribute",
+                  "source": "Physico-chemical properties",
+                  "target": "vapor_pressure",
+                  "color": "#9a999a"
             }
       },
       {

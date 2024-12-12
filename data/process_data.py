@@ -1,7 +1,19 @@
+"""
+Requires file "../app/config.yml" with the following parameters:
+psql_host: <psql database host>
+psql_user: <psql user>
+psql_pass: <psql user password
+psql_db_name: <psql database name>
+
+"""
 import sys
 import json
 import pandas as pd
 import math
+import yaml
+import pandas.io.sql as sqlio
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
 
 def format_number(number):
@@ -38,6 +50,24 @@ def wrap_label(label, length=10):
             line_len = 0
         line_len += len(word)
     return wrapped_label
+
+
+def connect_to_database(database_url):
+    engine = create_engine(database_url, echo=False)
+    return engine
+
+
+def read_chemical_database(engine, cols_to_use):
+    df = sqlio.read_sql_query("SELECT * FROM chemical_list", con=engine)
+
+    df.rename(columns={
+                "compound_name_user": "chem_name_user",
+                "log_kow_liter_liter_used": "log_kow_liter_liter",
+                "source_kow_used": "source_kow"
+            }, inplace=True)
+    df = df[["ptx_code", "chem_name_user"]+ cols_to_use]
+
+    return df
 
 
 def read_identifier_file(file_path):
@@ -116,6 +146,44 @@ def read_properties_file(file_path):
     df = df.astype(str)
     properties = [col for col in df.columns if col not in ["ptx_code", "chem_name_user"]]
     return df, properties
+
+
+def read_properties_file_2(file_path):
+    df = pd.read_excel(
+        file_path,
+        skiprows=0,
+        index_col=None,
+    ).rename(columns={
+        "DTXSID": "dtxsid",
+        "AVERAGE_MASS": "average_mass"
+    })
+
+    # Pivot the dataframe to reshape it
+    df_pivot = df.pivot(index=["dtxsid", "average_mass"], columns="NAME", values=["Value", "SOURCE"])
+    
+    # Flatten the multi-level columns
+    df_pivot.columns = [' '.join(col).strip() for col in df_pivot.columns.values]
+
+    # Reset the index to make it a flat table
+    df_pivot.reset_index(inplace=True)
+
+    df_pivot.rename(columns={
+        "Value Boiling Point": "boiling_point",
+        "Value Melting Point": "melting_point",
+        "Value Vapor Pressure": "vapor_pressure",
+        "SOURCE Boiling Point": "source_boiling_point",
+        "SOURCE Melting Point": "source_melting_point",
+        "SOURCE Vapor Pressure": "source_vapor_pressure"
+        }, inplace=True)
+    prop_cols = [
+        "average_mass",
+        "boiling_point", "source_boiling_point", 
+        "melting_point", "source_melting_point",
+        "vapor_pressure", "source_vapor_pressure"
+    ]
+    df_pivot = df_pivot[["dtxsid"] + prop_cols]
+    
+    return df_pivot, prop_cols
 
 
 def read_baseline_tox_file(file_path):
@@ -725,14 +793,11 @@ def export_chemical_table(df):
     df = df.astype(object).where(pd.notnull(df), None)
 
     # Convert DataFrame to a list of dictionaries with column order preserved
-    data = df.to_dict(orient='records')
-
-    # Convert the list of dictionaries to JSON, ensuring the order is preserved
-    json_data = json.dumps(data, indent=2)
+    json_data = df.to_dict(orient='records')
 
     # Optionally, write this JSON data to a file
     with open(chemical_table_json, 'wt') as file_out:
-        json.dump(data, file_out, indent=6)
+        json.dump(json_data, file_out, indent=2)
     print(f"{chemical_table_json} was generated")
 
     return
@@ -763,12 +828,14 @@ def export_single_chemical_data(
         json.dump(chem_data, file_out, indent=6)
 
 
+
 # Data files
 chem_ide_file = "Manuscript Chemicals - Identifiers.xlsx"
 drugbank_file = "Manuscript Chemicals - DrugBank.xlsx"
 toxclass_file = "toxicity_categories.tsv"
 use_file = "Manuscript Chemicals - Identifiers_with_category.xlsx"
-properties_file = "Visulaization P-Chem Dataset ver1.xlsx"
+properties_file = "Visulaization P-Chem Dataset ver1_updated.xlsx"
+properties_file_2 = "Visulaization P-Chem Dataset ver2.xlsx"
 baseline_file = "Visualization Data - Baseline Toxicity.xlsx"
 drugbank_moa_file = "Manuscript Chemicals - DrugBank - Target & MoA.xlsx"
 t3db_moa_file = "Manuscript Chemicals - T3Db - Target & MoA.xlsx"
@@ -800,19 +867,19 @@ labels = {
     "solubility_h2o_mol_liter": "Solubility (H2O)",
     "source_solubility_h2o": "Solubility (H2O) source",
     "henry_coefficient_atm_m3_mol": "Henry Coefficient",
-    "source_henry": "Henry Coefficient source",
+    "source_henry": "Henry coefficient Source",
     "log_kaw_kh_rt": "Log Kaw",
-    "source_kaw": "Log Kaw source",
+    "source_kaw": "Log Kaw Source",
     "log_kow_liter_liter": "Log Kow",
-    "source_kow": "Log Kow source",
+    "source_kow": "Log Kow Source",
     "pka_acid": "pKa (acid)",
     "pka_base": "pKa (base)",
-    "source_pka": "pKa source",
+    "source_pka": "pKa Source",
     "log_dlipw_ph74_liter_liter": "Log Dlipw (pH 7.4)",
-    "source_dlipw": "Log Dlipw source",
+    "source_dlipw": "Log Dlipw Source",
     "freely_dissolved_fraction": "Freely Dissolved Fraction",
     "density_kg_liter": "Density",
-    "source_density": "Density source",
+    "source_density": "Density Source",
     "baseline_celegans": "Baseline Toxicity - C. elegans",
     "baseline_dmagna": "Baseline Toxicity - D. magna",
     "baseline_drerio": "Baseline Toxicity - D. rerio",
@@ -824,7 +891,14 @@ labels = {
     "protein_binding": "Protein Binding (DrugBank)",
     "moa_t3db": "Mechanism of Action (T3DB)",
     "target_t3db": "Target Name (T3DB)",
-    "AOP_full": "Adverse Outcome Pathway"
+    "AOP_full": "Adverse Outcome Pathway",
+    "average_mass": "Average Mass",
+    "boiling_point": "Boiling Point",
+    "melting_point": "Melting Point",
+    "vapor_pressure": "Vapor Pressure",
+    "source_boiling_point": "Boiling Point Source",
+    "source_melting_point": "Melting Point Source",
+    "source_vapor_pressure": "Vapor Pressure Source",
 }
 units = {
     "mw_g_mol": "g/mol",
@@ -893,8 +967,33 @@ sources = {
     "pka_acid": "source_pka",
     "pka_base": "source_pka",
     "log_dlipw_ph74_liter_liter": "source_dlipw",
-    "density_kg_liter": "source_density"
+    "density_kg_liter": "source_density",
+    "boiling_point": "source_boiling_point",
+    "melting_point": "source_melting_point",
+    "vapor_pressure": "source_vapor_pressure"
 }
+
+# Load configuration parameters from .env file
+with open("../app/config.yml", "r") as stream:
+    try:
+        config = yaml.safe_load(stream)
+    except yaml.YAMLError as exc:
+        print(exc)
+
+connection_url = (
+        "postgresql://"
+        + str(config["psql_user"])
+        + ":"
+        + str(config["psql_pass"])
+        + "@"
+        + str(config["psql_host"])
+        + ":"
+        + "5432"
+        + "/"
+        + str(config["psql_db_name"])
+    )
+
+engine = connect_to_database(connection_url)
 
 
 # Read Identifiers file
@@ -926,9 +1025,24 @@ df_ide = df_ide.merge(
 
 # Read Physiochemical Properties file
 df_prop, property_cols = read_properties_file(properties_file)
+# df_ide = df_ide.merge(
+#     df_prop,
+#     on=["ptx_code"],
+#     how="left"
+# )
+
+df_chem_db = read_chemical_database(engine, property_cols)
 df_ide = df_ide.merge(
-    df_prop,
+    df_chem_db,
     on=["ptx_code"],
+    how="left"
+)
+
+df_prop_2, property_cols_2 = read_properties_file_2(properties_file_2)
+property_cols += property_cols_2
+df_ide = df_ide.merge(
+    df_prop_2,
+    on=["dtxsid"],
     how="left"
 )
 
