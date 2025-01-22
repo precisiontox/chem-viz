@@ -749,18 +749,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Genotoxicity",
-                  "label": "Genotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "genotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Immunotoxicity",
                   "label": "Immunotoxicity",
                   "shape": "round-pentagon",
@@ -773,25 +761,12 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Hepatotoxicity",
-                  "label": "Hepatotoxicity",
+                  "id": "Genotoxicity",
+                  "label": "Genotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
-                  "image": "hepatotoxicity.svg"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Genotoxicity",
-                  "color": "#135D66",
-                  "score": 3.46,
-                  "n_refs": 6,
-                  "ref_list": "24972111,12063071,9465935,7511791,7529355,9268046"
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -813,11 +788,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Hepatotoxicity",
+                  "target": "Genotoxicity",
                   "color": "#135D66",
-                  "score": 2.0,
-                  "n_refs": 1,
-                  "ref_list": "3376151"
+                  "score": 3.46,
+                  "n_refs": 6,
+                  "ref_list": "24972111,12063071,9465935,7511791,7529355,9268046"
             }
       }
 ]

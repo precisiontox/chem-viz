@@ -699,24 +699,24 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Neurotoxicity",
-                  "label": "Neurotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "neurotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Hepatotoxicity",
                   "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "hepatotoxicity.svg"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "Neurotoxicity",
+                  "label": "Neurotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -738,11 +738,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Neurotoxicity",
+                  "target": "Hepatotoxicity",
                   "color": "#135D66",
-                  "score": 2.91,
+                  "score": 3.87,
                   "n_refs": 1,
-                  "ref_list": "34478978"
+                  "ref_list": "19458971"
             }
       },
       {
@@ -751,11 +751,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Hepatotoxicity",
+                  "target": "Neurotoxicity",
                   "color": "#135D66",
-                  "score": 3.87,
+                  "score": 2.91,
                   "n_refs": 1,
-                  "ref_list": "19458971"
+                  "ref_list": "34478978"
             }
       }
 ]

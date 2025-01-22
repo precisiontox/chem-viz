@@ -878,30 +878,6 @@
             }
       },
       {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Hematotoxicity",
-                  "label": "Hematotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "hematotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Ototoxicity",
-                  "label": "Ototoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "ototoxicity.svg"
-            }
-      },
-      {
             "group": "edges",
             "data": {
                   "role": "category_tox_class",
@@ -925,32 +901,6 @@
                   "score": 2.63,
                   "n_refs": 51,
                   "ref_list": "16007524,17576325,20032007,9402409,17598911,16117974,34967358,15625777,8769617,20130764,7841574,16007525,8173131,16730040,8077514,9425383,20092275,18057479,16777703,32828790,20606829,23325436,8267481,20623750,23956101,12507161,17283379,2196167,20553011,36543294,18663660,26526729,28473992,14994974,18290996,2025128,7886687,25184238,21994861,10577295,1548414,30683041,12352887,19302462,22083028,12975558,32239567,8561126,20843939,22931300,15345904"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Hematotoxicity",
-                  "color": "#135D66",
-                  "score": 1.14,
-                  "n_refs": 1,
-                  "ref_list": "34087496"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Ototoxicity",
-                  "color": "#135D66",
-                  "score": 0.7,
-                  "n_refs": 3,
-                  "ref_list": "20941340,17319962,19745688"
             }
       }
 ]

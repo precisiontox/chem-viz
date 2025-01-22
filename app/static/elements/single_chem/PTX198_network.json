@@ -733,54 +733,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Nephrotoxicity",
-                  "label": "Nephrotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "nephrotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Ototoxicity",
-                  "label": "Ototoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "ototoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Hematotoxicity",
-                  "label": "Hematotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "hematotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Immunotoxicity",
-                  "label": "Immunotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "immunotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Neurotoxicity",
                   "label": "Neurotoxicity",
                   "shape": "round-pentagon",
@@ -793,64 +745,12 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Hepatotoxicity",
-                  "label": "Hepatotoxicity",
+                  "id": "Nephrotoxicity",
+                  "label": "Nephrotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
-                  "image": "hepatotoxicity.svg"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Nephrotoxicity",
-                  "color": "#135D66",
-                  "score": 2.94,
-                  "n_refs": 102,
-                  "ref_list": "20130772,34137387,20862348,2682943,6285711,21859328,25440915,22460395,9515114,1548282,9416391,16138435,19965947,9458538,26735892,8213806,19742270,24863373,21716719,21192814,7840575,34713692,17461998,12741439,2849717,9285038,23312723,12185472,8823538,31772214,6306847,20510647,16137385,22069672,30083888,21992471,11994033,10615548,12100196,21860787,15588117,18755125,20555413,30486699,3706943,24063786,9071704,30308453,26911608,20117065,18656262,1816110,20103497,8519942,15802212,18345723,6311916,27497730,20307148,10586837,2426515,8077713,16646986,3376977,15786387,11532999,27590397,16337174,19588350,14606623,16678005,30741619,19574603,35248614,21788472,32037154,22392452,24177356,12637076,6285712,18373879,20941340,25708691,15861345,12811231,8245883,2748029,16677413,3803209,11428976,8442906,30428841,32360486,22791803,30048817,21994617,25055032,33956193,1660570,17406046,22005269,7811037"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Ototoxicity",
-                  "color": "#135D66",
-                  "score": 0.21,
-                  "n_refs": 2,
-                  "ref_list": "19415035,20941340"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Hematotoxicity",
-                  "color": "#135D66",
-                  "score": 2.82,
-                  "n_refs": 3,
-                  "ref_list": "12883091,12426490,20167269"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Immunotoxicity",
-                  "color": "#135D66",
-                  "score": 1.33,
-                  "n_refs": 5,
-                  "ref_list": "19903337,12222155,1360757,9024946,36416909"
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -872,11 +772,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Hepatotoxicity",
+                  "target": "Nephrotoxicity",
                   "color": "#135D66",
-                  "score": 2.73,
-                  "n_refs": 12,
-                  "ref_list": "22666603,10482463,14661177,2832836,17598911,23295541,15802212,23956101,25163019,22480215,24085192,20829430"
+                  "score": 2.94,
+                  "n_refs": 102,
+                  "ref_list": "20130772,34137387,20862348,2682943,6285711,21859328,25440915,22460395,9515114,1548282,9416391,16138435,19965947,9458538,26735892,8213806,19742270,24863373,21716719,21192814,7840575,34713692,17461998,12741439,2849717,9285038,23312723,12185472,8823538,31772214,6306847,20510647,16137385,22069672,30083888,21992471,11994033,10615548,12100196,21860787,15588117,18755125,20555413,30486699,3706943,24063786,9071704,30308453,26911608,20117065,18656262,1816110,20103497,8519942,15802212,18345723,6311916,27497730,20307148,10586837,2426515,8077713,16646986,3376977,15786387,11532999,27590397,16337174,19588350,14606623,16678005,30741619,19574603,35248614,21788472,32037154,22392452,24177356,12637076,6285712,18373879,20941340,25708691,15861345,12811231,8245883,2748029,16677413,3803209,11428976,8442906,30428841,32360486,22791803,30048817,21994617,25055032,33956193,1660570,17406046,22005269,7811037"
             }
       }
 ]

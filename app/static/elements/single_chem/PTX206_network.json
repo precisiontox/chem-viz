@@ -836,12 +836,12 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Cardiotoxicity",
-                  "label": "Cardiotoxicity",
+                  "id": "Neurotoxicity",
+                  "label": "Neurotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
-                  "image": "cardiotoxicity.svg"
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -857,28 +857,16 @@
             }
       },
       {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Neurotoxicity",
-                  "label": "Neurotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "neurotoxicity.svg"
-            }
-      },
-      {
             "group": "edges",
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Cardiotoxicity",
+                  "target": "Neurotoxicity",
                   "color": "#135D66",
-                  "score": 1.27,
-                  "n_refs": 2,
-                  "ref_list": "30503814,31069958"
+                  "score": 3.35,
+                  "n_refs": 14,
+                  "ref_list": "8637057,7595461,14751452,19836673,31069958,21848865,8258389,18274958,11339626,14713564,8954750,14677793,25101788,1397799"
             }
       },
       {
@@ -892,19 +880,6 @@
                   "score": 3.46,
                   "n_refs": 2,
                   "ref_list": "19141786,12539864"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Neurotoxicity",
-                  "color": "#135D66",
-                  "score": 3.35,
-                  "n_refs": 14,
-                  "ref_list": "8637057,7595461,14751452,19836673,31069958,21848865,8258389,18274958,11339626,14713564,8954750,14677793,25101788,1397799"
             }
       }
 ]

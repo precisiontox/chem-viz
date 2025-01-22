@@ -1228,18 +1228,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Neurotoxicity",
-                  "label": "Neurotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "neurotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Hepatotoxicity",
                   "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
@@ -1271,19 +1259,6 @@
                   "score": 5.65,
                   "n_refs": 3,
                   "ref_list": "27635644,26318563,16835054"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Neurotoxicity",
-                  "color": "#135D66",
-                  "score": 1.15,
-                  "n_refs": 1,
-                  "ref_list": "18945337"
             }
       },
       {

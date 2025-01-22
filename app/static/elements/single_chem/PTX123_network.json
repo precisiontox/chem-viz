@@ -687,12 +687,12 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Neurotoxicity",
-                  "label": "Neurotoxicity",
+                  "id": "Genotoxicity",
+                  "label": "Genotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
-                  "image": "neurotoxicity.svg"
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -708,28 +708,16 @@
             }
       },
       {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Genotoxicity",
-                  "label": "Genotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "genotoxicity.svg"
-            }
-      },
-      {
             "group": "edges",
             "data": {
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Neurotoxicity",
+                  "target": "Genotoxicity",
                   "color": "#135D66",
-                  "score": 0.14,
-                  "n_refs": 1,
-                  "ref_list": "33677017"
+                  "score": 3.56,
+                  "n_refs": 12,
+                  "ref_list": "21621635,17764006,11398999,3058090,1952761,1952760,3090982,2817734,31706722,18069048,1952759,3288174"
             }
       },
       {
@@ -743,19 +731,6 @@
                   "score": 4.06,
                   "n_refs": 2,
                   "ref_list": "25238107,17162502"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Genotoxicity",
-                  "color": "#135D66",
-                  "score": 3.56,
-                  "n_refs": 12,
-                  "ref_list": "21621635,17764006,11398999,3058090,1952761,1952760,3090982,2817734,31706722,18069048,1952759,3288174"
             }
       }
 ]

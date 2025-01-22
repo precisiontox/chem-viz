@@ -1044,36 +1044,12 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Cardiotoxicity",
-                  "label": "Cardiotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "cardiotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Nephrotoxicity",
                   "label": "Nephrotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "nephrotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Ototoxicity",
-                  "label": "Ototoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "ototoxicity.svg"
             }
       },
       {
@@ -1089,16 +1065,15 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Cardiotoxicity",
-                  "color": "#135D66",
-                  "score": 1.05,
-                  "n_refs": 15,
-                  "ref_list": "11552224,22661994,23688742,21534011,27097055,15907929,12589175,25410653,21794114,23288202,8025914,3061940,24551180,34384247,16373419"
+                  "id": "Cardiotoxicity",
+                  "label": "Cardiotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "cardiotoxicity.svg"
             }
       },
       {
@@ -1120,11 +1095,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Ototoxicity",
+                  "target": "Hepatotoxicity",
                   "color": "#135D66",
-                  "score": 1.13,
-                  "n_refs": 3,
-                  "ref_list": "3884320,19995323,19830166"
+                  "score": 2.04,
+                  "n_refs": 14,
+                  "ref_list": "947310,22700542,4149715,11248842,17361319,1820873,20843939,4818386,241261,20553011,24251357,15057406,5579120,7461434"
             }
       },
       {
@@ -1133,11 +1108,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Hepatotoxicity",
+                  "target": "Cardiotoxicity",
                   "color": "#135D66",
-                  "score": 2.04,
-                  "n_refs": 14,
-                  "ref_list": "947310,22700542,4149715,11248842,17361319,1820873,20843939,4818386,241261,20553011,24251357,15057406,5579120,7461434"
+                  "score": 1.05,
+                  "n_refs": 15,
+                  "ref_list": "11552224,22661994,23688742,21534011,27097055,15907929,12589175,25410653,21794114,23288202,8025914,3061940,24551180,34384247,16373419"
             }
       }
 ]

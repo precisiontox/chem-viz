@@ -834,24 +834,24 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Nephrotoxicity",
-                  "label": "Nephrotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "nephrotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Hepatotoxicity",
                   "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "hepatotoxicity.svg"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "Nephrotoxicity",
+                  "label": "Nephrotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -884,11 +884,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Nephrotoxicity",
+                  "target": "Hepatotoxicity",
                   "color": "#135D66",
-                  "score": 1.68,
+                  "score": 2.46,
                   "n_refs": 5,
-                  "ref_list": "21487531,8655099,22423898,18227911,2353418"
+                  "ref_list": "3766854,20361094,9765339,34107285,34748821"
             }
       },
       {
@@ -897,11 +897,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Hepatotoxicity",
+                  "target": "Nephrotoxicity",
                   "color": "#135D66",
-                  "score": 2.46,
+                  "score": 1.68,
                   "n_refs": 5,
-                  "ref_list": "3766854,20361094,9765339,34107285,34748821"
+                  "ref_list": "21487531,8655099,22423898,18227911,2353418"
             }
       },
       {

@@ -130,7 +130,7 @@ def read_useclass_file(file_path, ptx_codes):
     return df
 
 
-def read_toxclass_file(file_path, ptx_codes):
+def read_toxclass_file(file_path, ptx_codes, perc_limit=5):
     df = pd.read_csv(
         file_path,
         sep="\t", 
@@ -138,6 +138,12 @@ def read_toxclass_file(file_path, ptx_codes):
     df["tox_class"] = df["tox_class"].str.capitalize() 
     df = df[df["ptx_code"].isin(ptx_codes)]
     df = df[df["score"] > 0]
+    df["wesa"] = df["score"] * df["n_refs"]
+    df = df.sort_values(by=['wesa'], ascending=False)
+    # Remove associations with WESA < x%
+    ptx_totals = df.groupby('ptx_code')['wesa'].transform('sum')
+    df['wesa_pct'] = (df['wesa'] / ptx_totals) * 100
+    df = df[df['wesa_pct'] >= perc_limit]
     return df
 
 

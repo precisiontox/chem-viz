@@ -733,24 +733,24 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Nephrotoxicity",
-                  "label": "Nephrotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "nephrotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Ototoxicity",
                   "label": "Ototoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "ototoxicity.svg"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "Nephrotoxicity",
+                  "label": "Nephrotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -771,11 +771,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Nephrotoxicity",
+                  "target": "Ototoxicity",
                   "color": "#135D66",
-                  "score": 0.97,
-                  "n_refs": 38,
-                  "ref_list": "28412957,11766781,29969596,8619902,2627266,23676604,668378,28166656,12917251,3849259,29337066,35038556,4325688,6927634,12571406,1187001,449873,17304422,34751788,523366,3310282,3888810,21085665,9255195,5289757,33998665,17438316,12810976,6803353,6146123,18501431,23328923,7413308,869655,6760676,3316564,32357212,9727317"
+                  "score": 5.29,
+                  "n_refs": 14,
+                  "ref_list": "33998665,1856141,606305,438542,8270363,6803353,8179270,463341,4666432,1087098,23676604,21818312,12810976,11766781"
             }
       },
       {
@@ -784,11 +784,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Ototoxicity",
+                  "target": "Nephrotoxicity",
                   "color": "#135D66",
-                  "score": 5.29,
-                  "n_refs": 14,
-                  "ref_list": "33998665,1856141,606305,438542,8270363,6803353,8179270,463341,4666432,1087098,23676604,21818312,12810976,11766781"
+                  "score": 0.97,
+                  "n_refs": 38,
+                  "ref_list": "28412957,11766781,29969596,8619902,2627266,23676604,668378,28166656,12917251,3849259,29337066,35038556,4325688,6927634,12571406,1187001,449873,17304422,34751788,523366,3310282,3888810,21085665,9255195,5289757,33998665,17438316,12810976,6803353,6146123,18501431,23328923,7413308,869655,6760676,3316564,32357212,9727317"
             }
       },
       {

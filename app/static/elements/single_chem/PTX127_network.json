@@ -813,18 +813,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Immunotoxicity",
-                  "label": "Immunotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "immunotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Ototoxicity",
                   "label": "Ototoxicity",
                   "shape": "round-pentagon",
@@ -834,16 +822,15 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Immunotoxicity",
-                  "color": "#135D66",
-                  "score": 0.31,
-                  "n_refs": 19,
-                  "ref_list": "18958157,22982499,17976319,11205068,17707922,20810174,36122635,17180505,24617047,3146994,12201650,19406486,29594315,16445085,17915735,18583369,21655126,19196829,16263518"
+                  "id": "Immunotoxicity",
+                  "label": "Immunotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {
@@ -857,6 +844,19 @@
                   "score": 0.72,
                   "n_refs": 22,
                   "ref_list": "1950546,11349764,2112363,16968576,18578449,7310930,16890085,11176588,30878773,8588672,7610811,16625551,10908956,18598837,3031988,8733449,11589975,27845826,22430335,2161637,6331211,11802005"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Immunotoxicity",
+                  "color": "#135D66",
+                  "score": 0.31,
+                  "n_refs": 19,
+                  "ref_list": "18958157,22982499,17976319,11205068,17707922,20810174,36122635,17180505,24617047,3146994,12201650,19406486,29594315,16445085,17915735,18583369,21655126,19196829,16263518"
             }
       }
 ]

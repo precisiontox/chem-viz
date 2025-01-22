@@ -733,18 +733,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Genotoxicity",
-                  "label": "Genotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "genotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Hepatotoxicity",
                   "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
@@ -754,16 +742,15 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Genotoxicity",
-                  "color": "#135D66",
-                  "score": 1.42,
-                  "n_refs": 10,
-                  "ref_list": "15962942,30650076,31207347,7510023,26443851,9568594,18570639,3543669,8005380,2203033"
+                  "id": "Genotoxicity",
+                  "label": "Genotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -777,6 +764,19 @@
                   "score": 3.62,
                   "n_refs": 11,
                   "ref_list": "31423600,20553011,3692093,20848085,20843939,23956101,25922167,11963321,1497489,24747151,23692888"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Genotoxicity",
+                  "color": "#135D66",
+                  "score": 1.42,
+                  "n_refs": 10,
+                  "ref_list": "15962942,30650076,31207347,7510023,26443851,9568594,18570639,3543669,8005380,2203033"
             }
       }
 ]

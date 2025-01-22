@@ -699,24 +699,24 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Neurotoxicity",
-                  "label": "Neurotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "neurotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Immunotoxicity",
                   "label": "Immunotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "immunotoxicity.svg"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "Neurotoxicity",
+                  "label": "Neurotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -738,11 +738,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Neurotoxicity",
+                  "target": "Immunotoxicity",
                   "color": "#135D66",
-                  "score": 4.66,
+                  "score": 7.58,
                   "n_refs": 1,
-                  "ref_list": "33512557"
+                  "ref_list": "29859490"
             }
       },
       {
@@ -751,11 +751,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Immunotoxicity",
+                  "target": "Neurotoxicity",
                   "color": "#135D66",
-                  "score": 7.58,
+                  "score": 4.66,
                   "n_refs": 1,
-                  "ref_list": "29859490"
+                  "ref_list": "33512557"
             }
       }
 ]

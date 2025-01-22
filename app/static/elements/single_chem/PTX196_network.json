@@ -733,48 +733,12 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Nephrotoxicity",
-                  "label": "Nephrotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "nephrotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Cardiotoxicity",
-                  "label": "Cardiotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "cardiotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Hepatotoxicity",
                   "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "hepatotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Ototoxicity",
-                  "label": "Ototoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "ototoxicity.svg"
             }
       },
       {
@@ -790,29 +754,15 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Nephrotoxicity",
-                  "color": "#135D66",
-                  "score": 1.34,
-                  "n_refs": 6,
-                  "ref_list": "17593829,32175056,31579224,35366178,15526904,30351976"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Cardiotoxicity",
-                  "color": "#135D66",
-                  "score": 0.09,
-                  "n_refs": 1,
-                  "ref_list": "30734091"
+                  "id": "Nephrotoxicity",
+                  "label": "Nephrotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -834,11 +784,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Ototoxicity",
+                  "target": "Genotoxicity",
                   "color": "#135D66",
-                  "score": 1.69,
-                  "n_refs": 1,
-                  "ref_list": "31649536"
+                  "score": 1.4,
+                  "n_refs": 9,
+                  "ref_list": "36669257,15962942,26999319,33099116,33706513,30989447,34904007,35830866,24403649"
             }
       },
       {
@@ -847,11 +797,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Genotoxicity",
+                  "target": "Nephrotoxicity",
                   "color": "#135D66",
-                  "score": 1.4,
-                  "n_refs": 9,
-                  "ref_list": "36669257,15962942,26999319,33099116,33706513,30989447,34904007,35830866,24403649"
+                  "score": 1.34,
+                  "n_refs": 6,
+                  "ref_list": "17593829,32175056,31579224,35366178,15526904,30351976"
             }
       }
 ]

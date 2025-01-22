@@ -687,18 +687,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Hepatotoxicity",
-                  "label": "Hepatotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "hepatotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Neurotoxicity",
                   "label": "Neurotoxicity",
                   "shape": "round-pentagon",
@@ -708,16 +696,15 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Hepatotoxicity",
-                  "color": "#135D66",
-                  "score": 1.24,
-                  "n_refs": 6,
-                  "ref_list": "15456926,22982774,30296546,11097384,16864508,16354159"
+                  "id": "Hepatotoxicity",
+                  "label": "Hepatotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "hepatotoxicity.svg"
             }
       },
       {
@@ -731,6 +718,19 @@
                   "score": 1.29,
                   "n_refs": 17,
                   "ref_list": "9593594,16474421,11513329,22386322,17651807,11358277,16099910,22357341,21623958,36030852,18728806,11599298,24333475,12437582,15932592,15943860,11131176"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Hepatotoxicity",
+                  "color": "#135D66",
+                  "score": 1.24,
+                  "n_refs": 6,
+                  "ref_list": "15456926,22982774,30296546,11097384,16864508,16354159"
             }
       }
 ]

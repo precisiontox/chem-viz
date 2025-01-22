@@ -1111,18 +1111,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Ototoxicity",
-                  "label": "Ototoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "ototoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Neurotoxicity",
                   "label": "Neurotoxicity",
                   "shape": "round-pentagon",
@@ -1132,16 +1120,15 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Ototoxicity",
-                  "color": "#135D66",
-                  "score": 8.88,
-                  "n_refs": 2,
-                  "ref_list": "3945945,1853351"
+                  "id": "Ototoxicity",
+                  "label": "Ototoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "ototoxicity.svg"
             }
       },
       {
@@ -1155,6 +1142,19 @@
                   "score": 6.76,
                   "n_refs": 4,
                   "ref_list": "7290284,6479276,4080061,17632591"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Ototoxicity",
+                  "color": "#135D66",
+                  "score": 8.88,
+                  "n_refs": 2,
+                  "ref_list": "3945945,1853351"
             }
       }
 ]

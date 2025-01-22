@@ -1416,30 +1416,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Cardiotoxicity",
-                  "label": "Cardiotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "cardiotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Immunotoxicity",
-                  "label": "Immunotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "immunotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Hepatotoxicity",
                   "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
@@ -1461,29 +1437,27 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Cardiotoxicity",
-                  "color": "#135D66",
-                  "score": 0.36,
-                  "n_refs": 4,
-                  "ref_list": "19596060,17635642,8437982,11451379"
+                  "id": "Immunotoxicity",
+                  "label": "Immunotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Immunotoxicity",
-                  "color": "#135D66",
-                  "score": 0.78,
-                  "n_refs": 2,
-                  "ref_list": "36113621,8229756"
+                  "id": "Cardiotoxicity",
+                  "label": "Cardiotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "cardiotoxicity.svg"
             }
       },
       {
@@ -1510,6 +1484,32 @@
                   "score": 0.56,
                   "n_refs": 13,
                   "ref_list": "19602844,20160127,26631585,21076961,23280249,22237944,11743984,22850435,22500955,27052459,22048647,29092095,18828802"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Immunotoxicity",
+                  "color": "#135D66",
+                  "score": 0.78,
+                  "n_refs": 2,
+                  "ref_list": "36113621,8229756"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Cardiotoxicity",
+                  "color": "#135D66",
+                  "score": 0.36,
+                  "n_refs": 4,
+                  "ref_list": "19596060,17635642,8437982,11451379"
             }
       }
 ]

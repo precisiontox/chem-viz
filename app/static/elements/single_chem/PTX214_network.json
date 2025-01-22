@@ -995,30 +995,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Immunotoxicity",
-                  "label": "Immunotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "immunotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Hepatotoxicity",
-                  "label": "Hepatotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "hepatotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Genotoxicity",
                   "label": "Genotoxicity",
                   "shape": "round-pentagon",
@@ -1028,29 +1004,15 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Immunotoxicity",
-                  "color": "#135D66",
-                  "score": 2.6,
-                  "n_refs": 2,
-                  "ref_list": "18941987,22012874"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Hepatotoxicity",
-                  "color": "#135D66",
-                  "score": 1.71,
-                  "n_refs": 1,
-                  "ref_list": "28683350"
+                  "id": "Immunotoxicity",
+                  "label": "Immunotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {
@@ -1064,6 +1026,19 @@
                   "score": 2.42,
                   "n_refs": 15,
                   "ref_list": "18703238,25498420,26086120,19812366,28326483,27078212,24291084,20574074,30010034,26994368,27777339,22115909,16730112,33052562,19875433"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Immunotoxicity",
+                  "color": "#135D66",
+                  "score": 2.6,
+                  "n_refs": 2,
+                  "ref_list": "18941987,22012874"
             }
       }
 ]

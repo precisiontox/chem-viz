@@ -699,30 +699,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Cardiotoxicity",
-                  "label": "Cardiotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "cardiotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Neurotoxicity",
-                  "label": "Neurotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "neurotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Hepatotoxicity",
                   "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
@@ -747,12 +723,24 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Nephrotoxicity",
-                  "label": "Nephrotoxicity",
+                  "id": "Cardiotoxicity",
+                  "label": "Cardiotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
-                  "image": "nephrotoxicity.svg"
+                  "image": "cardiotoxicity.svg"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "Neurotoxicity",
+                  "label": "Neurotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "neurotoxicity.svg"
             }
       },
       {
@@ -766,32 +754,6 @@
                   "score": 4.02,
                   "n_refs": 13,
                   "ref_list": "33838701,21637552,23632246,36754225,33578099,30025356,25230876,24007485,32798748,32006631,31464141,30659299,33228835"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Cardiotoxicity",
-                  "color": "#135D66",
-                  "score": 3.2,
-                  "n_refs": 4,
-                  "ref_list": "32980069,32798748,32006631,35709675"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Neurotoxicity",
-                  "color": "#135D66",
-                  "score": 2.48,
-                  "n_refs": 4,
-                  "ref_list": "32585290,33838701,34619195,36827814"
             }
       },
       {
@@ -826,11 +788,24 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Nephrotoxicity",
+                  "target": "Cardiotoxicity",
                   "color": "#135D66",
-                  "score": 2.25,
-                  "n_refs": 3,
-                  "ref_list": "32735800,22069658,32971454"
+                  "score": 3.2,
+                  "n_refs": 4,
+                  "ref_list": "32980069,32798748,32006631,35709675"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Neurotoxicity",
+                  "color": "#135D66",
+                  "score": 2.48,
+                  "n_refs": 4,
+                  "ref_list": "32585290,33838701,34619195,36827814"
             }
       }
 ]

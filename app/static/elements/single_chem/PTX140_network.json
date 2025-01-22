@@ -1111,18 +1111,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Hepatotoxicity",
-                  "label": "Hepatotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "hepatotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Cardiotoxicity",
                   "label": "Cardiotoxicity",
                   "shape": "round-pentagon",
@@ -1132,16 +1120,15 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Hepatotoxicity",
-                  "color": "#135D66",
-                  "score": 1.56,
-                  "n_refs": 2,
-                  "ref_list": "20843939,20553011"
+                  "id": "Hepatotoxicity",
+                  "label": "Hepatotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "hepatotoxicity.svg"
             }
       },
       {
@@ -1155,6 +1142,19 @@
                   "score": 3.19,
                   "n_refs": 12,
                   "ref_list": "36181876,10908518,16489111,2880980,24194433,11721647,22033499,11377395,24052561,17636692,9951426,21234705"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Hepatotoxicity",
+                  "color": "#135D66",
+                  "score": 1.56,
+                  "n_refs": 2,
+                  "ref_list": "20843939,20553011"
             }
       }
 ]

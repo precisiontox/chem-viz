@@ -733,18 +733,6 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Nephrotoxicity",
-                  "label": "Nephrotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "nephrotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Hepatotoxicity",
                   "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
@@ -754,16 +742,15 @@
             }
       },
       {
-            "group": "edges",
+            "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Nephrotoxicity",
-                  "color": "#135D66",
-                  "score": 1.75,
-                  "n_refs": 8,
-                  "ref_list": "21477703,26934182,21407003,31377765,25793437,24583855,31355341,29069421"
+                  "id": "Nephrotoxicity",
+                  "label": "Nephrotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -777,6 +764,19 @@
                   "score": 5.21,
                   "n_refs": 5,
                   "ref_list": "32858577,19909895,35364753,35670488,23956101"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Nephrotoxicity",
+                  "color": "#135D66",
+                  "score": 1.75,
+                  "n_refs": 8,
+                  "ref_list": "21477703,26934182,21407003,31377765,25793437,24583855,31355341,29069421"
             }
       }
 ]

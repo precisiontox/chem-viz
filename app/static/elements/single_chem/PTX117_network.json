@@ -1158,36 +1158,24 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
+                  "id": "Genotoxicity",
+                  "label": "Genotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "genotoxicity.svg"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
                   "id": "Neurotoxicity",
                   "label": "Neurotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "neurotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Hepatotoxicity",
-                  "label": "Hepatotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "hepatotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Immunotoxicity",
-                  "label": "Immunotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "immunotoxicity.svg"
             }
       },
       {
@@ -1206,12 +1194,25 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Genotoxicity",
-                  "label": "Genotoxicity",
+                  "id": "Immunotoxicity",
+                  "label": "Immunotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
-                  "image": "genotoxicity.svg"
+                  "image": "immunotoxicity.svg"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "category_tox_class",
+                  "subrole": "attribute",
+                  "source": "Toxicity",
+                  "target": "Genotoxicity",
+                  "color": "#135D66",
+                  "score": 3.97,
+                  "n_refs": 12,
+                  "ref_list": "22417675,28987565,17680492,17185266,9726001,8952709,15979257,20107585,19690995,9707097,15626647,16818242"
             }
       },
       {
@@ -1233,32 +1234,6 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Hepatotoxicity",
-                  "color": "#135D66",
-                  "score": 1.51,
-                  "n_refs": 1,
-                  "ref_list": "17897733"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Immunotoxicity",
-                  "color": "#135D66",
-                  "score": 3.47,
-                  "n_refs": 1,
-                  "ref_list": "22677474"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
                   "target": "Nephrotoxicity",
                   "color": "#135D66",
                   "score": 1.74,
@@ -1272,11 +1247,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Genotoxicity",
+                  "target": "Immunotoxicity",
                   "color": "#135D66",
-                  "score": 3.97,
-                  "n_refs": 12,
-                  "ref_list": "22417675,28987565,17680492,17185266,9726001,8952709,15979257,20107585,19690995,9707097,15626647,16818242"
+                  "score": 3.47,
+                  "n_refs": 1,
+                  "ref_list": "22677474"
             }
       }
 ]

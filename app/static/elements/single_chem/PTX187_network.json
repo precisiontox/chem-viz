@@ -708,12 +708,12 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Genotoxicity",
-                  "label": "Genotoxicity",
+                  "id": "Nephrotoxicity",
+                  "label": "Nephrotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
-                  "image": "genotoxicity.svg"
+                  "image": "nephrotoxicity.svg"
             }
       },
       {
@@ -732,24 +732,12 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Hematotoxicity",
-                  "label": "Hematotoxicity",
+                  "id": "Genotoxicity",
+                  "label": "Genotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
-                  "image": "hematotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
-                  "id": "Nephrotoxicity",
-                  "label": "Nephrotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "nephrotoxicity.svg"
+                  "image": "genotoxicity.svg"
             }
       },
       {
@@ -758,11 +746,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Genotoxicity",
+                  "target": "Nephrotoxicity",
                   "color": "#135D66",
-                  "score": 2.5,
-                  "n_refs": 22,
-                  "ref_list": "11695563,3713718,16464479,8222064,21873647,6799396,11695550,10581209,25047350,9268047,18347083,20188853,11695547,3531298,6692396,21218107,3910846,8020169,15200157,6815479,12204548,11695548"
+                  "score": 4.03,
+                  "n_refs": 50,
+                  "ref_list": "22069672,6776978,1003266,383123,362034,23142791,35316804,5590333,713267,1085402,14592552,2861741,9206904,4891810,1070998,4718465,13879809,14021610,20542992,6335023,5027599,10352210,5371434,14273384,4009405,1139519,13959839,5128205,10991954,14124684,31059688,6827393,1256009,4630987,4381370,9740150,8669433,372894,7294057,1203171,11115060,9413921,17722712,5024424,4638851,1949909,10570112,10375954,4199399,1070995"
             }
       },
       {
@@ -784,24 +772,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Hematotoxicity",
+                  "target": "Genotoxicity",
                   "color": "#135D66",
-                  "score": 4.35,
-                  "n_refs": 2,
-                  "ref_list": "17082564,17698508"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "category_tox_class",
-                  "subrole": "attribute",
-                  "source": "Toxicity",
-                  "target": "Nephrotoxicity",
-                  "color": "#135D66",
-                  "score": 4.03,
-                  "n_refs": 50,
-                  "ref_list": "22069672,6776978,1003266,383123,362034,23142791,35316804,5590333,713267,1085402,14592552,2861741,9206904,4891810,1070998,4718465,13879809,14021610,20542992,6335023,5027599,10352210,5371434,14273384,4009405,1139519,13959839,5128205,10991954,14124684,31059688,6827393,1256009,4630987,4381370,9740150,8669433,372894,7294057,1203171,11115060,9413921,17722712,5024424,4638851,1949909,10570112,10375954,4199399,1070995"
+                  "score": 2.5,
+                  "n_refs": 22,
+                  "ref_list": "11695563,3713718,16464479,8222064,21873647,6799396,11695550,10581209,25047350,9268047,18347083,20188853,11695547,3531298,6692396,21218107,3910846,8020169,15200157,6815479,12204548,11695548"
             }
       }
 ]

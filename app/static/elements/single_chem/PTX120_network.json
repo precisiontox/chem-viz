@@ -870,24 +870,24 @@
             "group": "nodes",
             "data": {
                   "role": "category_tox_class",
-                  "id": "Immunotoxicity",
-                  "label": "Immunotoxicity",
-                  "shape": "round-pentagon",
-                  "colorBg": "#77B0AA",
-                  "colorBorder": "#135D66",
-                  "image": "immunotoxicity.svg"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "category_tox_class",
                   "id": "Hepatotoxicity",
                   "label": "Hepatotoxicity",
                   "shape": "round-pentagon",
                   "colorBg": "#77B0AA",
                   "colorBorder": "#135D66",
                   "image": "hepatotoxicity.svg"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "category_tox_class",
+                  "id": "Immunotoxicity",
+                  "label": "Immunotoxicity",
+                  "shape": "round-pentagon",
+                  "colorBg": "#77B0AA",
+                  "colorBorder": "#135D66",
+                  "image": "immunotoxicity.svg"
             }
       },
       {
@@ -909,11 +909,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Immunotoxicity",
+                  "target": "Hepatotoxicity",
                   "color": "#135D66",
-                  "score": 0.93,
-                  "n_refs": 4,
-                  "ref_list": "16263518,18087587,16818251,3105120"
+                  "score": 1.37,
+                  "n_refs": 7,
+                  "ref_list": "11844837,20553011,21976823,20843939,22131085,14977862,22700542"
             }
       },
       {
@@ -922,11 +922,11 @@
                   "role": "category_tox_class",
                   "subrole": "attribute",
                   "source": "Toxicity",
-                  "target": "Hepatotoxicity",
+                  "target": "Immunotoxicity",
                   "color": "#135D66",
-                  "score": 1.37,
-                  "n_refs": 7,
-                  "ref_list": "11844837,20553011,21976823,20843939,22131085,14977862,22700542"
+                  "score": 0.93,
+                  "n_refs": 4,
+                  "ref_list": "16263518,18087587,16818251,3105120"
             }
       }
 ]
