@@ -1,0 +1,174 @@
+[
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "chem",
+                  "id": "PTX235",
+                  "ptx_code": "PTX235",
+                  "name": "NA",
+                  "label": "PTX235 | Bisphenol E",
+                  "cas": " 2081-08-5",
+                  "dtxsid": "DTXSID3047891",
+                  "db_id": "NA",
+                  "smiles": "CC(C1=CC=C(O)C=C1)C1=CC=C(O)C=C1",
+                  "inchi": "HCNHNBLSNVSJTJ-UHFFFAOYSA-N",
+                  "mw_g_mol": "NA",
+                  "solubility_h2o_mol_liter": "NA",
+                  "source_solubility_h2o": "NA",
+                  "henry_coefficient_atm_m3_mol": "NA",
+                  "source_henry": "NA",
+                  "log_kaw_kh_rt": "NA",
+                  "source_kaw": "NA",
+                  "pka_acid": "NA",
+                  "pka_base": "NA",
+                  "source_pka": "NA",
+                  "log_kow_liter_liter": "NA",
+                  "source_kow": "NA",
+                  "log_dlipw_ph74_liter_liter": "NA",
+                  "source_dlipw": "NA",
+                  "freely_dissolved_fraction": "NA",
+                  "density_kg_liter": "NA",
+                  "source_density": "NA",
+                  "average_mass": "NA",
+                  "boiling_point": "NA",
+                  "source_boiling_point": "NA",
+                  "melting_point": "NA",
+                  "source_melting_point": "NA",
+                  "vapor_pressure": "NA",
+                  "source_vapor_pressure": "NA"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Physico-chemical properties",
+                  "label": "Physico-chemical\nproperties",
+                  "colorBorder": "#007cc1",
+                  "colorBg": "#539cc4",
+                  "shape": "round-diamond"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX235",
+                  "target": "Physico-chemical properties"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Use",
+                  "label": "Use",
+                  "colorBorder": "#B03052",
+                  "colorBg": "#D76C82",
+                  "shape": "round-rectangle"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX235",
+                  "target": "Use"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Toxicity",
+                  "label": "Toxicity",
+                  "colorBorder": "#135D66",
+                  "colorBg": "#77B0AA",
+                  "shape": "round-pentagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX235",
+                  "target": "Toxicity"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Baseline Toxicity",
+                  "label": "Baseline Toxicity",
+                  "colorBorder": "#AB886D",
+                  "colorBg": "#D6C0B3",
+                  "shape": "round-hexagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX235",
+                  "target": "Baseline Toxicity"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Mechanism of Action",
+                  "label": "Mechanism of\nAction",
+                  "colorBorder": "#d4ac0d",
+                  "colorBg": "#F4D35E",
+                  "shape": "round-heptagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX235",
+                  "target": "Mechanism of Action"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Targets",
+                  "label": "Targets",
+                  "colorBorder": "#875178",
+                  "colorBg": "#cda7ba",
+                  "shape": "round-tag"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX235",
+                  "target": "Targets"
+            }
+      },
+      {
+            "group": "nodes",
+            "data": {
+                  "role": "attribute",
+                  "id": "Adverse Outcome Pathways",
+                  "label": "Adverse Outcome\nPathways",
+                  "colorBorder": "#79AC78",
+                  "colorBg": "#B0D9B1",
+                  "shape": "round-octagon"
+            }
+      },
+      {
+            "group": "edges",
+            "data": {
+                  "role": "attribute",
+                  "source": "PTX235",
+                  "target": "Adverse Outcome Pathways"
+            }
+      }
+]

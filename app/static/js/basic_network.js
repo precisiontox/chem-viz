@@ -143,22 +143,28 @@ function initializeBasicNetworkFeatures() {
 
     cy_graph.edges().qtip({
         content: function () {
-            let sourceNode = this.source();
-            let chem_name = sourceNode.data("name");
+            let chemNode = this.target();
+            let chemName = chemNode.data("name");
             if (this.data("role") === "tox_class") {
                 var qtip_content =
-                    "<div class='qtip-content'><br>\n" +
-                    "<b class='field-edge-tox'>Compound</b> | " + this.data("source") + " | " + chem_name+ "<br>\n" +
-                    "<b class='field-edge-tox'>Toxicity class</b> | <span style='color:" + this.data("color") + "'>" + this.data("target") + "</span><br>\n" +
-                    "<b class='field-edge-tox'>Score</b> | " + this.data("score") + "<br>\n" +
-                    "<b class='field-edge-tox'># references</b> | " + this.data("n_refs") + "<br>\n" +
-                    "</div>";
+                `<div class='qtip-content'><br>
+                    <b class='field-edge-tox'>Toxicity class</b> | <span style='color:${this.data("color")}; font-weight: bold'>${this.data("source")}</span><br>
+                    <b class='field-edge-tox'>Compound</b> | [${this.data("target")}] ${chemName} <br>
+                    <b class='field-edge-tox'>Score</b> | ${this.data("score")} <br>
+                    <b class='field-edge-tox'># references</b> | ${this.data("n_refs")} <br>
+                </div>`;
             } else if (this.data("role") === "use_class") {
                 var qtip_content =
-                    "<div class='qtip-content'><br>\n" +
-                    "<b class='field-edge-use'>Compound</b> | " + this.data("source") + " | " + chem_name+ "<br>\n" +
-                    "<b class='field-edge-use'>Use class</b> | <span style='color:" + this.data("color") + "'>" + this.data("target") + "</span><br>\n" +
-                    "</div>";
+                `<div class='qtip-container'>
+                    <div class='qtip-row'>
+                        <div class='qtip-label'>Use class</div>
+                        <div class='qtip-value'><span style='color:${this.data("color")}; font-weight: bold'> ${this.data("source")}</span></div>
+                    </div>
+                    <div class='qtip-row'> 
+                        <div class='qtip-label'>Compound</div> 
+                        <div class='qtip-value'>[${this.data("target")}] ${chemName}</div>
+                    </div>
+                </div>`;
             }
             return qtip_content
         },
