@@ -9,7 +9,9 @@
                   "label": "PTX172 | 1H-1,2,4-Triazole",
                   "cas": "288-88-0",
                   "dtxsid": "DTXSID6027131",
+                  "cid": "9257",
                   "db_id": "NA",
+                  "formula": "C2H3N3",
                   "smiles": "N1C=NC=N1",
                   "inchi": "NSPMIYGKQJPBQR-UHFFFAOYSA-N",
                   "mw_g_mol": "69.067",
@@ -19,21 +21,20 @@
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "5.26790686003941",
                   "source_kaw": "LSER",
-                  "pka_acid": "10.5",
-                  "pka_base": "2.3",
-                  "source_pka": "ACD/GALAS",
+                  "pka_acid": "9.79",
+                  "pka_base": "2.72",
+                  "source_pka": "UFZ, Sirius T3",
                   "log_kow_liter_liter": "-0.58",
                   "source_kow": "",
-                  "log_dlipw_ph74_liter_liter": "-0.18999999999999997",
+                  "log_dlipw_ph74_liter_liter": "-0.47",
                   "source_dlipw": "Kow QSAR (\u2206mw = 1)",
                   "freely_dissolved_fraction": "0.942261878446694",
                   "density_kg_liter": "1.237",
                   "source_density": "COMPTOX",
-                  "average_mass": 69.067,
-                  "boiling_point": "260.0 \u00b0C",
-                  "source_boiling_point": "Alfa Aesar (Chemical company)",
-                  "melting_point": "119.0 \u00b0C",
-                  "source_melting_point": "Merck Millipore (Chemical company)",
+                  "boiling_point": "260.0",
+                  "source_boiling_point": "CompTox (Alfa Aesar (Chemical company)",
+                  "melting_point": "NA",
+                  "source_melting_point": "NA",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n1.21 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n1.21 mol/liter",
                   "value": "1.20771",
-                  "hlLabel": "Solubility (H2O):\n1.21 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n1.21 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -233,9 +234,9 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\n10.50 ",
-                  "value": "10.5",
-                  "hlLabel": "pKa (acid):\n10.50 \nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (acid):\n9.79 ",
+                  "value": "9.79",
+                  "hlLabel": "pKa (acid):\n9.79 \nSource: UFZ, Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -247,9 +248,9 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n2.30 ",
-                  "value": "2.3",
-                  "hlLabel": "pKa (base):\n2.30 \nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (base):\n2.72 ",
+                  "value": "2.72",
+                  "hlLabel": "pKa (base):\n2.72 \nSource: UFZ, Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -275,9 +276,9 @@
                   "role": "prop",
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
-                  "combinedLabel": "Log Dlipw (pH 7.4):\n-0.19 ",
-                  "value": "-0.18999999999999997",
-                  "hlLabel": "Log Dlipw (pH 7.4):\n-0.19 \nSource: Kow QSAR (\u2206mw = 1)",
+                  "combinedLabel": "Log Dlipw (pH 7.4):\n-0.47 ",
+                  "value": "-0.47",
+                  "hlLabel": "Log Dlipw (pH 7.4):\n-0.47 \nSource: Kow QSAR (\u2206mw = 1)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n69.07 ",
-                  "value": 69.067,
-                  "hlLabel": "Average Mass:\n69.07 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n260.0 \u00b0C ",
-                  "value": "260.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n260.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Boiling Point:\n260.00 \u00b0C",
+                  "value": "260.0",
+                  "hlLabel": "Boiling Point:\n260.00 \u00b0C\nSource: CompTox (Alfa Aesar (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,12 +332,12 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n119.0 \u00b0C ",
-                  "value": "119.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n119.0 \u00b0C \nSource: Merck Millipore (Chemical company)",
+                  "combinedLabel": "Melting Point:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Melting Point:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -473,16 +460,6 @@
                   "role": "prop",
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
                   "target": "boiling_point",
                   "color": "#007cc1"
             }
@@ -494,7 +471,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "melting_point",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {

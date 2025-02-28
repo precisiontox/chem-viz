@@ -33,7 +33,7 @@
     <script type="text/javascript" src="{{ url_for('static',filename='js/cytoscape-svg.js') }}"></script>
     <script>
         const jsonBasic = "{{ url_for('static', filename='elements/basic.json')}}";
-        const imageBaseUrl = "{{ url_for('static', filename='images/nodes/') }}";
+        const imageBaseUrl = "{{ url_for('static', filename='images/') }}";
         const selectedChemFromURL = "{{ selected_chem }}";
     </script>
     <script src="{{ url_for('static', filename='js/layouts.js') }}" defer></script>
@@ -158,8 +158,16 @@
                         <div class="chem-value" id="chem-dsstox-id"></div>
                     </div>
                     <div class="chem-info-row">
+                        <div class="chem-label">PubChem CID</div>
+                        <div class="chem-value" id="chem-pubchem-cid"></div>
+                    </div>
+                    <div class="chem-info-row">
                         <div class="chem-label">DrugBank ID</div>
                         <div class="chem-value" id="chem-drugbank-id"></div>
+                    </div>
+                    <div class="chem-info-row">
+                        <div class="chem-label">Molecular Formula</div>
+                        <div class="chem-value" id="chem-formula"></div>
                     </div>
                     <div class="chem-info-row">
                         <div class="chem-label">SMILES</div>
@@ -178,203 +186,197 @@
                         <div class="chem-value" id="chem-tox"></div>
                     </div>
                 </div>
+                <div class="chem-value" id="chem-structure"></div>
+            </div>
+            <div class="table-tabs">
+                <button class="table-tab-btn active" onclick="showTable('phys-properties-table')">Physico-chemical Properties</button>
+                <button class="table-tab-btn" onclick="showTable('baseline-tox-table')">Baseline Toxicity</button>
+                <button class="table-tab-btn" onclick="showTable('aop-table')">Adverse Outcome Pathways</button>
+                <button class="table-tab-btn" onclick="showTable('targets-table')">Targets</button>
+                <button class="table-tab-btn" onclick="showTable('moa-table')">Mechanism of Action</button>
+            </div>
+    
+            <!-- Physico-chemical Properties Table -->
+            <div id="phys-properties-table" class="chem-table-container">
+                <table class="chem-data-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                            <th>Unit</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Molecular Weight</td>
+                            <td id="chem-mw"></td>
+                            <td>g/mol</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Solubility in H<sub>2</sub>O</td>
+                            <td id="chem-solubility"></td>
+                            <td>mol/L</td>
+                            <td id="chem-source-solubility"></td>
+                        </tr>
+                        <tr>
+                            <td>Henry Coefficient</td>
+                            <td id="chem-henry"></td>
+                            <td>atm*m3/mol</td>
+                            <td id="chem-source-henry"></td>
+                        </tr>
+                        <tr>
+                            <td>Log Kaw</td>
+                            <td id="chem-log-kaw"></td>
+                            <td></td>
+                            <td id="chem-source-kaw"></td>
+                        </tr>
+                        <tr>
+                            <td>Log Kow</td>
+                            <td id="chem-log-kow"></td>
+                            <td></td>
+                            <td id="chem-source-kow"></td>
+                        </tr>
+                        <tr>
+                            <td>pKa (Acid)</td>
+                            <td id="chem-pka-acid"></td>
+                            <td></td>
+                            <td id="chem-source-pka-acid"></td>
+                        </tr>
+                        <tr>
+                            <td>pKa (Base)</td>
+                            <td id="chem-pka-base"></td>
+                            <td></td>
+                            <td id="chem-source-pka-base"></td>
+                        </tr>
+                        <tr>
+                            <td>Log Dlipw (pH 7.4)</td>
+                            <td id="chem-log-dlipw"></td>
+                            <td></td>
+                            <td id="chem-source-dlipw"></td>
+                        </tr>
+                        <tr>
+                            <td>Freely Dissolved Fraction</td>
+                            <td id="chem-fdf"></td>
+                            <td></td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Density</td>
+                            <td id="chem-density"></td>
+                            <td>kg/L</td>
+                            <td id="chem-source-density"></td>
+                        </tr>
+                        <tr>
+                            <td>Boiling Point</td>
+                            <td id="chem-boiling"></td>
+                            <td>ºC</td>
+                            <td id="chem-source-boiling"></td>
+                        </tr>
+                        <tr>
+                            <td>Melting Point</td>
+                            <td id="chem-melting"></td>
+                            <td>ºC</td>
+                            <td id="chem-source-melting"></td>
+                        </tr>
+                        <tr>
+                            <td>Vapor Pressure</td>
+                            <td id="chem-vapor-pressure"></td>
+                            <td>mmHg</td>
+                            <td id="chem-source-vapor-pressure"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <div class="table-tabs">
-                    <button class="table-tab-btn active" onclick="showTable('phys-properties-table')">Physico-chemical Properties</button>
-                    <button class="table-tab-btn" onclick="showTable('baseline-tox-table')">Baseline Toxicity</button>
-                    <button class="table-tab-btn" onclick="showTable('aop-table')">Adverse Outcome Pathways</button>
-                    <button class="table-tab-btn" onclick="showTable('targets-table')">Targets</button>
-                    <button class="table-tab-btn" onclick="showTable('moa-table')">Mechanism of Action</button>
-                </div>
-        
-                <!-- Physico-chemical Properties Table -->
-                <div id="phys-properties-table" class="chem-table-container">
-                    <table class="chem-data-table">
-                        <thead>
-                            <tr>
-                                <th>Property</th>
-                                <th>Value</th>
-                                <th>Unit</th>
-                                <th>Source</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Molecular Weight</td>
-                                <td id="chem-mw"></td>
-                                <td>g/mol</td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <td>Solubility (H2O)</td>
-                                <td id="chem-solubility"></td>
-                                <td>mol/L</td>
-                                <td id="chem-source-solubility"></td>
-                            </tr>
-                            <tr>
-                                <td>Henry Coefficient</td>
-                                <td id="chem-henry"></td>
-                                <td>atm*m3/mol</td>
-                                <td id="chem-source-henry"></td>
-                            </tr>
-                            <tr>
-                                <td>Log Kaw</td>
-                                <td id="chem-log-kaw"></td>
-                                <td></td>
-                                <td id="chem-source-kaw"></td>
-                            </tr>
-                            <tr>
-                                <td>Log Kow</td>
-                                <td id="chem-log-kow"></td>
-                                <td></td>
-                                <td id="chem-source-kow"></td>
-                            </tr>
-                            <tr>
-                                <td>pKa (Acid)</td>
-                                <td id="chem-pka-acid"></td>
-                                <td></td>
-                                <td id="chem-source-pka-acid"></td>
-                            </tr>
-                            <tr>
-                                <td>pKa (Base)</td>
-                                <td id="chem-pka-base"></td>
-                                <td></td>
-                                <td id="chem-source-pka-base"></td>
-                            </tr>
-                            <tr>
-                                <td>Log Dlipw (pH 7.4)</td>
-                                <td id="chem-log-dlipw"></td>
-                                <td></td>
-                                <td id="chem-source-dlipw"></td>
-                            </tr>
-                            <tr>
-                                <td>Freely Dissolved Fraction</td>
-                                <td id="chem-fdf"></td>
-                                <td></td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <td>Density</td>
-                                <td id="chem-density"></td>
-                                <td>kg/L</td>
-                                <td id="chem-source-density"></td>
-                            </tr>
-                            <tr>
-                                <td>Average Mass</td>
-                                <td id="chem-avg-mass"></td>
-                                <td></td>
-                                <td>N/A</td>
-                            </tr>
-                            <tr>
-                                <td>Boiling Point</td>
-                                <td id="chem-boiling"></td>
-                                <td>ºC</td>
-                                <td id="chem-source-boiling"></td>
-                            </tr>
-                            <tr>
-                                <td>Melting Point</td>
-                                <td id="chem-melting"></td>
-                                <td>ºC</td>
-                                <td id="chem-source-melting"></td>
-                            </tr>
-                            <tr>
-                                <td>Vapor Pressure</td>
-                                <td id="chem-vapor-pressure"></td>
-                                <td>mmHg</td>
-                                <td id="chem-source-pressure"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div id="baseline-tox-table" class="chem-table-container" style="display: none;">
+                <table class="chem-data-table">
+                    <thead>
+                        <tr>
+                            <th>Organism</th>
+                            <th>Baseline Toxicity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Caenorhabditis elegans</td>
+                            <td id="base-tox-celegans"></td>
+                        </tr>
+                        <tr>
+                            <td>Danio rerio</td>
+                            <td id="base-tox-drerio"></td>
+                        </tr>
+                        <tr>
+                            <td>Daphnia magna</td>
+                            <td id="base-tox-dmagna"></td>
+                        </tr>
+                        <tr>
+                            <td>Drosophila melanogaster</td>
+                            <td id="base-tox-dmelanogaster"></td>
+                        </tr>
+                        <tr>
+                            <td>Human (HepG2 cells)</td>
+                            <td id="base-tox-cells"></td>
+                        </tr>
+                        <tr>
+                            <td>Cells (cells_generic_micromole_liter_free_ec10)</td>
+                            <td id="base-tox-cells-generic"></td>
+                        </tr>
+                        <tr>
+                            <td>Xenopus laevis</td>
+                            <td id="base-tox-xlaevis"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <div id="baseline-tox-table" class="chem-table-container" style="display: none;">
-                    <table class="chem-data-table">
-                        <thead>
-                            <tr>
-                                <th>Organism</th>
-                                <th>Baseline Toxicity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Caenorhabditis elegans</td>
-                                <td id="base-tox-celegans"></td>
-                            </tr>
-                            <tr>
-                                <td>Danio rerio</td>
-                                <td id="base-tox-drerio"></td>
-                            </tr>
-                            <tr>
-                                <td>Daphnia magna</td>
-                                <td id="base-tox-dmagna"></td>
-                            </tr>
-                            <tr>
-                                <td>Drosophila melanogaster</td>
-                                <td id="base-tox-dmelanogaster"></td>
-                            </tr>
-                            <tr>
-                                <td>Human (HepG2 cells)</td>
-                                <td id="base-tox-cells"></td>
-                            </tr>
-                            <tr>
-                                <td>Cells (cells_generic_micromole_liter_free_ec10)</td>
-                                <td id="base-tox-cells-generic"></td>
-                            </tr>
-                            <tr>
-                                <td>Xenopus laevis</td>
-                                <td id="base-tox-xlaevis"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div id="aop-table" class="chem-table-container" style="display: none;">
+                <table class="chem-data-table">
+                    <thead>
+                        <tr>
+                            <th>AOP ID</th>
+                            <th>AOP Name</th>
+                        </tr>
+                    </thead>
+                    <tbody id="aop-table-body">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
 
-                <div id="aop-table" class="chem-table-container" style="display: none;">
-                    <table class="chem-data-table">
-                        <thead>
-                            <tr>
-                                <th>AOP ID</th>
-                                <th>AOP Name</th>
-                            </tr>
-                        </thead>
-                        <tbody id="aop-table-body">
-                            <!-- Data will be populated here -->
-                        </tbody>
-                    </table>
-                </div>
+            <div id="targets-table" class="chem-table-container" style="display: none;">
+                <table class="chem-data-table">
+                    <thead>
+                        <tr>
+                            <th>Target</th>
+                        </tr>
+                    </thead>
+                    <tbody id="targets-table-body">
+                        <!-- Data will be populated here -->
+                    </tbody>
+                </table>
+            </div>
 
-                <div id="targets-table" class="chem-table-container" style="display: none;">
-                    <table class="chem-data-table">
-                        <thead>
-                            <tr>
-                                <th>Target</th>
-                            </tr>
-                        </thead>
-                        <tbody id="targets-table-body">
-                            <!-- Data will be populated here -->
-                        </tbody>
-                    </table>
-                </div>
-
-                <div id="moa-table" class="chem-table-container" style="display: none;">
-                    <table class="chem-data-table">
-                        <thead>
-                            <tr>
-                                <th>Source</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><b>DrugBank</b></td>
-                                <td id="moa-drugbank"></td>
-                            </tr>
-                            <tr>
-                                <td><b>T3DB</b></td>
-                                <td id="moa-t3db"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div id="moa-table" class="chem-table-container" style="display: none;">
+                <table class="chem-data-table">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>DrugBank</b></td>
+                            <td id="moa-drugbank"></td>
+                        </tr>
+                        <tr>
+                            <td><b>T3DB</b></td>
+                            <td id="moa-t3db"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         
@@ -390,80 +392,7 @@
     </div>
 
     <script>
-        function loadChemList() {
-        if (!$.fn.DataTable.isDataTable('#chem-table')) {
-            fetch('/get_chemicals')
-                .then(response => response.json())
-                .then(data => {
-                    const tableHeader = document.getElementById('chem-table-header');
-                    const tableBody = document.getElementById('chem-table-body');
-
-                    // Clear any existing content
-                    tableHeader.innerHTML = '';
-                    tableBody.innerHTML = '';
-
-                    // Create the table header
-                    if (data.length > 0) {
-                        const headers = Object.keys(data[0]);
-                        headers.forEach(header => {
-                            const th = document.createElement('th');
-                            th.textContent = header;
-                            tableHeader.appendChild(th);
-                        });
-                    }
-
-                    // Populate the table body
-                    data.forEach(row => {
-                        const tr = document.createElement('tr');
-                        Object.values(row).forEach(value => {
-                            const td = document.createElement('td');
-                            td.textContent = value;
-                            tr.appendChild(td);
-                        });
-                        tableBody.appendChild(tr);
-                    });
-
-                    // Initialize DataTable
-                    $('#chem-table').DataTable({
-                        dom: 'lBfrtip', // This is the key to enabling the buttons
-                        buttons: [
-                            'copy', 'csv', 'excel', 'pdf', 'print'
-                        ],
-                        scrollY: '65vh', // Vertical scrolling (adjust height as needed)
-                        scrollX: true,   // Enable horizontal scrolling
-                        scrollCollapse: true, // Allows the table to reduce in height when fewer rows are shown
-                        paging: false,
-                        columnDefs: [
-                            { width: '150px', targets: '_all' } // Set the width for all columns
-                        ],
-                        drawCallback: function() { // Add tooltips after the table is drawn
-                            $('#chem-table tbody td').each(function() {
-                                // Destroy any existing tooltip instance to avoid duplicates
-                                if ($(this).data('qtip')) $(this).qtip('destroy', true);
-
-                                // Determine if this cell is in the rightmost column
-                                let isRightmost = $(this).is(':last-child');
-
-                                $(this).qtip({
-                                    content: {
-                                        text: $(this).text().trim()
-                                    },
-                                    style: {
-                                        classes: 'qtip-dark qtip-rounded'
-                                    },
-                                    position: {
-                                        my: isRightmost ? 'top right' : 'top left', // Adjust `my` for the rightmost column
-                                        at: isRightmost ? 'bottom left' : 'bottom right' // Adjust `at` for the rightmost column
-                                    }
-                                });
-                            });
-                        }
-                    });
-                })
-                .catch(error => console.error('Error loading chemical list:', error));
-            }
-        }
-
+        
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tabcontent");

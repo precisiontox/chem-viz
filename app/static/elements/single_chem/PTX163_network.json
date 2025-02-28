@@ -9,10 +9,12 @@
                   "label": "PTX163 | Tunicamycin",
                   "cas": "11089-65-9",
                   "dtxsid": "DTXSID8036730",
+                  "cid": "20055059",
                   "db_id": "NA",
+                  "formula": "NA",
                   "smiles": "NA",
                   "inchi": "NA",
-                  "mw_g_mol": "",
+                  "mw_g_mol": "816.899",
                   "solubility_h2o_mol_liter": "",
                   "source_solubility_h2o": "",
                   "henry_coefficient_atm_m3_mol": "",
@@ -22,14 +24,13 @@
                   "pka_acid": "",
                   "pka_base": "",
                   "source_pka": "",
-                  "log_kow_liter_liter": "",
+                  "log_kow_liter_liter": "https://www.chemspider .com/Chemical-Structure .17347361.html",
                   "source_kow": "",
-                  "log_dlipw_ph74_liter_liter": "",
+                  "log_dlipw_ph74_liter_liter": "2.73",
                   "source_dlipw": "Kow QSAR (\u2206mw = 1)",
                   "freely_dissolved_fraction": "0.635756222637324",
                   "density_kg_liter": "",
                   "source_density": "",
-                  "average_mass": "NA",
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
                   "melting_point": "NA",
@@ -177,9 +178,9 @@
                   "role": "prop",
                   "id": "mw_g_mol",
                   "label": "Molecular Weight",
-                  "combinedLabel": "Molecular Weight:\n g/mol",
-                  "value": "",
-                  "hlLabel": "Molecular Weight:\n g/mol",
+                  "combinedLabel": "Molecular Weight:\n816.90 g/mol",
+                  "value": "816.899",
+                  "hlLabel": "Molecular Weight:\n816.90 g/mol",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n mol/liter",
                   "value": "",
-                  "hlLabel": "Solubility (H2O):\n mol/liter",
+                  "hlLabel": "Solubility in H2O:\n mol/liter",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -261,9 +262,9 @@
                   "role": "prop",
                   "id": "log_kow_liter_liter",
                   "label": "Log Kow",
-                  "combinedLabel": "Log Kow:\n ",
-                  "value": "",
-                  "hlLabel": "Log Kow:\n ",
+                  "combinedLabel": "Log Kow:\nhttps://www.chemspider .com/Chemical-Structure .17347361.html ",
+                  "value": "https://www.chemspider .com/Chemical-Structure .17347361.html",
+                  "hlLabel": "Log Kow:\nhttps://www.chemspider .com/Chemical-Structure .17347361.html ",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -275,9 +276,9 @@
                   "role": "prop",
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
-                  "combinedLabel": "Log Dlipw (pH 7.4):\n ",
-                  "value": "",
-                  "hlLabel": "Log Dlipw (pH 7.4):\n \nSource: Kow QSAR (\u2206mw = 1)",
+                  "combinedLabel": "Log Dlipw (pH 7.4):\n2.73 ",
+                  "value": "2.73",
+                  "hlLabel": "Log Dlipw (pH 7.4):\n2.73 \nSource: Kow QSAR (\u2206mw = 1)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -309,20 +310,6 @@
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Average Mass:\nn/a",
-                  "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -465,16 +452,6 @@
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
                   "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#9a999a"
             }
       },
       {

@@ -9,7 +9,9 @@
                   "label": "PTX224 | 1,3-Diphenylguanidine",
                   "cas": "102-06-7",
                   "dtxsid": "DTXSID3025178",
+                  "cid": "7594",
                   "db_id": "NA",
+                  "formula": "C13H13N3",
                   "smiles": "N=C(NC1=CC=CC=C1)NC1=CC=CC=C1",
                   "inchi": "OWRCNXZUPFZXOS-UHFFFAOYSA-N",
                   "mw_g_mol": "211.268",
@@ -20,20 +22,19 @@
                   "log_kaw_kh_rt": "6.81852975210058",
                   "source_kaw": "LSER",
                   "pka_acid": "",
-                  "pka_base": "10.1",
-                  "source_pka": "ACD/GALAS",
+                  "pka_base": "10.07",
+                  "source_pka": "UFZ; Sirius T3",
                   "log_kow_liter_liter": "2.7295",
                   "source_kow": "",
-                  "log_dlipw_ph74_liter_liter": "1.8767949999999998",
+                  "log_dlipw_ph74_liter_liter": "1.89",
                   "source_dlipw": "Kow QSAR (\u2206mw = 1)",
                   "freely_dissolved_fraction": "0.59193262510842",
                   "density_kg_liter": "1.2",
                   "source_density": "COMPTOX",
-                  "average_mass": 211.268,
-                  "boiling_point": "170.0 \u00b0C",
-                  "source_boiling_point": "Alfa Aesar (Chemical company)",
-                  "melting_point": "147.0 \u00b0C",
-                  "source_melting_point": "Tokyo Chemical Industry (Chemical company)",
+                  "boiling_point": "170.0",
+                  "source_boiling_point": "CompTox (Alfa Aesar (Chemical company)",
+                  "melting_point": "147.0; 148.0; 150.0",
+                  "source_melting_point": "CompTox (Tokyo Chemical Industry (Chemical company; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n4.76e-03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n4.76e-03 mol/liter",
                   "value": "0.00475929",
-                  "hlLabel": "Solubility (H2O):\n4.76e-03 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n4.76e-03 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -235,7 +236,7 @@
                   "label": "pKa (acid)",
                   "combinedLabel": "pKa (acid):\n ",
                   "value": "",
-                  "hlLabel": "pKa (acid):\n \nSource: ACD/GALAS",
+                  "hlLabel": "pKa (acid):\n \nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -247,9 +248,9 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n10.10 ",
-                  "value": "10.1",
-                  "hlLabel": "pKa (base):\n10.10 \nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (base):\n10.07 ",
+                  "value": "10.07",
+                  "hlLabel": "pKa (base):\n10.07 \nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -275,9 +276,9 @@
                   "role": "prop",
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
-                  "combinedLabel": "Log Dlipw (pH 7.4):\n1.88 ",
-                  "value": "1.8767949999999998",
-                  "hlLabel": "Log Dlipw (pH 7.4):\n1.88 \nSource: Kow QSAR (\u2206mw = 1)",
+                  "combinedLabel": "Log Dlipw (pH 7.4):\n1.89 ",
+                  "value": "1.89",
+                  "hlLabel": "Log Dlipw (pH 7.4):\n1.89 \nSource: Kow QSAR (\u2206mw = 1)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n211.27 ",
-                  "value": 211.268,
-                  "hlLabel": "Average Mass:\n211.27 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n170.0 \u00b0C ",
-                  "value": "170.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n170.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Boiling Point:\n170.00 \u00b0C",
+                  "value": "170.0",
+                  "hlLabel": "Boiling Point:\n170.00 \u00b0C\nSource: CompTox (Alfa Aesar (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n147.0 \u00b0C ",
-                  "value": "147.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n147.0 \u00b0C \nSource: Tokyo Chemical Industry (Chemical company)",
+                  "combinedLabel": "Melting Point:\n147.0; 148.0; 150.0 \u00b0C",
+                  "value": "147.0; 148.0; 150.0",
+                  "hlLabel": "Melting Point:\n147.0; 148.0; 150.0 \u00b0C\nSource: CompTox (Tokyo Chemical Industry (Chemical company; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

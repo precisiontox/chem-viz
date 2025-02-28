@@ -9,7 +9,9 @@
                   "label": "PTX157 | Fluconazole",
                   "cas": "86386-73-4",
                   "dtxsid": "DTXSID3020627",
+                  "cid": "3365",
                   "db_id": "DB00196",
+                  "formula": "C13H12F2N6O",
                   "smiles": "OC(CN1C=NC=N1)(CN1C=NC=N1)C1=C(F)C=C(F)C=C1",
                   "inchi": "RFHAOTPXVQNOHP-UHFFFAOYSA-N",
                   "mw_g_mol": "306.277",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.941632771850167",
                   "density_kg_liter": "1.444",
                   "source_density": "COMPTOX",
-                  "average_mass": 306.277,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "138.0 \u00b0C",
-                  "source_melting_point": "LKT Labs (Chemical company)",
+                  "melting_point": "141.0",
+                  "source_melting_point": "CompTox (Tokyo Chemical Industry (Chemical company)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n0.02 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n0.02 mol/liter",
                   "value": "0.0158043",
-                  "hlLabel": "Solubility (H2O):\n0.02 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n0.02 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n306.28 ",
-                  "value": 306.277,
-                  "hlLabel": "Average Mass:\n306.28 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n138.0 \u00b0C ",
-                  "value": "138.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n138.0 \u00b0C \nSource: LKT Labs (Chemical company)",
+                  "combinedLabel": "Melting Point:\n141.00 \u00b0C",
+                  "value": "141.0",
+                  "hlLabel": "Melting Point:\n141.00 \u00b0C\nSource: CompTox (Tokyo Chemical Industry (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

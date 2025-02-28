@@ -98,7 +98,7 @@ const generalNetworkStyle = [ // the stylesheet for general graph
             "border-color": "data(color_border)",
             "border-opacity": "1",
             "background-image": function (ele) {
-                return `${imageBaseUrl}${ele.data('image')}`;
+                return `${imageBaseUrl}/nodes/${ele.data('image')}`;
             },
             "background-image-opacity": "1",
             "background-image-containment": "over",
@@ -259,7 +259,7 @@ const singleNetworkStyle = [
             "shape": "data(shape)",
             "background-color": "data(colorBg)",
             "background-image": function (ele) {
-                return `${imageBaseUrl}${ele.data('image')}`;
+                return `${imageBaseUrl}/nodes/${ele.data('image')}`;
             },
             "background-image-opacity": "1",
             // "background-image-containment": "over",

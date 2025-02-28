@@ -9,7 +9,9 @@
                   "label": "PTX206 | DEET",
                   "cas": "134-62-3",
                   "dtxsid": "DTXSID2021995",
+                  "cid": "4284",
                   "db_id": "NA",
+                  "formula": "C12H17NO",
                   "smiles": "CCN(CC)C(=O)C1=CC=CC(C)=C1",
                   "inchi": "MMOXZBCLCQITDF-UHFFFAOYSA-N",
                   "mw_g_mol": "191.274",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.845175740989639",
                   "density_kg_liter": "0.995",
                   "source_density": "COMPTOX",
-                  "average_mass": 191.274,
-                  "boiling_point": "111.0 \u00b0C",
-                  "source_boiling_point": "Alfa Aesar (Chemical company)",
-                  "melting_point": "-45.0 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
-                  "vapor_pressure": "0.00199986 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "boiling_point": "111.0; 285.0; 290.0",
+                  "source_boiling_point": "CompTox (Alfa Aesar (Chemical company; Oxford University Chemical Safety Data (No longer updated; PhysPropNCCT)",
+                  "melting_point": "-45.0",
+                  "source_melting_point": "CompTox (Jean-Claude Bradley Open Melting Point Dataset)",
+                  "vapor_pressure": "0.00199986",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n4.77e-03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n4.77e-03 mol/liter",
                   "value": "0.00477281",
-                  "hlLabel": "Solubility (H2O):\n4.77e-03 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n4.77e-03 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n191.27 ",
-                  "value": 191.274,
-                  "hlLabel": "Average Mass:\n191.27 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n111.0 \u00b0C ",
-                  "value": "111.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n111.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Boiling Point:\n111.0; 285.0; 290.0 \u00b0C",
+                  "value": "111.0; 285.0; 290.0",
+                  "hlLabel": "Boiling Point:\n111.0; 285.0; 290.0 \u00b0C\nSource: CompTox (Alfa Aesar (Chemical company; Oxford University Chemical Safety Data (No longer updated; PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n-45.0 \u00b0C ",
-                  "value": "-45.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n-45.0 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n-45.00 \u00b0C",
+                  "value": "-45.0",
+                  "hlLabel": "Melting Point:\n-45.00 \u00b0C\nSource: CompTox (Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n0.00199986 mmHg ",
-                  "value": "0.00199986 mmHg",
-                  "hlLabel": "Vapor Pressure:\n0.00199986 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n2.00e-03 mmHg",
+                  "value": "0.00199986",
+                  "hlLabel": "Vapor Pressure:\n2.00e-03 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

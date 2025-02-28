@@ -9,7 +9,9 @@
                   "label": "PTX081 | Triethyltin bromide",
                   "cas": "2767-54-6",
                   "dtxsid": "DTXSID9040712",
+                  "cid": "17701",
                   "db_id": "NA",
+                  "formula": "C6H15BrSn",
                   "smiles": "CC[Sn](Br)(CC)CC",
                   "inchi": "KQPIFPBKXYBDGV-UHFFFAOYSA-M",
                   "mw_g_mol": "285.8",
@@ -21,19 +23,18 @@
                   "source_kaw": "",
                   "pka_acid": "6.81",
                   "pka_base": "",
-                  "source_pka": "UFZ; Sirius T3",
-                  "log_kow_liter_liter": "",
-                  "source_kow": "",
-                  "log_dlipw_ph74_liter_liter": "",
-                  "source_dlipw": "",
+                  "source_pka": "R. Stuart Tobias and M. Yasuda The Journal of Physical Chemistry 1964 68 (7), 1820-1828 DOI: 10.1021/j100789a025",
+                  "log_kow_liter_liter": "1.10",
+                  "source_kow": "read across from tributyltin using a fragment constant difference of  1.1 per butyl/to methyl (from alcohol /ethanol/butanol and ethylylbenzene to butylbenzene)  - TBT, Arnold et al. 1997",
+                  "log_dlipw_ph74_liter_liter": "0.69",
+                  "source_dlipw": "read across from tributyltin using a fragment constant difference of  1.1 per butyl/to methyl (from alcohol /ethanol/butanol and ethylylbenzene to butylbenzene)  - TBT",
                   "freely_dissolved_fraction": "0.996939396054114",
                   "density_kg_liter": "",
                   "source_density": "COMPTOX",
-                  "average_mass": 285.8,
-                  "boiling_point": "224.0 \u00b0C",
-                  "source_boiling_point": "Oxford University Chemical Safety Data (No longer updated)",
-                  "melting_point": "-13.5 \u00b0C",
-                  "source_melting_point": "Oxford University Chemical Safety Data (No longer updated)",
+                  "boiling_point": "224.0",
+                  "source_boiling_point": "CompTox (Oxford University Chemical Safety Data (No longer updated)",
+                  "melting_point": "-13.5",
+                  "source_melting_point": "CompTox (Oxford University Chemical Safety Data (No longer updated)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\nOCHEM mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\nOCHEM mol/liter",
                   "value": "OCHEM",
-                  "hlLabel": "Solubility (H2O):\nOCHEM mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\nOCHEM mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -235,7 +236,7 @@
                   "label": "pKa (acid)",
                   "combinedLabel": "pKa (acid):\n6.81 ",
                   "value": "6.81",
-                  "hlLabel": "pKa (acid):\n6.81 \nSource: UFZ; Sirius T3",
+                  "hlLabel": "pKa (acid):\n6.81 \nSource: R. Stuart Tobias and M. Yasuda The Journal of Physical Chemistry 1964 68 (7), 1820-1828 DOI: 10.1021/j100789a025",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -249,7 +250,7 @@
                   "label": "pKa (base)",
                   "combinedLabel": "pKa (base):\n ",
                   "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: UFZ; Sirius T3",
+                  "hlLabel": "pKa (base):\n \nSource: R. Stuart Tobias and M. Yasuda The Journal of Physical Chemistry 1964 68 (7), 1820-1828 DOI: 10.1021/j100789a025",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -261,9 +262,9 @@
                   "role": "prop",
                   "id": "log_kow_liter_liter",
                   "label": "Log Kow",
-                  "combinedLabel": "Log Kow:\n ",
-                  "value": "",
-                  "hlLabel": "Log Kow:\n ",
+                  "combinedLabel": "Log Kow:\n1.10 ",
+                  "value": "1.10",
+                  "hlLabel": "Log Kow:\n1.10 \nSource: read across from tributyltin using a fragment constant difference of  1.1 per butyl/to methyl (from alcohol /ethanol/butanol and ethylylbenzene to butylbenzene)  - TBT, Arnold et al. 1997",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -275,9 +276,9 @@
                   "role": "prop",
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
-                  "combinedLabel": "Log Dlipw (pH 7.4):\n ",
-                  "value": "",
-                  "hlLabel": "Log Dlipw (pH 7.4):\n ",
+                  "combinedLabel": "Log Dlipw (pH 7.4):\n0.69 ",
+                  "value": "0.69",
+                  "hlLabel": "Log Dlipw (pH 7.4):\n0.69 \nSource: read across from tributyltin using a fragment constant difference of  1.1 per butyl/to methyl (from alcohol /ethanol/butanol and ethylylbenzene to butylbenzene)  - TBT",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n285.80 ",
-                  "value": 285.8,
-                  "hlLabel": "Average Mass:\n285.80 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n224.0 \u00b0C ",
-                  "value": "224.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n224.0 \u00b0C \nSource: Oxford University Chemical Safety Data (No longer updated)",
+                  "combinedLabel": "Boiling Point:\n224.00 \u00b0C",
+                  "value": "224.0",
+                  "hlLabel": "Boiling Point:\n224.00 \u00b0C\nSource: CompTox (Oxford University Chemical Safety Data (No longer updated)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n-13.5 \u00b0C ",
-                  "value": "-13.5 \u00b0C",
-                  "hlLabel": "Melting Point:\n-13.5 \u00b0C \nSource: Oxford University Chemical Safety Data (No longer updated)",
+                  "combinedLabel": "Melting Point:\n-13.50 \u00b0C",
+                  "value": "-13.5",
+                  "hlLabel": "Melting Point:\n-13.50 \u00b0C\nSource: CompTox (Oxford University Chemical Safety Data (No longer updated)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

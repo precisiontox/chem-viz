@@ -9,7 +9,9 @@
                   "label": "PTX085 | Chlorpromazine hydrochloride",
                   "cas": "69-09-0",
                   "dtxsid": "DTXSID7024827",
+                  "cid": "6240",
                   "db_id": "NA",
+                  "formula": "C17H20Cl2N2S",
                   "smiles": "Cl.CN(C)CCCN1C2=C(SC3=C1C=C(Cl)C=C3)C=CC=C2",
                   "inchi": "FBSMERQALIEGJT-UHFFFAOYSA-N",
                   "mw_g_mol": "318.86",
@@ -24,16 +26,15 @@
                   "source_pka": "ACD pKa/GALAS",
                   "log_kow_liter_liter": "5.41",
                   "source_kow": "experimental  PhysPropNCCT",
-                  "log_dlipw_ph74_liter_liter": "4.40",
+                  "log_dlipw_ph74_liter_liter": "4.4",
                   "source_dlipw": "LSERD, eq. 1  (?mw=1)",
                   "freely_dissolved_fraction": "0.0146221732332831",
                   "density_kg_liter": "1.185",
                   "source_density": "COMPTOX",
-                  "average_mass": "NA",
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "NA",
-                  "source_melting_point": "NA",
+                  "melting_point": "179.0; 197.0",
+                  "source_melting_point": "CompTox (LKT Labs (Chemical company; Tokyo Chemical Industry (Chemical company)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n7.02e-06 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n7.02e-06 mol/liter",
                   "value": "0.00000702",
-                  "hlLabel": "Solubility (H2O):\n7.02e-06 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n7.02e-06 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -276,7 +277,7 @@
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n4.40 ",
-                  "value": "4.40",
+                  "value": "4.4",
                   "hlLabel": "Log Dlipw (pH 7.4):\n4.40 \nSource: LSERD, eq. 1  (?mw=1)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Average Mass:\nn/a",
-                  "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,12 +332,12 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Melting Point:\nn/a\nSource: NA",
+                  "combinedLabel": "Melting Point:\n179.0; 197.0 \u00b0C",
+                  "value": "179.0; 197.0",
+                  "hlLabel": "Melting Point:\n179.0; 197.0 \u00b0C\nSource: CompTox (LKT Labs (Chemical company; Tokyo Chemical Industry (Chemical company)",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -473,16 +460,6 @@
                   "role": "prop",
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#9a999a"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
                   "target": "boiling_point",
                   "color": "#9a999a"
             }
@@ -494,7 +471,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "melting_point",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {

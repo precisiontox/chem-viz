@@ -9,7 +9,9 @@
                   "label": "PTX007 | Acrylamide",
                   "cas": "79-06-1",
                   "dtxsid": "DTXSID5020027",
+                  "cid": "6579",
                   "db_id": "NA",
+                  "formula": "C3H5NO",
                   "smiles": "NC(=O)C=C",
                   "inchi": "HRPVXLWXLXDGHG-UHFFFAOYSA-N",
                   "mw_g_mol": "71.08",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.942245693301312",
                   "density_kg_liter": "0.972",
                   "source_density": "COMPTOX",
-                  "average_mass": 71.079,
-                  "boiling_point": "125.0 \u00b0C",
-                  "source_boiling_point": "Alfa Aesar (Chemical company)",
-                  "melting_point": "83.5 \u00b0C",
-                  "source_melting_point": "Alfa Aesar (Chemical company)",
-                  "vapor_pressure": "0.00700003 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "boiling_point": "125.0; 192.6; 237.5",
+                  "source_boiling_point": "CompTox (Alfa Aesar (Chemical company; PhysPropNCCT; NIOSH)",
+                  "melting_point": "83.5; 84.5; 85.0; 86.0",
+                  "source_melting_point": "CompTox (Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Tokyo Chemical Industry (Chemical company; Tokyo Chemical Industry (Chemical company)",
+                  "vapor_pressure": "0.00700003",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n8.98 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n8.98 mol/liter",
                   "value": "8.98",
-                  "hlLabel": "Solubility (H2O):\n8.98 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n8.98 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n71.08 ",
-                  "value": 71.079,
-                  "hlLabel": "Average Mass:\n71.08 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n125.0 \u00b0C ",
-                  "value": "125.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n125.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Boiling Point:\n125.0; 192.6; 237.5 \u00b0C",
+                  "value": "125.0; 192.6; 237.5",
+                  "hlLabel": "Boiling Point:\n125.0; 192.6; 237.5 \u00b0C\nSource: CompTox (Alfa Aesar (Chemical company; PhysPropNCCT; NIOSH)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n83.5 \u00b0C ",
-                  "value": "83.5 \u00b0C",
-                  "hlLabel": "Melting Point:\n83.5 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Melting Point:\n83.5; 84.5; 85.0; 86.0 \u00b0C",
+                  "value": "83.5; 84.5; 85.0; 86.0",
+                  "hlLabel": "Melting Point:\n83.5; 84.5; 85.0; 86.0 \u00b0C\nSource: CompTox (Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Tokyo Chemical Industry (Chemical company; Tokyo Chemical Industry (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n0.00700003 mmHg ",
-                  "value": "0.00700003 mmHg",
-                  "hlLabel": "Vapor Pressure:\n0.00700003 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n7.00e-03 mmHg",
+                  "value": "0.00700003",
+                  "hlLabel": "Vapor Pressure:\n7.00e-03 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

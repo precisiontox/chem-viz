@@ -9,7 +9,9 @@
                   "label": "PTX127 | Hydrocortisone",
                   "cas": "50-23-7",
                   "dtxsid": "DTXSID7020714",
+                  "cid": "5754",
                   "db_id": "DB00741",
+                  "formula": "C21H30O5",
                   "smiles": "C[C@]12C[C@H](O)[C@H]3[C@@H](CCC4=CC(=O)CC[C@]34C)[C@@H]1CC[C@]2(O)C(=O)CO",
                   "inchi": "JYGXADMDTFJGBT-VWUMJDOOSA-N",
                   "mw_g_mol": "362.466",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.934160444417415",
                   "density_kg_liter": "",
                   "source_density": "COMPTOX",
-                  "average_mass": 362.466,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "212.0 \u00b0C",
-                  "source_melting_point": "Biosynth (Chemical company)",
+                  "melting_point": "212.0; 218.5; 220.8",
+                  "source_melting_point": "CompTox (Biosynth (Chemical company; PhysPropNCCT; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n9.75e-04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n9.75e-04 mol/liter",
                   "value": "9.74915E-4",
-                  "hlLabel": "Solubility (H2O):\n9.75e-04 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n9.75e-04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n362.47 ",
-                  "value": 362.466,
-                  "hlLabel": "Average Mass:\n362.47 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n212.0 \u00b0C ",
-                  "value": "212.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n212.0 \u00b0C \nSource: Biosynth (Chemical company)",
+                  "combinedLabel": "Melting Point:\n212.0; 218.5; 220.8 \u00b0C",
+                  "value": "212.0; 218.5; 220.8",
+                  "hlLabel": "Melting Point:\n212.0; 218.5; 220.8 \u00b0C\nSource: CompTox (Biosynth (Chemical company; PhysPropNCCT; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

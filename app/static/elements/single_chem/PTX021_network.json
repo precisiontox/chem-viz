@@ -9,7 +9,9 @@
                   "label": "PTX021 | Propofol",
                   "cas": "2078-54-8",
                   "dtxsid": "DTXSID6023523",
+                  "cid": "4943",
                   "db_id": "DB00818",
+                  "formula": "C12H18O",
                   "smiles": "CC(C)C1=CC=CC(C(C)C)=C1O",
                   "inchi": "OLBCVFGFOZPWHH-UHFFFAOYSA-N",
                   "mw_g_mol": "178.2736",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.120128901830105",
                   "density_kg_liter": "0.981",
                   "source_density": "COMPTOX",
-                  "average_mass": 178.275,
-                  "boiling_point": "255.0 \u00b0C",
-                  "source_boiling_point": "Alfa Aesar (Chemical company)",
-                  "melting_point": "17.5 \u00b0C",
-                  "source_melting_point": "Alfa Aesar (Chemical company)",
+                  "boiling_point": "255.0",
+                  "source_boiling_point": "CompTox (Alfa Aesar (Chemical company)",
+                  "melting_point": "17.5",
+                  "source_melting_point": "CompTox (Alfa Aesar (Chemical company)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n1.04e-03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n1.04e-03 mol/liter",
                   "value": "0.00103992",
-                  "hlLabel": "Solubility (H2O):\n1.04e-03 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n1.04e-03 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n178.28 ",
-                  "value": 178.275,
-                  "hlLabel": "Average Mass:\n178.28 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n255.0 \u00b0C ",
-                  "value": "255.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n255.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Boiling Point:\n255.00 \u00b0C",
+                  "value": "255.0",
+                  "hlLabel": "Boiling Point:\n255.00 \u00b0C\nSource: CompTox (Alfa Aesar (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n17.5 \u00b0C ",
-                  "value": "17.5 \u00b0C",
-                  "hlLabel": "Melting Point:\n17.5 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Melting Point:\n17.50 \u00b0C",
+                  "value": "17.5",
+                  "hlLabel": "Melting Point:\n17.50 \u00b0C\nSource: CompTox (Alfa Aesar (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

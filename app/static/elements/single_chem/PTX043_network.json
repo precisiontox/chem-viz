@@ -9,7 +9,9 @@
                   "label": "PTX043 | Tributyltin chloride",
                   "cas": "1461-22-9",
                   "dtxsid": "DTXSID3027403",
+                  "cid": "15096",
                   "db_id": "NA",
+                  "formula": "C12H27ClSn",
                   "smiles": "CCCC[Sn](Cl)(CCCC)CCCC",
                   "inchi": "GCTFWCDSFPMHHS-UHFFFAOYSA-M",
                   "mw_g_mol": "291.066",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.0858511045746207",
                   "density_kg_liter": "-",
                   "source_density": "",
-                  "average_mass": "NA",
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "NA",
-                  "source_melting_point": "NA",
+                  "melting_point": "-19.0",
+                  "source_melting_point": "CompTox (SynQuest Labs (Chemical company)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n2.51e-08 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n2.51e-08 mol/liter",
                   "value": "0.0000000251",
-                  "hlLabel": "Solubility (H2O):\n2.51e-08 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n2.51e-08 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Average Mass:\nn/a",
-                  "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,12 +332,12 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Melting Point:\nn/a\nSource: NA",
+                  "combinedLabel": "Melting Point:\n-19.00 \u00b0C",
+                  "value": "-19.0",
+                  "hlLabel": "Melting Point:\n-19.00 \u00b0C\nSource: CompTox (SynQuest Labs (Chemical company)",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -473,16 +460,6 @@
                   "role": "prop",
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#9a999a"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
                   "target": "boiling_point",
                   "color": "#9a999a"
             }
@@ -494,7 +471,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "melting_point",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {

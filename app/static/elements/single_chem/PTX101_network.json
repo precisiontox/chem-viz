@@ -9,7 +9,9 @@
                   "label": "PTX101 | Hydroxyurea",
                   "cas": "127-07-1",
                   "dtxsid": "DTXSID6025438",
+                  "cid": "3657",
                   "db_id": "DB01005",
+                  "formula": "CH4N2O2",
                   "smiles": "NC(=O)NO",
                   "inchi": "VSNHCAURESNICA-UHFFFAOYSA-N",
                   "mw_g_mol": "76.055",
@@ -24,16 +26,15 @@
                   "source_pka": "ACD pKa/GALAS",
                   "log_kow_liter_liter": "-1.8",
                   "source_kow": "experimental  PhysPropNCCT",
-                  "log_dlipw_ph74_liter_liter": "-1.00",
+                  "log_dlipw_ph74_liter_liter": "-1.0",
                   "source_dlipw": "@ -1 at logKow < -1 (Gobas 1988)",
                   "freely_dissolved_fraction": "0.942276927352634",
                   "density_kg_liter": "1.195",
                   "source_density": "COMPTOX",
-                  "average_mass": 76.055,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "133.0 \u00b0C",
-                  "source_melting_point": "LKT Labs (Chemical company)",
+                  "melting_point": "133.0; 140.0",
+                  "source_melting_point": "CompTox (LKT Labs (Chemical company; Alfa Aesar (Chemical company)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n13.16 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n13.16 mol/liter",
                   "value": "13.1614",
-                  "hlLabel": "Solubility (H2O):\n13.16 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n13.16 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -276,7 +277,7 @@
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n-1.00 ",
-                  "value": "-1.00",
+                  "value": "-1.0",
                   "hlLabel": "Log Dlipw (pH 7.4):\n-1.00 \nSource: @ -1 at logKow < -1 (Gobas 1988)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n76.06 ",
-                  "value": 76.055,
-                  "hlLabel": "Average Mass:\n76.06 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n133.0 \u00b0C ",
-                  "value": "133.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n133.0 \u00b0C \nSource: LKT Labs (Chemical company)",
+                  "combinedLabel": "Melting Point:\n133.0; 140.0 \u00b0C",
+                  "value": "133.0; 140.0",
+                  "hlLabel": "Melting Point:\n133.0; 140.0 \u00b0C\nSource: CompTox (LKT Labs (Chemical company; Alfa Aesar (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

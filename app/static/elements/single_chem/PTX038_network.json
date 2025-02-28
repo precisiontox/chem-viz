@@ -9,7 +9,9 @@
                   "label": "PTX038 | Verapamil hydrochloride",
                   "cas": "152-11-4",
                   "dtxsid": "DTXSID2034095",
+                  "cid": "62969",
                   "db_id": "NA",
+                  "formula": "C27H39ClN2O4",
                   "smiles": "Cl.COC1=CC=C(CCN(C)CCCC(C#N)(C(C)C)C2=CC=C(OC)C(OC)=C2)C=C1OC",
                   "inchi": "DOQPXTMNIUCOSY-UHFFFAOYSA-N",
                   "mw_g_mol": "454.6082",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.204458800911693",
                   "density_kg_liter": "1.042",
                   "source_density": "COMPTOX",
-                  "average_mass": "NA",
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "NA",
-                  "source_melting_point": "NA",
+                  "melting_point": "138.5; 142.0",
+                  "source_melting_point": "CompTox (LKT Labs (Chemical company; Biosynth (Chemical company)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n8.91e-07 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n8.91e-07 mol/liter",
                   "value": "0.000000891",
-                  "hlLabel": "Solubility (H2O):\n8.91e-07 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n8.91e-07 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Average Mass:\nn/a",
-                  "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,12 +332,12 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Melting Point:\nn/a\nSource: NA",
+                  "combinedLabel": "Melting Point:\n138.5; 142.0 \u00b0C",
+                  "value": "138.5; 142.0",
+                  "hlLabel": "Melting Point:\n138.5; 142.0 \u00b0C\nSource: CompTox (LKT Labs (Chemical company; Biosynth (Chemical company)",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -473,16 +460,6 @@
                   "role": "prop",
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#9a999a"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
                   "target": "boiling_point",
                   "color": "#9a999a"
             }
@@ -494,7 +471,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "melting_point",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {

@@ -9,7 +9,9 @@
                   "label": "PTX037 | Valproic acid",
                   "cas": "99-66-1",
                   "dtxsid": "DTXSID6023733",
+                  "cid": "3121",
                   "db_id": "DB00313",
+                  "formula": "C8H16O2",
                   "smiles": "CCCC(CCC)C(O)=O",
                   "inchi": "NIJJYAXOARWZEE-UHFFFAOYSA-N",
                   "mw_g_mol": "144.2132",
@@ -24,16 +26,15 @@
                   "source_pka": "Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
                   "log_kow_liter_liter": "2.75",
                   "source_kow": "experimental Sangster et al. (1993)",
-                  "log_dlipw_ph74_liter_liter": "1.90",
+                  "log_dlipw_ph74_liter_liter": "1.9",
                   "source_dlipw": "Kow-QSAR (?mw=1)",
                   "freely_dissolved_fraction": "0.547614505020103",
                   "density_kg_liter": "0.95",
                   "source_density": "COMPTOX",
-                  "average_mass": 144.214,
-                  "boiling_point": "219.5 \u00b0C",
-                  "source_boiling_point": "Alfa Aesar (Chemical company)",
-                  "melting_point": "125.0 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
+                  "boiling_point": "219.5; 222.0",
+                  "source_boiling_point": "CompTox (Alfa Aesar (Chemical company; PhysPropNCCT)",
+                  "melting_point": "NA",
+                  "source_melting_point": "NA",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n0.03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n0.03 mol/liter",
                   "value": "0.0260016",
-                  "hlLabel": "Solubility (H2O):\n0.03 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n0.03 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -276,7 +277,7 @@
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n1.90 ",
-                  "value": "1.90",
+                  "value": "1.9",
                   "hlLabel": "Log Dlipw (pH 7.4):\n1.90 \nSource: Kow-QSAR (?mw=1)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n144.21 ",
-                  "value": 144.214,
-                  "hlLabel": "Average Mass:\n144.21 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n219.5 \u00b0C ",
-                  "value": "219.5 \u00b0C",
-                  "hlLabel": "Boiling Point:\n219.5 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Boiling Point:\n219.5; 222.0 \u00b0C",
+                  "value": "219.5; 222.0",
+                  "hlLabel": "Boiling Point:\n219.5; 222.0 \u00b0C\nSource: CompTox (Alfa Aesar (Chemical company; PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,12 +332,12 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n125.0 \u00b0C ",
-                  "value": "125.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n125.0 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Melting Point:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -473,16 +460,6 @@
                   "role": "prop",
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
                   "target": "boiling_point",
                   "color": "#007cc1"
             }
@@ -494,7 +471,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "melting_point",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {

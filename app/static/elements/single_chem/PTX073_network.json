@@ -9,7 +9,9 @@
                   "label": "PTX073 | 2,4,4'-Trichlorobiphenyl",
                   "cas": "7012-37-5",
                   "dtxsid": "DTXSID2038310",
+                  "cid": "23448",
                   "db_id": "NA",
+                  "formula": "C12H7Cl3",
                   "smiles": "ClC1=CC=C(C=C1)C1=C(Cl)C=C(Cl)C=C1",
                   "inchi": "BZTYNSQSZHARAZ-UHFFFAOYSA-N",
                   "mw_g_mol": "257.54",
@@ -24,18 +26,17 @@
                   "source_pka": "UFZ; Sirius T3",
                   "log_kow_liter_liter": "5.62",
                   "source_kow": "experimental  PhysPropNCCT",
-                  "log_dlipw_ph74_liter_liter": "5.70",
+                  "log_dlipw_ph74_liter_liter": "5.7",
                   "source_dlipw": "Quinn et al. 2014",
                   "freely_dissolved_fraction": "0.0051672818511257",
                   "density_kg_liter": "1.34",
                   "source_density": "COMPTOX",
-                  "average_mass": 257.54,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "58.0 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
-                  "vapor_pressure": "8.53E-5 mmHg",
-                  "source_vapor_pressure": "Li et al. J. Phys. Chem. Ref. Data 32(4): 1545-1590. "
+                  "melting_point": "58.0",
+                  "source_melting_point": "CompTox (Jean-Claude Bradley Open Melting Point Dataset)",
+                  "vapor_pressure": "8.53e-05; 0.000194984",
+                  "source_vapor_pressure": "CompTox (Li et al. J. Phys. Chem. Ref. Data 32(4: 1545-1590. ; PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n8.33e-07 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n8.33e-07 mol/liter",
                   "value": "0.000000833",
-                  "hlLabel": "Solubility (H2O):\n8.33e-07 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n8.33e-07 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -276,7 +277,7 @@
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n5.70 ",
-                  "value": "5.70",
+                  "value": "5.7",
                   "hlLabel": "Log Dlipw (pH 7.4):\n5.70 \nSource: Quinn et al. 2014",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n257.54 ",
-                  "value": 257.54,
-                  "hlLabel": "Average Mass:\n257.54 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n58.0 \u00b0C ",
-                  "value": "58.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n58.0 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n58.00 \u00b0C",
+                  "value": "58.0",
+                  "hlLabel": "Melting Point:\n58.00 \u00b0C\nSource: CompTox (Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n8.53E-5 mmHg ",
-                  "value": "8.53E-5 mmHg",
-                  "hlLabel": "Vapor Pressure:\n8.53E-5 mmHg \nSource: Li et al. J. Phys. Chem. Ref. Data 32(4): 1545-1590. ",
+                  "combinedLabel": "Vapor Pressure:\n8.53e-05; 0.000194984 mmHg",
+                  "value": "8.53e-05; 0.000194984",
+                  "hlLabel": "Vapor Pressure:\n8.53e-05; 0.000194984 mmHg\nSource: CompTox (Li et al. J. Phys. Chem. Ref. Data 32(4: 1545-1590. ; PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

@@ -9,7 +9,9 @@
                   "label": "PTX133 | Triphenyl phosphate",
                   "cas": "115-86-6",
                   "dtxsid": "DTXSID1021952",
+                  "cid": "8289",
                   "db_id": "NA",
+                  "formula": "C18H15O4P",
                   "smiles": "O=P(OC1=CC=CC=C1)(OC1=CC=CC=C1)OC1=CC=CC=C1",
                   "inchi": "XZZNDPSIHUTMOC-UHFFFAOYSA-N",
                   "mw_g_mol": "326.288",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.0584962604429123",
                   "density_kg_liter": "",
                   "source_density": "COMPTOX",
-                  "average_mass": 326.288,
-                  "boiling_point": "245.0 \u00b0C",
-                  "source_boiling_point": "Oxford University Chemical Safety Data (No longer updated)",
-                  "melting_point": "49.0 \u00b0C",
-                  "source_melting_point": "Merck Millipore (Chemical company)",
-                  "vapor_pressure": "6.28058E-6 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "boiling_point": "245.0; 248.5; 413.333",
+                  "source_boiling_point": "CompTox (Oxford University Chemical Safety Data (No longer updated; Alfa Aesar (Chemical company; NIOSH)",
+                  "melting_point": "49.0; 50.0; 50.5",
+                  "source_melting_point": "CompTox (Merck Millipore (Chemical company; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
+                  "vapor_pressure": "6.28058e-06",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n5.86e-06 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n5.86e-06 mol/liter",
                   "value": "5.85634E-6",
-                  "hlLabel": "Solubility (H2O):\n5.86e-06 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n5.86e-06 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n326.29 ",
-                  "value": 326.288,
-                  "hlLabel": "Average Mass:\n326.29 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n245.0 \u00b0C ",
-                  "value": "245.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n245.0 \u00b0C \nSource: Oxford University Chemical Safety Data (No longer updated)",
+                  "combinedLabel": "Boiling Point:\n245.0; 248.5; 413.333 \u00b0C",
+                  "value": "245.0; 248.5; 413.333",
+                  "hlLabel": "Boiling Point:\n245.0; 248.5; 413.333 \u00b0C\nSource: CompTox (Oxford University Chemical Safety Data (No longer updated; Alfa Aesar (Chemical company; NIOSH)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n49.0 \u00b0C ",
-                  "value": "49.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n49.0 \u00b0C \nSource: Merck Millipore (Chemical company)",
+                  "combinedLabel": "Melting Point:\n49.0; 50.0; 50.5 \u00b0C",
+                  "value": "49.0; 50.0; 50.5",
+                  "hlLabel": "Melting Point:\n49.0; 50.0; 50.5 \u00b0C\nSource: CompTox (Merck Millipore (Chemical company; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n6.28058E-6 mmHg ",
-                  "value": "6.28058E-6 mmHg",
-                  "hlLabel": "Vapor Pressure:\n6.28058E-6 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n6.28e-06 mmHg",
+                  "value": "6.28058e-06",
+                  "hlLabel": "Vapor Pressure:\n6.28e-06 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

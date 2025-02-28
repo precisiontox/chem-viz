@@ -9,7 +9,9 @@
                   "label": "PTX232 | Pentachlorophenol",
                   "cas": "87-86-5",
                   "dtxsid": "DTXSID7021106",
+                  "cid": "992",
                   "db_id": "NA",
+                  "formula": "C6HCl5O",
                   "smiles": "OC1=C(Cl)C(Cl)=C(Cl)C(Cl)=C1Cl",
                   "inchi": "IZUPBVBPLAPZRR-UHFFFAOYSA-N",
                   "mw_g_mol": "266.32",
@@ -19,23 +21,22 @@
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "5.99746814232055",
                   "source_kaw": "LSER eq 1 exp. Descriptors",
-                  "pka_acid": "4.49",
+                  "pka_acid": "4.67",
                   "pka_base": "",
-                  "source_pka": "ACD/GALAS",
+                  "source_pka": "UFZ; Sirius T3",
                   "log_kow_liter_liter": "5.12",
                   "source_kow": "",
-                  "log_dlipw_ph74_liter_liter": "4.069999999999999",
+                  "log_dlipw_ph74_liter_liter": "4.38",
                   "source_dlipw": "Kow QSAR (\u2206mw = 1)",
-                  "freely_dissolved_fraction": "0.00765501100351666",
+                  "freely_dissolved_fraction": "0.008",
                   "density_kg_liter": "1.764",
                   "source_density": "COMPTOX",
-                  "average_mass": 266.32,
-                  "boiling_point": "308.889 \u00b0C",
-                  "source_boiling_point": "NIOSH",
-                  "melting_point": "172.5 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
-                  "vapor_pressure": "1.10002E-4 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "boiling_point": "308.889; 309.5; 310.0",
+                  "source_boiling_point": "CompTox (NIOSH; PhysPropNCCT; Oxford University Chemical Safety Data (No longer updated)",
+                  "melting_point": "172.5; 174.0",
+                  "source_melting_point": "CompTox (Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset)",
+                  "vapor_pressure": "0.000110002",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n1.52e-04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n1.52e-04 mol/liter",
                   "value": "1.51944E-4",
-                  "hlLabel": "Solubility (H2O):\n1.52e-04 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n1.52e-04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -233,9 +234,9 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\n4.49 ",
-                  "value": "4.49",
-                  "hlLabel": "pKa (acid):\n4.49 \nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (acid):\n4.67 ",
+                  "value": "4.67",
+                  "hlLabel": "pKa (acid):\n4.67 \nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -249,7 +250,7 @@
                   "label": "pKa (base)",
                   "combinedLabel": "pKa (base):\n ",
                   "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: ACD/GALAS",
+                  "hlLabel": "pKa (base):\n \nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -275,9 +276,9 @@
                   "role": "prop",
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
-                  "combinedLabel": "Log Dlipw (pH 7.4):\n4.07 ",
-                  "value": "4.069999999999999",
-                  "hlLabel": "Log Dlipw (pH 7.4):\n4.07 \nSource: Kow QSAR (\u2206mw = 1)",
+                  "combinedLabel": "Log Dlipw (pH 7.4):\n4.38 ",
+                  "value": "4.38",
+                  "hlLabel": "Log Dlipw (pH 7.4):\n4.38 \nSource: Kow QSAR (\u2206mw = 1)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -289,9 +290,9 @@
                   "role": "prop",
                   "id": "freely_dissolved_fraction",
                   "label": "Freely Dissolved Fraction",
-                  "combinedLabel": "Freely Dissolved Fraction:\n7.66e-03 ",
-                  "value": "0.00765501100351666",
-                  "hlLabel": "Freely Dissolved Fraction:\n7.66e-03 ",
+                  "combinedLabel": "Freely Dissolved Fraction:\n8.00e-03 ",
+                  "value": "0.008",
+                  "hlLabel": "Freely Dissolved Fraction:\n8.00e-03 ",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n266.32 ",
-                  "value": 266.32,
-                  "hlLabel": "Average Mass:\n266.32 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n308.889 \u00b0C ",
-                  "value": "308.889 \u00b0C",
-                  "hlLabel": "Boiling Point:\n308.889 \u00b0C \nSource: NIOSH",
+                  "combinedLabel": "Boiling Point:\n308.889; 309.5; 310.0 \u00b0C",
+                  "value": "308.889; 309.5; 310.0",
+                  "hlLabel": "Boiling Point:\n308.889; 309.5; 310.0 \u00b0C\nSource: CompTox (NIOSH; PhysPropNCCT; Oxford University Chemical Safety Data (No longer updated)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n172.5 \u00b0C ",
-                  "value": "172.5 \u00b0C",
-                  "hlLabel": "Melting Point:\n172.5 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n172.5; 174.0 \u00b0C",
+                  "value": "172.5; 174.0",
+                  "hlLabel": "Melting Point:\n172.5; 174.0 \u00b0C\nSource: CompTox (Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n1.10002E-4 mmHg ",
-                  "value": "1.10002E-4 mmHg",
-                  "hlLabel": "Vapor Pressure:\n1.10002E-4 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n1.10e-04 mmHg",
+                  "value": "0.000110002",
+                  "hlLabel": "Vapor Pressure:\n1.10e-04 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

@@ -9,7 +9,9 @@
                   "label": "PTX100 | Cytarabine",
                   "cas": "147-94-4",
                   "dtxsid": "DTXSID3022877",
+                  "cid": "6253",
                   "db_id": "DB00987",
+                  "formula": "C9H13N3O5",
                   "smiles": "NC1=NC(=O)N(C=C1)[C@@H]1O[C@H](CO)[C@@H](O)[C@@H]1O",
                   "inchi": "UHDGCWIWMRVCDJ-CCXZUQQUSA-N",
                   "mw_g_mol": "243.219",
@@ -24,16 +26,15 @@
                   "source_pka": "ACD pKa/GALAS",
                   "log_kow_liter_liter": "-2.32",
                   "source_kow": "mean of ACD consensus and KOWWIN",
-                  "log_dlipw_ph74_liter_liter": "-1.00",
+                  "log_dlipw_ph74_liter_liter": "-1.0",
                   "source_dlipw": "@ -1 at logKow < -1 (Gobas 1988)",
                   "freely_dissolved_fraction": "0.942276927352634",
                   "density_kg_liter": "1.766",
                   "source_density": "COMPTOX",
-                  "average_mass": 243.219,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "212.5 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
+                  "melting_point": "212.5",
+                  "source_melting_point": "CompTox (Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n0.04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n0.04 mol/liter",
                   "value": "0.043909",
-                  "hlLabel": "Solubility (H2O):\n0.04 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n0.04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -276,7 +277,7 @@
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n-1.00 ",
-                  "value": "-1.00",
+                  "value": "-1.0",
                   "hlLabel": "Log Dlipw (pH 7.4):\n-1.00 \nSource: @ -1 at logKow < -1 (Gobas 1988)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n243.22 ",
-                  "value": 243.219,
-                  "hlLabel": "Average Mass:\n243.22 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n212.5 \u00b0C ",
-                  "value": "212.5 \u00b0C",
-                  "hlLabel": "Melting Point:\n212.5 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n212.50 \u00b0C",
+                  "value": "212.5",
+                  "hlLabel": "Melting Point:\n212.50 \u00b0C\nSource: CompTox (Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

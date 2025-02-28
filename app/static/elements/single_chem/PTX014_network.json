@@ -9,7 +9,9 @@
                   "label": "PTX014 | Imidazole",
                   "cas": "288-32-4",
                   "dtxsid": "DTXSID2029616",
+                  "cid": "795",
                   "db_id": "DB03366",
+                  "formula": "C3H4N2",
                   "smiles": "N1C=CN=C1",
                   "inchi": "RAXXELZNTBOGNW-UHFFFAOYSA-N",
                   "mw_g_mol": "68.079",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.941930198173734",
                   "density_kg_liter": "1.105",
                   "source_density": "COMPTOX",
-                  "average_mass": 68.079,
-                  "boiling_point": "166.5 \u00b0C",
-                  "source_boiling_point": "Oxford University Chemical Safety Data (No longer updated)",
-                  "melting_point": "89.5 \u00b0C",
-                  "source_melting_point": "Merck Millipore (Chemical company)",
+                  "boiling_point": "166.5; 256.0; 257.0",
+                  "source_boiling_point": "CompTox (Oxford University Chemical Safety Data (No longer updated; Alfa Aesar (Chemical company; PhysPropNCCT)",
+                  "melting_point": "89.5; 90.0; 90.5; 92.0",
+                  "source_melting_point": "CompTox (Merck Millipore (Chemical company; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Tokyo Chemical Industry (Chemical company)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n3.03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n3.03 mol/liter",
                   "value": "3.03389",
-                  "hlLabel": "Solubility (H2O):\n3.03 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n3.03 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n68.08 ",
-                  "value": 68.079,
-                  "hlLabel": "Average Mass:\n68.08 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n166.5 \u00b0C ",
-                  "value": "166.5 \u00b0C",
-                  "hlLabel": "Boiling Point:\n166.5 \u00b0C \nSource: Oxford University Chemical Safety Data (No longer updated)",
+                  "combinedLabel": "Boiling Point:\n166.5; 256.0; 257.0 \u00b0C",
+                  "value": "166.5; 256.0; 257.0",
+                  "hlLabel": "Boiling Point:\n166.5; 256.0; 257.0 \u00b0C\nSource: CompTox (Oxford University Chemical Safety Data (No longer updated; Alfa Aesar (Chemical company; PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n89.5 \u00b0C ",
-                  "value": "89.5 \u00b0C",
-                  "hlLabel": "Melting Point:\n89.5 \u00b0C \nSource: Merck Millipore (Chemical company)",
+                  "combinedLabel": "Melting Point:\n89.5; 90.0; 90.5; 92.0 \u00b0C",
+                  "value": "89.5; 90.0; 90.5; 92.0",
+                  "hlLabel": "Melting Point:\n89.5; 90.0; 90.5; 92.0 \u00b0C\nSource: CompTox (Merck Millipore (Chemical company; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Tokyo Chemical Industry (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

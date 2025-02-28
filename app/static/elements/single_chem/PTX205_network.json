@@ -9,7 +9,9 @@
                   "label": "PTX205 | Terbutryn",
                   "cas": "886-50-0",
                   "dtxsid": "DTXSID3024318",
+                  "cid": "13450",
                   "db_id": "NA",
+                  "formula": "C10H19N5S",
                   "smiles": "CCNC1=NC(SC)=NC(NC(C)(C)C)=N1",
                   "inchi": "IROINLKCQGIITA-UHFFFAOYSA-N",
                   "mw_g_mol": "241.36",
@@ -20,8 +22,8 @@
                   "log_kaw_kh_rt": "6.02352048954262",
                   "source_kaw": "LSER eq 1 exp. Descriptors",
                   "pka_acid": "",
-                  "pka_base": "",
-                  "source_pka": "ACD/GALAS",
+                  "pka_base": "-1.5; 4.34",
+                  "source_pka": "UFZ; Sirius T3",
                   "log_kow_liter_liter": "3.56",
                   "source_kow": "",
                   "log_dlipw_ph74_liter_liter": "3.4099999999999997",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.289387078129027",
                   "density_kg_liter": "1.228",
                   "source_density": "COMPTOX",
-                  "average_mass": 241.36,
-                  "boiling_point": "401.0 \u00b0C",
-                  "source_boiling_point": "Biosynth (Chemical company)",
-                  "melting_point": "104.0 \u00b0C",
-                  "source_melting_point": "PhysPropNCCT",
-                  "vapor_pressure": "1.69005E-6 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "boiling_point": "401.0",
+                  "source_boiling_point": "CompTox (Biosynth (Chemical company)",
+                  "melting_point": "104.0; 104.5",
+                  "source_melting_point": "CompTox (PhysPropNCCT; Jean-Claude Bradley Open Melting Point Dataset)",
+                  "vapor_pressure": "1.69005e-06",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n1.03e-04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n1.03e-04 mol/liter",
                   "value": "1.03316E-4",
-                  "hlLabel": "Solubility (H2O):\n1.03e-04 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n1.03e-04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -235,7 +236,7 @@
                   "label": "pKa (acid)",
                   "combinedLabel": "pKa (acid):\n ",
                   "value": "",
-                  "hlLabel": "pKa (acid):\n \nSource: ACD/GALAS",
+                  "hlLabel": "pKa (acid):\n \nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -247,9 +248,9 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (base):\n-1.5; 4.34 ",
+                  "value": "-1.5; 4.34",
+                  "hlLabel": "pKa (base):\n-1.5; 4.34 \nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n241.36 ",
-                  "value": 241.36,
-                  "hlLabel": "Average Mass:\n241.36 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n401.0 \u00b0C ",
-                  "value": "401.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n401.0 \u00b0C \nSource: Biosynth (Chemical company)",
+                  "combinedLabel": "Boiling Point:\n401.00 \u00b0C",
+                  "value": "401.0",
+                  "hlLabel": "Boiling Point:\n401.00 \u00b0C\nSource: CompTox (Biosynth (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n104.0 \u00b0C ",
-                  "value": "104.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n104.0 \u00b0C \nSource: PhysPropNCCT",
+                  "combinedLabel": "Melting Point:\n104.0; 104.5 \u00b0C",
+                  "value": "104.0; 104.5",
+                  "hlLabel": "Melting Point:\n104.0; 104.5 \u00b0C\nSource: CompTox (PhysPropNCCT; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n1.69005E-6 mmHg ",
-                  "value": "1.69005E-6 mmHg",
-                  "hlLabel": "Vapor Pressure:\n1.69005E-6 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n1.69e-06 mmHg",
+                  "value": "1.69005e-06",
+                  "hlLabel": "Vapor Pressure:\n1.69e-06 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

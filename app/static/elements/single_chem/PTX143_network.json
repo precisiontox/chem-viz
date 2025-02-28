@@ -9,7 +9,9 @@
                   "label": "PTX143 | Bis(4-hydroxyphenyl)methane",
                   "cas": "620-92-8",
                   "dtxsid": "DTXSID9022445",
+                  "cid": "12111",
                   "db_id": "NA",
+                  "formula": "C13H12O2",
                   "smiles": "OC1=CC=C(CC2=CC=C(O)C=C2)C=C1",
                   "inchi": "PXKLMJQFEQBVLD-UHFFFAOYSA-N",
                   "mw_g_mol": "200.237",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.474461936587941",
                   "density_kg_liter": "",
                   "source_density": "COMPTOX",
-                  "average_mass": "NA",
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "NA",
-                  "source_melting_point": "NA",
+                  "melting_point": "160.0; 161.0; 162.5",
+                  "source_melting_point": "CompTox (Tokyo Chemical Industry (Chemical company; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n2.62e-03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n2.62e-03 mol/liter",
                   "value": "0.00262449",
-                  "hlLabel": "Solubility (H2O):\n2.62e-03 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n2.62e-03 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Average Mass:\nn/a",
-                  "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,12 +332,12 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Melting Point:\nn/a\nSource: NA",
+                  "combinedLabel": "Melting Point:\n160.0; 161.0; 162.5 \u00b0C",
+                  "value": "160.0; 161.0; 162.5",
+                  "hlLabel": "Melting Point:\n160.0; 161.0; 162.5 \u00b0C\nSource: CompTox (Tokyo Chemical Industry (Chemical company; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -473,16 +460,6 @@
                   "role": "prop",
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#9a999a"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
                   "target": "boiling_point",
                   "color": "#9a999a"
             }
@@ -494,7 +471,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "melting_point",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {

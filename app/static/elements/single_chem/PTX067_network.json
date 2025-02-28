@@ -9,7 +9,9 @@
                   "label": "PTX067 | Cyproconazole",
                   "cas": "94361-06-5",
                   "dtxsid": "DTXSID0032601",
+                  "cid": "86132",
                   "db_id": "NA",
+                  "formula": "C15H18ClN3O",
                   "smiles": "CC(C1CC1)C(O)(CN1C=NC=N1)C1=CC=C(Cl)C=C1",
                   "inchi": "UFNOUKDBUJZYDE-UHFFFAOYSA-N",
                   "mw_g_mol": "291.78",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.590346403090982",
                   "density_kg_liter": "1.293",
                   "source_density": "COMPTOX",
-                  "average_mass": 291.78,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "105.0 \u00b0C",
-                  "source_melting_point": "LKT Labs (Chemical company)",
-                  "vapor_pressure": "2.59E-7 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "melting_point": "105.0; 106.65; 107.5",
+                  "source_melting_point": "CompTox (LKT Labs (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; PhysPropNCCT)",
+                  "vapor_pressure": "2.59e-07",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n4.29e-04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n4.29e-04 mol/liter",
                   "value": "0.000429",
-                  "hlLabel": "Solubility (H2O):\n4.29e-04 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n4.29e-04 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n291.78 ",
-                  "value": 291.78,
-                  "hlLabel": "Average Mass:\n291.78 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n105.0 \u00b0C ",
-                  "value": "105.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n105.0 \u00b0C \nSource: LKT Labs (Chemical company)",
+                  "combinedLabel": "Melting Point:\n105.0; 106.65; 107.5 \u00b0C",
+                  "value": "105.0; 106.65; 107.5",
+                  "hlLabel": "Melting Point:\n105.0; 106.65; 107.5 \u00b0C\nSource: CompTox (LKT Labs (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n2.59E-7 mmHg ",
-                  "value": "2.59E-7 mmHg",
-                  "hlLabel": "Vapor Pressure:\n2.59E-7 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n2.59e-07 mmHg",
+                  "value": "2.59e-07",
+                  "hlLabel": "Vapor Pressure:\n2.59e-07 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

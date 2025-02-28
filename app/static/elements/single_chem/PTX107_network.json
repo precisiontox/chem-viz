@@ -9,7 +9,9 @@
                   "label": "PTX107 | 17alpha-Ethinylestradiol",
                   "cas": "57-63-6",
                   "dtxsid": "DTXSID5020576",
+                  "cid": "5991",
                   "db_id": "DB00977",
+                  "formula": "C20H24O2",
                   "smiles": "[H][C@@]12CC[C@@](O)(C#C)[C@@]1(C)CC[C@]1([H])C3=C(CC[C@@]21[H])C=C(O)C=C3",
                   "inchi": "BFPYWIDHMRZLRN-SLHNCBLASA-N",
                   "mw_g_mol": "296.41",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.0671303784196809",
                   "density_kg_liter": "",
                   "source_density": "COMPTOX",
-                  "average_mass": 296.41,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "143.5 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
+                  "melting_point": "182.0; 183.0",
+                  "source_melting_point": "CompTox (Biosynth (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n3.94e-05 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n3.94e-05 mol/liter",
                   "value": "3.93604E-5",
-                  "hlLabel": "Solubility (H2O):\n3.94e-05 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n3.94e-05 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n296.41 ",
-                  "value": 296.41,
-                  "hlLabel": "Average Mass:\n296.41 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n143.5 \u00b0C ",
-                  "value": "143.5 \u00b0C",
-                  "hlLabel": "Melting Point:\n143.5 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n182.0; 183.0 \u00b0C",
+                  "value": "182.0; 183.0",
+                  "hlLabel": "Melting Point:\n182.0; 183.0 \u00b0C\nSource: CompTox (Biosynth (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

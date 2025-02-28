@@ -9,7 +9,9 @@
                   "label": "PTX152 | Ethanol",
                   "cas": "64-17-5",
                   "dtxsid": "DTXSID9020584",
+                  "cid": "702",
                   "db_id": "DB00898",
+                  "formula": "C2H6O",
                   "smiles": "CCO",
                   "inchi": "LFQSCWFLJHTTHZ-UHFFFAOYSA-N",
                   "mw_g_mol": "46.069",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.942245693301419",
                   "density_kg_liter": "",
                   "source_density": "COMPTOX",
-                  "average_mass": 46.069,
-                  "boiling_point": "78.0 \u00b0C",
-                  "source_boiling_point": "Alfa Aesar (Chemical company)",
-                  "melting_point": "-144.0 \u00b0C",
-                  "source_melting_point": "Oxford University Chemical Safety Data (No longer updated)",
-                  "vapor_pressure": "59.2652 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "boiling_point": "78.0; 78.2; 78.3333; 80.0",
+                  "source_boiling_point": "CompTox (Alfa Aesar (Chemical company; PhysPropNCCT; NIOSH; Alfa Aesar (Chemical company)",
+                  "melting_point": "-144.0; -130.0; -114.4; -114.3; -114.14; -114.1; -114.0; -113.889; -100.0; -90.0",
+                  "source_melting_point": "CompTox (Oxford University Chemical Safety Data (No longer updated; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; NIOSH; Alfa Aesar (Chemical company; Alfa Aesar (Chemical company)",
+                  "vapor_pressure": "59.2652",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n18.10 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n18.10 mol/liter",
                   "value": "18.103",
-                  "hlLabel": "Solubility (H2O):\n18.10 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n18.10 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n46.07 ",
-                  "value": 46.069,
-                  "hlLabel": "Average Mass:\n46.07 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n78.0 \u00b0C ",
-                  "value": "78.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n78.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Boiling Point:\n78.0; 78.2; 78.3333; 80.0 \u00b0C",
+                  "value": "78.0; 78.2; 78.3333; 80.0",
+                  "hlLabel": "Boiling Point:\n78.0; 78.2; 78.3333; 80.0 \u00b0C\nSource: CompTox (Alfa Aesar (Chemical company; PhysPropNCCT; NIOSH; Alfa Aesar (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n-144.0 \u00b0C ",
-                  "value": "-144.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n-144.0 \u00b0C \nSource: Oxford University Chemical Safety Data (No longer updated)",
+                  "combinedLabel": "Melting Point:\n-144.0; -130.0; -114.4; -114.3; -114.14; -114.1; -114.0; -113.889; -100.0; -90.0 \u00b0C",
+                  "value": "-144.0; -130.0; -114.4; -114.3; -114.14; -114.1; -114.0; -113.889; -100.0; -90.0",
+                  "hlLabel": "Melting Point:\n-144.0; -130.0; -114.4; -114.3; -114.14; -114.1; -114.0; -113.889; -100.0; -90.0 \u00b0C\nSource: CompTox (Oxford University Chemical Safety Data (No longer updated; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; NIOSH; Alfa Aesar (Chemical company; Alfa Aesar (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n59.2652 mmHg ",
-                  "value": "59.2652 mmHg",
-                  "hlLabel": "Vapor Pressure:\n59.2652 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n59.27 mmHg",
+                  "value": "59.2652",
+                  "hlLabel": "Vapor Pressure:\n59.27 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

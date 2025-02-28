@@ -9,7 +9,9 @@
                   "label": "PTX003 | [4-Chloro-6-(2,3-xylidino)-2-pyrimidinylthio]acetic acid",
                   "cas": "50892-23-4",
                   "dtxsid": "DTXSID4020290",
+                  "cid": "5694",
                   "db_id": "NA",
+                  "formula": "C14H14ClN3O2S",
                   "smiles": "CC1=C(C)C(NC2=NC(SCC(O)=O)=NC(Cl)=C2)=CC=C1",
                   "inchi": "SZRPDCCEHVWOJX-UHFFFAOYSA-N",
                   "mw_g_mol": "323.798",
@@ -24,16 +26,15 @@
                   "source_pka": "ACD pKa/GALAS",
                   "log_kow_liter_liter": "4.02",
                   "source_kow": "mean of ACD consensus and KOWWIN",
-                  "log_dlipw_ph74_liter_liter": "3.20",
+                  "log_dlipw_ph74_liter_liter": "3.2",
                   "source_dlipw": "Kow-QSAR (?mw=1)",
                   "freely_dissolved_fraction": "0.114186977642412",
                   "density_kg_liter": "",
                   "source_density": "",
-                  "average_mass": 323.8,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "155.0 \u00b0C",
-                  "source_melting_point": "Tokyo Chemical Industry (Chemical company)",
+                  "melting_point": "155.0",
+                  "source_melting_point": "CompTox (Tokyo Chemical Industry (Chemical company)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n0.15 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n0.15 mol/liter",
                   "value": "0.14644933",
-                  "hlLabel": "Solubility (H2O):\n0.15 mol/liter\nSource: est., EPISUITE",
+                  "hlLabel": "Solubility in H2O:\n0.15 mol/liter\nSource: est., EPISUITE",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -276,7 +277,7 @@
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n3.20 ",
-                  "value": "3.20",
+                  "value": "3.2",
                   "hlLabel": "Log Dlipw (pH 7.4):\n3.20 \nSource: Kow-QSAR (?mw=1)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n323.80 ",
-                  "value": 323.8,
-                  "hlLabel": "Average Mass:\n323.80 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n155.0 \u00b0C ",
-                  "value": "155.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n155.0 \u00b0C \nSource: Tokyo Chemical Industry (Chemical company)",
+                  "combinedLabel": "Melting Point:\n155.00 \u00b0C",
+                  "value": "155.0",
+                  "hlLabel": "Melting Point:\n155.00 \u00b0C\nSource: CompTox (Tokyo Chemical Industry (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

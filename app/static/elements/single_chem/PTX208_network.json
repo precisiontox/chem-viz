@@ -9,7 +9,9 @@
                   "label": "PTX208 | Clopyralid",
                   "cas": "1702-17-6",
                   "dtxsid": "DTXSID9029221",
+                  "cid": "15553",
                   "db_id": "NA",
+                  "formula": "C6H3Cl2NO2",
                   "smiles": "OC(=O)C1=C(Cl)C=CC(Cl)=N1",
                   "inchi": "HUBANNPOLNYSAD-UHFFFAOYSA-N",
                   "mw_g_mol": "192.0",
@@ -19,9 +21,9 @@
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "6.69763701577205",
                   "source_kaw": "LSER",
-                  "pka_acid": "2.1",
+                  "pka_acid": "1.63",
                   "pka_base": "",
-                  "source_pka": "ACD/GALAS",
+                  "source_pka": "UFZ; Sirius T3",
                   "log_kow_liter_liter": "1.06",
                   "source_kow": "",
                   "log_dlipw_ph74_liter_liter": "0.19059999999999985",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.958979676335838",
                   "density_kg_liter": "1.605",
                   "source_density": "COMPTOX",
-                  "average_mass": 192.0,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "150.0 \u00b0C",
-                  "source_melting_point": "Alfa Aesar (Chemical company)",
-                  "vapor_pressure": "1.20005E-5 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "melting_point": "NA",
+                  "source_melting_point": "NA",
+                  "vapor_pressure": "1.20005e-05",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n0.73 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n0.73 mol/liter",
                   "value": "0.732186",
-                  "hlLabel": "Solubility (H2O):\n0.73 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n0.73 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -233,9 +234,9 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\n2.10 ",
-                  "value": "2.1",
-                  "hlLabel": "pKa (acid):\n2.10 \nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (acid):\n1.63 ",
+                  "value": "1.63",
+                  "hlLabel": "pKa (acid):\n1.63 \nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -249,7 +250,7 @@
                   "label": "pKa (base)",
                   "combinedLabel": "pKa (base):\n ",
                   "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: ACD/GALAS",
+                  "hlLabel": "pKa (base):\n \nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n192.00 ",
-                  "value": 192.0,
-                  "hlLabel": "Average Mass:\n192.00 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,12 +332,12 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n150.0 \u00b0C ",
-                  "value": "150.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n150.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Melting Point:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Melting Point:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n1.20005E-5 mmHg ",
-                  "value": "1.20005E-5 mmHg",
-                  "hlLabel": "Vapor Pressure:\n1.20005E-5 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n1.20e-05 mmHg",
+                  "value": "1.20005e-05",
+                  "hlLabel": "Vapor Pressure:\n1.20e-05 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -473,16 +460,6 @@
                   "role": "prop",
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
                   "target": "boiling_point",
                   "color": "#9a999a"
             }
@@ -494,7 +471,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "melting_point",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {

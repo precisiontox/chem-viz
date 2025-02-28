@@ -9,7 +9,9 @@
                   "label": "PTX178 | Penconazole",
                   "cas": "66246-88-6",
                   "dtxsid": "DTXSID8042260",
+                  "cid": "91693",
                   "db_id": "NA",
+                  "formula": "C13H15Cl2N3",
                   "smiles": "CCCC(CN1C=NC=N1)C1=C(Cl)C=C(Cl)C=C1",
                   "inchi": "WKBPZYKAUNRMKP-UHFFFAOYSA-N",
                   "mw_g_mol": "284.18",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.087419185465644",
                   "density_kg_liter": "1.212",
                   "source_density": "COMPTOX",
-                  "average_mass": 284.18,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "58.5 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
-                  "vapor_pressure": "2.77971E-6 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "melting_point": "58.5",
+                  "source_melting_point": "CompTox (Jean-Claude Bradley Open Melting Point Dataset)",
+                  "vapor_pressure": "2.77971e-06",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n2.58e-04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n2.58e-04 mol/liter",
                   "value": "2.58115E-4",
-                  "hlLabel": "Solubility (H2O):\n2.58e-04 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n2.58e-04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n284.18 ",
-                  "value": 284.18,
-                  "hlLabel": "Average Mass:\n284.18 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n58.5 \u00b0C ",
-                  "value": "58.5 \u00b0C",
-                  "hlLabel": "Melting Point:\n58.5 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n58.50 \u00b0C",
+                  "value": "58.5",
+                  "hlLabel": "Melting Point:\n58.50 \u00b0C\nSource: CompTox (Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n2.77971E-6 mmHg ",
-                  "value": "2.77971E-6 mmHg",
-                  "hlLabel": "Vapor Pressure:\n2.77971E-6 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n2.78e-06 mmHg",
+                  "value": "2.77971e-06",
+                  "hlLabel": "Vapor Pressure:\n2.78e-06 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

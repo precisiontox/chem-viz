@@ -9,7 +9,9 @@
                   "label": "PTX198 | Acyclovir",
                   "cas": "59277-89-3",
                   "dtxsid": "DTXSID1022556",
+                  "cid": "135398513",
                   "db_id": "DB00787",
+                  "formula": "C8H11N5O3",
                   "smiles": "NC1=NC(=O)C2=C(N1)N(COCCO)C=N2",
                   "inchi": "MKUXAQIIEYXACX-UHFFFAOYSA-N",
                   "mw_g_mol": "225.208",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.942276927352634",
                   "density_kg_liter": "1.792",
                   "source_density": "COMPTOX",
-                  "average_mass": 225.208,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "255.0 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
+                  "melting_point": "255.0; 256.0; 256.75; 257.0; 262.0; 265.0",
+                  "source_melting_point": "CompTox (Jean-Claude Bradley Open Melting Point Dataset; Biosynth (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Tokyo Chemical Industry (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n7.19e-03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n7.19e-03 mol/liter",
                   "value": "0.0071856",
-                  "hlLabel": "Solubility (H2O):\n7.19e-03 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n7.19e-03 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n225.21 ",
-                  "value": 225.208,
-                  "hlLabel": "Average Mass:\n225.21 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n255.0 \u00b0C ",
-                  "value": "255.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n255.0 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n255.0; 256.0; 256.75; 257.0; 262.0; 265.0 \u00b0C",
+                  "value": "255.0; 256.0; 256.75; 257.0; 262.0; 265.0",
+                  "hlLabel": "Melting Point:\n255.0; 256.0; 256.75; 257.0; 262.0; 265.0 \u00b0C\nSource: CompTox (Jean-Claude Bradley Open Melting Point Dataset; Biosynth (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Tokyo Chemical Industry (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

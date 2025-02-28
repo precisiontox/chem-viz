@@ -9,7 +9,9 @@
                   "label": "PTX082 | Perfluorooctanoic acid",
                   "cas": "335-67-1",
                   "dtxsid": "DTXSID8031865",
+                  "cid": "9554",
                   "db_id": "NA",
+                  "formula": "C8HF15O2",
                   "smiles": "OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F",
                   "inchi": "SNGREZUHAYWORS-UHFFFAOYSA-N",
                   "mw_g_mol": "414.07",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.186117683762651",
                   "density_kg_liter": "",
                   "source_density": "",
-                  "average_mass": 414.07,
-                  "boiling_point": "189.0 \u00b0C",
-                  "source_boiling_point": "SynQuest Labs (Chemical company)",
-                  "melting_point": "59.0 \u00b0C",
-                  "source_melting_point": "Alfa Aesar (Chemical company)",
-                  "vapor_pressure": "0.0165014 mmHg",
-                  "source_vapor_pressure": "Tetko et al, J Comput Aided Mol Des. 2011; 25(6):533-54"
+                  "boiling_point": "188.0; 190.5; 192.4; 199.0",
+                  "source_boiling_point": "CompTox (ATSDR_Perfluoroalkyl_Cheminfo ; Alfa Aesar (Chemical company; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54)",
+                  "melting_point": "47.5; 54.3; 55.0; 55.3; 55.5; 56.0; 57.0; 57.3; 59.0; 59.5",
+                  "source_melting_point": "CompTox (Rayne et al, J. Env. Sci. and Health Part A, (2009 44(12:1145-1199; ATSDR_Perfluoroalkyl_Cheminfo ; 3M_PFOA_Sheet; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Jean-Claude Bradley Open Melting Point Dataset; Tokyo Chemical Industry (Chemical company; Tokyo Chemical Industry (Chemical company; Alfa Aesar (Chemical company; Tetko et al, J Comput Aided Mol Des. 2011)",
+                  "vapor_pressure": "0.0165014; 0.017; 0.0172514; 0.0314011; 0.0314775; 0.0316228; 0.0390032; 0.0907575; 0.525; 0.525043; 0.525049; 10.0",
+                  "source_vapor_pressure": "CompTox (Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; ATSDR_Perfluoroalkyl_Cheminfo ; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Bhhatarai et al. Environ. Sci. Technol. 2011, 45, 8120\u20138128.; Rayne et al, J. Env. Sci. and Health Part A, (2009 44(12:1145-1199; Danish_EPA_SCPFAS_Report_2015)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n0.03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n0.03 mol/liter",
                   "value": "0.0332134",
-                  "hlLabel": "Solubility (H2O):\n0.03 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n0.03 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n414.07 ",
-                  "value": 414.07,
-                  "hlLabel": "Average Mass:\n414.07 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n189.0 \u00b0C ",
-                  "value": "189.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n189.0 \u00b0C \nSource: SynQuest Labs (Chemical company)",
+                  "combinedLabel": "Boiling Point:\n188.0; 190.5; 192.4; 199.0 \u00b0C",
+                  "value": "188.0; 190.5; 192.4; 199.0",
+                  "hlLabel": "Boiling Point:\n188.0; 190.5; 192.4; 199.0 \u00b0C\nSource: CompTox (ATSDR_Perfluoroalkyl_Cheminfo ; Alfa Aesar (Chemical company; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n59.0 \u00b0C ",
-                  "value": "59.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n59.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Melting Point:\n47.5; 54.3; 55.0; 55.3; 55.5; 56.0; 57.0; 57.3; 59.0; 59.5 \u00b0C",
+                  "value": "47.5; 54.3; 55.0; 55.3; 55.5; 56.0; 57.0; 57.3; 59.0; 59.5",
+                  "hlLabel": "Melting Point:\n47.5; 54.3; 55.0; 55.3; 55.5; 56.0; 57.0; 57.3; 59.0; 59.5 \u00b0C\nSource: CompTox (Rayne et al, J. Env. Sci. and Health Part A, (2009 44(12:1145-1199; ATSDR_Perfluoroalkyl_Cheminfo ; 3M_PFOA_Sheet; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Jean-Claude Bradley Open Melting Point Dataset; Tokyo Chemical Industry (Chemical company; Tokyo Chemical Industry (Chemical company; Alfa Aesar (Chemical company; Tetko et al, J Comput Aided Mol Des. 2011)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n0.0165014 mmHg ",
-                  "value": "0.0165014 mmHg",
-                  "hlLabel": "Vapor Pressure:\n0.0165014 mmHg \nSource: Tetko et al, J Comput Aided Mol Des. 2011; 25(6):533-54",
+                  "combinedLabel": "Vapor Pressure:\n0.0165014; 0.017; 0.0172514; 0.0314011; 0.0314775; 0.0316228; 0.0390032; 0.0907575; 0.525; 0.525043; 0.525049; 10.0 mmHg",
+                  "value": "0.0165014; 0.017; 0.0172514; 0.0314011; 0.0314775; 0.0316228; 0.0390032; 0.0907575; 0.525; 0.525043; 0.525049; 10.0",
+                  "hlLabel": "Vapor Pressure:\n0.0165014; 0.017; 0.0172514; 0.0314011; 0.0314775; 0.0316228; 0.0390032; 0.0907575; 0.525; 0.525043; 0.525049; 10.0 mmHg\nSource: CompTox (Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; ATSDR_Perfluoroalkyl_Cheminfo ; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Bhhatarai et al. Environ. Sci. Technol. 2011, 45, 8120\u20138128.; Rayne et al, J. Env. Sci. and Health Part A, (2009 44(12:1145-1199; Danish_EPA_SCPFAS_Report_2015)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

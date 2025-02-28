@@ -9,7 +9,9 @@
                   "label": "PTX097 | 6-Propyl-2-thiouracil",
                   "cas": "51-52-5",
                   "dtxsid": "DTXSID5021209",
+                  "cid": "657298",
                   "db_id": "DB00550",
+                  "formula": "C7H10N2OS",
                   "smiles": "CCCC1=CC(=O)NC(=S)N1",
                   "inchi": "KNAHARQHSZJURB-UHFFFAOYSA-N",
                   "mw_g_mol": "170.23",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.94224962098945",
                   "density_kg_liter": "1.323",
                   "source_density": "COMPTOX",
-                  "average_mass": 170.23,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "219.0 \u00b0C",
-                  "source_melting_point": "PhysPropNCCT",
+                  "melting_point": "218.0; 219.0; 220.0",
+                  "source_melting_point": "CompTox (Merck Millipore (Chemical company; PhysPropNCCT; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n7.06e-03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n7.06e-03 mol/liter",
                   "value": "0.007062",
-                  "hlLabel": "Solubility (H2O):\n7.06e-03 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n7.06e-03 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n170.23 ",
-                  "value": 170.23,
-                  "hlLabel": "Average Mass:\n170.23 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n219.0 \u00b0C ",
-                  "value": "219.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n219.0 \u00b0C \nSource: PhysPropNCCT",
+                  "combinedLabel": "Melting Point:\n218.0; 219.0; 220.0 \u00b0C",
+                  "value": "218.0; 219.0; 220.0",
+                  "hlLabel": "Melting Point:\n218.0; 219.0; 220.0 \u00b0C\nSource: CompTox (Merck Millipore (Chemical company; PhysPropNCCT; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

@@ -417,6 +417,7 @@ input[type="range"]:focus {
     display: inline-block;
     width: 180px; /* Adjust width as needed */
     text-align: right;
+    color: #004880;
 }
 
 .qtip-content .field-edge-use {
@@ -447,7 +448,7 @@ input[type="range"]:focus {
     color: #8E44AD;
 }
 
-.qtip-content .drugbank_id {
+.qtip-content .formula {
     color: #da3a1d;
 }
 
@@ -459,7 +460,7 @@ input[type="range"]:focus {
     color: #F1C40F;
 }
 
-.qtip-content .drugbank {
+.qtip-content .drugbank_id {
     color: #dd009c;
 }
 
@@ -551,10 +552,14 @@ input[type="range"]:focus {
 }
 
 
-
-
 /* General Info Layout */
+.chem-info-content {
+    display: flex;
+    gap: 20px;
+    
+}
 .chem-general-info {
+    flex: 1; /* Takes the remaining space */
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -579,6 +584,19 @@ input[type="range"]:focus {
     text-align: left;
     color: #555;
     padding-left: 10px;
+}
+
+#chem-structure {
+    flex: 0 0 25%; /* Fixed to 25% width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chem-structure img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
 }
 
 .table-tabs {

@@ -9,7 +9,9 @@
                   "label": "PTX086 | Carbamazepine",
                   "cas": "298-46-4",
                   "dtxsid": "DTXSID4022731",
+                  "cid": "2554",
                   "db_id": "DB00564",
+                  "formula": "C15H12N2O",
                   "smiles": "NC(=O)N1C2=CC=CC=C2C=CC2=C1C=CC=C2",
                   "inchi": "FFGPTBGBLSHEPO-UHFFFAOYSA-N",
                   "mw_g_mol": "236.274",
@@ -24,16 +26,15 @@
                   "source_pka": "ACD pKa/GALAS",
                   "log_kow_liter_liter": "2.45",
                   "source_kow": "experimental  PhysPropNCCT",
-                  "log_dlipw_ph74_liter_liter": "3.10",
+                  "log_dlipw_ph74_liter_liter": "3.1",
                   "source_dlipw": "LSERD, cited in Escher 2017",
                   "freely_dissolved_fraction": "0.925455944784849",
                   "density_kg_liter": "1.224",
                   "source_density": "COMPTOX",
-                  "average_mass": 236.274,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "190.0 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
+                  "melting_point": "190.2; 191.0; 191.5",
+                  "source_melting_point": "CompTox (Jean-Claude Bradley Open Melting Point Dataset; Biosynth (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n4.90e-04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n4.90e-04 mol/liter",
                   "value": "0.00049",
-                  "hlLabel": "Solubility (H2O):\n4.90e-04 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n4.90e-04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -276,7 +277,7 @@
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
                   "combinedLabel": "Log Dlipw (pH 7.4):\n3.10 ",
-                  "value": "3.10",
+                  "value": "3.1",
                   "hlLabel": "Log Dlipw (pH 7.4):\n3.10 \nSource: LSERD, cited in Escher 2017",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n236.27 ",
-                  "value": 236.274,
-                  "hlLabel": "Average Mass:\n236.27 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n190.0 \u00b0C ",
-                  "value": "190.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n190.0 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n190.2; 191.0; 191.5 \u00b0C",
+                  "value": "190.2; 191.0; 191.5",
+                  "hlLabel": "Melting Point:\n190.2; 191.0; 191.5 \u00b0C\nSource: CompTox (Jean-Claude Bradley Open Melting Point Dataset; Biosynth (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

@@ -9,7 +9,9 @@
                   "label": "PTX174 | Propiconazole",
                   "cas": "60207-90-1",
                   "dtxsid": "DTXSID8024280",
+                  "cid": "43234",
                   "db_id": "NA",
+                  "formula": "C15H17Cl2N3O2",
                   "smiles": "CCCC1COC(CN2C=NC=N2)(O1)C1=C(Cl)C=C(Cl)C=C1",
                   "inchi": "STJLVHWMYQXCPB-UHFFFAOYSA-N",
                   "mw_g_mol": "342.22",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.0763922637736837",
                   "density_kg_liter": "",
                   "source_density": "COMPTOX",
-                  "average_mass": 342.22,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
                   "melting_point": "NA",
                   "source_melting_point": "NA",
-                  "vapor_pressure": "4.19952E-7 mmHg",
-                  "source_vapor_pressure": "PhysPropNCCT"
+                  "vapor_pressure": "4.19952e-07",
+                  "source_vapor_pressure": "CompTox (PhysPropNCCT)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n3.55e-04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n3.55e-04 mol/liter",
                   "value": "3.55398E-4",
-                  "hlLabel": "Solubility (H2O):\n3.55e-04 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n3.55e-04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n342.22 ",
-                  "value": 342.22,
-                  "hlLabel": "Average Mass:\n342.22 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n4.19952E-7 mmHg ",
-                  "value": "4.19952E-7 mmHg",
-                  "hlLabel": "Vapor Pressure:\n4.19952E-7 mmHg \nSource: PhysPropNCCT",
+                  "combinedLabel": "Vapor Pressure:\n4.20e-07 mmHg",
+                  "value": "4.19952e-07",
+                  "hlLabel": "Vapor Pressure:\n4.20e-07 mmHg\nSource: CompTox (PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

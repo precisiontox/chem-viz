@@ -9,7 +9,9 @@
                   "label": "PTX032 | 4,5-Dihydro-2-mercaptoimidazole",
                   "cas": "96-45-7",
                   "dtxsid": "DTXSID5020601",
+                  "cid": "2723650",
                   "db_id": "NA",
+                  "formula": "C3H6N2S",
                   "smiles": "S=C1NCCN1",
                   "inchi": "PDQAZBWRQCGBEV-UHFFFAOYSA-N",
                   "mw_g_mol": "102.1538",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.942265488242968",
                   "density_kg_liter": "1.207",
                   "source_density": "COMPTOX",
-                  "average_mass": 102.16,
-                  "boiling_point": "271.389 \u00b0C",
-                  "source_boiling_point": "NIOSH",
-                  "melting_point": "203.0 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
+                  "boiling_point": "271.389; 347.18",
+                  "source_boiling_point": "CompTox (NIOSH; PhysPropNCCT)",
+                  "melting_point": "197.5",
+                  "source_melting_point": "CompTox (Merck Millipore (Chemical company)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n0.33 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n0.33 mol/liter",
                   "value": "0.328095",
-                  "hlLabel": "Solubility (H2O):\n0.33 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n0.33 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n102.16 ",
-                  "value": 102.16,
-                  "hlLabel": "Average Mass:\n102.16 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n271.389 \u00b0C ",
-                  "value": "271.389 \u00b0C",
-                  "hlLabel": "Boiling Point:\n271.389 \u00b0C \nSource: NIOSH",
+                  "combinedLabel": "Boiling Point:\n271.389; 347.18 \u00b0C",
+                  "value": "271.389; 347.18",
+                  "hlLabel": "Boiling Point:\n271.389; 347.18 \u00b0C\nSource: CompTox (NIOSH; PhysPropNCCT)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n203.0 \u00b0C ",
-                  "value": "203.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n203.0 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n197.50 \u00b0C",
+                  "value": "197.5",
+                  "hlLabel": "Melting Point:\n197.50 \u00b0C\nSource: CompTox (Merck Millipore (Chemical company)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

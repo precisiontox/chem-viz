@@ -9,7 +9,9 @@
                   "label": "PTX227 | Perfluorohexanoic acid",
                   "cas": "307-24-4",
                   "dtxsid": "DTXSID3031862",
+                  "cid": "67542",
                   "db_id": "NA",
+                  "formula": "C6HF11O2",
                   "smiles": "OC(=O)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)F",
                   "inchi": "PXUULQAPEKKVAH-UHFFFAOYSA-N",
                   "mw_g_mol": "314.054",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.397111131868846",
                   "density_kg_liter": "1.66",
                   "source_density": "COMPTOX",
-                  "average_mass": 314.054,
-                  "boiling_point": "156.0 \u00b0C",
-                  "source_boiling_point": "Tetko et al, J Comput Aided Mol Des. 2011; 25(6):533-54",
-                  "melting_point": "10.0 \u00b0C",
-                  "source_melting_point": "Tetko et al, J Comput Aided Mol Des. 2011; 25(6):533-54",
-                  "vapor_pressure": "0.907575 mmHg",
-                  "source_vapor_pressure": "Danish_EPA_SCPFAS_Report_2015"
+                  "boiling_point": "156.0; 157.0",
+                  "source_boiling_point": "CompTox (Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54)",
+                  "melting_point": "10.0; 11.5; 12.3; 13.0; 14.0",
+                  "source_melting_point": "CompTox (Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Tetko et al, J Comput Aided Mol Des. 2011)",
+                  "vapor_pressure": "0.907575",
+                  "source_vapor_pressure": "CompTox (Danish_EPA_SCPFAS_Report_2015)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n9.11e-05 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n9.11e-05 mol/liter",
                   "value": "9.10797E-5",
-                  "hlLabel": "Solubility (H2O):\n9.11e-05 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n9.11e-05 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n314.05 ",
-                  "value": 314.054,
-                  "hlLabel": "Average Mass:\n314.05 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n156.0 \u00b0C ",
-                  "value": "156.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n156.0 \u00b0C \nSource: Tetko et al, J Comput Aided Mol Des. 2011; 25(6):533-54",
+                  "combinedLabel": "Boiling Point:\n156.0; 157.0 \u00b0C",
+                  "value": "156.0; 157.0",
+                  "hlLabel": "Boiling Point:\n156.0; 157.0 \u00b0C\nSource: CompTox (Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n10.0 \u00b0C ",
-                  "value": "10.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n10.0 \u00b0C \nSource: Tetko et al, J Comput Aided Mol Des. 2011; 25(6):533-54",
+                  "combinedLabel": "Melting Point:\n10.0; 11.5; 12.3; 13.0; 14.0 \u00b0C",
+                  "value": "10.0; 11.5; 12.3; 13.0; 14.0",
+                  "hlLabel": "Melting Point:\n10.0; 11.5; 12.3; 13.0; 14.0 \u00b0C\nSource: CompTox (Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Tetko et al, J Comput Aided Mol Des. 2011; 25(6:533-54; Tetko et al, J Comput Aided Mol Des. 2011)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -359,9 +346,9 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\n0.907575 mmHg ",
-                  "value": "0.907575 mmHg",
-                  "hlLabel": "Vapor Pressure:\n0.907575 mmHg \nSource: Danish_EPA_SCPFAS_Report_2015",
+                  "combinedLabel": "Vapor Pressure:\n0.91 mmHg",
+                  "value": "0.907575",
+                  "hlLabel": "Vapor Pressure:\n0.91 mmHg\nSource: CompTox (Danish_EPA_SCPFAS_Report_2015)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

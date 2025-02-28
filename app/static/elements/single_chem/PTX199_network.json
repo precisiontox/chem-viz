@@ -9,7 +9,9 @@
                   "label": "PTX199 | Ibuprofen",
                   "cas": "15687-27-1",
                   "dtxsid": "DTXSID5020732",
+                  "cid": "3672",
                   "db_id": "DB01050",
+                  "formula": "C13H18O2",
                   "smiles": "CC(C)CC1=CC=C(C=C1)C(C)C(O)=O",
                   "inchi": "HEFNNWSXXWATRW-UHFFFAOYSA-N",
                   "mw_g_mol": "206.285",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.0308462362983234",
                   "density_kg_liter": "1.06",
                   "source_density": "COMPTOX",
-                  "average_mass": 206.285,
-                  "boiling_point": "157.0 \u00b0C",
-                  "source_boiling_point": "Alfa Aesar (Chemical company)",
-                  "melting_point": "51.0 \u00b0C",
-                  "source_melting_point": "LKT Labs (Chemical company)",
+                  "boiling_point": "NA",
+                  "source_boiling_point": "NA",
+                  "melting_point": "51.0; 74.6; 75.0; 76.5; 77.5",
+                  "source_melting_point": "CompTox (LKT Labs (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n1.74e-04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n1.74e-04 mol/liter",
                   "value": "1.74402E-4",
-                  "hlLabel": "Solubility (H2O):\n1.74e-04 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n1.74e-04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,28 +316,14 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n206.28 ",
-                  "value": 206.285,
-                  "hlLabel": "Average Mass:\n206.28 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n157.0 \u00b0C ",
-                  "value": "157.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n157.0 \u00b0C \nSource: Alfa Aesar (Chemical company)",
+                  "combinedLabel": "Boiling Point:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Boiling Point:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n51.0 \u00b0C ",
-                  "value": "51.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n51.0 \u00b0C \nSource: LKT Labs (Chemical company)",
+                  "combinedLabel": "Melting Point:\n51.0; 74.6; 75.0; 76.5; 77.5 \u00b0C",
+                  "value": "51.0; 74.6; 75.0; 76.5; 77.5",
+                  "hlLabel": "Melting Point:\n51.0; 74.6; 75.0; 76.5; 77.5 \u00b0C\nSource: CompTox (LKT Labs (Chemical company; Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset; Alfa Aesar (Chemical company; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -473,18 +460,8 @@
                   "role": "prop",
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
                   "target": "boiling_point",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {

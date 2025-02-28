@@ -9,7 +9,9 @@
                   "label": "PTX066 | N,N'-Bis(2-hydroxyethyl)-2-nitro-p-phenylenediamine",
                   "cas": "84041-77-0",
                   "dtxsid": "DTXSID90232939",
+                  "cid": "5488740",
                   "db_id": "NA",
+                  "formula": "C10H15N3O4",
                   "smiles": "OCCNC1=CC(=C(NCCO)C=C1)[N+]([O-])=O",
                   "inchi": "HWQZRURILVPDGN-UHFFFAOYSA-N",
                   "mw_g_mol": "241.247",
@@ -29,13 +31,12 @@
                   "freely_dissolved_fraction": "0.942170480205689",
                   "density_kg_liter": "1.335",
                   "source_density": "COMPTOX",
-                  "average_mass": "NA",
-                  "boiling_point": "NA",
-                  "source_boiling_point": "NA",
-                  "melting_point": "NA",
-                  "source_melting_point": "NA",
-                  "vapor_pressure": "NA",
-                  "source_vapor_pressure": "NA"
+                  "boiling_point": "375.182; 418.88; 512.724",
+                  "source_boiling_point": "CompTox, predicted (TEST; EPISUITE; ACD/Labs)",
+                  "melting_point": "143.512; 174.71; 179.0",
+                  "source_melting_point": "CompTox, predicted (TEST; EPISUITE; OPERA 2.6)",
+                  "vapor_pressure": "1.4791083881682073e-11; 2.45e-11; 9.33254e-09",
+                  "source_vapor_pressure": "CompTox, predicted (OPERA 2.6; ACD/Labs; TEST)"
             }
       },
       {
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n1.58e-03 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n1.58e-03 mol/liter",
                   "value": "0.00158111",
-                  "hlLabel": "Solubility (H2O):\n1.58e-03 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n1.58e-03 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,28 +316,14 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Average Mass:\nn/a",
-                  "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Boiling Point:\nn/a\nSource: NA",
+                  "combinedLabel": "Boiling Point:\n375.182; 418.88; 512.724 \u00b0C",
+                  "value": "375.182; 418.88; 512.724",
+                  "hlLabel": "Boiling Point:\n375.182; 418.88; 512.724 \u00b0C\nSource: CompTox, predicted (TEST; EPISUITE; ACD/Labs)",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -345,12 +332,12 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Melting Point:\nn/a\nSource: NA",
+                  "combinedLabel": "Melting Point:\n143.512; 174.71; 179.0 \u00b0C",
+                  "value": "143.512; 174.71; 179.0",
+                  "hlLabel": "Melting Point:\n143.512; 174.71; 179.0 \u00b0C\nSource: CompTox, predicted (TEST; EPISUITE; OPERA 2.6)",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -359,12 +346,12 @@
                   "role": "prop",
                   "id": "vapor_pressure",
                   "label": "Vapor Pressure",
-                  "combinedLabel": "Vapor Pressure:\nn/a",
-                  "value": "NA",
-                  "hlLabel": "Vapor Pressure:\nn/a\nSource: NA",
+                  "combinedLabel": "Vapor Pressure:\n1.4791083881682073e-11; 2.45e-11; 9.33254e-09 mmHg",
+                  "value": "1.4791083881682073e-11; 2.45e-11; 9.33254e-09",
+                  "hlLabel": "Vapor Pressure:\n1.4791083881682073e-11; 2.45e-11; 9.33254e-09 mmHg\nSource: CompTox, predicted (OPERA 2.6; ACD/Labs; TEST)",
                   "shape": "round-diamond",
-                  "colorBg": "#ddd",
-                  "colorBorder": "#9a999a"
+                  "colorBg": "#539cc4",
+                  "colorBorder": "#007cc1"
             }
       },
       {
@@ -473,18 +460,8 @@
                   "role": "prop",
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
-                  "target": "average_mass",
-                  "color": "#9a999a"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
                   "target": "boiling_point",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {
@@ -494,7 +471,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "melting_point",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {
@@ -504,7 +481,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "vapor_pressure",
-                  "color": "#9a999a"
+                  "color": "#007cc1"
             }
       },
       {

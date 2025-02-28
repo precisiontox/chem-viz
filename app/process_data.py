@@ -8,6 +8,7 @@ psql_db_name: <psql database name>
 """
 import sys
 import os
+import re
 import json
 import pandas as pd
 import math
@@ -168,42 +169,104 @@ def read_properties_file(file_path, ptx_codes):
     return df, properties
 
 
-def read_properties_file_2(file_path):
+def read_comptox_file(file_path):
+    df = pd.read_csv(
+        file_path,
+        usecols=["DTXSID", "MOLECULAR_FORMULA"]#, "AVERAGE_MASS"]
+    ).rename(columns={
+        "DTXSID": "dtxsid",
+        "MOLECULAR_FORMULA": "formula",
+        # "AVERAGE_MASS": "average_mass"
+    })
+
+    return df
+
+
+def sort_values_and_sources(values, sources):
+    if pd.isna(values) or pd.isna(sources):
+        return values, sources  # Keep NaNs as they are
+    value_list = values.split("; ")
+    source_list = sources.replace("CompTox (", "").replace(")", "").split("; ")
+
+    # Convert numeric values to floats for sorting
+    sorted_pairs = sorted(zip(map(float, value_list), source_list), key=lambda x: x[0])
+    
+    # Unzip sorted pairs
+    sorted_values, sorted_sources = zip(*sorted_pairs)
+    
+    return "; ".join(map(str, sorted_values)), f"{'; '.join(sorted_sources)}"
+
+
+def read_extra_properties_sheet(file_path, sheet):
     df = pd.read_excel(
         file_path,
         skiprows=0,
         index_col=None,
+        sheet_name=sheet,
+        usecols=["DTXSID", "NAME", "Value", "SOURCE"]
     ).rename(columns={
         "DTXSID": "dtxsid",
-        "AVERAGE_MASS": "average_mass"
-    })
-
-    # Pivot the dataframe to reshape it
-    df_pivot = df.pivot(index=["dtxsid", "average_mass"], columns="NAME", values=["Value", "SOURCE"])
+    }).drop_duplicates()
     
-    # Flatten the multi-level columns
-    df_pivot.columns = [' '.join(col).strip() for col in df_pivot.columns.values]
 
+    # Transforming the DataFrame
+    df["Numeric_Value"] = df["Value"].str.split().str[0]
+    values_pivot = df.pivot_table(index="dtxsid", columns="NAME", values="Numeric_Value", aggfunc=lambda x: "; ".join(x))
+    sources_pivot = df.pivot_table(index="dtxsid", columns="NAME", values="SOURCE", aggfunc=lambda x: "; ".join(x))
+    # Rename source columns
+    sources_pivot = sources_pivot.add_suffix(" Source")
+
+    # Combine values and sources into one dataframe
+    final_df = values_pivot.merge(sources_pivot, on="dtxsid")
+    final_df = final_df.reset_index()
+
+    # Apply sorting to each numerical column and its respective source column
+    for col in values_pivot.columns:
+        source_col = col + " Source"
+        if source_col in sources_pivot.columns:
+            final_df[[col, source_col]] = final_df.apply(
+                lambda row: sort_values_and_sources(row[col], row[source_col]), axis=1, result_type="expand"
+            )
+
+    # Add "CompTox" label to sources
+    for col in final_df.columns:
+        if "Source" in col:
+            if sheet == "Predicted":
+                final_df[col] = "CompTox, predicted (" + final_df[col] + ")"
+            else:
+                final_df[col] = "CompTox (" + final_df[col] + ")"
+ 
     # Reset the index to make it a flat table
-    df_pivot.reset_index(inplace=True)
+    final_df.reset_index(inplace=True)
+    final_df.rename(columns={
+        "Boiling Point": "boiling_point",
+        "Melting Point": "melting_point",
+        "Vapor Pressure": "vapor_pressure",
+        "Boiling Point Source": "source_boiling_point",
+        "Melting Point Source": "source_melting_point",
+        "Vapor Pressure Source": "source_vapor_pressure"
+        }, 
+        inplace=True
+    )
+    return final_df
 
-    df_pivot.rename(columns={
-        "Value Boiling Point": "boiling_point",
-        "Value Melting Point": "melting_point",
-        "Value Vapor Pressure": "vapor_pressure",
-        "SOURCE Boiling Point": "source_boiling_point",
-        "SOURCE Melting Point": "source_melting_point",
-        "SOURCE Vapor Pressure": "source_vapor_pressure"
-        }, inplace=True)
+
+def read_properties_file_2(file_path):
+    exp_df = read_extra_properties_sheet(file_path, "Experimental")
+    pre_df = read_extra_properties_sheet(file_path, "Predicted")
+    
+
+    df = pd.concat([exp_df, pre_df], ignore_index=True)
+
     prop_cols = [
-        "average_mass",
         "boiling_point", "source_boiling_point", 
         "melting_point", "source_melting_point",
         "vapor_pressure", "source_vapor_pressure"
     ]
-    df_pivot = df_pivot[["dtxsid"] + prop_cols]
     
-    return df_pivot, prop_cols
+    df = df[["dtxsid"] + prop_cols]
+
+    return df, prop_cols
 
 
 def read_baseline_tox_file(file_path):
@@ -355,7 +418,9 @@ def get_chemical_node(chem_values: dict):
             "label": chem_values["label"],# truncate_label(chem_values["label"], 25),
             "cas": chem_values["casrn"],
             "dtxsid": chem_values["dtxsid"],
+            "cid": chem_values["pubchem_cid"],
             "db_id": chem_values["drugbank_id"],
+            "formula": chem_values["formula"],
             "smiles": chem_values["smiles"],
             "inchi": chem_values["inchikey"]
         }
@@ -801,13 +866,18 @@ def create_single_chemical_network(
 def export_chemical_table(df):
     """ Export chemical table to CSV and JSON files
     """
+
+    columns_order = ['ptx_code', 'chem_name_user', 'chem_name', 'casrn', 'dtxsid', 
+                    'pubchem_cid','drugbank_id', 'formula', 'smiles', 'inchikey', 
+                    'label', 'use_class', 'tox_class']
+    columns_order += [col for col in df.columns if col not in columns_order]
+    df = df[columns_order]
     df = df.replace("NA", "")
-    df = df.rename(columns=labels)
+    df = df.rename(columns=col_headers)
     df = df.drop(columns=["label"], axis=1)
-    cols_to_print = ["Ptox code", "Compound name (user)", "Compound name", "DrugBank ID", 
-                    "DTXSID", "CAS Number", "SMILES", "INCHIKEY"]
-    cols_to_print += [col for col in df.columns if col not in cols_to_print]
-    df.to_csv(chemical_table, columns=cols_to_print, index=False)
+
+    # Write the DataFrame to a CSV file
+    df.to_csv(chemical_table, index=False)
     print(f"{chemical_table} was generated")
 
     # Replace NaN values in the DataFrame with None, ensuring consistent replacement
@@ -858,12 +928,13 @@ with open(f"{HERE_PATH}/config.yml", "r") as stream:
         print(exc)
 
 # Data files
-chem_ide_file = f"{HERE_PATH}/data/2025 - Manuscript Chemicals - Identifiers.xlsx"
+chem_ide_file = f"{HERE_PATH}/data/2025_PTX_chemicals_final_identifier_list.tsv"
 drugbank_file = f"{HERE_PATH}/data/Manuscript Chemicals - DrugBank.xlsx"
 toxclass_file = f"{HERE_PATH}/data/toxicity_categories.tsv"
 use_file = f"{HERE_PATH}/data/Manuscript Chemicals - Identifiers_with_category.xlsx"
 properties_file = f"{HERE_PATH}/data/Visulaization P-Chem Dataset ver1_updated.xlsx"
-properties_file_2 = f"{HERE_PATH}/data/Visulaization P-Chem Dataset ver2.xlsx"
+properties_file_2 = f"{HERE_PATH}/data/2025 - Manuscript Chemicals -P.Chem Visualization.xlsx"
+comptox_file = f"{HERE_PATH}/data/Comptox_batch_search_200_compounds.csv"
 baseline_file = f"{HERE_PATH}/data/Visualization Data - Baseline Toxicity.xlsx"
 drugbank_moa_file = f"{HERE_PATH}/data/Manuscript Chemicals - DrugBank - Target & MoA.xlsx"
 t3db_moa_file = f"{HERE_PATH}/data/Manuscript Chemicals - T3Db - Target & MoA.xlsx"
@@ -880,21 +951,23 @@ chemical_table_json = f"{data_dir}chemical_table.json"
 palette_1 = ["#6C946F", "#F4D35E", "#EE964B", "#F95738", "#D81159", "#8F2D56", "#218380", "#FFC857"]
 palette_2 = ["#894b5d", "#6868ac", "#85a1ac", "#8a5796", "#ecc371", "#f53151"]
 labels = {
-    "ptx_code": "Ptox code",
-    "chem_name": "Compound name",
-    "chem_name_user": "Compound name (user)",
+    "ptx_code": "Ptox Code",
+    "chem_name": "Compound Name",
+    "chem_name_user": "Compound Name (User)",
     "casrn": "CAS Number",
     "dtxsid": "DTXSID",
     "drugbank_id": "DrugBank ID",
+    "pubchem_cid": "PubChem CID",
+    "formula": "Molecular Formula",
     "smiles": "SMILES",
     "inchikey": "INCHIKEY",
     "use_class": "Use Category",
     "tox_class": "Toxicity Category",
     "mw_g_mol": "Molecular Weight",
-    "solubility_h2o_mol_liter": "Solubility (H2O)",
-    "source_solubility_h2o": "Solubility (H2O) source",
+    "solubility_h2o_mol_liter": "Solubility in H2O",
+    "source_solubility_h2o": "Solubility in H2O Source",
     "henry_coefficient_atm_m3_mol": "Henry Coefficient",
-    "source_henry": "Henry coefficient Source",
+    "source_henry": "Henry Coefficient Source",
     "log_kaw_kh_rt": "Log Kaw",
     "source_kaw": "Log Kaw Source",
     "log_kow_liter_liter": "Log Kow",
@@ -929,9 +1002,13 @@ labels = {
 }
 units = {
     "mw_g_mol": "g/mol",
+    "average_mass": "g/mol",
     "solubility_h2o_mol_liter": "mol/liter",
     "henry_coefficient_atm_m3_mol": "atm*m3/mol",
-    "density_kg_liter": "kg/liter"
+    "density_kg_liter": "kg/liter",
+    "boiling_point": "°C",
+    "melting_point": "°C",
+    "vapor_pressure": "mmHg"
 }
 shapes = {
     "Physico-chemical properties": "round-diamond",
@@ -1000,11 +1077,19 @@ sources = {
     "vapor_pressure": "source_vapor_pressure"
 }
 
+col_headers = {}
+for k in labels:
+    if k in units:
+        col_headers[k] = labels[k]+ " (" + units[k] + ")"
+    else:
+        col_headers[k] = labels[k]
+
 # Establish connection to the database
 engine = connect_to_database(config)
 
 # Read Identifiers file
-df_ide = read_identifier_file(chem_ide_file)
+df_ide = pd.read_csv(chem_ide_file, sep="\t")
+df_ide["pubchem_cid"] = df_ide["pubchem_cid"].astype(str)
 ptx_codes = df_ide["ptx_code"].to_list()
 
 # Read DrugBank file
@@ -1015,7 +1100,7 @@ df_ide = df_ide.merge(
         how="left"
 )
 
-# Read 'Use' class file
+# Read Use class file
 df_useclass = read_useclass_file(use_file, ptx_codes)
 df_ide = df_ide.merge(
     df_useclass.groupby('ptx_code').agg({'use_class': '; '.join}).reset_index(),
@@ -1023,11 +1108,19 @@ df_ide = df_ide.merge(
     how="left"
 )
 
-# Read Toxicity Class file ### Apply filtering on score/n_refs
+# Read Toxicity Class file
 df_toxclass = read_toxclass_file(toxclass_file, ptx_codes)
 df_ide = df_ide.merge(
     df_toxclass.groupby('ptx_code').agg({'tox_class': '; '.join}).reset_index(),
     on=["ptx_code"],
+    how="left"
+)
+
+# Read Comptox file (get molecular formula & average mass)
+df_comptox = read_comptox_file(comptox_file)
+df_ide = df_ide.merge(
+    df_comptox,
+    on=["dtxsid"],
     how="left"
 )
 
@@ -1046,6 +1139,7 @@ df_ide = df_ide.merge(
     how="left"
 )
 
+# Read Physiochemical Properties file 2
 df_prop_2, property_cols_2 = read_properties_file_2(properties_file_2)
 property_cols += property_cols_2
 df_ide = df_ide.merge(
@@ -1053,6 +1147,7 @@ df_ide = df_ide.merge(
     on=["dtxsid"],
     how="left"
 )
+
 
 # Read Baseline Toxicity file
 df_base = read_baseline_tox_file(baseline_file)

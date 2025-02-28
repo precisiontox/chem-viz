@@ -68,7 +68,7 @@ function displayCategoryChemicals(categoryNode) {
                     class="category-header-background" 
                     style="background: linear-gradient(90deg, ${categoryNode.data('color_border')}, ${categoryNode.data('color_bg')}); border-radius: 5px; z-index: 0;"></div> 
                 <img 
-                    src='${imageBaseUrl}${categoryNode.data('image')}' 
+                    src='${imageBaseUrl}/nodes/${categoryNode.data('image')}' 
                     alt='Category Image' 
                     class='category-header-image' 
                 >
@@ -231,9 +231,9 @@ function commonNetworkFeatures() {
     cy_graph.nodes("node[role='chem']").qtip({
         content: function () {
             if (this.data("db_id")==="NA") {
-                var drugbank = "<b class='field drugbank_id'>DrugBank AN</b> | N/A<br>\n";
+                var drugbank = "<b class='field'>DrugBank AN</b> | N/A<br>\n";
             } else {
-                var drugbank = "<b class='field drugbank_id'>DrugBank AN</b> | <a href='https://go.drugbank.com/drugs/" + this.data("db_id") + "'>" + this.data("db_id") + "</a><br>\n";
+                var drugbank = "<b class='field'>DrugBank AN</b> | <a href='https://go.drugbank.com/drugs/" + this.data("db_id") + "' target='_blank'>" + this.data("db_id") + "</a><br>\n";
             }
             if (this.data("mw_g_mol")==="NA") {
                 var mw = "<b class='field prop'>Molecular Weight</b> | N/A<br>\n";
@@ -287,13 +287,15 @@ function commonNetworkFeatures() {
             }
             var qtip_content =
                 "<div class='qtip-content' style='max-height: 200px; overflow-y: auto;'>" +
-                "<b class='field compound'>Compound</b><b>  | " + this.data("name") + "</b> <br>\n" +
-                "<b class='field ptx_code'>PTX Code</b> | " + this.data("ptx_code") + "<br>\n" +
-                "<b class='field cas_number'>CAS Number</b> | " + this.data("cas") + "<br>\n" +
-                "<b class='field dsstox_id'>DSSTox ID</b> | <a href='https://comptox.epa.gov/chemexpo/chemical/"+this.data("dtxsid")+"'>"+this.data("dtxsid") + "</a><br>\n" +
-                 drugbank+
-                "<b class='field smiles'>SMILES</b> | " + this.data("smiles") + "<br>\n" +
-                "<b class='field inchi'>InChIKey</b> | " + this.data("inchi") + "<br>\n" +
+                "<b class='field'>Compound</b><b>  | " + this.data("name") + "</b> <br>\n" +
+                "<b class='field'>PTX Code</b> | " + this.data("ptx_code") + "<br>\n" +
+                "<b class='field'>CAS Number</b> | " + this.data("cas") + "<br>\n" +
+                "<b class='field'>DSSTox ID</b> | <a href='https://comptox.epa.gov/dashboard/chemical/details/"+this.data("dtxsid")+"' target='_blank'>"+this.data("dtxsid") + "</a><br>\n" +
+                "<b class='field'>PubChem CID</b> | <a href='https://pubchem.ncbi.nlm.nih.gov/compound/"+this.data("cid")+"' target='_blank'>"+this.data("cid") + "</a><br>\n" +
+                drugbank+
+                "<b class='field'>Molecular Formula</b> | " + formatMolecularFormula(this.data("formula")) + "<br>\n" +
+                "<b class='field'>SMILES</b> | " + this.data("smiles") + "<br>\n" +
+                "<b class='field'>InChIKey</b> | " + this.data("inchi") + "<br>\n" +
                 // mw + solubility + henry + log_kaw + log_kow + pka_acid + pka_base + dlipw + fdf + density +
                 "</div>";
             return qtip_content
@@ -581,16 +583,25 @@ function displayChemicalInfo(selectedChem) {
         document.getElementById('chem-info-section').style.display = 'block';
         
         // Populate the section with data
+        document.getElementById('chem-structure').innerHTML =
+        `<img 
+            src='${imageBaseUrl}/chem_structures/${data.pubchem_cid}.png' 
+            alt='<chemical structure image not found>' 
+        >`
         document.getElementById('chem-ptx-code').textContent = data.ptx_code || 'N/A';
         document.getElementById('chem-name').textContent = data.chem_name || 'N/A';
         document.getElementById('chem-common-name').textContent = data.chem_name_user || 'N/A';
-        document.getElementById('chem-dsstox-id').innerHTML = data.dtxsid
-                ? `<a href="https://comptox.epa.gov/chemexpo/chemical/${data.dtxsid}" target="_blank">${data.dtxsid}</a>`
-                : 'N/A';
         document.getElementById('chem-cas').textContent = data.casrn || 'N/A';
+        document.getElementById('chem-dsstox-id').innerHTML = data.dtxsid
+                ? `<a href="https://comptox.epa.gov/dashboard/chemical/details/${data.dtxsid}" target="_blank">${data.dtxsid}</a>`
+                : 'N/A';
+        document.getElementById('chem-pubchem-cid').innerHTML = data.pubchem_cid
+        ? `<a href="https://pubchem.ncbi.nlm.nih.gov/compound/${data.pubchem_cid}" target="_blank">${data.pubchem_cid}</a>`
+        : 'N/A';
         document.getElementById('chem-drugbank-id').innerHTML = data.drugbank_id
         ? `<a href="https://go.drugbank.com/drugs/${data.drugbank_id}" target="_blank">${data.drugbank_id}</a>`
         : 'N/A';
+        document.getElementById('chem-formula').innerHTML = formatMolecularFormula(data.formula) || 'N/A';
         document.getElementById('chem-smiles').textContent = data.smiles || 'N/A';
         document.getElementById('chem-inchi').textContent = data.inchikey || 'N/A';
         document.getElementById('chem-use').textContent = data.use_class || 'N/A';
@@ -614,7 +625,6 @@ function displayChemicalInfo(selectedChem) {
         document.getElementById('chem-fdf').textContent = data.freely_dissolved_fraction || 'N/A';
         document.getElementById('chem-density').textContent = data.density_kg_liter || 'N/A';
         document.getElementById('chem-source-density').textContent = data.source_density || 'N/A';
-        document.getElementById('chem-avg-mass').textContent = data.average_mass || 'N/A';
         document.getElementById('chem-boiling').textContent = data.boiling_point || 'N/A';
         document.getElementById('chem-source-boiling').textContent = data.source_boiling_point || 'N/A';
         document.getElementById('chem-melting').textContent = data.melting_point || 'N/A';
@@ -696,6 +706,16 @@ function populateTargetsTable(data) {
 }
 
 // Utility Functions
+function formatMolecularFormula(formula) {
+    // Ensure the input is a string before applying the regex
+    if (typeof formula !== "string") {
+        return formula; // Return as-is if it's not a string
+    }
+    
+    // Use regex to wrap numbers in <sub> tags
+    return formula.replace(/(\d+)/g, "<sub>$1</sub>");
+}
+
 function populateChemSelect(basicNetworkLoaded = false) {
     const select = document.getElementById('chem-select');
     select.innerHTML = '<option value="">Select a compound...</option>';
@@ -770,6 +790,89 @@ function resetNetwork() {
         }
     }
 }
+
+// DataTable
+function loadChemList() {
+    if (!$.fn.DataTable.isDataTable('#chem-table')) {
+        fetch('/get_chemicals')
+            .then(response => response.json())
+            .then(data => {
+                const tableHeader = document.getElementById('chem-table-header');
+                const tableBody = document.getElementById('chem-table-body');
+
+                // Clear any existing content
+                tableHeader.innerHTML = '';
+                tableBody.innerHTML = '';
+
+                // Create the table header
+                if (data.length > 0) {
+                    const headers = Object.keys(data[0]);
+                    headers.forEach(header => {
+                        const th = document.createElement('th');
+                        th.textContent = header;
+                        tableHeader.appendChild(th);
+                    });
+                }
+
+                // Populate the table body
+                data.forEach(row => {
+                    const tr = document.createElement('tr');
+                    Object.entries(row).forEach(([key, value]) => {
+                        const td = document.createElement('td');
+                        
+                        // Check if this is the molecular formula column
+                        if (key.toLowerCase() === "formula" || key.toLowerCase() === "molecular formula") {
+                            td.innerHTML = formatMolecularFormula(value); // Use innerHTML for proper rendering
+                        } else {
+                            td.textContent = value; // Use textContent for other fields
+                        }
+
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+
+                // Initialize DataTable
+                $('#chem-table').DataTable({
+                    dom: 'lBfrtip', // Enable buttons
+                    buttons: [
+                        'copy', 'csv', 'excel', 'pdf', 'print'
+                    ],
+                    scrollY: '65vh', // Vertical scrolling (adjust height as needed)
+                    scrollX: true,   // Enable horizontal scrolling
+                    scrollCollapse: true, // Allows the table to reduce in height when fewer rows are shown
+                    paging: false,
+                    columnDefs: [
+                        { width: '150px', targets: '_all' } // Set the width for all columns
+                    ],
+                    drawCallback: function() { // Add tooltips after the table is drawn
+                        $('#chem-table tbody td').each(function() {
+                            // Destroy any existing tooltip instance to avoid duplicates
+                            if ($(this).data('qtip')) $(this).qtip('destroy', true);
+
+                            // Determine if this cell is in the rightmost column
+                            let isRightmost = $(this).is(':last-child');
+
+                            $(this).qtip({
+                                content: {
+                                    text: $(this).text().trim()
+                                },
+                                style: {
+                                    classes: 'qtip-dark qtip-rounded'
+                                },
+                                position: {
+                                    my: isRightmost ? 'top right' : 'top left',
+                                    at: isRightmost ? 'bottom left' : 'bottom right'
+                                }
+                            });
+                        });
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading chemical list:', error));
+    }
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.tablinks').click();

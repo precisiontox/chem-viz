@@ -9,7 +9,9 @@
                   "label": "PTX126 | Anastrozole",
                   "cas": "120511-73-1",
                   "dtxsid": "DTXSID9022607",
+                  "cid": "2187",
                   "db_id": "DB01217",
+                  "formula": "C17H19N5",
                   "smiles": "CC(C)(C#N)C1=CC(=CC(CN2C=NC=N2)=C1)C(C)(C)C#N",
                   "inchi": "YBBLVLTVTVSKRW-UHFFFAOYSA-N",
                   "mw_g_mol": "293.374",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.657805175706962",
                   "density_kg_liter": "",
                   "source_density": "COMPTOX",
-                  "average_mass": 293.374,
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
-                  "melting_point": "81.5 \u00b0C",
-                  "source_melting_point": "Jean-Claude Bradley Open Melting Point Dataset",
+                  "melting_point": "81.5; 130.14",
+                  "source_melting_point": "CompTox (Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n4.17e-04 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n4.17e-04 mol/liter",
                   "value": "4.16719E-4",
-                  "hlLabel": "Solubility (H2O):\n4.17e-04 mol/liter\nSource: COMPTOX (OPERA)",
+                  "hlLabel": "Solubility in H2O:\n4.17e-04 mol/liter\nSource: COMPTOX (OPERA)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,20 +316,6 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n293.37 ",
-                  "value": 293.374,
-                  "hlLabel": "Average Mass:\n293.37 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
                   "combinedLabel": "Boiling Point:\nn/a",
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n81.5 \u00b0C ",
-                  "value": "81.5 \u00b0C",
-                  "hlLabel": "Melting Point:\n81.5 \u00b0C \nSource: Jean-Claude Bradley Open Melting Point Dataset",
+                  "combinedLabel": "Melting Point:\n81.5; 130.14 \u00b0C",
+                  "value": "81.5; 130.14",
+                  "hlLabel": "Melting Point:\n81.5; 130.14 \u00b0C\nSource: CompTox (Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },

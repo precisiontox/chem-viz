@@ -9,7 +9,9 @@
                   "label": "PTX070 | Rotenone",
                   "cas": "83-79-4",
                   "dtxsid": "DTXSID6021248",
+                  "cid": "6758",
                   "db_id": "NA",
+                  "formula": "C23H22O6",
                   "smiles": "[H][C@@]12COC3=C(C=C(OC)C(OC)=C3)[C@]1([H])C(=O)C1=CC=C3O[C@H](CC3=C1O2)C(C)=C",
                   "inchi": "JUVIOZPCNVVQFO-HBGVWJBISA-N",
                   "mw_g_mol": "394.423",
@@ -29,11 +31,10 @@
                   "freely_dissolved_fraction": "0.11640924998038",
                   "density_kg_liter": "1.293",
                   "source_density": "COMPTOX",
-                  "average_mass": 394.423,
-                  "boiling_point": "215.0 \u00b0C",
-                  "source_boiling_point": "Oxford University Chemical Safety Data (No longer updated)",
-                  "melting_point": "159.0 \u00b0C",
-                  "source_melting_point": "MolMall",
+                  "boiling_point": "215.0",
+                  "source_boiling_point": "CompTox (Oxford University Chemical Safety Data (No longer updated)",
+                  "melting_point": "165.5; 176.0",
+                  "source_melting_point": "CompTox (Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset)",
                   "vapor_pressure": "NA",
                   "source_vapor_pressure": "NA"
             }
@@ -190,10 +191,10 @@
             "data": {
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
-                  "label": "Solubility (H2O)",
-                  "combinedLabel": "Solubility (H2O):\n2.48e-05 mol/liter",
+                  "label": "Solubility in H2O",
+                  "combinedLabel": "Solubility in H2O:\n2.48e-05 mol/liter",
                   "value": "0.0000248",
-                  "hlLabel": "Solubility (H2O):\n2.48e-05 mol/liter\nSource: COMPTOX",
+                  "hlLabel": "Solubility in H2O:\n2.48e-05 mol/liter\nSource: COMPTOX",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -315,25 +316,11 @@
             "group": "nodes",
             "data": {
                   "role": "prop",
-                  "id": "average_mass",
-                  "label": "Average Mass",
-                  "combinedLabel": "Average Mass:\n394.42 ",
-                  "value": 394.423,
-                  "hlLabel": "Average Mass:\n394.42 ",
-                  "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
-            }
-      },
-      {
-            "group": "nodes",
-            "data": {
-                  "role": "prop",
                   "id": "boiling_point",
                   "label": "Boiling Point",
-                  "combinedLabel": "Boiling Point:\n215.0 \u00b0C ",
-                  "value": "215.0 \u00b0C",
-                  "hlLabel": "Boiling Point:\n215.0 \u00b0C \nSource: Oxford University Chemical Safety Data (No longer updated)",
+                  "combinedLabel": "Boiling Point:\n215.00 \u00b0C",
+                  "value": "215.0",
+                  "hlLabel": "Boiling Point:\n215.00 \u00b0C\nSource: CompTox (Oxford University Chemical Safety Data (No longer updated)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -345,9 +332,9 @@
                   "role": "prop",
                   "id": "melting_point",
                   "label": "Melting Point",
-                  "combinedLabel": "Melting Point:\n159.0 \u00b0C ",
-                  "value": "159.0 \u00b0C",
-                  "hlLabel": "Melting Point:\n159.0 \u00b0C \nSource: MolMall",
+                  "combinedLabel": "Melting Point:\n165.5; 176.0 \u00b0C",
+                  "value": "165.5; 176.0",
+                  "hlLabel": "Melting Point:\n165.5; 176.0 \u00b0C\nSource: CompTox (Jean-Claude Bradley Open Melting Point Dataset; Jean-Claude Bradley Open Melting Point Dataset)",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -464,16 +451,6 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
-            }
-      },
-      {
-            "group": "edges",
-            "data": {
-                  "role": "prop",
-                  "subrole": "attribute",
-                  "source": "Physico-chemical properties",
-                  "target": "average_mass",
                   "color": "#007cc1"
             }
       },
