@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
@@ -73,7 +74,7 @@
                     </div>
                 </div>
                 
-                <div class="dropdown">
+                <div class="dropdown" id="change_label_size_container" style="display: none;">
                     <label for="label-font-size-slider">Change chemical label size:</label>
                     <input 
                         type="range" id="label-font-size-slider" 
@@ -85,27 +86,28 @@
                 <hr>
                 <div class="dropdown">
                     <label for="chem-select">Focus on chemical:</label>
-                    <select id="chem-select" class="chem-select" style="width: 100%;" onchange="loadSingleChemNetwork(value)">
+                    <select id="chem-select" class="chem-select" style="width: 100%;" onchange="redirectToChemical(value)">
+                    <!-- <select id="chem-select" class="chem-select" style="width: 100%;" onchange="loadSingleChemNetwork(value)"> -->
                         <option value="">Select a compound...</option>
                     </select>
                 </div>
                 <br>
                 <div class="dropdown">
-                    <button id="reset-button"><i class="fa-solid fa-arrow-rotate-left"></i> Reset Network</button>
+                    <button id="reset-button"><i class="fa-solid fa-arrow-rotate-left"></i> Reset View</button>
                 </div>
                 <div class="dropdown">
                     <button class="dl-btn-off" id="dl-btn">
-                        <i class="fas fa-download"></i> Download Network
+                        <i class="fas fa-camera"></i> Download Snapshot
                     </button>
                     <div id="dl-content" class="dl-content">
                         <button class="dl-btn-pic" id="dl_svg">
                             <i class="fas fa-file-download"></i> SVG
                         </button>
                         <button class="dl-btn-pic" id="dl_jpg">
-                            <i class="fas fa-camera"></i> JPG
+                            <i class="fas fa-file-download"></i> JPG
                         </button>
                         <button class="dl-btn-pic" id="dl_png">
-                            <i class="fas fa-camera"></i> PNG
+                            <i class="fas fa-file-download"></i> PNG
                         </button>
                     </div>
                 </div>
@@ -126,13 +128,18 @@
                 </div>
                 <div class="zoom-widget">
                     <div class="zoom-widget-row">
-                        <button class="my-btn" id="zoom_in" title="Zoom in">
+                        <button class="my-btn" id="zoom-in" title="Zoom in">
                             <i class="fas fa-search-plus"></i>
                         </button>
                     </div>
                     <div class="zoom-widget-row">
-                        <button class="my-btn" id="zoom_out" title="Zoom out">
+                        <button class="my-btn" id="zoom-out" title="Zoom out">
                             <i class="fas fa-search-minus"></i>
+                        </button>
+                    </div>
+                    <div class="zoom-widget-row">
+                        <button class="my-btn" id="mouse-wheel-zoom" title="Enable/disable zoom with mouse wheel">
+                            <i class='bx bxs-mouse' style="font-size: larger;"></i>
                         </button>
                     </div>
                 </div>
@@ -446,18 +453,28 @@
         });
 
         // BUTTON: Zoom-In / Zoom-Out
-        $("#zoom_in").click(function () {
-            var z = cy_graph.zoom() + 0.2;
+        $("#zoom-in").click(function () {
+            var z = cy_graph.zoom() + 0.1;
             cy_graph.zoom(z);
         });
-        $("#zoom_out").click(function () {
-            var z = cy_graph.zoom() - 0.2;
+        $("#zoom-out").click(function () {
+            var z = cy_graph.zoom() - 0.1;
             cy_graph.zoom(z);
         });
 
-        // BUTTON: Center the graph on the page
-        $("#center").click(function () {
-            cy_graph.fit(cy_graph.$("node:visible"));
+        $('#mouse-wheel-zoom').click(function () {
+            // Get the current zooming state
+            let isZoomingEnabled = cy_graph.userZoomingEnabled();
+            
+            // Toggle the state
+            cy_graph.userZoomingEnabled(!isZoomingEnabled);
+
+            // Update button text based on the new state
+            if (isZoomingEnabled){
+                $('#mouse-wheel-zoom i').toggleClass("bx-mouse bxs-mouse");
+            } else {
+                $('#mouse-wheel-zoom i').toggleClass("bxs-mouse bx-mouse");
+            }
         });
 
         /// DOWNLOAD BUTTONS

@@ -3,9 +3,15 @@ let lastClickTime = 0;  // Store the time of the last click
 let doubleClickDelay = 300;  // Maximum delay between clicks (in milliseconds)
 let isSingleChemNetwork = false; // Tracks if a single chemical network is loaded
 
+function redirectToChemical(selectedChem) {
+    if (selectedChem) {
+        window.location.href = `/${encodeURIComponent(selectedChem)}`;
+    }
+}
 
 function displayCategoryChemicals(categoryNode) {
     document.getElementById('chem-info-section').style.display = 'none';
+    document.getElementById('change_label_size_container').style.display = 'none';
     
     // Get all connected chemical nodes
     const connectedEdges = categoryNode.connectedEdges();
@@ -99,13 +105,17 @@ function displayCategoryChemicals(categoryNode) {
     } else {
         document.getElementById('category-info-section').style.display = 'none';
     }
+    if (cy_graph.edges(':visible').length > 0) {
+        document.getElementById('change_label_size_container').style.display = 'block';
+    }
 }
 
 function initializeCytoscape(selectedChem = null) {
     if (selectedChem) {
         populateChemSelect().then(() => {
             document.getElementById('chem-select').value = selectedChem;
-            document.getElementById('chem-select').dispatchEvent(new Event('change'));
+            loadSingleChemNetwork(selectedChem);
+            // document.getElementById('chem-select').dispatchEvent(new Event('change'));
         });
     } else {
         initializeNetworkBasic();
@@ -122,6 +132,9 @@ function initializeNetworkBasic() {
                     container: document.getElementById('cy_graph'),
                     elements: elements,
                     style: generalNetworkStyle,
+                    zoomingEnabled: true,
+                    userZoomingEnabled: false, 
+                    wheelSensitivity: 0.5
                     // layout: cose_layout
                 });
                 initializeBasicNetworkFeatures();
@@ -362,6 +375,9 @@ function loadBasicNetworkAndClassify(classificationType) {
                 container: document.getElementById('cy_graph'),
                 elements: elements,
                 style: generalNetworkStyle,
+                zoomingEnabled: true,
+                userZoomingEnabled: false, 
+                wheelSensitivity: 0.5,
                 layout: initial_layout  // Adjust layout as needed
             });
 
@@ -417,6 +433,8 @@ function toggleChemNodes(categoryNode) {
 
 // Single Chemical Network Functions
 function loadSingleChemNetwork(selectedChem) {
+    document.getElementById('change_label_size_container').style.display = 'none';
+
     // If no node is selected, reset the network
     if (!selectedChem) {
         selectClassification(true, 'use');
@@ -438,6 +456,9 @@ function loadSingleChemNetwork(selectedChem) {
                 container: document.getElementById('cy_graph'),
                 elements: chemNetworkElements,
                 style: singleNetworkStyle,
+                zoomingEnabled: true,
+                userZoomingEnabled: false, 
+                wheelSensitivity: 0.5,
                 layout: circle_layout
             });
 
@@ -655,16 +676,16 @@ function populateAopTable(aopData) {
             const row = document.createElement('tr');
 
             const aopIdCell = document.createElement('td');
-            aopIdCell.textContent = aop.AOP_id|| 'N/A';
-            // aopIdCell.innerHTML = aop.AOP_id 
-            // ? `<a href="https://aopwiki.org/aops/${aop.AOP_id }" target="_blank">${aop.AOP_id }</a>`
-            // : 'N/A';
+            // aopIdCell.textContent = 'AOP: '+aop.AOP_id|| 'N/A';
+            aopIdCell.innerHTML = aop.AOP_id 
+            ? `<a href="https://aopwiki.org/aops/${aop.AOP_id }" target="_blank">${'AOP: '+aop.AOP_id }</a>`
+            : 'N/A';
 
             const aopNameCell = document.createElement('td');
-            // aopNameCell.textContent = aop.AOP_name || 'N/A';
-            aopNameCell.innerHTML = aop.AOP_name
-            ? `<a href="https://aopwiki.org/aops/${aop.AOP_id }" target="_blank">${aop.AOP_name }</a>`
-            : 'N/A';
+            aopNameCell.textContent = aop.AOP_name || 'N/A';
+            // aopNameCell.innerHTML = aop.AOP_name
+            // ? `<a href="https://aopwiki.org/aops/${aop.AOP_id }" target="_blank">${aop.AOP_name }</a>`
+            // : 'N/A';
 
 
             row.appendChild(aopIdCell);
@@ -878,4 +899,18 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.tablinks').click();
     // Add event listener for the reset button
     document.getElementById('reset-button').addEventListener('click', resetNetwork);
+    
 });
+
+document.getElementById('cy_graph').addEventListener('wheel', function(event) {
+    if (!event.ctrlKey && !event.metaKey) {  
+        // ✅ Stop Cytoscape from hijacking the scroll event
+        event.stopPropagation();
+        
+        // ✅ Allow normal page scrolling
+        window.scrollBy({
+            top: event.deltaY,
+            behavior: 'auto' 
+        });
+    }
+}, { passive: false });
