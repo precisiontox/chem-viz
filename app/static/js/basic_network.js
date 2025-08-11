@@ -299,7 +299,13 @@ function commonNetworkFeatures() {
                 var density = "<b class='field prop'>Density</b> | "+this.data("density_kg_liter")+" kg/liter (source:"+this.data("source_density")+")<br>\n"
             }
             var qtip_content =
-                "<div class='qtip-content' style='max-height: 200px; overflow-y: auto;'>" +
+                "<div class='qtip-content' style='max-height: 200px; overflow-y: auto; position: relative;'>" +
+                
+                "<div style='position: absolute; top: 5px; right: 5px;'>" +
+                "<a href='https://dex.precisiontox.org/chem/" + this.data("ptx_code") + "' target='_blank' style='display: inline-flex; align-items: center; background-color: #004880; color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px;'>" +
+                "<i class='fas fa-search-plus' style='margin-right: 4px;'></i>Go to chemical" +
+                "</a></div>" +
+
                 "<b class='field'>Compound</b><b>  | " + this.data("name") + "</b> <br>\n" +
                 "<b class='field'>PTX Code</b> | " + this.data("ptx_code") + "<br>\n" +
                 "<b class='field'>CAS Number</b> | " + this.data("cas") + "<br>\n" +
@@ -310,7 +316,7 @@ function commonNetworkFeatures() {
                 "<b class='field'>SMILES</b> | " + this.data("smiles") + "<br>\n" +
                 "<b class='field'>InChIKey</b> | " + this.data("inchi") + "<br>\n" +
                 // mw + solubility + henry + log_kaw + log_kow + pka_acid + pka_base + dlipw + fdf + density +
-                "</div>";
+                "</div><br>";
             return qtip_content
         },
         position: {
@@ -400,34 +406,117 @@ function loadBasicNetworkAndClassify(classificationType) {
 }
 
 function toggleChemNodes(categoryNode) {
-    // Find all connected 'chem' nodes and edges
+    // Get all connected chemical nodes and edges
     const connectedEdges = categoryNode.connectedEdges();
     const chemNodes = connectedEdges.targets().add(connectedEdges.sources()).filter("[role='chem']");
 
     // Determine if we should hide or show chem nodes
     const isAlreadyVisible = connectedEdges.every(edge => edge.visible());
-
     if (isAlreadyVisible) {
+        // Hide all edges for the category node
         connectedEdges.hide();
+        // Hide chem nodes that are only connected to it
         const chemNodesWithNoVisibleEdges = cy_graph.nodes("[role='chem']").filter(node => {
             // Check if the node has no visible connected edges
             return node.connectedEdges(":visible").length === 0;
         });
         chemNodesWithNoVisibleEdges.hide();        
     } else {
-        // Show category node (always keep it visible), connected edges, and chem nodes
+        // Show all connected edges and chem nodes
         connectedEdges.show();
         chemNodes.show();
     }
 
-    // Get all currently visible elements
-    const visibleElements = cy_graph.elements(":visible");
+    // const visibleEdges = cy_graph.edges(":visible");
+    // const visibleNodes = cy_graph.nodes(":visible");
+    
+    // const offsetY = 1200;  
 
-    // Re-layout all visible elements
-    reLayout(visibleElements, cose_layout);
 
-    // Fit the view to the visible elements
-    cy_graph.fit(visibleElements);
+    // // Apply cose layout only to the selected category and its chemical nodes
+    // // categoryNode.union(chemNodes).union(connectedEdges).positions((node, i) => {
+    // cy_graph.elements(":visible").positions((node, i) => {
+    //     return {
+    //         x: node.position("x"),
+    //         y: node.position("y") + offsetY // Shift nodes downward
+    //     };
+    // }).layout({
+    //     // cy_graph.elements(":visible").nodes("[role='chem']").layout({
+    //     name: 'cose',
+    //     fit: true, // Fit the subset inside its space
+    //     nodeRepulsion: 10000,
+    //     nodeOverlap: 700,
+    //     avoidOverlap: true
+    // }).run();
+
+    // // Apply grid layout to only category nodes
+    // cy_graph.nodes("[role^='category']").layout({
+    //     name: 'grid',
+    //     fit: false,  // Avoid rescaling the entire graph
+    //     // rows: 1,     // Keep category nodes in a row
+    //     avoidOverlap: true,
+    //     position: function (node) {
+    //         return {
+    //             x: node.position("x"),
+    //             y: node.position("y") - offsetY // Keep them above
+    //         };
+    //     }
+    // }).run();
+
+    const activeEles = categoryNode.union(chemNodes).union(connectedEdges);
+    const categoryNodes = cy_graph.nodes(":visible[role ^='category']").not(activeEles);
+    // const nonCategoryNodes = cy_graph.nodes(":visible").not(categoryNodes);
+    
+    // 🟢 Step 1: Apply `cose` to non-category nodes (without label dimensions)
+    activeEles.layout({
+        name: 'cose',
+        fit: true,
+        padding: 20,
+        nodeRepulsion: 10000,
+        nodeOverlap: 700,
+        nodeDimensionsIncludeLabels: false // Default behavior
+    }).run();
+    
+    // 🔵 Step 2: Apply `cose` to category nodes (with label dimensions)
+    categoryNodes.layout({
+        name: 'cose',
+        fit: false,
+        padding: 20,
+        nodeRepulsion: 2000, // Extra spacing
+        nodeOverlap: 700,
+        nodeDimensionsIncludeLabels: true // Enable label-based separation
+    }).run();
+    
+    // // 🔥 Step 3: Ensure category nodes don’t overlap with others
+    const bbox = activeEles.boundingBox(); // Get the bounding box of the non-category nodes
+
+    categoryNodes.positions((node, i) => ({
+        x: node.position("x"),  // Keep the x position the same
+        y: node.position("y") - bbox.h - 10000 - (i * 50) // Move all category nodes up
+    }));
+        
+    // // Fit everything
+    // cy_graph.fit(cy_graph.elements(":visible"));
+
+    // // Fit the view to the visible elements
+    // const visibleElements = cy_graph.elements(":visible");
+    // reLayout(visibleElements, cose_layout);
+    // visibleElements.layout({
+    //     name: "cose",
+    //     fit: true,
+    //     padding: 20,
+    //     nodeRepulsion: node => node.data("role").startsWith("category") ? 200000 : 10000, // More separation for category nodes
+    //     nodeOverlap: 700
+    // }).run();
+    // console.log(cy_graph.nodes(":visible[role^='category']").length);
+    // cy_graph.nodes(":visible[role^='category']").layout({
+    //     name: 'cose',
+    //     fit: true,
+    //     padding: 20,
+    //     nodeRepulsion: 10000,
+    //     nodeOverlap: 700,
+    // }).run();
+    // cy_graph.fit(visibleElements);
 }
 
 
@@ -854,10 +943,10 @@ function loadChemList() {
                 });
 
                 // Initialize DataTable
-                $('#chem-table').DataTable({
+                const chem_table = $('#chem-table').DataTable({
                     dom: 'lBfrtip', // Enable buttons
                     buttons: [
-                        'copy', 'csv', 'excel', 'pdf', 'print'
+                        'copy', 'csv', 'excel'
                     ],
                     scrollY: '65vh', // Vertical scrolling (adjust height as needed)
                     scrollX: true,   // Enable horizontal scrolling
@@ -889,6 +978,22 @@ function loadChemList() {
                         });
                     }
                 });
+                let loaderTimeout;
+
+                chem_table.on('order.dt', function () {
+                    $('#loader').show();
+                    loaderTimeout = setTimeout(() => {}, 200); // Start timer
+                });
+
+                chem_table.on('draw.dt', function () {
+                    const hideLoader = () => $('#loader').hide();
+                    if (loaderTimeout) {
+                        clearTimeout(loaderTimeout);
+                        setTimeout(hideLoader, 200); // Keep spinner for minimum time
+                    } else {
+                        hideLoader();
+                    }
+                }); 
             })
             .catch(error => console.error('Error loading chemical list:', error));
     }

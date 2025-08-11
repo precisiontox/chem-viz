@@ -4,7 +4,7 @@ let cose_layout =
     fit: true,
     padding: 20,
     nodeRepulsion: 10000,
-    nodeOverlap: 700
+    nodeOverlap: 700,
 };
 let initial_layout = {
     name: 'grid',
