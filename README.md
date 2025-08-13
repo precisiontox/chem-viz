@@ -19,7 +19,7 @@ These chemicals are simultaneously displayed in tables (one for each category) b
 
 In addition, clicking on any chemical node will show a tooltip box displaying all compound identifiers.
 
-<img src="app/static/images/readme/tooltip.png">
+<img src="app/static/images/readme/tooltip.png" width="300">
 
 ### Single chemical properties view
 
