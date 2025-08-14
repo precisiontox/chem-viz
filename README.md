@@ -19,7 +19,7 @@ These chemicals are simultaneously displayed in tables (one for each category) b
 
 In addition, clicking on any chemical node will show a tooltip box displaying all compound identifiers.
 
-<img src="app/static/images/readme/tooltip.png" width="300">
+<img src="app/static/images/readme/tooltip.png" width="400">
 
 ### Single chemical properties view
 
@@ -38,3 +38,41 @@ For further convenience, chemical information is also displayed in a structured 
 Finally, the web application includes a comprehensive table listing the entire chemical collection. This table consolidates all available data for each chemical into clearly defined columns. Users can filter and sort the table as needed to support targeted analysis, as well as download it in different formats.
 
 <img src="app/static/images/readme/full_table.png">
+
+## Data
+
+All data shown in the application were provided by PrecisionTox Consortium partners. 
+
+All raw data files can be found in `app/data/`.
+
+## Setup
+### Requirements
+-  Python3.6+
+-  Install required packages (virtual environment recommended)
+```shell
+source my_venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Launch
+You can run the app locally with:
+```shell
+python app/main.py
+```
+
+### Rebuilding the graphs
+This step is not required as graph files are already provided as JSON files in `app/static/elements/`. 
+
+If you want to rebuild these files run:
+```shell
+python app/process_data.py
+```
+This script will use raw data files present in `app/data/`. 
+
+In addition, it also requires connecting to the PrecisionTox Central Database. For this, it is neccessary to create a `app/config.yml` file with the following parameters:
+```
+psql_host: <psql database host>
+psql_user: <psql user>
+psql_pass: <psql user password
+psql_db_name: <psql database name>
+```
