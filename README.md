@@ -1,5 +1,7 @@
 # PrecisionTox Chemical Visualization Tool
 
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-orange.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+
 The PrecisionTox Chemical Visualization Tool is a web-based application developed
 to facilitate the exploration and analysis of the [PrecisionTox](precisiontox.org) chemical collection.
 
