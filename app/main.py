@@ -1,5 +1,4 @@
 from flask import Flask, render_template, Response, jsonify
-import pandas as pd
 import json
 import os
 from collections import OrderedDict
@@ -24,6 +23,9 @@ def get_chemical_info(selected_chem):
     json_path = os.path.join(
         app.root_path, 'static', 'data', 'single_chem', f'{selected_chem}_data.json'
     )
+
+    if not os.path.isfile(json_path):
+        return jsonify({"error": "Chemical not found"}), 404
 
     # Load the JSON file
     with open(json_path) as f:
