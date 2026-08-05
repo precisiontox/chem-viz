@@ -1001,7 +1001,6 @@ function loadChemList() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.tablinks').click();
     // Add event listener for the reset button
     document.getElementById('reset-button').addEventListener('click', resetNetwork);
     
