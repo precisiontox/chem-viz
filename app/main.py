@@ -1,10 +1,18 @@
 from flask import Flask, render_template, Response, jsonify
-import pandas as pd
 import json
 import os
 from collections import OrderedDict
+from datetime import timedelta
 # from app import app
 app = Flask(__name__)
+STATIC_CACHE_SECONDS = 60 * 60 * 24
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=STATIC_CACHE_SECONDS)
+
+
+def add_json_cache_headers(response):
+    response.cache_control.public = True
+    response.cache_control.max_age = STATIC_CACHE_SECONDS
+    return response
 
 
 @app.route('/')
@@ -25,6 +33,9 @@ def get_chemical_info(selected_chem):
         app.root_path, 'static', 'data', 'single_chem', f'{selected_chem}_data.json'
     )
 
+    if not os.path.isfile(json_path):
+        return jsonify({"error": "Chemical not found"}), 404
+
     # Load the JSON file
     with open(json_path) as f:
         chem_data = json.load(f, object_pairs_hook=OrderedDict) 
@@ -34,7 +45,7 @@ def get_chemical_info(selected_chem):
         # Convert the data back to JSON string to ensure order and return it
         response = json.dumps(chem_data, indent=4, sort_keys=False)
         # Return a Flask response with the correct content type
-        return Response(response, content_type='application/json')
+        return add_json_cache_headers(Response(response, content_type='application/json'))
 
     else:
         # If the chemical is not found, return an error response
@@ -52,8 +63,8 @@ def get_chemicals():
     response = json.dumps(data, indent=4, sort_keys=False)
 
     # Return a Flask response with the correct content type
-    return Response(response, content_type='application/json')
+    return add_json_cache_headers(Response(response, content_type='application/json'))
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

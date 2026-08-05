@@ -4,33 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ptox Chemical Selection</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/google-fonts/arimo/arimo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/boxicons/2.1.4/boxicons.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/font-awesome/6.5.2/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/qtip2/3.0.3/jquery.qtip.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/datatables/1.11.5/jquery.dataTables.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/datatables-buttons/2.2.2/buttons.dataTables.min.css') }}">
     <!-- Include Select2 CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='vendor/select2/4.0.13/select2.min.css') }}" rel="stylesheet" />
     <!-- Include Select2 JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.21.0/cytoscape.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cytoscape-qtip@2.7.1/cytoscape-qtip.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="{{ url_for('static', filename='vendor/cytoscape/3.21.0/cytoscape.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jquery/3.5.1/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/qtip2/3.0.3/jquery.qtip.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/datatables/1.11.5/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/datatables-buttons/2.2.2/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/cytoscape-qtip/2.7.1/cytoscape-qtip.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/jszip/3.1.3/jszip.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/select2/4.0.13/select2.min.js') }}"></script>
     <!-- pdfmake for PDF export -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="{{ url_for('static', filename='vendor/pdfmake/0.1.53/pdfmake.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/pdfmake/0.1.53/vfs_fonts.js') }}"></script>
     <!-- Buttons for CSV, Excel, PDF, and Print -->
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js" integrity="sha256-FPJJt8nA+xL4RU6/gsriA8p8xAeLGatoyTjldvQKGdE=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='vendor/datatables-buttons/2.2.2/buttons.html5.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='vendor/datatables-buttons/2.2.2/buttons.print.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='vendor/filesaver/1.3.8/FileSaver.min.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static',filename='js/cytoscape-svg.js') }}"></script>
     <script>
         const jsonBasic = "{{ url_for('static', filename='elements/basic.json')}}";
@@ -48,8 +46,8 @@
         <img src="{{ url_for('static', filename='images/logos/ptox_logo_white.png') }}" alt="Logo" class="logo">
         <span id="title_chemical">CHEMICAL&nbsp;</span><span>LIBRARY</span>
         <ul>
-            <li><a href="https://precisiontox.org/" target="_blank">PrecisionTox</a></li>
-            <li><a href="about.asp" target="_blank">About</a></li>
+            <li><a href="https://precisiontox.org/" target="_blank" rel="noopener noreferrer">PrecisionTox</a></li>
+            <li><a href="about.asp" target="_blank" rel="noopener noreferrer">About</a></li>
         </ul> 
     </div>
     <div class="tab">

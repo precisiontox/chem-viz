@@ -51,7 +51,7 @@ function displayCategoryChemicals(categoryNode) {
                     <td><a href='/${chem.ptx_code}'>${chem.ptx_code}</a></td>
                     <td>${chem.name}</td>
                     <td>${chem.score}</td>
-                    <td>${chem.refs}</td
+                    <td>${chem.refs}</td>
                 </tr>
             `).join('');
         } else if (category === "use") {
@@ -246,7 +246,7 @@ function commonNetworkFeatures() {
             if (this.data("db_id")==="NA") {
                 var drugbank = "<b class='field'>DrugBank AN</b> | N/A<br>\n";
             } else {
-                var drugbank = "<b class='field'>DrugBank AN</b> | <a href='https://go.drugbank.com/drugs/" + this.data("db_id") + "' target='_blank'>" + this.data("db_id") + "</a><br>\n";
+                var drugbank = "<b class='field'>DrugBank AN</b> | <a href='https://go.drugbank.com/drugs/" + this.data("db_id") + "' target='_blank' rel='noopener noreferrer'>" + this.data("db_id") + "</a><br>\n";
             }
             if (this.data("mw_g_mol")==="NA") {
                 var mw = "<b class='field prop'>Molecular Weight</b> | N/A<br>\n";
@@ -302,15 +302,15 @@ function commonNetworkFeatures() {
                 "<div class='qtip-content' style='max-height: 200px; overflow-y: auto; position: relative;'>" +
                 
                 "<div style='position: absolute; top: 5px; right: 5px;'>" +
-                "<a href='https://dex.precisiontox.org/chem/" + this.data("ptx_code") + "' target='_blank' style='display: inline-flex; align-items: center; background-color: #004880; color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px;'>" +
+                "<a href='https://dex.precisiontox.org/chem/" + this.data("ptx_code") + "' target='_blank' rel='noopener noreferrer' style='display: inline-flex; align-items: center; background-color: #004880; color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px;'>" +
                 "<i class='fas fa-search-plus' style='margin-right: 4px;'></i>Go to chemical" +
                 "</a></div>" +
 
                 "<b class='field'>Compound</b><b>  | " + this.data("name") + "</b> <br>\n" +
                 "<b class='field'>PTX Code</b> | " + this.data("ptx_code") + "<br>\n" +
                 "<b class='field'>CAS Number</b> | " + this.data("cas") + "<br>\n" +
-                "<b class='field'>DSSTox ID</b> | <a href='https://comptox.epa.gov/dashboard/chemical/details/"+this.data("dtxsid")+"' target='_blank'>"+this.data("dtxsid") + "</a><br>\n" +
-                "<b class='field'>PubChem CID</b> | <a href='https://pubchem.ncbi.nlm.nih.gov/compound/"+this.data("cid")+"' target='_blank'>"+this.data("cid") + "</a><br>\n" +
+                "<b class='field'>DSSTox ID</b> | <a href='https://comptox.epa.gov/dashboard/chemical/details/"+this.data("dtxsid")+"' target='_blank' rel='noopener noreferrer'>"+this.data("dtxsid") + "</a><br>\n" +
+                "<b class='field'>PubChem CID</b> | <a href='https://pubchem.ncbi.nlm.nih.gov/compound/"+this.data("cid")+"' target='_blank' rel='noopener noreferrer'>"+this.data("cid") + "</a><br>\n" +
                 drugbank+
                 "<b class='field'>Molecular Formula</b> | " + formatMolecularFormula(this.data("formula")) + "<br>\n" +
                 "<b class='field'>SMILES</b> | " + this.data("smiles") + "<br>\n" +
@@ -703,13 +703,13 @@ function displayChemicalInfo(selectedChem) {
         document.getElementById('chem-common-name').textContent = data.chem_name_user || 'N/A';
         document.getElementById('chem-cas').textContent = data.casrn || 'N/A';
         document.getElementById('chem-dsstox-id').innerHTML = data.dtxsid
-                ? `<a href="https://comptox.epa.gov/dashboard/chemical/details/${data.dtxsid}" target="_blank">${data.dtxsid}</a>`
+                ? `<a href="https://comptox.epa.gov/dashboard/chemical/details/${data.dtxsid}" target="_blank" rel="noopener noreferrer">${data.dtxsid}</a>`
                 : 'N/A';
         document.getElementById('chem-pubchem-cid').innerHTML = data.pubchem_cid
-        ? `<a href="https://pubchem.ncbi.nlm.nih.gov/compound/${data.pubchem_cid}" target="_blank">${data.pubchem_cid}</a>`
+        ? `<a href="https://pubchem.ncbi.nlm.nih.gov/compound/${data.pubchem_cid}" target="_blank" rel="noopener noreferrer">${data.pubchem_cid}</a>`
         : 'N/A';
         document.getElementById('chem-drugbank-id').innerHTML = data.drugbank_id
-        ? `<a href="https://go.drugbank.com/drugs/${data.drugbank_id}" target="_blank">${data.drugbank_id}</a>`
+        ? `<a href="https://go.drugbank.com/drugs/${data.drugbank_id}" target="_blank" rel="noopener noreferrer">${data.drugbank_id}</a>`
         : 'N/A';
         document.getElementById('chem-formula').innerHTML = formatMolecularFormula(data.formula) || 'N/A';
         document.getElementById('chem-smiles').textContent = data.smiles || 'N/A';
@@ -767,7 +767,7 @@ function populateAopTable(aopData) {
             const aopIdCell = document.createElement('td');
             // aopIdCell.textContent = 'AOP: '+aop.AOP_id|| 'N/A';
             aopIdCell.innerHTML = aop.AOP_id 
-            ? `<a href="https://aopwiki.org/aops/${aop.AOP_id }" target="_blank">${'AOP: '+aop.AOP_id }</a>`
+            ? `<a href="https://aopwiki.org/aops/${aop.AOP_id }" target="_blank" rel="noopener noreferrer">${'AOP: '+aop.AOP_id }</a>`
             : 'N/A';
 
             const aopNameCell = document.createElement('td');
@@ -1001,7 +1001,6 @@ function loadChemList() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('.tablinks').click();
     // Add event listener for the reset button
     document.getElementById('reset-button').addEventListener('click', resetNetwork);
     

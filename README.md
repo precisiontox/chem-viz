@@ -75,6 +75,7 @@ In addition, it also requires connecting to the PrecisionTox Central Database. F
 ```
 psql_host: <psql database host>
 psql_user: <psql user>
-psql_pass: <psql user password
+psql_pass: <psql user password>
 psql_db_name: <psql database name>
 ```
+You can rename `app/config.example.yml`
