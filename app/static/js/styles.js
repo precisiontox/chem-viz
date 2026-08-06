@@ -118,6 +118,13 @@ const generalNetworkStyle = [
         }
     },
     {
+        selector: "node[role^='category'].category-open",
+        style: {
+            "width": "90px",
+            "height": "90px"
+        }
+    },
+    {
         selector: "node[role^='category'].hl",
         style: {
             "width": "85px",

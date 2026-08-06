@@ -456,12 +456,14 @@ function toggleChemNodes(categoryNode) {
             return node.connectedEdges(":visible").length === 0;
         });
         chemNodesWithNoVisibleEdges.hide();
+        categoryNode.removeClass('category-open');
         arrangeUnopenedCategoriesAfterToggle();
         cy_graph.fit(cy_graph.elements(':visible'), 20);
     } else {
         // Show all connected edges and chem nodes
         connectedEdges.show();
         chemNodes.show();
+        categoryNode.addClass('category-open');
 
         const activeElements = categoryNode.union(chemNodes).union(connectedEdges);
 
