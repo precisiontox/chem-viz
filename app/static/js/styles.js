@@ -1,4 +1,4 @@
-const generalNetworkStyle = [ // the stylesheet for general graph
+const generalNetworkStyle = [
     {
         selector: "node",
         style: {
