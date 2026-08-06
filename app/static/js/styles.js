@@ -8,7 +8,7 @@ const generalNetworkStyle = [
         }
     },
     {
-        selector: "node.hl, node:selected",
+        selector: "node.hl",
         style: {
             "font-size": "25px",
             "font-weight": "bold",
@@ -30,7 +30,24 @@ const generalNetworkStyle = [
             "width": "40px",
             "height": "40px",
             "background-color": "#f0f0f0",
-            "border-width": "5px",
+            "pie-size": "100%",
+            "pie-1-background-color": "data(category_color_1)",
+            "pie-1-background-size": "data(category_slice_1)",
+            "pie-2-background-color": "data(category_color_2)",
+            "pie-2-background-size": "data(category_slice_2)",
+            "pie-3-background-color": "data(category_color_3)",
+            "pie-3-background-size": "data(category_slice_3)",
+            "pie-4-background-color": "data(category_color_4)",
+            "pie-4-background-size": "data(category_slice_4)",
+            "pie-5-background-color": "data(category_color_5)",
+            "pie-5-background-size": "data(category_slice_5)",
+            "pie-6-background-color": "data(category_color_6)",
+            "pie-6-background-size": "data(category_slice_6)",
+            "pie-7-background-color": "data(category_color_7)",
+            "pie-7-background-size": "data(category_slice_7)",
+            "pie-8-background-color": "data(category_color_8)",
+            "pie-8-background-size": "data(category_slice_8)",
+            "border-width": "2px",
             "border-color": "#172d4a",
             "label": "data(name)",
             "color": "#172d4a",
@@ -42,6 +59,7 @@ const generalNetworkStyle = [
         style: {
             "background-color": "#9a999a",
             "border-color": "#004880",
+            "border-width": "5px",
             "color": "white", 
             "text-background-shape": "round-rectangle",
             "text-background-color": "#004880",
@@ -55,6 +73,14 @@ const generalNetworkStyle = [
             "width": "45px",
             "height": "45px"
         }
+    },
+    {
+        selector: "node[role='chem'].hl2",
+        style: {
+            "border-color": "#004880",
+            "border-width": "5px"
+        }
+
     },
     {
         selector: "node[role='category_use_class']",
@@ -130,14 +156,6 @@ const generalNetworkStyle = [
             "width": "85px",
             "height": "85px",
             "font-size": "27px",
-            "border-width": "5px",
-            "border-color": "#004880",
-            "color": "#004880"
-        }
-    },
-    {
-        selector: "node[role^='category']:selected",
-        style: {
             "border-width": "5px",
             "border-color": "#004880",
             "color": "#004880"

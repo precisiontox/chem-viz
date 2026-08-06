@@ -24,7 +24,7 @@ function initializeNetworkBasic() {
                     elements: elements,
                     style: generalNetworkStyle,
                     zoomingEnabled: true,
-                    userZoomingEnabled: false, 
+                    userZoomingEnabled: true, 
                     wheelSensitivity: 0.5
                     // layout: cose_layout
                 });
@@ -107,6 +107,51 @@ function boxesOverlap(firstBox, secondBox, padding = 80) {
 
 function getVisibleChemicalCategoryNeighbors(chemNode) {
     return chemNode.connectedEdges(":visible").connectedNodes().filter("[role^='category']");
+}
+
+function getCategoryColor(categoryNode) {
+    return categoryNode.data('color_bg') || categoryNode.data('color_border') || categoryNode.data('color') || '#111111';
+}
+
+function clearChemicalPieData() {
+    cy_graph.nodes("[role='chem']").forEach(chemNode => {
+        for (let index = 1; index <= 8; index++) {
+            chemNode.data(`category_color_${index}`, '#f0f0f0');
+            chemNode.data(`category_slice_${index}`, 0);
+        }
+    });
+}
+
+function setChemicalPieData(chemNode, categoryNodes) {
+    const maxSlices = 8;
+    const sliceSize = 100 / categoryNodes.length;
+
+    categoryNodes.slice(0, maxSlices).forEach((categoryNode, index) => {
+        chemNode.data(`category_color_${index + 1}`, getCategoryColor(categoryNode));
+        chemNode.data(`category_slice_${index + 1}`, sliceSize);
+    });
+}
+
+function updateChemicalPieColors() {
+    clearChemicalPieData();
+
+    cy_graph.nodes("[role='chem']").forEach(chemNode => {
+        const visibleCategoryEdges = chemNode.connectedEdges(":visible").filter(edge => {
+            const visibleCategoryNodes = edge.connectedNodes().filter(connectedNode => {
+                const role = connectedNode.data('role') || '';
+                return connectedNode.visible() && role.startsWith('category');
+            });
+            return visibleCategoryNodes.length > 0;
+        });
+        const visibleCategoryNodes = visibleCategoryEdges.connectedNodes().filter(connectedNode => {
+            const role = connectedNode.data('role') || '';
+            return connectedNode.visible() && role.startsWith('category');
+        });
+
+        if (visibleCategoryNodes.length > 0) {
+            setChemicalPieData(chemNode, visibleCategoryNodes);
+        }
+    });
 }
 
 function moveNodesBy(nodes, dx, dy) {
@@ -271,8 +316,9 @@ function commonNetworkFeatures() {
     });
 
     cy_graph.on('mouseover mouseout', 'edge', function (event) {
-        var node = event.target;
-        node.toggleClass("hl");
+        var edge = event.target;
+        edge.toggleClass("hl");
+        edge.connectedNodes().toggleClass("hl");
     });
 
     cy_graph.nodes("node[role='chem']").qtip({
@@ -417,7 +463,7 @@ function loadBasicNetworkAndClassify(classificationType) {
                 elements: elements,
                 style: generalNetworkStyle,
                 zoomingEnabled: true,
-                userZoomingEnabled: false, 
+                userZoomingEnabled: true, 
                 wheelSensitivity: 0.5,
                 layout: initial_layout  // Adjust layout as needed
             });
@@ -458,10 +504,12 @@ function toggleChemNodes(categoryNode) {
         chemNodesWithNoVisibleEdges.hide();
         categoryNode.removeClass('category-open');
         arrangeUnopenedCategoriesAfterToggle();
+        updateChemicalPieColors();
         cy_graph.fit(cy_graph.elements(':visible'), 20);
     } else {
         // Show all connected edges and chem nodes
         connectedEdges.show();
+        updateChemicalPieColors();
         chemNodes.show();
         categoryNode.addClass('category-open');
 
@@ -481,6 +529,7 @@ function toggleChemNodes(categoryNode) {
             const unopenedCategoryNodes = getUnopenedVisibleCategoryNodes(categoryNode);
             const occupiedElements = cy_graph.elements(':visible').not(unopenedCategoryNodes);
             positionUnopenedCategoryNodesOutsideOccupiedGraph(occupiedElements, unopenedCategoryNodes);
+            updateChemicalPieColors();
             cy_graph.fit(cy_graph.elements(':visible'), 20);
         });
         layout.run();
@@ -515,7 +564,7 @@ function loadSingleChemNetwork(selectedChem) {
                 elements: chemNetworkElements,
                 style: singleNetworkStyle,
                 zoomingEnabled: true,
-                userZoomingEnabled: false, 
+                userZoomingEnabled: true, 
                 wheelSensitivity: 0.5,
                 layout: circle_layout
             });
