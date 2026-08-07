@@ -1,5 +1,16 @@
 // Basic Network Functions
 
+function setResetButtonHighlighted(isHighlighted) {
+    const resetButton = document.getElementById('reset-button');
+    if (resetButton) {
+        resetButton.classList.toggle('reset-tool-active', isHighlighted);
+    }
+}
+
+function markNetworkChanged() {
+    setResetButtonHighlighted(true);
+}
+
 function initializeCytoscape(selectedChem = null) {
     if (selectedChem) {
         populateChemSelect().then(() => {
@@ -24,12 +35,13 @@ function initializeNetworkBasic() {
                     elements: elements,
                     style: generalNetworkStyle,
                     zoomingEnabled: true,
-                    userZoomingEnabled: true, 
+                    userZoomingEnabled: false, 
                     wheelSensitivity: 0.5
                     // layout: cose_layout
                 });
                 initializeBasicNetworkFeatures();
                 selectClassification(true, 'use');
+                setResetButtonHighlighted(false);
                 populateChemSelect(basicNetworkloaded=true);
             })
             .catch(error => console.error('Error loading elements:', error));
@@ -447,7 +459,7 @@ function selectClassification(first_time=false, selectedClass=null) {
     }
 }
 
-function loadBasicNetworkAndClassify(classificationType) {
+function loadBasicNetworkAndClassify(classificationType, showResetButton=true) {
     // Load the basic network JSON file
     fetch(jsonBasic)
         .then(response => response.json())
@@ -463,7 +475,7 @@ function loadBasicNetworkAndClassify(classificationType) {
                 elements: elements,
                 style: generalNetworkStyle,
                 zoomingEnabled: true,
-                userZoomingEnabled: true, 
+                userZoomingEnabled: false, 
                 wheelSensitivity: 0.5,
                 layout: initial_layout  // Adjust layout as needed
             });
@@ -475,6 +487,7 @@ function loadBasicNetworkAndClassify(classificationType) {
             selectClassification(true, classificationType);
 
             isSingleChemNetwork = false;
+            setResetButtonHighlighted(showResetButton);
         })
         .catch(error => console.error('Error loading basic network:', error));
 
@@ -506,6 +519,7 @@ function toggleChemNodes(categoryNode) {
         arrangeUnopenedCategoriesAfterToggle();
         updateChemicalPieColors();
         cy_graph.fit(cy_graph.elements(':visible'), 20);
+        markNetworkChanged();
     } else {
         // Show all connected edges and chem nodes
         connectedEdges.show();
@@ -531,6 +545,7 @@ function toggleChemNodes(categoryNode) {
             positionUnopenedCategoryNodesOutsideOccupiedGraph(occupiedElements, unopenedCategoryNodes);
             updateChemicalPieColors();
             cy_graph.fit(cy_graph.elements(':visible'), 20);
+            markNetworkChanged();
         });
         layout.run();
     }
@@ -564,7 +579,7 @@ function loadSingleChemNetwork(selectedChem) {
                 elements: chemNetworkElements,
                 style: singleNetworkStyle,
                 zoomingEnabled: true,
-                userZoomingEnabled: true, 
+                userZoomingEnabled: false, 
                 wheelSensitivity: 0.5,
                 layout: circle_layout
             });
@@ -625,6 +640,7 @@ function initializeSingleChemNetworkFeatures() {
             // neighborNodes.layout(circle_layout).run();
             cy_graph.fit(cy_graph.elements());
         }
+        markNetworkChanged();
     });
 
     // Apply qTip tooltip to attribute nodes
@@ -717,14 +733,16 @@ function resetNetwork() {
         const activeButton = document.querySelector('.classification-btn.active');
         if (activeButton) {
             const classificationType = activeButton.id.includes('use') ? 'use' : 'tox';
-            loadBasicNetworkAndClassify(classificationType);
+            loadBasicNetworkAndClassify(classificationType, false);
         }
     }
+    setResetButtonHighlighted(false);
 }
 
 function initializeNetworkControls() {
     document.getElementById('label-font-size-slider').addEventListener('input', function() {
         changeLabelFontSize(this.value);
+        markNetworkChanged();
     });
 
     // BUTTON: Center the graph on the page

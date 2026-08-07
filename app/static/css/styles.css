@@ -39,7 +39,8 @@ body, html {
 }
 
 #title_chemical {
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-size: 20px;
 }
 
 
@@ -75,13 +76,6 @@ body, html {
     width: 100%; /* Full width on hover */
 }
 
-
-.tab {
-    overflow: hidden;
-    display: flex;
-    justify-content: left;
-    color: white;
-}
 
 .tab button {
     background-color: #6396bd;
@@ -297,9 +291,9 @@ input[type="range"]:focus {
     box-shadow: 0 0 10px rgba(0, 124, 193, 0.5); /* Optional shadow when focused */
 }
 
-#reset-button, #dl-btn{
+#dl-btn{
     width: 100%;
-    padding: 10px; /* Adjust padding as needed */
+    /* padding: 10px; Adjust padding as needed */
     background-color: white;
     border: 1px solid #172d4a;
     box-shadow: 3px 3px #172d4a;
@@ -310,10 +304,9 @@ input[type="range"]:focus {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, filter 0.3s; /* Added filter transition for icon hover effect */
 }
-#reset-button:hover, #dl-btn:hover {
+#dl-btn:hover {
     background-color: #CCC;
 }
-
 
 #dl-content {
     display: none;
@@ -697,13 +690,13 @@ input[type="range"]:focus {
 }
 
 
-#chem-list{
-    background-color: #e0e0e0;
+#chem_list{
+    background-color: inherit;
 }
 
 /* Set a background color for the entire tab content area */
 #chem_list.tabcontent {
-    background-color: white; /* Light gray background for the whole tab */
+    background-color: inherit; /* Light gray background for the whole tab */
     padding: 10px; /* Optional: adds spacing around the table */
     height: 100%; /* Ensure it covers the full height */
     box-sizing: border-box; /* Include padding in the element's height */
@@ -771,4 +764,722 @@ input[type="range"]:focus {
 }
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+/* Design refresh: app shell and controls */
+:root {
+    --ptox-ink: #172d4a;
+    --ptox-text: #25313f;
+    --ptox-muted: #667085;
+    --ptox-line: #d8dee8;
+    --ptox-panel: #f6f8fb;
+    --ptox-panel-strong: #eef3f8;
+    --ptox-accent: #007cc1;
+    --ptox-accent-dark: #004880;
+    --ptox-hover: #e8f1f8;
+    --ptox-page-max: 1440px;
+}
+
+body, html {
+    min-height: 100%;
+    height: auto;
+    background: #edf2f7;
+    color: var(--ptox-text);
+    font-family: "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.topbar-inner,
+.app-intro-inner,
+.tab-inner,
+.network-guide-inner,
+#network-container,
+#network_view,
+.chem-info-section,
+.category-info-section,
+.chem-list-shell {
+    width: min(100%, var(--ptox-page-max));
+    max-width: var(--ptox-page-max);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.topbar {
+    display: block;
+    height: 64px;
+    padding: 0 24px;
+    background: var(--ptox-accent-dark);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 10px rgba(23, 45, 74, 0.18);
+}
+
+.topbar-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.topbar .logo {
+    height: 48px;
+    margin-right: 12px;
+}
+
+.topbar span {
+    letter-spacing: 0;
+}
+
+.topbar ul {
+    margin-left: auto;
+    padding-left: 24px;
+}
+
+.topbar li {
+    padding-left: 16px;
+}
+
+.topbar a {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.tab {
+    display: block;
+    height: 44px;
+    padding: 0 16px;
+    background: inherit;
+    box-sizing: border-box;
+}
+
+.tab-inner {
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    padding-left: 16px;
+}
+
+.tab button {
+    width: auto;
+    min-width: 108px;
+    margin-left: 0;
+    padding: 9px 18px;
+    border: 1px solid var(--ptox-line);
+    border-bottom: none;
+    border-radius: 6px 6px 0 0;
+    background: #f6f8fb;
+    color: var(--ptox-muted);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.tab button:hover {
+    background: #ffffff;
+    color: var(--ptox-accent-dark);
+}
+
+.tab button.active {
+    background: #ffffff;
+    color: var(--ptox-ink);
+    box-shadow: 0 -2px 8px rgba(23, 45, 74, 0.08);
+}
+
+.app-intro {
+    padding: 1rem;
+    background: inherit;
+    /* border-bottom: 1px solid var(--ptox-line); */
+}
+
+.app-intro-inner {
+    /* border: 1px solid #d4e0eb; */
+    border-radius: 14px;
+    /* background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%); */
+    padding: 24px 28px;
+    /* box-shadow: 0 8 px 24px rgba(23, 45, 74, 0.08); */
+}
+
+.app-intro-copy {
+    min-width: 0;
+    padding-left: 16px;
+    border-left: 4px solid var(--ptox-accent);
+}
+
+.app-intro .app-intro-header {
+    margin: 0 0 14px;
+    color: var(--ptox-ink);
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.08;
+}
+
+.app-intro-header {
+    color: var(--ptox-ink);
+    line-height: 1.2;
+    font-weight: 3000;
+}
+
+.app-intro-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1440px;
+}
+
+.app-intro p {
+    margin: 0;
+    color: var(--ptox-text);
+    font-size: 15px;
+    
+    line-height: 1.55;
+    max-width: 900px;
+}
+
+.app-intro .publication-link {
+    margin-top: 18px;
+}
+
+.publication-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 0 12px;
+    border: 1px solid var(--ptox-line);
+    border-radius: 6px;
+    color: var(--ptox-ink);
+    background: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.publication-link:hover {
+    background: var(--ptox-hover);
+    color: var(--ptox-accent-dark);
+}
+
+.tabcontent {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+}
+
+#network_view {
+    margin: 0 auto;
+    border: 1px solid #dbe5ef;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
+}
+
+#network_view.tabcontent.active {
+    display: block;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    background: #ffffff;
+}
+
+.network-guide {
+    flex: 0 0 auto;
+    padding: 16px 20px;
+    margin-top: 15px;
+    border-bottom: 1px solid var(--ptox-line);
+}
+
+.network-guide-inner {
+    display: grid;
+    grid-template-columns: minmax(270px, 330px) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.network-guide-main {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    align-self: start;
+}
+
+.network-guide h1 {
+    margin: 0 0 5px;
+    color: var(--ptox-ink);
+    font-size: 20px;
+    line-height: 1.25;
+}
+
+.network-guide p {
+    max-width: 900px;
+    margin: 0;
+    color: var(--ptox-muted);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.network-guide-steps {
+    grid-column: 1;
+    grid-row: 1;
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+    align-self: start;
+}
+
+.network-guide-steps div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ptox-text);
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.network-guide-steps span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--ptox-hover);
+    color: var(--ptox-accent-dark);
+    font-size: 11px;
+}
+
+.container {
+    height: auto;
+    max-height: none;
+    gap: 0;
+    overflow: visible;
+    background: #ffffff;
+}
+
+#network_view .container {
+    align-items: stretch;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    overflow: visible;
+}
+
+#network-container {
+    border-radius: 0px 0px 14px 14px;
+}
+
+.network-control-panel {
+    display: grid;
+    grid-template-columns: minmax(190px, 250px) minmax(260px, 1fr) minmax(190px, 220px);
+    gap: 12px;
+    align-items: start;
+}
+
+.control-group,
+.dropdown {
+    margin: 0;
+}
+
+.control-group label,
+.dropdown label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--ptox-muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}
+
+.button-group {
+    gap: 8px;
+    margin: 0;
+}
+
+.label-size-control {
+    grid-column: auto;
+}
+
+.focus-control {
+    min-width: 0;
+}
+
+.action-control,
+.download-control {
+    min-width: 0;
+}
+
+.download-control {
+    position: relative;
+}
+
+.network-control-panel > .download-control {
+    padding-top: 22px;
+}
+
+.download-control #dl-content {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 20;
+    min-width: 220px;
+    padding: 8px;
+    border: 1px solid var(--ptox-line);
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0 8px 18px rgba(23, 45, 74, 0.16);
+}
+
+.network-label-size-control {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    z-index: 5;
+    width: min(240px, calc(100% - 24px));
+    padding: 8px 10px;
+    border: 1px solid rgba(216, 222, 232, 0.86);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 2px 8px rgba(23, 45, 74, 0.1);
+}
+
+.network-label-size-control label {
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+
+.network-label-size-control input[type="range"] {
+    height: 6px;
+}
+
+.classification-btn,
+#reset-button,
+#dl-btn,
+.dl-btn-pic {
+    min-height: 38px;
+    border: 1px solid var(--ptox-line);
+    border-radius: 6px;
+    box-shadow: none;
+    background: #ffffff;
+    color: var(--ptox-ink);
+    font-size: 13px;
+    font-weight: 700;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.classification-btn {
+    padding: 6px 8px;
+}
+
+.classification-btn:hover,
+#reset-button:hover,
+#dl-btn:hover,
+.dl-btn-pic:hover {
+    background: var(--ptox-hover);
+    color: var(--ptox-accent-dark);
+    border-color: #b9c7d6;
+}
+
+.classification-btn.active {
+    background: var(--ptox-ink);
+    border-color: var(--ptox-ink);
+    color: #ffffff;
+}
+
+.classification-btn .btn-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#reset-button,
+#dl-btn {
+    width: 100%;
+    padding: 9px 12px;
+    text-align: left;
+}
+
+#dl-btn {
+    text-align: center;
+}
+
+#reset-button i,
+#dl-btn i {
+    width: 18px;
+    margin-right: 6px;
+    text-align: center;
+}
+
+.dropdown select,
+.select2-container--default .select2-selection--single {
+    min-height: 38px;
+    border: 1px solid var(--ptox-line);
+    border-radius: 6px;
+    background: #ffffff;
+    color: var(--ptox-text);
+    font-size: 13px;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 36px;
+    color: var(--ptox-text);
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 36px;
+}
+
+.main-panel {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    background: #ffffff;
+    border-radius: 0px 0px 14px 14px;
+}
+
+#network_view .main-panel {
+    height: min(760px, calc(100vh - 240px));
+    min-height: 560px;
+    max-height: 760px;
+}
+
+.cytoscape-container {
+    inset: 0;
+    background: #ffffff;
+    border-radius: 0px 0px 14px 14px;
+}
+
+.tools-widget,
+.zoom-widget {
+    position: absolute;
+    z-index: 5;
+    margin: 0;
+}
+
+.tools-widget {
+    top: 12px;
+    left: 12px;
+    display: flex;
+    gap: 6px;
+}
+
+.zoom-widget {
+    top: 12px;
+    right: 12px;
+}
+
+.zoom-widget-row {
+    margin-bottom: 6px;
+}
+
+.my-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--ptox-line);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--ptox-ink);
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(23, 45, 74, 0.12);
+}
+
+.my-btn:hover {
+    background: var(--ptox-hover);
+    color: var(--ptox-accent-dark);
+}
+
+.tools-widget #reset-button {
+    width: 36px;
+    min-height: 36px;
+    height: 36px;
+    padding: 0;
+    text-align: center;
+}
+
+.tools-widget #reset-button.reset-tool-active {
+    border-color: var(--ptox-accent);
+    background: var(--ptox-accent-dark);
+    color: #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 72, 128, 0.26);
+}
+
+.tools-widget #reset-button.reset-tool-active:hover {
+    background: var(--ptox-ink);
+    color: #ffffff;
+}
+
+.tools-widget #reset-button i {
+    width: auto;
+    margin-right: 0;
+}
+
+.chem-info-section,
+.category-info-section {
+    position: relative;
+    z-index: 1;
+    width: min(calc(100% - 48px), var(--ptox-page-max));
+    margin: 24px auto;
+    padding: 20px 24px;
+    border: 1px solid var(--ptox-line);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(23, 45, 74, 0.08);
+    align-items: stretch;
+}
+
+.chem-info-section h2 {
+    margin-top: 0;
+    color: var(--ptox-accent-dark) !important;
+    font-size: 22px;
+}
+
+.chem-info-content {
+    align-items: flex-start;
+}
+
+.chem-general-info {
+    gap: 8px;
+}
+
+.chem-info-row {
+    gap: 12px;
+    padding: 6px 0;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.chem-label {
+    color: var(--ptox-muted);
+    border-right: 2px solid var(--ptox-line);
+}
+
+.chem-value {
+    color: var(--ptox-text);
+}
+
+.table-tabs {
+    justify-content: flex-start;
+    gap: 6px;
+}
+
+.table-tab-btn {
+    padding: 8px 12px;
+    border-color: var(--ptox-line);
+    border-radius: 6px;
+    background: #ffffff;
+    color: var(--ptox-muted);
+    font-size: 13px;
+}
+
+.table-tab-btn:hover,
+.table-tab-btn.active {
+    background: var(--ptox-ink);
+    color: #ffffff;
+}
+
+.chem-data-table,
+.chem-associated-table {
+    border: 1px solid var(--ptox-line);
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+.chem-data-table th,
+.chem-associated-table th {
+    background: var(--ptox-ink);
+}
+
+.chem-data-table td,
+.chem-associated-table td {
+    border-bottom: 1px solid #edf0f4;
+}
+
+#chem_list.tabcontent {
+    padding: 16px;
+    background: #ffffff;
+}
+
+.chem-list-shell {
+    width: min(100%, var(--ptox-page-max));
+}
+
+#chem_list .dataTables_wrapper {
+    max-height: calc(100vh - 150px);
+    padding: 12px;
+    border: 1px solid var(--ptox-line);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 2px 12px rgba(23, 45, 74, 0.08);
+}
+
+.dataTables_wrapper .dataTables_scrollHead thead {
+    background: var(--ptox-ink) !important;
+}
+
+@media (max-width: 1180px) {
+    .network-guide-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .network-guide-main,
+    .network-guide-steps {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .network-control-panel {
+        grid-template-columns: minmax(190px, 250px) minmax(260px, 1fr) minmax(190px, 220px);
+    }
+
+    .network-guide-steps {
+        grid-template-columns: repeat(3, max-content);
+        min-width: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .network-guide-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .app-intro-copy {
+        padding-left: 12px;
+    }
+
+    .app-intro-columns {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .network-guide-steps {
+        grid-template-columns: 1fr;
+        min-width: 0;
+    }
+
+    .network-control-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .download-control #dl-content {
+        left: 0;
+        right: auto;
+    }
+
+    .label-size-control {
+        grid-column: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        overflow: auto;
+    }
+
+    .main-panel {
+        min-height: 68vh;
+    }
+
+    .chem-info-content {
+        flex-direction: column;
+    }
 }
