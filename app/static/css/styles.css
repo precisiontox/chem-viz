@@ -726,16 +726,59 @@ input[type="range"]:focus {
     /* white-space: nowrap; / */
 }
 .dataTables_wrapper tbody {
-    font-size: 12px;
+    color: #1f2937;
+    font-size: 13px;
 }
 .dataTables_wrapper tbody tr {
-    height: 50px; /* Adjust this value to your preferred row height */
+    height: 44px;
+}
+
+.dataTables_wrapper tbody tr:hover,
+.dataTables_wrapper tbody tr:hover td {
+    background: #eaf3fb;
 }
 .dataTables_wrapper tbody td {
-    max-width: 250px; /* Adjust to fit within your desired table width */
+    color: #1f2937;
+    max-width: 250px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; /* Prevents text from wrapping to multiple lines */
+    white-space: nowrap;
+}
+
+#chem-table th:first-child,
+#chem-table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    min-width: 96px;
+    max-width: 120px;
+    background: #ffffff;
+    box-shadow: 1px 0 0 var(--ptox-line);
+    font-weight: 700;
+}
+
+#chem-table thead th:first-child {
+    z-index: 5;
+    background: var(--ptox-ink);
+    color: #ffffff;
+}
+
+table.dataTable.display tbody tr.odd td:first-child,
+table.dataTable.display tbody tr.odd td:first-child.sorting_1,
+#chem-table tbody tr:nth-child(odd) td:first-child {
+    background: #f9f9f9 !important;
+}
+
+table.dataTable.display tbody tr.even td:first-child,
+table.dataTable.display tbody tr.even td:first-child.sorting_1,
+#chem-table tbody tr:nth-child(even) td:first-child {
+    background: #ffffff !important;
+}
+
+table.dataTable.display tbody tr:hover td:first-child,
+table.dataTable.display tbody tr:hover td:first-child.sorting_1,
+#chem-table tbody tr:hover td:first-child {
+    background: #eaf3fb !important;
 }
 .dataTables_wrapper .dataTables_info {
     font-size: 12px; /* Set to desired font size */
