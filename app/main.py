@@ -28,6 +28,11 @@ def chemical_table():
     return render_template('index.html', selected_tab='chem_list')
 
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 @app.route('/<ptx_code>')
 def single_chem_network(ptx_code):
     # Render your main HTML page but with a specific PTX code pre-selected

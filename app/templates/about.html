@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | PrecisionTox Chemical Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/google-fonts/arimo/arimo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/font-awesome/6.5.2/css/all.min.css') }}">
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <a class="topbar-logo-link" href="{{ url_for('home') }}" aria-label="PrecisionTox Chemical Library home">
+                <img src="{{ url_for('static', filename='images/logos/ptox_logo_white.png') }}" alt="Logo" class="logo">
+            </a>
+            <span id="title_chemical">PrecisionTox Chemical Library</span>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Explore</a></li>
+                <li><a href="{{ url_for('chemical_table') }}">Table</a></li>
+                <li><a href="https://precisiontox.org/" target="_blank" rel="noopener noreferrer">PrecisionTox</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="about-page">
+        <section class="about-card" aria-label="About the PrecisionTox Chemical Library">
+            <div class="about-hero">
+                <p class="about-kicker">About this resource</p>
+                <p>
+                    This application is a companion resource for the PrecisionTox Chemical Library publication. It helps users explore the
+                    rationale, classifications, and collected annotations for a curated set of 200 chemicals selected to support
+                    phylotoxicology and new approach methodologies.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <article class="about-section about-section-wide">
+                    <h2>The PrecisionTox Chemical Library</h2>
+                    <p>
+                        This chemical collection was designed to discover evolutionarily conserved
+                        biomolecular signatures of toxicity as part of the <b>PrecisionTox</b> project. From an initial pool of more than 1,500 nominees, 200 chemicals were selected
+                        using multiple criteria, including organ toxicity, environmental exposure, chemical structure, modes of action,
+                        toxicological relevance, and practical testing constraints such as availability, purity, cost, and shipping.
+                    </p>
+                    <p>
+                        Unlike libraries focused on a single disease target or receptor interaction, the PrecisionTox collection prioritizes
+                        diversity in targets and mechanisms of toxicity. This makes it useful for evaluating toxicity prediction approaches,
+                        refining toxicological models, and supporting hazard identification for human and environmental health protection.
+                    </p>
+                </article>
+
+                <div class="about-article-images about-section-wide">
+                    <img src="{{ url_for('static', filename='images/article/m_kfaf126f1.jpeg') }}" alt="PrecisionTox chemical library publication figure 1">
+                    <img src="{{ url_for('static', filename='images/article/m_kfaf126f2.jpeg') }}" alt="PrecisionTox chemical library publication figure 2">
+                </div>
+
+                <article class="about-section about-section-wide">
+                    <h3>PrecisionTox Project</h3>
+                    <p>
+                        <a href="https://precisiontox.org/" target="_blank" rel="noopener noreferrer">PrecisionTox</a> is an EU's Horizon 2020 project that 
+                        aims to promote alternative methods to animal testing for chemical safety assessment. It proposes to establish causation between chemicals 
+                        and their adverse health effects by testing the concept of <b>phylotoxicology</b>: the idea that many biomolecular and toxicological responses to
+                        chemical exposure are shared across distantly related species through evolutionarily conserved processes and pathways.
+                        The collection supports omics-based toxicological studies across alternative test models and provides a shared data
+                        resource for exploring chemical diversity and biological response.
+                    </p>
+                </article>
+
+                <article class="about-section">
+                    <h3>What You Can Explore</h3>
+                    <ul>
+                        <li>Use and toxicity endpoint classifications.</li>
+                        <li>Individual chemical networks with collected annotations.</li>
+                        <li>A searchable full table of the chemical collection.</li>
+                    </ul>
+                </article>
+
+                <article class="about-section">
+                    <h3>Collected Information</h3>
+                    <ul>
+                        <li>Physicochemical properties.</li>
+                        <li>Text-mined toxicity classifications.</li>
+                        <li>ADME-related information.</li>
+                        <li>Baseline toxicity data (in C.elegans, D.melanogaster, D.rerio, X. laevis, D.magna and HepG2 cells).</li>
+                        <li>Mechanisms of action, targets, and adverse outcome pathways (from Drugbank, T3DB and AOP-Wiki).</li>
+                    </ul>
+                </article>
+
+                <article class="about-section about-section-wide">
+                    <h2>Cite</h2>
+                    <p>
+                        <b>The PrecisionTox chemical library: creation of a chemical collection to discover evolutionary conserved biomolecular
+                        signatures of toxicity</b>. Rubén Martínez, Juan Carlos González-Sánchez, Stavroula I Sampani, Stefan Scholz,
+                        Beate I Escher, Luise Henneberger, Julia Huchthausen, Maurice Whelan, Thomas Dickmeis, Carsten Weiss,
+                        John K Colbourne, Jonathan H Freedman, <em>Toxicological Sciences</em> (2025). 
+                        <a href="https://doi.org/10.1093/toxsci/kfaf126" target="_blank" rel="noopener noreferrer">kfaf126</a>.
+                    </p>
+                </article>
+
+                <article class="about-section about-section-wide">
+                    <h2>Contact</h2>
+                    <p>Juan Carlos González Sánchez - <i>juan-carlos.gonzalez@bioquant.uni-heidelberg.de</i></p>
+                </article>
+
+                <footer class="about-funding about-section-wide">
+                    <div class="about-funding-meta">
+                        <p>© 2026 PrecisionTox.</p>
+                        <p><b>GRANT AGREEMENT:</b> 965406</p>
+                        <img src="{{ url_for('static', filename='images/logos/EU-768x256.png') }}" alt="European Union flag">
+                    </div>
+                    <p class="about-funding-disclaimer">
+                        The content of this website reflects the authors’ views and the European Union cannot be held responsible for any use
+                        that may be made of the information contained therein.
+                    </p>
+                </footer>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
