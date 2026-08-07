@@ -66,7 +66,6 @@ function loadChemList() {
                     const tr = document.createElement('tr');
                     Object.entries(row).forEach(([key, value]) => {
                         const td = document.createElement('td');
-                        
                         // Check if this is the molecular formula column
                         if (key.toLowerCase() === "formula" || key.toLowerCase() === "molecular formula") {
                             td.innerHTML = formatMolecularFormula(value); // Use innerHTML for proper rendering

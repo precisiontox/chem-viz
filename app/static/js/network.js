@@ -1,5 +1,16 @@
 // Basic Network Functions
 
+function setResetButtonHighlighted(isHighlighted) {
+    const resetButton = document.getElementById('reset-button');
+    if (resetButton) {
+        resetButton.classList.toggle('reset-tool-active', isHighlighted);
+    }
+}
+
+function markNetworkChanged() {
+    setResetButtonHighlighted(true);
+}
+
 function initializeCytoscape(selectedChem = null) {
     if (selectedChem) {
         populateChemSelect().then(() => {
@@ -30,6 +41,7 @@ function initializeNetworkBasic() {
                 });
                 initializeBasicNetworkFeatures();
                 selectClassification(true, 'use');
+                setResetButtonHighlighted(false);
                 populateChemSelect(basicNetworkloaded=true);
             })
             .catch(error => console.error('Error loading elements:', error));
@@ -107,6 +119,51 @@ function boxesOverlap(firstBox, secondBox, padding = 80) {
 
 function getVisibleChemicalCategoryNeighbors(chemNode) {
     return chemNode.connectedEdges(":visible").connectedNodes().filter("[role^='category']");
+}
+
+function getCategoryColor(categoryNode) {
+    return categoryNode.data('color_bg') || categoryNode.data('color_border') || categoryNode.data('color') || '#111111';
+}
+
+function clearChemicalPieData() {
+    cy_graph.nodes("[role='chem']").forEach(chemNode => {
+        for (let index = 1; index <= 8; index++) {
+            chemNode.data(`category_color_${index}`, '#f0f0f0');
+            chemNode.data(`category_slice_${index}`, 0);
+        }
+    });
+}
+
+function setChemicalPieData(chemNode, categoryNodes) {
+    const maxSlices = 8;
+    const sliceSize = 100 / categoryNodes.length;
+
+    categoryNodes.slice(0, maxSlices).forEach((categoryNode, index) => {
+        chemNode.data(`category_color_${index + 1}`, getCategoryColor(categoryNode));
+        chemNode.data(`category_slice_${index + 1}`, sliceSize);
+    });
+}
+
+function updateChemicalPieColors() {
+    clearChemicalPieData();
+
+    cy_graph.nodes("[role='chem']").forEach(chemNode => {
+        const visibleCategoryEdges = chemNode.connectedEdges(":visible").filter(edge => {
+            const visibleCategoryNodes = edge.connectedNodes().filter(connectedNode => {
+                const role = connectedNode.data('role') || '';
+                return connectedNode.visible() && role.startsWith('category');
+            });
+            return visibleCategoryNodes.length > 0;
+        });
+        const visibleCategoryNodes = visibleCategoryEdges.connectedNodes().filter(connectedNode => {
+            const role = connectedNode.data('role') || '';
+            return connectedNode.visible() && role.startsWith('category');
+        });
+
+        if (visibleCategoryNodes.length > 0) {
+            setChemicalPieData(chemNode, visibleCategoryNodes);
+        }
+    });
 }
 
 function moveNodesBy(nodes, dx, dy) {
@@ -271,8 +328,9 @@ function commonNetworkFeatures() {
     });
 
     cy_graph.on('mouseover mouseout', 'edge', function (event) {
-        var node = event.target;
-        node.toggleClass("hl");
+        var edge = event.target;
+        edge.toggleClass("hl");
+        edge.connectedNodes().toggleClass("hl");
     });
 
     cy_graph.nodes("node[role='chem']").qtip({
@@ -336,7 +394,7 @@ function commonNetworkFeatures() {
                 "<div class='qtip-content' style='max-height: 200px; overflow-y: auto; position: relative;'>" +
                 
                 "<div style='position: absolute; top: 5px; right: 5px;'>" +
-                "<a href='https://dex.precisiontox.org/chem/" + this.data("ptx_code") + "' target='_blank' rel='noopener noreferrer' style='display: inline-flex; align-items: center; background-color: #004880; color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px;'>" +
+                "<a href='" + buildChemicalPath(this.data("ptx_code")) + "' target='_blank' rel='noopener noreferrer' style='display: inline-flex; align-items: center; background-color: #004880; color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px;'>" +
                 "<i class='fas fa-search-plus' style='margin-right: 4px;'></i>Go to chemical" +
                 "</a></div>" +
 
@@ -401,7 +459,7 @@ function selectClassification(first_time=false, selectedClass=null) {
     }
 }
 
-function loadBasicNetworkAndClassify(classificationType) {
+function loadBasicNetworkAndClassify(classificationType, showResetButton=true) {
     // Load the basic network JSON file
     fetch(jsonBasic)
         .then(response => response.json())
@@ -429,6 +487,7 @@ function loadBasicNetworkAndClassify(classificationType) {
             selectClassification(true, classificationType);
 
             isSingleChemNetwork = false;
+            setResetButtonHighlighted(showResetButton);
         })
         .catch(error => console.error('Error loading basic network:', error));
 
@@ -456,12 +515,17 @@ function toggleChemNodes(categoryNode) {
             return node.connectedEdges(":visible").length === 0;
         });
         chemNodesWithNoVisibleEdges.hide();
+        categoryNode.removeClass('category-open');
         arrangeUnopenedCategoriesAfterToggle();
+        updateChemicalPieColors();
         cy_graph.fit(cy_graph.elements(':visible'), 20);
+        markNetworkChanged();
     } else {
         // Show all connected edges and chem nodes
         connectedEdges.show();
+        updateChemicalPieColors();
         chemNodes.show();
+        categoryNode.addClass('category-open');
 
         const activeElements = categoryNode.union(chemNodes).union(connectedEdges);
 
@@ -479,7 +543,9 @@ function toggleChemNodes(categoryNode) {
             const unopenedCategoryNodes = getUnopenedVisibleCategoryNodes(categoryNode);
             const occupiedElements = cy_graph.elements(':visible').not(unopenedCategoryNodes);
             positionUnopenedCategoryNodesOutsideOccupiedGraph(occupiedElements, unopenedCategoryNodes);
+            updateChemicalPieColors();
             cy_graph.fit(cy_graph.elements(':visible'), 20);
+            markNetworkChanged();
         });
         layout.run();
     }
@@ -574,6 +640,7 @@ function initializeSingleChemNetworkFeatures() {
             // neighborNodes.layout(circle_layout).run();
             cy_graph.fit(cy_graph.elements());
         }
+        markNetworkChanged();
     });
 
     // Apply qTip tooltip to attribute nodes
@@ -666,14 +733,16 @@ function resetNetwork() {
         const activeButton = document.querySelector('.classification-btn.active');
         if (activeButton) {
             const classificationType = activeButton.id.includes('use') ? 'use' : 'tox';
-            loadBasicNetworkAndClassify(classificationType);
+            loadBasicNetworkAndClassify(classificationType, false);
         }
     }
+    setResetButtonHighlighted(false);
 }
 
 function initializeNetworkControls() {
     document.getElementById('label-font-size-slider').addEventListener('input', function() {
         changeLabelFontSize(this.value);
+        markNetworkChanged();
     });
 
     // BUTTON: Center the graph on the page
