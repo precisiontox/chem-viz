@@ -795,6 +795,7 @@ body, html {
 .network-guide-inner,
 #network-container,
 #network_view,
+#chem_list,
 .chem-info-section,
 .category-info-section,
 .chem-list-shell {
@@ -969,7 +970,8 @@ body, html {
     overflow: visible;
 }
 
-#network_view {
+#network_view,
+#chem_list {
     margin: 0 auto;
     border: 1px solid #dbe5ef;
     border-radius: 14px;
@@ -1397,20 +1399,19 @@ body, html {
 
 #chem_list.tabcontent {
     padding: 16px;
-    background: #ffffff;
 }
 
 .chem-list-shell {
-    width: min(100%, var(--ptox-page-max));
+    width: 100%;
 }
 
 #chem_list .dataTables_wrapper {
     max-height: calc(100vh - 150px);
-    padding: 12px;
-    border: 1px solid var(--ptox-line);
-    border-radius: 8px;
-    background: #ffffff;
-    box-shadow: 0 2px 12px rgba(23, 45, 74, 0.08);
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .dataTables_wrapper .dataTables_scrollHead thead {
