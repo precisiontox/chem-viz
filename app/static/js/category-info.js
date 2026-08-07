@@ -37,7 +37,7 @@ function displayCategoryChemicals(categoryNode) {
             `;
             tableContent = chemData.map(chem => `
                 <tr>
-                    <td><a href='/${chem.ptx_code}'>${chem.ptx_code}</a></td>
+                    <td><a href='${buildChemicalPath(chem.ptx_code)}'>${chem.ptx_code}</a></td>
                     <td>${chem.name}</td>
                     <td>${chem.score}</td>
                     <td>${chem.refs}</td>
@@ -50,7 +50,7 @@ function displayCategoryChemicals(categoryNode) {
             `;
             tableContent = chemData.map(chem => `
                 <tr>
-                    <td><a href='/${chem.ptx_code}'>${chem.ptx_code}</a></td>
+                    <td><a href='${buildChemicalPath(chem.ptx_code)}'>${chem.ptx_code}</a></td>
                     <td>${chem.name}</td>
                 </tr>
             `).join('');

@@ -5,6 +5,9 @@ from collections import OrderedDict
 from datetime import timedelta
 # from app import app
 app = Flask(__name__)
+APP_BASE_PATH = os.environ.get('APPLICATION_ROOT') or os.environ.get('SCRIPT_NAME')
+if APP_BASE_PATH:
+    app.config['APPLICATION_ROOT'] = APP_BASE_PATH.rstrip('/') or '/'
 STATIC_CACHE_SECONDS = 60 * 60 * 24
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=STATIC_CACHE_SECONDS)
 
@@ -17,13 +20,22 @@ def add_json_cache_headers(response):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', selected_tab='network_view')
+
+
+@app.route('/table')
+def chemical_table():
+    return render_template('index.html', selected_tab='chem_list')
 
 
 @app.route('/<ptx_code>')
 def single_chem_network(ptx_code):
     # Render your main HTML page but with a specific PTX code pre-selected
-    return render_template('index.html', selected_chem=ptx_code.upper())
+    return render_template(
+        'index.html',
+        selected_chem=ptx_code.upper(),
+        selected_tab='network_view'
+    )
 
 
 @app.route('/chemical_data/<selected_chem>')

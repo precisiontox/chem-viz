@@ -34,6 +34,8 @@
         const jsonBasic = "{{ url_for('static', filename='elements/basic.json')}}";
         const imageBaseUrl = "{{ url_for('static', filename='images/') }}";
         const selectedChemFromURL = "{{ selected_chem }}";
+        const selectedTabFromURL = "{{ selected_tab|default('network_view') }}";
+        const appBasePath = "{{ request.script_root or config.get('APPLICATION_ROOT', '') }}";
     </script>
     <script src="{{ url_for('static', filename='js/layouts.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/styles.js') }}" defer></script>
@@ -80,8 +82,8 @@
 
     <div class="tab">
         <div class="tab-inner">
-            <button class="tablinks" data-tab-target="network_view">Explore Chemical Classification and Annotations</button>
-            <button class="tablinks" data-tab-target="chem_list">Browse Full Chemical Table</button>
+            <button class="tablinks" data-tab-target="network_view" data-tab-url="{{ url_for('home') }}">Explore Chemical Classification and Annotations</button>
+            <button class="tablinks" data-tab-target="chem_list" data-tab-url="{{ url_for('chemical_table') }}">Browse Full Chemical Table</button>
         </div>
     </div>
 

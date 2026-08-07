@@ -49,13 +49,34 @@ function showTable(tableId) {
     }
 }
 
+function normalizePath(path) {
+    return path.replace(/\/$/, '') || '/';
+}
+
+function resolveAppUrl(path) {
+    return new URL(buildAppPath(path), window.location.origin);
+}
+
 function initializeTabs() {
     document.querySelectorAll('.tablinks').forEach(button => {
         button.addEventListener('click', function(event) {
+            const targetUrl = this.dataset.tabUrl;
+            if (targetUrl) {
+                const tabUrl = resolveAppUrl(targetUrl);
+                if (normalizePath(tabUrl.pathname) !== normalizePath(window.location.pathname)) {
+                    window.location.href = tabUrl.href;
+                    return;
+                }
+            }
             openTab(event, this.dataset.tabTarget);
         });
     });
-    document.querySelector('.tablinks').click();
+
+    const selectedTab = selectedTabFromURL || 'network_view';
+    const selectedButton = document.querySelector(`.tablinks[data-tab-target="${selectedTab}"]`);
+    if (selectedButton) {
+        openTab({ currentTarget: selectedButton }, selectedTab);
+    }
 }
 
 function initializeTableTabs() {
