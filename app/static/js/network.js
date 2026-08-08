@@ -563,10 +563,18 @@ function loadSingleChemNetwork(selectedChem) {
         return;
     }
 
-    // Fetch the smaller network JSON file for the selected chemical
-    const jsonUrl = `/static/elements/single_chem/${selectedChem}_network.json`; // Modify this to the correct path
+    // Fetch the smaller network JSON file for the selected chemical.
+    const jsonUrl = jsonBasic.replace(
+        /elements\/basic\.json$/,
+        `elements/single_chem/${encodeURIComponent(selectedChem)}_network.json`
+    );
     fetch(jsonUrl)
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load single chemical network: ${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        })
         .then(chemNetworkElements => {
             // Destroy the previous network  to clean up memory
             if (cy_graph) {

@@ -41,8 +41,13 @@ function populateChemSelect(basicNetworkLoaded = false) {
 
 function loadChemList() {
     if (!$.fn.DataTable.isDataTable('#chem-table')) {
-        fetch('/get_chemicals')
-            .then(response => response.json())
+        fetch(buildAppPath('/get_chemicals'))
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load chemical list: ${response.status} ${response.statusText}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 const tableHeader = document.getElementById('chem-table-header');
                 const tableBody = document.getElementById('chem-table-body');
