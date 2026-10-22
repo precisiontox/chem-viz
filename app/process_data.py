@@ -197,6 +197,15 @@ def sort_values_and_sources(values, sources):
     return "; ".join(map(str, sorted_values)), f"{'; '.join(sorted_sources)}"
 
 
+def read_solvent_file(file_path):
+    df = pd.read_csv(
+        file_path,
+        sep="\t",
+        usecols=["ptx_code", "solvent_name"]
+    ).rename(columns={"solvent_name": "vehicle"})
+    return df
+
+
 def read_extra_properties_sheet(file_path, sheet):
     df = pd.read_excel(
         file_path,
@@ -869,7 +878,7 @@ def export_chemical_table(df):
 
     columns_order = ['ptx_code', 'chem_name_user', 'chem_name', 'casrn', 'dtxsid', 
                     'pubchem_cid','drugbank_id', 'formula', 'smiles', 'inchikey', 
-                    'label', 'use_class', 'tox_class']
+                    'label', 'use_class', 'tox_class', 'vehicle']
     columns_order += [col for col in df.columns if col not in columns_order]
     df = df[columns_order]
     df = df.replace("NA", "")
@@ -940,6 +949,7 @@ drugbank_moa_file = f"{HERE_PATH}/data/Manuscript Chemicals - DrugBank - Target 
 t3db_moa_file = f"{HERE_PATH}/data/Manuscript Chemicals - T3Db - Target & MoA.xlsx"
 aop_file_simple = f"{HERE_PATH}/data/Manuscript Chemicals - AOP IDs - only.xlsx"
 aop_file = f"{HERE_PATH}/data/Manuscript Chemicals - AOP.xlsx"
+solvent_file = f"{HERE_PATH}/data/ptx_solvent.tsv"
 
 # Output files
 elements_dir = f"{HERE_PATH}/static/elements/"
@@ -963,6 +973,7 @@ labels = {
     "inchikey": "INCHIKEY",
     "use_class": "Use Category",
     "tox_class": "Toxicity Category",
+    "vehicle": "Vehicle",
     "mw_g_mol": "Molecular Weight",
     "solubility_h2o_mol_liter": "Solubility in H2O",
     "source_solubility_h2o": "Solubility in H2O Source",
@@ -1121,6 +1132,14 @@ df_comptox = read_comptox_file(comptox_file)
 df_ide = df_ide.merge(
     df_comptox,
     on=["dtxsid"],
+    how="left"
+)
+
+# Read Solvent file (vehicle used for each chemical)
+df_solvent = read_solvent_file(solvent_file)
+df_ide = df_ide.merge(
+    df_solvent,
+    on=["ptx_code"],
     how="left"
 )
 
