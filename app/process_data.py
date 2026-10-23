@@ -106,6 +106,19 @@ def read_identifier_file(file_path):
     return df
 
 
+INCHIKEY_PATTERN = r"^[A-Z]{14}-[A-Z]{10}-[A-Z]$"
+
+
+def fix_swapped_smiles_inchikey(df):
+    # Some source rows have the SMILES and InChIKey columns transposed
+    swapped = df["smiles"].astype(str).str.match(INCHIKEY_PATTERN) & \
+        ~df["inchikey"].astype(str).str.match(INCHIKEY_PATTERN)
+    if swapped.any():
+        print(f"Fixing swapped SMILES/InChIKey for: {', '.join(df.loc[swapped, 'ptx_code'])}")
+        df.loc[swapped, ["smiles", "inchikey"]] = df.loc[swapped, ["inchikey", "smiles"]].values
+    return df
+
+
 def read_drugbank_file(file_path, ptx_codes):
     target_cols = ["Prec.Tox code", "DrugBank ID", "organism", "Chemical Target",
                    "Chemical Effect at Target", "known_action", "toxicity"]
@@ -1101,6 +1114,7 @@ engine = connect_to_database(config)
 # Read Identifiers file
 df_ide = pd.read_csv(chem_ide_file, sep="\t")
 df_ide["pubchem_cid"] = df_ide["pubchem_cid"].astype(str)
+df_ide = fix_swapped_smiles_inchikey(df_ide)
 ptx_codes = df_ide["ptx_code"].to_list()
 
 # Read DrugBank file
