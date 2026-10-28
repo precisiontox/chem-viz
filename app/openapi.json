@@ -1,0 +1,330 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "PrecisionTox Chemical Library API",
+    "version": "1.0.0",
+    "description": "Read-only access to the PrecisionTox chemical collection (https://dex.precisiontox.org/chem/).\n\nAll chemical and collection endpoints return plain JSON by default and JSON-LD (schema.org / Bioschemas `MolecularEntity` and `Dataset`) when requested with `Accept: application/ld+json` or `?format=jsonld`.\n\nMissing values are `null`. Multi-valued measurements (e.g. several pKa values) are returned as arrays.",
+    "contact": { "name": "PrecisionTox", "url": "https://precisiontox.org/" }
+  },
+  "externalDocs": {
+    "description": "Publication describing the chemical library",
+    "url": "https://doi.org/10.1093/toxsci/kfaf126"
+  },
+  "tags": [
+    { "name": "Chemical Library: Chemicals", "description": "PrecisionTox chemical library, served under /chem" },
+    { "name": "Chemical Library: Categories" },
+    { "name": "Chemical Library: Metadata" }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["Chemical Library: Metadata"],
+        "summary": "API index (JSON) or dataset description (JSON-LD)",
+        "operationId": "chemGetIndex",
+        "parameters": [{ "$ref": "#/components/parameters/format" }],
+        "responses": {
+          "200": {
+            "description": "API links, or a schema.org Dataset description when JSON-LD is requested",
+            "content": {
+              "application/json": { "schema": { "type": "object" } },
+              "application/ld+json": { "schema": { "type": "object" } }
+            }
+          }
+        }
+      }
+    },
+    "/chemical-info": {
+      "get": {
+        "tags": ["Chemical Library: Chemicals"],
+        "summary": "List and search chemicals",
+        "description": "Filters are combined with AND. Each filter can be repeated (`use=Pesticide&use=Pharmaceutical`, as in the DEX API) or given comma-separated values; values of one filter are combined with OR. Matching is case-insensitive.\n\nUse `name` to map the chemical names used by the PTox/DEx API (e.g. `Cadmium chloride`, `bisphenol A`) to PTX codes.",
+        "operationId": "chemListChemicals",
+        "parameters": [
+          { "name": "q", "in": "query", "description": "Substring search on PTX code, name and CAS number", "schema": { "type": "string" }, "example": "cadmium" },
+          { "name": "name", "in": "query", "description": "Exact chemical name, as used by the PTox/DEx API", "schema": { "type": "array", "items": { "type": "string" } }, "style": "form", "explode": true, "example": ["bisphenol A"] },
+          { "name": "use", "in": "query", "description": "Use category (see /chemical-category/use)", "schema": { "type": "array", "items": { "type": "string" } }, "style": "form", "explode": true, "example": ["Pharmaceutical"] },
+          { "name": "toxicity", "in": "query", "description": "Toxicity endpoint category (see /chemical-category/toxicity)", "schema": { "type": "array", "items": { "type": "string" } }, "style": "form", "explode": true, "example": ["Nephrotoxicity"] },
+          { "name": "vehicle", "in": "query", "description": "Dosing vehicle / solvent", "schema": { "type": "array", "items": { "type": "string" } }, "style": "form", "explode": true, "example": ["water"] },
+          { "name": "casrn", "in": "query", "description": "Exact CAS Registry Number", "schema": { "type": "array", "items": { "type": "string" } }, "style": "form", "explode": true, "example": ["10108-64-2"] },
+          { "name": "dtxsid", "in": "query", "description": "Exact EPA DSSTox substance ID", "schema": { "type": "array", "items": { "type": "string" } }, "style": "form", "explode": true, "example": ["DTXSID6020226"] },
+          { "name": "inchikey", "in": "query", "description": "Exact InChIKey", "schema": { "type": "array", "items": { "type": "string" } }, "style": "form", "explode": true, "example": ["YKYOUMDCQGMQQO-UHFFFAOYSA-L"] },
+          { "name": "pubchem_cid", "in": "query", "description": "Exact PubChem compound ID", "schema": { "type": "array", "items": { "type": "string" } }, "style": "form", "explode": true, "example": ["24947"] },
+          { "name": "drugbank_id", "in": "query", "description": "Exact DrugBank ID", "schema": { "type": "array", "items": { "type": "string" } }, "style": "form", "explode": true, "example": ["DB14126"] },
+          { "name": "limit", "in": "query", "description": "Maximum number of results (default: all)", "schema": { "type": "integer", "minimum": 1 } },
+          { "name": "offset", "in": "query", "description": "Number of results to skip", "schema": { "type": "integer", "minimum": 0, "default": 0 } },
+          { "$ref": "#/components/parameters/format" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Matching chemicals",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/ChemicalList" } },
+              "application/ld+json": { "schema": { "type": "object", "description": "schema.org Dataset with the chemicals in hasPart" } }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error" }
+        }
+      }
+    },
+    "/chemical-info/{ptx_code}": {
+      "get": {
+        "tags": ["Chemical Library: Chemicals"],
+        "summary": "Get one chemical",
+        "operationId": "chemGetChemical",
+        "parameters": [
+          { "name": "ptx_code", "in": "path", "required": true, "description": "PrecisionTox code (case-insensitive)", "schema": { "type": "string", "pattern": "^[Pp][Tt][Xx][0-9]{3}$" }, "example": "PTX201" },
+          { "$ref": "#/components/parameters/format" }
+        ],
+        "responses": {
+          "200": {
+            "description": "The chemical",
+            "content": {
+              "application/json": { "schema": { "$ref": "#/components/schemas/Chemical" } },
+              "application/ld+json": { "schema": { "type": "object", "description": "schema.org / Bioschemas MolecularEntity" } }
+            }
+          },
+          "404": { "$ref": "#/components/responses/Error" }
+        }
+      }
+    },
+    "/chemical-category/": {
+      "get": {
+        "tags": ["Chemical Library: Categories"],
+        "summary": "List both use and toxicity endpoint categories with chemical counts",
+        "operationId": "chemListAllCategories",
+        "responses": {
+          "200": {
+            "description": "Categories grouped by type",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "meta": { "type": "object", "properties": { "api_version": { "type": "string" } } },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "use": { "type": "array", "items": { "$ref": "#/components/schemas/Category" } },
+                        "toxicity": { "type": "array", "items": { "$ref": "#/components/schemas/Category" } }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/chemical-category/{kind}": {
+      "get": {
+        "tags": ["Chemical Library: Categories"],
+        "summary": "List use or toxicity endpoint categories with chemical counts",
+        "operationId": "chemListCategories",
+        "parameters": [
+          { "name": "kind", "in": "path", "required": true, "schema": { "type": "string", "enum": ["use", "toxicity"] } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Categories",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CategoryList" } } }
+          },
+          "404": { "$ref": "#/components/responses/Error" }
+        }
+      }
+    },
+    "/context.jsonld": {
+      "get": {
+        "tags": ["Chemical Library: Metadata"],
+        "summary": "JSON-LD context used by the JSON-LD responses (counterpart of DEX /api/context.jsonld)",
+        "operationId": "chemGetContext",
+        "responses": {
+          "200": { "description": "JSON-LD context", "content": { "application/ld+json": { "schema": { "type": "object" } } } }
+        }
+      }
+    },
+    "/vocab": {
+      "get": {
+        "tags": ["Chemical Library: Metadata"],
+        "summary": "JSON-LD vocabulary for the ptx: terms used in JSON-LD responses",
+        "operationId": "chemGetVocabulary",
+        "responses": {
+          "200": { "description": "RDF vocabulary", "content": { "application/ld+json": { "schema": { "type": "object" } } } }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "format": {
+        "name": "format",
+        "in": "query",
+        "description": "Response format. Alternative to the Accept header.",
+        "schema": { "type": "string", "enum": ["json", "jsonld"] }
+      }
+    },
+    "responses": {
+      "Error": {
+        "description": "Error",
+        "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "status": { "type": "integer" },
+              "message": { "type": "string" }
+            }
+          }
+        }
+      },
+      "Value": {
+        "description": "A number, a string, or an array of them when several values are reported",
+        "oneOf": [
+          { "type": "number" },
+          { "type": "string" },
+          { "type": "array", "items": { "oneOf": [{ "type": "number" }, { "type": "string" }] } }
+        ]
+      },
+      "Measurement": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "value": { "$ref": "#/components/schemas/Value" },
+          "unit": { "type": "string", "nullable": true },
+          "source": { "type": "string", "nullable": true, "description": "Data source(s), '; '-separated when several" }
+        }
+      },
+      "BaselineToxicity": {
+        "type": "object",
+        "nullable": true,
+        "properties": {
+          "value": { "$ref": "#/components/schemas/Value" },
+          "unit": { "type": "string", "nullable": true },
+          "test_system": { "type": "string" }
+        }
+      },
+      "Chemical": {
+        "type": "object",
+        "properties": {
+          "ptx_code": { "type": "string", "example": "PTX201" },
+          "name": { "type": "string", "example": "Tenofovir" },
+          "name_user": { "type": "string", "nullable": true },
+          "url": { "type": "string", "format": "uri", "description": "Web page (and JSON-LD @id) of the chemical" },
+          "api_url": { "type": "string", "format": "uri" },
+          "identifiers": {
+            "type": "object",
+            "properties": {
+              "casrn": { "type": "string", "nullable": true },
+              "dtxsid": { "type": "string", "nullable": true },
+              "pubchem_cid": { "type": "string", "nullable": true },
+              "drugbank_id": { "type": "string", "nullable": true },
+              "inchikey": { "type": "string", "nullable": true },
+              "smiles": { "type": "string", "nullable": true },
+              "molecular_formula": { "type": "string", "nullable": true }
+            }
+          },
+          "external_links": {
+            "type": "object",
+            "description": "Links to the chemical in external databases (only those available)",
+            "additionalProperties": { "type": "string", "format": "uri" }
+          },
+          "use_categories": { "type": "array", "items": { "type": "string" } },
+          "toxicity_categories": { "type": "array", "items": { "type": "string" } },
+          "vehicle": { "type": "string", "nullable": true },
+          "physchem_properties": {
+            "type": "object",
+            "properties": {
+              "molecular_weight": { "$ref": "#/components/schemas/Measurement" },
+              "water_solubility": { "$ref": "#/components/schemas/Measurement" },
+              "henry_coefficient": { "$ref": "#/components/schemas/Measurement" },
+              "log_kaw": { "$ref": "#/components/schemas/Measurement" },
+              "pka_acid": { "$ref": "#/components/schemas/Measurement" },
+              "pka_base": { "$ref": "#/components/schemas/Measurement" },
+              "log_kow": { "$ref": "#/components/schemas/Measurement" },
+              "log_dlipw_ph74": { "$ref": "#/components/schemas/Measurement" },
+              "freely_dissolved_fraction": { "$ref": "#/components/schemas/Measurement" },
+              "density": { "$ref": "#/components/schemas/Measurement" },
+              "boiling_point": { "$ref": "#/components/schemas/Measurement" },
+              "melting_point": { "$ref": "#/components/schemas/Measurement" },
+              "vapor_pressure": { "$ref": "#/components/schemas/Measurement" }
+            }
+          },
+          "baseline_toxicity": {
+            "type": "object",
+            "properties": {
+              "danio_rerio": { "$ref": "#/components/schemas/BaselineToxicity" },
+              "daphnia_magna": { "$ref": "#/components/schemas/BaselineToxicity" },
+              "caenorhabditis_elegans": { "$ref": "#/components/schemas/BaselineToxicity" },
+              "xenopus_laevis": { "$ref": "#/components/schemas/BaselineToxicity" },
+              "drosophila_melanogaster": { "$ref": "#/components/schemas/BaselineToxicity" },
+              "hepg2_cells": { "$ref": "#/components/schemas/BaselineToxicity" },
+              "hepg2_cells_generic_free_ec10": { "$ref": "#/components/schemas/BaselineToxicity" }
+            }
+          },
+          "mechanism_of_action": {
+            "type": "object",
+            "properties": {
+              "drugbank": { "type": "string", "nullable": true },
+              "t3db": { "type": "string", "nullable": true }
+            }
+          },
+          "protein_binding": { "type": "string", "nullable": true },
+          "targets": { "type": "array", "items": { "type": "string" }, "description": "Molecular targets (T3DB)" },
+          "adverse_outcome_pathways": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "aop_id": { "type": "integer" },
+                "name": { "type": "string" },
+                "url": { "type": "string", "format": "uri" }
+              }
+            }
+          }
+        }
+      },
+      "ChemicalList": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "type": "object",
+            "properties": {
+              "total": { "type": "integer", "description": "Number of matches before paging" },
+              "offset": { "type": "integer" },
+              "limit": { "type": "integer", "nullable": true },
+              "returned": { "type": "integer" },
+              "api_version": { "type": "string" }
+            }
+          },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Chemical" } }
+        }
+      },
+      "CategoryList": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "type": "object",
+            "properties": {
+              "total": { "type": "integer" },
+              "api_version": { "type": "string" }
+            }
+          },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Category" } }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "chemical_count": { "type": "integer" },
+          "chemicals_url": { "type": "string", "format": "uri", "description": "chemical-info query listing the chemicals in this category" }
+        }
+      }
+    }
+  }
+}

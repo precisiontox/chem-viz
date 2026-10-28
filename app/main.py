@@ -1,10 +1,15 @@
-from flask import Flask, render_template, Response, jsonify
+from flask import Flask, render_template, Response, jsonify, redirect, url_for
 import json
 import os
 from collections import OrderedDict
 from datetime import timedelta
+try:
+    from app.api import api_bp, chemical_jsonld, dataset_jsonld, get_chemical
+except ImportError:  # running as `python app/main.py`
+    from api import api_bp, chemical_jsonld, dataset_jsonld, get_chemical
 # from app import app
 app = Flask(__name__)
+app.register_blueprint(api_bp)
 APP_BASE_PATH = os.environ.get('APPLICATION_ROOT') or os.environ.get('SCRIPT_NAME')
 if APP_BASE_PATH:
     app.config['APPLICATION_ROOT'] = APP_BASE_PATH.rstrip('/') or '/'
@@ -20,26 +25,35 @@ def add_json_cache_headers(response):
 
 @app.route('/')
 def home():
-    return render_template('index.html', selected_tab='network_view')
+    return render_template('index.html', selected_tab='network_view', jsonld=dataset_jsonld())
 
 
 @app.route('/table')
 def chemical_table():
-    return render_template('index.html', selected_tab='chem_list')
+    return render_template('index.html', selected_tab='chem_list', jsonld=dataset_jsonld())
 
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about.html', jsonld=dataset_jsonld())
+
+
+@app.route('/api')
+def api_root():
+    # Explicit rule so '/api' is not caught by the '/<ptx_code>' route below
+    return redirect(url_for('api.index'))
 
 
 @app.route('/<ptx_code>')
 def single_chem_network(ptx_code):
     # Render your main HTML page but with a specific PTX code pre-selected
+    chem = get_chemical(ptx_code)
     return render_template(
         'index.html',
         selected_chem=ptx_code.upper(),
-        selected_tab='network_view'
+        selected_tab='network_view',
+        jsonld=chemical_jsonld(chem) if chem else dataset_jsonld(),
+        jsonld_alternate=url_for('api.chemical_detail', ptx_code=chem['ptx_code']) if chem else None
     )
 
 

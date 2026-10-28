@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API | PrecisionTox Chemical Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/google-fonts/arimo/arimo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/font-awesome/6.5.2/css/all.min.css') }}">
+    <link rel="service-desc" type="application/json" href="{{ url_for('api.openapi_spec') }}">
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-inner">
+            <a class="topbar-logo-link" href="{{ url_for('home') }}" aria-label="PrecisionTox Chemical Library home">
+                <img src="{{ url_for('static', filename='images/logos/ptox_logo_white.png') }}" alt="Logo" class="logo">
+            </a>
+            <span id="title_chemical">PrecisionTox Chemical Library</span>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Explore</a></li>
+                <li><a href="{{ url_for('chemical_table') }}">Table</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="https://precisiontox.org/" target="_blank" rel="noopener noreferrer">PrecisionTox</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="about-page api-page">
+        <section class="about-card" aria-label="PrecisionTox Chemical Library API">
+            <div class="about-hero">
+                <p class="about-kicker">API</p>
+                <p>
+                    Programmatic, read-only access to the PrecisionTox Chemical Library. It complements the
+                    <a href="{{ dex_api_docs }}" target="_blank" rel="noopener noreferrer">PTox/DEx API</a>
+                    and follows its conventions: GET requests, repeatable query parameters and optional JSON-LD responses.
+                </p>
+                <div class="api-meta">
+                    <p><b>Base URL:</b> <code>{{ base_url }}</code></p>
+                    <p><b>Version:</b> <code>{{ api_version }}</code></p>
+                </div>
+                <div class="api-links">
+                    <a class="api-button" href="{{ url_for('api.openapi_spec') }}"><i class="fa-solid fa-file-code"></i> OpenAPI JSON</a>
+                    <a class="api-button" href="{{ url_for('api.swagger_docs') }}"><i class="fa-solid fa-flask"></i> Try it out (interactive docs)</a>
+                    <a class="api-button api-button-secondary" href="{{ dex_api_docs }}" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> PTox/DEx API</a>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                {% if example_response %}
+                <article class="about-section about-section-wide">
+                    <h2>Example JSON Response</h2>
+                    <p><code>GET /api/chemical-info/PTX001</code> (shortened)</p>
+                    <pre class="api-code"><code>{{ example_response }}</code></pre>
+                </article>
+                {% endif %}
+
+                {% for section in sections %}
+                <article class="about-section about-section-wide api-section">
+                    <h2>{{ section.title }}</h2>
+                    <p>{{ section.intro }}</p>
+                    {% for endpoint in section.endpoints %}
+                    <div class="api-endpoint">
+                        <p class="api-endpoint-path"><span class="api-method">{{ endpoint.method }}</span> <code>{{ endpoint.path }}</code></p>
+                        <p class="api-endpoint-description">{{ endpoint.description }}</p>
+                        {% for curl in endpoint.curls %}
+                        <pre class="api-code"><code>{{ curl }}</code></pre>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </article>
+                {% endfor %}
+
+                <article class="about-section about-section-wide">
+                    <h2>Query Parameters</h2>
+                    <p>
+                        Filters of <code>/api/chemical-info</code> are combined with AND. A filter can be repeated
+                        (<code>use=Pesticide&amp;use=Pharmaceutical</code>) or given comma-separated values; values of
+                        one filter are combined with OR. Matching is case-insensitive. Unknown parameters return an error,
+                        so typos do not go unnoticed.
+                    </p>
+                    <div class="api-table-wrap">
+                        <table class="api-table">
+                            <thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead>
+                            <tbody>
+                                {% for name, type, description in parameters %}
+                                <tr><td><code>{{ name }}</code></td><td>{{ type }}</td><td>{{ description }}</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="about-section about-section-wide">
+                    <h2>Response Shape</h2>
+                    <p>Missing values are <code>null</code>; numbers are returned as numbers.</p>
+                    <div class="api-table-wrap">
+                        <table class="api-table">
+                            <thead><tr><th>Field</th><th>Description</th></tr></thead>
+                            <tbody>
+                                {% for name, description in fields %}
+                                <tr><td><code>{{ name }}</code></td><td>{{ description }}</td></tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="about-section">
+                    <h3>Errors</h3>
+                    <p>
+                        Errors are returned as JSON: <code>{"error": {"status": 404, "message": "..."}}</code>.
+                        Unknown chemicals and paths return 404; invalid or unknown query parameters return 400.
+                    </p>
+                </article>
+
+                <article class="about-section">
+                    <h3>Usage</h3>
+                    <p>
+                        No authentication is needed. Responses allow cross-origin requests (CORS) and carry ETag and
+                        cache headers. If you use the data, please cite
+                        <a href="{{ citation }}" target="_blank" rel="noopener noreferrer">the PrecisionTox chemical library publication</a>.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
