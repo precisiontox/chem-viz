@@ -29,7 +29,7 @@
                   "log_dlipw_ph74_liter_liter": "3.33",
                   "source_dlipw": "Hunziker and Escher 2001 (note higher affinity of cation to liposome)",
                   "freely_dissolved_fraction": "0.0858511045746207",
-                  "density_kg_liter": "-",
+                  "density_kg_liter": "NA",
                   "source_density": "",
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
@@ -304,12 +304,12 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density:\n- kg/liter",
-                  "value": "-",
-                  "hlLabel": "Density:\n- kg/liter",
+                  "combinedLabel": "Density:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Density:\nn/a",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -451,7 +451,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {

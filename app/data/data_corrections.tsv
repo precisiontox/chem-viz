@@ -1,0 +1,6 @@
+ptx_code	column	value	note
+PTX043	density_kg_liter		Database value is "-"; no density available
+PTX081	solubility_h2o_mol_liter	5.70e-5	Database value was "OCHEM" (a source name). CompTox predicted average (1 value: Percepta 2023.1.2); CompTox experimental average is 2.62e-2 (PubChem)
+PTX081	source_solubility_h2o	COMPTOX (predicted average)	Previous source "COMPTOX (OPERA)"; CompTox no longer lists an OPERA water solubility for this chemical
+PTX163	log_kow_liter_liter		Database value was a ChemSpider URL (Chemical-Structure.17347361), not a value; the current ChemSpider page shows no logP
+PTX163	formula	C37H60N4O16	Tunicamycin (CAS 11089-65-9) is a homolog mixture with no CompTox structure. Formula of the ChemSpider 17347361 / PubChem 20055059 record, matching the MW in the database (816.899). InChIKey/SMILES left empty: ChemSpider and PubChem stereochemistry differ
