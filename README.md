@@ -41,6 +41,21 @@ Finally, the web application includes a comprehensive table listing the entire c
 
 <img src="app/static/images/readme/full_table.png">
 
+### REST API
+
+A read-only JSON API is available under `/api/`, complementing the [PTox/DEx API](https://dex.precisiontox.org/api-docs) and following its layout: an API guide with endpoint descriptions and curl examples at `/api-docs` (linked as "API" in the top bar), interactive Swagger docs at `/api-docs/swagger` and the OpenAPI spec at `/openapi.json`. The endpoint descriptions shown in the guide are defined in `API_DOC_SECTIONS` in `app/api.py`.
+
+| Endpoint | Description |
+|---|---|
+| `GET /api/chemical-info` | List chemicals. Filters: `q`, `name`, `use`, `toxicity`, `vehicle`, `casrn`, `dtxsid`, `inchikey`, `pubchem_cid`, `drugbank_id` (repeat a filter or comma-separate values to OR them); paging: `limit`, `offset`. `name` matches the chemical names used by DEX |
+| `GET /api/chemical-info/{ptx_code}` | One chemical |
+| `GET /api/chemical-category/` | Use and toxicity categories with chemical counts |
+| `GET /api/chemical-category/{use\|toxicity}` | One category type |
+
+Chemical and collection endpoints also return JSON-LD (schema.org / Bioschemas `MolecularEntity` and `Dataset`) with `Accept: application/ld+json` or `?format=jsonld` (as in DEX); the context is published at `/api/context.jsonld`. The HTML pages embed the same JSON-LD for search engines.
+
+JSON-LD identifiers are built from the `CHEM_PUBLIC_BASE_URL` environment variable (default `https://dex.precisiontox.org/chem`). The API caches data in memory, so restart the app after rebuilding the data files.
+
 ## Data
 
 All data shown in the application were provided by PrecisionTox Consortium partners. 

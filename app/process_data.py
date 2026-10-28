@@ -106,6 +106,33 @@ def read_identifier_file(file_path):
     return df
 
 
+INCHIKEY_PATTERN = r"^[A-Z]{14}-[A-Z]{10}-[A-Z]$"
+
+
+def fix_swapped_smiles_inchikey(df):
+    # Some source rows have the SMILES and InChIKey columns transposed
+    swapped = df["smiles"].astype(str).str.match(INCHIKEY_PATTERN) & \
+        ~df["inchikey"].astype(str).str.match(INCHIKEY_PATTERN)
+    if swapped.any():
+        print(f"Fixing swapped SMILES/InChIKey for: {', '.join(df.loc[swapped, 'ptx_code'])}")
+        df.loc[swapped, ["smiles", "inchikey"]] = df.loc[swapped, ["inchikey", "smiles"]].values
+    return df
+
+
+def apply_data_corrections(df, file_path):
+    # Manual fixes for values that are wrong in the source database/files.
+    # An empty value clears the cell.
+    df_fix = pd.read_csv(file_path, sep="\t", dtype=str, keep_default_na=False)
+    for _, fix in df_fix.iterrows():
+        rows = df["ptx_code"] == fix["ptx_code"]
+        if not rows.any() or fix["column"] not in df.columns:
+            print(f"Correction skipped (unknown chemical/column): {fix['ptx_code']} {fix['column']}")
+            continue
+        df.loc[rows, fix["column"]] = fix["value"] if fix["value"] != "" else None
+    print(f"Applied {len(df_fix)} data corrections from {os.path.basename(file_path)}")
+    return df
+
+
 def read_drugbank_file(file_path, ptx_codes):
     target_cols = ["Prec.Tox code", "DrugBank ID", "organism", "Chemical Target",
                    "Chemical Effect at Target", "known_action", "toxicity"]
@@ -950,6 +977,7 @@ t3db_moa_file = f"{HERE_PATH}/data/Manuscript Chemicals - T3Db - Target & MoA.xl
 aop_file_simple = f"{HERE_PATH}/data/Manuscript Chemicals - AOP IDs - only.xlsx"
 aop_file = f"{HERE_PATH}/data/Manuscript Chemicals - AOP.xlsx"
 solvent_file = f"{HERE_PATH}/data/ptx_solvent.tsv"
+corrections_file = f"{HERE_PATH}/data/data_corrections.tsv"
 
 # Output files
 elements_dir = f"{HERE_PATH}/static/elements/"
@@ -1101,6 +1129,7 @@ engine = connect_to_database(config)
 # Read Identifiers file
 df_ide = pd.read_csv(chem_ide_file, sep="\t")
 df_ide["pubchem_cid"] = df_ide["pubchem_cid"].astype(str)
+df_ide = fix_swapped_smiles_inchikey(df_ide)
 ptx_codes = df_ide["ptx_code"].to_list()
 
 # Read DrugBank file
@@ -1209,6 +1238,8 @@ df_ide = df_ide.merge(
 # aop_dict = df_aop.set_index("AOP_id").apply(
 #             lambda row: {"title": row["AOP_title"], "type": row["Type"]}, axis=1
 #             ).to_dict()
+
+df_ide = apply_data_corrections(df_ide, corrections_file)
 
 df_ide = df_ide.fillna("NA")
 

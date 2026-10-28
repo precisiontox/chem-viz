@@ -46,6 +46,13 @@
     <script src="{{ url_for('static', filename='js/chemical-list.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/network.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+    {% if jsonld_alternate %}
+    <link rel="alternate" type="application/ld+json" href="{{ jsonld_alternate }}?format=jsonld">
+    <link rel="alternate" type="application/json" href="{{ jsonld_alternate }}">
+    {% endif %}
+    {% if jsonld %}
+    <script type="application/ld+json">{{ jsonld|tojson }}</script>
+    {% endif %}
 
 </head>
 
@@ -59,6 +66,7 @@
             <ul>
                 <li><a href="https://precisiontox.org/" target="_blank" rel="noopener noreferrer">PrecisionTox</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('api.docs') }}">API</a></li>
             </ul>
         </div>
     </div>

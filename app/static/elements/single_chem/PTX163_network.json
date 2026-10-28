@@ -11,7 +11,7 @@
                   "dtxsid": "DTXSID8036730",
                   "cid": "20055059",
                   "db_id": "NA",
-                  "formula": "NA",
+                  "formula": "C37H60N4O16",
                   "smiles": "NA",
                   "inchi": "NA",
                   "mw_g_mol": "816.899",
@@ -24,7 +24,7 @@
                   "pka_acid": "",
                   "pka_base": "",
                   "source_pka": "",
-                  "log_kow_liter_liter": "https://www.chemspider .com/Chemical-Structure .17347361.html",
+                  "log_kow_liter_liter": "NA",
                   "source_kow": "",
                   "log_dlipw_ph74_liter_liter": "2.73",
                   "source_dlipw": "Kow QSAR (\u2206mw = 1)",
@@ -262,12 +262,12 @@
                   "role": "prop",
                   "id": "log_kow_liter_liter",
                   "label": "Log Kow",
-                  "combinedLabel": "Log Kow:\nhttps://www.chemspider .com/Chemical-Structure .17347361.html ",
-                  "value": "https://www.chemspider .com/Chemical-Structure .17347361.html",
-                  "hlLabel": "Log Kow:\nhttps://www.chemspider .com/Chemical-Structure .17347361.html ",
+                  "combinedLabel": "Log Kow:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Log Kow:\nn/a",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -421,7 +421,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "log_kow_liter_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {

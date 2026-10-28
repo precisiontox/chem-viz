@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/google-fonts/arimo/arimo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/font-awesome/6.5.2/css/all.min.css') }}">
+    {% if jsonld %}
+    <script type="application/ld+json">{{ jsonld|tojson }}</script>
+    {% endif %}
 </head>
 <body>
     <div class="topbar">
@@ -18,6 +21,7 @@
             <ul>
                 <li><a href="{{ url_for('home') }}">Explore</a></li>
                 <li><a href="{{ url_for('chemical_table') }}">Table</a></li>
+                <li><a href="{{ url_for('api.docs') }}">API</a></li>
                 <li><a href="https://precisiontox.org/" target="_blank" rel="noopener noreferrer">PrecisionTox</a></li>
             </ul>
         </div>

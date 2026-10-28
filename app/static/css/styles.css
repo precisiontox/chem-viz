@@ -1619,7 +1619,147 @@ body, html {
     margin: 0;
 }
 
+/* API page */
+.api-page code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    color: var(--ptox-ink);
+    background: var(--ptox-panel-strong);
+    border-radius: 4px;
+    padding: 1px 5px;
+    overflow-wrap: anywhere;
+}
+
+.api-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 28px;
+    margin-top: 14px;
+}
+
+.about-hero .api-meta p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.api-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.api-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border: 1px solid var(--ptox-accent-dark);
+    border-radius: 8px;
+    background: var(--ptox-accent-dark);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.api-button:hover {
+    background: var(--ptox-ink);
+}
+
+.api-button-secondary {
+    background: #ffffff;
+    color: var(--ptox-accent-dark);
+}
+
+.api-button-secondary:hover {
+    background: var(--ptox-hover);
+}
+
+.api-endpoint {
+    margin-top: 16px;
+    padding: 14px 16px;
+    border: 1px solid var(--ptox-line);
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.api-section .api-endpoint p {
+    margin: 0 0 8px;
+}
+
+.api-endpoint-path {
+    font-weight: 700;
+}
+
+.api-method {
+    display: inline-block;
+    margin-right: 6px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    background: var(--ptox-accent);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    vertical-align: 1px;
+}
+
+.api-page pre.api-code {
+    margin: 8px 0 0;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: var(--ptox-ink);
+    overflow-x: auto;
+}
+
+.api-page pre.api-code code {
+    padding: 0;
+    background: none;
+    color: #e6edf5;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
+    overflow-wrap: normal;
+}
+
+.api-page pre.api-code + pre.api-code {
+    margin-top: 8px;
+}
+
+.api-table-wrap {
+    overflow-x: auto;
+}
+
+.api-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    color: var(--ptox-text);
+}
+
+.api-table th,
+.api-table td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--ptox-line);
+    text-align: left;
+    vertical-align: top;
+}
+
+.api-table th {
+    background: var(--ptox-panel-strong);
+    color: var(--ptox-ink);
+}
+
+.api-table td:first-child {
+    white-space: nowrap;
+}
+
 @media (max-width: 900px) {
+    .api-table td:first-child {
+        white-space: normal;
+    }
+
     .about-grid {
         grid-template-columns: 1fr;
     }
