@@ -2,19 +2,12 @@
 dark-grey for text: #2c2e35 /  #424949 
 */
 
-.arimo-<uniquifier> {
-  font-family: "Arimo", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(135deg, #004880, #007cc1);
+    background: linear-gradient(135deg, #054a81, #007cc1);
     font-family: helvetica neue, helvetica, liberation sans, arial, sans-serif;
     overflow: auto;
 }
@@ -97,12 +90,12 @@ body, html {
     justify-content: center; /* Horizontally center content */
     padding: 5px; /* Adjust padding as needed */
     background-color: white;
-    border: 1px solid #172d4a;
-    box-shadow: 3px 3px #172d4a;
+    border: 1px solid #102230;
+    box-shadow: 3px 3px #102230;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
-    color: #172d4a;
+    color: #102230;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, filter 0.3s; /* Added filter transition for icon hover effect */
 }
@@ -145,7 +138,7 @@ body, html {
 .dropdown select {
     width: 100%; /* Make the dropdown take the full width of the container */
     padding: 8px; /* Adjust the padding for a better look */
-    border: 1px solid #172d4a;
+    border: 1px solid #102230;
     border-radius: 5px; /* Rounded corners for the dropdown */
     background-color: white; /* Background color */
     color: #2c2e35; /* Text color */
@@ -160,7 +153,7 @@ body, html {
 
 .dropdown select:focus {
     outline: none;
-    border-color: #172d4a; /* Change border color when focused */
+    border-color: #102230; /* Change border color when focused */
     box-shadow: 0 0 5px rgba(0, 124, 193, 0.5); /* Optional: shadow on focus */
 }
 
@@ -193,7 +186,7 @@ input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 20px; /* Thumb width */
     height: 20px; /* Thumb height */
-    background: #172d4a; /* Thumb color */
+    background: #102230; /* Thumb color */
     border-radius: 50%; /* Rounded thumb */
     cursor: pointer; /* Pointer cursor on hover */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional shadow */
@@ -202,7 +195,7 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]::-moz-range-thumb {
     width: 20px;
     height: 20px;
-    background: #172d4a;
+    background: #102230;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -212,14 +205,14 @@ input[type="range"]::-moz-range-thumb {
 input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
     height: 8px;
-    background: linear-gradient(90deg, #007cc1, #004880); /* Gradient color for the bar */
+    background: linear-gradient(90deg, #007cc1, #054a81); /* Gradient color for the bar */
     border-radius: 5px;
 }
 
 input[type="range"]::-moz-range-track {
     width: 100%;
     height: 8px;
-    background: linear-gradient(90deg, #007cc1, #004880);
+    background: linear-gradient(90deg, #007cc1, #054a81);
     border-radius: 5px;
 }
 
@@ -237,12 +230,12 @@ input[type="range"]:focus {
     width: 100%;
     /* padding: 10px; Adjust padding as needed */
     background-color: white;
-    border: 1px solid #172d4a;
-    box-shadow: 3px 3px #172d4a;
+    border: 1px solid #102230;
+    box-shadow: 3px 3px #102230;
     text-align: center;
     border-radius: 5px;
     font-weight: bold;
-    color: #172d4a;
+    color: #102230;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, filter 0.3s; /* Added filter transition for icon hover effect */
 }
@@ -265,12 +258,12 @@ input[type="range"]:focus {
     justify-content: center;
     padding: 8px;
     background-color: white;
-    border: 1px solid #172d4a;
+    border: 1px solid #102230;
     border-radius: 5px;
     font-weight: bold;
-    color: #172d4a;
+    color: #102230;
     cursor: pointer;
-    box-shadow: 2px 2px #172d4a;
+    box-shadow: 2px 2px #102230;
     transition: background-color 0.3s, color 0.3s;
 }
 .dl-btn-pic i {
@@ -352,7 +345,7 @@ input[type="range"]:focus {
     display: inline-block;
     width: 180px; /* Adjust width as needed */
     text-align: right;
-    color: #004880;
+    color: #054a81;
 }
 
 .qtip-content .field-edge-use {
@@ -368,11 +361,11 @@ input[type="range"]:focus {
 }
 
 .qtip-content .compound {
-    color: #172d4a;
+    color: #102230;
 }
 
 .qtip-content .ptx_code {
-      color: #004880;
+      color: #054a81;
 }
 
 .qtip-content .cas_number {
@@ -547,9 +540,9 @@ input[type="range"]:focus {
     flex: 0 0 auto;
     padding: 10px 20px;
     background-color: #f0f0f0;
-    border: 1px solid #172d4a;
+    border: 1px solid #102230;
     border-radius: 5px;
-    color: #172d4a;
+    color: #102230;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -590,7 +583,7 @@ input[type="range"]:focus {
 }
 
 .chem-data-table th {
-    background-color: #004880;
+    background-color: #054a81;
     color: white;
     font-weight: bold;
 }
@@ -614,13 +607,13 @@ input[type="range"]:focus {
 
 /* Apply styles to the first column of the Physico-chemical Properties table */
 #phys-properties-table td:first-child {
-    color: #004880; /* Change this color to your preferred choice */
+    color: #054a81; /* Change this color to your preferred choice */
     font-weight: bold; /* Optional: make the text bold */
 }
 
 /* Apply styles to the first column of the Baseline Toxicity table */
 #baseline-tox-table td:first-child {
-    color: #004880; /* Change this color to your preferred choice */
+    color: #054a81; /* Change this color to your preferred choice */
     font-weight: bold; /* Optional: make the text bold */
 }
 
@@ -656,7 +649,7 @@ input[type="range"]:focus {
 }
 /* DataTable header (column headers) background color */
 .dataTables_wrapper .dataTables_scrollHead thead {
-    background: linear-gradient(90deg, #004880, #007cc1) !important;
+    background: linear-gradient(90deg, #054a81, #007cc1) !important;
 }
 .dataTables_wrapper .dataTables_scrollHead th {
     color: white;
@@ -750,26 +743,30 @@ table.dataTable.display tbody tr:hover td:first-child.sorting_1,
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
-/* Design refresh: app shell and controls */
+/* Design refresh: app shell and controls.
+   Colours, font and panel style follow the PTox/DEx main app (ptox_data_explorer/app/static/css/app.css). */
 :root {
-    --ptox-ink: #172d4a;
-    --ptox-text: #25313f;
-    --ptox-muted: #667085;
-    --ptox-line: #d8dee8;
-    --ptox-panel: #f6f8fb;
-    --ptox-panel-strong: #eef3f8;
+    --ptox-ink: #102230;
+    --ptox-text: #102230;
+    --ptox-muted: #5d7383;
+    --ptox-line: #c6d7e3;
+    --ptox-card: #ffffff;
+    --ptox-panel: #f7fbfd;
+    --ptox-panel-strong: #eef5f9;
     --ptox-accent: #007cc1;
-    --ptox-accent-dark: #004880;
-    --ptox-hover: #e8f1f8;
+    --ptox-accent-dark: #054a81;
+    --ptox-hover: #edf4f8;
     --ptox-page-max: 1440px;
+    --ptox-panel-radius: 18px;
+    --ptox-panel-shadow: 0 12px 30px rgba(5, 74, 129, 0.06);
 }
 
 body, html {
     min-height: 100%;
     height: auto;
-    background: #edf2f7;
+    background: linear-gradient(180deg, #f5f9fb 0%, #e9f1f5 100%);
     color: var(--ptox-text);
-    font-family: "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Avenir Next", "Segoe UI", sans-serif;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -828,7 +825,7 @@ body, html {
 .tab button.active {
     background: #ffffff;
     color: var(--ptox-ink);
-    box-shadow: 0 -2px 8px rgba(23, 45, 74, 0.08);
+    box-shadow: 0 -2px 8px rgba(16, 34, 48, 0.08);
 }
 
 .app-intro {
@@ -838,11 +835,11 @@ body, html {
 }
 
 .app-intro-inner {
-    /* border: 1px solid #d4e0eb; */
-    border-radius: 14px;
-    /* background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%); */
+    border: 1px solid var(--ptox-line);
+    border-radius: var(--ptox-panel-radius);
+    background: linear-gradient(135deg, #ffffff 0%, #f1f7fb 100%);
     padding: 24px 28px;
-    /* box-shadow: 0 8 px 24px rgba(23, 45, 74, 0.08); */
+    box-shadow: var(--ptox-panel-shadow);
 }
 
 .app-intro-copy {
@@ -920,9 +917,10 @@ body, html {
 #network_view,
 #chem_list {
     margin: 0 auto;
-    border: 1px solid #dbe5ef;
-    border-radius: 14px;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
+    border: 1px solid var(--ptox-line);
+    border-radius: var(--ptox-panel-radius);
+    background: var(--ptox-card);
+    box-shadow: var(--ptox-panel-shadow);
 }
 
 #network_view.tabcontent.active {
@@ -1017,7 +1015,7 @@ body, html {
 }
 
 #network-container {
-    border-radius: 0px 0px 14px 14px;
+    border-radius: 0 0 var(--ptox-panel-radius) var(--ptox-panel-radius);
 }
 
 .network-control-panel {
@@ -1079,7 +1077,7 @@ body, html {
     border: 1px solid var(--ptox-line);
     border-radius: 6px;
     background: #ffffff;
-    box-shadow: 0 8px 18px rgba(23, 45, 74, 0.16);
+    box-shadow: 0 8px 18px rgba(16, 34, 48, 0.16);
 }
 
 .network-label-size-control {
@@ -1092,7 +1090,7 @@ body, html {
     border: 1px solid rgba(216, 222, 232, 0.86);
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.88);
-    box-shadow: 0 2px 8px rgba(23, 45, 74, 0.1);
+    box-shadow: 0 2px 8px rgba(16, 34, 48, 0.1);
 }
 
 .network-label-size-control label {
@@ -1185,7 +1183,7 @@ body, html {
     width: auto;
     min-width: 0;
     background: #ffffff;
-    border-radius: 0px 0px 14px 14px;
+    border-radius: 0 0 var(--ptox-panel-radius) var(--ptox-panel-radius);
 }
 
 #network_view .main-panel {
@@ -1197,7 +1195,7 @@ body, html {
 .cytoscape-container {
     inset: 0;
     background: #ffffff;
-    border-radius: 0px 0px 14px 14px;
+    border-radius: 0 0 var(--ptox-panel-radius) var(--ptox-panel-radius);
 }
 
 .tools-widget,
@@ -1231,7 +1229,7 @@ body, html {
     background: rgba(255, 255, 255, 0.94);
     color: var(--ptox-ink);
     font-size: 16px;
-    box-shadow: 0 2px 8px rgba(23, 45, 74, 0.12);
+    box-shadow: 0 2px 8px rgba(16, 34, 48, 0.12);
 }
 
 .my-btn:hover {
@@ -1251,7 +1249,7 @@ body, html {
     border-color: var(--ptox-accent);
     background: var(--ptox-accent-dark);
     color: #ffffff;
-    box-shadow: 0 3px 10px rgba(0, 72, 128, 0.26);
+    box-shadow: 0 3px 10px rgba(5, 74, 129, 0.26);
 }
 
 .tools-widget #reset-button.reset-tool-active:hover {
@@ -1272,8 +1270,9 @@ body, html {
     margin: 24px auto;
     padding: 20px 24px;
     border: 1px solid var(--ptox-line);
-    border-radius: 8px;
-    box-shadow: 0 2px 12px rgba(23, 45, 74, 0.08);
+    border-radius: var(--ptox-panel-radius);
+    background: var(--ptox-card);
+    box-shadow: var(--ptox-panel-shadow);
     align-items: stretch;
 }
 
@@ -1376,10 +1375,10 @@ body, html {
 }
 
 .about-card {
-    border: 1px solid #dbe5ef;
-    border-radius: 14px;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%);
-    box-shadow: 0 4px 18px rgba(23, 45, 74, 0.08);
+    border: 1px solid var(--ptox-line);
+    border-radius: var(--ptox-panel-radius);
+    background: var(--ptox-card);
+    box-shadow: var(--ptox-panel-shadow);
     padding: 30px 34px;
 }
 
@@ -1447,7 +1446,7 @@ body, html {
     height: 100%;
     max-height: 360px;
     object-fit: contain;
-    border: 1px solid #dbe5ef;
+    border: 1px solid var(--ptox-line);
     border-radius: 10px;
     background: #ffffff;
     padding: 10px;
