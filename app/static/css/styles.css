@@ -19,64 +19,6 @@ body, html {
     overflow: auto;
 }
 
-.topbar {
-    width: 100%;
-    height: 75px;
-    color: white;
-    font-family: "Arimo", sans-serif;
-    font-size: 25px;
-    padding: 10px 0px 10px 30px;
-    display: flex;
-    /*flex-direction: column;*/
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
-.topbar .logo {
-    height: 65px;
-    margin-right: 15px;
-}
-
-#title_chemical {
-    /* font-weight: bold; */
-    font-size: 20px;
-}
-
-
-.topbar li {
-    display: inline;
-    list-style-type: none;
-    margin: 0;
-    padding-left: 20px;
-}
-.topbar a {
-    color: #f0f0f0;
-    font-size: 60%;
-    font-weight: bolder;
-    text-decoration: none;
-    position: relative;
-  }
-
-.topbar a:hover {
-    color: white;
-}
-.topbar a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px; /* Adjust the thickness of the underline */
-    background-color: white; /* Underline color */
-    left: 0;
-    bottom: -2px; /* Adjusts the position of the underline */
-    transition: width 0.3s ease-in-out; /* Animation effect */
-}
-
-.topbar a:hover::after {
-    width: 100%; /* Full width on hover */
-}
-
-
 .tab button {
     background-color: #6396bd;
     width: 125px;
@@ -832,7 +774,6 @@ body, html {
     overflow-y: auto;
 }
 
-.topbar-inner,
 .app-intro-inner,
 .tab-inner,
 .network-guide-inner,
@@ -847,46 +788,6 @@ body, html {
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;
-}
-
-.topbar {
-    display: block;
-    height: 64px;
-    padding: 0 24px;
-    background: var(--ptox-accent-dark);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 2px 10px rgba(23, 45, 74, 0.18);
-}
-
-.topbar-inner {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.topbar .logo {
-    height: 48px;
-    margin-right: 12px;
-}
-
-.topbar span {
-    letter-spacing: 0;
-}
-
-.topbar ul {
-    margin-left: auto;
-    padding-left: 24px;
-}
-
-.topbar li {
-    padding-left: 16px;
-}
-
-.topbar a {
-    font-size: 13px;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.82);
 }
 
 .tab {
@@ -980,7 +881,10 @@ body, html {
     max-width: 1400px;
 }
 
-.app-intro .publication-link {
+.app-intro-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 18px;
 }
 
@@ -1463,12 +1367,6 @@ body, html {
 
 
 /* About page */
-.topbar-logo-link {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-}
-
 .about-page {
     width: min(100%, var(--ptox-page-max));
     max-width: var(--ptox-page-max);

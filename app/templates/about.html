@@ -6,26 +6,15 @@
     <title>About | PrecisionTox Chemical Library</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/google-fonts/arimo/arimo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/top_nav.css') }}">
+    <script src="{{ url_for('static', filename='js/top_nav.js') }}" defer></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/font-awesome/6.5.2/css/all.min.css') }}">
     {% if jsonld %}
     <script type="application/ld+json">{{ jsonld|tojson }}</script>
     {% endif %}
 </head>
 <body>
-    <div class="topbar">
-        <div class="topbar-inner">
-            <a class="topbar-logo-link" href="{{ url_for('home') }}" aria-label="PrecisionTox Chemical Library home">
-                <img src="{{ url_for('static', filename='images/logos/ptox_logo_white.png') }}" alt="Logo" class="logo">
-            </a>
-            <span id="title_chemical">PrecisionTox Chemical Library</span>
-            <ul>
-                <li><a href="{{ url_for('home') }}">Explore</a></li>
-                <li><a href="{{ url_for('chemical_table') }}">Table</a></li>
-                <li><a href="{{ url_for('api.docs') }}">API</a></li>
-                <li><a href="https://precisiontox.org/" target="_blank" rel="noopener noreferrer">PrecisionTox</a></li>
-            </ul>
-        </div>
-    </div>
+    {% include "layout/top_nav.html" %}
 
     <main class="about-page">
         <section class="about-card" aria-label="About the PrecisionTox Chemical Library">

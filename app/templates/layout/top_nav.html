@@ -1,0 +1,24 @@
+<header class="top-nav">
+  <a class="brand" href="{{ dex_base_url }}/">
+    <img src="{{ url_for('static', filename='images/logos/ptox_logo_white.png') }}" alt="PTox logo">
+    <span><sup>PTox</sup>/<sub>DEx</sub> PrecisionTox Data Explorer</span>
+  </a>
+  <nav class="nav-links">
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-button" type="button" aria-haspopup="true" aria-expanded="false">
+        Omics Data
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="{{ dex_base_url }}/species-centric" role="menuitem">Species-Centric View</a>
+        <a href="{{ dex_base_url }}/chemical-centric" role="menuitem">Chemical-Centric View</a>
+        <a href="{{ dex_base_url }}/matrix" role="menuitem">The Matrix</a>
+        <a href="{{ dex_base_url }}/gene-metabolite" role="menuitem">Gene/Metabolite View</a>
+      </div>
+    </div>
+    <a href="{{ dex_base_url }}/phenotype" target="_blank" rel="noopener noreferrer">Phenotype Data</a>
+    <a href="{{ url_for('home') }}">Chemical Selection</a>
+    <a class="nav-links-api" href="{{ url_for('api.docs') }}">API</a>
+    <a href="{{ dex_base_url }}/downloads/">Downloads</a>
+  </nav>
+</header>
