@@ -4,9 +4,9 @@ import os
 from collections import OrderedDict
 from datetime import timedelta
 try:
-    from app.api import api_bp, chemical_jsonld, dataset_jsonld, get_chemical
+    from app.api import DEX_BASE_URL, api_bp, chemical_jsonld, dataset_jsonld, get_chemical
 except ImportError:  # running as `python app/main.py`
-    from api import api_bp, chemical_jsonld, dataset_jsonld, get_chemical
+    from api import DEX_BASE_URL, api_bp, chemical_jsonld, dataset_jsonld, get_chemical
 # from app import app
 app = Flask(__name__)
 app.register_blueprint(api_bp)
@@ -15,6 +15,12 @@ if APP_BASE_PATH:
     app.config['APPLICATION_ROOT'] = APP_BASE_PATH.rstrip('/') or '/'
 STATIC_CACHE_SECONDS = 60 * 60 * 24
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=STATIC_CACHE_SECONDS)
+
+
+@app.context_processor
+def inject_dex_base_url():
+    # Used by the shared top navigation bar to link back to the PTox/DEx main app
+    return {'dex_base_url': DEX_BASE_URL}
 
 
 def add_json_cache_headers(response):
