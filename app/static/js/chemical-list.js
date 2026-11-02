@@ -122,12 +122,12 @@ function loadChemList() {
                 let loaderTimeout;
 
                 chem_table.on('order.dt', function () {
-                    $('#loader').show();
+                    $('#loader').prop('hidden', false);
                     loaderTimeout = setTimeout(() => {}, 200); // Start timer
                 });
 
                 chem_table.on('draw.dt', function () {
-                    const hideLoader = () => $('#loader').hide();
+                    const hideLoader = () => $('#loader').prop('hidden', true);
                     if (loaderTimeout) {
                         clearTimeout(loaderTimeout);
                         setTimeout(hideLoader, 200); // Keep spinner for minimum time

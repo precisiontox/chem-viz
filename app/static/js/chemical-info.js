@@ -20,10 +20,10 @@ function displayChemicalInfo(selectedChem) {
             src='${imageBaseUrl}/chem_structures/${data.pubchem_cid}.png' 
             alt='<chemical structure image not found>' 
         >`
-        document.getElementById('chem-ptx-code').textContent = data.ptx_code || 'N/A';
-        document.getElementById('chem-name').textContent = data.chem_name || 'N/A';
-        document.getElementById('chem-common-name').textContent = data.chem_name_user || 'N/A';
-        document.getElementById('chem-cas').textContent = data.casrn || 'N/A';
+        document.getElementById('chem-ptx-code').textContent = displayValue(data.ptx_code);
+        document.getElementById('chem-name').textContent = displayValue(data.chem_name);
+        document.getElementById('chem-common-name').textContent = displayValue(data.chem_name_user);
+        document.getElementById('chem-cas').textContent = displayValue(data.casrn);
         document.getElementById('chem-dsstox-id').innerHTML = data.dtxsid
                 ? `<a href="https://comptox.epa.gov/dashboard/chemical/details/${data.dtxsid}" target="_blank" rel="noopener noreferrer">${data.dtxsid}</a>`
                 : 'N/A';
@@ -34,44 +34,44 @@ function displayChemicalInfo(selectedChem) {
         ? `<a href="https://go.drugbank.com/drugs/${data.drugbank_id}" target="_blank" rel="noopener noreferrer">${data.drugbank_id}</a>`
         : 'N/A';
         document.getElementById('chem-formula').innerHTML = formatMolecularFormula(data.formula) || 'N/A';
-        document.getElementById('chem-smiles').textContent = data.smiles || 'N/A';
-        document.getElementById('chem-inchi').textContent = data.inchikey || 'N/A';
-        document.getElementById('chem-use').textContent = data.use_class || 'N/A';
-        document.getElementById('chem-tox').textContent = data.tox_class || 'N/A';
+        document.getElementById('chem-smiles').textContent = displayValue(data.smiles);
+        document.getElementById('chem-inchi').textContent = displayValue(data.inchikey);
+        document.getElementById('chem-use').textContent = displayValue(data.use_class);
+        document.getElementById('chem-tox').textContent = displayValue(data.tox_class);
 
-        document.getElementById('chem-mw').textContent = data.mw_g_mol || 'N/A';
-        document.getElementById('chem-solubility').textContent = data.solubility_h2o_mol_liter || 'N/A';
-        document.getElementById('chem-source-solubility').textContent = data.source_solubility_h2o || 'N/A';
-        document.getElementById('chem-henry').textContent = data.henry_coefficient_atm_m3_mol || 'N/A';
-        document.getElementById('chem-source-henry').textContent = data.source_henry || 'N/A';
-        document.getElementById('chem-log-kaw').textContent = data.log_kaw_kh_rt || 'N/A';
-        document.getElementById('chem-source-kaw').textContent = data.source_kaw || 'N/A';
-        document.getElementById('chem-log-kow').textContent = data.log_kow_liter_liter || 'N/A';
-        document.getElementById('chem-source-kow').textContent = data.source_kow || 'N/A';
-        document.getElementById('chem-pka-acid').textContent = data.pka_acid || 'N/A';
-        document.getElementById('chem-source-pka-acid').textContent = data.source_pka || 'N/A';
-        document.getElementById('chem-pka-base').textContent = data.pka_base || 'N/A';
-        document.getElementById('chem-source-pka-base').textContent = data.source_pka || 'N/A';
-        document.getElementById('chem-log-dlipw').textContent = data.log_dlipw_ph74_liter_liter || 'N/A';
-        document.getElementById('chem-source-dlipw').textContent = data.source_dlipw || 'N/A';
-        document.getElementById('chem-fdf').textContent = data.freely_dissolved_fraction || 'N/A';
-        document.getElementById('chem-density').textContent = data.density_kg_liter || 'N/A';
-        document.getElementById('chem-source-density').textContent = data.source_density || 'N/A';
-        document.getElementById('chem-boiling').textContent = data.boiling_point || 'N/A';
-        document.getElementById('chem-source-boiling').textContent = data.source_boiling_point || 'N/A';
-        document.getElementById('chem-melting').textContent = data.melting_point || 'N/A';
-        document.getElementById('chem-source-melting').textContent = data.source_melting_point || 'N/A';
-        document.getElementById('chem-vapor-pressure').textContent = data.vapor_pressure || 'N/A';
-        document.getElementById('chem-source-vapor-pressure').textContent = data.source_vapor_pressure || 'N/A';
-        document.getElementById('base-tox-celegans').textContent = data.baseline_celegans || 'N/A';
-        document.getElementById('base-tox-drerio').textContent = data.baseline_drerio || 'N/A';
-        document.getElementById('base-tox-dmagna').textContent = data.baseline_dmagna || 'N/A';
-        document.getElementById('base-tox-dmelanogaster').textContent = data.baseline_dmelanogaster || 'N/A';
-        document.getElementById('base-tox-cells').textContent = data.baseline_cells || 'N/A';
-        document.getElementById('base-tox-cells-generic').textContent = data.baseline_cells_generic_micromole_liter_free_ec10 || 'N/A';
-        document.getElementById('base-tox-xlaevis').textContent = data.baseline_xlaevis || 'N/A';
-        document.getElementById('moa-drugbank').textContent = data.moa_drugbank || 'N/A';
-        document.getElementById('moa-t3db').textContent = data.moa_t3db || 'N/A';
+        document.getElementById('chem-mw').textContent = displayValue(data.mw_g_mol);
+        document.getElementById('chem-solubility').textContent = displayValue(data.solubility_h2o_mol_liter);
+        document.getElementById('chem-source-solubility').textContent = displayValue(data.source_solubility_h2o);
+        document.getElementById('chem-henry').textContent = displayValue(data.henry_coefficient_atm_m3_mol);
+        document.getElementById('chem-source-henry').textContent = displayValue(data.source_henry);
+        document.getElementById('chem-log-kaw').textContent = displayValue(data.log_kaw_kh_rt);
+        document.getElementById('chem-source-kaw').textContent = displayValue(data.source_kaw);
+        document.getElementById('chem-log-kow').textContent = displayValue(data.log_kow_liter_liter);
+        document.getElementById('chem-source-kow').textContent = displayValue(data.source_kow);
+        document.getElementById('chem-pka-acid').textContent = displayValue(data.pka_acid);
+        document.getElementById('chem-source-pka-acid').textContent = displayValue(data.source_pka);
+        document.getElementById('chem-pka-base').textContent = displayValue(data.pka_base);
+        document.getElementById('chem-source-pka-base').textContent = displayValue(data.source_pka);
+        document.getElementById('chem-log-dlipw').textContent = displayValue(data.log_dlipw_ph74_liter_liter);
+        document.getElementById('chem-source-dlipw').textContent = displayValue(data.source_dlipw);
+        document.getElementById('chem-fdf').textContent = displayValue(data.freely_dissolved_fraction);
+        document.getElementById('chem-density').textContent = displayValue(data.density_kg_liter);
+        document.getElementById('chem-source-density').textContent = displayValue(data.source_density);
+        document.getElementById('chem-boiling').textContent = displayValue(data.boiling_point);
+        document.getElementById('chem-source-boiling').textContent = displayValue(data.source_boiling_point);
+        document.getElementById('chem-melting').textContent = displayValue(data.melting_point);
+        document.getElementById('chem-source-melting').textContent = displayValue(data.source_melting_point);
+        document.getElementById('chem-vapor-pressure').textContent = displayValue(data.vapor_pressure);
+        document.getElementById('chem-source-vapor-pressure').textContent = displayValue(data.source_vapor_pressure);
+        document.getElementById('base-tox-celegans').textContent = displayValue(data.baseline_celegans);
+        document.getElementById('base-tox-drerio').textContent = displayValue(data.baseline_drerio);
+        document.getElementById('base-tox-dmagna').textContent = displayValue(data.baseline_dmagna);
+        document.getElementById('base-tox-dmelanogaster').textContent = displayValue(data.baseline_dmelanogaster);
+        document.getElementById('base-tox-cells').textContent = displayValue(data.baseline_cells);
+        document.getElementById('base-tox-cells-generic').textContent = displayValue(data.baseline_cells_generic_micromole_liter_free_ec10);
+        document.getElementById('base-tox-xlaevis').textContent = displayValue(data.baseline_xlaevis);
+        document.getElementById('moa-drugbank').textContent = displayValue(data.moa_drugbank);
+        document.getElementById('moa-t3db').textContent = displayValue(data.moa_t3db);
         populateAopTable(data.aop || []);
         populateTargetsTable(data.targets || []);
         showTable('phys-properties-table');

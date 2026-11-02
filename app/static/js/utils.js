@@ -34,6 +34,11 @@ function redirectToChemical(selectedChem) {
     }
 }
 
+function displayValue(value) {
+    // Unlike `value || 'N/A'`, keeps numeric 0 values
+    return value === null || value === undefined || value === '' ? 'N/A' : value;
+}
+
 function formatMolecularFormula(formula) {
     // Ensure the input is a string before applying the regex
     if (typeof formula !== "string") {

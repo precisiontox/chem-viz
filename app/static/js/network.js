@@ -394,7 +394,7 @@ function commonNetworkFeatures() {
                 "<div class='qtip-content' style='max-height: 200px; overflow-y: auto; position: relative;'>" +
                 
                 "<div style='position: absolute; top: 5px; right: 5px;'>" +
-                "<a href='" + buildChemicalPath(this.data("ptx_code")) + "' target='_blank' rel='noopener noreferrer' style='display: inline-flex; align-items: center; background-color: #004880; color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px;'>" +
+                "<a href='" + buildChemicalPath(this.data("ptx_code")) + "' target='_blank' rel='noopener noreferrer' style='display: inline-flex; align-items: center; background-color: #054a81; color: white; padding: 4px 8px; border-radius: 4px; text-decoration: none; font-size: 12px;'>" +
                 "<i class='fas fa-search-plus' style='margin-right: 4px;'></i>Go to chemical" +
                 "</a></div>" +
 

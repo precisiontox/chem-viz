@@ -13,14 +13,14 @@ const generalNetworkStyle = [
             "font-size": "25px",
             "font-weight": "bold",
             "border-width": "5px",
-            "border-color": "#004880",
+            "border-color": "#054a81",
         }
     },
     {
         selector: "node.hl2",
         style: {
             "border-width": "5px",
-            "border-color": "#004880",
+            "border-color": "#054a81",
         }
     },
     {
@@ -48,9 +48,9 @@ const generalNetworkStyle = [
             "pie-8-background-color": "data(category_color_8)",
             "pie-8-background-size": "data(category_slice_8)",
             "border-width": "2px",
-            "border-color": "#172d4a",
+            "border-color": "#102230",
             "label": "data(name)",
-            "color": "#172d4a",
+            "color": "#102230",
             "font-weight": "bold"
         }
     },
@@ -58,11 +58,11 @@ const generalNetworkStyle = [
         selector: "node[role='chem'].hl, node[role='chem']:selected",
         style: {
             "background-color": "#9a999a",
-            "border-color": "#004880",
+            "border-color": "#054a81",
             "border-width": "5px",
             "color": "white", 
             "text-background-shape": "round-rectangle",
-            "text-background-color": "#004880",
+            "text-background-color": "#054a81",
             "text-background-opacity": "1",
             // "label": "data(label)",
         }
@@ -77,7 +77,7 @@ const generalNetworkStyle = [
     {
         selector: "node[role='chem'].hl2",
         style: {
-            "border-color": "#004880",
+            "border-color": "#054a81",
             "border-width": "5px"
         }
 
@@ -109,7 +109,7 @@ const generalNetworkStyle = [
     {
         selector: "edge.hl, edge:selected",
         style: {
-            "line-color": "#004880",
+            "line-color": "#054a81",
             "z-index": "1"
         }
     },
@@ -157,8 +157,8 @@ const generalNetworkStyle = [
             "height": "85px",
             "font-size": "27px",
             "border-width": "5px",
-            "border-color": "#004880",
-            "color": "#004880"
+            "border-color": "#054a81",
+            "color": "#054a81"
         }
     }
 ];
@@ -172,15 +172,15 @@ const singleNetworkStyle = [
             "height": "50px",
             "background-color": "#f0f0f0",
             "border-width": "5px",
-            "border-color": "#172d4a",
+            "border-color": "#102230",
             "label": "data(name)",
-            "color": "#172d4a",
+            "color": "#102230",
             "font-size": "20px",
             "font-weight": "bold",
             "text-valign": "center",
             "color": "white",
             "text-background-shape": "round-rectangle",
-            "text-background-color": "#172d4a",
+            "text-background-color": "#102230",
             "text-background-opacity": "1",
             "text-wrap": "wrap",
             "text-max-width": "200px"
@@ -194,26 +194,26 @@ const singleNetworkStyle = [
             "font-size": "25px",
             "font-weight": "bold",
             "border-width": "5px",
-            "border-color": "#004880",
+            "border-color": "#054a81",
             "background-color": "#9a999a",
-            "border-color": "#004880",
+            "border-color": "#054a81",
             "color": "white", 
             "text-background-shape": "round-rectangle",
-            "text-background-color": "#004880",
+            "text-background-color": "#054a81",
             "text-background-opacity": "1",
         }
     },
     {
         selector: "edge[role='attribute']",
         style: {
-            "line-color": "#172d4a",
+            "line-color": "#102230",
             "width": "10px"
         }
     },
     {
         selector: "edge[role='attribute'].hl, edge[role='attribute']:selected",
         style: {
-            "line-color": "#004880",
+            "line-color": "#054a81",
             "width": "15px"
         }
     },
@@ -241,7 +241,7 @@ const singleNetworkStyle = [
     {
         selector: "node[role='isolated-attribute']:selected",
         style: {
-            "border-color": "#004880",
+            "border-color": "#054a81",
             "border-opacity": "1"
         }
     },
@@ -272,8 +272,8 @@ const singleNetworkStyle = [
             "width": "82px",
             "height": "82px",
             "font-size": "22px",
-            "border-color": "#004880",
-            "text-outline-color": "#004880",
+            "border-color": "#054a81",
+            "text-outline-color": "#054a81",
         }
     },
     {
@@ -311,9 +311,9 @@ const singleNetworkStyle = [
             "width": "53px",
             "height": "53px",
             "font-size": "20px",
-            "border-color": "#004880",
+            "border-color": "#054a81",
             "border-opacity": "1",
-            "color": "#004880"
+            "color": "#054a81"
         }
     },
     {
@@ -331,7 +331,7 @@ const singleNetworkStyle = [
     {
         selector: "edge[role^='category'].hl, edge[role^='category']:selected",
         style: {
-            "line-color": "#004880",
+            "line-color": "#054a81",
             "width": "5px"
         }
     },
@@ -360,8 +360,8 @@ const singleNetworkStyle = [
             "height": "53px",
             "label": "data(hlLabel)",
             "font-size": "18px",
-            "color": "#004880",
-            "border-color": "#004880",
+            "color": "#054a81",
+            "border-color": "#054a81",
             "border-opacity": "1",
         }
     },
@@ -394,9 +394,9 @@ const singleNetworkStyle = [
         style:{
             "width": "52px",
             "height": "52px",
-            "color": "#004880",
+            "color": "#054a81",
             "font-size": "18px",
-            "border-color": "#004880",
+            "border-color": "#054a81",
             "border-opacity": "1",
         }
     },
@@ -428,8 +428,8 @@ const singleNetworkStyle = [
         style: {
             "width": "52px",
             "height": "52px",
-            "color": "#004880",
-            "border-color": "#004880",
+            "color": "#054a81",
+            "border-color": "#054a81",
             "border-opacity": "1",
             "label": "data(fullLabel)",
             "font-size": "18px",
@@ -443,8 +443,8 @@ const singleNetworkStyle = [
         style: {
             "width": "52px",
             "height": "52px",
-            "color": "#004880",
-            "border-color": "#004880",
+            "color": "#054a81",
+            "border-color": "#054a81",
             "border-opacity": "1"
         }
     },
@@ -477,8 +477,8 @@ const singleNetworkStyle = [
         style: {
             "width": "52px",
             "height": "52px",
-            "color": "#004880",
-            "border-color": "#004880",
+            "color": "#054a81",
+            "border-color": "#054a81",
             "border-opacity": "1",
             "font-size": "18px",
             "font-weight": "bold",
