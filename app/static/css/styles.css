@@ -870,28 +870,21 @@ body, html {
     border: 1px solid var(--ptox-line);
     border-radius: var(--ptox-panel-radius);
     background: linear-gradient(135deg, #ffffff 0%, #f1f7fb 100%);
-    padding: 24px 28px;
+    padding: 1.25rem;
     box-shadow: var(--ptox-panel-shadow);
 }
 
 .app-intro-copy {
     min-width: 0;
-    padding-left: 16px;
-    border-left: 4px solid var(--ptox-accent);
 }
 
+/* Title and copy sized like the main app's home hero (default h1 + 16px body text) */
 .app-intro .app-intro-header {
-    margin: 0 0 14px;
+    margin: 0.67em 0;
     color: var(--ptox-ink);
-    font-size: 30px;
-    font-weight: 800;
-    line-height: 1.08;
-}
-
-.app-intro-header {
-    color: var(--ptox-ink);
-    line-height: 1.2;
-    font-weight: 3000;
+    font-size: 2em;
+    font-weight: 700;
+    line-height: normal;
 }
 
 .app-intro-columns {
@@ -903,9 +896,9 @@ body, html {
 .app-intro p {
     margin: 0;
     color: var(--ptox-text);
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.55;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.62;
     max-width: 1400px;
 }
 
@@ -1727,10 +1720,6 @@ body, html {
 @media (max-width: 900px) {
     .network-guide-inner {
         grid-template-columns: 1fr;
-    }
-
-    .app-intro-copy {
-        padding-left: 12px;
     }
 
     .app-intro-columns {
