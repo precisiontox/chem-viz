@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ptox Chemical Selection</title>
+    <title>PrecisionTox Chemical Library</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logos/logo_original.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/top_nav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/boxicons/2.1.4/boxicons.min.css') }}">
@@ -71,7 +72,7 @@
                 </p>
 
                 <div class="app-intro-links">
-                    <a class="publication-link" href="#publication-link" target="_blank" rel="noopener noreferrer">
+                    <a class="publication-link" href="{{ publication_url }}" target="_blank" rel="noopener noreferrer">
                         <i class="fa-solid fa-file-lines"></i> Publication
                     </a>
                     <a class="publication-link" href="{{ url_for('about') }}">
@@ -428,8 +429,11 @@
         </div>
     </div>
         
-    <div id="loader" style="display: none;">
-        <div class="spinner"></div>
+    <div id="loader" class="loading-overlay" hidden>
+        <div class="loading-overlay-card">
+            <div class="loading-spinner" aria-hidden="true"></div>
+            <p>Loading data...</p>
+        </div>
     </div>
 
     <div id="chem_list" class="tabcontent">

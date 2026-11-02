@@ -4,9 +4,9 @@ import os
 from collections import OrderedDict
 from datetime import timedelta
 try:
-    from app.api import DEX_BASE_URL, api_bp, chemical_jsonld, dataset_jsonld, get_chemical
+    from app.api import CITATION_DOI, DEX_BASE_URL, api_bp, chemical_jsonld, dataset_jsonld, get_chemical
 except ImportError:  # running as `python app/main.py`
-    from api import DEX_BASE_URL, api_bp, chemical_jsonld, dataset_jsonld, get_chemical
+    from api import CITATION_DOI, DEX_BASE_URL, api_bp, chemical_jsonld, dataset_jsonld, get_chemical
 # from app import app
 app = Flask(__name__)
 app.register_blueprint(api_bp)
@@ -18,9 +18,9 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=STATIC_CACHE_SECONDS
 
 
 @app.context_processor
-def inject_dex_base_url():
-    # Used by the shared top navigation bar to link back to the PTox/DEx main app
-    return {'dex_base_url': DEX_BASE_URL}
+def inject_template_globals():
+    # dex_base_url: used by the shared top navigation bar to link back to the PTox/DEx main app
+    return {'dex_base_url': DEX_BASE_URL, 'publication_url': CITATION_DOI}
 
 
 def add_json_cache_headers(response):
