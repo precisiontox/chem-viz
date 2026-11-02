@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrecisionTox Chemical Library</title>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logos/logo_original.png') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/top_nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css', v=config.ASSET_VERSION) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/top_nav.css', v=config.ASSET_VERSION) }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/boxicons/2.1.4/boxicons.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/font-awesome/6.5.2/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='vendor/qtip2/3.0.3/jquery.qtip.min.css') }}">
@@ -38,16 +38,16 @@
         const selectedTabFromURL = "{{ selected_tab|default('network_view') }}";
         const appBasePath = "{{ request.script_root or config.get('APPLICATION_ROOT', '') }}";
     </script>
-    <script src="{{ url_for('static', filename='js/layouts.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/styles.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/state.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/utils.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/category-info.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/chemical-info.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/chemical-list.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/network.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/top_nav.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/layouts.js', v=config.ASSET_VERSION) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/styles.js', v=config.ASSET_VERSION) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/state.js', v=config.ASSET_VERSION) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/utils.js', v=config.ASSET_VERSION) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/category-info.js', v=config.ASSET_VERSION) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/chemical-info.js', v=config.ASSET_VERSION) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/chemical-list.js', v=config.ASSET_VERSION) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/network.js', v=config.ASSET_VERSION) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/main.js', v=config.ASSET_VERSION) }}" defer></script>
+    <script src="{{ url_for('static', filename='js/top_nav.js', v=config.ASSET_VERSION) }}" defer></script>
     {% if jsonld_alternate %}
     <link rel="alternate" type="application/ld+json" href="{{ jsonld_alternate }}?format=jsonld">
     <link rel="alternate" type="application/json" href="{{ jsonld_alternate }}">

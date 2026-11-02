@@ -647,10 +647,6 @@ input[type="range"]:focus {
     max-height: calc(100vh - 150px); /* Adjust based on available space */
     overflow-y: auto; /* Ensures the table and footer stay within tab boundaries */
 }
-/* DataTable header (column headers) background color */
-.dataTables_wrapper .dataTables_scrollHead thead {
-    background: linear-gradient(90deg, #054a81, #007cc1) !important;
-}
 .dataTables_wrapper .dataTables_scrollHead th {
     color: white;
     font-size: 14px;
@@ -1184,22 +1180,77 @@ body, html {
 }
 
 .dropdown select,
-.select2-container--default .select2-selection--single {
-    min-height: 38px;
-    border: 1px solid var(--ptox-line);
-    border-radius: 6px;
-    background: #ffffff;
+/* Select2 picker styled like the main app's single Selectize control (selectize.default.css).
+   "body" outranks select2.min.css, which loads after this file */
+body .select2-container--default .select2-selection--single {
+    height: auto;
+    min-height: 36px;
+    border: 1px solid #b8b8b8;
+    border-radius: 3px;
+    background-color: #f9f9f9;
+    background-image: linear-gradient(to bottom, #fefefe, #f2f2f2);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     color: var(--ptox-text);
     font-size: 13px;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__rendered {
-    line-height: 36px;
+body .select2-container--default.select2-container--open .select2-selection--single {
+    border-radius: 3px 3px 0 0;
+    background: #ffffff;
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__rendered {
+    padding: 8px 30px 8px 8px;
+    line-height: 18px;
     color: var(--ptox-text);
 }
 
-.select2-container--default .select2-selection--single .select2-selection__arrow {
-    height: 36px;
+body .select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: #999999;
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 0;
+    right: 10px;
+    height: 100%;
+}
+
+body .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #808080 transparent transparent transparent;
+    border-width: 5px 5px 0 5px;
+}
+
+body .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #808080 transparent;
+    border-width: 0 5px 5px 5px;
+}
+
+body .select2-container--default .select2-dropdown {
+    border-color: #b8b8b8;
+    border-radius: 0 0 3px 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 13px;
+}
+
+body .select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid #d0d0d0;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+body .select2-container--default .select2-results__option {
+    padding: 5px 8px;
+    line-height: 18px;
+}
+
+body .select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background: #f5fafd;
+    color: #495c68;
+}
+
+body .select2-container--default .select2-results__option[aria-selected=true] {
+    background: #d9ebf7;
+    color: #08395d;
 }
 
 .main-panel {
@@ -1435,9 +1486,9 @@ body, html {
 .about-section p,
 .about-section li {
     color: var(--ptox-text);
-    font-size: 17px;
-    font-weight: 500;
-    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.62;
 }
 
 .about-hero p {
@@ -1595,12 +1646,13 @@ body, html {
     background: var(--ptox-hover);
 }
 
+/* Endpoint cards, method pills and code blocks as in the main app's API page */
 .api-endpoint {
     margin-top: 16px;
-    padding: 14px 16px;
+    padding: 1rem 1rem 1.1rem;
     border: 1px solid var(--ptox-line);
-    border-radius: 10px;
-    background: #ffffff;
+    border-radius: 14px;
+    background: #fbfdfe;
 }
 
 .api-section .api-endpoint p {
@@ -1613,33 +1665,41 @@ body, html {
 
 .api-method {
     display: inline-block;
+    min-width: 3.6rem;
     margin-right: 6px;
-    padding: 2px 8px;
-    border-radius: 5px;
-    background: var(--ptox-accent);
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 0.03em;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    background: #d9ecfa;
+    color: #0b4f80;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
     vertical-align: 1px;
+}
+
+.api-method-get {
+    background: #e8f4df;
+    color: #2b6b1f;
 }
 
 .api-page pre.api-code {
     margin: 8px 0 0;
-    padding: 12px 14px;
-    border-radius: 8px;
-    background: var(--ptox-ink);
-    overflow-x: auto;
+    padding: 1rem;
+    border-radius: 14px;
+    background: #0f2232;
+    overflow: auto;
 }
 
 .api-page pre.api-code code {
     padding: 0;
-    background: none;
-    color: #e6edf5;
+    background: transparent;
+    color: #f3f8fb;
     font-size: 14px;
     line-height: 1.5;
-    white-space: pre;
-    overflow-wrap: normal;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .api-page pre.api-code + pre.api-code {

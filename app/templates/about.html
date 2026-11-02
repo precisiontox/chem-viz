@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About · PrecisionTox Chemical Library</title>
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logos/logo_original.png') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/top_nav.css') }}">
-    <script src="{{ url_for('static', filename='js/top_nav.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css', v=config.ASSET_VERSION) }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/top_nav.css', v=config.ASSET_VERSION) }}">
+    <script src="{{ url_for('static', filename='js/top_nav.js', v=config.ASSET_VERSION) }}" defer></script>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/font-awesome/6.5.2/css/all.min.css') }}">
     {% if jsonld %}
     <script type="application/ld+json">{{ jsonld|tojson }}</script>

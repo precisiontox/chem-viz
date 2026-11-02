@@ -2,6 +2,7 @@ from flask import Flask, render_template, Response, jsonify, redirect, url_for
 import json
 import os
 from collections import OrderedDict
+import time
 from datetime import timedelta
 try:
     from app.api import CITATION_DOI, DEX_BASE_URL, api_bp, chemical_jsonld, dataset_jsonld, get_chemical
@@ -15,6 +16,8 @@ if APP_BASE_PATH:
     app.config['APPLICATION_ROOT'] = APP_BASE_PATH.rstrip('/') or '/'
 STATIC_CACHE_SECONDS = 60 * 60 * 24
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = timedelta(seconds=STATIC_CACHE_SECONDS)
+# Appended as ?v= to our CSS/JS links so browsers fetch new files after a deploy (same as the main app)
+app.config['ASSET_VERSION'] = os.environ.get('PTOX_ASSET_VERSION', str(int(time.time())))
 
 
 @app.context_processor
