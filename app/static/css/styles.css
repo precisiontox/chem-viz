@@ -611,10 +611,17 @@ input[type="range"]:focus {
     font-weight: bold; /* Optional: make the text bold */
 }
 
-/* Apply styles to the first column of the Baseline Toxicity table */
-#baseline-tox-table td:first-child {
+/* Apply styles to the first column of the Baseline Toxicity and Exposure Doses tables */
+#baseline-tox-table td:first-child,
+#exposure-dose-table td:first-child {
     color: #054a81; /* Change this color to your preferred choice */
     font-weight: bold; /* Optional: make the text bold */
+}
+
+.chem-table-note {
+    color: #555;
+    font-size: 0.85em;
+    margin: 8px 0 0;
 }
 
 /* Responsive Design */

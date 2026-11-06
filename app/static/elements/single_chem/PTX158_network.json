@@ -22,14 +22,14 @@
                   "log_kaw_kh_rt": "6.91718085174846",
                   "source_kaw": "LSER eq 1 exp. Descriptors",
                   "pka_acid": "8.5",
-                  "pka_base": "",
+                  "pka_base": "NA",
                   "source_pka": "ACD pKa/GALAS",
                   "log_kow_liter_liter": "1.96",
-                  "source_kow": "",
+                  "source_kow": "NA",
                   "log_dlipw_ph74_liter_liter": "2.1502404747633",
                   "source_dlipw": "LSER",
                   "freely_dissolved_fraction": "0.934378342340487",
-                  "density_kg_liter": "",
+                  "density_kg_liter": "NA",
                   "source_density": "COMPTOX",
                   "boiling_point": "275.0",
                   "source_boiling_point": "CompTox (Oxford University Chemical Safety Data (No longer updated)",
@@ -248,12 +248,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: ACD pKa/GALAS",
+                  "combinedLabel": "pKa (base):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (base):\nn/a\nSource: ACD pKa/GALAS",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -264,7 +264,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n1.96 ",
                   "value": "1.96",
-                  "hlLabel": "Log Kow:\n1.96 ",
+                  "hlLabel": "Log Kow:\n1.96 \nSource: NA",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -304,12 +304,12 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density:\n kg/liter",
-                  "value": "",
-                  "hlLabel": "Density:\n kg/liter\nSource: COMPTOX",
+                  "combinedLabel": "Density:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Density:\nn/a\nSource: COMPTOX",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -411,7 +411,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -451,7 +451,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -489,7 +489,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n1233.85",
+                  "label": "D. rerio:\n1233.85 \u00b5M",
                   "value": "1233.84876289429",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -501,7 +501,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n580.29",
+                  "label": "D. magna:\n580.29 \u00b5M",
                   "value": "580.290411955705",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -513,7 +513,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n1263.82",
+                  "label": "C. elegans:\n1263.82 \u00b5M",
                   "value": "1263.82211669605",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -525,7 +525,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n373.99",
+                  "label": "X. laevis:\n373.99 \u00b5M",
                   "value": "373.988698670525",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -537,7 +537,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n5110.07",
+                  "label": "D. melanogaster:\n5110.07 \u00b5M feed",
                   "value": "5110.06857890751",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n2.17e-04",
-                  "value": "0.000216951126462399",
+                  "label": "HepG2 cells, nominal IC10:\n216.95 \u00b5M",
+                  "value": "216.951126462399",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n2.03e-04",
-                  "value": "0.000202714433912837",
+                  "label": "HepG2 cells, free IC10:\n202.71 \u00b5M",
+                  "value": "202.714433912837",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"

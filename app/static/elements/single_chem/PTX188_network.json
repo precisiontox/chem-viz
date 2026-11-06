@@ -25,7 +25,7 @@
                   "pka_base": "7.45",
                   "source_pka": "UFZ; Sirius T3",
                   "log_kow_liter_liter": "0.87",
-                  "source_kow": "",
+                  "source_kow": "NA",
                   "log_dlipw_ph74_liter_liter": "0.76",
                   "source_dlipw": "Kow QSAR (\u2206mw = 1)",
                   "freely_dissolved_fraction": "0.941697298680189",
@@ -264,7 +264,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n0.87 ",
                   "value": "0.87",
-                  "hlLabel": "Log Kow:\n0.87 ",
+                  "hlLabel": "Log Kow:\n0.87 \nSource: NA",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -489,7 +489,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n166451.23",
+                  "label": "D. rerio:\n166451.23 \u00b5M",
                   "value": "166451.226647879",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -501,7 +501,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n33194.49",
+                  "label": "D. magna:\n33194.49 \u00b5M",
                   "value": "33194.4899590574",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -513,7 +513,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n70966.44",
+                  "label": "C. elegans:\n70966.44 \u00b5M",
                   "value": "70966.43679966",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -525,7 +525,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n7652.30",
+                  "label": "X. laevis:\n7652.30 \u00b5M",
                   "value": "7652.30180207149",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -537,7 +537,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n303649.00",
+                  "label": "D. melanogaster:\n303649.00 \u00b5M feed",
                   "value": "303648.996357779",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n2.93e-03",
-                  "value": "0.00292732463077673",
+                  "label": "HepG2 cells, nominal IC10:\n2927.32 \u00b5M",
+                  "value": "2927.32463077673",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n2.76e-03",
-                  "value": "0.00275665369716243",
+                  "label": "HepG2 cells, free IC10:\n2756.65 \u00b5M",
+                  "value": "2756.65369716243",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"

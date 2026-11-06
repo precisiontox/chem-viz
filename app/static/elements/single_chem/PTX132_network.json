@@ -22,14 +22,14 @@
                   "log_kaw_kh_rt": "5.93144585209998",
                   "source_kaw": "LSER",
                   "pka_acid": "10.0",
-                  "pka_base": "",
+                  "pka_base": "NA",
                   "source_pka": "ACD/GALAS",
                   "log_kow_liter_liter": "8.324",
-                  "source_kow": "",
+                  "source_kow": "NA",
                   "log_dlipw_ph74_liter_liter": "8.5262595455429",
                   "source_dlipw": "Kow-QSAR (\u2206mw=1)",
                   "freely_dissolved_fraction": "3.34099987998436E-5",
-                  "density_kg_liter": "",
+                  "density_kg_liter": "NA",
                   "source_density": "COMPTOX",
                   "boiling_point": "430.0; 576.696; 611.07; 674.782",
                   "source_boiling_point": "CompTox, predicted (OPERA 2.6; TEST; EPISUITE; ACD/Labs)",
@@ -248,12 +248,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (base):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (base):\nn/a\nSource: ACD/GALAS",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -264,7 +264,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n8.32 ",
                   "value": "8.324",
-                  "hlLabel": "Log Kow:\n8.32 ",
+                  "hlLabel": "Log Kow:\n8.32 \nSource: NA",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -304,12 +304,12 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density:\n kg/liter",
-                  "value": "",
-                  "hlLabel": "Density:\n kg/liter\nSource: COMPTOX",
+                  "combinedLabel": "Density:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Density:\nn/a\nSource: COMPTOX",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -411,7 +411,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -451,7 +451,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -489,7 +489,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n6.01e-04",
+                  "label": "D. rerio:\n6.01e-04 \u00b5M",
                   "value": "0.000601177959350757",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -501,7 +501,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n3.65e-03",
+                  "label": "D. magna:\n3.65e-03 \u00b5M",
                   "value": "0.00364606070804575",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -513,7 +513,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n8.42e-03",
+                  "label": "C. elegans:\n8.42e-03 \u00b5M",
                   "value": "0.00841619932476012",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -525,7 +525,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n0.05",
+                  "label": "X. laevis:\n0.05 \u00b5M",
                   "value": "0.0487472430655514",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -537,7 +537,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n0.03",
+                  "label": "D. melanogaster:\n0.03 \u00b5M feed",
                   "value": "0.0282747650415549",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n2.32e-06",
-                  "value": "2.31652687174454e-06",
+                  "label": "HepG2 cells, nominal IC10:\n2.32 \u00b5M",
+                  "value": "2.31652687174454",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n7.74e-11",
-                  "value": "7.73951600047907e-11",
+                  "label": "HepG2 cells, free IC10:\n7.74e-05 \u00b5M",
+                  "value": "7.73951600047907e-05",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"

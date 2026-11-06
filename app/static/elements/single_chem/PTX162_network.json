@@ -21,15 +21,15 @@
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "6.96146996733418",
                   "source_kaw": "LSER",
-                  "pka_acid": "",
-                  "pka_base": "",
+                  "pka_acid": "NA",
+                  "pka_base": "NA",
                   "source_pka": "ACD/GALAS",
                   "log_kow_liter_liter": "3.811",
-                  "source_kow": "",
+                  "source_kow": "NA",
                   "log_dlipw_ph74_liter_liter": "3.9691099999999992",
                   "source_dlipw": "Kow QSAR (\u2206mw = 1)",
                   "freely_dissolved_fraction": "0.0796620181678073",
-                  "density_kg_liter": "",
+                  "density_kg_liter": "NA",
                   "source_density": "COMPTOX",
                   "boiling_point": "408.0; 833.757",
                   "source_boiling_point": "CompTox, predicted (OPERA 2.6; ACD/Labs)",
@@ -234,12 +234,12 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (acid):\n \nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (acid):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (acid):\nn/a\nSource: ACD/GALAS",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -248,12 +248,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: ACD/GALAS",
+                  "combinedLabel": "pKa (base):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (base):\nn/a\nSource: ACD/GALAS",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -264,7 +264,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n3.81 ",
                   "value": "3.811",
-                  "hlLabel": "Log Kow:\n3.81 ",
+                  "hlLabel": "Log Kow:\n3.81 \nSource: NA",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -304,12 +304,12 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density:\n kg/liter",
-                  "value": "",
-                  "hlLabel": "Density:\n kg/liter\nSource: COMPTOX",
+                  "combinedLabel": "Density:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Density:\nn/a\nSource: COMPTOX",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -401,7 +401,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_acid",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -411,7 +411,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -451,7 +451,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -489,7 +489,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n19.52",
+                  "label": "D. rerio:\n19.52 \u00b5M",
                   "value": "19.5245530082426",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -501,7 +501,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n18.42",
+                  "label": "D. magna:\n18.42 \u00b5M",
                   "value": "18.4217040093816",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -513,7 +513,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n43.15",
+                  "label": "C. elegans:\n43.15 \u00b5M",
                   "value": "43.1539843763783",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -525,7 +525,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n29.15",
+                  "label": "X. laevis:\n29.15 \u00b5M",
                   "value": "29.1488400427178",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -537,7 +537,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n161.72",
+                  "label": "D. melanogaster:\n161.72 \u00b5M feed",
                   "value": "161.721888818266",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n1.05e-05",
-                  "value": "1.04692855000501e-05",
+                  "label": "HepG2 cells, nominal IC10:\n10.47 \u00b5M",
+                  "value": "10.4692855000501",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n8.34e-07",
-                  "value": "8.34004411708954e-07",
+                  "label": "HepG2 cells, free IC10:\n0.83 \u00b5M",
+                  "value": "0.834004411708954",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"

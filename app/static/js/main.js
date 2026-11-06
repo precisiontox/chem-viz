@@ -21,11 +21,9 @@ function openTab(evt, tabName) {
 
 function showTable(tableId) {
     // Hide tables
-    document.getElementById('phys-properties-table').style.display = 'none';
-    document.getElementById('baseline-tox-table').style.display = 'none';
-    document.getElementById('aop-table').style.display = 'none';
-    document.getElementById('targets-table').style.display = 'none';
-    document.getElementById('moa-table').style.display = 'none';
+    document.querySelectorAll('.chem-table-container').forEach(table => {
+        table.style.display = 'none';
+    });
 
     // Remove 'active' class from buttons
     document.querySelectorAll('.table-tab-btn').forEach(button => {
@@ -36,17 +34,7 @@ function showTable(tableId) {
     document.getElementById(tableId).style.display = 'block';
 
     // Add 'active' class to the clicked button
-    if (tableId === 'phys-properties-table') {
-        document.querySelector('.table-tab-btn:nth-child(1)').classList.add('active');
-    } else if (tableId === 'baseline-tox-table') {
-        document.querySelector('.table-tab-btn:nth-child(2)').classList.add('active');
-    } else if (tableId === 'aop-table') {
-        document.querySelector('.table-tab-btn:nth-child(3)').classList.add('active');
-    } else if (tableId === 'targets-table') {
-        document.querySelector('.table-tab-btn:nth-child(4)').classList.add('active');
-    } else if (tableId === 'moa-table') {
-        document.querySelector('.table-tab-btn:nth-child(5)').classList.add('active');
-    }
+    document.querySelector(`.table-tab-btn[data-table-target="${tableId}"]`).classList.add('active');
 }
 
 function normalizePath(path) {

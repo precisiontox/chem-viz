@@ -21,11 +21,11 @@
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "6.02352048954262",
                   "source_kaw": "LSER eq 1 exp. Descriptors",
-                  "pka_acid": "",
+                  "pka_acid": "NA",
                   "pka_base": "-1.5; 4.34",
                   "source_pka": "UFZ; Sirius T3",
                   "log_kow_liter_liter": "3.56",
-                  "source_kow": "",
+                  "source_kow": "NA",
                   "log_dlipw_ph74_liter_liter": "3.4099999999999997",
                   "source_dlipw": "Kow QSAR (\u2206mw = 1)",
                   "freely_dissolved_fraction": "0.289387078129027",
@@ -234,12 +234,12 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (acid):\n \nSource: UFZ; Sirius T3",
+                  "combinedLabel": "pKa (acid):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (acid):\nn/a\nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -264,7 +264,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n3.56 ",
                   "value": "3.56",
-                  "hlLabel": "Log Kow:\n3.56 ",
+                  "hlLabel": "Log Kow:\n3.56 \nSource: NA",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -401,7 +401,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_acid",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -489,7 +489,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n69.84",
+                  "label": "D. rerio:\n69.84 \u00b5M",
                   "value": "69.8393196540885",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -501,7 +501,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n52.94",
+                  "label": "D. magna:\n52.94 \u00b5M",
                   "value": "52.9419581017428",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -513,7 +513,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n122.43",
+                  "label": "C. elegans:\n122.43 \u00b5M",
                   "value": "122.4334253426",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -525,7 +525,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n63.87",
+                  "label": "X. laevis:\n63.87 \u00b5M",
                   "value": "63.8685416858688",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -537,7 +537,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n467.47",
+                  "label": "D. melanogaster:\n467.47 \u00b5M feed",
                   "value": "467.471350709594",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n3.50e-05",
-                  "value": "3.49695509660616e-05",
+                  "label": "HepG2 cells, nominal IC10:\n34.97 \u00b5M",
+                  "value": "34.9695509660616",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n1.01e-05",
-                  "value": "1.01197361775527e-05",
+                  "label": "HepG2 cells, free IC10:\n10.12 \u00b5M",
+                  "value": "10.1197361775527",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"

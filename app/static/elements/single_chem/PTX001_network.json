@@ -17,18 +17,18 @@
                   "mw_g_mol": "183.31",
                   "solubility_h2o_mol_liter": "2.493044569",
                   "source_solubility_h2o": "MSDS (Sigma)",
-                  "henry_coefficient_atm_m3_mol": "",
-                  "source_henry": "",
-                  "log_kaw_kh_rt": "",
-                  "source_kaw": "",
-                  "pka_acid": "",
-                  "pka_base": "",
+                  "henry_coefficient_atm_m3_mol": "NA",
+                  "source_henry": "NA",
+                  "log_kaw_kh_rt": "NA",
+                  "source_kaw": "NA",
+                  "pka_acid": "NA",
+                  "pka_base": "NA",
                   "source_pka": "ACD pKa/GALAS",
-                  "log_kow_liter_liter": "",
-                  "source_kow": "",
-                  "log_dlipw_ph74_liter_liter": "",
-                  "source_dlipw": "",
-                  "freely_dissolved_fraction": "",
+                  "log_kow_liter_liter": "NA",
+                  "source_kow": "NA",
+                  "log_dlipw_ph74_liter_liter": "NA",
+                  "source_dlipw": "NA",
+                  "freely_dissolved_fraction": "NA",
                   "density_kg_liter": "4.05",
                   "source_density": "MSDS (Sigma)",
                   "boiling_point": "960.0",
@@ -206,12 +206,12 @@
                   "role": "prop",
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
-                  "combinedLabel": "Henry Coefficient:\n atm*m3/mol",
-                  "value": "",
-                  "hlLabel": "Henry Coefficient:\n atm*m3/mol",
+                  "combinedLabel": "Henry Coefficient:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Henry Coefficient:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -220,12 +220,12 @@
                   "role": "prop",
                   "id": "log_kaw_kh_rt",
                   "label": "Log Kaw",
-                  "combinedLabel": "Log Kaw:\n ",
-                  "value": "",
-                  "hlLabel": "Log Kaw:\n ",
+                  "combinedLabel": "Log Kaw:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Log Kaw:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -234,12 +234,12 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (acid):\n \nSource: ACD pKa/GALAS",
+                  "combinedLabel": "pKa (acid):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (acid):\nn/a\nSource: ACD pKa/GALAS",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -248,12 +248,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: ACD pKa/GALAS",
+                  "combinedLabel": "pKa (base):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (base):\nn/a\nSource: ACD pKa/GALAS",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -262,12 +262,12 @@
                   "role": "prop",
                   "id": "log_kow_liter_liter",
                   "label": "Log Kow",
-                  "combinedLabel": "Log Kow:\n ",
-                  "value": "",
-                  "hlLabel": "Log Kow:\n ",
+                  "combinedLabel": "Log Kow:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Log Kow:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -276,12 +276,12 @@
                   "role": "prop",
                   "id": "log_dlipw_ph74_liter_liter",
                   "label": "Log Dlipw (pH 7.4)",
-                  "combinedLabel": "Log Dlipw (pH 7.4):\n ",
-                  "value": "",
-                  "hlLabel": "Log Dlipw (pH 7.4):\n ",
+                  "combinedLabel": "Log Dlipw (pH 7.4):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Log Dlipw (pH 7.4):\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -290,12 +290,12 @@
                   "role": "prop",
                   "id": "freely_dissolved_fraction",
                   "label": "Freely Dissolved Fraction",
-                  "combinedLabel": "Freely Dissolved Fraction:\n ",
-                  "value": "",
-                  "hlLabel": "Freely Dissolved Fraction:\n ",
+                  "combinedLabel": "Freely Dissolved Fraction:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Freely Dissolved Fraction:\nn/a",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -381,7 +381,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -391,7 +391,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -401,7 +401,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_acid",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -411,7 +411,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -421,7 +421,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "log_kow_liter_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -431,7 +431,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "log_dlipw_ph74_liter_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -441,7 +441,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "freely_dissolved_fraction",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {

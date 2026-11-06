@@ -208,6 +208,17 @@
           "test_system": { "type": "string" }
         }
       },
+      "ExposureDose": {
+        "type": "object",
+        "nullable": true,
+        "description": "Dose applied in the omics experiments",
+        "properties": {
+          "value": { "$ref": "#/components/schemas/Value" },
+          "unit": { "type": "string", "example": "µM" },
+          "dose_type": { "type": "string", "nullable": true, "enum": ["Low (BMD10)", "Alternative", null] },
+          "test_system": { "type": "string" }
+        }
+      },
       "Chemical": {
         "type": "object",
         "properties": {
@@ -264,6 +275,26 @@
               "drosophila_melanogaster": { "$ref": "#/components/schemas/BaselineToxicity" },
               "hepg2_cells": { "$ref": "#/components/schemas/BaselineToxicity" },
               "hepg2_cells_generic_free_ec10": { "$ref": "#/components/schemas/BaselineToxicity" }
+            }
+          },
+          "exposure_doses": {
+            "type": "object",
+            "properties": {
+              "danio_rerio": { "$ref": "#/components/schemas/ExposureDose" },
+              "daphnia_magna": { "$ref": "#/components/schemas/ExposureDose" },
+              "caenorhabditis_elegans": { "$ref": "#/components/schemas/ExposureDose" },
+              "xenopus_laevis": { "$ref": "#/components/schemas/ExposureDose" },
+              "drosophila_melanogaster_female": { "$ref": "#/components/schemas/ExposureDose" },
+              "drosophila_melanogaster_male": { "$ref": "#/components/schemas/ExposureDose" },
+              "hepg2_cells": { "$ref": "#/components/schemas/ExposureDose" }
+            }
+          },
+          "exposure_dose_preparation": {
+            "type": "object",
+            "properties": {
+              "stock": { "type": "string", "nullable": true },
+              "buffer": { "type": "string", "nullable": true },
+              "note": { "type": "string", "nullable": true }
             }
           },
           "mechanism_of_action": {

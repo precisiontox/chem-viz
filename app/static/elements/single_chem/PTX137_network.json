@@ -25,11 +25,11 @@
                   "pka_base": "5.06",
                   "source_pka": "ACD/GALAS",
                   "log_kow_liter_liter": "5.2765",
-                  "source_kow": "",
+                  "source_kow": "NA",
                   "log_dlipw_ph74_liter_liter": "5.44731141615912",
                   "source_dlipw": "Kow-QSAR (\u2206mw=1)",
                   "freely_dissolved_fraction": "0.0154932928306422",
-                  "density_kg_liter": "",
+                  "density_kg_liter": "NA",
                   "source_density": "COMPTOX",
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
@@ -264,7 +264,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\n5.28 ",
                   "value": "5.2765",
-                  "hlLabel": "Log Kow:\n5.28 ",
+                  "hlLabel": "Log Kow:\n5.28 \nSource: NA",
                   "shape": "round-diamond",
                   "colorBg": "#539cc4",
                   "colorBorder": "#007cc1"
@@ -304,12 +304,12 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density:\n kg/liter",
-                  "value": "",
-                  "hlLabel": "Density:\n kg/liter\nSource: COMPTOX",
+                  "combinedLabel": "Density:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Density:\nn/a\nSource: COMPTOX",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -451,7 +451,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -489,7 +489,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n0.67",
+                  "label": "D. rerio:\n0.67 \u00b5M",
                   "value": "0.671678888150183",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -501,7 +501,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n1.19",
+                  "label": "D. magna:\n1.19 \u00b5M",
                   "value": "1.18510768652439",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -513,7 +513,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n2.66",
+                  "label": "C. elegans:\n2.66 \u00b5M",
                   "value": "2.65984346096657",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -525,7 +525,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n3.66",
+                  "label": "X. laevis:\n3.66 \u00b5M",
                   "value": "3.66398050407133",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -537,7 +537,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n9.77",
+                  "label": "D. melanogaster:\n9.77 \u00b5M feed",
                   "value": "9.77218628810497",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n6.01e-06",
-                  "value": "6.01002024039465e-06",
+                  "label": "HepG2 cells, nominal IC10:\n6.01 \u00b5M",
+                  "value": "6.01002024039465",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n9.31e-08",
-                  "value": "9.3115003502521e-08",
+                  "label": "HepG2 cells, free IC10:\n0.09 \u00b5M",
+                  "value": "0.093115003502521",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
