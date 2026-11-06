@@ -683,39 +683,105 @@ input[type="range"]:focus {
     white-space: nowrap;
 }
 
-#chem-table th:first-child,
-#chem-table td:first-child {
-    position: sticky;
-    left: 0;
-    z-index: 3;
-    min-width: 96px;
-    max-width: 120px;
-    background: #ffffff;
-    box-shadow: 1px 0 0 var(--ptox-line);
-    font-weight: 700;
+/* Topic selector of the full table */
+.chem-topic-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    margin-bottom: 12px;
 }
 
-#chem-table thead th:first-child {
-    z-index: 5;
+.chem-topic-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.chem-topic-btn {
+    padding: 8px 12px;
+    border: 1px solid var(--ptox-line);
+    border-radius: 6px;
+    background: #ffffff;
+    color: var(--ptox-muted);
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.chem-topic-btn:hover,
+.chem-topic-btn.active {
     background: var(--ptox-ink);
     color: #ffffff;
 }
 
-table.dataTable.display tbody tr.odd td:first-child,
-table.dataTable.display tbody tr.odd td:first-child.sorting_1,
-#chem-table tbody tr:nth-child(odd) td:first-child {
+.chem-sources-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ptox-muted);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.chem-sources-toggle[hidden] {
+    display: none;
+}
+
+/* Frozen columns of the full table: Ptox Code and Compound Name */
+#chem-table td:nth-child(-n+2),
+#chem_list .dataTables_scrollHead th:nth-child(-n+2) {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    font-weight: 700;
+}
+
+#chem-table td:nth-child(2),
+#chem_list .dataTables_scrollHead th:nth-child(2) {
+    left: var(--chem-frozen-left, 0);
+    box-shadow: 1px 0 0 var(--ptox-line);
+}
+
+#chem_list .dataTables_scrollHead th:nth-child(-n+2) {
+    z-index: 5;
+    background-color: var(--ptox-ink);
+    color: #ffffff;
+}
+
+/* Long values are cut short here, and shown in full in the tooltip of the cell */
+#chem_list .dataTables_wrapper tbody td {
+    max-width: 170px;
+}
+
+#chem_list .dataTables_wrapper tbody td:first-child {
+    max-width: 90px;
+}
+
+#chem_list .dataTables_wrapper tbody td:nth-child(2) {
+    max-width: 220px;
+}
+
+#chem_list .dataTables_scrollHead th {
+    background-repeat: no-repeat;
+    background-position: center right 6px;
+}
+
+table.dataTable.display tbody tr.odd td:nth-child(-n+2),
+table.dataTable.display tbody tr.odd td:nth-child(-n+2).sorting_1,
+#chem-table tbody tr:nth-child(odd) td:nth-child(-n+2) {
     background: #f9f9f9 !important;
 }
 
-table.dataTable.display tbody tr.even td:first-child,
-table.dataTable.display tbody tr.even td:first-child.sorting_1,
-#chem-table tbody tr:nth-child(even) td:first-child {
+table.dataTable.display tbody tr.even td:nth-child(-n+2),
+table.dataTable.display tbody tr.even td:nth-child(-n+2).sorting_1,
+#chem-table tbody tr:nth-child(even) td:nth-child(-n+2) {
     background: #ffffff !important;
 }
 
-table.dataTable.display tbody tr:hover td:first-child,
-table.dataTable.display tbody tr:hover td:first-child.sorting_1,
-#chem-table tbody tr:hover td:first-child {
+table.dataTable.display tbody tr:hover td:nth-child(-n+2),
+table.dataTable.display tbody tr:hover td:nth-child(-n+2).sorting_1,
+#chem-table tbody tr:hover td:nth-child(-n+2) {
     background: #eaf3fb !important;
 }
 .dataTables_wrapper .dataTables_info {
