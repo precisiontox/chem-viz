@@ -21,7 +21,7 @@
                   "source_henry": "COMPTOX",
                   "log_kaw_kh_rt": "6.02048615749113",
                   "source_kaw": "LSER eq 1",
-                  "pka_acid": "",
+                  "pka_acid": "NA",
                   "pka_base": "2.3",
                   "source_pka": "UFZ; Sirius T3",
                   "log_kow_liter_liter": "0.04",
@@ -234,12 +234,12 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (acid):\n \nSource: UFZ; Sirius T3",
+                  "combinedLabel": "pKa (acid):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (acid):\nn/a\nSource: UFZ; Sirius T3",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -401,7 +401,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_acid",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -489,7 +489,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n293000.00",
+                  "label": "D. rerio:\n293000.00 \u00b5M",
                   "value": "293000.0",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -501,7 +501,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n52700.00",
+                  "label": "D. magna:\n52700.00 \u00b5M",
                   "value": "52700.0",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -513,7 +513,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n112304.21",
+                  "label": "C. elegans:\n112304.21 \u00b5M",
                   "value": "112304.210630623",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -525,7 +525,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n10847.38",
+                  "label": "X. laevis:\n10847.38 \u00b5M",
                   "value": "10847.3836363859",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -537,7 +537,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n486883.44",
+                  "label": "D. melanogaster:\n486883.44 \u00b5M feed",
                   "value": "486883.436114588",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n0.05",
-                  "value": "0.0490690934882188",
+                  "label": "HepG2 cells, nominal IC10:\n49069.09 \u00b5M",
+                  "value": "49069.0934882188",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n0.05",
-                  "value": "0.046235264661012",
+                  "label": "HepG2 cells, free IC10:\n46235.26 \u00b5M",
+                  "value": "46235.264661012",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"

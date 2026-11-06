@@ -31,7 +31,7 @@ This new network displays several nodes representing all main attributes: use an
 
 <img src="app/static/images/readme/figure_2.png">
 
-For further convenience, chemical information is also displayed in a structured table format beneath the graph. 
+For further convenience, chemical information is also displayed in a structured table format beneath the graph. These tables also include the doses applied in the omics experiments for each test system.
 
 <img src="app/static/images/readme/figure_3.png">
 

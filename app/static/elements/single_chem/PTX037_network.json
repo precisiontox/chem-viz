@@ -22,7 +22,7 @@
                   "log_kaw_kh_rt": "4.46842234848348",
                   "source_kaw": "LSER eq 1",
                   "pka_acid": "4.52",
-                  "pka_base": "",
+                  "pka_base": "NA",
                   "source_pka": "Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
                   "log_kow_liter_liter": "2.75",
                   "source_kow": "experimental Sangster et al. (1993)",
@@ -248,12 +248,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
+                  "combinedLabel": "pKa (base):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (base):\nn/a\nSource: Niu, L., et al. (2022). pH-Dependent Partitioning of Ionizable Organic Chemicals between the Silicone Polymer Polydimethylsiloxane (PDMS) and Water. ACS Environmental Au.",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -411,7 +411,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -489,7 +489,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n2170.00",
+                  "label": "D. rerio:\n2170.00 \u00b5M",
                   "value": "2170.0",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -501,7 +501,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n924.00",
+                  "label": "D. magna:\n924.00 \u00b5M",
                   "value": "924.0",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -513,7 +513,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n2007.83",
+                  "label": "C. elegans:\n2007.83 \u00b5M",
                   "value": "2007.83467268337",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -525,7 +525,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n529.34",
+                  "label": "X. laevis:\n529.34 \u00b5M",
                   "value": "529.341971615207",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -537,7 +537,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n8176.99",
+                  "label": "D. melanogaster:\n8176.99 \u00b5M feed",
                   "value": "8176.989857614",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n5.94e-04",
-                  "value": "0.000594131844827602",
+                  "label": "HepG2 cells, nominal IC10:\n594.13 \u00b5M",
+                  "value": "594.131844827602",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n3.25e-04",
-                  "value": "0.000325355216121948",
+                  "label": "HepG2 cells, free IC10:\n325.36 \u00b5M",
+                  "value": "325.355216121948",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"

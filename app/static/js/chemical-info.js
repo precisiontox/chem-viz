@@ -70,6 +70,14 @@ function displayChemicalInfo(selectedChem) {
         document.getElementById('base-tox-cells').textContent = displayValue(data.baseline_cells);
         document.getElementById('base-tox-cells-generic').textContent = displayValue(data.baseline_cells_generic_micromole_liter_free_ec10);
         document.getElementById('base-tox-xlaevis').textContent = displayValue(data.baseline_xlaevis);
+        ['celegans', 'drerio', 'dmagna', 'dmelanogaster_female', 'dmelanogaster_male', 'cells', 'xlaevis'].forEach(system => {
+            const elementId = `dose-${system.replace('_', '-')}`;
+            document.getElementById(elementId).textContent = displayValue(data[`dose_${system}`]);
+            document.getElementById(`${elementId}-type`).textContent = displayValue(data[`dose_${system}_type`]);
+        });
+        document.getElementById('dose-stock').textContent = displayValue(data.dose_stock);
+        document.getElementById('dose-buffer').textContent = displayValue(data.dose_buffer);
+        document.getElementById('dose-note').textContent = displayValue(data.dose_note);
         document.getElementById('moa-drugbank').textContent = displayValue(data.moa_drugbank);
         document.getElementById('moa-t3db').textContent = displayValue(data.moa_t3db);
         populateAopTable(data.aop || []);

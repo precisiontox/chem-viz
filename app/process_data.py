@@ -80,6 +80,8 @@ def read_chemical_database(engine, cols_to_use):
                 "source_kow_used": "source_kow"
             }, inplace=True)
     df = df[["ptx_code", "chem_name_user"]+ cols_to_use]
+    # Empty cells in the database are missing values, not text
+    df = df.replace("", None)
 
     return df
 
@@ -320,9 +322,39 @@ def read_baseline_tox_file(file_path):
     })
     for col in [col for col in df.columns if "baseline_" in col]:
         df[col] = df[col].astype(float)
+    # The file stores HepG2 values in mol/L and the in vivo values in µM. Show all in µM,
+    # rounding to the 15 significant digits of the file to drop floating point noise.
+    for col in ["baseline_cells", "baseline_cells_generic_micromole_liter_free_ec10"]:
+        df[col] = (df[col] * 1e6).map(lambda value: float(f"{value:.15g}"))
     df = df.drop(columns=["Compound", "CASRN", "DTXSID"], axis=1)
     df.fillna("NA", inplace=True)
     df = df.astype(str)
+    return df
+
+
+def read_dose_file(file_path, ptx_codes):
+    # Doses applied in the PrecisionTox omics experiments (WP2). One row per chemical,
+    # with a dose and a dose type for each test system. The file does not state the
+    # dose unit: it is µM, as shown by the notes in its last column and by comparing the
+    # doses with the water solubility and baseline toxicity of each chemical.
+    df = pd.read_excel(file_path, sheet_name="Compounds_OMICs").rename(columns={
+        "compound_ID": "ptx_code",
+        "stock_type": "dose_stock",
+        "buffer": "dose_buffer",
+        "Unnamed: 18": "dose_note"
+    })
+    df = df[df["ptx_code"].isin(ptx_codes)]
+
+    out_cols = ["ptx_code"]
+    for source_col, dose_col in dose_columns.items():
+        df[dose_col] = pd.to_numeric(df[source_col], errors="coerce")
+        df[dose_col+"_type"] = df[source_col+"_dose"].map(dose_types)
+        out_cols += [dose_col, dose_col+"_type"]
+
+    df["dose_stock"] = df["dose_stock"].str.replace("aequous", "aqueous")
+    df["dose_note"] = df["dose_note"].str.strip().str.replace(r"Litt[ée]rature", "Literature", regex=True)
+    df = df[out_cols + ["dose_stock", "dose_buffer", "dose_note"]]
+    df = df.astype(object).fillna("NA").astype(str)
     return df
 
 
@@ -646,7 +678,7 @@ def get_baseline_tox_nodes_edges(chem_values: dict):
             color_bg = "#ddd"
             color_border = "#9a999a"
         else:
-            label = labels[base].replace("Baseline Toxicity - ","")+":\n"+format_number(float(chem_values[base]))
+            label = labels[base].replace("Baseline Toxicity - ","")+":\n"+format_number(float(chem_values[base]))+" "+units[base]
             color_bg = colors["Baseline Toxicity_bg"]
             color_border = colors["Baseline Toxicity_border"]
             base_not_empty = True
@@ -940,6 +972,8 @@ def export_single_chemical_data(
     df_chem = df_chem.replace("NA", "")
     for col in [col for col in df_chem.columns if "baseline_" in col]:
         df_chem[col] = df_chem[col].apply(lambda x: format_number(x))
+    for col in dose_columns.values():
+        df_chem[col] = df_chem[col].apply(lambda x: format_number(x))
     for prop in [col for col in property_cols if "source" not in col]:
         df_chem[prop] = df_chem[prop].apply(lambda x: format_number(x))
 
@@ -972,6 +1006,7 @@ properties_file = f"{HERE_PATH}/data/Visulaization P-Chem Dataset ver1_updated.x
 properties_file_2 = f"{HERE_PATH}/data/2025 - Manuscript Chemicals -P.Chem Visualization.xlsx"
 comptox_file = f"{HERE_PATH}/data/Comptox_batch_search_200_compounds.csv"
 baseline_file = f"{HERE_PATH}/data/Visualization Data - Baseline Toxicity.xlsx"
+dose_file = f"{HERE_PATH}/data/PT_WP2_Compounds_OMICS.xlsx"
 drugbank_moa_file = f"{HERE_PATH}/data/Manuscript Chemicals - DrugBank - Target & MoA.xlsx"
 t3db_moa_file = f"{HERE_PATH}/data/Manuscript Chemicals - T3Db - Target & MoA.xlsx"
 aop_file_simple = f"{HERE_PATH}/data/Manuscript Chemicals - AOP IDs - only.xlsx"
@@ -988,6 +1023,17 @@ chemical_table_json = f"{data_dir}chemical_table.json"
 
 palette_1 = ["#6C946F", "#F4D35E", "#EE964B", "#F95738", "#D81159", "#8F2D56", "#218380", "#FFC857"]
 palette_2 = ["#894b5d", "#6868ac", "#85a1ac", "#8a5796", "#ecc371", "#f53151"]
+# Test system columns in the dose file -> column names used here
+dose_columns = {
+    "C_elegans": "dose_celegans",
+    "Daphnia_magna": "dose_dmagna",
+    "Danio_rerio": "dose_drerio",
+    "Drosophila_melanogaster_female": "dose_dmelanogaster_female",
+    "Drosophila_melanogaster_male": "dose_dmelanogaster_male",
+    "Homo_sapiens_HepG2_cells": "dose_cells",
+    "Xenopus_laevis": "dose_xlaevis",
+}
+dose_types = {"L": "Low (BMD10)", "A": "Alternative"}
 labels = {
     "ptx_code": "Ptox Code",
     "chem_name": "Compound Name",
@@ -1024,8 +1070,25 @@ labels = {
     "baseline_drerio": "Baseline Toxicity - D. rerio",
     "baseline_xlaevis": "Baseline Toxicity - X. laevis",
     "baseline_dmelanogaster": "Baseline Toxicity - D. melanogaster",
-    "baseline_cells": "Baseline Toxicity - HepG2 cells",
-    "baseline_cells_generic_micromole_liter_free_ec10": "Baseline Toxicity - HepG2 cells (generic micromol/l free EC10)",
+    "baseline_cells": "Baseline Toxicity - HepG2 cells, nominal IC10",
+    "baseline_cells_generic_micromole_liter_free_ec10": "Baseline Toxicity - HepG2 cells, free IC10",
+    "dose_celegans": "Exposure Dose - C. elegans",
+    "dose_celegans_type": "Exposure Dose Type - C. elegans",
+    "dose_dmagna": "Exposure Dose - D. magna",
+    "dose_dmagna_type": "Exposure Dose Type - D. magna",
+    "dose_drerio": "Exposure Dose - D. rerio",
+    "dose_drerio_type": "Exposure Dose Type - D. rerio",
+    "dose_dmelanogaster_female": "Exposure Dose - D. melanogaster (female)",
+    "dose_dmelanogaster_female_type": "Exposure Dose Type - D. melanogaster (female)",
+    "dose_dmelanogaster_male": "Exposure Dose - D. melanogaster (male)",
+    "dose_dmelanogaster_male_type": "Exposure Dose Type - D. melanogaster (male)",
+    "dose_cells": "Exposure Dose - HepG2 cells",
+    "dose_cells_type": "Exposure Dose Type - HepG2 cells",
+    "dose_xlaevis": "Exposure Dose - X. laevis",
+    "dose_xlaevis_type": "Exposure Dose Type - X. laevis",
+    "dose_stock": "Exposure Dose Stock",
+    "dose_buffer": "Exposure Dose Buffer",
+    "dose_note": "Exposure Dose Note",
     "moa_drugbank": "Mechanism of Action (DrugBank)",
     "protein_binding": "Protein Binding (DrugBank)",
     "moa_t3db": "Mechanism of Action (T3DB)",
@@ -1047,7 +1110,27 @@ units = {
     "density_kg_liter": "kg/liter",
     "boiling_point": "°C",
     "melting_point": "°C",
-    "vapor_pressure": "mmHg"
+    "vapor_pressure": "mmHg",
+    # In vivo baseline toxicity: LC50 from the QSARs of the chemical library article
+    # (eq. 6), which matches these values when they are read as µM.
+    "baseline_celegans": "µM",
+    "baseline_dmagna": "µM",
+    "baseline_drerio": "µM",
+    "baseline_xlaevis": "µM",
+    "baseline_dmelanogaster": "µM feed",
+    # HepG2 baseline toxicity is stored in mol/L in the source file and converted to µM in
+    # read_baseline_tox_file. The source unit comes from eq. 5 of the article (26 mmol/L
+    # lipid / Dlipw), and the free IC10 equals the nominal IC10 multiplied by the freely
+    # dissolved fraction.
+    "baseline_cells": "µM",
+    "baseline_cells_generic_micromole_liter_free_ec10": "µM",
+    "dose_celegans": "µM",
+    "dose_dmagna": "µM",
+    "dose_drerio": "µM",
+    "dose_dmelanogaster_female": "µM",
+    "dose_dmelanogaster_male": "µM",
+    "dose_cells": "µM",
+    "dose_xlaevis": "µM",
 }
 shapes = {
     "Physico-chemical properties": "round-diamond",
@@ -1127,8 +1210,7 @@ for k in labels:
 engine = connect_to_database(config)
 
 # Read Identifiers file
-df_ide = pd.read_csv(chem_ide_file, sep="\t")
-df_ide["pubchem_cid"] = df_ide["pubchem_cid"].astype(str)
+df_ide = pd.read_csv(chem_ide_file, sep="\t", dtype={"pubchem_cid": str})
 df_ide = fix_swapped_smiles_inchikey(df_ide)
 ptx_codes = df_ide["ptx_code"].to_list()
 
@@ -1201,6 +1283,14 @@ df_ide = df_ide.merge(
 df_base = read_baseline_tox_file(baseline_file)
 df_ide = df_ide.merge(
     df_base,
+    on=["ptx_code"],
+    how="left"
+)
+
+# Read Exposure Doses file
+df_dose = read_dose_file(dose_file, ptx_codes)
+df_ide = df_ide.merge(
+    df_dose,
     on=["ptx_code"],
     how="left"
 )

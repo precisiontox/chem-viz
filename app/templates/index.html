@@ -239,6 +239,7 @@
             <div class="table-tabs">
                 <button class="table-tab-btn active" data-table-target="phys-properties-table">Physico-chemical Properties</button>
                 <button class="table-tab-btn" data-table-target="baseline-tox-table">Baseline Toxicity</button>
+                <button class="table-tab-btn" data-table-target="exposure-dose-table">Exposure Doses</button>
                 <button class="table-tab-btn" data-table-target="aop-table">Adverse Outcome Pathways</button>
                 <button class="table-tab-btn" data-table-target="targets-table">Targets</button>
                 <button class="table-tab-btn" data-table-target="moa-table">Mechanism of Action</button>
@@ -344,39 +345,123 @@
                         <tr>
                             <th>Organism</th>
                             <th>Baseline Toxicity</th>
+                            <th>Unit</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Caenorhabditis elegans</td>
                             <td id="base-tox-celegans"></td>
+                            <td>µM</td>
                         </tr>
                         <tr>
                             <td>Danio rerio</td>
                             <td id="base-tox-drerio"></td>
+                            <td>µM</td>
                         </tr>
                         <tr>
                             <td>Daphnia magna</td>
                             <td id="base-tox-dmagna"></td>
+                            <td>µM</td>
                         </tr>
                         <tr>
                             <td>Drosophila melanogaster</td>
                             <td id="base-tox-dmelanogaster"></td>
+                            <td>µM feed</td>
                         </tr>
                         <tr>
-                            <td>Human (HepG2 cells)</td>
+                            <td>Human (HepG2 cells), nominal IC10</td>
                             <td id="base-tox-cells"></td>
+                            <td>µM</td>
                         </tr>
                         <tr>
-                            <td>Cells (cells_generic_micromole_liter_free_ec10)</td>
+                            <td>Human (HepG2 cells), free IC10</td>
                             <td id="base-tox-cells-generic"></td>
+                            <td>µM</td>
                         </tr>
                         <tr>
                             <td>Xenopus laevis</td>
                             <td id="base-tox-xlaevis"></td>
+                            <td>µM</td>
                         </tr>
                     </tbody>
                 </table>
+                <p class="chem-table-note">
+                    HepG2 cells: nominal IC10 is the total concentration in the medium; free IC10 is the freely dissolved concentration.
+                </p>
+            </div>
+
+            <div id="exposure-dose-table" class="chem-table-container" style="display: none;">
+                <table class="chem-data-table">
+                    <thead>
+                        <tr>
+                            <th>Test system</th>
+                            <th>Dose</th>
+                            <th>Unit</th>
+                            <th>Dose type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Caenorhabditis elegans</td>
+                            <td id="dose-celegans"></td>
+                            <td>µM</td>
+                            <td id="dose-celegans-type"></td>
+                        </tr>
+                        <tr>
+                            <td>Danio rerio</td>
+                            <td id="dose-drerio"></td>
+                            <td>µM</td>
+                            <td id="dose-drerio-type"></td>
+                        </tr>
+                        <tr>
+                            <td>Daphnia magna</td>
+                            <td id="dose-dmagna"></td>
+                            <td>µM</td>
+                            <td id="dose-dmagna-type"></td>
+                        </tr>
+                        <tr>
+                            <td>Drosophila melanogaster (female)</td>
+                            <td id="dose-dmelanogaster-female"></td>
+                            <td>µM</td>
+                            <td id="dose-dmelanogaster-female-type"></td>
+                        </tr>
+                        <tr>
+                            <td>Drosophila melanogaster (male)</td>
+                            <td id="dose-dmelanogaster-male"></td>
+                            <td>µM</td>
+                            <td id="dose-dmelanogaster-male-type"></td>
+                        </tr>
+                        <tr>
+                            <td>Human (HepG2 cells)</td>
+                            <td id="dose-cells"></td>
+                            <td>µM</td>
+                            <td id="dose-cells-type"></td>
+                        </tr>
+                        <tr>
+                            <td>Xenopus laevis</td>
+                            <td id="dose-xlaevis"></td>
+                            <td>µM</td>
+                            <td id="dose-xlaevis-type"></td>
+                        </tr>
+                        <tr>
+                            <td>Stock</td>
+                            <td colspan="3" id="dose-stock"></td>
+                        </tr>
+                        <tr>
+                            <td>Buffer</td>
+                            <td colspan="3" id="dose-buffer"></td>
+                        </tr>
+                        <tr>
+                            <td>Note</td>
+                            <td colspan="3" id="dose-note"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="chem-table-note">
+                    Doses applied in the omics experiments. Low (BMD10): BMD10 determined in the test system itself.
+                    Alternative: dose determined by the highest value from the least sensitive other test system.
+                </p>
             </div>
 
             <div id="aop-table" class="chem-table-container" style="display: none;">

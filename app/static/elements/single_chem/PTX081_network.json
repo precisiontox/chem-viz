@@ -17,19 +17,19 @@
                   "mw_g_mol": "285.8",
                   "solubility_h2o_mol_liter": "5.70e-5",
                   "source_solubility_h2o": "COMPTOX (predicted average)",
-                  "henry_coefficient_atm_m3_mol": "",
+                  "henry_coefficient_atm_m3_mol": "NA",
                   "source_henry": "COMPTOX",
-                  "log_kaw_kh_rt": "",
-                  "source_kaw": "",
+                  "log_kaw_kh_rt": "NA",
+                  "source_kaw": "NA",
                   "pka_acid": "6.81",
-                  "pka_base": "",
+                  "pka_base": "NA",
                   "source_pka": "R. Stuart Tobias and M. Yasuda The Journal of Physical Chemistry 1964 68 (7), 1820-1828 DOI: 10.1021/j100789a025",
                   "log_kow_liter_liter": "1.10",
                   "source_kow": "read across from tributyltin using a fragment constant difference of  1.1 per butyl/to methyl (from alcohol /ethanol/butanol and ethylylbenzene to butylbenzene)  - TBT, Arnold et al. 1997",
                   "log_dlipw_ph74_liter_liter": "0.69",
                   "source_dlipw": "read across from tributyltin using a fragment constant difference of  1.1 per butyl/to methyl (from alcohol /ethanol/butanol and ethylylbenzene to butylbenzene)  - TBT",
                   "freely_dissolved_fraction": "0.996939396054114",
-                  "density_kg_liter": "",
+                  "density_kg_liter": "NA",
                   "source_density": "COMPTOX",
                   "boiling_point": "224.0",
                   "source_boiling_point": "CompTox (Oxford University Chemical Safety Data (No longer updated)",
@@ -206,12 +206,12 @@
                   "role": "prop",
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
-                  "combinedLabel": "Henry Coefficient:\n atm*m3/mol",
-                  "value": "",
-                  "hlLabel": "Henry Coefficient:\n atm*m3/mol\nSource: COMPTOX",
+                  "combinedLabel": "Henry Coefficient:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Henry Coefficient:\nn/a\nSource: COMPTOX",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -220,12 +220,12 @@
                   "role": "prop",
                   "id": "log_kaw_kh_rt",
                   "label": "Log Kaw",
-                  "combinedLabel": "Log Kaw:\n ",
-                  "value": "",
-                  "hlLabel": "Log Kaw:\n ",
+                  "combinedLabel": "Log Kaw:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Log Kaw:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -248,12 +248,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (base):\n \nSource: R. Stuart Tobias and M. Yasuda The Journal of Physical Chemistry 1964 68 (7), 1820-1828 DOI: 10.1021/j100789a025",
+                  "combinedLabel": "pKa (base):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (base):\nn/a\nSource: R. Stuart Tobias and M. Yasuda The Journal of Physical Chemistry 1964 68 (7), 1820-1828 DOI: 10.1021/j100789a025",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -304,12 +304,12 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density:\n kg/liter",
-                  "value": "",
-                  "hlLabel": "Density:\n kg/liter\nSource: COMPTOX",
+                  "combinedLabel": "Density:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Density:\nn/a\nSource: COMPTOX",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -381,7 +381,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -391,7 +391,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -411,7 +411,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -451,7 +451,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -489,7 +489,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_drerio",
-                  "label": "D. rerio:\n166000.00",
+                  "label": "D. rerio:\n166000.00 \u00b5M",
                   "value": "166000.0",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -501,7 +501,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmagna",
-                  "label": "D. magna:\n33000.00",
+                  "label": "D. magna:\n33000.00 \u00b5M",
                   "value": "33000.0",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -513,7 +513,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_celegans",
-                  "label": "C. elegans:\n70376.19",
+                  "label": "C. elegans:\n70376.19 \u00b5M",
                   "value": "70376.188559695",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -525,7 +525,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_xlaevis",
-                  "label": "X. laevis:\n7638.36",
+                  "label": "X. laevis:\n7638.36 \u00b5M",
                   "value": "7638.35783577691",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -537,7 +537,7 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_dmelanogaster",
-                  "label": "D. melanogaster:\n302900.51",
+                  "label": "D. melanogaster:\n302900.51 \u00b5M feed",
                   "value": "302900.506816622",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n0.03",
-                  "value": "0.02607982",
+                  "label": "HepG2 cells, nominal IC10:\n26079.82 \u00b5M",
+                  "value": "26079.82",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n0.03",
-                  "value": "0.026",
+                  "label": "HepG2 cells, free IC10:\n26000.00 \u00b5M",
+                  "value": "26000.0",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"

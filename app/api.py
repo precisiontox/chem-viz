@@ -79,15 +79,29 @@ PHYSCHEM_FIELDS = [
 
 # api key, label, value column, test system, unit
 BASELINE_FIELDS = [
-    ("danio_rerio", "Baseline toxicity - D. rerio", "Baseline Toxicity - D. rerio", "Danio rerio", None),
-    ("daphnia_magna", "Baseline toxicity - D. magna", "Baseline Toxicity - D. magna", "Daphnia magna", None),
-    ("caenorhabditis_elegans", "Baseline toxicity - C. elegans", "Baseline Toxicity - C. elegans", "Caenorhabditis elegans", None),
-    ("xenopus_laevis", "Baseline toxicity - X. laevis", "Baseline Toxicity - X. laevis", "Xenopus laevis", None),
-    ("drosophila_melanogaster", "Baseline toxicity - D. melanogaster", "Baseline Toxicity - D. melanogaster", "Drosophila melanogaster", None),
-    ("hepg2_cells", "Baseline toxicity - HepG2 cells", "Baseline Toxicity - HepG2 cells", "HepG2 cells", None),
-    ("hepg2_cells_generic_free_ec10", "Baseline toxicity - HepG2 cells (generic free EC10)",
-     "Baseline Toxicity - HepG2 cells (generic micromol/l free EC10)", "HepG2 cells", "µmol/L"),
+    ("danio_rerio", "Baseline toxicity - D. rerio", "Baseline Toxicity - D. rerio (µM)", "Danio rerio", "µM"),
+    ("daphnia_magna", "Baseline toxicity - D. magna", "Baseline Toxicity - D. magna (µM)", "Daphnia magna", "µM"),
+    ("caenorhabditis_elegans", "Baseline toxicity - C. elegans", "Baseline Toxicity - C. elegans (µM)", "Caenorhabditis elegans", "µM"),
+    ("xenopus_laevis", "Baseline toxicity - X. laevis", "Baseline Toxicity - X. laevis (µM)", "Xenopus laevis", "µM"),
+    ("drosophila_melanogaster", "Baseline toxicity - D. melanogaster", "Baseline Toxicity - D. melanogaster (µM feed)",
+     "Drosophila melanogaster", "µM feed"),
+    ("hepg2_cells", "Baseline toxicity - HepG2 cells, nominal IC10", "Baseline Toxicity - HepG2 cells, nominal IC10 (µM)",
+     "HepG2 cells", "µM"),
+    ("hepg2_cells_generic_free_ec10", "Baseline toxicity - HepG2 cells, free IC10",
+     "Baseline Toxicity - HepG2 cells, free IC10 (µM)", "HepG2 cells", "µM"),
 ]
+
+# api key, label, test system
+DOSE_FIELDS = [
+    ("danio_rerio", "D. rerio", "Danio rerio"),
+    ("daphnia_magna", "D. magna", "Daphnia magna"),
+    ("caenorhabditis_elegans", "C. elegans", "Caenorhabditis elegans"),
+    ("xenopus_laevis", "X. laevis", "Xenopus laevis"),
+    ("drosophila_melanogaster_female", "D. melanogaster (female)", "Drosophila melanogaster (female)"),
+    ("drosophila_melanogaster_male", "D. melanogaster (male)", "Drosophila melanogaster (male)"),
+    ("hepg2_cells", "HepG2 cells", "HepG2 cells"),
+]
+DOSE_UNIT = "µM"
 
 IDENTIFIER_FILTERS = ["casrn", "dtxsid", "inchikey", "pubchem_cid", "drugbank_id"]
 LIST_FILTERS = {"use": "use_categories", "toxicity": "toxicity_categories"}
@@ -173,6 +187,16 @@ def _build_chemical(row, detail):
             ("test_system", test_system),
         ]) if parts else None
 
+    doses = OrderedDict()
+    for key, label, test_system in DOSE_FIELDS:
+        parts = _split(row.get(f"Exposure Dose - {label} ({DOSE_UNIT})"))
+        doses[key] = OrderedDict([
+            ("value", _value(parts)),
+            ("unit", DOSE_UNIT),
+            ("dose_type", _clean(row.get(f"Exposure Dose Type - {label}"))),
+            ("test_system", test_system),
+        ]) if parts else None
+
     targets = detail.get("targets") if detail else None
     if targets is None:
         targets = _split(row.get("Target Name (T3DB)"))
@@ -200,6 +224,12 @@ def _build_chemical(row, detail):
         ("vehicle", _clean(row.get("Vehicle"))),
         ("physchem_properties", physchem),
         ("baseline_toxicity", baseline),
+        ("exposure_doses", doses),
+        ("exposure_dose_preparation", OrderedDict([
+            ("stock", _clean(row.get("Exposure Dose Stock"))),
+            ("buffer", _clean(row.get("Exposure Dose Buffer"))),
+            ("note", _clean(row.get("Exposure Dose Note"))),
+        ])),
         ("mechanism_of_action", OrderedDict([
             ("drugbank", _clean(row.get("Mechanism of Action (DrugBank)"))),
             ("t3db", _clean(row.get("Mechanism of Action (T3DB)"))),
@@ -292,6 +322,10 @@ def chemical_jsonld(chem, with_context=True):
         b = chem["baseline_toxicity"][key]
         if b:
             props.append(_property_value(f"baseline_{key}", label, b["value"], b["unit"]))
+    for key, label, _system in DOSE_FIELDS:
+        d = chem["exposure_doses"][key]
+        if d:
+            props.append(_property_value(f"dose_{key}", f"Exposure dose - {label}", d["value"], d["unit"], d["dose_type"]))
     doc["additionalProperty"] = props
 
     if chem["use_categories"]:
@@ -331,8 +365,9 @@ def dataset_jsonld(parts=None, with_context=True):
         ("name", "The PrecisionTox Chemical Library"),
         ("description", (
             "Curated collection of chemicals studied by the PrecisionTox consortium, annotated with "
-            "use and toxicity endpoint categories, physico-chemical properties, baseline toxicity in "
-            "several test systems, mechanisms of action, molecular targets and adverse outcome pathways."
+            "use and toxicity endpoint categories, physico-chemical properties, baseline toxicity and "
+            "omics exposure doses in several test systems, mechanisms of action, molecular targets and "
+            "adverse outcome pathways."
         )),
         ("url", DATASET_ID),
         ("citation", CITATION_DOI),
@@ -343,7 +378,8 @@ def dataset_jsonld(parts=None, with_context=True):
                       "adverse outcome pathways", "new approach methodologies"]),
         ("isAccessibleForFree", True),
         ("variableMeasured", [label for _k, label, _c, _u, _s in PHYSCHEM_FIELDS]
-                             + [label for _k, label, _c, _t, _u in BASELINE_FIELDS]),
+                             + [label for _k, label, _c, _t, _u in BASELINE_FIELDS]
+                             + [f"Exposure dose - {label}" for _k, label, _t in DOSE_FIELDS]),
         ("distribution", [
             OrderedDict([("@type", "DataDownload"), ("encodingFormat", "text/csv"),
                          ("contentUrl", f"{PUBLIC_BASE_URL}/static/data/chemical_table.csv")]),
@@ -382,6 +418,10 @@ def vocab_jsonld():
     terms += [
         OrderedDict([("@id", f"ptx:baseline_{key}"), ("@type", "rdf:Property"), ("rdfs:label", label)])
         for key, label, _c, _t, _u in BASELINE_FIELDS
+    ]
+    terms += [
+        OrderedDict([("@id", f"ptx:dose_{key}"), ("@type", "rdf:Property"), ("rdfs:label", f"Exposure dose - {label}")])
+        for key, label, _t in DOSE_FIELDS
     ]
     return OrderedDict([
         ("@context", {
@@ -648,8 +688,8 @@ API_DOC_SECTIONS = [
     {
         "title": "Chemical Info Endpoints",
         "intro": "Look up the chemicals of the library and all their annotations: identifiers, use and "
-                 "toxicity categories, physico-chemical properties, baseline toxicity, mechanisms of action, "
-                 "targets and adverse outcome pathways.",
+                 "toxicity categories, physico-chemical properties, baseline toxicity, omics exposure doses, "
+                 "mechanisms of action, targets and adverse outcome pathways.",
         "endpoints": [
             {"method": "GET", "path": "/api/chemical-info",
              "description": "All chemicals, with optional filters and paging (see Query Parameters).",
@@ -738,7 +778,9 @@ API_DOC_FIELDS = [
     ("use_categories, toxicity_categories", "Arrays of category names."),
     ("vehicle", "Dosing vehicle / solvent."),
     ("physchem_properties", "Each property is {value, unit, source} or null. value is an array when several values are reported (e.g. pKa)."),
-    ("baseline_toxicity", "One entry per test system: {value, unit, test_system} or null."),
+    ("baseline_toxicity", "One entry per test system: {value, unit, test_system} or null. Units differ between test systems."),
+    ("exposure_doses", "Dose applied in the omics experiments, one entry per test system: {value, unit, dose_type, test_system} or null."),
+    ("exposure_dose_preparation", "stock, buffer and note of the omics exposure doses."),
     ("mechanism_of_action, protein_binding", "Text from DrugBank and T3DB."),
     ("targets", "Molecular targets (T3DB)."),
     ("adverse_outcome_pathways", "Array of {aop_id, name, url} linking to AOP-Wiki."),
@@ -755,7 +797,7 @@ def _example_response():
     chem = copy.deepcopy(get_chemical("PTX001"))
     if chem is None:
         return None
-    for key, keep in (("physchem_properties", 3), ("baseline_toxicity", 2)):
+    for key, keep in (("physchem_properties", 3), ("baseline_toxicity", 2), ("exposure_doses", 2)):
         items = list(chem[key].items())
         chem[key] = OrderedDict(items[:keep] + [("…", f"{len(items) - keep} more")])
     for key in ("mechanism_of_action", "protein_binding"):

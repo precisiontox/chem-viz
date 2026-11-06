@@ -15,22 +15,22 @@
                   "smiles": "NA",
                   "inchi": "NA",
                   "mw_g_mol": "816.899",
-                  "solubility_h2o_mol_liter": "",
-                  "source_solubility_h2o": "",
-                  "henry_coefficient_atm_m3_mol": "",
-                  "source_henry": "",
-                  "log_kaw_kh_rt": "",
-                  "source_kaw": "",
-                  "pka_acid": "",
-                  "pka_base": "",
-                  "source_pka": "",
+                  "solubility_h2o_mol_liter": "NA",
+                  "source_solubility_h2o": "NA",
+                  "henry_coefficient_atm_m3_mol": "NA",
+                  "source_henry": "NA",
+                  "log_kaw_kh_rt": "NA",
+                  "source_kaw": "NA",
+                  "pka_acid": "NA",
+                  "pka_base": "NA",
+                  "source_pka": "NA",
                   "log_kow_liter_liter": "NA",
-                  "source_kow": "",
+                  "source_kow": "NA",
                   "log_dlipw_ph74_liter_liter": "2.73",
                   "source_dlipw": "Kow QSAR (\u2206mw = 1)",
                   "freely_dissolved_fraction": "0.635756222637324",
-                  "density_kg_liter": "",
-                  "source_density": "",
+                  "density_kg_liter": "NA",
+                  "source_density": "NA",
                   "boiling_point": "NA",
                   "source_boiling_point": "NA",
                   "melting_point": "NA",
@@ -192,12 +192,12 @@
                   "role": "prop",
                   "id": "solubility_h2o_mol_liter",
                   "label": "Solubility in H2O",
-                  "combinedLabel": "Solubility in H2O:\n mol/liter",
-                  "value": "",
-                  "hlLabel": "Solubility in H2O:\n mol/liter",
+                  "combinedLabel": "Solubility in H2O:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Solubility in H2O:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -206,12 +206,12 @@
                   "role": "prop",
                   "id": "henry_coefficient_atm_m3_mol",
                   "label": "Henry Coefficient",
-                  "combinedLabel": "Henry Coefficient:\n atm*m3/mol",
-                  "value": "",
-                  "hlLabel": "Henry Coefficient:\n atm*m3/mol",
+                  "combinedLabel": "Henry Coefficient:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Henry Coefficient:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -220,12 +220,12 @@
                   "role": "prop",
                   "id": "log_kaw_kh_rt",
                   "label": "Log Kaw",
-                  "combinedLabel": "Log Kaw:\n ",
-                  "value": "",
-                  "hlLabel": "Log Kaw:\n ",
+                  "combinedLabel": "Log Kaw:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Log Kaw:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -234,12 +234,12 @@
                   "role": "prop",
                   "id": "pka_acid",
                   "label": "pKa (acid)",
-                  "combinedLabel": "pKa (acid):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (acid):\n ",
+                  "combinedLabel": "pKa (acid):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (acid):\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -248,12 +248,12 @@
                   "role": "prop",
                   "id": "pka_base",
                   "label": "pKa (base)",
-                  "combinedLabel": "pKa (base):\n ",
-                  "value": "",
-                  "hlLabel": "pKa (base):\n ",
+                  "combinedLabel": "pKa (base):\nn/a",
+                  "value": "NA",
+                  "hlLabel": "pKa (base):\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -264,7 +264,7 @@
                   "label": "Log Kow",
                   "combinedLabel": "Log Kow:\nn/a",
                   "value": "NA",
-                  "hlLabel": "Log Kow:\nn/a",
+                  "hlLabel": "Log Kow:\nn/a\nSource: NA",
                   "shape": "round-diamond",
                   "colorBg": "#ddd",
                   "colorBorder": "#9a999a"
@@ -304,12 +304,12 @@
                   "role": "prop",
                   "id": "density_kg_liter",
                   "label": "Density",
-                  "combinedLabel": "Density:\n kg/liter",
-                  "value": "",
-                  "hlLabel": "Density:\n kg/liter",
+                  "combinedLabel": "Density:\nn/a",
+                  "value": "NA",
+                  "hlLabel": "Density:\nn/a\nSource: NA",
                   "shape": "round-diamond",
-                  "colorBg": "#539cc4",
-                  "colorBorder": "#007cc1"
+                  "colorBg": "#ddd",
+                  "colorBorder": "#9a999a"
             }
       },
       {
@@ -371,7 +371,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "solubility_h2o_mol_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -381,7 +381,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "henry_coefficient_atm_m3_mol",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -391,7 +391,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "log_kaw_kh_rt",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -401,7 +401,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_acid",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -411,7 +411,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "pka_base",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -451,7 +451,7 @@
                   "subrole": "attribute",
                   "source": "Physico-chemical properties",
                   "target": "density_kg_liter",
-                  "color": "#007cc1"
+                  "color": "#9a999a"
             }
       },
       {
@@ -549,8 +549,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells",
-                  "label": "HepG2 cells:\n7.69e-05",
-                  "value": "7.68922809115104e-05",
+                  "label": "HepG2 cells, nominal IC10:\n76.89 \u00b5M",
+                  "value": "76.8922809115104",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
@@ -561,8 +561,8 @@
             "data": {
                   "role": "base_tox",
                   "id": "baseline_cells_generic_micromole_liter_free_ec10",
-                  "label": "HepG2 cells (generic micromol/l free EC10):\n4.89e-05",
-                  "value": "4.88847460622699e-05",
+                  "label": "HepG2 cells, free IC10:\n48.88 \u00b5M",
+                  "value": "48.8847460622699",
                   "shape": "round-hexagon",
                   "colorBg": "#D6C0B3",
                   "colorBorder": "#AB886D"
