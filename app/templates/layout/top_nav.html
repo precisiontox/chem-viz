@@ -1,5 +1,12 @@
 {% set chem_current = request.endpoint in ['home', 'chemical_table', 'single_chem_network'] %}
 {% set api_current = request.endpoint in ['api.docs', 'api.swagger_docs'] %}
+{# Same pages and descriptions as the main app's Phenotype Data menu #}
+{% set phenotype_pages = [
+  ('/', 'Overview', 'Summary of phenotype data and experiments'),
+  ('/explore/', 'Single-Endpoint View', 'Distribution, ranking and dose-response for one endpoint'),
+  ('/compare/', 'Multi-Endpoint View', 'Compare endpoints across chemicals and species'),
+  ('/experiments/', 'Experiment Records', 'Experiment metadata and individual records'),
+] %}
 <header class="top-nav">
   <a class="brand" href="{{ dex_base_url }}/">
     <img src="{{ url_for('static', filename='images/logos/ptox_logo_white.png') }}" alt="PTox logo">
@@ -22,7 +29,17 @@
         <a href="{{ dex_base_url }}/gene-metabolite" role="menuitem"><span class="nav-menu-title">Gene/Metabolite View</span><span class="nav-menu-desc">Response profile by gene or metabolite</span></a>
       </div>
     </div>
-    <a href="{{ dex_base_url }}/phenotype" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-microscope nav-icon" aria-hidden="true"></i>Phenotype Data</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-button" type="button" aria-haspopup="true" aria-expanded="false">
+        <i class="fa-solid fa-microscope nav-icon" aria-hidden="true"></i>Phenotype Data
+        <span aria-hidden="true"></span>
+      </button>
+      <div class="nav-dropdown-menu" role="menu">
+        {% for path, label, description in phenotype_pages %}
+        <a href="{{ dex_base_url }}/phenotype{{ path }}" role="menuitem"><span class="nav-menu-title">{{ label }}</span><span class="nav-menu-desc">{{ description }}</span></a>
+        {% endfor %}
+      </div>
+    </div>
     <a href="{{ url_for('home') }}"{% if chem_current %} aria-current="page"{% endif %}><i class="fa-solid fa-flask nav-icon" aria-hidden="true"></i>Chemical Library</a>
     <a class="nav-links-api" href="{{ url_for('api.docs') }}"{% if api_current %} aria-current="page"{% endif %}><i class="fa-solid fa-code nav-icon" aria-hidden="true"></i>API</a>
     <a href="{{ dex_base_url }}/downloads/"><i class="fa-solid fa-download nav-icon" aria-hidden="true"></i>Downloads</a>
