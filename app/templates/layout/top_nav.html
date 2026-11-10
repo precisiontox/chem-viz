@@ -1,24 +1,30 @@
+{% set chem_current = request.endpoint in ['home', 'chemical_table', 'single_chem_network'] %}
+{% set api_current = request.endpoint in ['api.docs', 'api.swagger_docs'] %}
 <header class="top-nav">
   <a class="brand" href="{{ dex_base_url }}/">
     <img src="{{ url_for('static', filename='images/logos/ptox_logo_white.png') }}" alt="PTox logo">
     <span><sup>PTox</sup>/<sub>DEx</sub> PrecisionTox Data Explorer</span>
   </a>
-  <nav class="nav-links">
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="top-nav-links" aria-label="Toggle navigation">
+    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+  </button>
+  <nav class="nav-links" id="top-nav-links">
     <div class="nav-dropdown">
       <button class="nav-dropdown-button" type="button" aria-haspopup="true" aria-expanded="false">
         <i class="fa-solid fa-dna nav-icon" aria-hidden="true"></i>Omics Data
         <span aria-hidden="true"></span>
       </button>
       <div class="nav-dropdown-menu" role="menu">
-        <a href="{{ dex_base_url }}/species-centric" role="menuitem">Species-Centric View</a>
-        <a href="{{ dex_base_url }}/chemical-centric" role="menuitem">Chemical-Centric View</a>
-        <a href="{{ dex_base_url }}/matrix" role="menuitem">The Matrix</a>
-        <a href="{{ dex_base_url }}/gene-metabolite" role="menuitem">Gene/Metabolite View</a>
+        {# Descriptions adapted from the ones the main app shows for these views on its home page #}
+        <a href="{{ dex_base_url }}/species-centric" role="menuitem"><span class="nav-menu-title">Species-Centric View</span><span class="nav-menu-desc">One species across selected chemicals</span></a>
+        <a href="{{ dex_base_url }}/chemical-centric" role="menuitem"><span class="nav-menu-title">Chemical-Centric View</span><span class="nav-menu-desc">One chemical across selected species</span></a>
+        <a href="{{ dex_base_url }}/matrix" role="menuitem"><span class="nav-menu-title">The Matrix</span><span class="nav-menu-desc">Multi-species and multi-chemical overlap</span></a>
+        <a href="{{ dex_base_url }}/gene-metabolite" role="menuitem"><span class="nav-menu-title">Gene/Metabolite View</span><span class="nav-menu-desc">Response profile by gene or metabolite</span></a>
       </div>
     </div>
     <a href="{{ dex_base_url }}/phenotype" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-microscope nav-icon" aria-hidden="true"></i>Phenotype Data</a>
-    <a href="{{ url_for('home') }}"><i class="fa-solid fa-flask nav-icon" aria-hidden="true"></i>Chemical Selection</a>
-    <a class="nav-links-api" href="{{ url_for('api.docs') }}">API</a>
-    <a href="{{ dex_base_url }}/downloads/">Downloads</a>
+    <a href="{{ url_for('home') }}"{% if chem_current %} aria-current="page"{% endif %}><i class="fa-solid fa-flask nav-icon" aria-hidden="true"></i>Chemical Selection</a>
+    <a class="nav-links-api" href="{{ url_for('api.docs') }}"{% if api_current %} aria-current="page"{% endif %}><i class="fa-solid fa-code nav-icon" aria-hidden="true"></i>API</a>
+    <a href="{{ dex_base_url }}/downloads/"><i class="fa-solid fa-download nav-icon" aria-hidden="true"></i>Downloads</a>
   </nav>
 </header>
