@@ -44,6 +44,16 @@
   opacity: 0.95;
 }
 
+.nav-icon {
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+}
+
+/* The dropdown button already adds a 0.4rem `gap`; top it up to match the links */
+.nav-dropdown-button .nav-icon {
+  margin-right: 0.1rem;
+}
+
 .nav-dropdown {
   position: relative;
 }
