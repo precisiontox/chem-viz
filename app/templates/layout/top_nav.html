@@ -23,7 +23,7 @@
       </div>
     </div>
     <a href="{{ dex_base_url }}/phenotype" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-microscope nav-icon" aria-hidden="true"></i>Phenotype Data</a>
-    <a href="{{ url_for('home') }}"{% if chem_current %} aria-current="page"{% endif %}><i class="fa-solid fa-flask nav-icon" aria-hidden="true"></i>Chemical Selection</a>
+    <a href="{{ url_for('home') }}"{% if chem_current %} aria-current="page"{% endif %}><i class="fa-solid fa-flask nav-icon" aria-hidden="true"></i>Chemical Library</a>
     <a class="nav-links-api" href="{{ url_for('api.docs') }}"{% if api_current %} aria-current="page"{% endif %}><i class="fa-solid fa-code nav-icon" aria-hidden="true"></i>API</a>
     <a href="{{ dex_base_url }}/downloads/"><i class="fa-solid fa-download nav-icon" aria-hidden="true"></i>Downloads</a>
   </nav>
